@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>SMTPForFreeUsers</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">SMTPForFreeUsers</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-1"></span><p class="line874">Free users are restricted to HTTP/HTTPS only, to a whitelist of sites.  Because most email services work over SMTP, which is not HTTP or HTTPS, that means you cannot use SMTP on Free accounts. <span class="anchor" id="line-2-1"></span><span class="anchor" id="line-3-1"></span><p class="line862">The exception is that we have added a special exception to our firewall rules for <strong>gmail smtp servers</strong>.  If you use them, it should work. <span class="anchor" id="line-4-1"></span><span class="anchor" id="line-5-1"></span><p class="line874">However, we have to hard-code the IP addresses of Google's servers into our firewall, and these sometimes change, which means that, on occasion, google may switch to a new gmail server which we don't know about, and that would temporarily block email until the next time we do a release. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><p class="line874">For Django, you can use the settings: <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line867"><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><pre><span class="anchor" id="line-1"></span>EMAIL_HOST = "smtp.gmail.com"
+<span class="anchor" id="line-2"></span>EMAIL_HOST_USER = "yourusername@gmail.com"
+<span class="anchor" id="line-3"></span>EMAIL_HOST_PASSWORD = 'yourpassword'
+<span class="anchor" id="line-4"></span>EMAIL_PORT = 587
+<span class="anchor" id="line-5"></span>EMAIL_USE_TLS = True</pre><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><p class="line867">
+<h3 id="Google_security_blocking_and_setting_up_an_App-Specific_password">Google security blocking and setting up an App-Specific password</h3>
+<span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><p class="line862">Google sometimes blocks SMTP requests from IP addresses it doesn't recognise.  If you're finding emails aren't getting sent, try visiting the security page on your Google account, and have a look for security notifications.  You may need to approve some requests, or generate an application-specific password.  <a class="https" href="https://support.google.com/accounts/answer/6010255?hl=en&gt;">This page is often a good starting point</a>.  <em>(Some people have reported that they can't access the correct security settings on that page from the normal web interface and have to use a mobile device to see them there.  Thanks, Google! ;-)</em> <span class="anchor" id="line-21"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>ManagingDatabaseConnections</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">ManagingDatabaseConnections</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-1"></span><p class="line867">
+<h1 id="Managing_database_connections">Managing database connections</h1>
+<span class="anchor" id="line-2-1"></span><span class="anchor" id="line-3-1"></span><p class="line874">A couple of different problems can occur if your app isn't managing its database connections carefully: <span class="anchor" id="line-4-1"></span><span class="anchor" id="line-5-1"></span><span class="anchor" id="line-6-1"></span><p class="line867">
+<h2 id="Dealing_with_OperationalError_1226.2C_User_has_exceeded_the_max_user_connections_resource">Dealing with OperationalError 1226, User has exceeded the max_user_connections resource</h2>
+<span class="anchor" id="line-7-1"></span><span class="anchor" id="line-8-1"></span><p class="line862">Are you having trouble with problems like this: <strong><a class="nonexistent" href="./OperationalError.html">OperationalError</a>: (1226, "User '&lt;username&gt;' has exceeded the 'max_user_connections' resource (current value: X")</strong>? <span class="anchor" id="line-9-1"></span><span class="anchor" id="line-10-1"></span><p class="line874">If you're seeing this problem consistently, it means that you have several, simulateneous processes that are all holding on to their database connections and are stuck, refusing to release them.  This shouldn't happen in the normal, day-to-day operation of a web application, so it means something is wrong: some part of your code isn't cleaning up its database connections properly.   <span class="anchor" id="line-11-1"></span><span class="anchor" id="line-12-1"></span><p class="line874">Make sure you're using a well known ORM (like Django's, or SQLAlchemy), and make sure its options for connection pooling and clean-up are well set. <span class="anchor" id="line-13-1"></span><span class="anchor" id="line-14-1"></span><p class="line862">If you're managing database connections yourself manually, make sure that you close connections tidily after each use, even if there's an error -- for example, consider using <tt class="backtick">try/finally</tt>, and put a <tt class="backtick">connection.close()</tt> into the <tt class="backtick">finally</tt> clause... <span class="anchor" id="line-15-1"></span><span class="anchor" id="line-16-1"></span><span class="anchor" id="line-17-1"></span><p class="line867">
+<h2 id="Dealing_with_OperationalError_2006.2C_.27MySQL_server_has_gone_away.27">Dealing with OperationalError 2006, 'MySQL server has gone away'</h2>
+<span class="anchor" id="line-18-1"></span><span class="anchor" id="line-19-1"></span><p class="line862">Are you having trouble with problems like this: <strong><a class="nonexistent" href="./OperationalError.html">OperationalError</a>: (2006, 'MySQL server has gone away')</strong>? <span class="anchor" id="line-20-1"></span><span class="anchor" id="line-21-1"></span><p class="line874">Some Python frameworks have object relationship managers (ORMs) that manage a pool of database connections for you. Other libraries do not. MySQLdb specifically does not manage the connections and will error if you try to reuse a stale connection. One that has closed or expired. You need to explicitly check for this error case and handle it.  <span class="anchor" id="line-22-1"></span><span class="anchor" id="line-23-1"></span><p class="line862">Below is some example code from a <a class="http" href="http://stackoverflow.com/questions/207981/how-to-enable-mysql-client-auto-re-connect-with-mysqldb">stackoverflow answer</a> <span class="anchor" id="line-24-1"></span><span class="anchor" id="line-25"></span><p class="line867"><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><pre><span class="anchor" id="line-1"></span>import MySQLdb
+<span class="anchor" id="line-2"></span>
+<span class="anchor" id="line-3"></span>class DB:
+<span class="anchor" id="line-4"></span>  conn = None
+<span class="anchor" id="line-5"></span>
+<span class="anchor" id="line-6"></span>  def connect(self):
+<span class="anchor" id="line-7"></span>    self.conn = MySQLdb.connect()
+<span class="anchor" id="line-8"></span>
+<span class="anchor" id="line-9"></span>  def query(self, sql):
+<span class="anchor" id="line-10"></span>    try:
+<span class="anchor" id="line-11"></span>      cursor = self.conn.cursor()
+<span class="anchor" id="line-12"></span>      cursor.execute(sql)
+<span class="anchor" id="line-13"></span>    except (AttributeError, MySQLdb.OperationalError):
+<span class="anchor" id="line-14"></span>      self.connect()
+<span class="anchor" id="line-15"></span>      cursor = self.conn.cursor()
+<span class="anchor" id="line-16"></span>      cursor.execute(sql)
+<span class="anchor" id="line-17"></span>    return cursor
+<span class="anchor" id="line-18"></span>
+<span class="anchor" id="line-19"></span>db = DB()
+<span class="anchor" id="line-20"></span>sql = "SELECT * FROM foo"
+<span class="anchor" id="line-21"></span>cur = db.query(sql)
+<span class="anchor" id="line-22"></span># wait a long time for the Mysql connection to timeout
+<span class="anchor" id="line-23"></span>cur = db.query(sql)
+<span class="anchor" id="line-24"></span># still works</pre><span class="anchor" id="line-53"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

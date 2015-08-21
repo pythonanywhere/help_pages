@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>VirtualEnvForNewerDjango</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">VirtualEnvForNewerDjango</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-11"></span><p class="line867">
+<h2 id="Guide_to_setting_up_a_virtualenv_for_PythonAnywhere_Web_apps">Guide to setting up a virtualenv for PythonAnywhere Web apps</h2>
+<span class="anchor" id="line-2-4"></span><span class="anchor" id="line-3-3"></span><p class="line862">A virtualenv is a way to have your own private Python environment that has different versions of packages to the system default.  You can have many virtualenvs, each with its own versions of installed packages.  On <a href="./PythonAnywhere.html">PythonAnywhere</a>, this is a great way to use newer (or older) versions of software than the ones we have installed. <span class="anchor" id="line-4-3"></span><span class="anchor" id="line-5-2"></span><p class="line874">One reason you might want to do this is to use a newer version of Django.  For Python 2.7, our system default is currently 1.3.7, while the latest version is 1.8.  These instructions explain what to do if you want to use Django 1.8; if it's a different package that you want to upgrade (or you need a different version of Django), then the changes should be pretty obvious. <span class="anchor" id="line-6-2"></span><span class="anchor" id="line-7-2"></span><span class="anchor" id="line-8-2"></span><p class="line867">
+<h3 id="Instructions">Instructions</h3>
+<span class="anchor" id="line-9-1"></span><span class="anchor" id="line-10-1"></span><p class="line862">Log in to <a href="./PythonAnywhere.html">PythonAnywhere</a>, and create a new Web app: <span class="anchor" id="line-11-1"></span><span class="anchor" id="line-12-1"></span><ul><li>Go to the "Web" tab. <span class="anchor" id="line-13-1"></span></li><li>Select the "Add a new web app" option on the left-hand side. <span class="anchor" id="line-14-1"></span></li><li>If you have a Web Developer account, specify the domain you want your web app to appear on, then click "Next" <span class="anchor" id="line-15-1"></span></li><li>Select the "Manual configuration" option from the list. <span class="anchor" id="line-16-1"></span></li><li>Click "Next", and wait for the system to tell you that the web app has been created. <span class="anchor" id="line-17-1"></span><span class="anchor" id="line-18-1"></span></li></ul><p class="line862">Now you can check that you have a web app -- go to <em>yourusername</em>.pythonanywhere.com in your browser to see the simple site we generate for you. <span class="anchor" id="line-19-1"></span><span class="anchor" id="line-20"></span><p class="line862">You may have noticed a <em>Virtualenv path</em> option.  Let's go and create a virtualenv, so we have something to put in there.   <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><p class="line867">
+<h3 id="Creating_the_virtualenv_and_installing_.28eg.29_django">Creating the virtualenv and installing (eg) django</h3>
+<span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><p class="line862">Go to the "Consoles" tab and start a <em>Bash console</em> <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><p class="line867"><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><pre><span class="anchor" id="line-1"></span>14:50 ~ $ mkvirtualenv django18</pre><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><p class="line867"><em><strong>TIP: if you want to use Python 3 for your virtualenv, use <tt class="backtick">mkvirtualenv&nbsp;--python=/usr/bin/python3.4&nbsp;django18</tt></strong></em> <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line867"><em><strong>TIP: if you see an error saying <tt class="backtick">mkvirtualenv:&nbsp;command&nbsp;not&nbsp;found</tt>, check out <a href="./InstallingVirtualenvWrapper.html">InstallingVirtualenvWrapper</a>.</strong></em> <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><p class="line862">You can check it works -- the prompt should gain the <tt class="backtick">(django18)</tt> prefix, and you can check <tt class="backtick">which&nbsp;pip</tt> returns the virtualenv pip: <span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><p class="line867"><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><pre><span class="anchor" id="line-1-1"></span>(django18)14:51 ~ $ which pip
+<span class="anchor" id="line-2"></span>/home/myusername/.virtualenvs/django18/bin/pip</pre><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><p class="line874">If it hasn't, you'll need to activate the virtualenv, like this: <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><p class="line867"><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><pre><span class="anchor" id="line-1-2"></span>workon django18</pre><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><p class="line862">You'll need to do this in any bash console when you're trying to install things to your virtualenv or run <tt class="backtick">manage.py</tt>, otherwise you'll be trying to make changes to the system environment instead of your virtualenv. <span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><p class="line874">Now install Django: <span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><p class="line867"><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><pre><span class="anchor" id="line-1-3"></span>(django18)14:51 ~ $ pip install django</pre><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><p class="line874">(apologies if this takes a long time.  We're working on speeding up disk I/O) <span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><p class="line874">Now you can check it worked: <span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><p class="line867"><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><pre><span class="anchor" id="line-1-4"></span>(django18)15:02 ~ $ which django-admin.py
+<span class="anchor" id="line-2-1"></span>/home/myusername/.virtualenvs/django18/bin/django-admin.py
+<span class="anchor" id="line-3"></span>(django18)15:02 ~ $ django-admin.py --version
+<span class="anchor" id="line-4"></span>1.8.2</pre><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><p class="line874">Start a new django project: <span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line867"><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><pre><span class="anchor" id="line-1-5"></span>(django18)15:02 ~ $ django-admin.py startproject mysite</pre><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><p class="line874">Check it worked: <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><p class="line867"><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><pre><span class="anchor" id="line-1-6"></span>(django18)15:02 ~ $ tree mysite
+<span class="anchor" id="line-2-2"></span>mysite
+<span class="anchor" id="line-3-1"></span>├── manage.py
+<span class="anchor" id="line-4-1"></span>└── mysite
+<span class="anchor" id="line-5"></span>    ├── __init__.py
+<span class="anchor" id="line-6"></span>    ├── settings.py
+<span class="anchor" id="line-7"></span>    ├── urls.py
+<span class="anchor" id="line-8"></span>    └── wsgi.py</pre><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><p class="line862">Note the <tt class="backtick">mysite/mysite</tt> folder -- it's definitely a version of Django later than 1.4 <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><p class="line867">
+<h3 id="Using_the_virtualenv_in_your_web_app">Using the virtualenv in your web app</h3>
+<span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><p class="line862">Now go back to the <strong>Web</strong> tab and edit the WSGI file for your web app (There's a link on the web app tab) and delete everything except the Django section and then uncomment the Django section. Your WSGI file should look something like this: <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><p class="line867"><span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span><span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><pre><span class="anchor" id="line-1-7"></span># +++++++++++ DJANGO +++++++++++
+<span class="anchor" id="line-2-3"></span># To use your own django app use code like this:
+<span class="anchor" id="line-3-2"></span>import os
+<span class="anchor" id="line-4-2"></span>import sys
+<span class="anchor" id="line-5-1"></span>
+<span class="anchor" id="line-6-1"></span># assuming your django settings file is at '/home/myusername/mysite/mysite/settings.py'
+<span class="anchor" id="line-7-1"></span>path = '/home/myusername/mysite'
+<span class="anchor" id="line-8-1"></span>if path not in sys.path:
+<span class="anchor" id="line-9"></span>    sys.path.append(path)
+<span class="anchor" id="line-10"></span>
+<span class="anchor" id="line-11"></span>os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+<span class="anchor" id="line-12"></span>
+<span class="anchor" id="line-13"></span>## Uncomment the lines below depending on your Django version
+<span class="anchor" id="line-14"></span>###### then, for django &gt;=1.5:
+<span class="anchor" id="line-15"></span>from django.core.wsgi import get_wsgi_application
+<span class="anchor" id="line-16"></span>application = get_wsgi_application()
+<span class="anchor" id="line-17"></span>###### or, for older django &lt;=1.4
+<span class="anchor" id="line-18"></span>#import django.core.handlers.wsgi
+<span class="anchor" id="line-19"></span>#application = django.core.handlers.wsgi.WSGIHandler()</pre><span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span><p class="line862">Then, back on the web tab itself, edit the path to your virtualenv in the Virtualenv section.  You can specify the full path, <em>/home/myusername/.virtualenvs/django18</em>, or just the short name of the virtualenv, <em>django18, and the system will automatically expand it to the full path after you submit it. <span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><p class="line862">Save it, then go and hit the <strong>Reload</strong> button for your domain. <span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><p class="line867">
+<h3 id="Checking_it_worked.">Checking it worked.</h3>
+<span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><p class="line874">Go to site -- you should see the Django "it worked!" page. <span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><p class="line862">You're all set up, and now you can use your virtualenv <img alt=":)" height="15" src="/wiki/static/pythonanywhere/img/smile.png" title=":)" width="15" /> <span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><p class="line867">
+<h3 id="Extra_packages">Extra packages</h3>
+<span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><p class="line862">Don't forget, the virtualenv has its own set of installed packages -- so if you want to use something you'll need to <tt class="backtick">pip&nbsp;install</tt> it.  A common example for Django is the Python MySQL library, for which you'll need to install <tt class="backtick">mysql-python</tt>: <span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><p class="line867"><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><pre><span class="anchor" id="line-1-8"></span>(django18)15:12 ~/mysite $ pip install mysql-python    </pre><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><p class="line867">
+<h3 id="Static_files">Static files</h3>
+<span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><p class="line862">Because we had to use manual web app creation to use this virtualenv (instead of <a href="./PythonAnywhere.html">PythonAnywhere</a>'s built-in Django web app quick-start option, which you'll remember uses an older version of Django), one thing is missing -- configuration for static file mappings.  This means that if you enable the Django admin pages, they'll work, but the formatting won't be there because it can't load the CSS where that formatting is specified. <span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><p class="line874">To fix this, go to the "Web" tab, select your domain at the left if it's not already selected, then in the "Static files" table: <span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><ul><li><p class="line862">Click on the "Enter URL" and enter <tt class="backtick">/static/admin/</tt>, then hit return. <span class="anchor" id="line-143"></span></li><li><p class="line862">Click on the "Enter path" on the same line, and enter <tt class="backtick">/home/myusername/.virtualenvs/django18/lib/python2.7/site-packages/django/contrib/admin/static/admin</tt>, replacing <tt class="backtick">myusername</tt> with your username as usual. <span class="anchor" id="line-144"></span></li><li>Reload the web app again. <span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span></li></ul><p class="line874">If you visit the admin site after doing that, all of the formatting will be there. <span class="anchor" id="line-147"></span><span class="anchor" id="line-148"></span><p class="line867">
+<h3 id="Developing_with_your_virtualenv">Developing with your virtualenv</h3>
+<span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span><p class="line874">Remember: whenever you want to get back and work on your virtualenv, you <span class="anchor" id="line-151"></span>need to make sure it's active -- if you're opening a new console, for example. <span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><p class="line862">Look out for the little <tt class="backtick">(django18)</tt> prefix at the command-line. <span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span><p class="line862">It's also well worth checking <tt class="backtick">which&nbsp;pip</tt> to make sure you're using the <span class="anchor" id="line-156"></span>virtualenv pip when installing. <span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><p class="line874">If in doubt, run: <span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><p class="line867"><span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span><pre><span class="anchor" id="line-1-9"></span>(django18)17:02 ~ $ source virtualenvwrapper.sh</pre><span class="anchor" id="line-163"></span><span class="anchor" id="line-164"></span><p class="line862">To switch on virtualenvwrapper (you can add this to your <tt class="backtick">.bashrc</tt>) <span class="anchor" id="line-165"></span><span class="anchor" id="line-166"></span><p class="line874">And <span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span><p class="line867"><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><pre><span class="anchor" id="line-1-10"></span>(django18)17:02 ~ $ workon django18</pre><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span><p class="line874">to switch to working on your virtual environment. <span class="anchor" id="line-173"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

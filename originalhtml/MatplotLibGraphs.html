@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>MatplotLibGraphs</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">MatplotLibGraphs</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h3 id="Can_I_use_matplotlib_to_generate_graphs_from_my_data.3F">Can I use matplotlib to generate graphs from my data?</h3>
+<span class="anchor" id="line-2"></span><p class="line874">Yes you can, and your graphs will be saved as an image file in your directory. <span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span><p class="line874">The block of code below gives you an example of how you would do this: <span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><p class="line867"><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-1-1"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c)) {
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    var n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        var a = document.createElement('A');
+        s.className = 'LineNumber';
+        a.appendChild(document.createTextNode(nformat(n,4,'')));
+        a.href = '#' + did + '_' + n;
+        s.appendChild(a);
+        s.appendChild(document.createTextNode(' '));
+        n += nstep;
+        if (l.childNodes.length) {
+          l.insertBefore(s, l.firstChild);
+        }
+        else {
+          l.appendChild(s);
+        }
+      }
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c)) {
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-9eae31afdc987329f8d77bbf8c24a4b669878998\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998" lang="en"><span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_1">   1</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_1"></span><span class="anchor" id="line-1-2"></span>    <span class="ResWord">import</span> <span class="ID">matplotlib</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_2">   2</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_2"></span><span class="anchor" id="line-2-1"></span>    <span class="ResWord">import</span> <span class="ID">matplotlib.pyplot</span> <span class="ResWord">as</span> <span class="ID">plt</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_3">   3</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_3"></span><span class="anchor" id="line-3-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_4">   4</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_4"></span><span class="anchor" id="line-4-1"></span>    <span class="ID">fig</span> = <span class="ID">plt</span>.<span class="ID">figure</span>()</span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_5">   5</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_5"></span><span class="anchor" id="line-5-1"></span>    <span class="ID">ax</span> = <span class="ID">fig</span>.<span class="ID">add_subplot</span>(<span class="Number">111</span>)</span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_6">   6</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_6"></span><span class="anchor" id="line-6-1"></span>    <span class="ID">ax</span>.<span class="ID">plot</span>(<span class="ResWord">range</span>(<span class="Number">100</span>))</span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_7">   7</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_7"></span><span class="anchor" id="line-7-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-9eae31afdc987329f8d77bbf8c24a4b669878998_8">   8</a> </span><span class="LineAnchor" id="CA-9eae31afdc987329f8d77bbf8c24a4b669878998_8"></span><span class="anchor" id="line-8-1"></span>    <span class="ID">fig</span>.<span class="ID">savefig</span>(<span class="String">'</span><span class="String">graph.png</span><span class="String">'</span>)</span>
+</pre></div></div><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line867"><tt class="backtick">graph.png</tt> will then show up in your home directory. Simply put, wherever you might normally use <tt class="backtick">plt.show()</tt> to display your graph on screen you should use <tt class="backtick">fig.savefig('your_graph.png')</tt> to save it as an image file instead. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line862">Once you've done that, you can view the graph from your browser using a URL like this: <tt class="backtick">http://www.pythonanywhere.com/user/your-username/files/home/your-username/graph.png</tt> <span class="anchor" id="line-20"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

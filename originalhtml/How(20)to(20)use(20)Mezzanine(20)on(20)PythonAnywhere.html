@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>How to use Mezzanine on PythonAnywhere</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">How to use Mezzanine on PythonAnywhere</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-9"></span><p class="line867">
+<h1 id="How_to_use_Mezzanine_on_PythonAnywhere">How to use Mezzanine on PythonAnywhere</h1>
+<span class="anchor" id="line-2-6"></span><span class="anchor" id="line-3-4"></span><p class="line867">
+<h2 id="Install_mezzanine_into_a_virtualenv">Install mezzanine into a virtualenv</h2>
+<span class="anchor" id="line-4-3"></span><span class="anchor" id="line-5-2"></span><p class="line862">The default version of mezzanine available on <a href="./PythonAnywhere.html">PythonAnywhere</a> is a little old. To get the latest version, you need to use a virtualenv <span class="anchor" id="line-6-2"></span><span class="anchor" id="line-7-2"></span><p class="line867">
+<h3 id="Creating_a_virtualenv">Creating a virtualenv</h3>
+<span class="anchor" id="line-8-1"></span><span class="anchor" id="line-9-1"></span><p class="line874">Start by creating a virtualenv -- a "virtual environment" which has only the <span class="anchor" id="line-10-1"></span>python packages you want, rather than the system default ones.  This allows  <span class="anchor" id="line-11-1"></span>you to use the latest version of mezzanine. <span class="anchor" id="line-12-1"></span><span class="anchor" id="line-13-1"></span><p class="line867"><span class="anchor" id="line-14-1"></span><span class="anchor" id="line-15-1"></span><span class="anchor" id="line-16-1"></span><span class="anchor" id="line-17-1"></span><span class="anchor" id="line-18-1"></span><pre><span class="anchor" id="line-1"></span>source virtualenvwrapper.sh
+<span class="anchor" id="line-2"></span>mkvirtualenv mezzanine  
+<span class="anchor" id="line-3"></span># or optionally, mkvirtualenv mezzanine --python=python3  to use Python 3
+<span class="anchor" id="line-4"></span># you can also use --system-site-packages, see below </pre><span class="anchor" id="line-19-1"></span><span class="anchor" id="line-20-1"></span><p class="line862">* ASIDE: If you use <em>--system-site-packages</em>, you'll get all of the pythonanywhere <span class="anchor" id="line-21"></span><a class="http" href="http://www.pythonanywhere.com/batteries_included/">batteries included system pacakges</a>  <span class="anchor" id="line-22"></span>like numpy, scipy etc, available in your virtualenv. the difference <span class="anchor" id="line-23"></span>will be that you will then be able to install your own, upgraded version over <span class="anchor" id="line-24"></span>the top, which is what we're doing with the mezzanine package. <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><p class="line874">You will now be "in" the virtualenv.  You can tell whenever your virtualenv is <span class="anchor" id="line-27"></span>active, because its name appears in the bash prompt: <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line867"><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><pre><span class="anchor" id="line-1-1"></span>(mezzanine)15:18 ~ $</pre><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line874">From this point on, you can use <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line867"><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><pre><span class="anchor" id="line-1-2"></span>deactivate # to switch off the virtualenv
+<span class="anchor" id="line-2-1"></span>workon mezzanine # to go back into the virtualenv</pre><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><p class="line867"><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><p class="line867"><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><pre><span class="anchor" id="line-1-3"></span>pip install mezzanine
+<span class="anchor" id="line-2-2"></span># will show "downloading mezzanine... downloading django.. downloading requests etc
+<span class="anchor" id="line-3-1"></span># it may take several minutes for the install to complete.
+<span class="anchor" id="line-4-1"></span>
+<span class="anchor" id="line-5"></span># check mezzanine has installed correctlyy
+<span class="anchor" id="line-6"></span>pip freeze | grep -i mezzanine 
+<span class="anchor" id="line-7"></span># this should show a recent version.</pre><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><p class="line874">If anything goes wrong, make sure you were "in" the virtualenv when you started. <span class="anchor" id="line-54"></span>Did the prompt have the little <tt class="backtick">(mezzanine)</tt>? If not, use <tt class="backtick">workon&nbsp;mezzanine</tt>. <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><p class="line867">
+<h2 id="Starting_a_mezzanine_project">Starting a mezzanine project</h2>
+<span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><p class="line874">Next is building your actual mezzanine site. <span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><p class="line867">
+<h3 id="Creating_the_project">Creating the project</h3>
+<span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><p class="line862">I'm using <em>project_name</em> as the project name, but you can substitute in whatever <span class="anchor" id="line-64"></span>you want - as long as you do it everywhere! <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><p class="line867"><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><pre><span class="anchor" id="line-1-4"></span>workon mezzanine
+<span class="anchor" id="line-2-3"></span>mezzanine-project project_name
+<span class="anchor" id="line-3-2"></span>cd project_name</pre><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line867">
+<h3 id="Setting_a_timezone">Setting a timezone</h3>
+<span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><p class="line862">Next you'll need to edit the <em>settings.py</em> for your project.  Use the <strong>Files</strong> menu to  <span class="anchor" id="line-75"></span>navigate to <em>project_name/settings.py</em>, and then find the line that defines <tt class="backtick">TIME_ZONE</tt>, <span class="anchor" id="line-76"></span>and set it to something appropriate, eg: <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><p class="line867"><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><pre><span class="anchor" id="line-1-5"></span>TIME_ZONE = 'Europe/London'</pre><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><p class="line867">
+<h3 id="Creating_the_database">Creating the database</h3>
+<span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><p class="line867"><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><pre><span class="anchor" id="line-1-6"></span>python manage.py createdb --noinput</pre><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><p class="line867">
+<h2 id="Creating_a_web_app">Creating a web app</h2>
+<span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span><p class="line862">Go to the <strong>Web tab</strong> on <a href="./PythonAnywhere.html">PythonAnywhere</a>, and click <strong>Start a new Web App</strong>. <span class="anchor" id="line-91"></span>Choose <strong>Manual Configuration</strong>.   <span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><p class="line867">
+<h3 id="virtualenv">virtualenv</h3>
+<span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><p class="line862">In the <strong>virtualenv</strong> section of the web tab, enter the path to your virtualenv:  <em>/home/yourusername/.virtualenvs/mezzanine</em> in our example. <span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span><p class="line867">
+<h3 id="WSGI_configuration:_sys.path_.2B-_django_settings_module">WSGI configuration: sys.path + django settings module</h3>
+<span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><p class="line874">Once it's loaded, click on the link <span class="anchor" id="line-101"></span>to your <strong>WSGI file</strong>, and edit it so that it looks a little like this: <span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span><p class="line867"><span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><pre><span class="anchor" id="line-1-7"></span>import os
+<span class="anchor" id="line-2-4"></span>import sys
+<span class="anchor" id="line-3-3"></span>
+<span class="anchor" id="line-4-2"></span># add project folder to path
+<span class="anchor" id="line-5-1"></span>path = '/home/yourusername/project_name':
+<span class="anchor" id="line-6-1"></span>if path not in sys.path:
+<span class="anchor" id="line-7-1"></span>    sys.path.append(path)
+<span class="anchor" id="line-8"></span>
+<span class="anchor" id="line-9"></span># Remove any references to your home folder (this can break Mezzanine)
+<span class="anchor" id="line-10"></span>while "." in sys.path:
+<span class="anchor" id="line-11"></span>    sys.path.remove(".")
+<span class="anchor" id="line-12"></span>while "" in sys.path:
+<span class="anchor" id="line-13"></span>    sys.path.remove("") 
+<span class="anchor" id="line-14"></span>
+<span class="anchor" id="line-15"></span># specify django settings
+<span class="anchor" id="line-16"></span>os.environ['DJANGO_SETTINGS_MODULE'] = 'project_name.settings'
+<span class="anchor" id="line-17"></span>
+<span class="anchor" id="line-18"></span># load default django wsgi app
+<span class="anchor" id="line-19"></span>import django.core.handlers.wsgi
+<span class="anchor" id="line-20"></span>application = django.core.handlers.wsgi.WSGIHandler()</pre><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><p class="line867">
+<h4 id="Reload_Web_App">Reload Web App</h4>
+<span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span><p class="line862">Hit the big <strong>Reload Web App</strong> button, and click on the link to your site. You should <span class="anchor" id="line-129"></span>now see a live site saying things like "Home" and "Congratulations", but the layout <span class="anchor" id="line-130"></span>will look all broken, because the CSS isn't loading yet. <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><p class="line867">
+<h2 id="Configuring_static_files">Configuring static files</h2>
+<span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><p class="line867">
+<h3 id="Add_a_Static_files_entry_on_the_Web_tab">Add a Static files entry on the Web tab</h3>
+<span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><p class="line862">Back on the <strong>Web tab</strong>, go to the <strong>Static Files</strong> section, and enter a <span class="anchor" id="line-138"></span>static file with <span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><ul><li><p class="line862">URL: <em>/static/</em> <span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span></li><li class="gap"><p class="line862">path: <em>/home/yourusername/project_name/static</em> <span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span></li></ul><p class="line867">
+<h3 id="Run_manage.py_collectstatic">Run manage.py collectstatic</h3>
+<span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><p class="line862">Open, or re-open your <strong>Bash console</strong>, and run <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><p class="line867"><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><span class="anchor" id="line-152"></span><pre><span class="anchor" id="line-1-8"></span>workon mezzanine
+<span class="anchor" id="line-2-5"></span>python manage.py collectstatic</pre><span class="anchor" id="line-153"></span><span class="anchor" id="line-154"></span><p class="line867">
+<h4 id="Reload_web_app">Reload web app</h4>
+<span class="anchor" id="line-155"></span><span class="anchor" id="line-156"></span><p class="line862">Back on the <strong>Web tab</strong>, hit the big <strong>Reload</strong> button, <span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><p class="line874">Now your site should be live, and looking good! <span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><span class="anchor" id="line-161"></span><p class="line867">
+<h2 id="Things_to_think_about_next">Things to think about next</h2>
+<span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span><ul><li><p class="line862">The default database for Mezzanine is SQLite.  It's fine for testing, but you probably want to switch to MySQL for production use. Check out the <a href="./UsingMySQL.html">UsingMySQL</a> page. <span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span></li><li class="gap"><p class="line862">You'll want to switch <tt class="backtick">DEBUG</tt> to False, and that will need you need to fill in <tt class="backtick">ALLOWED_HOSTS</tt> in <em>settings.py</em> <span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span></li></ul><p class="line867">
+<h3 id="Customising_templates">Customising templates</h3>
+<span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><p class="line862">There's a few notes in this forum thread:  <a class="https" href="https://www.pythonanywhere.com/forums/topic/1195/">https://www.pythonanywhere.com/forums/topic/1195/</a> <span class="anchor" id="line-171"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

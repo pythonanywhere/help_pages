@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>ForcingHTTPS</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">ForcingHTTPS</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-2"></span><p class="line874">For some web sites you might want to not just offer HTTPS access to your users -- you might want to force all connections to go through HTTPS.  There are different ways to do that for different web frameworks.  Here are some -- if you don't see the framework you use, let us know with the "Send Feedback" link above. <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867">
+<h2 id="Django">Django</h2>
+<span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">Just <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867"><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><pre><span class="anchor" id="line-1"></span>    pip install --user django-sslify</pre><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line874">Or install it into your virtualenv if you're using one. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line862">Then add the middleware as the first middleware class you have in settings.py.  Also note that it won't force SSL if you have <tt>DEBUG&nbsp;=&nbsp;True</tt> in your settings (which in turn means you'll need to make sure that <tt>ALLOWED_HOSTS</tt> is set up properly). <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><p class="line867">
+<h2 id="web2py">web2py</h2>
+<span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><p class="line874">Uncomment this line in db.py: <span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><p class="line867"><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><pre><span class="anchor" id="line-1-1"></span>    request.requires_https()</pre><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line867">
+<h2 id="Flask">Flask</h2>
+<span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><p class="line862">Use <a class="https" href="https://github.com/kennethreitz/flask-sslify">this Flask extension</a>. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><p class="line867">
+<h2 id="Bottle">Bottle</h2>
+<span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><p class="line862">Use <a class="https" href="https://pypi.python.org/pypi/Bottle-SSLify/0.0.1">this Bottle extension</a>. <span class="anchor" id="line-33"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>InstallingQSTKonPythonAnywhere</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">InstallingQSTKonPythonAnywhere</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-5"></span><p class="line867">
+<h1 id="Installing_QSToolKit_on_PythonAnywhere">Installing QSToolKit on PythonAnywhere</h1>
+<span class="anchor" id="line-2-1"></span><span class="anchor" id="line-3"></span><p class="line874">QSToolKit (QSTK) is a Python-based open source software framework designed to support portfolio construction and management. We are building the QSToolKit primarily for finance students, computing students, and quantitative analysts with programming experience. You should not expect to use it as a desktop app trading platform. Instead, think of it as a software infrastructure to support a workflow of modeling, testing and trading. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line862">You can install it on even a free <a href="./PythonAnywhere.html">PythonAnywhere</a> account if you follow these instructions. All the below commands need to be entered into a Bash console.  <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line874">Step 1: Download QSTK using the command. <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><p class="line867"><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><pre><span class="anchor" id="line-1"></span>wget http://pypi.python.org/packages/source/Q/QSTK/QSTK-0.2.6.tar.gz </pre><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><p class="line874">Step 2: Extract the tarball using the command. <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line867"><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><pre><span class="anchor" id="line-1-1"></span>tar -xzvf QSTK-0.2.6.tar.gz </pre><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line874">Step 3: Move to the QSTK directory created now. <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line867"><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><pre><span class="anchor" id="line-1-2"></span>cd QSTK-0.2.6 </pre><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><p class="line874">Step 4: Install QSTK once you have all the dependencies using the command. <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line867"><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><pre><span class="anchor" id="line-1-3"></span>python setup.py install --user </pre><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><p class="line874">Step 5: Testing the Installation was correct, please run the following commands. Please read the output to check if everything looks okay. <span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><p class="line867"><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><pre><span class="anchor" id="line-1-4"></span>cd Examples
+<span class="anchor" id="line-2"></span>python Validation.py</pre><span class="anchor" id="line-47"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

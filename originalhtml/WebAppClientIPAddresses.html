@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>WebAppClientIPAddresses</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">WebAppClientIPAddresses</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-2"></span><p class="line867">
+<h1 id="How_to_get_the_IP_addresses_of_clients_for_your_web_app">How to get the IP addresses of clients for your web app</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">Web apps on <a href="./PythonAnywhere.html">PythonAnywhere</a> are load-balanced across a cluster of machines.  This means that when you access the <tt>remote_addr</tt> field, which is where the client IP address normally goes, you'll get the internal IP address of the load-balancer. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">Our loadbalancer puts the real IP address that we received the request from into the X-Real-IP header, which you can access like this in Flask: <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867"><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><pre><span class="anchor" id="line-1"></span>    request.headers['X-Real-IP']</pre><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line874">...and like this in Django: <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line867"><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><pre><span class="anchor" id="line-1-1"></span>    request.META.get('HTTP_X_REAL_IP')</pre><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line874">(Other web frameworks will be similar) <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line862">We also pass along the <tt>X-Forwarded-For</tt> header, which contains a comma-separated list of IP addresses which *should* be a list of all proxies that have handled the client's request, with the client's IP address first and the one we received it from last.  However, you should note that the data in that header isn't guaranteed -- malicious or broken clients or proxies anywhere between the client and your web app can put anything they want in there.  The only thing we at <a href="./PythonAnywhere.html">PythonAnywhere</a> can guarantee is the last item on the list, which will be the IP address of the machine our load-balancer received the request from. <span class="anchor" id="line-20"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

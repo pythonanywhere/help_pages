@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Postgres</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">Postgres</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h1 id="Can_I_use_Postgres_on_PythonAnywhere.3F">Can I use Postgres on PythonAnywhere?</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line874">Yes!  You'll need to upgrade to a paying account. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line862">Currently, Postgres is only available via the <strong>Custom</strong> account type.  Enable Postgres, set your disk quota, and then choose the other features (number of web apps etc) as appropriate <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line874">In more detail: <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><ul><li>If you have a free account, go to the Account page, and click on the "Change your custom plan" button.  Switch the Postgres option on, choose how much disk space you want for your PG databases, choose any other paid features you want, and then click "Upgrade to this custom plan".  This will take you through a payment confirmation process. <span class="anchor" id="line-10"></span></li><li>If you already have a custom plan, go to the Account page, and click on the "Change your custom plan" button.  The popup window will be pre-configured with all of your current custom plan settings, so you just need to switch the Postgres option on, choose how much disk space you want for your PG databases, and then click "Switch to this custom plan".  This will take you through the normal payment confirmation process. <span class="anchor" id="line-11"></span></li><li>If you have a Hacker, Web Dev, or Startup account it's a little more complicated -- you can go to the Account page and click on the "Build a custom plan" button, but right now, the popup won't be initialised with your current account's settings (we're working on a fix for this).  So you'll need to set the sliders to match those as well as switch on Postgres -- there's a table of the correct settings below.  Once you've configured a custom plan with your settings and with Postgres enabled, you can click on "Switch to this custom plan" and do the payment confirmation.  Sorry for the inconvenience -- we only realised that this annoyance was there right at the end of development and we didn't want to delay the Postgres release while we tinkered with the UI. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></li></ul><p class="line874">Here are the settings for the Custom plan popup to mimic the non-custom plans: <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><div><table><tbody><tr>  <td><p class="line862">                        </td>
+  <td><p class="line862"> Hacker </td>
+  <td><p class="line862"> Web Developer </td>
+  <td><p class="line862"> Startup </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-16"></span><p class="line862"> CPU time per day:      </td>
+  <td><p class="line862"> 3000   </td>
+  <td><p class="line862"> 3000          </td>
+  <td><p class="line862"> 50000   </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-17"></span><p class="line862"> Number of web apps:    </td>
+  <td><p class="line862"> 1      </td>
+  <td><p class="line862"> 3             </td>
+  <td><p class="line862"> 8       </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-18"></span><p class="line862"> Number of web workers: </td>
+  <td><p class="line862"> 2      </td>
+  <td><p class="line862"> 3             </td>
+  <td><p class="line862"> 5       </td>
+</tr>
+<tr>  <td><span class="anchor" id="line-19"></span><p class="line862"> Disk space (GB):       </td>
+  <td><p class="line862"> 0.5    </td>
+  <td><p class="line862"> 5             </td>
+  <td><p class="line862"> 50      </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-20"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

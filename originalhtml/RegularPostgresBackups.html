@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>RegularPostgresBackups</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">RegularPostgresBackups</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-1"></span><p class="line867">
+<h1 id="How_to_implement_regular_Postgres_backups_on_PythonAnywhere">How to implement regular Postgres backups on PythonAnywhere</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">Your Postgres data on <a href="./PythonAnywhere.html">PythonAnywhere</a> is fully protected against hardware failure.  However, we do not automatically support rolling back to a point in time.  If you want protection from accidental changes, you can set up a scheduled task to regularly back your data up to a file, which you can re-load into Postgres at a later date. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">Here's an example of a command that can dump a particular database called "mydb": <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867"><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><pre><span class="anchor" id="line-1"></span>pg_dump --host=HOSTNAME --port=PORT --user=super --format=c --file=pgbackup`date -%F-%H%M`.dump mydb</pre><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line862">You'll want to experiment with <tt class="backtick">pg_dump</tt> and <tt class="backtick">pg_restore</tt> until you have a backup command which you have confidence in -- remember, an untested backup procedure isn't a backup procedure at all! <span class="anchor" id="line-12"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

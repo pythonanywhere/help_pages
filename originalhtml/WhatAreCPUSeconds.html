@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>WhatAreCPUSeconds</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">WhatAreCPUSeconds</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h1 id="What_are_.22CPU_seconds.22.3F">What are "CPU seconds"?</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">With every <a href="./PythonAnywhere.html">PythonAnywhere</a> account, you get a number of CPU-seconds included each month. This applies to all code run through our in-browser consoles, and in your scheduled tasks. It does not currently apply to your web apps. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line862">A CPU-second is one second of full-power usage on a CPU with two Amazon Compute Units (which means double what they <a class="http" href="http://aws.amazon.com/ec2/instance-types/">define here</a> as "equivalent CPU capacity of a 1.0-1.2 GHz 2007 Opteron or 2007 Xeon processor"). Your code only uses up CPU seconds while it's actually busy. If your code isn't using any CPU power (maybe it's not running, or it's waiting for input or for a web request to return) then it's not using any CPU seconds. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line874">If you use up all of your included CPU seconds, don't worry! You can always buy more — and even if you don't, your processes will still run, in the tarpit. <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><p class="line874">Tarpitted processes run at a lower priority than users who haven't hit their limit yet, but they get any spare capacity that we have on our server cluster, unless they're using gigabytes of RAM. <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line862">Here's <a class="https" href="https://www.pythonanywhere.com/tarpit/">more info about the tarpit</a>. <span class="anchor" id="line-12"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

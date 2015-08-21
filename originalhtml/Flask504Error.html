@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Flask504Error</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">Flask504Error</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-2"></span><p class="line867">
+<h1 id="Dealing_with_504_errors_in_flask_applications_.28or.2C_getting_wsgi_config_right.29">Dealing with 504 errors in flask applications (or, getting wsgi config right)</h1>
+<span class="anchor" id="line-2-1"></span><span class="anchor" id="line-3"></span><p class="line874">The most common problem we see with flask apps is that people try and call <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line867"><span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><pre><span class="anchor" id="line-1"></span>app.run()
+<span class="anchor" id="line-2"></span># don't do this!</pre><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line862">This actually tries to launch Flask's own development server.  That's not necessary on <a href="./PythonAnywhere.html">PythonAnywhere</a>, because we do the server part for you.  All you need is to import your flask app into your wsgi file, something like this: <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><p class="line867"><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><pre><span class="anchor" id="line-1-1"></span>from my_flask_app import app as application</pre><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><p class="line874">The app has to be renamed application, like that. <span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><p class="line867"><strong>Do not call app.run() anywhere in your code</strong> as it will conflict with the <a href="./PythonAnywhere.html">PythonAnywhere</a> workers and cause 504 errors.  Or, if you must call app.run() (eg to be able to run a test server on your own pc), then make sure it's inside an <tt class="backtick">if&nbsp;__name__&nbsp;==&nbsp;'__main__':</tt> block <span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><p class="line862">Other than that, be sure to check out our guide to <a href="./DebuggingImportError.html">Debugging import errors</a> for general tips on dealing with problems in your wsgi config. <span class="anchor" id="line-21"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

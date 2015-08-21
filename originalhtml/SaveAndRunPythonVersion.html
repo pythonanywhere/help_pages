@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>SaveAndRunPythonVersion</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">SaveAndRunPythonVersion</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h1 id="How_can_I_use_a_different_version_of_Python_for_the_Save_.26_Run_button.3F">How can I use a different version of Python for the Save &amp; Run button?</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">The Save &amp; Run button defaults to Python 3.  If you want to use Python 2, you can do so by inserting a special line at the top of your file, called a <a class="https" href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">hashbang</a>: <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">For example: <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867"><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-1-1"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c)) {
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    var n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        var a = document.createElement('A');
+        s.className = 'LineNumber';
+        a.appendChild(document.createTextNode(nformat(n,4,'')));
+        a.href = '#' + did + '_' + n;
+        s.appendChild(a);
+        s.appendChild(document.createTextNode(' '));
+        n += nstep;
+        if (l.childNodes.length) {
+          l.insertBefore(s, l.firstChild);
+        }
+        else {
+          l.appendChild(s);
+        }
+      }
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c)) {
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-31d770d5e54968f3646fd8d8bd21ea91d99c3c10\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-31d770d5e54968f3646fd8d8bd21ea91d99c3c10" lang="en"><span class="line"><span class="LineNumber"><a href="#CA-31d770d5e54968f3646fd8d8bd21ea91d99c3c10_1">   1</a> </span><span class="LineAnchor" id="CA-31d770d5e54968f3646fd8d8bd21ea91d99c3c10_1"></span><span class="anchor" id="line-1-2"></span><span class="Comment">#!/usr/bin/env python2.7</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-31d770d5e54968f3646fd8d8bd21ea91d99c3c10_2">   2</a> </span><span class="LineAnchor" id="CA-31d770d5e54968f3646fd8d8bd21ea91d99c3c10_2"></span><span class="anchor" id="line-2-1"></span><span class="ResWord">print</span> <span class="String">"</span><span class="String">hello from python 2</span><span class="String">"</span></span>
+</pre></div></div><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><p class="line874">Will load Python 2,  <span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><p class="line874">Or, for example: <span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><p class="line867"><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-1-3"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-9801bf8c2b9a6a5f2c2f819bb5449e8dea17715f\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-9801bf8c2b9a6a5f2c2f819bb5449e8dea17715f" lang="en"><span class="line"><span class="LineNumber"><a href="#CA-9801bf8c2b9a6a5f2c2f819bb5449e8dea17715f_1">   1</a> </span><span class="LineAnchor" id="CA-9801bf8c2b9a6a5f2c2f819bb5449e8dea17715f_1"></span><span class="anchor" id="line-1-4"></span><span class="Comment">#!/usr/bin/env python3.3</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-9801bf8c2b9a6a5f2c2f819bb5449e8dea17715f_2">   2</a> </span><span class="LineAnchor" id="CA-9801bf8c2b9a6a5f2c2f819bb5449e8dea17715f_2"></span><span class="anchor" id="line-2-2"></span><span class="ResWord">print</span>(<span class="String">"</span><span class="String">hello from python 3</span><span class="String">"</span>)</span>
+</pre></div></div><span class="anchor" id="line-20"></span><p class="line874">will load python 3.3 instead of 3.4. <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><p class="line867"><strong>NB</strong> the hashbang has to be the very first line in the file. <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><p class="line862">You could also use <tt class="backtick">/usr/bin/python2.7</tt>, but the <tt class="backtick">/usr/bin/env&nbsp;python2.7</tt> formulation makes the hashbang compatible with virtualenvs, which are a more advanced python feature (but one most people end up using sooner or later). <span class="anchor" id="line-25"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

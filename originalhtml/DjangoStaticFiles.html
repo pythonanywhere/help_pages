@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>DjangoStaticFiles</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">DjangoStaticFiles</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-1"></span><p class="line867">
+<h1 id="How_to_setup_static_files_in_Django">How to setup static files in Django</h1>
+<span class="anchor" id="line-2-1"></span><span class="anchor" id="line-3-1"></span><p class="line874">There are 3 main things to do:   <span class="anchor" id="line-4"></span><ul><li><p class="line862">set <tt class="backtick">STATIC_ROOT</tt> in settings.py <span class="anchor" id="line-5"></span></li><li><p class="line862">run <tt class="backtick">manage.py&nbsp;collectstatic</tt>  <span class="anchor" id="line-6"></span></li><li><p class="line862">set up a Static Files entry on the <a href="./PythonAnywhere.html">PythonAnywhere</a> Web tab. <span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span></li></ul><p class="line862">Optionally, you can also customise <tt class="backtick">STATIC_URL</tt>, if you want to use a static URL prefix other than <em>/static/</em> <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line867">
+<h2 id="Set_STATIC_ROOT_in_settings.py">Set STATIC_ROOT in settings.py</h2>
+<span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><p class="line862">The <tt class="backtick">STATIC_ROOT</tt> variable in <em>settings.py</em> defines the single folder you want to collect all your static files into.  Typically, this would be a top-level folder inside your project, eg: <span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><p class="line867"><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><pre><span class="anchor" id="line-1"></span>    STATIC_ROOT = "/home/myusername/myproject/static"
+<span class="anchor" id="line-2"></span>    # or, eg,
+<span class="anchor" id="line-3"></span>    STATIC_ROOT = os.path.join(BASE_DIR, "static")</pre><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><p class="line874">The important thing is this needs to be the full, absolute path to your static files folder. <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line867">
+<h2 id="Run_manage.py_collectstatic">Run manage.py collectstatic</h2>
+<span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line862">This command collects up all your static files from each of your app folders (including the static files for the admin app) and from any other folders you specify in settings.py, and copies them into <tt class="backtick">STATIC_ROOT</tt>. <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><p class="line874">You need to re-run this command whenever you want to publish new versions of your static files. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line867">
+<h2 id="A.28Optionally.29_change_STATIC_URL">(Optionally) change STATIC_URL</h2>
+<span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><p class="line862">If you really must, you can change the default STATIC_URL, which is <em>/static/</em>, to being a different prefix, like <em>/assets/</em>, or whatever it may be. You'll probably want to use the <tt class="backtick">{%&nbsp;static&nbsp;%}</tt> template tag with this.  There's more info in the <a class="https" href="https://docs.djangoproject.com/en/dev/howto/static-files/">django docs</a>. <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line867">
+<h2 id="Set_up_a_static_files_mapping">Set up a static files mapping</h2>
+<span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line874">Finally, set up a static files mapping to get our web servers to serve out your static files for you. <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><ul><li><p class="line862">Go to the <strong>Web</strong> tab on the <a href="./PythonAnywhere.html">PythonAnywhere</a> dashboard <span class="anchor" id="line-38"></span></li><li><p class="line862">Go to the <strong>Static Files</strong> section <span class="anchor" id="line-39"></span></li><li><p class="line862">Enter the same URL as <tt class="backtick">STATIC_URL</tt> in the <strong>url</strong> section  (typically, <em>/static/</em>) <span class="anchor" id="line-40"></span></li><li><p class="line862">Enter the path from <tt class="backtick">STATIC_ROOT</tt> into the <strong>path</strong> section  (the full path, including <tt class="backtick">/home/username/etc</tt>) <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span></li></ul><p class="line862">Then hit <strong>Reload</strong> and test your static file mapping by going to retrieve a known static file.   <span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><p class="line862">Eg, if you have a file at <em>/home/myusername/myproject/static/css/base.css</em>, go visit <em><a class="http" href="http://www.your-domain.com/static/css/base.css">http://www.your-domain.com/static/css/base.css</a></em> <span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><p class="line867">
+<h2 id="Serving_static_files_in_development">Serving static files in development</h2>
+<span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><p class="line862">Django does have an alternative for serving static files during development, which can avoid then need for you to run <tt class="backtick">collectstatic</tt> whenever you make changes to your files, but it comes at the cost of putting an extra processing burden on the Python parts of your app.  If you really want to use this, you'll find more info in the <a class="https" href="https://docs.djangoproject.com/en/dev/howto/static-files/">django docs.</a> <span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><p class="line867">
+<h2 id="Media_files">Media files</h2>
+<span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><p class="line862">If you're using Django's <a class="https" href="https://docs.djangoproject.com/en/dev/topics/files/">default uploaded files handling</a>, then you'll need to set up a similar static files mapping from <tt class="backtick">MEDIA_URL</tt> to <tt class="backtick">MEDIA_ROOT</tt>... <span class="anchor" id="line-55"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

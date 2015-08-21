@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>502BadGateway</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">502BadGateway</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+<h1 id="I.27m_getting_a_.22502_Bad_Gateway_.2F_Backend.22_error.__What_to_do_next.3F">I'm getting a "502 Bad Gateway / Backend" error.  What to do next?</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867">
+<h3 id="Try_hitting_.22Reload.22_again">Try hitting "Reload" again</h3>
+<span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">It may just be a glitch!  Reloading often clears things up. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><p class="line867">
+<h3 id="Wait_for_the_web_app_to_be_fully_reloaded">Wait for the web app to be fully reloaded</h3>
+<span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line874">Sometimes, if you go and visit your site immediately after hitting the "Reload" button, you end up trying to access the site while it's still reloading, and that can cause a bad gateway error.  Make sure the spinner has stopped before viewing the site. <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line867">
+<h3 id="Look_for_import_errors_or_syntax_errors_in_your_WSGI_file">Look for import errors or syntax errors in your WSGI file</h3>
+<span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><p class="line874">If your WSGI file is totally broken, that can cause a 502 bad gateway error, and it wouldn't end up in the error logs. <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line874">In almost all other cases, we should be able to catch exceptions and send them to your error logs (you have checked your error logs haven't you?) <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><p class="line867">
+<h3 id="Don.27t_use_app.run.28.29_.28for_Flask.29_or_try_to_run_your_own_web_server">Don't use app.run() (for Flask) or try to run your own web server</h3>
+<span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><p class="line874">Flask's app.run() call tries to create its own web server, which is typically what you would use on your own machine. <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><p class="line874">On our servers, we run web server processes for you (using uWSGI), so there's no need to use app.run().  Just provide the <span class="anchor" id="line-25"></span>wsgi application as a variable called "application", and we'll do the rest. <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><p class="line874">But if you try and call app.run(), it conflicts with our web worker and breaks stuff. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><p class="line867">
+<h3 id="Contact_support_if_nothing_else_works">Contact support if nothing else works</h3>
+<span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><p class="line862">We're always happy to help.  Use the "send feedback" button, or post in the forums, or email us at <a class="mailto" href="mailto:support@pythonanywhere.com">support@pythonanywhere.com</a>. <span class="anchor" id="line-33"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

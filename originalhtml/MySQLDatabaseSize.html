@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>MySQLDatabaseSize</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">MySQLDatabaseSize</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-1"></span><p class="line867">
+<h2 id="How_do_I_find_out_how_large_my_MySQL_database_is.3F">How do I find out how large my MySQL database is?</h2>
+<span class="anchor" id="line-2-1"></span><span class="anchor" id="line-3-1"></span><p class="line874">To find out how much space the current database is using, start a MySQL console on the database in question, then run this: <span class="anchor" id="line-4-1"></span><span class="anchor" id="line-5"></span><p class="line867"><span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><pre><span class="anchor" id="line-1"></span>SELECT table_schema "Database Name"
+<span class="anchor" id="line-2"></span>     , SUM(data_length + index_length) / (1024 * 1024) "Database Size in MB"
+<span class="anchor" id="line-3"></span>FROM information_schema.TABLES
+<span class="anchor" id="line-4"></span>GROUP BY table_schema;</pre><span class="anchor" id="line-11"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

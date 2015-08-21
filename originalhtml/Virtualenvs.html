@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Virtualenvs</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">Virtualenvs</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1-8"></span><p class="line867">
+<h1 id="How_to_use_a_virtualenv_in_your_web_app_.28to_get_newer_versions_of_django.2C_flask_etc.29">How to use a virtualenv in your web app (to get newer versions of django, flask etc)</h1>
+<span class="anchor" id="line-2-5"></span><span class="anchor" id="line-3-4"></span><p class="line862">A <a class="https" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> is a way to create a python environment that's isolated and separate from the normal system-wide installed packages.  It's particularly useful if you decide our 'default' versions of packages are not the versions you want to use -- to get the latest django, for example. <span class="anchor" id="line-4-4"></span><span class="anchor" id="line-5-4"></span><p class="line867">
+<h2 id="Using_a_virtualenv_in_your_web_app">Using a virtualenv in your web app</h2>
+<span class="anchor" id="line-6-1"></span><span class="anchor" id="line-7-1"></span><p class="line874">Create a new web app using the "manual config" option, or visit one of your existing web apps, and you'll see a section called "Virtualenvs" in the config tab.  This allows you to specify the path to an existing virtualenv.   Read on for instructions on how to create one. <span class="anchor" id="line-8-1"></span><span class="anchor" id="line-9"></span><p class="line867">
+<h2 id="Creating_a_virtualenv">Creating a virtualenv</h2>
+<span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line862">We recommend using <em>virtualenvwrapper</em>, a handy command-line tool, to create your virtualenv.  Here's an example: <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line867"><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><pre><span class="anchor" id="line-1"></span>$ mkvirtualenv myvirtualenv --python=/usr/bin/python3.4</pre><span class="anchor" id="line-16"></span><p class="line867"><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><pre><span class="anchor" id="line-1-1"></span>Running virtualenv with interpreter /usr/bin/python3.4
+<span class="anchor" id="line-2"></span>Using base prefix '/usr'
+<span class="anchor" id="line-3"></span>New python executable in myvirtualenv/bin/python3.4
+<span class="anchor" id="line-4"></span>Also creating executable in myvirtualenv/bin/python
+<span class="anchor" id="line-5"></span>Installing setuptools, pip...done.</pre><span class="anchor" id="line-23"></span><p class="line867"><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><pre><span class="anchor" id="line-1-2"></span>(myvirtualenv) $ which python
+<span class="anchor" id="line-2-1"></span>/home/myusername/.virtualenvs/bin/python
+<span class="anchor" id="line-3-1"></span>(myvirtualenv) $ deactivate
+<span class="anchor" id="line-4-1"></span>$ which python
+<span class="anchor" id="line-5-1"></span>/usr/bin/python
+<span class="anchor" id="line-6"></span>$ workon myvirtualenv
+<span class="anchor" id="line-7"></span>(myvirtualenv) $ which python
+<span class="anchor" id="line-8"></span>/home/myusername/.virtualenvs/bin/python</pre><span class="anchor" id="line-33"></span><p class="line867"><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><pre><span class="anchor" id="line-1-3"></span>(myvirtualenv) $ python
+<span class="anchor" id="line-2-2"></span>Python 3.4.0 (default, Apr 11 2014, 13:05:11) 
+<span class="anchor" id="line-3-2"></span>[GCC 4.8.2] on linux
+<span class="anchor" id="line-4-2"></span>Type "help", "copyright", "credits" or "license" for more information.
+<span class="anchor" id="line-5-2"></span>&gt;&gt;&gt; </pre><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><ul><li><p class="line862">You can specify whichever version of Python you like for your virtualenv, but <em>it must match the version of python you've chosen for your web app</em> <span class="anchor" id="line-42"></span></li><li><p class="line862">Once you create your virtualenv, you need to <strong>activate</strong> it.  It's automatically activate straight after you create it with <tt class="backtick">mkvirtualenv</tt>, and you can re-activate it later with <tt class="backtick">workon&nbsp;myvirtualenv</tt>. <span class="anchor" id="line-43"></span></li><li><p class="line862">You can tell whether your virtualenv is active, because its name appears in your prompt -- you see <tt class="backtick">(myvirtualenv)&nbsp;$</tt>. <span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></li></ul><p class="line867">
+<h2 id="Installing_virtualenvwrapper_if_you_need_to">Installing virtualenvwrapper if you need to</h2>
+<span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><p class="line862">If you see a <tt class="backtick">command&nbsp;not&nbsp;found</tt> error when trying to run <tt class="backtick">mkvirtualenv</tt>, you'll find some installation instructions here: <a href="./InstallingVirtualenvWrapper.html">InstallingVirtualenvWrapper</a> <span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line867">
+<h2 id="Installing_stuff_into_your_virtualenv">Installing stuff into your virtualenv</h2>
+<span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><p class="line867"><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><pre><span class="anchor" id="line-1-4"></span>$ workon myvirtualenv</pre><span class="anchor" id="line-54"></span><p class="line867"><span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><pre><span class="anchor" id="line-1-5"></span>(myvirtualenv) $ which pip  # this lets you check that the virtualenv has been activated
+<span class="anchor" id="line-2-3"></span>/home/myusername/.virtualenvs/myvirtualenv/bin/pip</pre><span class="anchor" id="line-58"></span><p class="line867"><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><pre><span class="anchor" id="line-1-6"></span>(myvirtualenv) $ pip install django==1.7.1 # or flask, or whichever modules you want to use, optionally specifying a version number</pre><span class="anchor" id="line-61"></span><p class="line867"><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><pre><span class="anchor" id="line-1-7"></span>Downloading/unpacking django==1.7.1
+<span class="anchor" id="line-2-4"></span>  Downloading Django-1.7.1-py2.py3-none-any.whl (7.4MB): 7.4MB downloaded
+<span class="anchor" id="line-3-3"></span>Installing collected packages: django
+<span class="anchor" id="line-4-3"></span>Successfully installed django
+<span class="anchor" id="line-5-3"></span>Cleaning up...</pre><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><p class="line867">
+<h2 id="Using_your_virtualenv_back_in_your_web_app">Using your virtualenv back in your web app</h2>
+<span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line862">Now that you have a virtualenv, and you know its path, you can go and enter it back in the <strong>Web</strong> tab. <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><p class="line862">Go to the Virtualenv section, and enter the path: <em>/home/myusername/.virtualenvs/myvirtualenv</em> <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><p class="line862">* TIP: if you're using virtualenvwrapper, you can just enter the name of the virtualenv, <em>myvirtualenv</em>, and the system will automatically guess the rest of the path (<em>/home/myusername/.virtualenvs etc</em>) after you hit ok <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><p class="line862">Now, <strong>Reload</strong> your web app, and you should find it has access to all the packages in your virtualenv, instead of the system ones. <span class="anchor" id="line-79"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

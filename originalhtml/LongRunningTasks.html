@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>LongRunningTasks</title>
+<link rel="stylesheet" type="text/css" media="all" charset="utf-8" href="pythonanywhere/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="pythonanywhere/css/screen.css">
+<link rel="stylesheet" type="text/css" media="print" charset="utf-8" href="pythonanywhere/css/print.css">
+<style type="text/css">
+ul.pagetitle{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+li.pagetitle{
+  display: inline;
+  margin: 0;
+}
+td.noborder {
+  border: 0;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="noborder">
+<img src="logo.png">
+</td>
+<td class="noborder">
+<ul class="pagetitle">
+<li class="pagetitle"><a class="backlink">LongRunningTasks</a>
+</ul>
+<br><br>
+[<a href="PythonAnywhereWiki.html">PythonAnywhereWiki</a>]&nbsp;[<a href="TitleIndex.html">TitleIndex</a>]&nbsp;[<a href="WordIndex.html">WordIndex</a>]&nbsp;
+</td>
+</tr>
+</table>
+<hr>
+<div id="page">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867"><a href="./PythonAnywhere.html">PythonAnywhere</a> consoles can run for a long time, but we do occasionally have to bounce our servers for maintenance.  So, while you can usually keep a console program running for a long time, you will occasionally find it resets itself. <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line874">If you want to keep a process running more or less permanently, or have it restart automatically, the best solution is to use a scheduled task, which runs once an hour or once a day, and either (re)launches the job if it's not running, or just quits if it is already running. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">You'll need to start by making sure your job is resilient to being terminated unexpectedly -- make it save its data every so often, and make sure it is able to resume work wherever it is left off. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line874">Then you just need some way of checking whether the process is running.  We often use a socket for these cases.  Your process opens the socket while it runs, and if it ever exits, it will release it automatically.  Then it's easy to check on, with code like this: <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line867"><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span><span class="anchor" id="line-1-1"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c)) {
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    var n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        var a = document.createElement('A');
+        s.className = 'LineNumber';
+        a.appendChild(document.createTextNode(nformat(n,4,'')));
+        a.href = '#' + did + '_' + n;
+        s.appendChild(a);
+        s.appendChild(document.createTextNode(' '));
+        n += nstep;
+        if (l.childNodes.length) {
+          l.insertBefore(s, l.firstChild);
+        }
+        else {
+          l.appendChild(s);
+        }
+      }
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c)) {
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-0c31f1f650499a29f5d0286709717d24072e269c\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-0c31f1f650499a29f5d0286709717d24072e269c" lang="en"><span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_1">   1</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_1"></span><span class="anchor" id="line-1-2"></span>    <span class="ResWord">import</span> <span class="ID">logging</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_2">   2</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_2"></span><span class="anchor" id="line-2-1"></span>    <span class="ResWord">import</span> <span class="ID">socket</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_3">   3</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_3"></span><span class="anchor" id="line-3-1"></span>    <span class="ResWord">import</span> <span class="ID">sys</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_4">   4</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_4"></span><span class="anchor" id="line-4-1"></span>    <span class="ResWord">from</span> <span class="ID">my_module</span> <span class="ResWord">import</span> <span class="ID">my_long_running_process</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_5">   5</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_5"></span><span class="anchor" id="line-5-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_6">   6</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_6"></span><span class="anchor" id="line-6-1"></span>    <span class="ID">lock_socket</span> = <span class="ID">socket</span>.<span class="ID">socket</span>(<span class="ID">socket</span>.<span class="ID">AF_UNIX</span>, <span class="ID">socket</span>.<span class="ID">SOCK_DGRAM</span>)</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_7">   7</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_7"></span><span class="anchor" id="line-7-1"></span>    <span class="ResWord">try</span>:</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_8">   8</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_8"></span><span class="anchor" id="line-8-1"></span>        <span class="ID">lock_id</span> = <span class="String">"</span><span class="String">my-username.my-task-name</span><span class="String">"</span>   <span class="Comment"># this should be unique. using your username as a prefix is a convention</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_9">   9</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_9"></span><span class="anchor" id="line-9-1"></span>        <span class="ID">lock_socket</span>.<span class="ID">bind</span>(<span class="String">'</span><span class="SPChar">\0</span><span class="String">'</span> + <span class="ID">lock_id</span>)</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_10">  10</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_10"></span><span class="anchor" id="line-10-1"></span>        <span class="ID">logging</span>.<span class="ID">debug</span>(<span class="String">"</span><span class="String">Acquired lock </span><span class="String">%r</span><span class="String">"</span> % (<span class="ID">lock_id</span>,))</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_11">  11</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_11"></span><span class="anchor" id="line-11-1"></span>    <span class="ResWord">except</span> <span class="ID">socket</span>.<span class="ID">error</span>:</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_12">  12</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_12"></span><span class="anchor" id="line-12-1"></span>        <span class="Comment"># socket already locked, task must already be running</span></span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_13">  13</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_13"></span><span class="anchor" id="line-13-1"></span>        <span class="ID">logging</span>.<span class="ID">info</span>(<span class="String">"</span><span class="String">Failed to acquire lock </span><span class="String">%r</span><span class="String">"</span> % (<span class="ID">lock_id</span>,))</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_14">  14</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_14"></span><span class="anchor" id="line-14-1"></span>        <span class="ID">sys</span>.<span class="ID">exit</span>()</span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_15">  15</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_15"></span><span class="anchor" id="line-15-1"></span>    </span>
+<span class="line"><span class="LineNumber"><a href="#CA-0c31f1f650499a29f5d0286709717d24072e269c_16">  16</a> </span><span class="LineAnchor" id="CA-0c31f1f650499a29f5d0286709717d24072e269c_16"></span><span class="anchor" id="line-16-1"></span>    <span class="ID">my_long_running_process</span>()</span>
+</pre></div></div><span class="anchor" id="line-28"></span><span class="anchor" id="bottom"></span></div>
+</div>
+<hr>
+2015-08-21 13:55
+</body>
+</html>

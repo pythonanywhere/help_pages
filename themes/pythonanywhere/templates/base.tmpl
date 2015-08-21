@@ -1,0 +1,66 @@
+## -*- coding: utf-8 -*-
+<%namespace name="base" file="base_helper.tmpl" import="*" />
+<%namespace name="notes" file="annotation_helper.tmpl" import="*" />
+<%namespace name="pythonanywhere" file="pythonanywhere.tmpl" import="*" />
+${set_locale(lang)}
+${base.html_headstart()}
+<%block name="extra_head">
+### Leave this block alone.
+</%block>
+${template_hooks['extra_head']()}
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
+
+<!-- Menubar -->
+
+<div class="navbar navbar-static-top" id="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+            ${pythonanywhere.header_html()}
+        </div>
+    </div>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="content" role="main">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    ${template_hooks['page_header']()}
+    <%block name="content"></%block>
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    ${content_footer}
+    ${template_hooks['page_footer']()}
+</div>
+${pythonanywhere.feedback_dialog_html()}
+${base.late_load_js()}
+    <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+    <!-- fancy dates -->
+    <script>
+    moment.locale("${momentjs_locales[lang]}");
+    fancydates(${date_fanciness}, ${js_date_format});
+    </script>
+    <!-- end fancy dates -->
+    <%block name="extra_js"></%block>
+    % if annotations and post and not post.meta('noannotations'):
+        ${notes.code()}
+    % elif not annotations and post and post.meta('annotations'):
+        ${notes.code()}
+    % endif
+${pythonanywhere.late_load_javascript()}
+${body_end}
+${template_hooks['body_end']()}
+</body>
+</html>
