@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # TODO:
-# * redirects from old wiki
+# * Get feedback working from the help doamin
 # * write something to deal with re-generating the index for the js search
 # * hand edits:
 #   * DjangoTutorial - at the end, we need the code after the list indented 8
@@ -11,6 +11,7 @@
 #   * Insert links to files that have no links to them
 #   * Edit some long titles down to shorter versions
 # DONE:
+# * redirects from old wiki
 # * Find other feedback links to link to
 # * check the link target for the "I want to suggest a new guide" - it fires
 # *   up the JS for feedback
