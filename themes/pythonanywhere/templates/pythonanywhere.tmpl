@@ -31,7 +31,7 @@
             <li><a href="/" id="id_dashboard_link">Dashboard</a></li>
             <li><a href="/account/" id="id_account_link">Account</a></li>
             <li><a href="/logout" id="id_logout_link">Log out</a></li>
-            
+
             ### Leave this block alone.
             %if search_form:
                 ${search_form}
@@ -64,7 +64,7 @@
 </%def>
 
 <%def name="late_load_javascript()">
-    ## Note: we use a newer jquery ui here to be compatible with the jquery 
+    ## Note: we use a newer jquery ui here to be compatible with the jquery
     ## that is used by the search
     <script type="text/javascript" src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 
@@ -80,7 +80,7 @@
             $.extend(
                 urls,
                 {
-                    feedback: '/feedback/submit/'
+                    feedback: 'https://www.pythonanywhere.com/feedback/submit/'
                 }
             );
 
