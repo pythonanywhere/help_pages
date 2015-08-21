@@ -61,7 +61,7 @@ We recommend using *virtualenvwrapper*, a handy command-line tool, to create you
 ##Installing virtualenvwrapper if you need to
 
 
-If you see a `command not found` error when trying to run `mkvirtualenv`, you'll find some installation instructions here: [InstallingVirtualenvWrapper](/help/pages/InstallingVirtualenvWrapper)
+If you see a `command not found` error when trying to run `mkvirtualenv`, you'll find some installation instructions here: [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper)
 
 
 ##Installing stuff into your virtualenv

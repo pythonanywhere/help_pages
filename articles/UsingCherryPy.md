@@ -12,7 +12,7 @@
 
 
 
-[CherryPy](/help/pages/CherryPy) has its own built-in server, but that won't work well on PythonAnywhere. In order to use [CherryPy](/help/pages/CherryPy), you need to make it serve through WSGI and link that up to the PythonAnywhere web-serving infrastructure. Here is a simple [CherryPy](/help/pages/CherryPy) application that will run well on PythonAnywhere: 
+[CherryPy](//www.cherrypy.org/) has its own built-in server, but that won't work well on PythonAnywhere. In order to use [CherryPy](//www.cherrypy.org/), you need to make it serve through WSGI and link that up to the PythonAnywhere web-serving infrastructure. Here is a simple [CherryPy](//www.cherrypy.org/) application that will run well on PythonAnywhere: 
 
   * Create a "Manually configured" web app * Edit the wsgi file so it looks something like this: 
 

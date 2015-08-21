@@ -32,7 +32,7 @@ The preinstalled versions of Django on PythonAnywhere are a little out of date, 
     pip install django ## this may take a couple of minutes
 
 
-  * TIP: if you see an error saying mkvirtualenv: command not found, check out [InstallingVirtualenvWrapper](/help/pages/InstallingVirtualenvWrapper). 
+  * TIP: if you see an error saying mkvirtualenv: command not found, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper). 
 
 Once you've created your virtualenv, you'll be able to see that it's active because your command prompt, which normally says something like `17:18 ~ $` will get prefixed with a little `(django17)`, like this: 
 
@@ -84,7 +84,7 @@ We support different databases, but using SQlite, the default, is probably simpl
 ###(not) the Development server: setting up your web app on the Web tab
 
 
-Don't try and run the Django development server on [PythonAnywere](/help/pages/PythonAnywere). It won't work, because our console servers aren't the same as our web servers. 
+Don't try and run the Django development server on [PythonAnywere](https://www.pythonanywhere.com/). It won't work, because our console servers aren't the same as our web servers. 
 
 Instead, open up a third browser tab and go to our **Web** tab. Click **Add a new web app**, choose **Manual configuration** and then **Python 3.4**. When you hit next, you'll be on your web app configuration page, and it's probably a good idea to keep this tab open in your browser at all times too, so that you can easily jump back to it, and hit reload on your web app, or find your log files, or whatever it may be. 
 
@@ -153,7 +153,7 @@ Just remember to hit "Reload" back on the web tab after you've saved your change
 ###Fixing the admin CSS
 
 
-When you first load the admin site, it will look all ugly because, since we're not using the dev server, the admin CSS isn't served automatically. We can hack in a quick fix for it now. Go to the [Web Tab](/help/pages/FollowingTheDjangoTutorialweb_app_setup) and find the **Static Files** section. Add a new entry: 
+When you first load the admin site, it will look all ugly because, since we're not using the dev server, the admin CSS isn't served automatically. We can hack in a quick fix for it now. Go to the [Web Tab](https://www.pythonanywhere.com/web_app_setup) and find the **Static Files** section. Add a new entry: 
 
   * url `/static/admin/`
   * path: `/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.4/site-packages/django/contrib/admin/static/admin`

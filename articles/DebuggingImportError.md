@@ -133,7 +133,7 @@ What this implies is that you have a directory tree that looks like this:
             `-- settings.py
 
 
-NB - this is the typical django project structure for django versions greater than 1.4. You will probably need to use a virtualenv to get this to work, see [VirtualenvForNewerDjango](/help/pages/VirtualenvForNewerDjango)
+NB - this is the typical django project structure for django versions greater than 1.4. You will probably need to use a virtualenv to get this to work, see [VirtualenvForNewerDjango](/pages/VirtualEnvForNewerDjango)
 
 If in doubt, try the 
 

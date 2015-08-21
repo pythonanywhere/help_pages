@@ -32,4 +32,4 @@ You can use public / private keys to login via ssh. Please add your public keys 
 ###Filezilla etc
 
 
-You can also use SSH access to get files into your account using Filezilla and other similar upload tools. [Details here](/help/pages/FTP)
+You can also use SSH access to get files into your account using Filezilla and other similar upload tools. [Details here](/pages/FTP)

@@ -27,7 +27,7 @@ To use your own domain name with a PythonAnywhere web app there are two steps
 ##Domains without a www prefix (naked domains)
 
 
-One small problem with setting up DNS like this is that it doesn't allow "naked domains" -- that is, you can have your site at `www.yourdomain.com` or `somethingelse.yourdomain.com`, but not at just `yourdomain.com`. [Here's some more information about that, and some recommendations](/help/pages/NakedDomains). 
+One small problem with setting up DNS like this is that it doesn't allow "naked domains" -- that is, you can have your site at `www.yourdomain.com` or `somethingelse.yourdomain.com`, but not at just `yourdomain.com`. [Here's some more information about that, and some recommendations](/pages/NakedDomains). 
 
 
 ##General Instructions

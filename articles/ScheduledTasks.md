@@ -33,4 +33,4 @@ You can also schedule non-Python files to be run, using the same hash-bang synta
 ###Stopping scheduled tasks from running too often
 
 
-If you want only one instance of a scheduled task to be running at any particular time, you can use a lock file to only run a script if it is not already running. See the [LongRunningTasks](/help/pages/LongRunningTasks) page. 
+If you want only one instance of a scheduled task to be running at any particular time, you can use a lock file to only run a script if it is not already running. See the [LongRunningTasks](/pages/LongRunningTasks) page. 

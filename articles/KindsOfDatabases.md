@@ -17,6 +17,6 @@
 ##Databases available
 
 
-PythonAnywhere supports [Postgres](/help/pages/Postgres) in paid plans only, and MySQL and SQLite in all accounts, including free ones. 
+PythonAnywhere supports [Postgres](/pages/Postgres) in paid plans only, and MySQL and SQLite in all accounts, including free ones. 
 
 We're considering adding MongoDB in the future -- if you're interested in it (or something else entirely), let us know! 

@@ -27,4 +27,4 @@ The app has to be renamed application, like that.
 
 **Do not call app.run() anywhere in your code** as it will conflict with the PythonAnywhere workers and cause 504 errors. Or, if you must call app.run() (eg to be able to run a test server on your own pc), then make sure it's inside an `if __name__ == '__main__':` block 
 
-Other than that, be sure to check out our guide to [Debugging import errors](/help/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config. 
+Other than that, be sure to check out our guide to [Debugging import errors](/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config. 

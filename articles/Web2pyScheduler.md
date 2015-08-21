@@ -14,7 +14,7 @@
 
 The [web2py scheduler](//web2py.com/book/default/chapter/04#Scheduler-%28experimental%29) is a way to process asynchronous jobs from web2py. The way to get it running on PythonAnywhere is to use a **Scheduled Task**, which runs once a day. 
 
-*(This is the usual [long-running tasks hack](/help/pages/LongRunningTasks) on PythonAnywhere -- because we can't guarantee to keep a process running forever, the workaround is to have a scheduled task that runs periodically, and restarts the task if it's died, or just quits if it sees it's already running.)*
+*(This is the usual [long-running tasks hack](/pages/LongRunningTasks) on PythonAnywhere -- because we can't guarantee to keep a process running forever, the workaround is to have a scheduled task that runs periodically, and restarts the task if it's died, or just quits if it sees it's already running.)*
 
 Here's some example code -- you'll need to adapt this to match your own web2py apps' names: 
 

@@ -21,4 +21,4 @@ You'll find an "Upload" button appears inside any folders you have write access 
 
 If you have ssh access (included in all paid-for accounts), you can also use scp (including WinSCP) to copy files up to PythonAnywhere. 
 
-From inside the file browser, you can edit text files; find it on the [Files](https://www.pythonanywhere.com/files/) tab, then click its "edit" link, and you'll be taken to [the file editor](/help/pages/FileEditor). Alternatively, if you prefer to use vim or emacs, you can run them from a bash console. 
+From inside the file browser, you can edit text files; find it on the [Files](https://www.pythonanywhere.com/files/) tab, then click its "edit" link, and you'll be taken to [the file editor](/pages/FileEditor). Alternatively, if you prefer to use vim or emacs, you can run them from a bash console. 

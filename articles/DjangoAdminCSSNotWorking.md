@@ -21,4 +21,4 @@ The ugly/hacky way is to add a specific static files mapping pointing at the dja
 
 But that's an ugly hack, and you'll soon run into problems with the rest of your CSS not loading. 
 
-The "proper" way to do it is to make sure you've got `django.contrib.admin` loaded in your `INSTALLED_APPS`, and then run `collectstatic`. There's a [full guide to django static files here](/help/pages/DjangoStaticFiles)
+The "proper" way to do it is to make sure you've got `django.contrib.admin` loaded in your `INSTALLED_APPS`, and then run `collectstatic`. There's a [full guide to django static files here](/pages/DjangoStaticFiles)

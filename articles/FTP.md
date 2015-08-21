@@ -24,13 +24,13 @@ The short answer is that you cannot use FTP or Filezilla unless you have a payin
 ##Using a code sharing site like GitHub or BitBucket
 
 
-The best way is to use a source code control system (or VCS) like Git, mercurial or subversion. You can then "push" your code up to [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.org/), and then "pull" it down to PythonAnywhere, or push from PythonAnywhere to Bitbucket or [GitHub](/help/pages/GitHub). You also get all the benefits of using a version control system, the ability to go back to older versions of files, etc. 
+The best way is to use a source code control system (or VCS) like Git, mercurial or subversion. You can then "push" your code up to [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.org/), and then "pull" it down to PythonAnywhere, or push from PythonAnywhere to Bitbucket or [GitHub](//www.github.com/). You also get all the benefits of using a version control system, the ability to go back to older versions of files, etc. 
 
 Follow the instructions on either Github ("[create a repo](https://help.github.com/articles/create-a-repo)") or Bitbucket ("[Bitbucket 101](https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+101)"), both of which have excellent documentation, for how to get started. 
 
-On PythonAnywhere, use a **Bash Console**, and you'll be able to access `git` (or `hg` or `svn`) and [clone your repository](/help/pages/ExternalVCS), and push and pull. You can also generate an SSH keypair using `ssh-keygen`. 
+On PythonAnywhere, use a **Bash Console**, and you'll be able to access `git` (or `hg` or `svn`) and [clone your repository](/pages/ExternalVCS), and push and pull. You can also generate an SSH keypair using `ssh-keygen`. 
 
-If you want to clone all of your [GitHub](/help/pages/GitHub) repositories, you might want to take a look at Bede Kelly's [cloneall](https://asciinema.org/a/10136). 
+If you want to clone all of your [GitHub](//www.github.com/) repositories, you might want to take a look at Bede Kelly's [cloneall](https://asciinema.org/a/10136). 
 
 
 ##Uploading a zip file

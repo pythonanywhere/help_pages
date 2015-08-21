@@ -17,11 +17,11 @@
 ##Using external version control systems with PythonAnywhere
 
 
-Rather than uploading and downloading files manually, you might prefer to pull in a whole repository of source code from somewhere like [GitHub](/help/pages/GitHub) or [BitBucket](/help/pages/BitBucket). 
+Rather than uploading and downloading files manually, you might prefer to pull in a whole repository of source code from somewhere like [GitHub](//www.github.com/) or [BitBucket](//www.bitbucket.org/). 
 
 Bash consoles — create them from the [Consoles page](https://www.pythonanywhere.com/consoles/) — include popular source control clients: `git`, `hg` and `svn`. 
 
-If you're pulling in from a private git repo on [GitHub](/help/pages/GitHub), you may need to setup a new ssh key, and copy &amp; paste it into your [GitHub](/help/pages/GitHub) account's authorised keys. 
+If you're pulling in from a private git repo on [GitHub](//www.github.com/), you may need to setup a new ssh key, and copy &amp; paste it into your [GitHub](//www.github.com/) account's authorised keys. 
 
         ssh-keygen 
         cat ~/.ssh/id_rsa.pub

@@ -39,7 +39,7 @@ We've also included `virtualenv` and `virtualenvwrapper`, so if you create a vir
 ####Using virtualenvs in web apps
 
 
-You need to enter the location of your virtualenv on the "Web" tab to use it in a web app. Check out the [example here](/help/pages/VirtualEnvForNewerDjango)
+You need to enter the location of your virtualenv on the "Web" tab to use it in a web app. Check out the [example here](/pages/VirtualEnvForNewerDjango)
 
 
 ###For Python 3

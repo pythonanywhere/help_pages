@@ -40,7 +40,7 @@ In the education beta, we're just seeing if we can add a little icing to the cak
 ##Adding students to your account
 
 
-Users have the ability to nominate their teacher via the [Account page](/help/pages/Educationaccount). So one option is to get your students to sign up for PythonAnywhere accounts one by one, and enter your username into the "teacher" field. This can also be a good way to check out the features of the education beta, by signing up for a second account, and using it as a "fake" student account. 
+Users have the ability to nominate their teacher via the [Account page](https://www.pythonanywhere.com/account). So one option is to get your students to sign up for PythonAnywhere accounts one by one, and enter your username into the "teacher" field. This can also be a good way to check out the features of the education beta, by signing up for a second account, and using it as a "fake" student account. 
 
 Alternatively, we can bulk-create accounts for all your students if you like. Just get in touch! [support@pythonanywhere.com](mailto:support@pythonanywhere.com). 
 
@@ -50,7 +50,7 @@ Alternatively, we can bulk-create accounts for all your students if you like. Ju
 
 Once you have some students set up, you'll see a new drop-down at the top right of your dashboard. From there you'll be able to click through and view your students' pages. 
 
-![](/help/students_dropdown.png)
+![](/students_dropdown.png)
 
 You'll be able to view their Files, Consoles, Database, and Web app config. 
 

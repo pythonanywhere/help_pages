@@ -168,7 +168,7 @@ Now your site should be live, and looking good!
 ##Things to think about next
 
 
-  * The default database for Mezzanine is SQLite. It's fine for testing, but you probably want to switch to MySQL for production use. Check out the [UsingMySQL](/help/pages/UsingMySQL) page. 
+  * The default database for Mezzanine is SQLite. It's fine for testing, but you probably want to switch to MySQL for production use. Check out the [UsingMySQL](/pages/UsingMySQL) page. 
   * You'll want to switch `DEBUG` to False, and that will need you need to fill in `ALLOWED_HOSTS` in *settings.py*
 
 

@@ -48,7 +48,7 @@ Go to the "Consoles" tab and start a *Bash console*
 
 ***TIP: if you want to use Python 3 for your virtualenv, use `mkvirtualenv --python=/usr/bin/python3.4 django18`***
 
-***TIP: if you see an error saying `mkvirtualenv: command not found`, check out [InstallingVirtualenvWrapper](/help/pages/InstallingVirtualenvWrapper).***
+***TIP: if you see an error saying `mkvirtualenv: command not found`, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper).***
 
 You can check it works -- the prompt should gain the `(django18)` prefix, and you can check `which pip` returns the virtualenv pip: 
 
@@ -134,7 +134,7 @@ Save it, then go and hit the **Reload** button for your domain.
 
 Go to site -- you should see the Django "it worked!" page. 
 
-You're all set up, and now you can use your virtualenv ![:\)](/help/smile.png)
+You're all set up, and now you can use your virtualenv ![:\)](/smile.png)
 
 
 ###Extra packages

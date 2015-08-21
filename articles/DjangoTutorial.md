@@ -21,7 +21,7 @@ So you want to create a web application, but you don't really want to do all the
 
 **Note:** This tutorial is for **Django 1.3 on PythonAnywhere**. If you use a different version of Django, you will get weird and unhelpful errors. 
 
-*If you just want to follow the official django tutorial on PythonAnywhere, check out [FollowingTheDjangoTutorial](/help/pages/FollowingTheDjangoTutorial) instead*
+*If you just want to follow the official django tutorial on PythonAnywhere, check out [FollowingTheDjangoTutorial](/pages/FollowingTheDjangoTutorial) instead*
 
 Well, that's one of the reasons we created PythonAnywhere. This tutorial will take you through the process of creating a working Django site with an admin interface and a front page that tells you the time. At the end of the tutorial, there's also an overview of options you can use if you already know Django, and you have already coded up a web app which you want to use on PythonAnywhere. 
 
@@ -250,7 +250,7 @@ There's just a couple of subtleties:
 ###Note down the path to your project's parent folder and the project name
 
 
-There are several ways you might have got a Django project into PythonAnywhere - maybe you started one from scratch using `django-admin.py startproject`. Maybe you pulled it in from [GitHub](/help/pages/GitHub) or another code sharing site using `git` or a similar VCS tool. Maybe it's in your Dropbox! 
+There are several ways you might have got a Django project into PythonAnywhere - maybe you started one from scratch using `django-admin.py startproject`. Maybe you pulled it in from [GitHub](//www.github.com/) or another code sharing site using `git` or a similar VCS tool. Maybe it's in your Dropbox! 
 
 Either way, the thing to do is make a note of the path to **parent folder of the project root**. The project root is the folder which contains `settings.py`; for example, let's say it's `/home/my_username/projects/my_project/`
 
@@ -264,7 +264,7 @@ You also need to make a note of the **name of the project root folder** in this 
 
 Those two together should add up to the full path to the project root. Crystal-clear? 
 
-If you have problems with import errors, check out our [Guide to sys.path and import errors](/help/pages/DebuggingImportError)
+If you have problems with import errors, check out our [Guide to sys.path and import errors](/pages/DebuggingImportError)
 
 
 ###Edit the wsgi file
@@ -299,7 +299,7 @@ If you're using a version of Django &gt; 1.6 (which you really shouldn't with th
 
 Your Django app should now work, and you can visit at `http://my_username.pythonanywhere.com`
 
-Again, if you have any problems, check out the [guide to sys.path and import errors](/help/pages/DebuggingImportError)
+Again, if you have any problems, check out the [guide to sys.path and import errors](/pages/DebuggingImportError)
 
 
 ###Setup the database in settings.py, and syncdb
@@ -343,7 +343,7 @@ Follow the usual prompts to create an admin user and password.
 ###Static files
 
 
-Checkout out our [guide to static files in Django](/help/pages/DjangoStaticFiles)
+Checkout out our [guide to static files in Django](/pages/DjangoStaticFiles)
 
 
 ###Reload the web server and enjoy!

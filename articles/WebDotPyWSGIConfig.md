@@ -20,4 +20,4 @@ Web.py applications usually have an `"app"` variable to represent the applicatio
 
 
 
-Other than that, be sure to check out our guide to [Debugging import errors](/help/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config. 
+Other than that, be sure to check out our guide to [Debugging import errors](/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config. 

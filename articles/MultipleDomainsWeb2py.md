@@ -16,7 +16,7 @@
 There is some potential for confusion because there are slightly different definitions of "app" here. 
 
   * For PythonAnywhere, an "app" means a Python WSGI application that works for one domain 
-  * For Web2py, an "app" is an semi-independent module that lives inside a single [Web2Py](/help/pages/Web2Py) WSGI host. 
+  * For Web2py, an "app" is an semi-independent module that lives inside a single [Web2Py](//www.web2py.com/) WSGI host. 
 
 So, in the web2py world, one web2py folder can contain multiple applications, and each of them might be a totally different website for a different domain. 
 
