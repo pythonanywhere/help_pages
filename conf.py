@@ -679,7 +679,7 @@ PRETTY_URLS = True
 #       with the MarkdownExtension class and should not be added here.
 from markdown.extensions.toc import TocExtension
 toc_extension = TocExtension()
-MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', toc_extension, "markdown.extensions.attr_list"]
+MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'tables', toc_extension, "markdown.extensions.attr_list"]
 
 # Extra options to pass to the pandoc comand.
 # by default, it's empty, is a list of strings, for example
