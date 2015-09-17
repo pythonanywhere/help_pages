@@ -1,7 +1,7 @@
 #!/bin/bash
 # Note: Run this as root on a web server
 
-output_dir=/mnt/user_storage/homedirs/help/home/help/wikiexport/originalhtml
+output_dir=/mnt/user_storage/homedirs/help/home/help/helpsite/originalhtml
 
 rm -rf ${output_dir:?'not set'}/*
 python /usr/share/MoinMoin/moin-1.9.7/MoinMoin/script/moin.py \
