@@ -45,6 +45,6 @@ td.noborder {
 <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">Your Postgres data on <a href="./PythonAnywhere.html">PythonAnywhere</a> is fully protected against hardware failure.  However, we do not automatically support rolling back to a point in time.  If you want protection from accidental changes, you can set up a scheduled task to regularly back your data up to a file, which you can re-load into Postgres at a later date. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">Here's an example of a command that can dump a particular database called "mydb": <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><p class="line867"><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><pre><span class="anchor" id="line-1"></span>pg_dump --host=HOSTNAME --port=PORT --user=super --format=c --file=pgbackup`date -%F-%H%M`.dump mydb</pre><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line862">You'll want to experiment with <tt class="backtick">pg_dump</tt> and <tt class="backtick">pg_restore</tt> until you have a backup command which you have confidence in -- remember, an untested backup procedure isn't a backup procedure at all! <span class="anchor" id="line-12"></span><span class="anchor" id="bottom"></span></div>
 </div>
 <hr>
-2015-08-21 13:55
+2015-09-17 14:07
 </body>
 </html>

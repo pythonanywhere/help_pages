@@ -45,6 +45,6 @@ td.noborder {
 <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line874">There are two ways to fix this. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">The ugly/hacky way is to add a specific static files mapping pointing at the django admin css folder: <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><ul><li><p class="line862">url: <em>/static/admin</em> <span class="anchor" id="line-8"></span></li><li><p class="line862">path: <em>/usr/local/lib/python3.4/dist-packages/django/contrib/admin/static/admin/</em>  (or the path to the same folder inside your virtualenv, if you're using one) <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span></li></ul><p class="line874">But that's an ugly hack, and you'll soon run into problems with the rest of your CSS not loading. <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><p class="line862">The "proper" way to do it is to make sure you've got <tt class="backtick">django.contrib.admin</tt> loaded in your <tt class="backtick">INSTALLED_APPS</tt>, and then run <tt class="backtick">collectstatic</tt>.  There's a <a href="./DjangoStaticFiles.html">full guide to django static files here</a> <span class="anchor" id="line-13"></span><span class="anchor" id="bottom"></span></div>
 </div>
 <hr>
-2015-08-21 13:55
+2015-09-17 14:07
 </body>
 </html>

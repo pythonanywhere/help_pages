@@ -43,6 +43,6 @@ td.noborder {
 <span class="anchor" id="line-1"></span><p class="line874">When trying to get data in mysql, you may see an error a little like this: <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><ul><li style="list-style-type:none"><p class="line891"><tt class="backtick">Error&nbsp;Code:&nbsp;1045&nbsp;Access&nbsp;denied&nbsp;for&nbsp;user&nbsp;'myusername'@'%'&nbsp;(using&nbsp;password:&nbsp;YES)</tt> <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></li></ul><p class="line874">The newer versions of mysql client block load data by default. You need to pass it in as a command line switch. If you open up a Bash console you can connect the the mysql database manually like so: <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><ul><li style="list-style-type:none"><p class="line891"><tt class="backtick">mysql&nbsp;-hmysql.server&nbsp;-umyusername&nbsp;myusername\$default&nbsp;-p&nbsp;--local-infile=1</tt> <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></li></ul><p class="line874">"myusername\$default" is the name of the database with the "$" escaped for  <span class="anchor" id="line-10"></span>bash. "--local-infile=1" enables the load data command. You will be  <span class="anchor" id="line-11"></span>prompted for your password. <span class="anchor" id="line-12"></span><span class="anchor" id="bottom"></span></div>
 </div>
 <hr>
-2015-08-21 13:55
+2015-09-17 14:07
 </body>
 </html>
