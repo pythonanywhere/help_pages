@@ -4,11 +4,6 @@
 # * Get feedback working from the help doamin
 # * write something to deal with re-generating the index for the js search
 # * hand edits:
-#   * DjangoTutorial - at the end, we need the code after the list indented 8
-#     spaces and the INSTALLED_APPS code block
-#   * code blocks with number-prefixed lines
-#   * apply :::type to code blocks
-#   * Insert links to files that have no links to them
 #   * Edit some long titles down to shorter versions
 # DONE:
 # * redirects from old wiki
