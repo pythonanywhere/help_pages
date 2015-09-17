@@ -27,7 +27,7 @@ If you want help about Python programming generally (as opposed to PythonAnywher
 [TOC]
 
 
-##Step-by-step guides for a some common tasks
+##Step-by-step guides for some common tasks
 
 
 [ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png) I want to start learning Python ](//www.pythonanywhere.com/task_helpers/start/1-start_python/)

@@ -12,11 +12,13 @@
 
 
 
-This guides pertains to the tutorial for Django 1.7: <https://docs.djangoproject.com/en/1.7/intro/tutorial01/>
+We &lt;3 Django at PythonAnywhere, we use it ourselves. Their tutorial is excellent, but there's a couple of small things that are different about the PythonAnywhere environment, compared to a regular PC. 
 
-As far as possible, each section in the django tutorial will have a matching section on this page, with any additional instructions you may need 
+This guides pertains to the tutorial for Django 1.7: <https://docs.djangoproject.com/en/1.7/intro/tutorial01/> (but there should only be minor differences for 1.8) 
 
-We &lt;3 Django at PythonAnywhere, w use it ourselves. Their tutorial is excellent, but there's a couple of small things that are different about the PythonAnywhere environment, compared to a regular PC. 
+This document is not a replacement for the official django tutorial, instead, it's meant to be a companion guide -- the django tutorial is meant to be your primary guide, but when you read each section of the django tutorial, you should also take a look at the corresponding section notes in this guide, for additional instructions. 
+
+So we recommend you keep both the django tutorial and this page open side-by-side as you go through them. 
 
 
 ##Part 1 (project setup and the models API)
@@ -32,14 +34,14 @@ The preinstalled versions of Django on PythonAnywhere are a little out of date, 
     pip install django ## this may take a couple of minutes
 
 
-  * TIP: if you see an error saying mkvirtualenv: command not found, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper). 
+  * TIP: *if you see an error saying mkvirtualenv: command not found, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper)*. 
 
 Once you've created your virtualenv, you'll be able to see that it's active because your command prompt, which normally says something like `17:18 ~ $` will get prefixed with a little `(django17)`, like this: 
 
     (django17)17:18 ~ $
 
 
-***Always make sure your virtualenv is active when working on the django tutorial***
+***--&gt; Always make sure your virtualenv is active when working on the django tutorial***
 
 If you need to reactivate it later, maybe if you close your bash console and open a new one, the command is: 
 
@@ -73,12 +75,21 @@ For example, the next thing the tutorial wants you to do is edit `settings.py`. 
 
 You will need to tell Django what site it's working for by finding `ALLOWED_HOSTS` in `settings.py` and editing it like this: 
 
-    ALLOWED_HOSTS = ['<your_username>.pythonanywhere.com']
+       1 ALLOWED_HOSTS = ['<your_username>.pythonanywhere.com']
+
 
 
 If you are using your own domain name, put that in the list instead. 
 
-We support different databases, but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though. Then, run the `python manage.py migrate` command back in your Bash console. 
+We support different databases, but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though. 
+
+  * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 1.7. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject again`.*. 
+
+Then, run the `python manage.py migrate` command back in your Bash console. 
+
+    (django17)$ cd mysite  #  cd into the directory that contains manage.py if you haven't already
+    (django17)$ python manage.py migrate
+
 
 
 ###(not) the Development server: setting up your web app on the Web tab

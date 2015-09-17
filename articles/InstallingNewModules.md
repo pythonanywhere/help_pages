@@ -17,45 +17,60 @@
 ##Installing Python modules on PythonAnywhere
 
 
+You can install new modules into PythonAnywhere by using a **Bash Console**
 
-##Using the --user flag
+
+##1\. Using the --user flag
 
 
 We've included both `easy_install` and `pip` for Python versions 2.6, 2.7 and 3.3 (the default is 2.7, add use `pip2.6` or `pip3` / `pip3.3` / `easy_install-3.3` for other versions), but you'll need to pass the `--user` flag to them, which will install modules to a directory (.local) inside your home folder. Please note, this is quite literally `--user`, you don't need to replace it with your username, or to add your username to the command line! 
 
 Example: to install the `pwhich` module, you'd run this: 
 
-`pip install --user pwhich`
+    pip install --user pwhich
+
 
 Do let us know if there are any packages you think should be part of our standard "batteries included". 
 
 
-###Using virtualenvs
+##2\. Using a virtualenv
 
 
 We've also included `virtualenv` and `virtualenvwrapper`, so if you create a virtualenv you can install whatever versions of various packages you want to. However, in a virtualenv, the `--user` is not needed. In fact using `--user` will cause an error in a virtualenv. 
 
+    $ mkvirtualenv my-virtualenv
+    (my-virtualenv) $ pip install pwhich
 
-####Using virtualenvs in web apps
+
+
+###Using virtualenvs in web apps
 
 
 You need to enter the location of your virtualenv on the "Web" tab to use it in a web app. Check out the [example here](/pages/VirtualEnvForNewerDjango)
 
 
-###For Python 3
+##3\. To use Python 3
 
 
-If you're using Python 3, use 
 
-`pip3.3 install --user packagename`
+###Python 3, with --user
 
-or 
 
-`pip3.4 install --user packagename`
+Use 
 
-Or set up your virtualenv using --python=python3.3. 
+    pip3.4 install --user packagename
 
-Installers for Python2.6 are `pip2.6` and `easy_install-2.6`, and you can also use `pip3.3` / `easy_install-3.3` or `pip3.4` / `easy_install-3.4`
+
+*(installers for Python2.6 are `pip2.6` and `easy_install-2.6`, and you can also use `pip3.3` / `easy_install-3.3` or `pip3.4` / `easy_install-3.4`)*
+
+
+###Python 3, with a virtualenv
+
+
+Use the additional flag `--python=python3.4`, eg: 
+
+    mkvirtualenv --python=python3.4 myvirtualenv
+
 
 
 ###Packages requiring compilation

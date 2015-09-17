@@ -19,10 +19,12 @@
 
 To start using MySQL, you'll need to go to the MySQL tab on your [dashboard](https://www.pythonanywhere.com/dashboard/), and set up a password. You'll also find the connection settings (host name, username) on that tab, as well as the ability to create new databases. 
 
-You can start a new MySQL console to access your databases from this tab too, or alternatively you can open a mysql shell with the following command from a bash shell or ssh session: 
+You can start a new MySQL console to access your databases from this tab too, or alternatively you can open a MySQL shell with the following command from a bash shell or ssh session: 
 
-    mysql -u USERNAME -h mysql.server -p
+    mysql -u USERNAME -h HOSTNAME -p
 
+
+The USERNAME is the username you use to log in to PythonAnywhere and the HOSTNAME is on your Databases tab. 
 
 To access a MySQL database from Python 2.6 or 2.7, just `import MySQLdb`. 
 
@@ -38,10 +40,12 @@ To configure Django to access a MySQL database on PythonAnywhere, you need to do
             'NAME': '<your_username>$<your_database_name>',
             'USER': '<your_username>',
             'PASSWORD': '<your_mysql_password>',
-            'HOST': 'mysql.server',
+            'HOST': '<your_mysql_hostname>',
         }
     }
 
+
+Again, you can get the username and hostname details from the "Databases" tab. 
 
 
 ###MySQL with Django tests
@@ -58,39 +62,21 @@ When you run Django tests that use the database, Django tries to create a databa
 We suggest you use a form like `<your username>$test_<your database name>`. Create this database from the PythonAnywhere Databases tab and Django will happily use it and run your tests. 
 
 
-###MySQL with Python 3 for Django
+###MySQL with Python 3
 
 
-For Django, you need to install a slightly different package, the official "mysql connector" from Oracle: 
+If you're using MySQL with Python 3, you need to install a module. If you're not using a virtualenv, run: 
 
-    pip3.4 install --user https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-2.0.1.tar.gz
-
-
-Then, update your *settings.py* to use the oracle django backend, "mysql.connector.django": 
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'mysql.connector.django',
-             ...
+    $ pip3.4 install --user mysqlclient
 
 
-If you're using the South migrations framework, you'll also need to add the following lines: 
+If using a virtualenv: 
 
-    SOUTH_DATABASE_ADAPTERS = {
-        'default' : 'south.db.mysql'
-    }
-
+    $ workon my-virtualenv
+    (my-virtualenv)$ pip install mysqlclient
 
 
-###MySQL bindings for Python 3 (not for Django)
-
-
-For Python 3, you have to install "MySQL-for-Python-3": 
-
-    pip3.4 install --user https://github.com/davispuh/MySQL-for-Python-3/archive/1.0.tar.gz
-
-
-...once that's completed, then the same import as for Python 2.x will work. 
+...once that's completed, then the same imports/Django settings/etc as for Python 2.x will work. 
 
 
 ###Handling connection timeout errors
