@@ -23,14 +23,11 @@
     <a class="brand" href="/"><img id="id_logo" src="//www.pythonanywhere.com/static/anywhere/images/logo-234x35.png" height="35" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
     <div class="nav-collapse">
         <ul id="id_header_links" class="nav">
-            <li><a id="id_feedback_link" class="feedback_link" href="">Send feedback</a></li>
-            <li><a id="id_forums_link" href="/forums/">Forums</a></li>
-            <li><a href="/help/" id="id_help_link">Help</a></li>
+            <li><a href="//www.pythonanywhere.com/" id="id_dashboard_link">PythonAnywhere</a></li>
+            <!--li><a id="id_feedback_link" class="feedback_link" href="">Send feedback</a></li-->
+            <li><a id="id_forums_link" href="//www.pythonanywhere.com/forums/">Forums</a></li>
             <li><a href="http://blog.pythonanywhere.com/" id="id_blog_link">Blog</a></li>
 
-            <li><a href="/" id="id_dashboard_link">Dashboard</a></li>
-            <li><a href="/account/" id="id_account_link">Account</a></li>
-            <li><a href="/logout" id="id_logout_link">Log out</a></li>
 
             ### Leave this block alone.
             %if search_form:
@@ -51,7 +48,7 @@
         We'll get back to you over email ASAP.
     </div>
     <textarea id="id_feedback_dialog_text" rows="6"></textarea>
-    <input id="id_feedback_dialog_email_address" type="text" class="default_prompt"/>
+    <input id="id_feedback_dialog_email_address" type="text" placeholder="Email address (optional - only necessary if you would like us to contact you)"/>
     <div id="id_feedback_dialog_error" class="pa_hidden">
         Sorry, there was an error connecting to the server. <br/>Please try again in a few moments...
     </div>
@@ -84,7 +81,7 @@
                 }
             );
 
-            Anywhere.FeedbackDialog.Initialise(urls, false);
+            Anywhere.FeedbackDialog.Initialise(urls, true);
 
         });
     </script>
