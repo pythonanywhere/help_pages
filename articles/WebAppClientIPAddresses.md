@@ -12,18 +12,20 @@
 
 
 
-Web apps on PythonAnywhere are load-balanced across a cluster of machines. This means that when you access the `remote_addr` field, which is where the client IP address normally goes, you'll get the internal IP address of the load-balancer. 
+Web apps on PythonAnywhere are load-balanced across a cluster of machines. This means that when you access the `remote_addr` field, which is where the client IP address normally goes, you'll get the internal IP address of the load-balancer.
 
-Our loadbalancer puts the real IP address that we received the request from into the X-Real-IP header, which you can access like this in Flask: 
+Our loadbalancer puts the real IP address that we received the request from into the X-Real-IP header, which you can access like this in Flask:
 
-        request.headers['X-Real-IP']
-
-
-...and like this in Django: 
-
-        request.META.get('HTTP_X_REAL_IP')
+    :::python
+    request.headers['X-Real-IP']
 
 
-(Other web frameworks will be similar) 
+...and like this in Django:
 
-We also pass along the `X-Forwarded-For` header, which contains a comma-separated list of IP addresses which *should* be a list of all proxies that have handled the client's request, with the client's IP address first and the one we received it from last. However, you should note that the data in that header isn't guaranteed -- malicious or broken clients or proxies anywhere between the client and your web app can put anything they want in there. The only thing we at PythonAnywhere can guarantee is the last item on the list, which will be the IP address of the machine our load-balancer received the request from. 
+    :::python
+    request.META.get('HTTP_X_REAL_IP')
+
+
+(Other web frameworks will be similar)
+
+We also pass along the `X-Forwarded-For` header, which contains a comma-separated list of IP addresses which *should* be a list of all proxies that have handled the client's request, with the client's IP address first and the one we received it from last. However, you should note that the data in that header isn't guaranteed -- malicious or broken clients or proxies anywhere between the client and your web app can put anything they want in there. The only thing we at PythonAnywhere can guarantee is the last item on the list, which will be the IP address of the machine our load-balancer received the request from.

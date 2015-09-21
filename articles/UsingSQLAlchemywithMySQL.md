@@ -13,9 +13,10 @@
 
 
 
-SQLAlchemy needs to some extra arguments to work on PythonAnywhere: 
+SQLAlchemy needs to some extra arguments to work on PythonAnywhere:
 
+    :::python
     engine = create_engine('mysql+mysqldb://...', pool_recycle=280)
 
 
-The RDS service disconnects clients after 5 minutes (300s), so we need to set the `pool_recycle` to something lower than that, or you'll occasionally see disconnection errors in your logs. 
+The RDS service disconnects clients after 5 minutes (300s), so we need to set the `pool_recycle` to something lower than that, or you'll occasionally see disconnection errors in your logs.

@@ -12,7 +12,8 @@
 
 
 
-  * Open a Bash console and cd to your web2py directory. You'll know you're in the right place if there's a parameters_443.py in the directory. 
-  * Run this: 
+  * Open a Bash console and cd to your web2py directory. You'll know you're in the right place if there's a file called `parameters_443.py` in the directory.
+  * Run this:
 
-    python -c "from gluon.main import save_password; save_password(raw_input('admin password: '),443)"
+        ::python
+        python -c "from gluon.main import save_password; save_password(raw_input('admin password: '),443)"

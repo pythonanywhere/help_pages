@@ -12,12 +12,13 @@
 
 
 
-Web.py applications usually have an `"app"` variable to represent the application. You can turn this into a wsgi-compatible application by calling `.wsgifunc()` on it. So, in your wsgi file, you'll need something like this: 
+Web.py applications usually have an `"app"` variable to represent the application. You can turn this into a wsgi-compatible application by calling `.wsgifunc()` on it. So, in your wsgi file, you'll need something like this:
 
-       1 sys.path.append('/home/myusername/path-to/my-webdotpy-files')
-       2 from myapp import app
-       3 application = app.wsgifunc()
+    :::python
+    sys.path.append('/home/myusername/path-to/my-webdotpy-files')
+    from myapp import app
+    application = app.wsgifunc()
 
 
 
-Other than that, be sure to check out our guide to [Debugging import errors](/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config. 
+Other than that, be sure to check out our guide to [Debugging import errors](/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config.

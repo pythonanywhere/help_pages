@@ -17,9 +17,9 @@
 ##Types of PythonAnywhere consoles
 
 
-In the [Consoles page](https://www.pythonanywhere.com/consoles/) you'll find links to start various types of console: 
+In the [Consoles page](https://www.pythonanywhere.com/consoles/) you'll find links to start various types of console:
 
-  * Python 2.7, 2.6 or 3.3, using either the standard Python shell or IPython. If you've never tried IPython, check it out, it's pretty cool! 
-  * Bash 
-  * [PyPy](//pypy.org/) (experimental) 
-  * MySQL 
+  * Python 2.7, 2.6, 3.3 or 3.4, using either the standard Python shell or IPython. If you've never tried IPython, check it out, it's pretty cool!
+  * Bash
+  * [PyPy](//pypy.org/)
+  * MySQL
