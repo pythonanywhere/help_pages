@@ -70,7 +70,6 @@ If you want help about Python programming generally (as opposed to PythonAnywher
   * [I want to embed a live python console on my website](/pages/EmbeddedConsoles)
   * Problems with consoles:
     * [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
-    * [My console seems to be stuck on a single line](/pages/SingleLineConsoleProblem)
     * [The "Starting encrypted connection" message never disappears](/pages/StartingEncryptedConnection)
     * [I can't type certain keys into the console, like close-parenthesis (international keyboards)](/pages/TypingProblemsInternational)
 
