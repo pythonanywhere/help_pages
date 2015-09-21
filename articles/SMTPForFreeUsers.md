@@ -13,14 +13,15 @@
 
 
 
-Free users are restricted to HTTP/HTTPS only, to a whitelist of sites. Because most email services work over SMTP, which is not HTTP or HTTPS, that means you cannot use SMTP on Free accounts. 
+Free users are restricted to HTTP/HTTPS only, to a whitelist of sites. Because most email services work over SMTP, which is not HTTP or HTTPS, that means you cannot use SMTP on Free accounts.
 
-The exception is that we have added a special exception to our firewall rules for **gmail smtp servers**. If you use them, it should work. 
+The exception is that we have added a special exception to our firewall rules for **gmail smtp servers**. If you use them, it should work.
 
-However, we have to hard-code the IP addresses of Google's servers into our firewall, and these sometimes change, which means that, on occasion, google may switch to a new gmail server which we don't know about, and that would temporarily block email until the next time we do a release. 
+However, we have to hard-code the IP addresses of Google's servers into our firewall, and these sometimes change, which means that, on occasion, google may switch to a new gmail server which we don't know about, and that would temporarily block email until the next time we do a release.
 
-For Django, you can use the settings: 
+For Django, you can use the settings:
 
+    :::python
     EMAIL_HOST = "smtp.gmail.com"
     EMAIL_HOST_USER = "yourusername@gmail.com"
     EMAIL_HOST_PASSWORD = 'yourpassword'
