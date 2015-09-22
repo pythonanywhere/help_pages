@@ -331,10 +331,9 @@ REDIRECTIONS = []
 # to `nikola deploy`.  If no arguments are specified, a preset
 # named `default` will be executed.  You can use as many presets
 # in a `nikola deploy` command as you like.
-DEPLOY_TARGET = "help@ssh.pythonanywhere.com"
 DEPLOY_COMMANDS = {
     'default': [
-        "rsync -rav --delete output/ {}:/home/help/helpsite/output".format(DEPLOY_TARGET,),
+        "rsync -rav --delete output/ /home/help/helpsite/output",
     ]
 }
 
