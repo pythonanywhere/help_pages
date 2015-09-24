@@ -6,9 +6,9 @@ import time
 
 BLOG_AUTHOR = "PythonAnywere"  # (translatable)
 BLOG_TITLE = "PythonAnywhere help"  # (translatable)
-SITE_URL = "https://www.pythonanywhere.com/"
+SITE_URL = "https://help.pythonanywhere.com/"
 
-BASE_URL = "https://www.pythonanywhere.com/"
+BASE_URL = "https://help.pythonanywhere.com/"
 BLOG_EMAIL = "support@pythonanywhere.com"
 BLOG_DESCRIPTION = "Help pages for PythonAnywhere"  # (translatable)
 
