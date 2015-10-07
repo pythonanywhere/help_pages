@@ -18,7 +18,7 @@
 
 We need you to point us to the location of two files, saved into your files area somewhere:
 
-  * The **Private Key**, which should be **unencrypted**, ie it should start with `----BEGIN RSA PRIVATE KEY`
+  * The **Private Key**, which should be **unencrypted**, ie it should start with `----BEGIN PRIVATE KEY` (or BEGIN RSA PRIVATE KEY)
   * The **Combined Certificate**, which consists of your certificate *and* the certificate chain sent to you by your vendor. It should have several BEGIN/END CERTICATE blocks.
 
 
@@ -43,7 +43,7 @@ To get the certificate, you'll need to send them a text file called a "Certifica
   * The certificate (which you should save on PythonAnywhere as yourdomain.com.cert) will be a text file starting with something like `BEGIN CERTIFICATE` (with some dashes on either side), then some encoded stuff, then `END CERTIFICATE` (again, with dashes). It's an encoded proof that the CA have certified that the person who owns the private key (the yourdomain.com.key file, which they haven't seen, but which was used to sign the CSR they did receive) definitely is you.
   * Because not all browsers necessarily trust your particular CA to certify people, you also often need a "certificate chain" AKA a "certificate bundle", which connects your certificate with someone who is trusted by all browsers. This is yet another text file, with several certificates in it. The certificate vendor should send it to you alongside your own certificate. You can tell the difference between the two because your certificate will just have one "BEGIN/END" bit in it, while the chain will probably have several. (Some CAs are able to offer certificates that are trusted directly. They tend to be the most expensive ones. Check with your certificate vendor if you're unsure.)
   * Once you have the certificate and the chain, create a new file which has your certificate at the top, then the chain afterwards. (You may have to add a newline so that you don't get the END line of your certificate on the same line as the BEGIN for the first line of the chain.) Save that as yourdomain.com.combined.cert
-  * Get your private key: This is the private key that you would have created as part of the process of generating the CSR. You will need to give it to use unencrypted, so make sure that the key starts with the line `-----BEGIN RSA PRIVATE KEY-----`. if you see something like `Proc-Type: 4,ENCRYPTED` then it's encrypted and you need to decrypt it before we can use it: `openssl rsa -in server.key.encrypted -out server.key`
+  * Get your private key: This is the private key that you would have created as part of the process of generating the CSR. You will need to give it to use unencrypted, so make sure that the key starts with the line `-----BEGIN PRIVATE KEY-----`. if you see something like `Proc-Type: 4,ENCRYPTED` then it's encrypted and you need to decrypt it before we can use it: `openssl rsa -in server.key.encrypted -out server.key`
 
 Finally tell us in a "Send feedback" message (link at the top right of this page) where in your file storage on PythonAnywhere we can find the yourdomain.com.key and the yourdomain.com.combined.cert files, and which website it's for. We can take it from there.
 
