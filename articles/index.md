@@ -12,13 +12,26 @@
 
 
 
-Many of your questions about PythonAnywhere are likely to be answered below. If not, the best place to get support is in [our forums](https://www.pythonanywhere.com/forums/). We monitor them to make sure that every question gets answered, and you get the added benefit that other PythonAnywhere customers can help you out too. They're also a nice place for a chat ![:-\)](/smile.png)
+Many of your questions about PythonAnywhere are likely to be answered below. If
+not, the best place to get support is in
+[our forums](https://www.pythonanywhere.com/forums/). We monitor them to make
+sure that every question gets answered, and you get the added benefit that
+other PythonAnywhere customers can help you out too. They're also a nice place
+for a chat ![:-\)](/smile.png)
 
-If you want, you can access an even broader group of people by asking your questions on Stack Overflow; we check [all posts there tagged with pythonanywhere](//stackoverflow.com/questions/tagged/pythonanywhere) daily, and reply if no-one else has already solved the problem.
+If you want, you can access an even broader group of people by asking your
+questions on Stack Overflow; we check
+[all posts there tagged with pythonanywhere](//stackoverflow.com/questions/tagged/pythonanywhere)
+ daily, and reply if no-one else has already solved the problem.
 
-But if you want to ask your questions in private and get responses over email, you can use the "Send feedback" link at the top of any page on PythonAnywhere. We'll be alerted and will get back to you ASAP.
+But if you want to ask your questions in private and get responses over email,
+you can use the "Send feedback" link at the top of any page on PythonAnywhere.
+We'll be alerted and will get back to you ASAP.  You can also email us directly
+via [support@pythonanywhere.com](mailto:support@pythonanywhere.com)
 
-If you want help about Python programming generally (as opposed to PythonAnywhere), you can [buy 1:1 live Python help at Codementor](https://www.codementor.io/python-experts?utm_source=pythonanywhere&utm_medium=text-link&utm_content=forums&utm_campaign=pa-q1).
+If you want help about Python programming generally (as opposed to
+PythonAnywhere), you can
+[buy 1:1 live Python help at Codementor](https://www.codementor.io/python-experts?utm_source=pythonanywhere&utm_medium=text-link&utm_content=forums&utm_campaign=pa-q1).
 
 
 [TOC]
