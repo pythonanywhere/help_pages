@@ -38,3 +38,5 @@ Then you just need some way of checking whether the process is running. We often
         sys.exit()
 
     my_long_running_process()
+
+__Important:__ If you put this code in a function, make sure to declare `global lock_socket` to put the lock_socket at the module/global level. Otherwise the socket will not persist and will be closed.
