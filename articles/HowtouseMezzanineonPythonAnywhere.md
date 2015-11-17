@@ -16,7 +16,7 @@
 ##Install mezzanine into a virtualenv
 
 
-The default version of mezzanine available on PythonAnywhere is a little old. To get the latest version, you need to use a virtualenv
+The default version of mezzanine available on PythonAnywhere is a little old. To get the latest version, you need to use a virtualenv. Also, take a look at this PythonAnywhere [forum thread]((www.pythonanywhere.com/forums/topic/2693/)) if you are using Mezzanine 4 or higher and running into problems.
 
 
 ###Creating a virtualenv
