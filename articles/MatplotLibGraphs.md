@@ -26,6 +26,8 @@ The block of code below gives you an example of how you would do this:
     matplotlib.use("agg")
     import matplotlib.pyplot as plt
 
+    matplotlib.use('Agg')
+
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.plot(range(100))
