@@ -23,10 +23,8 @@ The block of code below gives you an example of how you would do this:
 
     :::python
     import matplotlib
-    matplotlib.use("agg")
+    matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-
-    matplotlib.use('Agg')
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
