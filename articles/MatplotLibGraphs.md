@@ -23,13 +23,14 @@ The block of code below gives you an example of how you would do this:
 
     :::python
     import matplotlib
+    matplotlib.use("agg")
     import matplotlib.pyplot as plt
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.plot(range(100))
 
-    fig.savefig('graph.png')
+    fig.savefig("graph.png")
 
 
 
