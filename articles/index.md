@@ -109,6 +109,7 @@ PythonAnywhere), you can
   * [Using CherryPy](/pages/UsingCherryPy)
   * [Using Tornado](/pages/UsingTornado)
   * [How to use Mezzanine on PythonAnywhere](/pages/HowtouseMezzanineonPythonAnywhere)
+  * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
 
 
 ###Common problems for specific web frameworks
@@ -127,6 +128,7 @@ PythonAnywhere), you can
     * [How can I use Django 1.7](/pages/VirtualEnvForNewerDjango) under Python 2.7 (1.6 is the default under Python 3.3/4)
     * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
     * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
+    * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
   * Flask
     * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
     * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
