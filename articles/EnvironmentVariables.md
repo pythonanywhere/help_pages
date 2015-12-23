@@ -65,7 +65,7 @@ Here you can set environment variables using Bash syntax:
 
 
 ```bash
-SECRET_KEY="mysekritvalue"
+export SECRET_KEY="mysekritvalue"
 ```
 
 And, again, you can set several environment variables if you need to, one per line.
