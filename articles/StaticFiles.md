@@ -12,9 +12,18 @@
 
 
 
-Our static files support is an optional extra. If you're happy letting your web framework serve static files for you, then that's fine. Or if you want to you can give the job of serving static files to our web servers, by setting up a static files mapping -- it should mean your web worker has more time for non-static requests, the ones that actually need code.
+Our static files support is an optional extra. If you're happy letting your web
+framework serve static files for you, then that's fine. Or if you want to you
+can give the job of serving static files to our web servers, by setting up a
+static files mapping -- it should mean your web worker has more time for
+non-static requests, the ones that actually need code.
 
-Static files config is basically a mapping from a URL to a directory. You tell us where your files are (eg `/home/me/myapp/static`), and what URL you want them served at (eg */static/*), and then hit "Reload web app". Then, any files inside the static folder will be served, eg `/home/me/myapp/static/css/base.css` will appear at `http://me.pythonanywhere.com/static/css/base.css`.
+Static files config is basically a mapping from a URL to a directory. You tell
+us where your files are (eg `/home/me/myapp/static`), and what URL you want
+them served at (eg `/static/`) and then hit "Reload web app". Then, any files
+inside the static folder will be served, eg
+`/home/me/myapp/static/css/base.css` will appear at
+`http://me.pythonanywhere.com/static/css/base.css`.
 
 
 ##A worked example
