@@ -10,7 +10,10 @@
 .. type: text
 -->
 
+[TOC]
 
+
+##Getting help
 
 Many of your questions about PythonAnywhere are likely to be answered below. If
 not, the best place to get support is in
@@ -34,11 +37,13 @@ PythonAnywhere), you can
 [buy 1:1 live Python help at Codementor](https://www.codementor.io/python-experts?utm_source=pythonanywhere&utm_medium=text-link&utm_content=forums&utm_campaign=pa-q1).
 
 
-[TOC]
-
-
 ##Step-by-step guides for some common tasks
 
+These guides will walk you through the steps necessary to start using
+PythonAnywhere effectively. They are a great place to start if you have no idea
+where to begin. When you click on one of these links, we will take you to your
+PythonAnywhere account and show instructions at the top of the page about what
+to do.
 
 [ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png) I want to start learning Python ](//www.pythonanywhere.com/task_helpers/start/1-start_python/)
 
@@ -105,35 +110,37 @@ PythonAnywhere), you can
   * [Switching to the new virtualenv system](/pages/UpgradingToTheNewVirtualenvSystem)
   * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
   * [Python 3 web apps](/pages/Python3WebApps)
-  * [Using Flask](/pages/Flask)
-  * [Using CherryPy](/pages/UsingCherryPy)
-  * [Using Tornado](/pages/UsingTornado)
-  * [How to use Mezzanine on PythonAnywhere](/pages/HowtouseMezzanineonPythonAnywhere)
   * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
 
 
-###Common problems for specific web frameworks
-
+##Common web app questions
 
   * All
     * [Debugging import errors and sys.path issues](/pages/DebuggingImportError)
     * [How do I get streaming/buffering to work?](/pages/Buffering)
+  * CherryPy
+    * [Using CherryPy](/pages/UsingCherryPy)
+  * Django
+    * [How to follow the Django Tutorial on PythonAnywhere](/pages/FollowingTheDjangoTutorial)
+    * [How can I use a version of Django that's not the deault on PythonAnywhere](/pages/VirtualEnvForNewerDjango) (1.3 is the default for 2.7 and 1.6 is the default under Python 3.3/4)
+    * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
+    * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
+    * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
+  * Flask
+    * [Using Flask](/pages/Flask)
+    * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
+    * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
+  * Mezzanine
+    * [How to use Mezzanine on PythonAnywhere](/pages/HowtouseMezzanineonPythonAnywhere)
+  * Tornado
+    * [Using Tornado](/pages/UsingTornado)
+  * Web.py
+    * ["Web.py application WSGI configuration"](/pages/WebDotPyWSGIConfig)
   * [Web2Py](//www.web2py.com/)
     * ["Admin is disabled because insecure channel (web2py error)"](/pages/AdminIsDisabledBecauseInsecureChannel)
     * [How do I set up different apps for different domains in Web2py?](/pages/MultipleDomainsWeb2py)
     * [How do I change my admin password in Web2py?](/pages/Web2pyAdminPassword)
     * [How do I run the web2py scheduler?](/pages/Web2pyScheduler)
-  * Django
-    * [How to follow the Django Tutorial on PythonAnywhere](/pages/FollowingTheDjangoTutorial)
-    * [How can I use Django 1.7](/pages/VirtualEnvForNewerDjango) under Python 2.7 (1.6 is the default under Python 3.3/4)
-    * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
-    * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
-    * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
-  * Flask
-    * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
-    * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
-  * Web.py
-    * ["Web.py application WSGI configuration"](/pages/WebDotPyWSGIConfig)
 
 
 ##Useful Python modules
