@@ -52,3 +52,4 @@ rq==0.5.3
 six==1.9.0
 webassets==0.10.1
 wsgiref==0.1.2
+livereload==2.4.0
