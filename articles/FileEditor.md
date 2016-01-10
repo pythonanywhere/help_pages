@@ -19,8 +19,8 @@
 
 PythonAnywhere's built-in file editor allows you to edit your files with syntax highlighting and, for Python, simple pyflakes-based error-checking.
 
-When you want to run your code, you can use the "Save and run" button at the top right. This uses Python 2.7 by default; if you want to use a different version, you can use what's known as a "hashbang" in the very first line of your file. You start with the characters #!, and then the path to the interpreter you want, eg:
+When you want to run your code, you can use the black "Save and run" button at the top right, with its three chevrons >>>.
 
-    :::python
-    #!/usr/bin/env python3
-    print("Hello, World")
+The default Python version here is 3.4.  If you want to change that, see the
+[instructions for changing the default editor Python version](/pages/SaveAndRunPythonVersion). 
+
