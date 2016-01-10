@@ -22,5 +22,5 @@ PythonAnywhere's built-in file editor allows you to edit your files with syntax 
 When you want to run your code, you can use the "Save and run" button at the top right. This uses Python 2.7 by default; if you want to use a different version, you can use what's known as a "hashbang" in the very first line of your file. You start with the characters #!, and then the path to the interpreter you want, eg:
 
     :::python
-    #!/usr/local/bin/python3.3
+    #!/usr/bin/env python3
     print("Hello, World")
