@@ -27,6 +27,10 @@ Then you just need some way of checking whether the process is running. We often
     import sys
     from my_module import my_long_running_process
 
+    lock_socket = None  # we want to keep the socket open until the very end of
+                        # our script so we use a global variable to avoid going
+                        # out of scope and being garbage-collected
+
     def is_lock_free():
         global lock_socket
         lock_socket = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
@@ -42,5 +46,7 @@ Then you just need some way of checking whether the process is running. We often
 
     if not is_lock_free():
         sys.exit()
+
     my_long_running_process()
+
 
