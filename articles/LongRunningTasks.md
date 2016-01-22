@@ -50,3 +50,5 @@ Then you just need some way of checking whether the process is running. We often
     my_long_running_process()
 
 
+**Note** -- due to some scaling issues, we're currently having to limit the max duration of scheduled tasks.  Free users are limited to one hour, and paying users are limited to 6 hours.  So this means, if you are a paying user, you should use an hourly task.  For free users, unfortunately, this solution currently won't work.  We are working on it!
+
