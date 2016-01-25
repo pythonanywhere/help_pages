@@ -17,7 +17,7 @@ Your Postgres data on PythonAnywhere is fully protected against hardware failure
 Here's an example of a command that can dump a particular database called "mydb":
 
     :::bash
-    pg_dump --host=HOSTNAME --port=PORT --user=super --format=c --file=pgbackup`date -%F-%H%M`.dump mydb
+    pg_dump --host=HOSTNAME --port=PORT --user=super --format=c --file=pgbackup`date +%F-%H%M`.dump mydb
 
 
 You'll want to experiment with `pg_dump` and `pg_restore` until you have a backup command which you have confidence in -- remember, an untested backup procedure isn't a backup procedure at all!
