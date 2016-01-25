@@ -52,7 +52,7 @@ You're now ready to do the CNAME config. take a note of the CNAME config on the 
 ##Configuring the domain at the domain registrar
 
 
-Once you've purchased your domain and created the new webapp config on pythonanywhere, you'll want to find the configuration screen on youur domain provider that allows you to set up a *CNAME*. 
+Once you've purchased your domain and created the new webapp config on pythonanywhere, you'll want to find the configuration screen on your domain provider that allows you to set up a *CNAME*. 
 
 The CNAME record will point (say) www.yourdomain.com to the value specified on the "Web" tab for your application; this will be of the form **webapp-XXXX.pythonanywhere.com**. This tells [the domain name system](//en.wikipedia.org/wiki/Domain_Name_System) that when someone asks for your website, they should get it from us. 
 
