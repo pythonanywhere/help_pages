@@ -13,8 +13,6 @@
 [TOC]
 
 
-##Getting help
-
 Many of your questions about PythonAnywhere are likely to be answered below. If
 not, the best place to get support is in
 [our forums](https://www.pythonanywhere.com/forums/). We monitor them to make
@@ -37,7 +35,128 @@ PythonAnywhere), you can
 [buy 1:1 live Python help at Codementor](https://www.codementor.io/python-experts?utm_source=pythonanywhere&utm_medium=text-link&utm_content=forums&utm_campaign=pa-q1).
 
 
-##Step-by-step guides for some common tasks
+
+# I'm a beginner learning Python
+
+We have lots of begginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
+
+[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png) I want to start learning Python ](//www.pythonanywhere.com/task_helpers/start/1-start_python/)
+
+And here are some common questions and guides for beginners:
+
+  * [How can I use Python 2 with the "Save &amp; Run" button?](/pages/SaveAndRunPythonVersion)
+  * [Installing new Python modules for yourself](/pages/InstallingNewModules)
+
+  * [Using the file browser](/pages/FileBrowser)
+  * [The file editor](/pages/FileEditor)
+
+
+
+# I've got an existing web app that I'm trying to deploy
+
+This section assumes you have started building a web app on your local PC, and you're now looking to deploy it to PythonAnywhere.
+
+Here is a step-by-step tutorial that walks you through the general outline of how to set up an existing web app on PythonAnywhehre
+
+[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png) I have built a web app on my local PC and want to deploy it on PythonAnywhere ](//www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app)
+
+
+And here are some popular how-to guides and help pages for common issues:
+
+  * [Can I use FTP/Filezilla? How should I upload my code to PythonAnywhere?](/pages/FTP)
+  * [Debugging import errors and sys.path issues in your WSGI file](/pages/DebuggingImportError)
+  * [Using a virtualenv for your web app](/pages/Virtualenvs)
+  * [How to use your own domain for your web app (CNAME setup)](/pages/OwnDomains)
+  * [How to use our static files service, and why you might want to](/pages/StaticFiles)
+  * [How to use SSL for your own domain](/pages/SSLOwnDomains)
+  * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
+  * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
+  * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
+
+
+**Some tips for specific web frameworks**
+
+
+  * Django
+    * [How can I use a more recent version of Django](/pages/VirtualEnvForNewerDjango)
+    * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
+    * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
+    * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
+
+  * Flask
+    * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
+    * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
+    * [Using SQLAlchemy with MySQL](/pages/UsingSQLAlchemywithMySQL)
+
+  * Web2Py
+    * ["Admin is disabled because insecure channel (web2py error)"](/pages/AdminIsDisabledBecauseInsecureChannel)
+    * [How do I set up different apps for different domains in Web2py?](/pages/MultipleDomainsWeb2py)
+    * [How do I change my admin password in Web2py?](/pages/Web2pyAdminPassword)
+    * [How do I run the web2py scheduler?](/pages/Web2pyScheduler)
+
+  * Others
+    * [How to use Mezzanine on PythonAnywhere](/pages/HowtouseMezzanineonPythonAnywhere)
+    * [Using CherryPy](/pages/UsingCherryPy)
+    * [Using Tornado](/pages/UsingTornado)
+    * ["Web.py application WSGI configuration"](/pages/WebDotPyWSGIConfig)
+
+
+
+
+# I'm looking at an error message in a console
+
+Oh no!  Here's our most common explanations and solutions to console problems:
+
+  * [I get "permission denied" when trying to pip install a new module](/pages/InstallingNewModules)
+  * [Why do I get a "403 Forbidden" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
+  * [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
+  * [I can't type certain keys into the console, like close-parenthesis (international keyboards)](/pages/TypingProblemsInternational)
+
+
+
+# I'm looking at an error message in my web app
+
+
+Oh no!  But fear not -- the likelihood is that we've seen someone else with this error before, and we know how to fix it.  Here are some guides:
+
+
+  * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
+  * [Debugging import errors and sys.path issues](/pages/DebuggingImportError)
+  * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
+  * [Fixing "OperationalError: 1226 User has exceeded the max_user_connections resource](/pages/ManagingDatabaseConnections)
+
+
+
+# I'm trying to figure out how to get a particular tool or feature to work
+
+  * [Installing new Python modules for yourself](/pages/InstallingNewModules)
+  * [How do I keep a console running forever? Or, how do I make a program that restarts automatically? Or, how to I run an async task queue like celery?](/pages/LongRunningTasks)
+  * [Can I use matplotlib to generate graphs from my data?](/pages/MatplotLibGraphs)
+  * [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
+
+And here's some very brief FAQ answers about common tools:
+
+  * **Can I use MongoDB**? Only via an external service like mongolabs
+  * **Can I use an external MySQL service?** Probably not (on a free account), unless they have an HTTP api.
+  * Can I use Redis?  Again, only via an external service like redislabs.  Although you can use redislite
+  * Can I use websockets, or run my own socket server?  I'm afraid not --  we only support Python apps that implement the WSGI protocol
+
+
+# I'm a teacher looking to use PythonAnywhere for education
+
+
+Welcome!  We have lots of teachers and students on board.  Check out this page for an overview of our education-specific features:
+
+  * [Info on our educational features](/pages/Education)
+
+
+Or you can run through this step-by-step tutorial if you prefer:
+
+[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png) I want to check out the Education Beta features ](//www.pythonanywhere.com/task_helpers/start/6-education/)
+
+
+
+#Step-by-step guides for some common tasks
 
 These guides will walk you through the steps necessary to start using
 PythonAnywhere effectively. They are a great place to start if you have no idea
@@ -59,7 +178,7 @@ to do.
 
 
 
-##Popular services, common requests, FAQ
+#Popular services, common requests, FAQ
 
 
   * **Github** should work just fine. On free accounts, **git** to other sites will only work over https to [whitelisted](/pages/403ForbiddenError) sites.
@@ -105,7 +224,6 @@ to do.
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
   * [How to point a new domain at an existing web app](/pages/UsingANewDomainForExistingWebApp)
-  * [A guide to setting up a virtualenv for PythonAnywhere webapps](/pages/VirtualEnvForNewerDjango) (so that you can use your own versions of different modules -- for example, Django 1.6 instead of the default 1.3.7)
   * [Using a virtualenv for your web app](/pages/Virtualenvs)
   * [Switching to the new virtualenv system](/pages/UpgradingToTheNewVirtualenvSystem)
   * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
@@ -122,7 +240,7 @@ to do.
     * [Using CherryPy](/pages/UsingCherryPy)
   * Django
     * [How to follow the Django Tutorial on PythonAnywhere](/pages/FollowingTheDjangoTutorial)
-    * [How can I use a version of Django that's not the deault on PythonAnywhere](/pages/VirtualEnvForNewerDjango) (1.3 is the default for 2.7 and 1.6 is the default under Python 3.3/4)
+    * [How can I use a version of Django that's not the default on PythonAnywhere](/pages/VirtualEnvForNewerDjango) (1.3 is the default for 2.7 and 1.6 is the default under Python 3.3/4)
     * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
     * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
     * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
@@ -194,3 +312,4 @@ to do.
 
   * [Setting up Haskell and creating a new Cabal package](/pages/Haskell)
   * [Testing a simple Javascript project using Jasmine](/pages/Javascript)
+
