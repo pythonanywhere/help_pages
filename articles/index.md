@@ -166,7 +166,7 @@ And here's some very brief FAQ answers about common requests:
 
 Welcome!  We have lots of teachers and students on board.  Check out this page for an overview of our education-specific features:
 
-  * [Info on our educational features](/pages/Education)
+  * [General info on our educational features](/pages/Education)
 
 
 Or you can run through this step-by-step tutorial if you prefer:
@@ -183,6 +183,7 @@ Or you can run through this step-by-step tutorial if you prefer:
   * [I want to embed a live python console on my website](/pages/EmbeddedConsoles)
   * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
   * [How do I get streaming/buffering to work?](/pages/Buffering)
+  * [How to use a virtualenv in an IPython Notebook](/pages/IPythonNotebookVirtualenvs)
 
 
 
