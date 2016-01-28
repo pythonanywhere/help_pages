@@ -38,7 +38,8 @@ You **can** use a virtualenv for your IPython notebook. Follow the following ste
     JSON key called `display_name` to be a name that you like.
 
 4. You should now be able to see your kernel in the IPython notebook menu:
-    `Kernel -> Change kernel` and be able so switch to it. IPython will remember
+    `Kernel -> Change kernel` and be able so switch to it (you may need to
+    refresh the page before it appears in the list). IPython will remember
     which kernel to use for that notebook from then on.
 
 
