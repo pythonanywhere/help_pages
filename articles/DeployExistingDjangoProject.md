@@ -1,7 +1,7 @@
 
 <!--
 .. title: Deploying an existing Django project on PythonAnywhere
-.. slug: DeployingExistingDjangoProject
+.. slug: DeployExistingDjangoProject
 .. date: 2016-02-10 12:35:28 UTC
 .. tags:
 .. category:
