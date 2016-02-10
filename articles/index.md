@@ -82,7 +82,8 @@ And some tips for specific web frameworks:
 
 
   * Django
-    * [How can I use a more recent version of Django](/pages/VirtualEnvForNewerDjango)
+    * [Deploying an existing Django project on PythonAnywhere](/pages/DeployExistingDjangoProject)
+    * [How can I use a more recent version of Django for a new project](/pages/VirtualEnvForNewerDjango)
     * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
     * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
     * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
