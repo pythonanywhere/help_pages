@@ -16,6 +16,8 @@ A post-receive hook will take care of the nikola build and deploy
 
 ## generating the help pages manually
 
+The sources, if you need to rebuild manually are in `/var/www/nikola-sources`
+
 For whatever reason...
 
     workon nikola
