@@ -24,3 +24,17 @@ For whatever reason...
     nikola build
     nikola deploy  # nb this has a hard-coded path to a static files directory for the web app, so don't run it on your own pc
 
+## Git stuff
+The git post-receive hook, in case it gets killed is:
+
+    #!/bin/bash
+    export GIT_WORK_TREE=/var/www/nikola-sources
+    mkdir -p $GIT_WORK_TREE
+    git checkout -f
+    echo "begin nikola build: "`date` >> /home/help/deploy-log.txt
+    cd $GIT_WORK_TREE
+    rm -f output/assets/js/tipuesearch_content.json            
+    /home/help/.virtualenvs/nikola/bin/nikola build
+    /home/help/.virtualenvs/nikola/bin/nikola deploy
+    echo "deploy completed: "`date` >> /home/help/deploy-log.txt
+    
