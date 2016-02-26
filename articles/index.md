@@ -152,6 +152,7 @@ Here are some guides for some of the common things people want to do:
   * [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
+  * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
 
 
 And here's some very brief FAQ answers about common requests:
