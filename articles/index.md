@@ -138,6 +138,7 @@ Once you've done that, here are some solutions to common problems
 
   * [Debugging import errors and sys.path issues](/pages/DebuggingImportError)  <--  if you've just started setting up your app, chances are the answer is in here.
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
+  * [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
   * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
   * [Fixing "OperationalError: 1226 User has exceeded the max_user_connections resource](/pages/ManagingDatabaseConnections)
 
