@@ -90,6 +90,7 @@ And some tips for specific web frameworks:
 <!--TODO: Django 400 bad request ALLOWED_HOSTS page -->
 
   * Flask
+    * [A beginner's guide to building a simple database-backed Flask website on PythonAnywhere](http://blog.pythonanywhere.com/121/)
     * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
     * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
     * [Using SQLAlchemy with MySQL](/pages/UsingSQLAlchemywithMySQL)
