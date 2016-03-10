@@ -128,10 +128,13 @@ Once it's loaded, click on the link to your **WSGI file**, and edit it so that i
     # specify django settings
     os.environ['DJANGO_SETTINGS_MODULE'] = 'project_name.settings'
 
-    # load default django wsgi app
+    # load default django wsgi app for Django < 1.4
     import django.core.handlers.wsgi
     application = django.core.handlers.wsgi.WSGIHandler()
 
+    # load default django wsgi app for Django >= 1.4
+    from django.core.wsgi import get_wsgi_application
+    application = get_wsgi_application()
 
 
 ####Reload Web App
