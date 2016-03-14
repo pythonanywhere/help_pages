@@ -42,7 +42,11 @@ The help pages have the following sections -- hopefully you can jump straight to
 
 We have lots of begginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
 
-[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png) I want to start learning Python ](//www.pythonanywhere.com/task_helpers/start/1-start_python/)
+<a href="//www.pythonanywhere.com/task_helpers/start/1-start_python/" class="btn">
+    <img alt="keyboard icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png">
+    &nbsp;
+     I want to start learning Python
+</a>
 
 And here are some common questions and guides for beginners:
 
@@ -61,8 +65,11 @@ This section assumes you have started building a web app on your local PC, and y
 
 Here is a step-by-step tutorial that walks you through the general outline of how to set up an existing web app on PythonAnywhehre
 
-[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png) I have built a web app on my local PC and want to deploy it on PythonAnywhere ](//www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app)
-
+<a href="//www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/" class="btn">
+    <img alt="computer icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png">
+    &nbsp;
+     I have built a web app on my local PC and want to deploy it on PythonAnywhere 
+</a>
 
 And here are some popular how-to guides and help pages for common webapp issues:
 
@@ -175,8 +182,11 @@ Welcome!  We have lots of teachers and students on board.  Check out this page f
 
 Or you can run through this step-by-step tutorial if you prefer:
 
-[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png) I want to check out the Education Beta features ](//www.pythonanywhere.com/task_helpers/start/6-education/)
-
+<a href="//www.pythonanywhere.com/task_helpers/start/6-education/" class="btn">
+    <img alt="trophy icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
+    &nbsp;
+    I want to check out the Education Beta features 
+</a>
 
 
 
@@ -243,12 +253,23 @@ Other Languages:
 
 
 
-#A few other step-by-step guides
+# A few other step-by-step guides
 
-[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png) I want to follow the Django Tutorial ](//www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/)
+<a href="//www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/" class="btn">
+    <img alt="fishies icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png">
+    &nbsp;
+    I want to follow the Django Tutorial 
+</a>
 
-[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png) I want to create a web application ](//www.pythonanywhere.com/task_helpers/start/3-web_app/)
+<a href="//www.pythonanywhere.com/task_helpers/start/3-web_app/" class="btn">
+    <img alt="cloud icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png">
+    &nbsp;
+    I want to create a web application 
+</a>
 
-
-[ ![](//www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png) I want to clone and hack on my GitHub project ](//www.pythonanywhere.com/task_helpers/start/5-github/)
+<a href="//www.pythonanywhere.com/task_helpers/start/5-github/" class="btn">
+    <img alt="github icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png">
+    &nbsp;
+    I want to clone and hack on my GitHub project 
+</a>
 
