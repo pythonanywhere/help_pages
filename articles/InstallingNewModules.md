@@ -43,6 +43,11 @@ We've also included `virtualenv` and `virtualenvwrapper`, so if you create a vir
     $ mkvirtualenv my-virtualenv
     (my-virtualenv) $ pip install pwhich
 
+We recommend that in any Python 2.7 virtualenv you create, you install the following
+security fix packages:
+
+    :::bash
+    (my-virtualenv) $ pip install urllib3[secure] pyopenssl ndg-httpsclient pyasn1
 
 
 ###Using virtualenvs in web apps
