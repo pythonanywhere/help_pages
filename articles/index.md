@@ -79,6 +79,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to use your own domain for your web app (CNAME setup)](/pages/OwnDomains)
   * [How to use our static files service, and why you might want to](/pages/StaticFiles)
   * [How to use SSL for your own domain](/pages/SSLOwnDomains)
+  * [How to get a Let's Encrypt certificate for your own domain](/pages/LetsEncrypt)
   * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
   * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
