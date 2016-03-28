@@ -1,6 +1,6 @@
 <!--
 .. title: Let's Encrypt
-.. slug: LetsEncrypt 
+.. slug: LetsEncrypt
 .. date: 2016-03-24
 .. tags:
 .. category:
@@ -31,12 +31,12 @@ need to host a static file on our domain.
     # user public/private key pair
     openssl genrsa 4096 > user.key
     openssl rsa -in user.key -pubout > user.pub
-    
+
     # domain private key and csr
     export DOMAIN=www.obeythetestinggoat.com  # replace this with your own domain name!
     openssl genrsa 4096 > $DOMAIN.key
     openssl req -new -sha256 -key $DOMAIN.key -subj "/CN=$DOMAIN" > $DOMAIN.csr
-    
+
     # now launch the signing script and follow the instructions!
     python sign_csr.py --file-base --public-key user.pub $DOMAIN.csr > $DOMAIN.crt
 
@@ -53,7 +53,7 @@ were earlier
 There's two of those signing steps, and then it will ask you to:
 
     STEP 4: Please update your server to serve the following file at this URL:
-    
+
     URL: http://www.obeythetestinggoat.com/.well-known/acme-challenge/asdfasdfasdfasdfasdf
     File contents: "qwerqwerqwerqwerqwerqwerqwer"
 
@@ -61,7 +61,7 @@ At this point you'll need your pythonanywhere site to be able to serve a static
 file.  Head over to the web tab and set up a new mapping:
 
 * Static URL: /.well-known/
-* Static Path: /tmp/letsencrypt.well-known
+* Static Path: /tmp/letsencrypt.well-known/
 
 After hitting **Reload** on my web app to get that live, put the
 static file there with the contents asked for:
