@@ -115,7 +115,7 @@ Once it's loaded, click on the link to your **WSGI file**, and edit it so that i
     import sys
 
     # add project folder to path
-    path = '/home/yourusername/project_name':
+    path = '/home/yourusername/project_name'
     if path not in sys.path:
         sys.path.append(path)
 
