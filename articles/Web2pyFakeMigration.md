@@ -27,7 +27,7 @@ go through the following procedure:
 
 1. Enable `fake_migrate_all` by adding this argument to the DAL constructor:
 
-      ```python
+      ```
       db = DAL(..., fake_migrate_all=True)
       ```
 
