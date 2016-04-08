@@ -48,10 +48,10 @@ For other tools, you can set up a tunnel that pretends to be a MySQL server runn
 As long as you're not running a MySQL instance locally, just invoke SSH locally (that is, on your own machine -- not on PythonAnywhere) like this (replacing **username** with your PythonAnywhere username):
 
     :::bash
-    ssh -L 3306:mysql.server:3306 username@ssh.pythonanywhere.com
+    ssh -L 3306:username.mysql.pythonanywhere-services.com:3306 username@ssh.pythonanywhere.com
 
 
-That -L option means "forward LOCAL port 3306 to REMOTE host mysql.server port 3306" (the port numbers can be different, but in this case the standard MySQL port would be easiest). You can also use -R to cause remote connections to be forwarded back to you, but that's a pretty unusual thing to do for most people.
+That -L option means "forward LOCAL port 3306 to REMOTE host username.mysql.pythonanywhere-services.com port 3306" (the port numbers can be different, but in this case the standard MySQL port would be easiest). You can also use -R to cause remote connections to be forwarded back to you, but that's a pretty unusual thing to do for most people.
 
 **REMEMBER** that you need to keep your this process open at all times while you're accessing your PythonAnywhere MySQL server from your local machine! As soon as that closes, your forwarded connection is also lost.
 
@@ -64,7 +64,7 @@ At this point, you should be able to run MySQL as normal. One thing to watch out
 Finally, if you are running a MySQL server locally and hence port 3306 is already in use, you can modify your SSH invocation to use any other port:
 
     :::bash
-    ssh -L 3333:mysql.server:3306 username@ssh.pythonanywhere.com
+    ssh -L 3333:username.mysql.pythonanywhere-services.com:3306 username@ssh.pythonanywhere.com
 
 
 However, you'd then need to configure your MySQL client to use this other port, as this is not the default for MySQL.

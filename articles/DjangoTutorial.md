@@ -320,7 +320,7 @@ You need to make sure of three things:
 
   * if using *sqlite*, you must have the full path to your database
   * if using *MySQL*, you'll need the database name, password, and host
-    * (`mysql.server` if you're using our MySQL service)
+    * (`yourusername.mysql.pythonanywhere-services.com` if you're using our MySQL service)
   * finally, make sure all your apps are in `INSTALLED_APPS`
 
         :::python
