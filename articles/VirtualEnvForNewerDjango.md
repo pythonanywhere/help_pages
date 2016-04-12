@@ -19,7 +19,12 @@
 
 A virtualenv is a way to have your own private Python environment that has different versions of packages to the system default. You can have many virtualenvs, each with its own versions of installed packages. On PythonAnywhere, this is a great way to use newer (or older) versions of software than the ones we have installed.
 
-One reason you might want to do this is to use a newer version of Django. For Python 2.7, our system default is currently 1.3.7, while the latest version is 1.8. These instructions explain what to do if you want to use Django 1.8; if it's a different package that you want to upgrade (or you need a different version of Django), then the changes should be pretty obvious.
+One reason you might want to do this is to use a newer version of Django. For
+Python 2.7, our system default is pinned to 1.3.7 to support websites that have
+been running here for a long time, while the latest version is 1.9. These
+instructions explain what to do if you want to use Django 1.9; if it's a
+different package that you want to upgrade (or you need a different version of
+Django), then the changes should be pretty obvious.
 
 
 ###Instructions
@@ -43,49 +48,49 @@ You may have noticed a *Virtualenv path* option. Let's go and create a virtualen
 
 Go to the "Consoles" tab and start a *Bash console*
 
-    14:50 ~ $ mkvirtualenv --python=/usr/bin/python3.4 django18
+    14:50 ~ $ mkvirtualenv --python=/usr/bin/python3.5 django19
 
 
-***TIP: if you want to use Python 2 for your virtualenv, use `mkvirtualenv --python=/usr/bin/python2.7 django18`***
+***TIP: if you want to use Python 2 for your virtualenv, use `mkvirtualenv --python=/usr/bin/python2.7 django19`***
 
 ***TIP: if you see an error saying `mkvirtualenv: command not found`, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper).***
 
-You can check it works -- the prompt should gain the `(django18)` prefix, and you can check `which pip` returns the virtualenv pip:
+You can check it works -- the prompt should gain the `(django19)` prefix, and you can check `which pip` returns the virtualenv pip:
 
-    (django18)14:51 ~ $ which pip
-    /home/myusername/.virtualenvs/django18/bin/pip
+    (django19)14:51 ~ $ which pip
+    /home/myusername/.virtualenvs/django19/bin/pip
 
 
 If it hasn't, you'll need to activate the virtualenv, like this:
 
-    workon django18
+    workon django19
 
 
 You'll need to do this in any bash console when you're trying to install things to your virtualenv or run `manage.py`, otherwise you'll be trying to make changes to the system environment instead of your virtualenv.
 
 Now install Django:
 
-    (django18)14:51 ~ $ pip install django
+    (django19)14:51 ~ $ pip install django
 
 
 (apologies if this takes a long time. We're working on speeding up disk I/O)
 
 Now you can check it worked:
 
-    (django18)15:02 ~ $ which django-admin.py
-    /home/myusername/.virtualenvs/django18/bin/django-admin.py
-    (django18)15:02 ~ $ django-admin.py --version
-    1.8.2
+    (django19)15:02 ~ $ which django-admin.py
+    /home/myusername/.virtualenvs/django19/bin/django-admin.py
+    (django19)15:02 ~ $ django-admin.py --version
+    1.9.3
 
 
 Start a new django project:
 
-    (django18)15:02 ~ $ django-admin.py startproject mysite
+    (django19)15:02 ~ $ django-admin.py startproject mysite
 
 
 Check it worked:
 
-    (django18)15:02 ~ $ tree mysite
+    (django19)15:02 ~ $ tree mysite
     mysite
     ├── manage.py
     └── mysite
@@ -124,7 +129,7 @@ Now go back to the **Web** tab and edit the WSGI file for your web app (There's 
     #application = django.core.handlers.wsgi.WSGIHandler()
 
 
-Then, back on the web tab itself, edit the path to your virtualenv in the Virtualenv section. You can specify the full path, */home/myusername/.virtualenvs/django18*, or just the short name of the virtualenv, _django18, and the system will automatically expand it to the full path after you submit it.
+Then, back on the web tab itself, edit the path to your virtualenv in the Virtualenv section. You can specify the full path, */home/myusername/.virtualenvs/django19*, or just the short name of the virtualenv, _django19, and the system will automatically expand it to the full path after you submit it.
 
 Save it, then go and hit the **Reload** button for your domain.
 
@@ -146,11 +151,11 @@ Django is the Python MySQL library.
 
 For Python 2.7 you'll need to install `mysql-python`:
 
-    (django18)15:12 ~/mysite $ pip install mysql-python
+    (django19)15:12 ~/mysite $ pip install mysql-python
 
 For Python 3.x you need a different package, `mysqlclient`:
 
-    (django18)15:12 ~/mysite $ pip install mysqlclient
+    (django19)15:12 ~/mysite $ pip install mysqlclient
 
 
 
@@ -162,7 +167,7 @@ Because we had to use manual web app creation to use this virtualenv (instead of
 To fix this, go to the "Web" tab, select your domain at the left if it's not already selected, then in the "Static files" table:
 
   * Click on the "Enter URL" and enter `/static/admin/`, then hit return.
-  * Click on the "Enter path" on the same line, and enter `/home/myusername/.virtualenvs/django18/lib/python2.7/site-packages/django/contrib/admin/static/admin`, replacing `myusername` with your username as usual.
+  * Click on the "Enter path" on the same line, and enter `/home/myusername/.virtualenvs/django19/lib/python2.7/site-packages/django/contrib/admin/static/admin`, replacing `myusername` with your username as usual.
   * Reload the web app again.
 
 If you visit the admin site after doing that, all of the formatting will be there.
@@ -173,20 +178,20 @@ If you visit the admin site after doing that, all of the formatting will be ther
 
 Remember: whenever you want to get back and work on your virtualenv, you need to make sure it's active -- if you're opening a new console, for example.
 
-Look out for the little `(django18)` prefix at the command-line.
+Look out for the little `(django19)` prefix at the command-line.
 
 It's also well worth checking `which pip` to make sure you're using the virtualenv pip when installing.
 
 If in doubt, run:
 
-    (django18)17:02 ~ $ source virtualenvwrapper.sh
+    (django19)17:02 ~ $ source virtualenvwrapper.sh
 
 
 To switch on virtualenvwrapper (you can add this to your `.bashrc`)
 
 And
 
-    (django18)17:02 ~ $ workon django18
+    (django19)17:02 ~ $ workon django19
 
 
 to switch to working on your virtual environment.
