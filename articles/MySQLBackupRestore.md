@@ -33,10 +33,37 @@ You will then be prompted to enter your password.
 
 **TIP**: the 'single-quotes' around the database name are required, because of the '$' character in the full database name.
 
-
 The *db-backup.sql* file will then be available in your home folder (via the
 *Files* tab), where you can download it to a safe place.
 
+**Scheduling the backup as a task**
+
+To automate the backup process, you can create a script and run it daily or hourly via the "Schedule" tab.
+
+First, modify /home/username/.my.cnf to include your username and password for your database. It should look like this:
+
+```
+[client]
+user = 'yourusername'
+password = 'db_password'
+```
+
+Be sure to put the single quotes around each of those.
+
+Next, put the mysqldump code (without user and password calls) above into a bash script. Create a file for this in your user directory. Let's say it's backup_db.sh. Put a bash shebang (so it can be executed) at the top and then the msyqldump command:
+
+```
+#!/bin/bash
+mysqldump -h yourusername.mysql.pythonanywhere-services.com 'yourusername$dbname' > backup_file.sql
+```
+
+Next, make this file executable. Open up a bash console, cd into the directory where you created it and run the following command:
+
+```bash
+chmod 764 backup_file.sql
+```
+
+Finally, go to the "Schedule" tab and create a new scheduled task pointing to this script.
 
 ## Restoring from a backup file
 
