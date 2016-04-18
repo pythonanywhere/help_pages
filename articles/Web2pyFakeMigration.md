@@ -25,13 +25,16 @@ To get around these, we've been advised by other web2py users that you should
 go through the following procedure:
 
 
-1. Enable `fake_migrate_all` by adding this argument to the DAL constructor:
+1. Enable `fake_migrate_all` by adding this argument to the DAL constructor
+   containing the new database name:
 
       ```
       db = DAL(..., fake_migrate_all=True)
       ```
 
-2. Load your site, at least once,
+      Migrate for individual table definitions should be set to False
+
+2. Load your site, at least once, eg by opening the admin site.
 
 3. Disable `fake_migrate_all` by removing that argument again. This is important,
   because otherwise your web2py migrations will be disabled forever, and you won't
