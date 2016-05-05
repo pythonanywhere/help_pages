@@ -51,4 +51,4 @@ Assuming your vitualenv directory is `/home/me/.virtualenvs/my-venv`, you would
 use a shebang of:
 
     :::bash
-    #!/home/me/.virtualenvs/my-venev/bin/python
+    #!/home/me/.virtualenvs/my-venv/bin/python
