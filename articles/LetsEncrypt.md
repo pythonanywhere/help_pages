@@ -71,7 +71,8 @@ static file there with the contents asked for:
     # replace asdfasdfasdf and qwerqwerqwer as appropriate
     echo "qweqwerqwerqwerqwerqwer" > /tmp/letsencrypt.well-known/acme-challenge/asdfasdfasdfasdf
     # check it worked:
-    curl http://$DOMAIN/.well-known/acme-challenge/
+    export DOMAIN=www.obeythetestinggoat.com  # replace with yours if you're in a different Bash console, skip if you used ctrl+z
+    curl http://$DOMAIN/.well-known/acme-challenge/asdfasdfasdfasdf
     # should show qwerwqerqwer or equivalent
 
 Once this is working, go back to the original console and continue the script:
