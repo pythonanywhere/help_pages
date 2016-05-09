@@ -84,6 +84,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
+  * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
 
 
 And some tips for specific web frameworks:
@@ -114,6 +115,7 @@ And some tips for specific web frameworks:
     * [Using CherryPy](/pages/UsingCherryPy)
     * [Using Tornado (WSGI-only mode)](/pages/UsingTornado)
     * [Using Web.py](/pages/WebDotPyWSGIConfig)
+    * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
 
 
 
