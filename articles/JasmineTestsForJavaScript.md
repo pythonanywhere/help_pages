@@ -1,7 +1,7 @@
 
 <!--
-.. title: Javascript
-.. slug: Javascript
+.. title: Jasmine tests for Javascript projects
+.. slug: jasmine-tests-for-js-projects
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
 .. category:
