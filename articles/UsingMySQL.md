@@ -27,7 +27,23 @@ HOSTNAME is on your Databases tab.  It will prompt you for a password -- use
 the one you entered on the Databases tab.
 
 
-To access a MySQL database from Python just `import MySQLdb`.
+## Accessing MySQL from Python
+
+The appropriate libraries are installed for all versions of Python that we
+support, so if you're not using a virtualenv, to access a MySQL database
+just `import MySQLdb`.
+
+If you *are* using a virtualenv, you'll need to install the correct package
+yourself.  Start a bash console inside the virtualenv, then:
+
+For Python 2.7
+
+    pip install mysql-python
+
+For Python 3.x
+
+    pip install mysqlclient
+
 
 
 ## MySQL with Django
