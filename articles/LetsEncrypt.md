@@ -86,7 +86,7 @@ The Let's Encrypt certificate is missing the intermediate certificate, so
 you'll need to get it from Let's Encrypt and add it to your certificate chain:
 
     :::bash
-    curl https://letsencrypt.org/certs/lets-encrypt-x1-cross-signed.pem.txt >> $DOMAIN.crt
+    curl https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt >> $DOMAIN.crt
 
 And now the last step is to hand over two files to the pythonanywhere admins.
 Put the following 2 files somewhere in your home directory on PythonAnywhere:
