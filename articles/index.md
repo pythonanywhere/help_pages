@@ -165,7 +165,7 @@ Here are some guides for some of the common things people want to do:
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
-  * [Working with PDFs and converting document formats](/pages/PDF-and-document-wrangling)
+  * [Working with PDFs and converting document formats](/pages/PDF)
 
 
 And here's some very brief FAQ answers about common requests:
