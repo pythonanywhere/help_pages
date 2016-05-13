@@ -1,7 +1,8 @@
 
 <!--
 .. title: PDF and other document-wrangling tools on PythonAnywhere
-.. date: 2016-05-13 14:35:28 UTC+01:00
+.. date: 2016-05-13 11:35:28 UTC+01:00
+.. slug: PDF
 .. tags:
 .. category:
 .. link:
