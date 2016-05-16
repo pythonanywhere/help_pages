@@ -13,4 +13,6 @@
 
 
 ## Can I include parameters to be passed to my scheduled task?
-Yes you can. You can just include the full command-line, including any arguments and parameters, in the "path to script" box:
+
+Yes you can. You can just include the full command-line, including any arguments and parameters, in the "path to script" box.
+

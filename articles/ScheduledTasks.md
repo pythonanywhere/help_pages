@@ -12,8 +12,6 @@
 
 
 
-
-
 ## PythonAnywhere Scheduled Tasks
 
 
@@ -46,6 +44,13 @@ start of your file — for example, starting your file with:
 ...will make it run using Python 3.5.
 
 
+
+## Using a virtualenv
+
+See the article called [How do I run a scheduled task inside a virtualenv](/pages/VirtualEnvInScheduledTasks)
+
+
+
 ## Non-Python scripts
 
 Non-Python scripts will have to have executable permissions set; to do this, run the following
@@ -58,15 +63,10 @@ Then use the same hash-bang syntax to specify which interpreter to
 use — eg. #!/bin/bash. 
 
 
-### Stopping scheduled tasks from running too often
 
+## Stopping scheduled tasks from running too often
 
 If you want only one instance of a scheduled task to be running at any
 particular time, you can use a lock file to only run a script if it is not
 already running. See the [LongRunningTasks](/pages/LongRunningTasks) page.
-
-
-### Using a virtualenv
-
-See the article called [How do I run a scheduled task inside a virtualenv](/pages/VirtualEnvInScheduledTasks)
 
