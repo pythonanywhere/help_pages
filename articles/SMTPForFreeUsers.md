@@ -38,6 +38,13 @@ firewall, and these sometimes change, which means that, on occasion, Google may
 switch to a new Gmail server which we don't know about, and that would
 temporarily block email until we are able to update the firewall.
 
+One other thing that's quite important: we highly recommend you use an
+[app-specific password](https://support.google.com/accounts/answer/185833?hl=en)
+instead of your normal Google login password for this.  This has two advantages:
+
+ * Google's security systems sometimes block your first attempt to use their SMTP servers from a new IP address, which can be a pain if you're running code on different servers (which happens a lot on PythonAnywhere as we change our systems).
+ * It's much better not having a copy of your main Google password on a third-party service like PythonAnywhere, because you can always revoke the password from the Google site if necessary, without having to log in here.
+
 For Django, you can use the settings:
 
     :::python
