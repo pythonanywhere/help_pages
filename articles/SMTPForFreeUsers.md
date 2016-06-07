@@ -42,7 +42,7 @@ One other thing that's quite important: we highly recommend you use an
 [app-specific password](https://support.google.com/accounts/answer/185833?hl=en)
 instead of your normal Google login password for this.  This has two advantages:
 
- * Google's security systems sometimes block your first attempt to use their SMTP servers from a new IP address, which can be a pain if you're running code on different servers (which happens a lot on PythonAnywhere as we change our systems).
+ * Google's security systems sometimes block your first attempt to use their SMTP servers from a new IP address, which can be a pain if you're running code on different servers (which happens a lot on PythonAnywhere as we change our systems).  They don't seem to do this for app-specific passwords.
  * It's much better not having a copy of your main Google password on a third-party service like PythonAnywhere, because you can always revoke the password from the Google site if necessary, without having to log in here.
 
 For Django, you can use the settings:
