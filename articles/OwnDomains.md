@@ -17,7 +17,7 @@ If you have a paid account on PythonAnywhere, you can set up web apps on your ow
 There are three steps 
 
   1. (if you haven't already), purchase a domain name from a [domain name registry](https://en.wikipedia.org/wiki/Domain_name_registry). 
-  1. Create a new entry on the [Web tab](/pages/OwnDomainsweb_app_setup) for your new domain 
+  1. Create a new entry on the [Web tab](https://www.pythonanywhere.com/web_app_setup) for your new domain
   1. Create a CNAME record with your domain provider, pointing at the new web app 
 
 
