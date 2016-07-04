@@ -52,8 +52,8 @@ Finally tell us in a "Send feedback" message (link at the top right of this page
 
 In the whole key-generation, csr-signing, cert receiving, file-concatenating dance, it is easy to get confused, particularly if you're managing more than one key or cert.  There's a step you can take right at the end to verify that your private-key/cert pair actually match.  Run these two commands:
 
-openssl rsa -noout -modulus -in yourdomain.com.key | openssl md5
-openssl x509 -noout -modulus -in yourdomain.com.combined.cert | openssl md5
+    openssl rsa -noout -modulus -in yourdomain.com.key | openssl md5
+    openssl x509 -noout -modulus -in yourdomain.com.combined.cert | openssl md5
 
 *([source](https://kb.wisc.edu/middleware/page.php?id=4064))*
 
