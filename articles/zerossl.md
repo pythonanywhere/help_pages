@@ -42,7 +42,7 @@ Click `Next` again, and ZeroSSL will display instructions on verifying ownership
 
 Click `Next` one last time, and assuming the verification was successful, you've got a shiny new SSL certificate! Download it and again, keep a copy in a secure location. Make a note of your user id.
 
-Upload your `.crt` file to your PA filesystem (probably the same directory as your private key).
+Upload your `.crt` file to your PA filesystem (probably the same directory as your private key). The certificate already contains the "intermediate certificate," so no need to combine certs as in the other SSL tutorials.
 
 The final step is notifying the great PythonAnywhere staff:
 > Finally tell us in a "Send feedback" message (link at the top right of this page) where in your file storage on PythonAnywhere we can find the yourdomain.com.key and the yourdomain.com.combined.cert files, and which website it's for. We can take it from there.
