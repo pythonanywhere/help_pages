@@ -1,5 +1,5 @@
 <!--
-.. title: ZeroSSL
+.. title: ZeroSSL: a free, web-based, Let's Encrypt SSL cert provider
 .. slug: ZeroSSL
 .. date: 2016-07-20
 .. tags:
