@@ -8,11 +8,15 @@
 .. description:
 .. type: text
 -->
-PythonAnywhere has already provided walkthroughs for creating SSL certificates via [commercial providers](https://help.pythonanywhere.com/pages/SSLOwnDomains) and a [command-line method](https://help.pythonanywhere.com/pages/LetsEncrypt) for free Let's Encrypt certificates. A new service, **ZeroSSL**, bridges the gap by making free Let's Encrypt certs as easy (easier?) to generate as commercial providers. This is a guide to generating your first ZeroSSL certificate. *Note: I have no affiliation whatsoever with ZeroSSL, other than I used their service.*
+PythonAnywhere has already provided walkthroughs for creating SSL certificates:
+   * via [commercial providers](https://help.pythonanywhere.com/pages/SSLOwnDomains) and 
+   * a [command-line method](https://help.pythonanywhere.com/pages/LetsEncrypt) for free Let's Encrypt certificates. 
+
+A new service, **ZeroSSL**, bridges the gap by making free Let's Encrypt certs as easy (easier?) to generate as commercial providers. This guide will walk you through generating your first ZeroSSL certificate. *Note: I have no affiliation whatsoever with ZeroSSL, other than I used their service.*
 
 ### Let's Encrypt SSL certificates have a 90-day expiration period, which means you'll need to be extra vigilant to prevent your certificate from expiring. Commercial services can generate multi-year (and multi-domain) certificates. If re-generating every 90 days will be a problem, you should probably just pay for an annual (or longer) certificate and not risk your site's security.
 
-We will start by generating a CSR (Certificate Signing Request) the same way we would for a commercial provider. The following is copied from PythonAnywhere's SSL guide:
+We will start by generating a CSR (Certificate Signing Request) the same way we would for a commercial provider<sup>[1](#footnote_csr)</sup>. The following is copied from PythonAnywhere's SSL guide:
 
 >  * From a Bash console on PythonAnywhere, generate the private key and CSR using the openssl command, like this (all on one line, replacing yourdomain.com appropriately):
     * `openssl req -new -newkey rsa:2048 -nodes -keyout yourdomain.com.key -out yourdomain.com.csr`
@@ -50,3 +54,7 @@ The final step is notifying the great PythonAnywhere staff:
 I have found that [DigiCert](https://www.digicert.com/help/)'s SSL verification service provides peace of mind. I would also suggest removing your `.crt` and `.key` files from PA once the certificate has been installed on your server and SSL has been verified.
 
 ### Add an entry to your iCal or Google Calendar to renew your certificate about 84 days from now!!
+
+___
+
+<a name="footnote_csr">1</a>: ZeroSSL offers to create a CSR request for you, which would allow you to bypass the PA command-line completely. However, the nature of private keys would indicate that generating them yourself is the most secure option. *(I have no training or deep knowledge regarding internet security, do not trust my opinion)*
