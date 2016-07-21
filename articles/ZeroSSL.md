@@ -13,6 +13,7 @@
 
 
 PythonAnywhere has already provided walkthroughs for creating SSL certificates:
+
    * via [commercial providers](https://help.pythonanywhere.com/pages/SSLOwnDomains) and
    * a [command-line method](https://help.pythonanywhere.com/pages/LetsEncrypt) for free Let's Encrypt certificates.
 
