@@ -68,7 +68,7 @@ Here is a step-by-step tutorial that walks you through the general outline of ho
 <a href="//www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/" class="btn">
     <img alt="computer icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png">
     &nbsp;
-     I have built a web app on my local PC and want to deploy it on PythonAnywhere 
+     I have built a web app on my local PC and want to deploy it on PythonAnywhere
 </a>
 
 And here are some popular how-to guides and help pages for common webapp issues:
@@ -80,6 +80,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to use our static files service, and why you might want to](/pages/StaticFiles)
   * [How to use SSL for your own domain](/pages/SSLOwnDomains)
   * [How to get a Let's Encrypt certificate for your own domain](/pages/LetsEncrypt)
+  * [How to use ZeroSSL](/pages/ZeroSSL), an alternative interface to LetsEncrypt
   * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
   * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
@@ -189,7 +190,7 @@ Or you can run through this step-by-step tutorial if you prefer:
 <a href="//www.pythonanywhere.com/task_helpers/start/6-education/" class="btn">
     <img alt="trophy icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
     &nbsp;
-    I want to check out the Education Beta features 
+    I want to check out the Education Beta features
 </a>
 
 
@@ -263,18 +264,18 @@ Other Languages:
 <a href="//www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/" class="btn">
     <img alt="fishies icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png">
     &nbsp;
-    I want to follow the Django Tutorial 
+    I want to follow the Django Tutorial
 </a>
 
 <a href="//www.pythonanywhere.com/task_helpers/start/3-web_app/" class="btn">
     <img alt="cloud icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png">
     &nbsp;
-    I want to create a web application 
+    I want to create a web application
 </a>
 
 <a href="//www.pythonanywhere.com/task_helpers/start/5-github/" class="btn">
     <img alt="github icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png">
     &nbsp;
-    I want to clone and hack on my GitHub project 
+    I want to clone and hack on my GitHub project
 </a>
 

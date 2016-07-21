@@ -8,9 +8,13 @@
 .. description:
 .. type: text
 -->
+
+*This is a user-provided guide from 2x2xplz.*
+
+
 PythonAnywhere has already provided walkthroughs for creating SSL certificates:
-   * via [commercial providers](https://help.pythonanywhere.com/pages/SSLOwnDomains) and 
-   * a [command-line method](https://help.pythonanywhere.com/pages/LetsEncrypt) for free Let's Encrypt certificates. 
+   * via [commercial providers](https://help.pythonanywhere.com/pages/SSLOwnDomains) and
+   * a [command-line method](https://help.pythonanywhere.com/pages/LetsEncrypt) for free Let's Encrypt certificates.
 
 A new service, **ZeroSSL**, bridges the gap by making free Let's Encrypt certs as easy (easier?) to generate as commercial providers. This guide will walk you through generating your first ZeroSSL certificate. *Note: I have no affiliation whatsoever with ZeroSSL, other than I used their service.*
 
@@ -29,15 +33,15 @@ We will start by generating a CSR (Certificate Signing Request) the same way we 
     * Country: your two-letter ISO country code as per [this Wikipedia page](//en.wikipedia.org/wiki/ISO_3166-1#Officially_assigned_code_elements)
     * When it asks you for a passphrase, leave it blank.
   * Next, you need to provide the contents of the CSR (yourdomain.com.csr -- not the key!) to your certificate vendor. They will generate the certificate for you, or will get the CA to do so on their behalf, and send it back to you.
-  
+
 Download the `.csr` file to your computer or other secure location and delete it from your PA filesystem. You will need the `.key` file later so you can leave it up.
 
-Now lets visit [ZeroSSL](https://zerossl.com/). Scroll down to the **FREE SSL Certificate Wizard** and click `Start`. 
+Now lets visit [ZeroSSL](https://zerossl.com/). Scroll down to the **FREE SSL Certificate Wizard** and click `Start`.
 
   * Enter an email address
   * Leave "Domains" blank. *Remember, your cert will be only valid for the __exact__ Common Name you specified above.*
   * Leave "Let's Encrypt key" blank (no, the `.key` file you received from PA does NOT go here).
-  * Paste the text of your `.csr` request in the CSR box. Paste the entire file, including the --BEGIN-- and --END-- lines. 
+  * Paste the text of your `.csr` request in the CSR box. Paste the entire file, including the --BEGIN-- and --END-- lines.
   * Select a verification method (I believe DNS is easier to set up) and accept the TOS and SA.
 
 When you first click `Next`, ZeroSSL will generate a public key for you. Download this and save it, this will allow you to generate your future certificates. Next time, paste that key into the box instead of generating a new one.
