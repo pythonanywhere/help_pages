@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-*This is a user-provided guide from 2x2xplz.*
+*This is a user-provided guide from andy800.*
 
 
 PythonAnywhere has already provided walkthroughs for creating SSL certificates:
