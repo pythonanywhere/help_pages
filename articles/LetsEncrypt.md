@@ -37,7 +37,6 @@ mapping:
 
 and then **reload your web app**
     
-    
 We'll need to create a simple config file. Put the following (with suitable
 replacements) into a file at `/home/<your_username>/letsencrypt/config`
 
