@@ -29,21 +29,13 @@ Now we need some directories to store our keys, certificates and associated file
     cd ~/letsencrypt
     
 You'll also need your pythonanywhere site to be able to serve static
-files from your `wellknown` directory. Head over to the web tab and set up a new
+files from your `wellknown` directory. Head over to web app tab and set up a new
 mapping:
 
 * Static URL: `/.well-known/acme-challenge`
 * Static Path: `/home/<your_username>/letsencrypt/wellknown`
 
 and then **reload your web app**
-    
-
-Now we need to create a private key:
-
-    :::bash
-    openssl genrsa 4096 > user.key
-    
-Keep this key file safe. It's how the Let's Encrypt servers know who you are.
     
     
 We'll need to create a simple config file. Put the following (with suitable
@@ -55,10 +47,13 @@ replacements) into a file at `/home/<your_username>/letsencrypt/config`
 Now we need to actually request a certificate:
 
     :::bash
-    ~/letsencrypt.sh/letsencrypt.sh --cron --domain <your_web_app_name> --privkey user.key --out . --challenge http-01
+    ~/letsencrypt.sh/letsencrypt.sh --cron --domain <your_web_app_name> --out . --challenge http-01
     
 If this is successful, you'll now have a directory named `<your_domain_name>` in
 your `letsencrypt` directory and your certificate and key will be in there. 
+
+* **Keep your `/home/<your_username>/letsencrypt` directory safe**. It contains
+  the information necessary for you to renew your certs.
 
 To get your certificate installed email support@pythonanywhere.com to let us
 know that you want us to install your certificate. Include your username, the
@@ -68,12 +63,12 @@ directory path, and the domain name and we'll do the rest.
 ## Certificate renewal
 
 To renew your certificate, assuming you've left the static file mapping in
-place and still have your `user.key` file and the `letsencrypt.sh` directory, you
+place and still have your `letsencrypt` and `letsencrypt.sh` directories, you
 just need to re-run:
 
     :::bash
     cd ~/letsencrypt
-    ~/letsencrypt.sh/letsencrypt.sh --cron --domain <your_web_app_name> --privkey user.key --out . --challenge http-01
+    ~/letsencrypt.sh/letsencrypt.sh --cron --domain <your_web_app_name> --out . --challenge http-01
     
 and then let us know that you have a new certificate and where we can find it.
 
