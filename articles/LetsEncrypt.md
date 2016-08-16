@@ -33,25 +33,26 @@ files from your `wellknown` directory. Head over to web app tab and set up a new
 mapping:
 
 * Static URL: `/.well-known/acme-challenge`
-* Static Path: `/home/<your_username>/letsencrypt/wellknown`
+* Static Path: `/home/yourusername/letsencrypt/wellknown`
 
 and then **reload your web app**
     
 We'll need to create a simple config file. Put the following (with suitable
-replacements) into a file at `/home/<your_username>/letsencrypt/config`
+replacements) into a file at `/home/yourusername/letsencrypt/config`
 
     :::bash
-    WELLKNOWN=/home/<your_username>/letsencrypt/wellknown
+    WELLKNOWN=/home/yourusername/letsencrypt/wellknown
     
 Now we need to actually request a certificate:
 
     :::bash
-    ~/letsencrypt.sh/letsencrypt.sh --cron --domain <your_web_app_name> --out . --challenge http-01
+    ~/letsencrypt.sh/letsencrypt.sh --cron --domain www.yourdomain.com --out . --challenge http-01
+    # susbtitute www.yourdomain.com with your own domain name, including the www. part
     
-If this is successful, you'll now have a directory named `<your_domain_name>` in
+If this is successful, you'll now have a directory named `www.yourdomain.com` in
 your `letsencrypt` directory and your certificate and key will be in there. 
 
-* **Keep your `/home/<your_username>/letsencrypt` directory safe**. It contains
+* **Keep your `/home/yourusername/letsencrypt` directory safe**. It contains
   the information necessary for you to renew your certs.
 
 To get your certificate installed email support@pythonanywhere.com to let us
@@ -67,7 +68,7 @@ just need to re-run:
 
     :::bash
     cd ~/letsencrypt
-    ~/letsencrypt.sh/letsencrypt.sh --cron --domain <your_web_app_name> --out . --challenge http-01
+    ~/letsencrypt.sh/letsencrypt.sh --cron --domain www.yourdomain.com --out . --challenge http-01
     
 and then let us know that you have a new certificate and where we can find it.
 
