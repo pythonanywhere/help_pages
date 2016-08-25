@@ -31,6 +31,7 @@ ${template_hooks['extra_head']()}
 <!-- End of Menubar -->
 <div class="container-fluid" id="content" role="main">
     <!--Body content-->
+    ${pythonanywhere.feedback_dialog_html()}
     <div class="row-fluid">
     <div class="span2"></div>
     <div class="span8">
@@ -62,7 +63,6 @@ ${template_hooks['extra_head']()}
     ${content_footer}
     ${template_hooks['page_footer']()}
 </div>
-${pythonanywhere.feedback_dialog_html()}
 ${base.late_load_js()}
     <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
     <!-- fancy dates -->
