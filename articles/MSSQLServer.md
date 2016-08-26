@@ -57,7 +57,7 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
         CPReuse =
         FileUsage = 1
 
-2. create another file in your home directory called .freetds.conf (note the "." at the start), and in it put the following:
+2. create another file in your home directory called `.freetds.conf` (note the "." at the start), and in it put the following:
 
         [sqlserver]
             host = YOUR_SQL_SERVER_IP_ADDRESS
