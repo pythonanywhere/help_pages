@@ -241,6 +241,7 @@ Databases:
   * [Databases available on PythonAnywhere](/pages/KindsOfDatabases)
   * [Getting started with Postgres](/pages/Postgres)
   * [Creating Postgres backups](/pages/RegularPostgresBackups)
+  * [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
   * [How do I find out how large my MySQL database is?](/pages/MySQLDatabaseSize)
   * [Migrating a web2py app from SQLite to MySQL](/pages/MigatingWeb2pyFromSQLiteToMySQL)
   * [Database character sets (UTF8/Unicode etc)](/pages/DatabaseCharacterSets)
