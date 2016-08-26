@@ -40,7 +40,7 @@ The help pages have the following sections -- hopefully you can jump straight to
 
 # I'm a beginner learning Python
 
-We have lots of begginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
+We have lots of beginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
 
 <a href="//www.pythonanywhere.com/task_helpers/start/1-start_python/" class="btn">
     <img alt="keyboard icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png">
