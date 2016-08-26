@@ -49,6 +49,7 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
 
 1. Create a new file inside your home directory, called `odbcinst.ini`, and containing the following:
 
+
     [FreeTDS]
     Description = TDS driver (Sybase/MS SQL)
     Driver = /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
@@ -59,6 +60,7 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
 
 2. create another file in your home directory called .freetds.conf (note the "." at the start), and in it put the following:
 
+
     [sqlserver]
         host = YOUR_SQL_SERVER_IP_ADDRESS
         port = YOUR_SQL_SERVER_PORT
@@ -68,6 +70,7 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
 
 3. Create yet another file in your home directory, called `odbc.ini`, and put this in it:
 
+
     [sqlserverdatasource]
     Driver = FreeTDS
     Description = ODBC connection via FreeTDS
@@ -76,6 +79,7 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
 
 
 4. Finally, when you want to connect to the database from your Python code:
+
 
     import os
     import pyodbc
