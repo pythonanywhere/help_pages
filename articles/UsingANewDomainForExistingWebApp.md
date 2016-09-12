@@ -15,7 +15,7 @@ domain *yourusername*`.pythonanywhere.com`.  But if you have a paid account,
 you can run the site on any domain that you own.
 
 If you already have a web application up and running on PythonAnywhere and you
-want to point a new domain at it -- for example, if you have as application at
+want to point a new domain at it -- for example, if you have a site at
 `fred.pythonanywhere.com` and you want it to show up at `www.fredsdomain.com` --
 there are two steps:
 
@@ -27,4 +27,3 @@ there are two steps:
    tab.  This will have a "CNAME" value, which you'll need to use in some
    configuration with the company you bought the domain from.  There's
    [more information about CNAME setup here](/pages/OwnDomains#configuring-the-domain-at-the-domain-registrar).
-
