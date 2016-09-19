@@ -13,7 +13,7 @@
 
 
 
-## in brief
+## In brief
 
 
 We need you to point us to the location of two files, saved into your files area somewhere:
