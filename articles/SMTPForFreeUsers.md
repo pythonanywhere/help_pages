@@ -22,8 +22,9 @@ If you want to send email, you have two options:
 
 ##Use an HTTP/HTTPS-based email service
 
-[Mailgun](http://mailgun.com/) is a site that allows you to send email using
-HTTP(S) requests, and its API endpoint is on our whitelist.  This is the most
+Services like [Mailgun](http://mailgun.com/) or
+[sendgrid](https://sendgrid.com/) allow you to send email using HTTP(S)
+requests, and their API endpoint are on our whitelist.  This is the most
 reliable option, and works well so long as your code isn't limited to using
 SMTP.
 
