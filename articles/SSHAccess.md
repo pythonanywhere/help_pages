@@ -12,7 +12,8 @@
 
 
 
-If you have a paid-for PythonAnywhere account, you can access it via ssh. Here's how: 
+If you have a paid-for PythonAnywhere account, you can access it via ssh.
+Here's how: 
 
 From a command line with ssh installed 
 
@@ -24,12 +25,23 @@ The server's fingerprint is:
     d5:50:bd:8e:23:eb:14:3f:cf:15:87:42:0b:bf:e2:60
 
 
-NB: &lt;username&gt; is your PythonAnywhere username. Not your email address. The password is the same password you use to login to the web site. 
+NB: &lt;username&gt; is your PythonAnywhere username. Not your email address.
+The password is the same password you use to login to the web site. 
 
-You can use public / private keys to login via ssh. Please add your public keys to `~/.ssh/authorized_keys` in order to enable passwordless logins. 
+You can use public / private keys to login via ssh. Please add your public keys
+to `~/.ssh/authorized_keys` in order to enable passwordless logins. 
 
+
+### Debugging
+
+Sometimes, for some reason, you may not be able to login using SSH. The
+starting point to working out what is going wrong is to run:
+
+    ssh -v <username>@ssh.pythonanywhere.com
+    
 
 ###Filezilla etc
 
 
-You can also use SSH access to get files into your account using Filezilla and other similar upload tools. [Details here](/pages/FTP)
+You can also use SSH access to get files into your account using Filezilla and
+other similar upload tools. [Details here](/pages/FTP)
