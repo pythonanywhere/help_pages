@@ -65,6 +65,7 @@ If your CNAME is still not working after a couple of hours, you should double-ch
 ##Specific DNS providers
 
   * [godaddy.com](https://ca.godaddy.com/help/add-a-cname-record-19236)
+  * [gandi.net](https://wiki.gandi.net/en/dns/zone/cname-record)
 
 
 ##Domains without a www prefix (naked domains)
