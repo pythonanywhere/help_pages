@@ -73,15 +73,17 @@ Again, you can get the username and hostname details from the "Databases" tab.
 When you run Django tests that use the database, Django tries to create a
 database called *test_&lt;original database name&gt;* and that will fail because
 Django does not have permissions to create a new database. To run Django tests
-on PythonAnywhere, add a `TEST_NAME` key to your database definition in
+on PythonAnywhere, add a `TEST` key to your database definition in
 `settings.py`. Like this:
 
     :::python
     DATABASES = {
         'default': {
-            'TEST_NAME': '<your username>$test_<your database name>',
              ...
+            'TEST': {
+              NAME: '<your username>$test_<your database name>',
 
+More info here: https://docs.djangoproject.com/en/1.10/ref/settings/#test 
 
 We suggest you use a form like `<your username>$test_<your database name>`.
 Create this database from the PythonAnywhere Databases tab and Django will
