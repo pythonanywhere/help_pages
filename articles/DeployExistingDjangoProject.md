@@ -140,5 +140,5 @@ section](/pages/#ive-got-an-existing-web-app-that-im-trying-to-deploy) in our
 help pages, particularly
 
 * [Configuring static files with django](/pages/DjangoStaticFiles)
-* [Setting environment variables](/pages/DjangoStaticFiles) if you need them for things like `SECRET_KEY`
+* [Setting environment variables](/pages/environment-variables-for-web-apps) if you need them for things like `SECRET_KEY`
 
