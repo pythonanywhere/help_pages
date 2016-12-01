@@ -282,3 +282,6 @@ Other Languages:
     I want to clone and hack on my GitHub project
 </a>
 
+# Bug Bounty
+
+[Details on the PythonAnywhere Bug Bounty](/pages/BugBounty)
