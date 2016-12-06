@@ -11,7 +11,7 @@
 -->
 
 
-Deploying a django app on PythonAnywhere is a lot like running a django app on
+Deploying a Django project on PythonAnywhere is a lot like running a Django project on
 your own PC.  You'll use a virtualenv, just like you probably do on your own
 PC, you'll have a copy of your code on PythonAnywhere which you can edit and
 browse and commit to version control.
@@ -19,7 +19,7 @@ browse and commit to version control.
 The main thing that's different is that, instead of using the Django dev server
 with `manage.py runserver` and viewing your site on localhost, you'll create
 what we call a *Web app* via the Web tab in our UI, and then configure it with
-a *WSGI file* whose job is simply to import your django project.
+a *WSGI file* whose job is simply to import your Django project.
 
 And then your site will be live on the real, public Internet.  woo!
 
@@ -27,7 +27,7 @@ And then your site will be live on the real, public Internet.  woo!
 Here's an overview of the steps involved.
 
 1. Upload your code to PythonAnywhere
-2. Set up a virtualenv and install django and any other requirements
+2. Set up a virtualenv and install Django and any other requirements
 3. Set up your web app using manual config and your WSGI file.
 4. Add any other setup (static files, environment variables etc)
 
@@ -59,7 +59,7 @@ $ mkvirtualenv --python=/usr/bin/python3.4 mysite-virtualenv
 (mysite-virtualenv)$ pip install -r requirements.txt
 ```
 
-**Warning**: *django may take a long time to install.  PythonAnywhere has very fast internet, but the filesystem access can be slow, and django creates a lot of small files during its installation.  Thankfully you only have to do it once!*
+**Warning**: *Django may take a long time to install.  PythonAnywhere has very fast internet, but the filesystem access can be slow, and Django creates a lot of small files during its installation.  Thankfully you only have to do it once!*
 
 **TIP**: *if you see an error saying `mkvirtualenv: command not found`, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper).*
 
@@ -68,7 +68,7 @@ $ mkvirtualenv --python=/usr/bin/python3.4 mysite-virtualenv
 
 At this point, you need to be armed with 3 pieces of information:
 
-1. The path to your django project's top folder -- the folder that contains "manage.py", eg */home/myusername/mysite*
+1. The path to your Django project's top folder -- the folder that contains "manage.py", eg */home/myusername/mysite*
 2. The name of your project (that's the name of the folder that contains your settings.py), eg *mysite*
 3. The name of your virtualenv, eg *mysite-virtualenv*
 
@@ -105,11 +105,11 @@ Delete everything except the Django section and then uncomment that section. You
 
 ```python
 # +++++++++++ DJANGO +++++++++++
-# To use your own django app use code like this:
+# To use your own Django app use code like this:
 import os
 import sys
 
-# assuming your django settings file is at '/home/myusername/mysite/mysite/settings.py'
+# assuming your Django settings file is at '/home/myusername/mysite/mysite/settings.py'
 path = '/home/myusername/mysite'
 if path not in sys.path:
     sys.path.append(path)
@@ -117,10 +117,10 @@ if path not in sys.path:
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 
 ## Uncomment the lines below depending on your Django version
-###### then, for django >=1.5:
+###### then, for Django >=1.5:
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-###### or, for older django <=1.4
+###### or, for older Django <=1.4
 #import django.core.handlers.wsgi
 #application = django.core.handlers.wsgi.WSGIHandler()
 ```
@@ -129,7 +129,7 @@ application = get_wsgi_application()
 * Be sure to substitute the correct path to your project, the folder that contains manage.py, which you noted above.
 * Don't forget to substitute in your own username too!
 * Also make sure you put the correct value for `DJANGO_SETTINGS_MODULE`.
-* This guide assumes you're using a recent version of django, so leave the old
+* This guide assumes you're using a recent version of Django, so leave the old
   `wsgi.WSGIHandler()` code commented out, or better still, delete it.
 
 
