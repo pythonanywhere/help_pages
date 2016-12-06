@@ -75,18 +75,33 @@ At this point, you need to be armed with 3 pieces of information:
 
 ### Create a Web app with Manual Config
 
-Head over to the **Web tab** and create a new web app, choosing the "Manual Configuration" option and the right version of Python (the same one you used to create your virtualenv).
+Head over to the **Web tab** and create a new web app, choosing the "Manual
+Configuration" option and the right version of Python (the same one you used to
+create your virtualenv).
 
 
 ### Enter your virtualenv name
 
-Once that's done, **enter the name of your virtualenv** in the Virtualenv section on the web tab and click OK.  You can just use its short name "mysite-virtualenv", and it will automatically complete to its full path in /home/username/.virtualenvs.
+Once that's done, **enter the name of your virtualenv** in the Virtualenv
+section on the web tab and click OK.  You can just use its short name
+"mysite-virtualenv", and it will automatically complete to its full path in
+/home/username/.virtualenvs.
 
 ### Edit your WSGI file
 
-Next, click through to the WSGI file from the link on the web tab.
+One thing that's important here: your Django project (if you're using a
+recent version of Django) will have a file inside it called `wsgi.py`.  This is
+*not* the one you need to change to set things up on PythonAnywhere -- the
+system here ignores that file.
 
-Delete everything except the Django section and then uncomment that section. Your WSGI file should look something like this: 
+Instead, the WSGI file to change is the one that has a link inside the "Code"
+section of the **Web tab** -- it will have a name something like
+`/var/www/yourusername_pythonanywhere_com_wsgi.py` or
+`/var/www/www_yourdomain_com_wsgi.py`.
+
+Click on the WSGI file link, and it will take you to an editor where you can change it.
+
+Delete everything except the Django section and then uncomment that section. Your WSGI file should look something like this:
 
 ```python
 # +++++++++++ DJANGO +++++++++++
@@ -121,24 +136,35 @@ application = get_wsgi_application()
 Save the file, then go and hit the **Reload** button for your domain.  (You'll find one at the top right of the wsgi file editor, or you can go back to the main web tab)
 
 
+# Database setup
+
+If, like most sites, your site uses a database, you'll need to set that up.
+Go to the **Consoles tab**, start a bash console, use `cd` to navigate to the
+directory where your Django project's `manage.py` lives, then run
+
+```
+./manage.py migrate
+```
+
+
 # Checking it worked.
 
-Go visit your site, it should be live!
+Go visit your site, it should be live!  But it probably won't be using your
+CSS stylesheets, JavaScript and other things that are loaded from static files.
+To get those set up, check out the page [configuring static files with Django](/pages/DjangoStaticFiles)
 
 
 # What to do if you see any errors.
 
-First, check your **error log**.  You'll find a link to it on your web tab.  
+First, check your **error log**.  You'll find a link to it on your web tab.
 
 Then check out [the "debugging web app errors" section](/pages/#im-looking-at-an-error-message-in-my-web-app) from our help topics, particularly [this article on sys.path and import errors](/pages/DebuggingImportError)
 
 
 # Additional configuration:
 
-Check out [the "existing web app"
-section](/pages/#ive-got-an-existing-web-app-that-im-trying-to-deploy) in our
-help pages, particularly
-
-* [Configuring static files with django](/pages/DjangoStaticFiles)
-* [Setting environment variables](/pages/environment-variables-for-web-apps) if you need them for things like `SECRET_KEY`
-
+There are many different ways to set things up so that your database settings,
+`SECRET_KEY`, and so on are different in your local environment to the settings
+in your live environment on PythonAnywhere.  If you're specifically using
+environment variables to store them, this page on [setting environment variables for web apps](/pages/environment-variables-for-web-apps)
+will help.
