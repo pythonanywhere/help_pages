@@ -29,7 +29,7 @@ We don't recommend any particular domain registrar, they're all pretty similar. 
 
 ##Creating a PythonAnywhere web app for your new domain
 
-**PythonAnywhere web app doesnot exist**
+**PythonAnywhere web app does not exist**
 
 Just click the "Add a new web app" button on the Web tab, specify the domain on the first step, and go on to choose your python version, framework and so on.
 
