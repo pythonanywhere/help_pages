@@ -90,6 +90,12 @@ Create this database from the PythonAnywhere Databases tab and Django will
 happily use it and run your tests.
 
 
+## MySQL with web2py
+To use MySQL with web2py, you'll need to change your DAL constructor:
+
+    :::python
+    db = DAL('mysql://<your_username>:<your_mysql_password>@<your_mysql_hostname>/<your_database_name>')
+
 
 ## Handling connection timeout errors
 
