@@ -49,6 +49,8 @@ Now we need to actually request a certificate:
     ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01
     # susbtitute www.yourdomain.com with your own domain name, including the www. part
 
+* *Tip: if you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure*
+
 If this is successful, you'll now have a directory named `www.yourdomain.com` in
 your `letsencrypt` directory and your certificate and key will be in there.
 
