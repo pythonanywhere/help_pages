@@ -12,6 +12,7 @@
 
 
 # Permission denied for npm install --global
+
 This is because npm tries to install to a `/usr` path which you can't write to. To solve this, you can either change the default directory for global packages or use nvm to take care of installing globally. 
 
 If you know you want to run on the most updated version of node, you should just use nvm, which is incompatible with the steps to change your default npm directory below.
