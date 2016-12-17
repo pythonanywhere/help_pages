@@ -15,11 +15,15 @@
 
 Are you staring at an error that says:
 
-    python: can't open file 'myfile.txt': [Errno 2] No such file or directory
+```text
+python: can't open file 'myfile.txt': [Errno 2] No such file or directory
+```
 
 Or maybe:
 
-    IOError : No such file or directory
+```text
+IOError : No such file or directory
+```
 
 
 Are you saying something like: "Curses!  It works on my machine?"?
