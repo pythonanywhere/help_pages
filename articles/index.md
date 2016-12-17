@@ -127,6 +127,7 @@ Oh no!  Here's our most common explanations and solutions to console problems:
 
   * [I get "permission denied" when trying to pip install a new module](/pages/InstallingNewModules)
   * [Why do I get a "403 Forbidden" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
+  * [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
   * [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
 
 
