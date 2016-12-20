@@ -56,3 +56,9 @@ code like this, based on deriving the current path from Python's magic
 Windows and on Linux...
 
 
+## Another possibility: case-sensitivity
+
+One other thing that might be going on is that you're using the `wRoNG cAsINg`.
+Casing doesn't matter on Windows but it does on Linux (and therefore, it
+matters on PythonAnywhere).  So, be consistent with Uppercase and lowercase!
+
