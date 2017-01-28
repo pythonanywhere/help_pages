@@ -169,6 +169,7 @@ Here are some guides for some of the common things people want to do:
   * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
   * [Working with PDFs and converting document formats](/pages/PDF)
   * [Can I use IPv6?](/pages/IPv6)
+  * [Using Selenium](/pages/selenium)
 
 
 And here's some very brief FAQ answers about common requests:
