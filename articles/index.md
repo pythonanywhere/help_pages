@@ -228,7 +228,6 @@ Consoles:
 Web apps:
 
   * [How to create a web application on PythonAnywhere](/pages/WebAppBasics)
-  * [Creating a new Django project on PythonAnywhere](/pages/DjangoTutorial)
   * [Reloading the web application after you've made changes](/pages/ReloadWebApp)
   * [Switching to the new virtualenv system](/pages/UpgradingToTheNewVirtualenvSystem)
   * [Python 3 web apps](/pages/Python3WebApps)
