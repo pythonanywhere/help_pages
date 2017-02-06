@@ -23,6 +23,10 @@ first to see whether we're already working on something.
   interesting to us.
 * Auto-pwnage - "If I run this code it does something bad to my
   account/files/web apps"
+* Problems on sites we host for our users -- sites at, eg, *username.pythonanywhere.com*
+  are not written by us (but if you can find contact details on those sites, you
+  are welcome to contact their owners directly).  Please only report vulnerabilities
+  for www.pythonanywhere.com.
   
 ## Bug classes we're interested in
 * General XSS, CSRF etc. - Can you get a user that is logged in to PythonAnywhere to do
@@ -36,5 +40,5 @@ first to see whether we're already working on something.
   
 ## Bug classes we're very interested in
 * Session/cookie hijacking
-* Privilege escalation in consoles, web apps and scheduled tasks
+* OS-level privilege escalation in consoles, web apps and scheduled tasks
 * Sandbox escape in consoles, web apps and scheduled tasks
