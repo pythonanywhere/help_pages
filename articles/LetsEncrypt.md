@@ -51,6 +51,14 @@ Now we need to actually request a certificate:
 
 * *Tip: if you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure*
 
+If you get a warning saying something like this:
+
+    To use dehydrated with this certificate authority you have to agree to their
+    terms of service which you can find here: https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf
+    To accept these terms of service run `/home/username/dehydrated/dehydrated --register --accept-terms`.
+
+...then you need to run the command they specify, and *then run the original dehydrated command again*.
+
 If this is successful, you'll now have a directory named `www.yourdomain.com` in
 your `letsencrypt` directory and your certificate and key will be in there.
 
