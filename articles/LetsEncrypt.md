@@ -59,7 +59,27 @@ If you get a warning saying something like this:
 
 ...then you need to run the command they specify, and *then run the original dehydrated command again*.
 
-If this is successful, you'll now have a directory named `www.yourdomain.com` in
+If this is successful, you will see something like this: 
+
+    :::text
+    # INFO: Using main config file /home/YOURUSERNAME/letsencrypt/config
+    # Processing www.yourdomain.com
+    #  + Checking domain name(s) of existing cert... unchanged.
+    #  + Checking expire date of existing cert...
+    #  + Valid till Nov  3 13:48:00 2016 GMT (Less than 30 days). Renewing!
+    #  + Signing domains...
+    #  + Generating private key...
+    #  + Generating signing request...
+    #  + Requesting challenge for www.yourdomain.com...
+    #  + Responding to challenge for www.yourdomain.com...
+    #  + Challenge is valid!
+    #  + Requesting certificate...
+    #  + Checking certificate...
+    #  + Done!
+    #  + Creating fullchain.pem...
+    #  + Done!
+
+You'll now have a directory named `www.yourdomain.com` in
 your `letsencrypt` directory and your certificate and key will be in there.
 
 * **Keep your `/home/YOURUSERNAME/letsencrypt` directory safe**. It contains
@@ -67,7 +87,7 @@ your `letsencrypt` directory and your certificate and key will be in there.
 
 To get your certificate installed email support@pythonanywhere.com to let us
 know that you want us to install your certificate. Include your username, the
-directory path, and the domain name and we'll do the rest.
+directory path to the certificates, and the domain name and we'll do the rest.
 
 
 ## Certificate renewal
