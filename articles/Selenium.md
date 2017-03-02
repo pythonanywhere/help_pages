@@ -37,20 +37,19 @@ it will keep running in the background, eating up your CPU quota*
 from pyvirtualdisplay import Display
 from selenium import webdriver
 
-display = Display(visible=0, size=(800, 600))
-display.start()
-
-try:
-    # we can now start Firefox and it will run inside the virtual display
-    browser = webdriver.Firefox()
-    browser.get('http://www.google.com')
-    print browser.title #this should print "Google"
-
-finally:
-    # tidy up
-    browser.quit()
-    display.stop() # ignore any output from this.
+with Display():
+    try:
+        # we can now start Firefox and it will run inside the virtual display
+        browser = webdriver.Firefox()
+        browser.get('http://www.google.com')
+        print browser.title #this should print "Google"
+  
+    finally:
+        # tidy up
+        browser.quit()
 ```
+
+
 
 
 ## Using xvfb-run from the command-line (or for scheduled tasks)
@@ -61,6 +60,14 @@ tasks, there's an even easier way to start up your Xvfb display, `xvfb-run`:
 Just precede your normal call to Python with `xvfb-run -a`:
 
     xvfb-run -a python3.5 /home/myusername/myfolder/myscript.py
+
+
+## Cleaning up manually
+
+If you fail to clean up properly in your code, you can use the "process
+listing" buttons on the Consoles page and the Schedule page to manually
+find and kill any leftover xvfb processes.
+
 
 
 ## Firefox only

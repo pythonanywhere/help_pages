@@ -27,11 +27,9 @@ spam other websites. **Paid-for accounts don't have this limitation**, because
 we can connect them to real people. Spammers and criminals prefer to be
 anonymous, so we figure they're unlikely to sign up for paid accounts here. 
 
-We do allow access to that we think are useful to a large number of our users
-(all sites that host PyPI modules, for instance). If there is a site that you
-think we should add to the list of allowed sites, let us know using the "Send
-feedback" link above. Generally, it will need to be something with a public
-API. 
+We will only whitelist sites that have a public, documented API. If you would
+like us to whitelist a site, send us a link to the API documentation that
+clearly shows the domain that the API is served from.
 
 
 ###[Errno 111] Connection refused

@@ -25,7 +25,7 @@ For whatever reason...
     nikola deploy  # nb this has a hard-coded path to a static files directory for the web app, so don't run it on your own pc
 
 ## Git stuff
-The git post-receive hook, in case it gets killed is:
+The git post-receive hook (in `/home/help/barerepo.git/hooks`), in case it gets killed is:
 
     #!/bin/bash
     export GIT_WORK_TREE=/var/www/nikola-sources
@@ -33,6 +33,7 @@ The git post-receive hook, in case it gets killed is:
     git checkout -f
     echo "begin nikola build: "`date` >> /home/help/deploy-log.txt
     cd $GIT_WORK_TREE
+    /home/help/.virtualenvs/nikola/bin/nikola check --clean-files
     rm -f output/assets/js/tipuesearch_content.json            
     /home/help/.virtualenvs/nikola/bin/nikola build
     /home/help/.virtualenvs/nikola/bin/nikola deploy
