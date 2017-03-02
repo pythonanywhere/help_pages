@@ -11,6 +11,7 @@
 
 Sometimes you may see errors like this in your PythonAnywhere website's error log:
 
+    2017-02-16 13:09:32 Thu Feb 16 13:09:32 2017 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 287] during GET / (10.0.0.14)
     2017-02-16 13:09:32 ERROR:root:IOError: write error
     2017-02-16 13:09:32 ERROR:root:Error running WSGI application
     2017-02-16 13:09:32 ERROR:root:GeneratorExit
