@@ -153,6 +153,7 @@ Once you've done that, here are some solutions to common problems
   * [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
   * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
   * [Fixing "OperationalError: 1226 User has exceeded the max_user_connections resource](/pages/ManagingDatabaseConnections)
+  * [I'm seeing lots of GeneratorExit errors in my error log](/pages/GeneratorExit)
 
 
 
