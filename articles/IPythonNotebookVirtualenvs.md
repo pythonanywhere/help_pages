@@ -29,7 +29,6 @@ You **can** use a virtualenv for your IPython notebook. Follow the following ste
   You can safely ignore all the DeprecrationWarnings.This will create a
   kernelspec for your virtualenv and tell you where it is:
 
-        :::
         [InstallNativeKernelSpec] Installed kernelspec pythonX in /home/username/.local/share/jupyter/kernels/pythonX
 
   Where pythonX will match the version of Python in your virtualenv.
@@ -54,10 +53,10 @@ You **can** use a virtualenv for your IPython notebook. Follow the following ste
             "language": "python",
             "argv": [
               "/home/harry/.virtualenvs/my-virtualenv-name/bin/python2.7",
-            "-m",
-            "ipykernel",
-            "-f",
-            "{connection_file}"
+              "-m",
+              "ipykernel",
+              "-f",
+              "{connection_file}"
             ]
         }
 
