@@ -26,7 +26,7 @@ You **can** use a virtualenv for your IPython notebook. Follow the following ste
         :::bash
         python -m ipykernel install --user --name=my-virtualenv-name --display-name='My virtualenv name'
  
-  Replacing the --name and --display-name parameters as appropriate.
+    Replacing the --name and --display-name parameters as appropriate.
 
 3. You should now be able to see your kernel in the IPython notebook menu:
    `Kernel -> Change kernel` and be able so switch to it (you may need to
