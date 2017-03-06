@@ -26,13 +26,13 @@ You **can** use a virtualenv for your IPython notebook. Follow the following ste
         :::bash
         ipython kernelspec install-self --user
 
-You can safely ignore all the DeprecrationWarnings.This will create a
-kernelspec for your virtualenv and tell you where it is:
+  You can safely ignore all the DeprecrationWarnings.This will create a
+  kernelspec for your virtualenv and tell you where it is:
 
         :::
         [InstallNativeKernelSpec] Installed kernelspec pythonX in /home/username/.local/share/jupyter/kernels/pythonX
 
-Where pythonX will match the version of Python in your virtualenv.
+  Where pythonX will match the version of Python in your virtualenv.
 
 
 3. Copy the new kernelspec somewhere useful. Choose a `kernel_name` for your new
