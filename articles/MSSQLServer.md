@@ -85,6 +85,11 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
 
     ...again, changing `YOUR_PYTHONANYWHERE_USERNAME`, `YOUR_SQL_SERVER_USERID`,
 and `YOUR_SQL_SERVER_PASSWORD` appropriately.
+**Note:** if you're using an Azure-hosted database, you may need to specify both
+the username and the server name in `YOUR_SQL_SERVER_USERID`, separated by an `@`.  For example,
+`yourusername@yourservername`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
+for more information.
+
 
 Once you've done that, it should all work fine!
 
