@@ -14,33 +14,22 @@
 
 You **can** use a virtualenv for your IPython notebook. Follow the following steps:
 
-1. From within your virtualenv, run
+1. Install the ipython kernel module into your virtualenv
 
         :::bash
-        ipython kernelspec install-self --user
+        workon my-virtualenv-name  # activate your virtualenv, if you haven't already
+        pip install ipykernel
 
-    This will create a kernelspec for your virtualenv and tell you where it is:
 
-        :::
-        [InstallNativeKernelSpec] Installed kernelspec pythonX in /home/username/.local/share/jupyter/kernels/pythonX
-
-    Where pythonX will match the version of Python in your virtualenv.
-
-2. Copy the new kernelspec somewhere useful. Choose a `kernel_name` for your new
-    kernel that is not `python2` or `python3` or one you've used before and then:
+2. Now run the kernel "self-install" script:
 
         :::bash
-        mkdir -p ~/.ipython/kernels
-        mv ~/.local/share/jupyter/kernels/pythonX ~/.ipython/kernels/<kernel_name>
+        python -m ipykernel install --user --name=my-virtualenv-name
+ 
+    Replacing the `--name` parameter as appropriate.
 
-3. If you want to change the name of the kernel that IPython shows you, you
-    need to edit `~/.ipython/kernels/<kernel_name>/kernel.json` and change the
-    JSON key called `display_name` to be a name that you like.
-
-4. You should now be able to see your kernel in the IPython notebook menu:
-    `Kernel -> Change kernel` and be able so switch to it (you may need to
-    refresh the page before it appears in the list). IPython will remember
-    which kernel to use for that notebook from then on.
-
-
+3. You should now be able to see your kernel in the IPython notebook menu:
+   `Kernel -> Change kernel` and be able so switch to it (you may need to
+   refresh the page before it appears in the list). IPython will remember
+   which kernel to use for that notebook from then on.
 

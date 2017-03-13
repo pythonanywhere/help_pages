@@ -41,7 +41,24 @@ start of your file — for example, starting your file with:
     :::bash
     #!/usr/bin/python3.5
 
-...will make it run using Python 3.5.
+...will make it run using Python 3.5.  (the advantage of
+doing it this way is that the "run" button in the editor
+also takes into account hashbangs).
+
+
+Alternatively, you can explicitly specify the python executable to use in the scheduled tasks page, so, instead of
+
+
+```
+/home/myusername/myproject/myscript.py
+```
+
+Use
+
+
+```
+python3.5 /home/myusername/myproject/myscript.py
+```
 
 
 
