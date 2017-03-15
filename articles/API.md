@@ -119,27 +119,29 @@ POST parameters: none.
 
 ### static_files
 
-list: GET /api/v0/user/{username}/webapps/{domain_name}/static_files/
-List all the static files mappings for a domain.
-(no parameters)
-
-create: POST /api/v0/user/{username}/webapps/{domain_name}/static_files/
-Create a new static files mapping. (webapp restart required)
-parameters: url, path
-
-read: GET /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
-Get URL and path of a particular mapping.
-(no parameters)
-
-update: PUT /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
-Modify a static files mapping. (webapp restart required)
-parameters: url, path
-
-partial_update: PATCH /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
-Modify a static files mapping. (webapp restart required)
-parameters: url, path
-
-delete: DELETE /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
-Remove a static files mapping. (webapp restart required)
-(no parameters)
+<table class="table table-hover table-bordered table-striped">
+  <tr><td>list: GET /api/v0/user/{username}/webapps/{domain_name}/static_files/</td></tr>
+  <tr><td>List all the static files mappings for a domain.</td></tr>
+  <tr><td>(no parameters)</td></tr>
+  <tr><td></td></tr>
+  <tr><td>create: POST /api/v0/user/{username}/webapps/{domain_name}/static_files/</td></tr>
+  <tr><td>Create a new static files mapping. (webapp restart required)</td></tr>
+  <tr><td>parameters: url, path</td></tr>
+  <tr><td></td></tr>
+  <tr><td>read: GET /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/</td></tr>
+  <tr><td>Get URL and path of a particular mapping.</td></tr>
+  <tr><td>(no parameters)</td></tr>
+  <tr><td></td></tr>
+  <tr><td>update: PUT /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/</td></tr>
+  <tr><td>Modify a static files mapping. (webapp restart required)</td></tr>
+  <tr><td>parameters: url, path</td></tr>
+  <tr><td></td></tr>
+  <tr><td>partial_update: PATCH /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/</td></tr>
+  <tr><td>Modify a static files mapping. (webapp restart required)</td></tr>
+  <tr><td>parameters: url, path</td></tr>
+  <tr><td></td></tr>
+  <tr><td>delete: DELETE /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/</td></tr>
+  <tr><td>Remove a static files mapping. (webapp restart required)</td></tr>
+  <tr><td>(no parameters)</td></tr>
+</table>
 
