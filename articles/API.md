@@ -34,19 +34,28 @@ Again, you can see a nice example on your [Accounts page](https://www.pythonanyw
 # Endpoints
 
 
-All endpoints are hosted at *http://www.pythonanywhere.com/*
+All endpoints are hosted at *https://www.pythonanywhere.com/*
+
+
 
 ### /api/v0/user/{username}/consoles/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td>GET</td><td>List all your consoles</td><td>(no parameters)</td></tr>
 </table>
+
+
 ### /api/v0/user/{username}/consoles/shared_with_you/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td>GET</td><td>View consoles shared with you</td><td>(no parameters)</td></tr>
 </table>
+
+
 ### /api/v0/user/{username}/consoles/{id}/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td>GET</td><td>Return information about a console instance.</td><td>(no parameters)</td></tr>
@@ -58,19 +67,26 @@ All endpoints are hosted at *http://www.pythonanywhere.com/*
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td>GET</td><td>Check sharing status for a path.  Returns 404 if path not currently shared.</td><td>Query parameter: path</td></tr>
   <tr><td>POST</td><td>Start sharing a file.  Returns 201 on success, or 200 if file was already shared.</td><td>POST parameter: path</td></tr>
+</table>
+
+
+### /api/v0/user/{username}/files/sharing/?path={path}
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td>GET</td><td>Check sharing status for a path.  Returns 404 if path not currently shared.</td><td>Query parameter: path</td></tr>
   <tr><td>DELETE</td><td>Stop sharing a path.  Returns 204 on successful unshare.</td><td>Query parameter: path</td></tr>
 </table>
 
 
-### /api/v0/user/{username}/files/tree/
+### /api/v0/user/{username}/files/tree/?path={path}
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td>GET</td><td>Returns a list of the contents of a directory, and its subdirectories
 as a list. Paths ending in slash/ represent directories.  Limited to
-1000 results.</td><td>(no parameters)</td></tr>
+1000 results.</td><td>Query parameter: path</td></tr>
 </table>
 
 
@@ -122,5 +138,6 @@ Config is backed up in /var/www, and your code is not touched.</td><td>(no param
   <tr><td>DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td>(no parameters)</td></tr>
 </table>
 
-All endpoints are hosted at *http://www.pythonanywhere.com/*
+
+All endpoints are hosted at *https://www.pythonanywhere.com/*
 
