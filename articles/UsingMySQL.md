@@ -19,12 +19,21 @@ alternatively you can open a MySQL shell with the following command from a
 bash console or ssh session:
 
     :::bash
-    mysql -u USERNAME -h HOSTNAME -p
+    mysql -u USERNAME -h HOSTNAME -p 'USERNAME$DATABASENAME'
 
 
-The USERNAME is the username you use to log in to PythonAnywhere and the
-HOSTNAME is on your Databases tab.  It will prompt you for a password -- use
-the one you entered on the Databases tab.
+In this:
+
+* The `USERNAME` is the username you use to log in to PythonAnywhere
+* The `HOSTNAME` is on your Databases tab
+* The `'USERNAME$DATABASENAME'` is the full name of your database, which comprises
+  your username, then a dollar sign, then the name you gave it.  The single quotes
+  around it are important!  If you don't put them in there, bash will try to interpret
+  the `$DATABASENAME` as an [environment variable](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html),
+  which will lead to an error saying `ERROR 1044 (42000): Access denied for user 'USERNAME'@'%' to database 'USERNAME'`
+
+When you run the command, it will prompt you for a password -- use the one you
+entered on the Databases tab.
 
 
 ## Accessing MySQL from Python
@@ -83,7 +92,7 @@ on PythonAnywhere, add a `TEST` key to your database definition in
             'TEST': {
               NAME: '<your username>$test_<your database name>',
 
-More info here: https://docs.djangoproject.com/en/1.10/ref/settings/#test 
+More info here: https://docs.djangoproject.com/en/1.10/ref/settings/#test
 
 We suggest you use a form like `<your username>$test_<your database name>`.
 Create this database from the PythonAnywhere Databases tab and Django will
