@@ -285,6 +285,7 @@ Other Languages:
     I want to clone and hack on my GitHub project
 </a>
 
-# Bug Bounty
+# Security
 
-[Details on the PythonAnywhere Bug Bounty](/pages/BugBounty)
+* [Securing your PythonAnywhere account](/pages/SecuringYourAccount)
+* [Details on the PythonAnywhere Bug Bounty](/pages/BugBounty)
