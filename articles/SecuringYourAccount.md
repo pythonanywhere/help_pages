@@ -12,7 +12,7 @@
 ###What we do
 
 We do all we can to keep your PythonAnywhere account secure, along with the
-files and data you have stored in it -- from fully-patched operation systems
+files and data you have stored in it -- from fully-patched operating systems
 and a [bug bounty program](https://help.pythonanywhere.com/pages/BugBounty) to
 encourage security researchers to tell us about any issues before they become
 problems, to strict internal policies determining when our support staff are
@@ -35,7 +35,7 @@ To make your account completely secure, there are things you can do too.
   in the world if they can guess its path.
 * If you're sharing code with anyone (including on our forums), make sure that
   you don't post anything with passwords in it.  (Replace passwords with something
-  like "********" if that part of the code is essential to the post.)
+  like "xxxxxxx" if that part of the code is essential to the post.)
 * Make sure you use a highly secure password for your PythonAnywhere login.
   We're big fans of using memorable but unguessable passwords of the kind
   [dreamed up by Randall Munroe of XKCD](https://xkcd.com/936/).  There's even
@@ -54,16 +54,16 @@ To make your account completely secure, there are things you can do too.
   public area.
 * Consider setting up two-factor authentication.
 
-###Two-factor auth
+###Two-factor authentication
 
-Finally, if you want the best possible security for your account, we recommend
+If you want the best possible security for your account, we recommend
 you enable two-factor authentication (TFA).  This is a system that uses an app on your
 phone to generate a number, once a minute.  When you log in to PythonAnywhere,
-you have to enter that code as well as your username and password.  In other
+you have to enter that number as well as your username and password.  In other
 words, someone who wants to break into your account not only needs to steal your
 password, they also need to get hold of your phone.
 
-One important warning about (TFA): when you set it up, it
+One important warning about TFA: when you set it up, it
 gives you some "emergency" codes, which you can use instead of the ones your
 phone generates.   It's *super*-important that you keep these safe.  Once you've
 set up TFA, you will not be able to access your account without a code, and our
