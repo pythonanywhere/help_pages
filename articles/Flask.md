@@ -106,7 +106,7 @@ This is ok
     def home():
         # etc etc, flask app code
 
-    if __name__ = '__main__':
+    if __name__ == '__main__':
         app.run()
 
 This is not ok:

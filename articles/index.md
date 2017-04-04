@@ -40,7 +40,7 @@ The help pages have the following sections -- hopefully you can jump straight to
 
 # I'm a beginner learning Python
 
-We have lots of begginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
+We have lots of beginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
 
 <a href="//www.pythonanywhere.com/task_helpers/start/1-start_python/" class="btn">
     <img alt="keyboard icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png">
@@ -68,7 +68,7 @@ Here is a step-by-step tutorial that walks you through the general outline of ho
 <a href="//www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/" class="btn">
     <img alt="computer icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png">
     &nbsp;
-     I have built a web app on my local PC and want to deploy it on PythonAnywhere 
+     I have built a web app on my local PC and want to deploy it on PythonAnywhere
 </a>
 
 And here are some popular how-to guides and help pages for common webapp issues:
@@ -80,11 +80,13 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to use our static files service, and why you might want to](/pages/StaticFiles)
   * [How to use SSL for your own domain](/pages/SSLOwnDomains)
   * [How to get a Let's Encrypt certificate for your own domain](/pages/LetsEncrypt)
+  * [How to use ZeroSSL](/pages/ZeroSSL), an alternative interface to LetsEncrypt
   * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
   * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
   * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
+  * [Using International Domain Names](/pages/InternationalDomainNames) -- that is, ones with non-ASCII/Unicode characters in them
 
 
 And some tips for specific web frameworks:
@@ -126,6 +128,7 @@ Oh no!  Here's our most common explanations and solutions to console problems:
 
   * [I get "permission denied" when trying to pip install a new module](/pages/InstallingNewModules)
   * [Why do I get a "403 Forbidden" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
+  * [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
   * [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
 
 
@@ -151,6 +154,7 @@ Once you've done that, here are some solutions to common problems
   * [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
   * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
   * [Fixing "OperationalError: 1226 User has exceeded the max_user_connections resource](/pages/ManagingDatabaseConnections)
+  * [I'm seeing lots of GeneratorExit errors in my error log](/pages/GeneratorExit)
 
 
 
@@ -166,6 +170,8 @@ Here are some guides for some of the common things people want to do:
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
   * [Working with PDFs and converting document formats](/pages/PDF)
+  * [Can I use IPv6?](/pages/IPv6)
+  * [Using Selenium](/pages/selenium)
 
 
 And here's some very brief FAQ answers about common requests:
@@ -189,7 +195,7 @@ Or you can run through this step-by-step tutorial if you prefer:
 <a href="//www.pythonanywhere.com/task_helpers/start/6-education/" class="btn">
     <img alt="trophy icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
     &nbsp;
-    I want to check out the Education Beta features 
+    I want to check out the Education Beta features
 </a>
 
 
@@ -224,7 +230,6 @@ Consoles:
 Web apps:
 
   * [How to create a web application on PythonAnywhere](/pages/WebAppBasics)
-  * [Creating a new Django project on PythonAnywhere](/pages/DjangoTutorial)
   * [Reloading the web application after you've made changes](/pages/ReloadWebApp)
   * [Switching to the new virtualenv system](/pages/UpgradingToTheNewVirtualenvSystem)
   * [Python 3 web apps](/pages/Python3WebApps)
@@ -239,6 +244,7 @@ Databases:
   * [Databases available on PythonAnywhere](/pages/KindsOfDatabases)
   * [Getting started with Postgres](/pages/Postgres)
   * [Creating Postgres backups](/pages/RegularPostgresBackups)
+  * [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
   * [How do I find out how large my MySQL database is?](/pages/MySQLDatabaseSize)
   * [Migrating a web2py app from SQLite to MySQL](/pages/MigatingWeb2pyFromSQLiteToMySQL)
   * [Database character sets (UTF8/Unicode etc)](/pages/DatabaseCharacterSets)
@@ -254,6 +260,7 @@ Scheduled tasks:
 Other Languages:
 
   * [Setting up Haskell and creating a new Cabal package](/pages/Haskell)
+  * [Setting up a Node project](/pages/Node)
   * [Testing a simple Javascript project using Jasmine](/pages/Javascript)
 
 
@@ -263,18 +270,22 @@ Other Languages:
 <a href="//www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/" class="btn">
     <img alt="fishies icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png">
     &nbsp;
-    I want to follow the Django Tutorial 
+    I want to follow the Django Tutorial
 </a>
 
 <a href="//www.pythonanywhere.com/task_helpers/start/3-web_app/" class="btn">
     <img alt="cloud icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png">
     &nbsp;
-    I want to create a web application 
+    I want to create a web application
 </a>
 
 <a href="//www.pythonanywhere.com/task_helpers/start/5-github/" class="btn">
     <img alt="github icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png">
     &nbsp;
-    I want to clone and hack on my GitHub project 
+    I want to clone and hack on my GitHub project
 </a>
 
+# Security
+
+* [Securing your PythonAnywhere account](/pages/SecuringYourAccount)
+* [Details on the PythonAnywhere Bug Bounty](/pages/BugBounty)

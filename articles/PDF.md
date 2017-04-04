@@ -36,7 +36,7 @@ ls /usr/bin/*pdf*
 
 You should see a whole bunch of potentially useful binaries which  you can call out to.
 
-![](/pdf_tools_in_bash.png.png)
+![](/pdf_tools_in_bash.png)
 
 We also have **Abiword** installed, and it has some command-line options for converting word documents and others.  Check out this [article about using abiword at the command-line](http://www.aboutlinux.info/2005/08/use-abiword-to-convert-filetypes-on.html) for example.
 

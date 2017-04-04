@@ -13,7 +13,7 @@
 
 
 
-## in brief
+## In brief
 
 
 We need you to point us to the location of two files, saved into your files area somewhere:
@@ -25,7 +25,7 @@ We need you to point us to the location of two files, saved into your files area
 ## Detailed instructions
 
 
-To enable SSL/HTTPS for your custom domain (that is, not `yourusername.pythonanywhere.com`, which gets it automatically), you'll need to get an SSL certificate. We don't sell them ourselves, so the first thing is to identify someone who will provide you with a certificate -- an SSL certificate vendor. [StartSSL](//www.startssl.com/?app=1) provide free ones, but have a rather user-hostile site. Other companies charge for the certificates, but are easier to use. You may find that your domain name registrar provides them ([GoDaddy](//www.godaddy.com/) and Namecheap certainly do), so if you've found their customer service to be good, you might want to use them.
+To enable SSL/HTTPS for your custom domain (that is, not `yourusername.pythonanywhere.com`, which gets it automatically), you'll need to get an SSL certificate. We don't sell them ourselves, so the first thing is to identify someone who will provide you with a certificate -- an SSL certificate vendor. An excellent choice for free certificates is [Let's Encrypt](/pages/LetsEncrypt), though you do have to renew the certificate every three months. Other companies charge for the certificates, but the certificates last longer. You may find that your domain name registrar provides them ([GoDaddy](//www.godaddy.com/) and Namecheap certainly do), so if you've found their customer service to be good, you might want to use them.
 
 To get the certificate, you'll need to send them a text file called a "Certificate Signing Request" (CSR), which is basically an encoded representation of a request to a certificate-issuing organisation (a "Certification Authority", or CA -- your certificate vendor may be a CA themselves, or they may resell certificates from a CA) saying "please give me a SSL certificate for the following domain, signed by yourselves, that can only be unlocked using my private key." And in order to generate one of those, you'll need to generate a private cryptographic key. Here are detailed instructions on how to do that on PythonAnywhere.
 

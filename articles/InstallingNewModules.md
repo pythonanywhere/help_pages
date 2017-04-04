@@ -66,7 +66,7 @@ You need to enter the location of your virtualenv on the "Web" tab to use it in 
 Use
 
     :::bash
-    pip3.4 install --user packagename
+    pip3.5 install --user packagename
 
 
 *(installers for Python2.6 are `pip2.6` and `easy_install-2.6`, and you can also use `pip3.3` / `easy_install-3.3` or `pip3.4` / `easy_install-3.4`)*
@@ -75,10 +75,10 @@ Use
 ###Python 3, with a virtualenv
 
 
-Use the additional flag `--python=python3.4`, eg:
+Use the additional flag `--python=python3.5`, eg:
 
     :::bash
-    mkvirtualenv --python=python3.4 myvirtualenv
+    mkvirtualenv --python=python3.5 myvirtualenv
 
 
 

@@ -51,7 +51,7 @@ Hit save, reload your web app, and it should now have access to the variable.
 > For when you're running database migrations, or doing any other command-line
 > interactions with your web app
 
-Assuming you're using a [Virtualenv](./Virtualenvs) for your web app, the most
+Assuming you're using a [Virtualenv](/pages/Virtualenvs) for your web app, the most
 convenient place to set an environment variable to be available in your Bash
 console sessions is in a special script called "postactivate" that gets run
 automatically whenever you activate your virtualenv.

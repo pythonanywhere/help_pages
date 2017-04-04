@@ -24,7 +24,7 @@ section, and add one new entry:
 * URL: /
 * Path: /home/yourusername/path/to/your/static/site
 
-Hi **Reload** on the web tab.
+Hit **Reload** on the web tab.
 
 Then, any files in */home/yourusername/path/to/your/static/site* will be served
 automatically.  Start with */home/yourusername/path/to/your/static/site/index.html*

@@ -1,4 +1,4 @@
-<!--
+(<!--
 .. title: Let's Encrypt
 .. slug: LetsEncrypt
 .. date: 2016-03-24
@@ -9,96 +9,97 @@
 .. type: text
 -->
 
-Let's Encrypt provide free SSL certificates for HTTPS. It's possible, but a
-little fiddly to get a Let's Encrypt certificate working on PythonAnywhere.
+Let's Encrypt provide free SSL certificates for HTTPS. It's possible
+to get a Let's Encrypt certificate working on PythonAnywhere.
 Here's how:
 
-The standard letsencrypt client needs all kinds of root privileges.  Instead,
-we use an alternative called "letsencrypt-nosudo":
-
-    git clone https://github.com/diafygi/letsencrypt-nosudo
-    cd letsencrypt-nosudo
-
-Next we follow the instructions from the [letsencrypt-nosudo github page](https://github.com/diafygi/letsencrypt-nosudo).
-We use openssl (which is
-preinstalled on PythonAnywhere) to create a user private/public key pair, then
-a private key and signing request for our domain.  Next we use the
-letsencrypt-nosudo command-line script to get our certificate signed by
-letsencrypt.  To go through the letsencrypt "ACME" verification process, we'll
-need to host a static file on our domain.
+We use a package called "dehydrated" to get our Let's Encrypt certificate
+(we don't use the standard one because it needs all kinds root privileges).
+To get it, run the following in a Bash console in your home directory:
 
     :::bash
-    # user public/private key pair
-    openssl genrsa 4096 > user.key
-    openssl rsa -in user.key -pubout > user.pub
+    git clone https://github.com/lukas2511/dehydrated.git ~/dehydrated
 
-    # domain private key and csr
-    export DOMAIN=www.obeythetestinggoat.com  # replace this with your own domain name!
-    openssl genrsa 4096 > $DOMAIN.key
-    openssl req -new -sha256 -key $DOMAIN.key -subj "/CN=$DOMAIN" > $DOMAIN.csr
 
-    # now launch the signing script and follow the instructions!
-    python sign_csr.py --file-base --public-key user.pub $DOMAIN.csr > $DOMAIN.crt
-
-At this point it'll ask you to run a series of command-line scripts in another
-window.  Use ctrl+z if you know how to do that, or start a new Bash console,
-and follow the instructions.  You'll have to be in the same directory as you
-were earlier
+Now we need some directories to store our keys, certificates and associated files:
 
     :::bash
-    cd letsencrypt-nosudo
-    export DOMAIN=www.obeythetestinggoat.com  # in case this comes in useful again, replace with yours
-    openssl dgst -sha256 -sign user.key # etc etc as per instructions
+    mkdir -p ~/letsencrypt/wellknown
+    cd ~/letsencrypt
 
-There's two of those signing steps, and then it will ask you to:
+You'll also need your pythonanywhere site to be able to serve static
+files from your `wellknown` directory. Head over to web app tab and set up a new
+mapping:
 
-    STEP 4: Please update your server to serve the following file at this URL:
+* Static URL: `/.well-known/acme-challenge`
+* Static Path: `/home/YOURUSERNAME/letsencrypt/wellknown`
 
-    URL: http://www.obeythetestinggoat.com/.well-known/acme-challenge/asdfasdfasdfasdfasdf
-    File contents: "qwerqwerqwerqwerqwerqwerqwer"
+(don't forget to replace "YOURUSERNAME" with your actual username, here and in
+the instructions below) and then **reload your web app**
 
-At this point you'll need your pythonanywhere site to be able to serve a static
-file.  Head over to the web tab and set up a new mapping:
-
-* Static URL: /.well-known/
-* Static Path: /tmp/letsencrypt.well-known/
-
-After hitting **Reload** on my web app to get that live, put the
-static file there with the contents asked for:
+We'll need to create a simple config file. Put the following (with suitable
+replacements) into a file at `/home/YOURUSERNAME/letsencrypt/config`
 
     :::bash
-    mkdir -p /tmp/letsencrypt.well-known/acme-challenge
-    # replace asdfasdfasdf and qwerqwerqwer as appropriate
-    echo "qweqwerqwerqwerqwerqwer" > /tmp/letsencrypt.well-known/acme-challenge/asdfasdfasdfasdf
-    # check it worked:
-    export DOMAIN=www.obeythetestinggoat.com  # replace with yours if you're in a different Bash console, skip if you used ctrl+z
-    curl http://$DOMAIN/.well-known/acme-challenge/asdfasdfasdfasdf
-    # should show qwerwqerqwer or equivalent
+    WELLKNOWN=/home/YOURUSERNAME/letsencrypt/wellknown
 
-Once this is working, go back to the original console and continue the script:
+Now we need to actually request a certificate:
 
     :::bash
-    cat $DOMAIN.crt
-    # should -----BEGIN CERTIFICATE----- etc etc!
+    ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01
+    # susbtitute www.yourdomain.com with your own domain name, including the www. part
+
+* *Tip: if you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure*
+
+If you get a warning saying something like this:
+
+    To use dehydrated with this certificate authority you have to agree to their
+    terms of service which you can find here: https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf
+    To accept these terms of service run `/home/username/dehydrated/dehydrated --register --accept-terms`.
+
+...then you need to run the command they specify, and *then run the original dehydrated command again*.
+
+If this is successful, you will see something like this: 
+
+    :::text
+    # INFO: Using main config file /home/YOURUSERNAME/letsencrypt/config
+    # Processing www.yourdomain.com
+    #  + Checking domain name(s) of existing cert... unchanged.
+    #  + Checking expire date of existing cert...
+    #  + Valid till Nov  3 13:48:00 2016 GMT (Less than 30 days). Renewing!
+    #  + Signing domains...
+    #  + Generating private key...
+    #  + Generating signing request...
+    #  + Requesting challenge for www.yourdomain.com...
+    #  + Responding to challenge for www.yourdomain.com...
+    #  + Challenge is valid!
+    #  + Requesting certificate...
+    #  + Checking certificate...
+    #  + Done!
+    #  + Creating fullchain.pem...
+    #  + Done!
+
+You'll now have a directory named `www.yourdomain.com` in
+your `letsencrypt` directory and your certificate and key will be in there.
+
+* **Keep your `/home/YOURUSERNAME/letsencrypt` directory safe**. It contains
+  the information necessary for you to renew your certs.
+
+To get your certificate installed email support@pythonanywhere.com to let us
+know that you want us to install your certificate. Include your username, the
+directory path to the certificates, and the domain name and we'll do the rest.
 
 
-The Let's Encrypt certificate is missing the intermediate certificate, so
-you'll need to get it from Let's Encrypt and add it to your certificate chain:
+## Certificate renewal
+
+To renew your certificate, assuming you've left the static file mapping in
+place and still have your `letsencrypt` and `letsencrypt.sh` directories, you
+just need to re-run:
 
     :::bash
-    curl https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt >> $DOMAIN.crt
+    cd ~/letsencrypt
+    ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01
 
-And now the last step is to hand over two files to the pythonanywhere admins.
-Put the following 2 files somewhere in your home directory on PythonAnywhere:
+and then let us know that you have a new certificate and where we can find it.
 
-* www.obeythetestinggoat.com.key
-* www.obeythetestinggoat.com.crt
 
-and send us Feedback or an email to support@pythonanywhere.com with the
-location of the files.
-
-It's not ideal at the moment, because of the manual step involved -- we, the
-pythonanywhere admins, currently have to manually update your certificate files
-for you.  But the other steps could be automated pretty well.  And this should
-motivate us to get some kind of automatic process for HTTPS certificates in
-place!

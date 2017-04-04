@@ -31,6 +31,7 @@ ${template_hooks['extra_head']()}
 <!-- End of Menubar -->
 <div class="container-fluid" id="content" role="main">
     <!--Body content-->
+    ${pythonanywhere.feedback_dialog_html()}
     <div class="row-fluid">
     <div class="span2"></div>
     <div class="span8">
@@ -49,11 +50,14 @@ ${template_hooks['extra_head']()}
                 <a href="https://github.com/pythonanywhere/help_pages">Submit a pull request!</a></i>
             </p>
             <p>
-                Copyright &copy; 2015 <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
+<%
+    from datetime import datetime
+%>
+                Copyright &copy; ${datetime.utcnow().year} <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
                 &mdash;
-                <a href="/terms/">Terms</a>
+                <a href="https://www.pythonanywhere.com/terms/">Terms</a>
                 &mdash;
-                <a href="/privacy/">Privacy</a><br/>
+                <a href="https://www.pythonanywhere.com/privacy/">Privacy</a><br/>
                 "Python" is a registered trademark of the Python Software Foundation.
             </p>
         </footer>
@@ -62,7 +66,6 @@ ${template_hooks['extra_head']()}
     ${content_footer}
     ${template_hooks['page_footer']()}
 </div>
-${pythonanywhere.feedback_dialog_html()}
 ${base.late_load_js()}
     <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
     <!-- fancy dates -->
