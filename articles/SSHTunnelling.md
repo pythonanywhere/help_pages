@@ -39,8 +39,11 @@ If you're running MySQL Workbench, you can configure it to connect using SSH dir
 | Password:  | **your PythonAnywhere database password** |
 | Default Schema:  | **your database name** |
 
+You may also need to allow ssh login based management as one of the mysql workbench options under server connections -> remote management.
 
-###Manual SSH tunneling
+
+
+###Manual SSH tunnelling
 
 
 For other tools, you can set up a tunnel that pretends to be a MySQL server running on your machine but actually sends data over SSH to your PythonAnywhere MySQL instance.
@@ -69,4 +72,12 @@ Finally, if you are running a MySQL server locally and hence port 3306 is alread
 
 However, you'd then need to configure your MySQL client to use this other port, as this is not the default for MySQL.
 
+
+###Accessing MySQL in Your Local Python Scripts
+
+If you have setup the manual ssh tunnelling described above, then you can also access the remote PythonAnywhere MySQl from the same port as well. However, if you had chose the first way (configuring MySQL Workbench), then you will also need a way to ssh tunnel for your python scripts. Check out [this](https://pypi.python.org/pypi/sshtunnel) python library.
+
+
+
 Thanks to Cartroo for this great guide
+
