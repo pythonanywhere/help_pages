@@ -1,7 +1,7 @@
 
 <!--
 .. title: RAM limits
-.. slug: API
+.. slug: RAMLimit
 .. date: 2017-04-18 18:35:28 UTC+01:00
 .. tags:
 .. category:
