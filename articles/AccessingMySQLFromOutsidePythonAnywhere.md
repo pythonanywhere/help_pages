@@ -41,6 +41,7 @@ If you're running Python code on your local machine, and you want it to access
 your MySQL database, you can install [the `sshtunnel` package](https://pypi.python.org/pypi/sshtunnel)
 and then use code like this:
 
+    import mysql.connector
     import sshtunnel
 
     sshtunnel.SSH_TIMEOUT = 5.0
@@ -58,6 +59,9 @@ and then use code like this:
         )
         # Do stuff
         connection.close()
+
+This example uses the `mysql-connector` library, but you can use any MySQL
+library you like.
 
 
 ### Manual SSH tunnelling
