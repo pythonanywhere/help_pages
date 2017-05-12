@@ -249,7 +249,7 @@ Databases:
   * [Migrating a web2py app from SQLite to MySQL](/pages/MigatingWeb2pyFromSQLiteToMySQL)
   * [Database character sets (UTF8/Unicode etc)](/pages/DatabaseCharacterSets)
   * [Importing a database you have stored on your own machine to PythonAnwyhere](/pages/ImportingYourLocalDatabaseToPythonAnywhere)
-  * [Tunnelling SSH for MySQL GUIs](/pages/SSHTunnelling)
+  * [Accessing your MySQL database from outside PythonAnywhere](/pages/AccessingMySQLFromOutsidePythonAnywhere)
 
 Scheduled tasks:
 
