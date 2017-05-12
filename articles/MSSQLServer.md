@@ -93,12 +93,12 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
         conn = pyodbc.connect('DSN=sqlserverdatasource;Uid=YOUR_SQL_SERVER_USERID;Pwd=YOUR_SQL_SERVER_PASSWORD;Encrypt=yes;Connection Timeout=30;')
 
     ...again, changing `YOUR_PYTHONANYWHERE_USERNAME`, `YOUR_SQL_SERVER_USERID`,
-and `YOUR_SQL_SERVER_PASSWORD` appropriately.
+    and `YOUR_SQL_SERVER_PASSWORD` appropriately.
 
-**Note:** just as with pymssql, if you're using an Azure-hosted database, you need to specify both
-the username and the server name in `YOUR_SQL_SERVER_USERID`, separated by an `@`.  For example,
-`yourusername@yourservername`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
-for more information.
+    **Note:** just as with pymssql, if you're using an Azure-hosted database, you need to specify both
+    the username and the server name in `YOUR_SQL_SERVER_USERID`, separated by an `@`.  For example,
+    `yourusername@yourservername`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
+    for more information.
 
 
 Once you've done that, it should all work fine!
