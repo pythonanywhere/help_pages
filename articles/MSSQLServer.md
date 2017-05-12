@@ -36,7 +36,8 @@ One thing to look out for -- if your SQL Server
 instance is on Azure, then your username is "username@databasename".  For
 example, if your database is `mydatabase.database.windows.net` and your username
 is `jim`,then the username you should use in the `pymssql.connect` would be
-`jim@mydatabase`.
+`jim@mydatabase`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
+for more information.
 
 If you have problems connecting to your database, there's [a great troubleshooting
 guide on the `pymssql` site](http://pymssql.org/en/stable/faq.html).  One
@@ -93,7 +94,8 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
 
     ...again, changing `YOUR_PYTHONANYWHERE_USERNAME`, `YOUR_SQL_SERVER_USERID`,
 and `YOUR_SQL_SERVER_PASSWORD` appropriately.
-**Note:** if you're using an Azure-hosted database, you may need to specify both
+
+**Note:** just as with pymssql, if you're using an Azure-hosted database, you need to specify both
 the username and the server name in `YOUR_SQL_SERVER_USERID`, separated by an `@`.  For example,
 `yourusername@yourservername`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
 for more information.
