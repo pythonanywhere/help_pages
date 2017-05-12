@@ -1,4 +1,3 @@
-
 <!--
 .. title: Connecting to Microsoft SQL Server
 .. slug: MSSQLServer
@@ -9,9 +8,6 @@
 .. description:
 .. type: text
 -->
-
-
-
 
 
 ##Connecting to Microsoft SQL Server
@@ -35,6 +31,18 @@ This is the easiest option.  Just connect to it like this:
 
 ...changing the `host`, `username`, `password` and `database` variables
 appropriately, of course.
+
+One thing to look out for -- if your SQL Server
+instance is on Azure, then your username is "username@databasename".  For
+example, if your database is `mydatabase.database.windows.net` and your username
+is `jim`,then the username you should use in the `pymssql.connect` would be
+`jim@mydatabase`.
+
+If you have problems connecting to your database, there's [a great troubleshooting
+guide on the `pymssql` site](http://pymssql.org/en/stable/faq.html).  One
+particularly useful trick is to set the `TDSDUMP` environment variable, which
+makes the system print out loads of debugging data.  Check out the link above
+for details.
 
 
 ### pyodbc
