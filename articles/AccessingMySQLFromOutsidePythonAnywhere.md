@@ -113,9 +113,8 @@ as this is not the default for MySQL.  For example:
     :::bash
     mysql -h 127.0.0.1 --port 3333 -u username -p
 
+You can also use this technique to give Python code access to the database
+instead of using the the `sshtunnel` technique.
 
-If you have set up the manual ssh tunnelling described above, then you can also
-access the remote PythonAnywhere MySQL from the same port as well rather than
-use the `sshtunnel` technique.
 
 *Many thanks to user Cartroo for the first version of this guide!*
