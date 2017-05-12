@@ -115,7 +115,7 @@ as this is not the default for MySQL.  For example:
 
 
 If you have set up the manual ssh tunnelling described above, then you can also
-access the remote PythonAnywhere MySQl from the same port as well rather than
+access the remote PythonAnywhere MySQL from the same port as well rather than
 use the `sshtunnel` technique.
 
 *Many thanks to user Cartroo for the first version of this guide!*
