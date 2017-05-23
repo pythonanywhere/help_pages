@@ -22,14 +22,21 @@ You can install new modules into PythonAnywhere by using a **Bash Console**
 
 ##1\. Using the --user flag
 
+To install a package into your account so that your Python programs can see it
+by default, use one of the `pip` commands.   There is one for each Python version:
+`pip2.7` installs modules for Python 2.7, `pip3.5` installs modules for Python
+3.5, and so on.  Modules that you install for one Python version are not visible
+from others, so it's important to use the right one.
 
-We've included both `easy_install` and `pip` for Python versions 2.6, 2.7 and 3.3 (the default is 2.7, use `pip2.6` or `pip3` / `pip3.3` / `easy_install-3.3` for other versions), but you'll need to pass the `--user` flag to them, which will install modules to a directory (.local) inside your home folder. Please note, this is quite literally `--user`, you don't need to replace it with your username, or to add your username to the command line!
-
-Example: to install the `pwhich` module, you'd run this:
+Example: to install the `pwhich` module for Python 3.4, you'd run this in a Bash
+console (not in a Python one):
 
     :::bash
-    pip install --user pwhich
+    pip3.4 install --user pwhich
 
+Please note, the command line option before the module name is quite literally `--user`, you
+don't need to replace it with your username, or to add your username to the
+command line!
 
 Do let us know if there are any packages you think should be part of our standard "batteries included".
 
@@ -37,10 +44,26 @@ Do let us know if there are any packages you think should be part of our standar
 ##2\. Using a virtualenv
 
 
-We've also included `virtualenv` and `virtualenvwrapper`, so if you create a virtualenv you can install whatever versions of various packages you want to. However, in a virtualenv, the `--user` is not needed. In fact using `--user` will cause an error in a virtualenv.
+We've also included `virtualenv` and `virtualenvwrapper`, so if you create a
+virtualenv you can install whatever versions of various packages you want to.
+However, in a virtualenv, the `--user` mentioned above is not needed. In fact
+using `--user` will cause an error in a virtualenv.
+
+You can specify which Python version to use for your virtualenv using the
+`--path` option.  So, to create a new Python 3.5 virtualenv, run this command:
 
     :::bash
-    $ mkvirtualenv my-virtualenv
+    $ mkvirtualenv my-virtualenv --python=`which python3.5`
+
+...or similarly for Python 2.7:
+
+    :::bash
+    $ mkvirtualenv my-virtualenv --python=`which python2.7`
+
+Then to install packages you can just use pip with no Python version number or
+`--user` flag:
+
+    :::bash
     (my-virtualenv) $ pip install pwhich
 
 We recommend that in any Python 2.7 virtualenv you create, you install the following
@@ -49,40 +72,11 @@ security fix packages:
     :::bash
     (my-virtualenv) $ pip install urllib3[secure] pyopenssl ndg-httpsclient pyasn1
 
+These should make sure that your code can make access external websites without
+security warnings.
+
 
 ###Using virtualenvs in web apps
 
 
 You need to enter the location of your virtualenv on the "Web" tab to use it in a web app. Check out the [example here](/pages/VirtualEnvForNewerDjango)
-
-
-##3\. To use Python 3
-
-
-
-###Python 3, with --user
-
-
-Use
-
-    :::bash
-    pip3.5 install --user packagename
-
-
-*(installers for Python2.6 are `pip2.6` and `easy_install-2.6`, and you can also use `pip3.3` / `easy_install-3.3` or `pip3.4` / `easy_install-3.4`)*
-
-
-###Python 3, with a virtualenv
-
-
-Use the additional flag `--python=python3.5`, eg:
-
-    :::bash
-    mkvirtualenv --python=python3.5 myvirtualenv
-
-
-
-###Packages requiring compilation
-
-
-We provide some compilers (eg gcc, g++), but not all. If your package installation fails with an error that looks like it might have been trying to compile something, you'll need to contact us to get us to install it for you. Use the "send feedback" button.
