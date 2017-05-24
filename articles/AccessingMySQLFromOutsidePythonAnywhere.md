@@ -32,7 +32,9 @@ If you're running MySQL Workbench, you can configure it to connect using SSH dir
 | Password:  | **your PythonAnywhere database password** |
 | Default Schema:  | **your database name, eg yourusername$mydatabase** |
 
-You may also need to allow ssh login based management as one of the mysql workbench options under server connections -> remote management.
+* You may also need to allow ssh login based management as one of the mysql workbench options under *server connections -> remote management*.
+
+* It's also a good idea to set the *Edit -> Preferences -> SQL Editor -> DBMS_Connection keep alive interval* setting to 200, to avoid any "lost connection" issues due to our 5-minute connection timeout.
 
 
 ### From Python code
