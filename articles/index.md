@@ -172,6 +172,7 @@ Here are some guides for some of the common things people want to do:
   * [Working with PDFs and converting document formats](/pages/PDF)
   * [Can I use IPv6?](/pages/IPv6)
   * [Using Selenium](/pages/selenium)
+  * [Does PythonAnywhere have an API?](/pages/API)
 
 
 And here's some very brief FAQ answers about common requests:
@@ -180,6 +181,7 @@ And here's some very brief FAQ answers about common requests:
   * **Can I use an external MySQL service?** Probably not (on a free account), unless they have an HTTP api.
   * Can I use Redis?  Again, only via an external service like redislabs.  Although you can use redislite
   * Can I use websockets, or run my own socket server?  I'm afraid not --  we only support Python apps that implement the WSGI protocol
+  * How do I reload my webapp automatically?  You can now use our [API](/pages/API) for this :)
 
 
 

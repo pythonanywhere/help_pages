@@ -16,19 +16,24 @@
 **Warning: our API is new and in beta and not officially supported, and may change at any time, and it is not to be relied upon, and may cause unpredictable growth of extra ears. Extra ears not guaranteed.**
 
 
-
-# Authentication
+# Getting started and Authentication
 
 The PythonAnywhere API uses token-based authentication.  You can get your token
 from the [Accounts page](https://www.pythonanywhere.com/account/#api_token)
 
-It's used in a header like this:
+It's used in a header called `Authorization`, and the value is encoded as the
+string "Token", followed by a space, followed by your token, like this:
 
 ```python
 'Authorization': f'Token {token}'
 ```
 
-Again, you can see a nice example on your [Accounts page](https://www.pythonanywhere.com/account/#api_token)
+Again, you can see a nice example on the [Accounts page](https://www.pythonanywhere.com/account/#api_token)
+
+
+Once you've generated your token, you can copy and paste it for use in your scripts.  You can also access
+it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populated environment variable,
+`$API_TOKEN`.
 
 
 # Endpoints
