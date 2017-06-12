@@ -26,6 +26,7 @@ there are two steps:
 
    This tells the PythonAnywhere system that when it receives a request for
    your domain, it should use your web app to respond to the request.
+
  * After you've done that, you'll see a new "DNS setup" section on the "Web"
    tab.  This will have a "CNAME" value, which you'll need to use in some
    configuration with the company you bought the domain from.  There's
