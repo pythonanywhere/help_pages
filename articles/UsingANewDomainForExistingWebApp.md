@@ -16,11 +16,11 @@ you can run the site on any domain that you own.
 
 If you already have a web application up and running on PythonAnywhere and you
 want to point a new domain at it -- for example, if you have a site at
-`fred.pythonanywhere.com` and you want it to show up at `www.fredsdomain.com` --
+`conrad.pythonanywhere.com` and you want it to show up at `www.conradsdomain.com` --
 there are two steps:
 
  * Go to the "Web" tab, and click on the pencil icon next to the web app name.
-   Change it from `fred.pythonanywhere.com` to `www.fredsdomain.com`.
+   Change it from `conrad.pythonanywhere.com` to `www.conradsdomain.com`.
 
    ![click on the pencil icon!](/rename_webapp.jpg)
 
