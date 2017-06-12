@@ -21,7 +21,9 @@ there are two steps:
 
  * Go to the "Web" tab, and click on the pencil icon next to the web app name.
    Change it from `fred.pythonanywhere.com` to `www.fredsdomain.com`.
+
    ![click on the pencil icon!](/rename_webapp.jpg)
+
    This tells the PythonAnywhere system that when it receives a request for
    your domain, it should use your web app to respond to the request.
  * After you've done that, you'll see a new "DNS setup" section on the "Web"
