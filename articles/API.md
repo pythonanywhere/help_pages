@@ -25,7 +25,7 @@ It's used in a header called `Authorization`, and the value is encoded as the
 string "Token", followed by a space, followed by your token, like this:
 
 ```python
-'Authorization': f'Token {token}'
+'Authorization': 'Token {}'.format(token)
 ```
 
 Again, you can see a nice example on the [Accounts page](https://www.pythonanywhere.com/account/#api_token)
