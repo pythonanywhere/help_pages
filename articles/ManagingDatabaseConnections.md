@@ -35,11 +35,10 @@ example, consider using `try/finally`, and put a `connection.close()` into the
 `finally` clause... 
 
 
-## Dealing with OperationalError 2006, 'MySQL server has gone away' and 2013, 'Lost connection to MySQL server during query'
+## Dealing with OperationalError 2006, 'MySQL server has gone away'
 
 Are you having trouble with problems like this:
 **OperationalError: (2006, 'MySQL server has gone away')**? 
-Or **(2013, 'Lost connection to MySQL server during query')**
 
 Our databases have a 300-second (5-minute) timeout on inactive connections.
 That means, if you open a connection to the database, and then you don't do
@@ -129,4 +128,17 @@ connection.close()
 make_another_query()
 ```
 
+
+## Dealing with OperationalError 2013, 'Lost connection to MySQL server during query'
+
+The MySQL docs suggest this error will usually be to do with a network connection
+glitch:  https://dev.mysql.com/doc/refman/5.7/en/error-lost-connection.html
+
+However, it may also happen because your query is trying to return too much data
+at once (millions of rows?), and it is hitting the 30-second `net_read_timeout`.
+If you think that might be the case, try limiting the max number of results, or
+breaking up your query into several smaller ones.
+
+(this error can be related to the "mysql server has gone away" problem above,
+so it's worth reading up on that as well).
 
