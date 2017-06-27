@@ -104,7 +104,13 @@ cur = db.query(sql)
 
 ### Anticipating errors in Django
 
-If you have some code that waits a long time in between database queries,
+You're unlikely to see this problem in your web app itself, because
+django's views manage connections for each request, and requests
+will time out at the web server end before the database timeout kicks
+in.
+
+You might see this error in manage.py shell, or in management commands
+though. If you have some code that waits a long time in between database queries,
 then calling `connection.close()` will anticipate any problems with the
 server timeout:
 
