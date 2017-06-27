@@ -132,7 +132,7 @@ make_another_query()
 ## Dealing with OperationalError 2013, 'Lost connection to MySQL server during query'
 
 The MySQL docs suggest this error will usually be to do with a network connection
-glitch:  https://dev.mysql.com/doc/refman/5.7/en/error-lost-connection.html
+glitch:  [dev.mysql.com/doc/refman/5.7/en/error-lost-connection.html](https://dev.mysql.com/doc/refman/5.7/en/error-lost-connection.html)
 
 However, it may also happen because your query is trying to return too much data
 at once (millions of rows?), and it is hitting the 30-second `net_read_timeout`.
