@@ -20,14 +20,14 @@ don't see the framework you use, let us know with the "Send Feedback" link
 above.
 
 
-##Django (1.8 or higher)
+## Django (1.8 or higher)
 
 In `settings.py`, set:
 
     SECURE_SSL_REDIRECT = True
 
 
-##Django (older versions)
+## Django (older versions)
 
 Just
 
@@ -42,7 +42,7 @@ Also note that it won't force SSL if you have `DEBUG = True` in your settings
 properly).
 
 
-##web2py
+## web2py
 
 
 Uncomment this line in db.py:
@@ -51,13 +51,31 @@ Uncomment this line in db.py:
 
 
 
-##Flask
+## Flask
 
 
 Use [this Flask extension](https://github.com/kennethreitz/flask-sslify).
 
 
-##Bottle
+## Bottle
 
 
 Use [this Bottle extension](https://pypi.python.org/pypi/Bottle-SSLify/0.0.1).
+
+
+## FAQ:  can I force HTTPS on the naked domain?
+
+You can't force-https if you're using a domain redirection service, but you can
+if you've manually set up a naked domain config.  More info here: [Naked Domains](/pages/NakedDomains)
+
+
+## Alternative solution: CloudFlare
+
+Edge caching providers like CloudFlare have their own solutions for HTTPS redirecting,
+which are worth looking into:
+
+* [couldflare support article on https redirects](https://support.cloudflare.com/hc/en-us/articles/200170536-How-do-I-redirect-all-visitors-to-HTTPS-SSL-)
+
+* [a blog post re: cloudflare and pythonanywhere](https://blog.pythonanywhere.com/80/)
+
+
