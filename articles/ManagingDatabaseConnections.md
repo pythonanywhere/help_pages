@@ -47,7 +47,7 @@ anything with it for 5 minutes, tnen the server will disconnect, and the
 next time you try to execute a query, it will fail.
 
 
-### 1. configure your ORM
+## 1. configure your ORM
 
 Some Python frameworks have object relationship managers (ORMs) that manage a
 pool of database connections for you. If you're using an ORM (like Django's
@@ -58,7 +58,7 @@ Django does this by default.  SQLAlchemy needs a little extra help,
 by setting `pool_recycle` to 280.  [More info here](/pages/UsingSQLAlchemywithMySQL/).
 
 
-### 2. handle errors manually
+## 2. handle errors manually
 
 If you're not using an ORM, you need to handle errors manually. MySQLdb
 specifically does not manage the connections and will error if you try to reuse
@@ -70,7 +70,7 @@ recycle connections for you (this might happen if you have some long-running tas
 that opens a connection at the beginning for example).
 
 
-#### Handling errors manually for MysqlDB:
+### Handling errors manually for MysqlDB:
 
 Below is some example code from a [stackoverflow answer](//stackoverflow.com/questions/207981/how-to-enable-mysql-client-auto-re-connect-with-mysqldb)
 
@@ -102,7 +102,7 @@ cur = db.query(sql)
 ```
 
 
-#### Anticipating errors in Django
+### Anticipating errors in Django
 
 If you have some code that waits a long time in between database queries,
 then calling `connection.close()` will anticipate any problems with the
