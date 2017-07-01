@@ -90,3 +90,10 @@ that's not on the list, you'll need to upgrade to a paid
 account.
 
 
+## Don't use selenium from your web app
+
+Selenium and Firefox are too slow to start up, and the request/response
+cycle is meant to be fast.  Instead, build some sort of queue of jobs,
+and use a scheduled task to process those jobs.  More info [here](/pages/LongRunningTasks/)
+
+
