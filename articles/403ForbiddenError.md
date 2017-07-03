@@ -27,9 +27,15 @@ spam other websites. **Paid-for accounts don't have this limitation**, because
 we can connect them to real people. Spammers and criminals prefer to be
 anonymous, so we figure they're unlikely to sign up for paid accounts here. 
 
-We will only whitelist sites that have a public, documented API. If you would
-like us to whitelist a site, send us a link to the API documentation that
-clearly shows the domain that the API is served from.
+## Requesting an addition to the whitelist
+
+We only whitelist sites that have an official, public, documented API -- ie, sites
+that are designed and intended for machine consumption rather than human consumption.
+
+If you would like us to whitelist a site, send us an email or feedback request, including:
+
+* a link to the API documentation
+* the domain or domains (including subdomains) that the API is served from.
 
 
 ### [Errno 111] Connection refused
