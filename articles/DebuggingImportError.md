@@ -130,7 +130,7 @@ What this implies is that you have a directory tree that looks like this:
     /home/myusername
     `-- myproject/
         |-- __init__.py
-        `-- myrpoject/
+        `-- myproject/
             |-- __init__.py
             `-- settings.py
 

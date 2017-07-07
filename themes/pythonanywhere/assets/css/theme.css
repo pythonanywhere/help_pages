@@ -1,3 +1,10 @@
+h3 {
+    margin-top: 3ex !important;
+    margin-bottom: 1ex !important;
+    border-bottom: 1px solid #DDD;
+}
+
+
 #container {
     width: 960px;
     margin: 50 auto;
@@ -145,6 +152,12 @@ article.post-micro {
     margin-top: 1em;
 }
 
+.navbar-inner {
+    border-bottom: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
 .navbar .brand {
     padding: 0 20px;
 }
@@ -208,3 +221,5 @@ p code {
     background-color: #eee;
     padding: 1px 5px 1px 5px;
 }
+
+

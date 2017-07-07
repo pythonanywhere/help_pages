@@ -16,7 +16,7 @@
 ##Install mezzanine into a virtualenv
 
 
-The default version of mezzanine available on PythonAnywhere is a little old. To get the latest version, you need to use a virtualenv
+The default version of mezzanine available on PythonAnywhere is a little old. To get the latest version, you need to use a virtualenv. Also, take a look at this PythonAnywhere [forum thread]((www.pythonanywhere.com/forums/topic/2693/)) if you are using Mezzanine 4 or higher and running into problems.
 
 
 ###Creating a virtualenv
@@ -115,7 +115,7 @@ Once it's loaded, click on the link to your **WSGI file**, and edit it so that i
     import sys
 
     # add project folder to path
-    path = '/home/yourusername/project_name':
+    path = '/home/yourusername/project_name'
     if path not in sys.path:
         sys.path.append(path)
 
@@ -128,10 +128,13 @@ Once it's loaded, click on the link to your **WSGI file**, and edit it so that i
     # specify django settings
     os.environ['DJANGO_SETTINGS_MODULE'] = 'project_name.settings'
 
-    # load default django wsgi app
+    # load default django wsgi app for Django < 1.4
     import django.core.handlers.wsgi
     application = django.core.handlers.wsgi.WSGIHandler()
 
+    # load default django wsgi app for Django >= 1.4
+    from django.core.wsgi import get_wsgi_application
+    application = get_wsgi_application()
 
 
 ####Reload Web App

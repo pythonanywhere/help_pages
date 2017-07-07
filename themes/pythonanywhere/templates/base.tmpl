@@ -31,6 +31,7 @@ ${template_hooks['extra_head']()}
 <!-- End of Menubar -->
 <div class="container-fluid" id="content" role="main">
     <!--Body content-->
+    ${pythonanywhere.feedback_dialog_html()}
     <div class="row-fluid">
     <div class="span2"></div>
     <div class="span8">
@@ -41,10 +42,30 @@ ${template_hooks['extra_head']()}
     <!--End of body content-->
 </div>
 <div class="footerbox">
+    <div id="id_footer" class="container">
+
+        <footer id="id_copyright_div">
+            <p>
+                <i>Want to improve this page?
+                <a href="https://github.com/pythonanywhere/help_pages">Submit a pull request!</a></i>
+            </p>
+            <p>
+<%
+    from datetime import datetime
+%>
+                Copyright &copy; ${datetime.utcnow().year} <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
+                &mdash;
+                <a href="https://www.pythonanywhere.com/terms/">Terms</a>
+                &mdash;
+                <a href="https://www.pythonanywhere.com/privacy/">Privacy</a><br/>
+                "Python" is a registered trademark of the Python Software Foundation.
+            </p>
+        </footer>
+
+    </div>
     ${content_footer}
     ${template_hooks['page_footer']()}
 </div>
-${pythonanywhere.feedback_dialog_html()}
 ${base.late_load_js()}
     <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
     <!-- fancy dates -->

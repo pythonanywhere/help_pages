@@ -16,7 +16,23 @@
 
 ##Databases available
 
+There are three databases built in to PythonAnywhere:
 
-PythonAnywhere supports [Postgres](/pages/Postgres) in paid plans only, and MySQL and SQLite in all accounts, including free ones. 
+* MySQL, which is available for every user
+* SQLite, which is also available for everyone, but runs a bit slowly on our system -- we
+  recommend you only use it for testing or for scripts that don't do a lot of processing.
+* [Postgres](/pages/Postgres) in available in paid plans only, as an add-on.
 
-We're considering adding MongoDB in the future -- if you're interested in it (or something else entirely), let us know! 
+We're considering adding built-in support for MongoDB and Redis in the future --
+if you're interested in it (or something else entirely), let us know!
+
+### Connecting to external databases
+
+If you have a paid plan, you can connect to databases outside PythonAnywhere.
+This means that you can get, say, a Redis instance from [Redis Labs](https://redislabs.com/),
+a MongoDB instance from [mLab](https://mlab.com/), or a [Microsoft SQL Server](/pages/MSSQLServer)
+instance from [Azure](https://azure.microsoft.com/), and connect to it from
+your code.  If the provider you choose has the option to place your database
+in a specific Amazon Web Services Availability Zone, then putting it in
+us-east-1 will put it very close to our servers and give the best performance.
+

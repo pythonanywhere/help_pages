@@ -51,7 +51,7 @@ In the end, I used the following procedure using web2py CSV export/import to mov
         * `rm -r databases; mkdir databases`
 
     1. change DAL connection string in app to:
-        * `db = DAL('mysql://user_name:password@mysql.server/database_name')` [for pythonanywhere, the database_name is in the form user_name$database_name]
+        * `db = DAL('mysql://user_name:password@user_name.mysql.pythonanywhere-services.com/database_name')` [for pythonanywhere, the database_name is in the form user_name$database_name]
     1. create new empty mysql database schema (from control panel in pythonanywhere or mysql command prompt)
 
 3. Generate database tables and load data

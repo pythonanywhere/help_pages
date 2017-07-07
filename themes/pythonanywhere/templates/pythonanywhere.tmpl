@@ -2,10 +2,9 @@
 
 <%def name="extra_css()">
     <link rel="stylesheet" href="//www.pythonanywhere.com/static/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="//www.pythonanywhere.com/static/bootstrap/css/bootstrap-responsive.css">
     <link rel="stylesheet" href="//www.pythonanywhere.com/static/anywhere/styles/bootstrap_base.css">
     <link rel="stylesheet" href="//www.pythonanywhere.com/static/anywhere/styles/wiki.css">
-    <link rel="stylesheet" href="//www.pythonanywhere.com/static/jquery/jquery-ui-1.8.11.custom.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="//www.pythonanywhere.com/static/jquery/jquery-ui.min.css" type="text/css" media="screen" charset="utf-8" />
 
     ### Leave this block alone.
     <style>
@@ -17,16 +16,31 @@
             margin-top: -8px !important;
         }
     </style>
+    ### Styles for implementing logged in iframe
+    <style>
+    .floaty-iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: transparent;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
 </%def>
 
 <%def name="header_html()">
-    <a class="brand" href="/"><img id="id_logo" src="//www.pythonanywhere.com/static/anywhere/images/logo-234x35.png" height="35" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
+    <a class="brand" href="//www.pythonanywhere.com/"><img id="id_logo" src="//www.pythonanywhere.com/static/anywhere/images/logo-234x35.png" height="35" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
     <div class="nav-collapse">
         <ul id="id_header_links" class="nav">
-            <li><a href="//www.pythonanywhere.com/" id="id_dashboard_link">PythonAnywhere</a></li>
-            <li><a id="id_feedback_link" class="feedback_link" href="">Send feedback</a></li>
+            <li><a id="id_feedback_link" class="feedback_link" onclick="showDialog()" style="cursor: pointer">Send feedback</a></li>
             <li><a id="id_forums_link" href="//www.pythonanywhere.com/forums/">Forums</a></li>
-            <li><a href="http://blog.pythonanywhere.com/" id="id_blog_link">Blog</a></li>
+            <li><a id="id_help_link" href="/">Help</a></li>
+            <li><a href="//blog.pythonanywhere.com/" id="id_blog_link">Blog</a></li>
 
 
             ### Leave this block alone.
@@ -39,51 +53,27 @@
 </%def>
 
 <%def name="feedback_dialog_html()">
-<div id="id_feedback_dialog" title="Help us improve" style="display:none">
-    <div id="id_feedback_dialog_blurb_big" class="dialog_blurb_big">
-        It's always a pleasure to hear from you!
-    </div>
-    <div id="id_feedback_dialog_blurb_small">
-        Ask us a question, or tell us what you love or hate about PythonAnywhere.<br/>
-        We'll get back to you over email ASAP.
-    </div>
-    <textarea id="id_feedback_dialog_text" rows="6"></textarea>
-    <input id="id_feedback_dialog_email_address" type="text" placeholder="Email address (optional - only necessary if you would like us to contact you)"/>
-    <div id="id_feedback_dialog_error" class="pa_hidden">
-        Sorry, there was an error connecting to the server. <br/>Please try again in a few moments...
-    </div>
-    <div class="dialog_buttons">
-        <img id="id_feedback_dialog_spinner" src="//www.pythonanywhere.com/static/anywhere/images/spinner-small.gif" />
-        <button class="btn btn-primary" id="id_feedback_dialog_ok_button">OK</button>
-        <button class="btn" id="id_feedback_dialog_cancel_button">Cancel</button>
-    </div>
-</div>
+    <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe hidden" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
 </%def>
 
 <%def name="late_load_javascript()">
     ## Note: we use a newer jquery ui here to be compatible with the jquery
     ## that is used by the search
     <script type="text/javascript" src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-
     <script type="text/javascript">
-        var urls = {};
-        var Anywhere = {};
-        Anywhere.urls = {};
-    </script>
-    <script type="text/javascript" src="//www.pythonanywhere.com/static/anywhere/scripts/ajax_utils.js"></script>
-    <script type="text/javascript" src="//www.pythonanywhere.com/static/anywhere/scripts/feedback_dialog.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $.extend(
-                urls,
-                {
-                    feedback: 'https://www.pythonanywhere.com/feedback/submit/'
-                }
-            );
 
-            Anywhere.FeedbackDialog.Initialise(urls, true);
+        window.onmessage = function(e) {
+            if (e.data=="hideiframe") {
+                document.getElementById('id_feedback_frame').className='floaty-iframe hidden';
+            }
+        }
 
-        });
+        function showDialog() {
+            document.getElementById('id_feedback_frame').className='floaty-iframe';
+            window.frames[0].postMessage("showdialog", "https://www.pythonanywhere.com");
+            return false;
+        }
+
     </script>
 
     <script>

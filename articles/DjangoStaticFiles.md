@@ -15,7 +15,7 @@
 There are 3 main things to do:
 
   * set `STATIC_ROOT` in settings.py
-  * run `manage.py collectstatic`
+  * run `python2.7 manage.py collectstatic` (or `python3.4` or `python3.5` as appropriate)
   * set up a Static Files entry on the PythonAnywhere Web tab.
 
 Optionally, you can also customise `STATIC_URL`, if you want to use a static URL prefix other than */static/*
@@ -35,10 +35,10 @@ The `STATIC_ROOT` variable in *settings.py* defines the single folder you want t
 The important thing is this needs to be the full, absolute path to your static files folder.
 
 
-##Run manage.py collectstatic
+##Run pythonX.Y manage.py collectstatic
 
 
-This command collects up all your static files from each of your app folders (including the static files for the admin app) and from any other folders you specify in settings.py, and copies them into `STATIC_ROOT`.
+This command (don't forget to replace "X.Y" with the version of Python your website uses) collects up all your static files from each of your app folders (including the static files for the admin app) and from any other folders you specify in settings.py, and copies them into `STATIC_ROOT`.
 
 You need to re-run this command whenever you want to publish new versions of your static files.
 

@@ -17,7 +17,7 @@
 We install virtualenvwrapper for all new users by default. If you've got an older pythonanywhere account, it's easy to install virtualenvwrapper:
 
     :::bash
-    echo '' >> ~/.bashrc && echo 'source virtualenvwrapper.sh' >> .bashrc
+    echo '' >> ~/.bashrc && echo 'source virtualenvwrapper.sh' >> ~/.bashrc
     source virtualenvwrapper.sh
 
 

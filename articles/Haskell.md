@@ -18,15 +18,17 @@ PythonAnywhere already comes with the Haskell ghc already installed. For example
 Once you have gotten more familiar with Haskell, you may find that you want to setup automatic testing etc for your project. Below is a sample workflow to set up a Cabal environment where you can build your package and run tests:
 
     :::bash
-    mkdir a-cool-haskell-project
-    cd a-cool-haskell-project
-
+    # setup ~/.cabal and download latest package list from hackage.haskell.org
     cabal update
-    # upgrade cabal-install, the cabal CLI tool to include sandbox functionality
+
+    # upgrade cabal-install, the CLI tool, to a shiny new version to get sandbox functionality
     cabal install cabal-install --jobs=5
 
     # the newly updated cabal will live in ~/.cabal/bin/cabal; make sure you are using it
     echo "alias cabal=~/.cabal/bin/cabal" >> ~/.bashrc && source ~/.bashrc
+
+    mkdir a-cool-haskell-project
+    cd a-cool-haskell-project
 
     # setup a "virtualenv"
     cabal sandbox init

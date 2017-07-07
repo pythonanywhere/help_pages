@@ -12,16 +12,16 @@
 
 
 
-Want to have a live Python console on your website, like on the [python.org](https://www.python.org) front page? No problem. 
+Want to have a live Python console on your website, like on the [python.org](https://www.python.org) front page? No problem.
 
-Use an iframe, like this: 
+Use an iframe, like this:
 
-    <iframe style="width: 640; height: 480; border: none;" name="embedded_python_anywhere" src="http://www.pythonanywhere.com/embedded3/"></iframe>
-
-
-Or use this link for python 2: 
-
-    <iframe style="width: 640; height: 480; border: none;" name="embedded_python_anywhere2" src="http://www.pythonanywhere.com/embedded/"></iframe>
+    <iframe style="width: 640; height: 480; border: none;" name="embedded_python_anywhere" src="https://www.pythonanywhere.com/embedded3/"></iframe>
 
 
-This will spawn a new "anonymous" console for each visitor to your site (unless they have a pythonanywhere account already, and are signed into it, in which case the console will actually run inside their account). 
+Or use this link for python 2:
+
+    <iframe style="width: 640; height: 480; border: none;" name="embedded_python_anywhere2" src="https://www.pythonanywhere.com/embedded/"></iframe>
+
+
+This will spawn a new "anonymous" console for each visitor to your site (unless they have a pythonanywhere account already, and are signed into it, in which case the console will actually run inside their account).

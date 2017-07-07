@@ -12,9 +12,7 @@
 
 
 
-
-
-##PythonAnywhere Scheduled Tasks
+## PythonAnywhere Scheduled Tasks
 
 
 Go to the [Schedule](https://www.pythonanywhere.com/schedule/) tab on your
@@ -23,30 +21,69 @@ up tasks to run daily at a particular time of day, or — for paying customers �
 hourly at a particular number of minutes past the hour. It's rather like a
 simple version of Unix's cron utility.
 
-The file that you use will have to be executable; to do this, run the following
+
+## Scheduling Python scripts to run 
+
+You can just enter the full path to your file, eg
+
+```
+/home/myusername/myproject/myscript.py
+```
+
+And it will be run using the scheduler's default Python version (currrently Python 2.7)
+
+
+## Specifying another Python version
+
+If you want to use a different version of Python, put a "hashbang" line at the
+start of your file — for example, starting your file with:
+
+    :::bash
+    #!/usr/bin/python3.5
+
+...will make it run using Python 3.5.  (the advantage of
+doing it this way is that the "run" button in the editor
+also takes into account hashbangs).
+
+
+Alternatively, you can explicitly specify the python executable to use in the scheduled tasks page, so, instead of
+
+
+```
+/home/myusername/myproject/myscript.py
+```
+
+Use
+
+
+```
+python3.5 /home/myusername/myproject/myscript.py
+```
+
+
+
+## Using a virtualenv
+
+See the article called [How do I run a scheduled task inside a virtualenv](/pages/VirtualEnvInScheduledTasks)
+
+
+
+## Non-Python scripts
+
+Non-Python scripts will have to have executable permissions set; to do this, run the following
 command from a bash console
 
     :::bash
     chmod +x /path/to/your.file
 
-If you specify a .py file to run, then it will normally be run using Python 2.7.
-If you want to use a different version of Python, put a "hash-bang" line at the
-start of the file — for example, starting your file with:
-
-    :::bash
-    #!/usr/local/bin/python3.3
-
-...will make it run using Python 3.3.
-
-You can also schedule non-Python files to be run, using the same hash-bang
-syntax to specify which interpreter to use — eg. #!/bin/bash. Non-Python files
-must be set up with execute permissions to be run from the scheduler. To do
-this, start a bash console and run chmod +x your-file.
+Then use the same hash-bang syntax to specify which interpreter to 
+use — eg. #!/bin/bash. 
 
 
-###Stopping scheduled tasks from running too often
 
+## Stopping scheduled tasks from running too often
 
 If you want only one instance of a scheduled task to be running at any
 particular time, you can use a lock file to only run a script if it is not
 already running. See the [LongRunningTasks](/pages/LongRunningTasks) page.
+

@@ -172,7 +172,7 @@ When you first load the admin site, it will look all ugly because, since we're n
   * url `/static/admin/`
   * path: `/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.4/site-packages/django/contrib/admin/static/admin`
 
-Substitute *yourusername* for your actual username. Hit reload, and visit the admin site again, and it should look pretty.
+Substitute *yourusername* with your actual username and *myvirtualenv* with the name of your virtualenv ("django17" in this guide). Hit reload, and visit the admin site again, and it should look pretty.
 
 Go through the rest of the tutorial, and then, when you get to part 6, static files, below, you'll be able to delete this "hack" just replace it with a "proper" static mapping.
 

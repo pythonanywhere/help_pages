@@ -551,22 +551,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = """
-    <div id="id_footer" class="container">
-
-        <footer id="id_copyright_div">
-            <p>
-                Copyright &copy; 2015 <a href="/about/company_details/">PythonAnywhere LLP</a>
-                &mdash;
-                <a href="/terms/">Terms</a>
-                &mdash;
-                <a href="/privacy/">Privacy</a><br/>
-                "Python" is a registered trademark of the Python Software Foundation.
-            </p>
-        </footer>
-
-    </div>
-"""
+CONTENT_FOOTER = ""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
