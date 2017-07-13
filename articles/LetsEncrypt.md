@@ -46,7 +46,7 @@ replacements) into a file at `/home/YOURUSERNAME/letsencrypt/config`
 Now we need to actually request a certificate:
 
     :::bash
-    ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01
+    ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out ~/letsencrypt --challenge http-01
     # susbtitute www.yourdomain.com with your own domain name, including the www. part
 
 * *Tip: if you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure*
