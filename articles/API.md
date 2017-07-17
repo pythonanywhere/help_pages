@@ -100,7 +100,7 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td>GET</td><td>List all webapps</td><td>(no parameters)</td></tr>
-  <tr><td>POST</td><td>Create a new webapp with manual configuration.</td><td>POST parameters: domain_name, python_version</td></tr>
+  <tr><td>POST</td><td>Create a new webapp with manual configuration. Python versions are specified in this form: python27 etc.</td><td>POST parameters: domain_name, python_version</td></tr>
 </table>
 
 
