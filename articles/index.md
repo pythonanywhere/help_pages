@@ -82,6 +82,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to get a Let's Encrypt certificate for your own domain](/pages/LetsEncrypt)
   * [How to use ZeroSSL](/pages/ZeroSSL), an alternative interface to LetsEncrypt
   * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
+  * [How to handle slow/async work in a web app](/pages/AsyncInWebApps)
   * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
@@ -151,6 +152,7 @@ If you haven't already, the first step is to look in your **error log** -- you'l
 Once you've done that, here are some solutions to common problems
 
   * [Debugging import errors and sys.path issues](/pages/DebuggingImportError)  <--  if you've just started setting up your app, chances are the answer is in here.
+  * [Dealing with "there was an error reloading your web app" messages](/pages/ErrorReloadingWebApp)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
   * [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
   * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
@@ -164,7 +166,8 @@ Once you've done that, here are some solutions to common problems
 Here are some guides for some of the common things people want to do:
 
   * [Installing new Python modules for yourself](/pages/InstallingNewModules)
-  * [How do I keep a console running forever? Or, how do I make a program that restarts automatically? Or, how to I run an async task queue like celery?](/pages/LongRunningTasks)
+  * [How do I keep a console running forever? Or, how do I make a program that restarts automatically?](/pages/LongRunningTasks)
+  * [How to I run an async task queue like celery?](/pages/LongRunningTasks)
   * [Can I use matplotlib to generate graphs from my data?](/pages/MatplotLibGraphs)
   * [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
