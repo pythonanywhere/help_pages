@@ -72,13 +72,20 @@ find and kill any leftover xvfb processes.
 
 
 
-## Firefox only
+## Firefox only, selenium 2, geckodriver not required
 
 Due to some constraints imposed by our current sandboxing model, the
 only browser we currently support is **Firefox v17.0**.  That is quite
 an old version, but it works for most sites.
 
 Chrome, PhantomJS, and others are not supported.
+
+The system-installed version of selenium is compatible with Firefox 17.
+If you want to use a virtualenv and install your own, make sure you install
+Selenium 2, as selenium 3 is not compatible.  geckodriver is not required.
+
+    pip install "selenium<3"
+
 
 
 ## Paid account may be required
