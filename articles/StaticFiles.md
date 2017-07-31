@@ -64,3 +64,15 @@ So, what you want is a static files mapping that says:
 Hopefully you can see how, after that, the relative paths are the same?
 
 So now you know what to put in the two boxes on the Static files section in the web tab. Remember to hit "reload" when you're done. To test it, visit the URL of one of your static files directly. Remember to use Ctrl+F5 to force a reload of the page.
+
+
+## Static files in Django
+
+Please see [this specific help page on static files in Django](/pages/DjangoStaticFiles)
+
+
+## Debugging static files issues
+
+Please see [this page on debugging problems with static files](/pages/DebuggingStaticFiles)
+
+

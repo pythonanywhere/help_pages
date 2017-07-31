@@ -155,6 +155,7 @@ Once you've done that, here are some solutions to common problems
   * [Dealing with "there was an error reloading your web app" messages](/pages/ErrorReloadingWebApp)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
   * [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
+  * [Debugging problems with static files (js, css) not loading](/pages/DebuggingStaticFiles)
   * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
   * [Fixing "OperationalError: 1226 User has exceeded the max_user_connections resource](/pages/ManagingDatabaseConnections)
   * [I'm seeing lots of GeneratorExit errors in my error log](/pages/GeneratorExit)
