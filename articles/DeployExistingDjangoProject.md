@@ -16,6 +16,9 @@ your own PC.  You'll use a virtualenv, just like you probably do on your own
 PC, you'll have a copy of your code on PythonAnywhere which you can edit and
 browse and commit to version control.
 
+![select_framework](path_to_the_screenshot)
+
+
 The main thing that's different is that, instead of using the Django dev server
 with `manage.py runserver` and viewing your site on localhost, you'll create
 what we call a *Web app* via the Web tab in our UI, and then configure it with
@@ -28,7 +31,7 @@ Here's an overview of the steps involved.
 
 1. Upload your code to PythonAnywhere
 2. Set up a virtualenv and install Django and any other requirements
-3. Set up your web app using manual config and your WSGI file.
+3. Set up your web app using **manual config** (choose **Django** if you want to create a new project) and your WSGI file.
 4. Add any other setup (static files, environment variables etc)
 
 
@@ -45,7 +48,25 @@ $ git clone https://github.com/myusername/myproject.git
 That's the solution we recommend, but there are a few different methods
 documented on the [Uploading code](/pages/FTP) page,
 
+For example, If your directory structure look like this
 
+```bash
+/home/myusername/mysite/
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+└── mysite
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+```
 
 # Create a virtualenv and install Django and any other requirements
 
@@ -83,9 +104,25 @@ create your virtualenv).
 ### Enter your virtualenv name
 
 Once that's done, **enter the name of your virtualenv** in the Virtualenv
-section on the web tab and click OK.  You can just use its short name
+section on the web tab and click OK.
+
+![virtualenv_web_app](path_to_the_screenshot)
+
+You can just use its short name
 "mysite-virtualenv", and it will automatically complete to its full path in
 /home/username/.virtualenvs.
+
+### Enter your code name
+
+Enter the path of your code in the Code section on the web tab, eg */home/myusername/mysite* in **Source code** and **Working directory**
+
+![code_web_app](path_to_the_screenshot)
+
+### Handle static files
+
+You may have a look at [Managing static files](https://docs.djangoproject.com/en/1.11/howto/static-files/) first. After you run "python manage.py collectstatic", all your static files will be copied to **STATIC_ROOT** in your settings.py. So you can just add **STATIC_URL** (default is "/static/") as URL and **STATIC_ROOT** as Directory
+
+![static_web_app](path_to_the_screenshot)
 
 ### Edit your WSGI file
 
