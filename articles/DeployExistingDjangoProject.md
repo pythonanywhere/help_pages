@@ -79,7 +79,7 @@ Configuration" option and the right version of Python (the same one you used to
 create your virtualenv).
 
 
-![screenshot of framework selection](select_framework_screenshot.png)
+![screenshot of framework selection](/select_framework_screenshot.png)
 
 * **NOTE:** Make sure you choose **Manual Configuration**, not the "Django"
   option, that's for new projects only.
@@ -90,7 +90,7 @@ create your virtualenv).
 Once that's done, **enter the name of your virtualenv** in the Virtualenv
 section on the web tab and click OK.
 
-![Screenshot of entering virtualenv name](virtualenv_screenshot.png)
+![Screenshot of entering virtualenv name](/virtualenv_screenshot.png)
 
 You can just use its short name
 "mysite-virtualenv", and it will automatically complete to its full path in
@@ -106,7 +106,7 @@ source files from the web tab.
 Enter the path to your project folder in the Code section on the web tab, eg
 */home/myusername/mysite* in **Source code** and **Working directory**
 
-![screenshot of code path inputs](code_screenshot.png)
+![screenshot of code path inputs](/code_screenshot.png)
 
 
 ### Edit your WSGI file
