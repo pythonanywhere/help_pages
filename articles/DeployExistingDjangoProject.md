@@ -16,9 +16,6 @@ your own PC.  You'll use a virtualenv, just like you probably do on your own
 PC, you'll have a copy of your code on PythonAnywhere which you can edit and
 browse and commit to version control.
 
-![select_framework](path_to_the_screenshot)
-
-
 The main thing that's different is that, instead of using the Django dev server
 with `manage.py runserver` and viewing your site on localhost, you'll create
 what we call a *Web app* via the Web tab in our UI, and then configure it with
@@ -31,7 +28,7 @@ Here's an overview of the steps involved.
 
 1. Upload your code to PythonAnywhere
 2. Set up a virtualenv and install Django and any other requirements
-3. Set up your web app using **manual config** (choose **Django** if you want to create a new project) and your WSGI file.
+3. Set up your web app using the **manual config** option
 4. Add any other setup (static files, environment variables etc)
 
 
@@ -48,25 +45,6 @@ $ git clone https://github.com/myusername/myproject.git
 That's the solution we recommend, but there are a few different methods
 documented on the [Uploading code](/pages/FTP) page,
 
-For example, If your directory structure look like this
-
-```bash
-/home/myusername/mysite/
-├── blog
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── migrations
-│   │   └── __init__.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-├── manage.py
-└── mysite
-    ├── __init__.py
-    ├── settings.py
-    ├── urls.py
-    └── wsgi.py
-```
 
 # Create a virtualenv and install Django and any other requirements
 
@@ -101,28 +79,35 @@ Configuration" option and the right version of Python (the same one you used to
 create your virtualenv).
 
 
+![screenshot of framework selection](select_framework_screenshot.png)
+
+* **NOTE:** Make sure you choose **Manual Configuration**, not the "Django"
+  option, that's for new projects only.
+
+
 ### Enter your virtualenv name
 
 Once that's done, **enter the name of your virtualenv** in the Virtualenv
 section on the web tab and click OK.
 
-![virtualenv_web_app](path_to_the_screenshot)
+![Screenshot of entering virtualenv name](virtualenv_screenshot.png)
 
 You can just use its short name
 "mysite-virtualenv", and it will automatically complete to its full path in
 /home/username/.virtualenvs.
 
-### Enter your code name
 
-Enter the path of your code in the Code section on the web tab, eg */home/myusername/mysite* in **Source code** and **Working directory**
+### Optional: enter path to your code
 
-![code_web_app](path_to_the_screenshot)
+Although this isn't necessary for the app to work, you can optionally
+set your working directory and give yourself a convenient hyperlink to your
+source files from the web tab.
 
-### Handle static files
+Enter the path to your project folder in the Code section on the web tab, eg
+*/home/myusername/mysite* in **Source code** and **Working directory**
 
-You may have a look at [Managing static files](https://docs.djangoproject.com/en/1.11/howto/static-files/) first. After you run "python manage.py collectstatic", all your static files will be copied to **STATIC_ROOT** in your settings.py. So you can just add **STATIC_URL** (default is "/static/") as URL and **STATIC_ROOT** as Directory
+![screenshot of code path inputs](code_screenshot.png)
 
-![static_web_app](path_to_the_screenshot)
 
 ### Edit your WSGI file
 
@@ -200,8 +185,14 @@ Then check out [the "debugging web app errors" section](/pages/#im-looking-at-an
 
 # Additional configuration:
 
+
 There are many different ways to set things up so that your database settings,
 `SECRET_KEY`, and so on are different in your local environment to the settings
 in your live environment on PythonAnywhere.  If you're specifically using
-environment variables to store them, this page on [setting environment variables for web apps](/pages/environment-variables-for-web-apps)
+environment variables to store them, this page on 
+[setting environment variables for web apps](/pages/environment-variables-for-web-apps)
 will help.
+
+Then, head over to the [help page on Static files in Django](/pages/DjangoStaticFiles)
+for instructions on how to set up static file serving.
+
