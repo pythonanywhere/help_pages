@@ -38,7 +38,7 @@ mapping:
 the instructions below) and then **reload your web app**
 
 We'll need to create a simple config file. Put the following (with suitable
-replacements) into a file at `/home/YOURUSERNAME/letsencrypt/config`
+replacements) into a file at `/home/YOURUSERNAME/dehydrated/config`
 
     :::bash
     WELLKNOWN=/home/YOURUSERNAME/letsencrypt/wellknown
