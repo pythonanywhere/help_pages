@@ -249,7 +249,8 @@ Web apps:
 Databases:
 
   * [Databases available on PythonAnywhere](/pages/KindsOfDatabases)
-  * [Getting started with Postgres](/pages/Postgres)
+  * [Activating a Postgres server](/pages/Postgres)
+  * [Congiguring postgres for your app (eg Django)](/pages/PostgresGettingStarted)
   * [Creating Postgres backups](/pages/RegularPostgresBackups)
   * [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
   * [How do I find out how large my MySQL database is?](/pages/MySQLDatabaseSize)
