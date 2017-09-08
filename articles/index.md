@@ -178,7 +178,7 @@ Here are some guides for some of the common things people want to do:
   * [Can I use IPv6?](/pages/IPv6)
   * [Using Selenium](/pages/selenium)
   * [Does PythonAnywhere have an API?](/pages/API)
-  * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular IPs?](/pages/StaticIPForExternalWhitelists)
+  * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalWhitelists)
 
 
 And here's some very brief FAQ answers about common requests:
