@@ -147,3 +147,16 @@ database using the same `pyodbc.connect`, but changing the value assigned to the
 DSN to the one you put in square brackes in `odbc.ini`.  For example:
 
     conn = pyodbc.connect('DSN=secondsqlserverdatasource;Uid=YOUR_SQL_SERVER_USERID;Pwd=YOUR_SQL_SERVER_PASSWORD;Encrypt=yes;Connection Timeout=30;')
+
+
+### Static IPs
+
+Some database-in-the-cloud providers expect you to set up a whitelist containing
+all of the IP addresses that you expect to connect to your database from.  This
+can be problematic because PythonAnywhere code can run on different machines
+with different IP addresses.
+
+[This page has some suggestions on what to do](/pages/StaticIPForExternalWhitelists)
+
+
+
