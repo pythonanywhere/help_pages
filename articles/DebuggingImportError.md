@@ -81,7 +81,7 @@ What this means is that you need to get a few things right for an import to work
 ###can you run the wsgi file itself?
 
 
-    $ python3.4 -i /var/www/www_my_domain_com_wsgi.py
+    $ python3.6 -i /var/www/www_my_domain_com_wsgi.py
 
 
 Or, if you're using python 2:

@@ -16,7 +16,7 @@ process requests, so only HTML and JavaScript) is possible on PythonAnywhere,
 using a little hack.
 
 First, set up a web app using any framework and Python version (it doesn't matter
-which, since we won't need them.  Maybe just choose Manual Configuration and Python3.5).
+which, since we won't need them.  Maybe just choose Manual Configuration and Python3.6).
 
 Then, on the Web tab configuration screen, scroll down to the **Static Files**
 section, and add one new entry:

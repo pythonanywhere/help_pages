@@ -12,7 +12,7 @@
 
 
 
-The Save &amp; Run button defaults to Python 3.5. If you want to use Python 2,
+The Save &amp; Run button defaults to Python 3.6. If you want to use Python 2,
 you can do so by inserting a special line at the top of your file, called a
 [hashbang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29):
 
@@ -23,16 +23,15 @@ For example:
     print "hello from python 2"
 
 
-
 Will load Python 2,
 
 Or, for example:
 
     :::python
-    #!/usr/bin/python3.3
+    #!/usr/bin/python3.4
     print("hello from python 3.3")
 
 
-will load python 3.3 instead of 3.5.
+will load python 3.4 instead of 3.6.
 
 **NB** the hashbang has to be the very first line in the file.

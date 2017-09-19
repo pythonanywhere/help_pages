@@ -26,12 +26,12 @@ Create a new web app using the "manual config" option, or visit one of your exis
 
 We recommend using *virtualenvwrapper*, a handy command-line tool, to create your virtualenv. Here's an example:
 
-    $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.4
+    $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.6
 
 
-    Running virtualenv with interpreter /usr/bin/python3.4
+    Running virtualenv with interpreter /usr/bin/python3.6
     Using base prefix '/usr'
-    New python executable in myvirtualenv/bin/python3.4
+    New python executable in myvirtualenv/bin/python3.6
     Also creating executable in myvirtualenv/bin/python
     Installing setuptools, pip...done.
 
@@ -47,7 +47,7 @@ We recommend using *virtualenvwrapper*, a handy command-line tool, to create you
 
 
     (myvirtualenv) $ python
-    Python 3.4.0 (default, Apr 11 2014, 13:05:11)
+    Python 3.6.0 (default, Apr 11 2014, 13:05:11)
     [GCC 4.8.2] on linux
     Type "help", "copyright", "credits" or "license" for more information.
     >>>

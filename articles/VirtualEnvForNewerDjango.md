@@ -17,7 +17,11 @@
 ##Guide to setting up a virtualenv for PythonAnywhere Web apps
 
 
-A virtualenv is a way to have your own private Python environment that has different versions of packages to the system default. You can have many virtualenvs, each with its own versions of installed packages. On PythonAnywhere, this is a great way to use newer (or older) versions of software than the ones we have installed.
+A virtualenv is a way to have your own private Python environment that has
+different versions of packages to the system default. You can have many
+virtualenvs, each with its own versions of installed packages. On
+PythonAnywhere, this is a great way to use newer (or older) versions of
+software than the ones we have installed.
 
 One reason you might want to do this is to use a newer version of Django. For
 example (at the time of writing) our system default is 1.10, but the Django
@@ -51,7 +55,7 @@ You may have noticed a *Virtualenv path* option. Let's go and create a virtualen
 
 Go to the "Consoles" tab and start a *Bash console*
 
-    14:50 ~ $ mkvirtualenv --python=/usr/bin/python3.5 myproject
+    14:50 ~ $ mkvirtualenv --python=/usr/bin/python3.6 myproject
 
 
 ***TIP: if you want to use Python 2 for your virtualenv, use `mkvirtualenv --python=/usr/bin/python2.7 myproject`***
@@ -106,7 +110,10 @@ Check it worked:
 ###Using the virtualenv in your web app
 
 
-Now go back to the **Web** tab and edit the WSGI file for your web app (There's a link on the web app tab) and delete everything except the Django section and then uncomment the Django section. Your WSGI file should look something like this:
+Now go back to the **Web** tab and edit the WSGI file for your web app (There's
+a link on the web app tab) and delete everything except the Django section and
+then uncomment the Django section. Your WSGI file should look something like
+this:
 
     # +++++++++++ DJANGO +++++++++++
     # To use your own django app use code like this:
@@ -125,7 +132,11 @@ Now go back to the **Web** tab and edit the WSGI file for your web app (There's 
     application = get_wsgi_application()
 
 
-Then, back on the web tab itself, edit the path to your virtualenv in the Virtualenv section. You can specify the full path, */home/myusername/.virtualenvs/myproject*, or just the short name of the virtualenv, *myproject*, and the system will automatically expand it to the full path after you submit it.
+Then, back on the web tab itself, edit the path to your virtualenv in the
+Virtualenv section. You can specify the full path,
+*/home/myusername/.virtualenvs/myproject*, or just the short name of the
+virtualenv, *myproject*, and the system will automatically expand it to the
+full path after you submit it.
 
 Save it, then go and hit the **Reload** button for your domain.
 
