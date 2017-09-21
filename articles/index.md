@@ -253,6 +253,7 @@ Databases:
   * [Activating a Postgres server](/pages/Postgres)
   * [Congiguring postgres for your app (eg Django)](/pages/PostgresGettingStarted)
   * [Creating Postgres backups](/pages/RegularPostgresBackups)
+  * [Increasing the number of connections for your Postgres server](/pages/PostgresConnections)
   * [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
   * [How do I find out how large my MySQL database is?](/pages/MySQLDatabaseSize)
   * [Migrating a web2py app from SQLite to MySQL](/pages/MigatingWeb2pyFromSQLiteToMySQL)
