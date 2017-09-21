@@ -61,7 +61,7 @@ tasks, there's an even easier way to start up your Xvfb display, `xvfb-run`:
 
 Just precede your normal call to Python with `xvfb-run -a`:
 
-    xvfb-run -a python3.5 /home/myusername/myfolder/myscript.py
+    xvfb-run -a python3.6 /home/myusername/myfolder/myscript.py
 
 
 ## Cleaning up manually

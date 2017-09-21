@@ -30,7 +30,7 @@ So we recommend you keep both the django tutorial and this page open side-by-sid
 
 The preinstalled versions of Django on PythonAnywhere are a little out of date, but you can use a *virtualenv* to install your own versions. We'll use a nifty helper tool called virtualenvwrapper. Open up a **Bash Console** and:
 
-    mkvirtualenv django17 --python=/usr/bin/python3.4
+    mkvirtualenv django17 --python=/usr/bin/python3.6
     pip install django ## this may take a couple of minutes
 
 
@@ -98,7 +98,12 @@ Then, run the `python manage.py migrate` command back in your Bash console.
 
 Don't try and run the Django development server on [PythonAnywere](https://www.pythonanywhere.com/). It won't work, because our console servers aren't the same as our web servers.
 
-Instead, open up a third browser tab and go to our **Web** tab. Click **Add a new web app**, choose **Manual configuration** and then **Python 3.4**. When you hit next, you'll be on your web app configuration page, and it's probably a good idea to keep this tab open in your browser at all times too, so that you can easily jump back to it, and hit reload on your web app, or find your log files, or whatever it may be.
+Instead, open up a third browser tab and go to our **Web** tab. Click **Add a
+new web app**, choose **Manual configuration** and then **Python 3.6**. When
+you hit next, you'll be on your web app configuration page, and it's probably a
+good idea to keep this tab open in your browser at all times too, so that you
+can easily jump back to it, and hit reload on your web app, or find your log
+files, or whatever it may be.
 
 Go to the *Virtualenv* section and enter the path to your virtualenv, something like this: */home/myusername/.virtualenvs/django17*
 
@@ -170,7 +175,7 @@ Just remember to hit "Reload" back on the web tab after you've saved your change
 When you first load the admin site, it will look all ugly because, since we're not using the dev server, the admin CSS isn't served automatically. We can hack in a quick fix for it now. Go to the [Web Tab](https://www.pythonanywhere.com/web_app_setup) and find the **Static Files** section. Add a new entry:
 
   * url `/static/admin/`
-  * path: `/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.4/site-packages/django/contrib/admin/static/admin`
+  * path: `/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.6/site-packages/django/contrib/admin/static/admin`
 
 Substitute *yourusername* with your actual username and *myvirtualenv* with the name of your virtualenv ("django17" in this guide). Hit reload, and visit the admin site again, and it should look pretty.
 

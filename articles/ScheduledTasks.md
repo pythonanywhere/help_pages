@@ -39,9 +39,9 @@ If you want to use a different version of Python, put a "hashbang" line at the
 start of your file — for example, starting your file with:
 
     :::bash
-    #!/usr/bin/python3.5
+    #!/usr/bin/python3.6
 
-...will make it run using Python 3.5.  (the advantage of
+...will make it run using Python 3.6.  (the advantage of
 doing it this way is that the "run" button in the editor
 also takes into account hashbangs).
 
@@ -57,7 +57,7 @@ Use
 
 
 ```
-python3.5 /home/myusername/myproject/myscript.py
+python3.6 /home/myusername/myproject/myscript.py
 ```
 
 

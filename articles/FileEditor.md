@@ -21,6 +21,6 @@ PythonAnywhere's built-in file editor allows you to edit your files with syntax 
 
 When you want to run your code, you can use the black "Save and run" button at the top right, with its three chevrons >>>.
 
-The default Python version here is 3.4.  If you want to change that, see the
+The default Python version here is 3.6.  If you want to change that, see the
 [instructions for changing the default editor Python version](/pages/SaveAndRunPythonVersion). 
 
