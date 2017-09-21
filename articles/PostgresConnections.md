@@ -20,7 +20,7 @@ If you're sure you're not, you can increase the number of connections that the
 server will allow at any one time.   Firstly, run the following command in a
 Postgres console:
 
-        alter system set max_connections = 30;
+    alter system set max_connections = 30;
 
 (or whatever number of connections you'd like).
 
