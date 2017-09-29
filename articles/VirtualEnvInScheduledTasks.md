@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-If you want to run a scheduled task in a virtualenv, specify the full path to the virtualenv python inside your task's command-line.
+If you want to run a scheduled task in a [virtualenv](/pages/VirtualenvsExplained), specify the full path to the virtualenv python inside your task's command-line.
 
 So, eg, instead of:
 

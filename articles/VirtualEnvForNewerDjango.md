@@ -17,7 +17,7 @@
 ##Guide to setting up a virtualenv for PythonAnywhere Web apps
 
 
-A virtualenv is a way to have your own private Python environment that has
+A [virtualenv](/pages/VirtualenvsExplained) is a way to have your own private Python environment that has
 different versions of packages to the system default. You can have many
 virtualenvs, each with its own versions of installed packages. On
 PythonAnywhere, this is a great way to use newer (or older) versions of
@@ -25,10 +25,10 @@ software than the ones we have installed.
 
 One reason you might want to do this is to use a newer version of Django. For
 example (at the time of writing) our system default is 1.10, but the Django
-team had just released a point update to 1.10.2.  If you want to upgrade to 
+team had just released a point update to 1.10.2.  If you want to upgrade to
 that, or later to 1.11, a virtualenv makes it easy.
 
-*(If you're on our old 
+*(If you're on our old
 [system image](https://www.pythonanywhere.com/batteries_included/), you'll be on an
 even earlier version of Django, so this guide is even more pertinent.)*
 

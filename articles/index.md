@@ -216,6 +216,7 @@ Or you can run through this step-by-step tutorial if you prefer:
   * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
   * [How do I get streaming/buffering to work?](/pages/Buffering)
   * [How to use a virtualenv in an IPython Notebook](/pages/IPythonNotebookVirtualenvs)
+  * [What are these virtualenv things, anyway?](/pages/VirtualenvsExplained)
 
 
 

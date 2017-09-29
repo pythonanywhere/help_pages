@@ -12,7 +12,7 @@
 
 
 
-A [virtualenv](https://virtualenv.pypa.io/en/latest/) is a way to create a python environment that's isolated and separate from the normal system-wide installed packages. It's particularly useful if you decide our 'default' versions of packages are not the versions you want to use -- to get the latest django, for example.
+A [virtualenv](/pages/VirtualenvsExplained) is a way to create a python environment that's isolated and separate from the normal system-wide installed packages. It's particularly useful if you decide our 'default' versions of packages are not the versions you want to use -- to get the latest django, for example.
 
 
 ##Using a virtualenv in your web app
