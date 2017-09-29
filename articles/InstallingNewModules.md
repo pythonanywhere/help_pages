@@ -45,7 +45,7 @@ Do let us know if there are any packages you think should be part of our standar
 
 
 We've also included `virtualenv` and `virtualenvwrapper`, so if you create a
-virtualenv you can install whatever versions of various packages you want to.
+[virtualenv](/pages/VirtualenvsExplained) you can install whatever versions of various packages you want to.
 However, in a virtualenv, the `--user` mentioned above is not needed. In fact
 using `--user` will cause an error in a virtualenv.
 
