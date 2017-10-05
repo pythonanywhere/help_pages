@@ -27,16 +27,6 @@ spam other websites. **Paid-for accounts don't have this limitation**, because
 we can connect them to real people. Spammers and criminals prefer to be
 anonymous, so we figure they're unlikely to sign up for paid accounts here.
 
-## Requesting an addition to the whitelist
-
-We only whitelist sites that have an official, public, documented API -- ie, sites
-that are designed and intended for machine consumption rather than human consumption.
-
-If you would like us to whitelist a site, send us an email or feedback request, including:
-
-* a link to the API documentation
-* the domain or domains (including subdomains) that the API is served from.
-
 
 ### [Errno 111] Connection refused
 
@@ -64,4 +54,9 @@ Paying users have unrestricted access.  You can [upgrade your account here](http
 
 After you upgrade you'll need to kill any old consoles and start new ones to get your
 new Internet settings.  You'll also need to restart any webapps and scheduled tasks.
+
+
+## Requesting an addition to the whitelist
+
+See [this page](/pages/RequestingWhitelistAdditions/)
 
