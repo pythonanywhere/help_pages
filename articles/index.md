@@ -262,7 +262,7 @@ Databases:
   * [Importing a database you have stored on your own machine to PythonAnwyhere](/pages/ImportingYourLocalDatabaseToPythonAnywhere)
   * [Accessing your MySQL database from outside PythonAnywhere](/pages/AccessingMySQLFromOutsidePythonAnywhere)
 
-Scheduled tasks:
+Scheduled tasks (similar to cron):
 
   * [Using the "Schedule" tab](/pages/ScheduledTasks)
   * [Can I pass command-line arguments and parameters to my scheduled tasks?](/pages/ScheduledTaskParameters)
