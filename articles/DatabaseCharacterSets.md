@@ -30,3 +30,4 @@ If you want to store non-latin characters in your database (eg. Cyrillic) then y
 Then, for each table run this: 
 
     ALTER TABLE tablename CHARACTER SET utf8 COLLATE utf8_general_ci;
+

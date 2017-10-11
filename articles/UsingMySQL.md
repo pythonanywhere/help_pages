@@ -120,3 +120,9 @@ for example: <http://docs.sqlalchemy.org/en/rel_0_9/core/pooling.html#setting-po
 ## Backup and restore
 
 See [this article on mysqldump](/pages/MySQLBackupRestore).
+
+
+## Character sets, UTF-8, internationalization, etc
+
+See [this article on character sets](/pages/DatabaseCharacterSets).
+
