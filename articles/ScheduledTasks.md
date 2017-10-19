@@ -15,7 +15,7 @@
 ## PythonAnywhere Scheduled Tasks
 
 
-Go to the [Schedule](https://www.pythonanywhere.com/schedule/) tab on your
+Go to the [Tasks](https://www.pythonanywhere.com/tasks_tab/) tab on your
 [Dashboard](https://www.pythonanywhere.com/dashboard/). From there you can set
 up tasks to run daily at a particular time of day, or — for paying customers —
 hourly at a particular number of minutes past the hour. It's rather like a
