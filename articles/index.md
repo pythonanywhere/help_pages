@@ -272,7 +272,7 @@ Other Languages:
 
   * [Setting up Haskell and creating a new Cabal package](/pages/Haskell)
   * [Setting up a Node project](/pages/Node)
-  * [Testing a simple Javascript project using Jasmine](/pages/Javascript)
+  * [Testing a simple Javascript project using Jasmine](/pages/JasmineTestsForJavaScript)
 
 
 
