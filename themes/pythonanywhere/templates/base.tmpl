@@ -10,28 +10,15 @@ ${base.html_headstart()}
 ${template_hooks['extra_head']()}
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
 
 <!-- Menubar -->
 
-<div class="navbar navbar-static-top" id="navbar">
-    <div class="navbar-inner">
-        <div class="container">
+${pythonanywhere.header_html()}
+${pythonanywhere.feedback_dialog_html()}
 
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </a>
-            ${pythonanywhere.header_html()}
-        </div>
-    </div>
-</div>
 <!-- End of Menubar -->
-<div class="container-fluid" id="content" role="main">
+<div class="container" id="content" role="main">
     <!--Body content-->
-    ${pythonanywhere.feedback_dialog_html()}
     <div class="row-fluid">
     <div class="span2"></div>
     <div class="span8">

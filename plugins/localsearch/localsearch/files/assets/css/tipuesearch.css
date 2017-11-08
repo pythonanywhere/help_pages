@@ -83,11 +83,6 @@ http://www.tipue.com/search
      font: 300 23px/1.6 'open sans', sans-serif;
 	margin-top: 31px;
 }
-.tipue_search_content_title a
-{
-     color: #3f72d8;
-     text-decoration: none;
-}
 .tipue_search_content_title a:hover
 {
 	padding-bottom: 1px;

@@ -1,82 +1,91 @@
 ## -*- coding: utf-8 -*-
 
 <%def name="extra_css()">
-    <link rel="stylesheet" href="//www.pythonanywhere.com/static/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="//www.pythonanywhere.com/static/anywhere/styles/bootstrap_base.css">
-    <link rel="stylesheet" href="//www.pythonanywhere.com/static/anywhere/styles/wiki.css">
-    <link rel="stylesheet" href="//www.pythonanywhere.com/static/jquery/jquery-ui.min.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" />
+  <link rel="stylesheet" href="https://www.pythonanywhere.com/feedback/help_css/">
 
-    ### Leave this block alone.
-    <style>
-        #tipue_search_input {
-            margin-left: 36px !important;
-        }
-        .ui-dialog-titlebar-close span {
-            margin-left: -8px !important;
-            margin-top: -8px !important;
-        }
-    </style>
-    ### Styles for implementing logged in iframe
-    <style>
+  ### Leave this block alone.
+  <style>
+    #tipue_search_input {
+      margin-left: 36px !important;
+    }
+    .ui-dialog-titlebar-close span {
+      margin-left: -8px !important;
+      margin-top: -8px !important;
+    }
+  </style>
+  ### Styles for implementing logged in iframe
+  <style>
     .floaty-iframe {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        background-color: transparent;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 99%;
+      height: 100%;
+      border: 0;
+      background-color: transparent;
     }
     .hidden {
-        display: none;
+      display: none;
     }
-</style>
+  </style>
+  <style>
+    .fullscreen-main-navbar {
+      padding: 5px 10px 5px 10px;
+    }
+  </style>
 </%def>
 
 <%def name="header_html()">
-    <a class="brand" href="//www.pythonanywhere.com/"><img id="id_logo" src="//www.pythonanywhere.com/static/anywhere/images/logo-234x35.png" height="35" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
-    <div class="nav-collapse">
-        <ul id="id_header_links" class="nav">
-            <li><a id="id_feedback_link" class="feedback_link" onclick="showDialog()" style="cursor: pointer">Send feedback</a></li>
-            <li><a id="id_forums_link" href="//www.pythonanywhere.com/forums/">Forums</a></li>
-            <li><a id="id_help_link" href="/">Help</a></li>
-            <li><a href="//blog.pythonanywhere.com/" id="id_blog_link">Blog</a></li>
+  <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
+  <div class="navbar-header">
+    <a class="brand" href="//www.pythonanywhere.com/"><img id="id_logo" src="//www.pythonanywhere.com/static/anywhere/images/PA-logo.svg" style="height: 35px" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
+  </div>
+  <div class="extra-nav-content">
+    ### Leave this block alone.
+    %if search_form:
+      ${search_form}
+    %endif
+  </div>
+  <div class="fullscreen-mini-nav">
+    <ul id="id_header_links" class="nav navbar-nav navbar-right help-links">
+    <li><a id="id_feedback_link" class="feedback_link btn-link" onclick="showDialog()" style="cursor: pointer">Send feedback</a></li>
+    <li><a id="id_forums_link" class="btn-link" href="//www.pythonanywhere.com/forums/">Forums</a></li>
+    <li><a id="id_help_link" class="btn-link" href="/">Help</a></li>
+    <li><a href="//blog.pythonanywhere.com/" class="btn-link" id="id_blog_link">Blog</a></li>
+  </ul>
+  </div>
 
+  </nav>
 
-            ### Leave this block alone.
-            %if search_form:
-                ${search_form}
-            %endif
-
-        </ul>
-    </div>
+  <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;display:none"></div>
 </%def>
 
 <%def name="feedback_dialog_html()">
-    <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe hidden" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
+  <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe hidden" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
 </%def>
 
 <%def name="late_load_javascript()">
-    ## Note: we use a newer jquery ui here to be compatible with the jquery
-    ## that is used by the search
-    <script type="text/javascript" src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-    <script type="text/javascript">
+  ## Note: we use a newer jquery ui here to be compatible with the jquery
+  ## that is used by the search
+  <script type="text/javascript" src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+  <script type="text/javascript">
 
-        window.onmessage = function(e) {
-            if (e.data=="hideiframe") {
-                document.getElementById('id_feedback_frame').className='floaty-iframe hidden';
-            }
+    window.onmessage = function(e) {
+      if (e.data=="hideiframe") {
+      document.getElementById('id_feedback_frame').className='floaty-iframe hidden';
+      }
+      }
+
+      function showDialog() {
+        document.getElementById('id_feedback_frame').className='floaty-iframe';
+        window.frames[0].postMessage("showdialog", "https://www.pythonanywhere.com");
+        return false;
         }
 
-        function showDialog() {
-            document.getElementById('id_feedback_frame').className='floaty-iframe';
-            window.frames[0].postMessage("showdialog", "https://www.pythonanywhere.com");
-            return false;
-        }
+      </script>
 
-    </script>
-
-    <script>
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -85,5 +94,5 @@
         ga('create', 'UA-18014859-11', 'auto');
         ga('send', 'pageview');
 
-    </script>
-</%def>
+      </script>
+    </%def>

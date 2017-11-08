@@ -725,9 +725,9 @@ COPY_SOURCES = False
 
 
 SEARCH_FORM = """
-<span class="navbar-form pull-right">
+<div class="navbar-form pull-right">
 <input type="text" id="tipue_search_input" placeholder="Search">
-</span>"""
+</div>"""
 BODY_END = """
 <script src="/assets/js/tipuesearch_set.js"></script>
 <script src="/assets/js/tipuesearch.js"></script>
@@ -744,7 +744,6 @@ $(document).ready(function() {
 EXTRA_HEAD_DATA = """
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 <link rel="stylesheet" type="text/css" href="https://www.pythonanywhere.com/static/anywhere/styles/bootstrap_base.css">
-<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;display:none"></div>
 """
 
 
