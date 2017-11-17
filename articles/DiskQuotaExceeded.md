@@ -27,9 +27,7 @@ And wonder why?  Where did all my space go?
 Open up a **Bash console** and use the `du` ("disk-usage") to find out how much space
 is being used in various places in your file storage:
 
-    du -hs ~/*    # this checks all the files and folders in your home folder
-    du -hs /tmp   # this checks how much is being used in your temp folder
-    du -hs ~/.virtualenvs/*   # virtualenvs can also use up lots of space
+    du -hs /tmp ~/.[!.]* ~/* | sort -h
 
 
 ## Cleaning up unused files
