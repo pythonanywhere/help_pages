@@ -118,6 +118,7 @@ And some tips for specific web frameworks:
     * [Using CherryPy](/pages/UsingCherryPy)
     * [Using Tornado (WSGI-only mode)](/pages/UsingTornado)
     * [Using Web.py](/pages/WebDotPyWSGIConfig)
+    * [Using Dash](/pages/DashWSGIConfig)
     * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
 
 
