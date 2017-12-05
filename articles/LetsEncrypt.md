@@ -13,6 +13,8 @@ Let's Encrypt provide free SSL certificates for HTTPS. It's possible
 to get a Let's Encrypt certificate working on PythonAnywhere.
 Here's how:
 
+* **Tip**: _free sites at yourusername.pythonanywhere.com already have HTTPS, you don't need letsencrypt for them._
+
 We use a package called "dehydrated" to get our Let's Encrypt certificate
 (we don't use the standard one because it needs all kinds root privileges).
 To get it, run the following in a Bash console in your home directory:
@@ -49,7 +51,7 @@ Now we need to actually request a certificate:
     ~/dehydrated/dehydrated --config ~/letsencrypt/config --cron --domain www.yourdomain.com --out ~/letsencrypt --challenge http-01
     # susbtitute www.yourdomain.com with your own domain name, including the www. part
 
-* *Tip: if you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure*
+* **Tip**: _If you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure_
 
 If you get a warning saying something like this:
 
