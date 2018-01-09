@@ -24,9 +24,19 @@ PythonAnywhere.  The actual IP address associated with running code is not fixed
 
 ## The solutions
 
+### Using an HTTP proxy
+
+Some companies can provide you with a private HTTP proxy with a static IP
+address.  If all you need the static IP for is HTTP/HTTPS (and not, for example,
+MySQL or ODBC), then this is a good and reasonably priced solution.
+Here's one example: [BestProxyAndVPN](http://www.bestproxyandvpn.com).
+
+Do note, though, that you'll need to configure your code to use the proxy.
+
+
 ### Statica
 
-If you have money to pay for a solution, one product that several customers
+If you need to do non-HTTP requests, like ODBC or MySQL, another product that several customers
 have used successfully [Statica](https://www.quotaguard.com/static-ip/) from
 QuotaGuard.  They provide a kind of static-IP-as-a-service.  You rent the IP
 address from them, and they provide a wrapper script that you can use to run
