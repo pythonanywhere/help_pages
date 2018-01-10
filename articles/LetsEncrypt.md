@@ -22,36 +22,46 @@ To get it, run the following in a Bash console in your home directory:
     :::bash
     git clone https://github.com/lukas2511/dehydrated.git ~/dehydrated
 
-
 Now we need some directories to store our keys, certificates and associated files:
 
     :::bash
     mkdir -p ~/letsencrypt/wellknown
     cd ~/letsencrypt
 
-You'll also need your pythonanywhere site to be able to serve static
+You'll also need your PythonAnywhere site to be able to serve static
 files from your `wellknown` directory. Head over to web app tab and set up a new
-mapping:
+mapping (replacing "YOURUSERNAME" with your actual username):
 
 * Static URL: `/.well-known/acme-challenge`
 * Static Path: `/home/YOURUSERNAME/letsencrypt/wellknown`
 
-(don't forget to replace "YOURUSERNAME" with your actual username, here and in
-the instructions below) and then **reload your web app**
+The static files table should look like this (with a different username in the second
+column):
 
-We'll need to create a simple config file. Put the following (with suitable
-replacements) into a file at `/home/YOURUSERNAME/letsencrypt/config`
+<img alt="Let's Encrypt static files setup" src="/letsencrypt-staticfiles.png" style="border: 2px solid lightblue; max-width: 70%;">
+
+If you're using our password-protection feature for your web app, you'll also need to switch that off for the duration of this procedure;
+you can turn it on again once you've got the certificate.
+
+Next, reload your web app using the button at the top of the page.
+
+Now we'll need to create a simple config file. Go back to the Bash console, and
+create it like this (replacing "YOURUSERNAME" with your actual username):
 
     :::bash
-    WELLKNOWN=/home/YOURUSERNAME/letsencrypt/wellknown
+    echo WELLKNOWN=/home/YOURUSERNAME/letsencrypt/wellknown > ~/letsencrypt/config
 
-Now we need to actually request a certificate:
+Next, if this is the first time you've ever created a Let's Encrypt certificate
+from PythonAnywhere, you need to register with them by running this command:
 
     :::bash
-    ~/dehydrated/dehydrated --config ~/letsencrypt/config --cron --domain www.yourdomain.com --out ~/letsencrypt --challenge http-01
-    # susbtitute www.yourdomain.com with your own domain name, including the www. part
+    ~/dehydrated/dehydrated --register --accept-terms
 
-* **Tip**: _If you're using our password-protection feature for your web app, you'll need to switch that off for the duration of this procedure_
+Now we need to actually request a certificate (replace "WWW.YOURDOMAIN.COM" with
+the actual hostname of your website as it's specified on the "Web" page):
+
+    :::bash
+    ~/dehydrated/dehydrated --config ~/letsencrypt/config --cron --domain WWW.YOURDOMAIN.COM --out ~/letsencrypt --challenge http-01
 
 If you get a warning saying something like this:
 
@@ -59,9 +69,11 @@ If you get a warning saying something like this:
     terms of service which you can find here: https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf
     To accept these terms of service run `/home/username/dehydrated/dehydrated --register --accept-terms`.
 
-...then you need to run the command they specify, and *then run the original dehydrated command again*.
+...then it's probably because you haven't registered -- you need to run
+the version of the command above (with the "--register" and "--accept-terms"
+flags), and *then run the dehydrated command to request the certificate again*.
 
-If this is successful, you will see something like this: 
+If this is successful, you will see something like this:
 
     :::text
     # INFO: Using main config file /home/YOURUSERNAME/letsencrypt/config
@@ -110,9 +122,9 @@ and then let us know that you have a new certificate and where we can find it.
 Forgot when your certificate will expire?
 
 Assuming your files are in the default directories, you can run this command:
-    
+
     openssl x509 -enddate -noout -in ~/letsencrypt/www.yourdomain.com/cert.pem
-    
+
 and if you have multiple domains, you can create a bash script like this:
 
     echo www.domain1.com expires $(openssl x509 -enddate -noout -in ~/letsencrypt/www.domain1.com/cert.pem)
