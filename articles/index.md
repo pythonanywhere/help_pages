@@ -55,6 +55,7 @@ And here are some common questions and guides for beginners:
   * [Using the file browser](/pages/FileBrowser)
   * [The file editor](/pages/FileEditor)
   * [Changing the font size in a PythonAnywhere console](/pages/ChangingFontSize)
+  * [How do I share my code online?](/pages/ShareMyCodeOnline)
 
 <!-- TODO: how do I edit a file?  How do I run a script? -->
 
@@ -215,6 +216,7 @@ Or you can run through this step-by-step tutorial if you prefer:
   * [how to get SSH access to your account](/pages/SSHAccess)
   * [How to follow the Django Tutorial on PythonAnywhere](/pages/FollowingTheDjangoTutorial)
   * [I want to embed a live python console on my website](/pages/EmbeddedConsoles)
+  * [How do I share my code online?](/pages/ShareMyCodeOnline)
   * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
   * [How do I get streaming/buffering to work?](/pages/Buffering)
   * [How to use a virtualenv in an IPython Notebook](/pages/IPythonNotebookVirtualenvs)
