@@ -25,6 +25,8 @@ above.
 In `settings.py`, set:
 
     SECURE_SSL_REDIRECT = True
+    
+and make sure you have the SecurityMiddleware enabled - [https://docs.djangoproject.com/en/1.11/ref/middleware/#module-django.middleware.security](https://docs.djangoproject.com/en/1.11/ref/middleware/#module-django.middleware.security)
 
 
 ## Django (older versions)
