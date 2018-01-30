@@ -50,3 +50,10 @@ Make sure to include the `matplotlib.use("Agg")` line from the example above --
 that's the bit that sets the "backend" that matplotlib uses to draw graphics.
 Tkinter is the default, but it won't work on PythonAnywhere.  Agg works fine...
 
+
+## Jupyter Notebooks
+
+With all that said, probably your best bet for working interactively with data
+and graphs is to use a Jupyter Notebook.  That's a premium feature on
+PythonAnywhere however...
+
