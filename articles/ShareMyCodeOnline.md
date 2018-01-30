@@ -50,3 +50,9 @@ https://blog.pythonanywhere.com/121/
 
 Good luck!
 
+
+## PS - or you can go elsewhere
+
+We should also mention our friends at [Trinket.io](https://trinket.io/), who
+have a platform that makes it really easy to share short scripts online.
+
