@@ -208,6 +208,6 @@ Because we're not using `runserver`, Django won't automatically serve static fil
 Essentially, here's what you'll have to do:
 
   * In settings.py, set `STATIC_URL` and `STATIC_ROOT` to sensible values, eg `/static/` for the URL, and `/home/my-username/my-django-project/static` for the root folder.
-  * Run `python3 manage.py collectstatic` to collect all the static files into the STATIC_ROOT folder
+  * Run `python manage.py collectstatic` to collect all the static files into the STATIC_ROOT folder
   * On the PythonAnywhere **Web** tab, set up a **Static Files** entry which points the URL from `STATIC_URL` to the folder specified at `STATIC_ROOT`.
   * Hit reload, and go see if it worked.
