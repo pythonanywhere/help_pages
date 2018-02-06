@@ -14,14 +14,14 @@
 
 We &lt;3 Django at PythonAnywhere, we use it ourselves. Their tutorial is excellent, but there's a couple of small things that are different about the PythonAnywhere environment, compared to a regular PC.
 
-This guides pertains to the tutorial for Django 1.7: <https://docs.djangoproject.com/en/1.7/intro/tutorial01/> (but there should only be minor differences for 1.8)
+This guides pertains to the tutorial for Django 2.0: <https://docs.djangoproject.com/en/2.0/intro/tutorial01/>
 
 This document is not a replacement for the official django tutorial, instead, it's meant to be a companion guide -- the django tutorial is meant to be your primary guide, but when you read each section of the django tutorial, you should also take a look at the corresponding section notes in this guide, for additional instructions.
 
 So we recommend you keep both the django tutorial and this page open side-by-side as you go through them.
 
 
-##Part 1 (project setup and the models API)
+## Writing your first Django app, Part 1
 
 
 
@@ -30,22 +30,22 @@ So we recommend you keep both the django tutorial and this page open side-by-sid
 
 The preinstalled versions of Django on PythonAnywhere are a little out of date, but you can use a *virtualenv* to install your own versions. We'll use a nifty helper tool called virtualenvwrapper. Open up a **Bash Console** and:
 
-    mkvirtualenv django17 --python=/usr/bin/python3.6
+    mkvirtualenv django2 --python=/usr/bin/python3.6
     pip install django ## this may take a couple of minutes
 
 
   * TIP: *if you see an error saying mkvirtualenv: command not found, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper)*.
 
-Once you've created your virtualenv, you'll be able to see that it's active because your command prompt, which normally says something like `17:18 ~ $` will get prefixed with a little `(django17)`, like this:
+Once you've created your virtualenv, you'll be able to see that it's active because your command prompt, which normally says something like `17:18 ~ $` will get prefixed with a little `(django2)`, like this:
 
-    (django17)17:18 ~ $
+    (django2)17:18 ~ $
 
 
 ***--&gt; Always make sure your virtualenv is active when working on the django tutorial***
 
 If you need to reactivate it later, maybe if you close your bash console and open a new one, the command is:
 
-    workon django17
+    workon django2
 
 
 It's probably a good idea to keep a bash console open at all times in one browser tab, with the virtualenv activated, so you can flick back and forth.
@@ -56,8 +56,8 @@ It's probably a good idea to keep a bash console open at all times in one browse
 
 The first command the tutorial asks you to run is to check the installed version:
 
-    python -c "import django; print(django.get_version())"
-    # This should show something like 1.7.1.
+    python -m django --version
+    # This should show something like 2.0.2.
     # If it shows anything else, you've probably forgotten to activate your virtualenv!
 
 
@@ -67,30 +67,53 @@ The first command the tutorial asks you to run is to check the installed version
 
 After you run the `startproject` command, you can take a look around the files in your project using our file browser and built-in browser-based editor. Open a new browser tab and go to the **Files** tab, then navigate to your new "mysite" folder.
 
+Apart from the **Files** tab, you can also use the `tree` command from the bash console to see the directory tree...
+
 
 
 ###(not) the Development server: setting up your web app on the Web tab
 
 
-Don't try and run the Django development server on [PythonAnywere](https://www.pythonanywhere.com/). It won't work, because our console servers aren't the same as our web servers.
+You will realize that the Django development server on
+[PythonAnywere](https://www.pythonanywhere.com/) (ie. the `manage.py runserver`
+command) doesn't work. This will never work because our console servers aren't
+even the same machines as our web servers.
 
-Instead, open up a third browser tab and go to our **Web** tab. Click **Add a
-new web app**, choose **Manual configuration** and then **Python 3.6**. When
-you hit next, you'll be on your web app configuration page, and it's probably a
-good idea to keep this tab open in your browser at all times too, so that you
-can easily jump back to it, and hit reload on your web app, or find your log
-files, or whatever it may be.
+Instead, you need to do 3 things:
+1. create a web app via our interface- this lets us know that you want to create
+   a website with say the public url `myusername.pythonanywhere.com` and
+   that we should listen and try to respond to any web traffic that comes to us
+   for that domain.
+2. configure the web app to be run with the virtualenv that you just setup-
+   this lets us know which python and python libraries we should be using to
+   run your code
+3. hook up the web app so that we know what code to run when a http request
+   comes in
 
-Go to the *Virtualenv* section and enter the path to your virtualenv, something like this: */home/myusername/.virtualenvs/django17*
 
-Then, find the link to **edit your wsgi file**, scroll through it, and uncomment the parts that pertain to django -- something like this:
+Let's take this step by step.
+
+First, to create a web app on PythonAnywhere, open up a new browser tab and go
+to our **Web** tab. Click **Add a new web app**, choose **Manual
+configuration** and then **Python 3.6**. When you hit next, you'll be on your
+web app configuration page, and it's probably a good idea to keep this tab open
+in your browser at all times too, so that you can easily jump back to it, which
+will allow you to easily hit reload on your web app, or find your log files, or
+whatever it may be.
+
+Second, go to the *Virtualenv* section of your web app and enter the path to
+your virtualenv, something like this: */home/myusername/.virtualenvs/django2*
+
+Finally, your wsgi.py file is how we know what code to run for you. Find the
+link to **edit your wsgi file**, scroll through it, and uncomment the parts
+that pertain to django -- something like this:
 
 
     :::python
     import os
     import sys
 
-    path = '/home/yourusername/mysite'
+    path = '/home/myusername/mysite'
     if path not in sys.path:
         sys.path.append(path)
     os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
@@ -99,71 +122,57 @@ Then, find the link to **edit your wsgi file**, scroll through it, and uncomment
 
 
 
-Save the file, then go back to the **Web** tab and hit the **Reload** button. You'll then be able to click on the link to your site, to see the Django "Welcome" site -- it's live and on the Internet!
+Save the file, then go back to the **Web** tab and hit the **Reload** button. Now when you click on the link to your site, instead of a generic coming soon page, you will be able to see a response by your Django code. This page is live and on the Internet! You can also click to the access log, server log and error logs from your web tab to debug any errors.
 
+***--&gt; Whenever you make changes to files in your django project, you'll need to hit "Reload" on the web tab to publish them and make them live on the actual site.***
 
-####Reloading to see changes
+####Disallowed Host
 
+Without making any changes, you will see an error page (`Invalid HTTP_HOST header`) instead of the Django welcome page. This is because your page is on the internet, and is access via the url/domain that you just setup (eg. `myusername.pythonanywhere.com`) is different from running a server locally and accessing it locally.
 
-From this point on, whenever you make changes to files in your django project, you'll need to hit "Reload" on the web tab to publish them and make them live on the actual site.
+You will need to tell Django what site it's processing requests for by going to
+the **Files** tab, and editing `settings.py`. Find `ALLOWED_HOSTS` in
+`settings.py` and editing it like this:
 
-
-##Part 2 (database setup & the admin site)
-
-
-###Database setup and settings.py
-
-
-For example, the next thing the tutorial wants you to do is edit `settings.py`. Navigate to it in the files browser, and click on it to open up our editor.
-
-You will need to tell Django what site it's working for by finding `ALLOWED_HOSTS` in `settings.py` and editing it like this:
 
     :::python
-    ALLOWED_HOSTS = ['<your_username>.pythonanywhere.com']
-
+    ALLOWED_HOSTS = ['myusername.pythonanywhere.com']
 
 
 If you are using your own domain name, put that in the list instead.
 
+Remember to reload your webapp after these changes!
+
+
+
+
+## Writing your first Django app, Part 2
+
+###Database setup and settings.py
+
+
+
 We support different databases, but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though.
 
-  * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 1.7. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject again`.*.
-
-Then, run the `python manage.py migrate` command back in your Bash console.
-
-    (django17)$ cd mysite  #  cd into the directory that contains manage.py if you haven't already
-    (django17)$ python manage.py migrate
-
-
-
-###(do not) Start the development server
-
-
-Remember, don't use `runserver` and *localhost:8000* on PythonAnywhere. Instead, go back to your **Web** tab, and hit reload on your web app. You will then be able to go to *your-username.pythonanywhere.com/admin* and see the admin site up and running...
-
-
-###Creating models
-
-
-When you start the polls app, check out the `tree` command to see the directory tree...
-
-    python manage.py startapp polls
-    tree
-
-
-Then, when you want to edit *polls/models.py*, click through to it using the **Files** tab...
+  * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 2.0. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject` again.*.
 
 
 ###Playing with the API
 
 
-All of this should work fine in your Bash console. If you want a better interactive interpreter for `manage.py shell`, do a
+Everythin in this section should work fine in your Bash console. If you want a
+better interactive interpreter for `manage.py shell`, do a
 
     pip install ipython
 
 
+###*Do not* start the development server to access the Django Admin
 
-###Editing admin.py
+
+Remember, don't use `runserver` and *localhost:8000* on PythonAnywhere.
+Instead, go back to your **Web** tab, hit reload if you have made any changes
+following the Django tutorial, and then you will then be able to go to
+*myusername.pythonanywhere.com/admin* and see the admin site up and running.
 
 
 Just remember to hit "Reload" back on the web tab after you've saved your changes to the file.
@@ -175,23 +184,17 @@ Just remember to hit "Reload" back on the web tab after you've saved your change
 When you first load the admin site, it will look all ugly because, since we're not using the dev server, the admin CSS isn't served automatically. We can hack in a quick fix for it now. Go to the [Web Tab](https://www.pythonanywhere.com/web_app_setup) and find the **Static Files** section. Add a new entry:
 
   * url `/static/admin/`
-  * path: `/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.6/site-packages/django/contrib/admin/static/admin`
+  * path: `/home/myusername/.virtualenvs/myvirtualenv/lib/python3.6/site-packages/django/contrib/admin/static/admin`
 
-Substitute *yourusername* with your actual username and *myvirtualenv* with the name of your virtualenv ("django17" in this guide). Hit reload, and visit the admin site again, and it should look pretty.
+Substitute *myusername* with your actual username and *myvirtualenv* with the name of your virtualenv ("django2" in this guide). Hit reload, and visit the admin site again, and it should look pretty.
 
-Go through the rest of the tutorial, and then, when you get to part 6, static files, below, you'll be able to delete this "hack" just replace it with a "proper" static mapping.
+Go through the rest of the tutorial, and then, when you get to part 6, static files, below, you'll be able to delete this "hack" and replace it with a "proper" static mapping.
 
 
-##Part 3 (views and templates)
+## Writing your first Django app, Part 3-4
 
 
 This part should all work smoothly. When we use PythonAnywhere, we often find ourselves with several tabs open -- one for a Bash console, several tabs for the different files we're editing, and maybe a tab for the web app config. See what workflow suits you!
-
-
-##Part 4 (forms, generic views)
-
-
-No particular instructions here
 
 
 ##Part 5 (testing)
@@ -207,7 +210,7 @@ Because we're not using `runserver`, Django won't automatically serve static fil
 
 Essentially, here's what you'll have to do:
 
-  * In settings.py, set `STATIC_URL` and `STATIC_ROOT` to sensible values, eg `/static/` for the URL, and `/home/my-username/my-django-project/static` for the root folder.
-  * Run `python manage.py collectstatic` to collect all the static files into the STATIC_ROOT folder
+  * In settings.py, set `STATIC_URL` and `STATIC_ROOT` to sensible values, eg `/static/` for the URL, and `/home/myusername/my-django-project/static` for the root folder.
+  * Run `python manage.py collectstatic` to collect all the static files into the `STATIC_ROOT` folder
   * On the PythonAnywhere **Web** tab, set up a **Static Files** entry which points the URL from `STATIC_URL` to the folder specified at `STATIC_ROOT`.
   * Hit reload, and go see if it worked.
