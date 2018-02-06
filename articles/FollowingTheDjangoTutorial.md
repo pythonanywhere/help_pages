@@ -25,7 +25,7 @@ So we recommend you keep both the django tutorial and this page open side-by-sid
 
 
 
-###Creating a virtualenv and Installing Django into it
+### Creating a virtualenv and Installing Django into it
 
 
 The preinstalled versions of Django on PythonAnywhere are a little out of date, but you can use a *virtualenv* to install your own versions. We'll use a nifty helper tool called virtualenvwrapper. Open up a **Bash Console** and:
@@ -51,7 +51,7 @@ If you need to reactivate it later, maybe if you close your bash console and ope
 It's probably a good idea to keep a bash console open at all times in one browser tab, with the virtualenv activated, so you can flick back and forth.
 
 
-####Checking the django installation
+#### Checking the django installation
 
 
 The first command the tutorial asks you to run is to check the installed version:
@@ -62,7 +62,7 @@ The first command the tutorial asks you to run is to check the installed version
 
 
 
-###Creating a project, and viewing files
+### Creating a project, and viewing files
 
 
 After you run the `startproject` command, you can take a look around the files in your project using our file browser and built-in browser-based editor. Open a new browser tab and go to the **Files** tab, then navigate to your new "mysite" folder.
@@ -71,7 +71,7 @@ Apart from the **Files** tab, you can also use the `tree` command from the bash 
 
 
 
-###(not) the Development server: setting up your web app on the Web tab
+### (not) the Development server: setting up your web app on the Web tab
 
 
 You will realize that the Django development server on
@@ -148,7 +148,7 @@ Remember to reload your webapp after these changes!
 
 ## Writing your first Django app, Part 2
 
-###Database setup and settings.py
+### Database setup and settings.py
 
 
 
@@ -157,7 +157,7 @@ We support different databases, but using SQlite, the default, is probably simpl
   * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 2.0. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject` again.*.
 
 
-###Playing with the API
+### Playing with the API
 
 
 Everythin in this section should work fine in your Bash console. If you want a
@@ -166,7 +166,7 @@ better interactive interpreter for `manage.py shell`, do a
     pip install ipython
 
 
-###*Do not* start the development server to access the Django Admin
+### *Do not* start the development server to access the Django Admin
 
 
 Remember, don't use `runserver` and *localhost:8000* on PythonAnywhere.
@@ -178,7 +178,7 @@ following the Django tutorial, and then you will then be able to go to
 Just remember to hit "Reload" back on the web tab after you've saved your changes to the file.
 
 
-###Fixing the admin CSS
+### Fixing the admin CSS
 
 
 When you first load the admin site, it will look all ugly because, since we're not using the dev server, the admin CSS isn't served automatically. We can hack in a quick fix for it now. Go to the [Web Tab](https://www.pythonanywhere.com/web_app_setup) and find the **Static Files** section. Add a new entry:
@@ -197,13 +197,13 @@ Go through the rest of the tutorial, and then, when you get to part 6, static fi
 This part should all work smoothly. When we use PythonAnywhere, we often find ourselves with several tabs open -- one for a Bash console, several tabs for the different files we're editing, and maybe a tab for the web app config. See what workflow suits you!
 
 
-##Part 5 (testing)
+## Part 5 (testing)
 
 
 If you ignored our suggestion earlier to just use SQLite, and you chose a different database, you will need to explicitly create a test database for django to use to run the tests...
 
 
-##Part 6 (static files)
+## Part 6 (static files)
 
 
 Because we're not using `runserver`, Django won't automatically serve static files. Follow the links to Django's documentation on how to serve static files in production.
