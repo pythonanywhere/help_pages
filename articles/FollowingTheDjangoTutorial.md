@@ -68,30 +68,6 @@ The first command the tutorial asks you to run is to check the installed version
 After you run the `startproject` command, you can take a look around the files in your project using our file browser and built-in browser-based editor. Open a new browser tab and go to the **Files** tab, then navigate to your new "mysite" folder.
 
 
-###Database setup and settings.py
-
-
-For example, the next thing the tutorial wants you to do is edit `settings.py`. Navigate to it in the files browser, and click on it to open up our editor.
-
-You will need to tell Django what site it's working for by finding `ALLOWED_HOSTS` in `settings.py` and editing it like this:
-
-    :::python
-    ALLOWED_HOSTS = ['<your_username>.pythonanywhere.com']
-
-
-
-If you are using your own domain name, put that in the list instead.
-
-We support different databases, but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though.
-
-  * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 1.7. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject again`.*.
-
-Then, run the `python manage.py migrate` command back in your Bash console.
-
-    (django17)$ cd mysite  #  cd into the directory that contains manage.py if you haven't already
-    (django17)$ python manage.py migrate
-
-
 
 ###(not) the Development server: setting up your web app on the Web tab
 
@@ -132,6 +108,40 @@ Save the file, then go back to the **Web** tab and hit the **Reload** button. Yo
 From this point on, whenever you make changes to files in your django project, you'll need to hit "Reload" on the web tab to publish them and make them live on the actual site.
 
 
+##Part 2 (database setup & the admin site)
+
+
+###Database setup and settings.py
+
+
+For example, the next thing the tutorial wants you to do is edit `settings.py`. Navigate to it in the files browser, and click on it to open up our editor.
+
+You will need to tell Django what site it's working for by finding `ALLOWED_HOSTS` in `settings.py` and editing it like this:
+
+    :::python
+    ALLOWED_HOSTS = ['<your_username>.pythonanywhere.com']
+
+
+
+If you are using your own domain name, put that in the list instead.
+
+We support different databases, but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though.
+
+  * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 1.7. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject again`.*.
+
+Then, run the `python manage.py migrate` command back in your Bash console.
+
+    (django17)$ cd mysite  #  cd into the directory that contains manage.py if you haven't already
+    (django17)$ python manage.py migrate
+
+
+
+###(do not) Start the development server
+
+
+Remember, don't use `runserver` and *localhost:8000* on PythonAnywhere. Instead, go back to your **Web** tab, and hit reload on your web app. You will then be able to go to *your-username.pythonanywhere.com/admin* and see the admin site up and running...
+
+
 ###Creating models
 
 
@@ -151,16 +161,6 @@ All of this should work fine in your Bash console. If you want a better interact
 
     pip install ipython
 
-
-
-##Part 2 (the admin site)
-
-
-
-###(do not) Start the development server
-
-
-Remember, don't use `runserver` and *localhost:8000* on PythonAnywhere. Instead, go back to your **Web** tab, and hit reload on your web app. You will then be able to go to *your-username.pythonanywhere.com/admin* and see the admin site up and running...
 
 
 ###Editing admin.py
