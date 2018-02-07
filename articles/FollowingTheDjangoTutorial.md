@@ -127,24 +127,23 @@ application = get_wsgi_application()
 ```
 
 
-Save the file, then go back to the **Web** tab and hit the **Reload** button. Now when you click on the link to your site, instead of a generic coming soon page, you will be able to see a response by your Django code. This page is live and on the Internet! You can also click to the access log, server log and error logs from your web tab to debug any errors.
+Save the file, then go back to the **Web** tab and hit the **Reload** button. Now instead of the django dev server running on your own machine, you have a django site live and on the Internet, at *yourusername.pythonanywhere.com*.  Try clicking the link to see it now.
 
 ***--&gt; Whenever you make changes to files in your django project, you'll need to hit "Reload" on the web tab to publish them and make them live on the actual site.***
 
-####Disallowed Host
+#### DisallowedHost
 
-Without making any changes, you will see an error page (`Invalid HTTP_HOST header`) instead of the Django welcome page. This is because your page is on the internet, and is access via the url/domain that you just setup (eg. `myusername.pythonanywhere.com`) is different from running a server locally and accessing it locally.
+If you try and click through to yoru site now, you will see an error page (`Invalid HTTP_HOST header`) instead of the Django welcome page. This is because your page is on the internet, and is access via the url/domain that you just setup (eg. `myusername.pythonanywhere.com`) is different from running a server locally and accessing it locally.
 
 You will need to tell Django what site it's processing requests for by going to
-the **Files** tab, and editing `settings.py`. Find `ALLOWED_HOSTS` in
+the **Files** tab, and editing `mysite/settings.py`. Find `ALLOWED_HOSTS` in
 `settings.py` and editing it like this:
 
 
     :::python
-    ALLOWED_HOSTS = ['myusername.pythonanywhere.com']
+    ALLOWED_HOSTS = ['*']
+    # once you finish the tutorial, you might want to change this to a more secure setting, 'yourusername.pythonanywhere.com'.
 
-
-If you are using your own domain name, put that in the list instead.
 
 Remember to reload your webapp after these changes!
 
