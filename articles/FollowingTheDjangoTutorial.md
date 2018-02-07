@@ -145,8 +145,7 @@ ALLOWED_HOSTS = ['*']
 # once you finish the tutorial, you might want to change this to a more secure setting, 'yourusername.pythonanywhere.com'.
 ```
 
-Remember to reload your webapp after these changes!
-
+Reload your webapp, and now when you visit your site, you should see the expected startup page, with its little rocket and message saying "The install worked successfully! Congratulations!".
 
 
 
