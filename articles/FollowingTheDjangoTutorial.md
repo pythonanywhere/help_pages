@@ -207,3 +207,9 @@ We used a little hack in our wsgi file that means static files are served by `dj
 
 ## Part 7 (customising the admin)
 
+All of this will work fine, just remember to reload your web app every time you want to see changes to the admin.
+
+If you haven't found it already, you might see a little "reload" icon in the editor, which will save you a trip to the web tab...
+
+
+Happy Django-ing!
