@@ -111,8 +111,7 @@ Second, go to the **Virtualenv section** of your web app and enter the name of o
 */home/myusername/.virtualenvs/django2*.
 
 Finally, your wsgi.py file is how we know what code to run for you. Find the
-link to **edit your wsgi file**, scroll through it, and uncomment the parts
-that pertain to django -- something like this:
+link to **edit your wsgi file**, delete everything and replace it with this:
 
 ```python
 import os
@@ -123,7 +122,8 @@ if path not in sys.path:
     sys.path.append(path)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+application = StaticFilesHandler(get_wsgi_application())
 ```
 
 
