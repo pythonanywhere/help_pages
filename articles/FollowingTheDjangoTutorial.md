@@ -99,7 +99,7 @@ First, to create a web app on PythonAnywhere, open up a new browser tab and go
 to our **Web** tab. Click **Add a new web app**, choose **Manual
 configuration** and then **Python 3.6**. 
 
-* *TIP: make sure you choose "Manual configuration", **not** "Django" when creating your webapp.
+* *TIP: make sure you choose "Manual configuration", **not** "Django" when creating your webapp.*
 
 When you hit next, you'll be on your web app configuration page, and it's probably a good idea to keep this tab open
 in your browser at all times too, so that you can easily jump back to it.  It
