@@ -118,7 +118,7 @@ that pertain to django -- something like this:
 import os
 import sys
 
-path = '/home/myusername/mysite'
+path = os.path.expanduser('~/mysite')
 if path not in sys.path:
     sys.path.append(path)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
