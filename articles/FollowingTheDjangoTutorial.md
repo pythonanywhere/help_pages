@@ -185,12 +185,14 @@ following the Django tutorial, and then you will then be able to go to
 
 
 
-## Writing your first Django app, Part 3-4
+## Writing your first Django app, Part 3 & 4
 
 
-This part should all work smoothly. 
+This part should all work smoothly.
 
-When we use PythonAnywhere, we often find ourselves with several tabs open -- one for a Bash console, several tabs for the different files we're editing, and maybe a tab for the web app config. See what workflow suits you!
+You'll probably find yourself using our "Files" tab quite a lot here, to create new files and directories, and edit them, as well as occasionlly flicking back to the Bash console to run commands, or the Web tab to reload your web app, and maybe to yet another tab to check your live site.
+
+When we use PythonAnywhere, we often find ourselves with lots of different browser tabs open at the same time  -- one for a Bash console, several tabs for the different files we're editing, and maybe a tab for the web app config. See what workflow suits you!
 
 
 ## Part 5 (testing)
@@ -201,12 +203,7 @@ If you ignored our suggestion earlier to just use SQLite, and you chose a differ
 
 ## Part 6 (static files)
 
+We used a little hack in our wsgi file that means static files are served by `django.contrib.static.StaticFilesHandler`.  Everything will work fine, but for a production app, you should read our [guide to static files in django](https://help.pythonanywhere.com/pages/DjangoStaticFiles)
 
-Because we're not using `runserver`, Django won't automatically serve static files. Follow the links to Django's documentation on how to serve static files in production.
+## Part 7 (customising the admin)
 
-Essentially, here's what you'll have to do:
-
-  * In settings.py, set `STATIC_URL` and `STATIC_ROOT` to sensible values, eg `/static/` for the URL, and `/home/myusername/my-django-project/static` for the root folder.
-  * Run `python manage.py collectstatic` to collect all the static files into the `STATIC_ROOT` folder
-  * On the PythonAnywhere **Web** tab, set up a **Static Files** entry which points the URL from `STATIC_URL` to the folder specified at `STATIC_ROOT`.
-  * Hit reload, and go see if it worked.
