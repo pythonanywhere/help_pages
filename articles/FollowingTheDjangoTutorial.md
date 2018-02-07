@@ -73,22 +73,24 @@ Apart from the **Files** tab, you can also use the `tree` command from the bash 
 
 ### (not) the development server: setting up your web app on the Web tab
 
-
-You will realize that the Django development server on
+You will probably quickly realize that the Django development server on
 [PythonAnywere](https://www.pythonanywhere.com/) (ie. the `manage.py runserver`
-command) doesn't work. This will never work because our console servers aren't
-even the same machines as our web servers.
+command) doesn't work.  If you try and run it, you're likely to see an error saying 
+*That port is already in use*. And in any case, it won't be able to create a dev server
+you can access, because our console servers aren't publicly accessible over the 
+Internet (they're actually different machines from our web servers).
 
 Instead, you need to do 3 things:
-1. create a web app via our interface- this lets us know that you want to create
-   a website with say the public url `myusername.pythonanywhere.com` and
+
+1. Create a web app via our interface- this lets us know that you want to create
+   a website with at `myusername.pythonanywhere.com` and
    that we should listen and try to respond to any web traffic that comes to us
    for that domain.
-2. configure the web app to be run with the virtualenv that you just setup-
-   this lets us know which python and python libraries we should be using to
-   run your code
-3. hook up the web app so that we know what code to run when a http request
-   comes in
+   
+2. Configure the web app to be run inside the virtualenv that you just set up -
+   this lets us know which versions of python and django we should be using.
+   
+3. Configure the web app so that we know what actual code to run.
 
 
 Let's take this step by step.
