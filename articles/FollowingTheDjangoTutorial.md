@@ -140,10 +140,10 @@ the **Files** tab, and editing `mysite/settings.py`. Find `ALLOWED_HOSTS` in
 `settings.py` and editing it like this:
 
 
-    :::python
-    ALLOWED_HOSTS = ['*']
-    # once you finish the tutorial, you might want to change this to a more secure setting, 'yourusername.pythonanywhere.com'.
-
+```python
+ALLOWED_HOSTS = ['*']
+# once you finish the tutorial, you might want to change this to a more secure setting, 'yourusername.pythonanywhere.com'.
+```
 
 Remember to reload your webapp after these changes!
 
