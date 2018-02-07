@@ -71,7 +71,7 @@ Apart from the **Files** tab, you can also use the `tree` command from the bash 
 
 
 
-### (not) the Development server: setting up your web app on the Web tab
+### (not) the development server: setting up your web app on the Web tab
 
 
 You will realize that the Django development server on
