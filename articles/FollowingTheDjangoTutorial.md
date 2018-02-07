@@ -163,13 +163,16 @@ We support different databases, but using SQlite, the default, is probably simpl
   * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 2.0. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject` again.*.
 
 
+
 ### Playing with the API
 
+Everything in this section should work fine in your Bash console. 
 
-Everythin in this section should work fine in your Bash console. If you want a
-better interactive interpreter for `manage.py shell`, do a
+(A minor thing: if you want a better interactive interpreter for `manage.py shell`, do a
 
     pip install ipython
+
+and you'll get nice tab-completion and syntax highlighting).
 
 
 ### *Do not* start the development server to access the Django Admin
