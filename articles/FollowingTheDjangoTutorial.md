@@ -131,7 +131,7 @@ Save the file, then go back to the **Web** tab and hit the **Reload** button. No
 
 ***--&gt; Whenever you make changes to files in your django project, you'll need to hit "Reload" on the web tab to publish them and make them live on the actual site.***
 
-#### DisallowedHost
+#### fixing he DisallowedHost error
 
 If you try and click through to yoru site now, you will see an error page (`Invalid HTTP_HOST header`) instead of the Django welcome page. This is because your page is on the internet, and is access via the url/domain that you just setup (eg. `myusername.pythonanywhere.com`) is different from running a server locally and accessing it locally.
 
@@ -147,6 +147,7 @@ ALLOWED_HOSTS = ['*']
 
 Reload your webapp, and now when you visit your site, you should see the expected startup page, with its little rocket and message saying "The install worked successfully! Congratulations!".
 
+You can now follow along with the rest of Part 1 of the official tutorial, more or less from the **Creating the Polls app** section onwards, using the tab with your Bash console, and another tab for editing files perhaps.
 
 
 ## Writing your first Django app, Part 2
