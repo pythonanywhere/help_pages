@@ -106,25 +106,25 @@ in your browser at all times too, so that you can easily jump back to it.  It
 will allow you to easily hit reload on your web app, or find your error log, and
 things like that.
 
-Second, go to the *Virtualenv* section of your web app and enter the path to
-your virtualenv, something like this: */home/myusername/.virtualenvs/django2*
+Second, go to the **Virtualenv section** of your web app and enter the name of our virtualenv,
+**django2**.  When you click confirm, you should find completes to a full path like this:
+*/home/myusername/.virtualenvs/django2*.
 
 Finally, your wsgi.py file is how we know what code to run for you. Find the
 link to **edit your wsgi file**, scroll through it, and uncomment the parts
 that pertain to django -- something like this:
 
+```python
+import os
+import sys
 
-    :::python
-    import os
-    import sys
-
-    path = '/home/myusername/mysite'
-    if path not in sys.path:
-        sys.path.append(path)
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
-    from django.core.wsgi import get_wsgi_application
-    application = get_wsgi_application()
-
+path = '/home/myusername/mysite'
+if path not in sys.path:
+    sys.path.append(path)
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+```
 
 
 Save the file, then go back to the **Web** tab and hit the **Reload** button. Now when you click on the link to your site, instead of a generic coming soon page, you will be able to see a response by your Django code. This page is live and on the Internet! You can also click to the access log, server log and error logs from your web tab to debug any errors.
