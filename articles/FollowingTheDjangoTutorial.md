@@ -184,26 +184,13 @@ following the Django tutorial, and then you will then be able to go to
 *myusername.pythonanywhere.com/admin* and see the admin site up and running.
 
 
-Just remember to hit "Reload" back on the web tab after you've saved your changes to the file.
-
-
-### Fixing the admin CSS
-
-
-When you first load the admin site, it will look all ugly because, since we're not using the dev server, the admin CSS isn't served automatically. We can hack in a quick fix for it now. Go to the [Web Tab](https://www.pythonanywhere.com/web_app_setup) and find the **Static Files** section. Add a new entry:
-
-  * url `/static/admin/`
-  * path: `/home/myusername/.virtualenvs/myvirtualenv/lib/python3.6/site-packages/django/contrib/admin/static/admin`
-
-Substitute *myusername* with your actual username and *myvirtualenv* with the name of your virtualenv ("django2" in this guide). Hit reload, and visit the admin site again, and it should look pretty.
-
-Go through the rest of the tutorial, and then, when you get to part 6, static files, below, you'll be able to delete this "hack" and replace it with a "proper" static mapping.
-
 
 ## Writing your first Django app, Part 3-4
 
 
-This part should all work smoothly. When we use PythonAnywhere, we often find ourselves with several tabs open -- one for a Bash console, several tabs for the different files we're editing, and maybe a tab for the web app config. See what workflow suits you!
+This part should all work smoothly. 
+
+When we use PythonAnywhere, we often find ourselves with several tabs open -- one for a Bash console, several tabs for the different files we're editing, and maybe a tab for the web app config. See what workflow suits you!
 
 
 ## Part 5 (testing)
