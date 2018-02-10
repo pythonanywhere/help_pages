@@ -22,7 +22,8 @@ From a command line with ssh installed
 
 The server's fingerprint is:
 
-    d5:50:bd:8e:23:eb:14:3f:cf:15:87:42:0b:bf:e2:60
+    MD5:d5:50:bd:8e:23:eb:14:3f:cf:15:87:42:0b:bf:e2:60
+    SHA256:zy2jmqxNg/fs6tFZK55OjHTI3B2UofzOiUvTPtcX3/Y
 
 
 NB: &lt;username&gt; is your PythonAnywhere username -- not your email address.
