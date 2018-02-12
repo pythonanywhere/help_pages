@@ -50,6 +50,8 @@ Make sure to include the `matplotlib.use("Agg")` line from the example above --
 that's the bit that sets the "backend" that matplotlib uses to draw graphics.
 Tkinter is the default, but it won't work on PythonAnywhere.  Agg works fine...
 
+(See [this page on tkinter](/pages/TkinterPygameEtc) for more info).
+
 
 ## Jupyter Notebooks
 
