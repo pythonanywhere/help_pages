@@ -179,6 +179,7 @@ Here are some guides for some of the common things people want to do:
   * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
   * [Working with PDFs and converting document formats](/pages/PDF)
   * [Can I use IPv6?](/pages/IPv6)
+  * [Can I use Pgame / Tkinter / turltle / GUI packages?](/pages/TkinterPygameEtc)
   * [Using Selenium](/pages/selenium)
   * [Does PythonAnywhere have an API?](/pages/API)
   * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalWhitelists)
