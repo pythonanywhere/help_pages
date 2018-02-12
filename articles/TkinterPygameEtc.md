@@ -2,13 +2,15 @@
 <!--
 .. title: Can I install/use Tkinter? (or Pygame, or QT, the turtle module, or other GUI libraries...)
 .. slug: TkinterPygameEtc
-.. date: 2018-02-12 11:35:28 UTC
+.. date: 2018-02-12 11:33:28 UTC
 .. tags:
 .. category:
 .. link:
 .. description:
 .. type: text
 -->
+
+In general, you can [install almost anything you like](/pages/InstallingNewModules), but...
 
 
 # Can I install Tkinter? or Pygame?
