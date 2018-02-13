@@ -90,6 +90,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [My site is slow!](/pages/MySiteIsSlow)
   * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
   * [Using International Domain Names](/pages/InternationalDomainNames) -- that is, ones with non-ASCII/Unicode characters in them
+  * [How do I create a web app that redirects from one domain to another?](/pages/RedirectWebApp)
 
 
 And some tips for specific web frameworks:
