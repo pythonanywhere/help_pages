@@ -2,7 +2,7 @@
 <!--
 .. title: How do I create a web app that redirects from one domain to another?
 .. slug: RedirectWebApp
-.. date: 2018-02-13 14:35:28 UTC+01:00
+.. date: 2018-02-13 12:00:28 UTC+01:00
 .. tags:
 .. category:
 .. link:
