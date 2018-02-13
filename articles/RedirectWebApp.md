@@ -1,3 +1,4 @@
+
 <!--
 .. title: How do I create a web app that redirects from one domain to another?
 .. slug: RedirectWebApp
