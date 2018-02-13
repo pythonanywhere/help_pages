@@ -39,8 +39,7 @@ control system, the ability to go back to older versions of files, etc.
 
 Follow the instructions on either Github ("[create a
 repo](https://help.github.com/articles/create-a-repo)") or Bitbucket
-("[Bitbucket
-101](https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+101)"), both
+("[set up a repository](https://confluence.atlassian.com/get-started-with-bitbucket/set-up-a-repository-861178557.html)"), both
 of which have excellent documentation, for how to get started.
 
 On PythonAnywhere, use a **Bash Console**, and you'll be able to access `git`
