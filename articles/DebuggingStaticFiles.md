@@ -64,6 +64,12 @@ the URL to the path on disk, exactly.
   'static/css/myfile.css' instead of '/static/css/myfile.css' -- this will work
   for some paths on your site but not others.  best to use absolute paths
   everywhere)
+  
+* You have a mapping where the file path is an individual file. In this case,
+  the mapping will override all the following mappings where the URL starts
+  with the URL of the single-file mapping. For instance, if you first mapping
+  is / -> /home/user/myfile.html, then all the following mappings will be
+  ignored and myfile.html will be served for all URLs.
 
 If you still can't figure it out, drop us an email to
 [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
