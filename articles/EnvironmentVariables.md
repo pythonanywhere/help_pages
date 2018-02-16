@@ -25,10 +25,35 @@ In brief, you need to set the environment variable in two different places:
 * In a *postactivate* script for it to work in Bash consoles
 * In your *WSGI file* for it to work in the web app itself.
 
+To avoid duplication, we recommend using a **.env file** and a tool called 
+[python-dotenv](https://github.com/theskumar/python-dotenv) to load it.
 
-## For your web app itself:  set the environment variable in your *WSGI file*
+## Start by saving your environment variables into a .env file in your project folder
 
-> This will ensure the environment variable is available to the worker
+You can run something like this in a Bash console, or edit the .env file directly
+using our "Files" tab:
+```bash
+cd ~/my-project-dir
+echo "SECRET_KEY=sekritvalue" >> .env
+echo "OTHER_SECRET=somethingelse" >> .env
+# etc
+```
+
+# Install python-dotenv into your virtualenv
+
+```bash
+workon my-virtualenv-name
+pip install python-dotenv
+# or, if you're not using a virtualenv:
+pip3.6 install --user python-dotenv
+
+# and, optionally, add it to your requirements.txt, if you're using one:
+echo python-dotenv >> requirements.txt
+```
+
+## For your web app itself:  loading your .env file in your *WSGI file*
+
+> This will ensure the environment variables is available to the worker
 > processes that are actually serving your web application, live on the
 > Internet.
 
@@ -38,43 +63,44 @@ using Python syntax:
 
 ```python
 import os
-os.environ["SECRET_KEY"] = "mysekritvalue"
+from dotenv import load_dotenv
+project_folder = os.path.expanduser('~/my-project-dir')  # adjust as appropriate
+load_dotenv(os.path.join(project_folder, '.env'))
 ```
 
-You can set as many environment variables as you like, this way.
 
 Hit save, reload your web app, and it should now have access to the variable.
 
 
-## For Bash consoles:  set the environment variable in your virtualenv *postactivate* script
+## For Bash consoles:  load your .env file in your virtualenv *postactivate* script
 
 > For when you're running database migrations, or doing any other command-line
 > interactions with your web app
 
-Assuming you're using a [Virtualenv](/pages/Virtualenvs) for your web app, the most
+Here's how to load up the environnment variables from your .env file in a Bash console:
+```bash
+set -a; source ~/my-project-dir/.env; set +a
+```
+
+Assuming you're using a [Virtualenv](/pages/Virtualenvs) for your web app, and also
+assuming you're using virtualenvwrapper/workon, a
 convenient place to set an environment variable to be available in your Bash
 console sessions is in a special script called "postactivate" that gets run
 automatically whenever you activate your virtualenv.
 
-Navigate to your virtualenv itself, and find  the folder called *bin*, and inside
-that you'll see a file called *postactivate*.  Open it up in the Editor.
-
 * A typical location might be */home/yourusername/.virtualenvs/my-project-virtualenv/bin/postactivate*
 
-Here you can set environment variables using Bash syntax:
-
+Here's how you might add the `source` command above to your postactivate script:
 
 ```bash
-export SECRET_KEY="mysekritvalue"
+echo 'set -a; source ~/my-project-dir/.env; set +a' >> ~/.virtualenvs/my-project-virtualenv/bin/postactivate
 ```
 
-And, again, you can set several environment variables if you need to, one per line.
-
 Test this out by activating your virtualenv, with, eg, `workon
-my-project-virtualenv` and then trying to run `echo $SECRET_KEY`
+my-project-virtualenv` and then trying to run eg `echo $SECRET_KEY`
 
 
-### That's annoying!  Why do I have to set it in multiple places!
+### All done!
 
-It *is* annoying.  We haven't found a good solution for de-duplicating the environment variables between these two files, but we're sure there is one out there -- if you know of one, do [get in touch!](mailto:support@pythonanywhere.com)
-
+Your environment variables should now load automatically, both in your webapp,
+and in your virtualenv.  
