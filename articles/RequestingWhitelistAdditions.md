@@ -25,6 +25,7 @@ that are designed and intended for machine consumption rather than human consump
 
 If you would like us to whitelist a site, send us an email or feedback request, including:
 
-* a link to the API documentation
+* a link to the API documentation. Particularly to documentation that states
+  the domain where the API is published.
 * the domain or domains (including subdomains) that the API is served from.
 
