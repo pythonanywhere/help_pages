@@ -12,37 +12,37 @@
 
 
 
-A couple of different problems can occur if your app isn't managing its database connections carefully: 
+A couple of different problems can occur if your app isn't managing its database connections carefully:
 
 
 ## Dealing with OperationalError 1226, User has exceeded the max_user_connections resource
 
 
-Are you having trouble with problems like this: **OperationalError: (1226, "User '&lt;username&gt;' has exceeded the 'max_user_connections' resource (current value: X")**? 
+Are you having trouble with problems like this: **OperationalError: (1226, "User '&lt;username&gt;' has exceeded the 'max_user_connections' resource (current value: X")**?
 
 If you're seeing this problem consistently, it means that you have several,
 simulateneous processes that are all holding on to their database connections
 and are stuck, refusing to release them. This shouldn't happen in the normal,
 day-to-day operation of a web application, so it means something is wrong: some
-part of your code isn't cleaning up its database connections properly. 
+part of your code isn't cleaning up its database connections properly.
 
 Make sure you're using a well known ORM (like Django's, or SQLAlchemy), and
-make sure its options for connection pooling and clean-up are well set. 
+make sure its options for connection pooling and clean-up are well set.
 
 If you're managing database connections yourself manually, make sure that you
 close connections tidily after each use, even if there's an error -- for
 example, consider using `try/finally`, and put a `connection.close()` into the
-`finally` clause... 
+`finally` clause...
 
 
 ## Dealing with OperationalError 2006, 'MySQL server has gone away'
 
 Are you having trouble with problems like this:
-**OperationalError: (2006, 'MySQL server has gone away')**? 
+**OperationalError: (2006, 'MySQL server has gone away')**?
 
 Our databases have a 300-second (5-minute) timeout on inactive connections.
 That means, if you open a connection to the database, and then you don't do
-anything with it for 5 minutes, tnen the server will disconnect, and the
+anything with it for 5 minutes, then the server will disconnect, and the
 next time you try to execute a query, it will fail.
 
 
@@ -62,7 +62,7 @@ by setting `pool_recycle` to 280.  [More info here](/pages/UsingSQLAlchemywithMy
 If you're not using an ORM, you need to handle errors manually. MySQLdb
 specifically does not manage the connections and will error if you try to reuse
 a stale connection. One that has closed or expired. You need to explicitly
-check for this error case and handle it. 
+check for this error case and handle it.
 
 Even if you are using an ORM, under certain circumstances, it won't automatically
 recycle connections for you (this might happen if you have some long-running task
