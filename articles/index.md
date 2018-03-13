@@ -243,6 +243,7 @@ Consoles:
   * [Changing a console's name](/pages/ChangingConsolesName)
   * [What are CPU-seconds?](/pages/WhatAreCPUSeconds)
   * [Using external version control systems](/pages/ExternalVCS) (eg. [GitHub](//www.github.com/), [BitBucket](//www.bitbucket.org/))
+  * [Browser extensions that are known to cause problems with PythonAnywhere consoles](/pages/ProblematicExtensions)
 
 Web apps:
 
