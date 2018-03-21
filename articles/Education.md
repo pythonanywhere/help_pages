@@ -59,7 +59,7 @@ Alternatively, we can bulk-create accounts for all your students if you like. Ju
 ## Viewing your students' stuff
 
 
-Once you have some students set up, you'll see a new drop-down at the top right of your dashboard. From there you'll be able to click through and view your students' pages.
+Once you have some students set up, you'll see a new drop-down at the top of your dashboard. From there you'll be able to click through and view your students' pages.
 
 ![](/students_dropdown.png)
 
