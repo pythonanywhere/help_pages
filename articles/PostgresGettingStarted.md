@@ -58,6 +58,7 @@ From the **Console session just now**
 
 ## Example Configuration for Django:
 
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -68,6 +69,7 @@ DATABASES = {
         'PORT': 10667,
     }
 }
+```
 
 
 ## Set up regular backups
