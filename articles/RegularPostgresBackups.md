@@ -20,4 +20,6 @@ Here's an example of a command that can dump a particular database called "mydb"
     pg_dump --host=HOSTNAME --port=PORT --username=super --format=c --file=pgbackup`date +%F-%H%M`.dump mydb
 
 
+You can find your `HOSTNAME` and `PORT` values on the **Databases tab**. The `HOSTNAME` will look something like myusername-667.postgres.pythonanywhere-services.com. See [this page](https://help.pythonanywhere.com/pages/PostgresGettingStarted/) if you need more information on Postgres setup and configuration.
+
 You'll want to experiment with `pg_dump` and `pg_restore` until you have a backup command which you have confidence in -- remember, an untested backup procedure isn't a backup procedure at all!
