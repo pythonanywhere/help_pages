@@ -30,7 +30,8 @@ if you're interested in it (or something else entirely), let us know!
 
 If you have a paid plan, you can connect to databases outside PythonAnywhere.
 This means that you can get, say, a Redis instance from [Redis Labs](https://redislabs.com/),
-a MongoDB instance from [mLab](https://mlab.com/), or a [Microsoft SQL Server](/pages/MSSQLServer)
+a MongoDB instance from [mLab](https://mlab.com/) (check out [this help page](/pages/MongoDB)
+for some hints about that), or a [Microsoft SQL Server](/pages/MSSQLServer)
 instance from [Azure](https://azure.microsoft.com/), and connect to it from
 your code.  If the provider you choose has the option to place your database
 in a specific Amazon Web Services Availability Zone, then putting it in
