@@ -189,7 +189,7 @@ Here are some guides for some of the common things people want to do:
 
 And here's some very brief FAQ answers about common requests:
 
-  * **Can I use MongoDB**? Only via an external service like mongolabs
+  * **Can I use MongoDB**? It's not built in, but from a paid account you can use an external service like [mLab](https://mlab.com/).  Some [exta hints and tips on using Mongo here](/pages/MongoDB).
   * **Can I use an external MySQL service?** Probably not (on a free account), unless they have an HTTP api.
   * Can I use Redis?  Again, only via an external service like redislabs.  Although you can use redislite
   * Can I use websockets, or run my own socket server?  I'm afraid not --  we only support Python apps that implement the WSGI protocol
