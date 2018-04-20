@@ -43,7 +43,7 @@ $ git clone https://github.com/myusername/myproject.git
 ```
 
 That's the solution we recommend, but there are a few different methods
-documented on the [Uploading code](/pages/FTP) page,
+documented on the [uploading and downloading files](/pages/UploadingAndDownloadingFiles) help page.
 
 
 # Create a virtualenv and install Django and any other requirements
@@ -189,7 +189,7 @@ Then check out [the "debugging web app errors" section](/pages/#im-looking-at-an
 There are many different ways to set things up so that your database settings,
 `SECRET_KEY`, and so on are different in your local environment to the settings
 in your live environment on PythonAnywhere.  If you're specifically using
-environment variables to store them, this page on 
+environment variables to store them, this page on
 [setting environment variables for web apps](/pages/environment-variables-for-web-apps)
 will help.
 

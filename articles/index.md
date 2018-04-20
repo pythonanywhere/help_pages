@@ -74,7 +74,7 @@ Here is a step-by-step tutorial that walks you through the general outline of ho
 
 And here are some popular how-to guides and help pages for common webapp issues:
 
-  * [Can I use FTP/Filezilla? How should I upload my code to PythonAnywhere?](/pages/FTP)
+  * [Can I use FTP/Filezilla? How should I upload my code to PythonAnywhere?](/pages/UploadingAndDownloadingFiles)
   * [Debugging import errors and sys.path issues in your WSGI file](/pages/DebuggingImportError)
   * [Using a virtualenv for your web app](/pages/Virtualenvs)
   * [How to use your own domain for your web app (CNAME setup)](/pages/OwnDomains)

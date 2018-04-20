@@ -25,7 +25,7 @@ The second option is described in more detail below
 ##Getting your code onto PythonAnywhere
 
 
-This guide assumes you've already managed to get your code onto PythonAnywhere. Check out the [getting code in and out](/pages/FTP) guide if you need to.
+This guide assumes you've already managed to get your code onto PythonAnywhere. Check out the [uploading and downloading files](/pages/UploadingAndDownloadingFiles) guide if you need to.
 
 For the purposes of these examples, we'll assume your code lives at `/home/yourusername/mysite`
 

@@ -44,8 +44,7 @@ starting point to working out what is going wrong is to run:
     ssh -v <username>@ssh.pythonanywhere.com
 
 
-###Filezilla etc
-
+###Filezilla, etc
 
 You can also use SSH access to get files into your account using Filezilla and
-other similar upload tools. [Details here](/pages/FTP)
+other similar upload tools. [Details here](/pages/UploadingAndDownloadingFiles).
