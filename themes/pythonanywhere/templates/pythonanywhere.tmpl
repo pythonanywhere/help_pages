@@ -6,6 +6,10 @@
 
   ### Leave this block alone.
   <style>
+html, body{height: 100%;}
+#id_copyright_div {position: relative !important;}
+  </style>
+  <style>
     #tipue_search_input {
       margin-left: 36px !important;
     }
@@ -37,6 +41,7 @@
 </%def>
 
 <%def name="header_html()">
+  <div style="min-height: 100%; position: relative;">
   <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
   <div class="navbar-header">
     <a class="brand" href="//www.pythonanywhere.com/"><img id="id_logo" src="//www.pythonanywhere.com/static/anywhere/images/PA-logo.svg" style="height: 35px" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>

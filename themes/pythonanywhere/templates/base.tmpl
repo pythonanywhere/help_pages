@@ -25,9 +25,8 @@ ${pythonanywhere.feedback_dialog_html()}
     ${template_hooks['page_header']()}
     <%block name="content"></%block>
     </div>
-    </div>
-    <!--End of body content-->
 </div>
+    <!--End of body content-->
 <div class="footerbox">
     <div id="id_footer" class="container">
 
@@ -40,11 +39,11 @@ ${pythonanywhere.feedback_dialog_html()}
 <%
     from datetime import datetime
 %>
-                Copyright &copy; ${datetime.utcnow().year} <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
+                Copyright &copy; 2011-${datetime.utcnow().year} <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
                 &mdash;
                 <a href="https://www.pythonanywhere.com/terms/">Terms</a>
                 &mdash;
-                <a href="https://www.pythonanywhere.com/privacy/">Privacy</a><br/>
+                <a href="https://www.pythonanywhere.com/privacy/">Privacy & Cookies</a><br/>
                 "Python" is a registered trademark of the Python Software Foundation.
             </p>
         </footer>
@@ -52,6 +51,7 @@ ${pythonanywhere.feedback_dialog_html()}
     </div>
     ${content_footer}
     ${template_hooks['page_footer']()}
+</div>
 </div>
 ${base.late_load_js()}
     <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
