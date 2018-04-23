@@ -18,7 +18,7 @@ button is just a short click away...
 
 ##The file upload button
 
-If you just want to upload one file, and it's smaller than 200MiB in size, you
+If you just want to upload one file, and it's smaller than 100MiB in size, you
 can just upload it on the "Files" page -- look for the orange button.   Similarly,
 your can download files using the button next to the filename.
 
