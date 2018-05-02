@@ -35,7 +35,7 @@ mapping (replacing "YOURUSERNAME" with your actual username):
 * Static URL: `/.well-known/acme-challenge`
 * Static Path: `/home/YOURUSERNAME/letsencrypt/wellknown`
 
-The static files table should look like this (with a different username in the second
+The static files table needs to include at least an entry like the one below (with a different username in the second
 column):
 
 <img alt="Let's Encrypt static files setup" src="/letsencrypt-staticfiles.png" style="border: 2px solid lightblue; max-width: 70%;">
