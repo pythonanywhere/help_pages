@@ -40,6 +40,8 @@ column):
 
 <img alt="Let's Encrypt static files setup" src="/letsencrypt-staticfiles.png" style="border: 2px solid lightblue; max-width: 70%;">
 
+Please note that this step is mandatory even if you currently do not serve up static files in this way.
+
 If you're using our password-protection feature for your web app, you'll also need to switch that off for the duration of this procedure;
 you can turn it on again once you've got the certificate.
 
