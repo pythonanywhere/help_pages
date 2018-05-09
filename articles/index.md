@@ -20,7 +20,7 @@ other PythonAnywhere customers can help you out too. They're also a nice place
 for a chat ![:-\)](/smile.png)
 
 If you want, you can access an even broader group of people by asking your
-questions on *StackOverflow*; we check
+questions on **StackOverflow**; we check
 [all posts there tagged with pythonanywhere](//stackoverflow.com/questions/tagged/pythonanywhere)
  daily, and reply if no-one else has already solved the problem.
 
