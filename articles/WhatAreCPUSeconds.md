@@ -12,7 +12,7 @@
 
 
 
-With every PythonAnywhere account, you get a number of CPU-seconds included each month.
+With every PythonAnywhere account, you get a number of CPU-seconds included each day.
 This applies to all code run through our in-browser consoles, and in your scheduled tasks.
 It does not currently apply to your web apps.
 
