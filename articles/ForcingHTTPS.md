@@ -25,7 +25,7 @@ above.
 In `settings.py`, set:
 
     SECURE_SSL_REDIRECT = True
-    
+
 and make sure you have the SecurityMiddleware enabled - [https://docs.djangoproject.com/en/1.11/ref/middleware/#module-django.middleware.security](https://docs.djangoproject.com/en/1.11/ref/middleware/#module-django.middleware.security)
 
 
@@ -56,7 +56,8 @@ Uncomment this line in db.py:
 ## Flask
 
 
-Use [this Flask extension](https://github.com/kennethreitz/flask-sslify).
+Use [this Flask extension](https://github.com/kennethreitz/flask-sslify).  Note
+that it doesn't work if you have `DEBUG` set to `True`.
 
 
 ## Bottle
