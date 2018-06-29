@@ -20,38 +20,36 @@ ${pythonanywhere.feedback_dialog_html()}
 <div class="container" id="content" role="main">
     <!--Body content-->
     <div class="row-fluid">
-    <div class="span2"></div>
-    <div class="span8">
-    ${template_hooks['page_header']()}
-    <%block name="content"></%block>
+        <div class="span2"></div>
+        <div class="span8">
+            ${template_hooks['page_header']()}
+            <%block name="content"></%block>
+        </div>
     </div>
-</div>
     <!--End of body content-->
-<div class="footerbox">
-    <div id="id_footer" class="container">
+    <div class="footerbox">
+        <div id="id_footer" class="container">
 
-        <footer id="id_copyright_div">
-            <p>
-                <i>Want to improve this page?
-                <a href="https://github.com/pythonanywhere/help_pages">Submit a pull request!</a></i>
-            </p>
-            <p>
-<%
-    from datetime import datetime
-%>
-                Copyright &copy; 2011-${datetime.utcnow().year} <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
-                &mdash;
-                <a href="https://www.pythonanywhere.com/terms/">Terms</a>
-                &mdash;
-                <a href="https://www.pythonanywhere.com/privacy/">Privacy & Cookies</a><br/>
-                "Python" is a registered trademark of the Python Software Foundation.
-            </p>
-        </footer>
-
+            <footer id="id_copyright_div">
+                <p>
+                    <i>Want to improve this page?
+                        <a href="https://github.com/pythonanywhere/help_pages">Submit a pull request!</a></i>
+                </p>
+                <p>
+                    <%
+                           from datetime import datetime
+                           %>
+                           Copyright &copy; 2011-${datetime.utcnow().year} <a href="https://www.pythonanywhere.com/about/company_details/">PythonAnywhere LLP</a>
+                           &mdash;
+                           <a href="https://www.pythonanywhere.com/terms/">Terms</a>
+                           &mdash;
+                           <a href="https://www.pythonanywhere.com/privacy/">Privacy & Cookies</a><br/>
+                           "Python" is a registered trademark of the Python Software Foundation.
+                </p>
+            </footer>
+        </div>
+        ${template_hooks['page_footer']()}
     </div>
-    ${content_footer}
-    ${template_hooks['page_footer']()}
-</div>
 </div>
 ${base.late_load_js()}
     <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>

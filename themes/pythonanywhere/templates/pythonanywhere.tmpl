@@ -20,14 +20,19 @@ html, body{height: 100%;}
   </style>
   ### Styles for implementing logged in iframe
   <style>
-    .floaty-iframe {
-      position: absolute;
-      top: 0;
+    #id_feedback_container {
+      position: fixed;
+      left: 0;
+      top: 10%;
+      right: 0;
       bottom: 0;
-      width: 99%;
+      background-color: transparent;
+      z-index: 10;
+    }
+    .floaty-iframe {
+      width: 100%;
       height: 100%;
       border: 0;
-      background-color: transparent;
     }
     .hidden {
       display: none;
@@ -67,7 +72,9 @@ html, body{height: 100%;}
 </%def>
 
 <%def name="feedback_dialog_html()">
-  <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe hidden" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
+    <div id="id_feedback_container" class="hidden">
+      <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
+    </div>
 </%def>
 
 <%def name="late_load_javascript()">
@@ -78,12 +85,12 @@ html, body{height: 100%;}
 
     window.onmessage = function(e) {
       if (e.data=="hideiframe") {
-      document.getElementById('id_feedback_frame').className='floaty-iframe hidden';
+      document.getElementById('id_feedback_container').className='hidden';
       }
       }
 
       function showDialog() {
-        document.getElementById('id_feedback_frame').className='floaty-iframe';
+        document.getElementById('id_feedback_container').className='';
         window.frames[0].postMessage("showdialog", "https://www.pythonanywhere.com");
         return false;
         }
