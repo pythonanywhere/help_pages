@@ -112,7 +112,7 @@ This is ok
 This is not ok:
 
     :::python
-    app = Flask(__name___)
+    app = Flask(__name__)
     @app.route('/')
     def home():
         # etc etc, flask app code
