@@ -29,3 +29,6 @@ Follow these steps:
    `Kernel -> Change kernel` and be able to switch to it (you may need to
    refresh the page before it appears in the list). IPython will remember
    which kernel to use for that notebook from then on.
+        
+**Note: ** For this to work, your virtualenv must be in the statndard
+virtualenv directory. That is ~/.virtualenvs 
