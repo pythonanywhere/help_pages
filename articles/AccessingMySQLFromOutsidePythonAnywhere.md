@@ -10,6 +10,7 @@
 .. type: text
 -->
 
+> Warning -- this will only work in paid accounts
 
 If you have a paid PythonAnywhere account, you can access your MySQL database
 from outside PythonAnywhere using one of several techniques, depending on what
