@@ -73,6 +73,7 @@ Make a note of the path to that file, and the name of the app variable (is it "a
 In your WSGI file, skip down to the flask section, uncomment it, and make it looks something like this:
 
     :::python
+    import sys
     path = '/home/yourusername/mysite'
     if path not in sys.path:
        sys.path.append(path)
