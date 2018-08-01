@@ -262,7 +262,7 @@ Databases:
 
   * [Databases available on PythonAnywhere](/pages/KindsOfDatabases)
   * [Activating a Postgres server](/pages/Postgres)
-  * [Congiguring postgres for your app (eg Django)](/pages/PostgresGettingStarted)
+  * [Configuring postgres for your app (eg Django)](/pages/PostgresGettingStarted)
   * [Creating Postgres backups](/pages/RegularPostgresBackups)
   * [Increasing the number of connections for your Postgres server](/pages/PostgresConnections)
   * [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
