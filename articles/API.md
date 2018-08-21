@@ -83,10 +83,18 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>POST text to "type" into the console.  Add a "\n" for return.</td><td style="width: 30%">executable, arguments, working_directory</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>"type" into the console.  Add a "\n" for return.</td><td style="width: 30%">POST parameter: input</td></tr>
 </table>
 
 ## Files
+
+### /api/v0/user/{username}/files/path{path}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td></td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
 
 ### /api/v0/user/{username}/files/sharing/
 
@@ -151,37 +159,36 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a web app's configuration</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td style="width: 30%">python_version, source_directory, virtualenv_path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td style="width: 30%">python_version, source_directory, virtualenv_path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Delete the webapp.  This will take the site offline.
 Config is backed up in /var/www, and your code is not touched.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
-
+<table class="table table-striped">
 ### /api/v0/user/{username}/webapps/{domain_name}/reload/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td style="width: 30%">POST parameters: none.</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code o
+n disk.</td><td style="width: 30%">POST parameters: none</td></tr>
 </table>
-
-
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%"
+>(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style
+="width: 30%">url, path</td></tr>
 </table>
-
-
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no pa
+rameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="wid
+th: 30%">url, path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="w
+idth: 30%">url, path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="
+width: 30%">(no parameters)</td></tr>
 </table>
-
