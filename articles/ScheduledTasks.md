@@ -103,6 +103,7 @@ directory as your script, then this code changes the above example to make that 
     with open(data_file, "r") as f:
         data = f.read()
 
+(Don't forget to `import os` at the top of your file if you use that code!)
 
 
 ## Non-Python scripts
