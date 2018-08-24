@@ -22,7 +22,7 @@ hourly at a particular number of minutes past the hour. It's rather like a
 simple version of Unix's cron utility.
 
 
-## Scheduling Python scripts to run 
+## Scheduling Python scripts to run
 
 You can just enter the full path to your file, eg
 
@@ -67,6 +67,43 @@ python3.6 /home/myusername/myproject/myscript.py
 See the article called [How do I run a scheduled task inside a virtualenv](/pages/VirtualEnvInScheduledTasks)
 
 
+## Make sure you take account of the working directory
+
+This can easily trip you up -- if you access another file in your script (that is, you
+open it for reading or writing -- not if you `import` code from it), you need to
+remember that the working directory of your script won't necessarily be the directory
+where the script is running.  This is particularly prone to happening with SQLite
+databases.
+
+So, for example, if you have a script in
+`/home/yourusername/some_directory/myscript.py`, and you normally run it by starting
+bash and running this:
+
+    cd ~/some_directory
+    python3.6 myscript.py
+
+...then you might have some hidden assumptions about the working directory in the
+script -- it would work in this case, but not when scheduled.  Perhaps you do something
+like this inside it:
+
+    with open("my_data_file.txt", "r") as f:
+        data = f.read()
+
+This code will try to find the file `my_data_file.txt` inside the program's working
+directory -- that is, the directory you used `cd` to get to when you ran it from
+bash.  But in a scheduled task, the working directory might be different -- perhaps
+it's just `/home/yourusername`.
+
+The best solution to this is to be explicit about the directory containing the data file
+when you `open` it in your script.  So, if the data file will *always* be in the same
+directory as your script, then this code changes the above example to make that explicit:
+
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    data_file = os.path.join(script_directory, "my_data_file.txt")
+    with open(data_file, "r") as f:
+        data = f.read()
+
+
 
 ## Non-Python scripts
 
@@ -76,8 +113,8 @@ command from a bash console
     :::bash
     chmod +x /path/to/your.file
 
-Then use the same hash-bang syntax to specify which interpreter to 
-use — eg. #!/bin/bash. 
+Then use the same hash-bang syntax to specify which interpreter to
+use — eg. #!/bin/bash.
 
 
 
