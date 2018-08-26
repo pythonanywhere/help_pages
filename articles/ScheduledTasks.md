@@ -83,8 +83,8 @@ bash and running this:
     python3.6 myscript.py
 
 ...then you might have some hidden assumptions about the working directory in the
-script, which would mean that it would work in when you run it like that from bash, but not when scheduled.
-Perhaps you do something like this inside it:
+script, which would mean that it would work when you run it like that from
+bash, but not when scheduled. Perhaps you do something like this inside it:
 
     with open("my_data_file.txt", "r") as f:
         data = f.read()
