@@ -30,7 +30,6 @@ string "Token", followed by a space, followed by your token, like this:
 
 Again, you can see a nice example on the [Accounts page](https://www.pythonanywhere.com/account/#api_token)
 
-
 Once you've generated your token, you can copy and paste it for use in your scripts.  You can also access
 it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populated environment variable,
 `$API_TOKEN`.
@@ -38,8 +37,8 @@ it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populate
 
 # Endpoints
 
-
 All endpoints are hosted at *https://www.pythonanywhere.com/*
+
 
 
 ## Consoles
@@ -165,30 +164,41 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 Config is backed up in /var/www, and your code is not touched.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
-<table class="table table-striped">
+
 ### /api/v0/user/{username}/webapps/{domain_name}/reload/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code o
-n disk.</td><td style="width: 30%">POST parameters: none</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td style="width: 30%">POST parameters: none</td></tr>
 </table>
+
+
+### /api/v0/user/{username}/webapps/{domain_name}/ssl/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
+</table>
+
+
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%"
->(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style
-="width: 30%">url, path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
 </table>
+
+
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no pa
-rameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="wid
-th: 30%">url, path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="w
-idth: 30%">url, path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="
-width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
