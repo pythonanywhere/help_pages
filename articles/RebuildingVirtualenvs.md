@@ -15,7 +15,7 @@
 *If you need to rebuild your virtualenv following a system upgrade*
 
 
-##1) Indentify your virtualenv
+##1) Identify your virtualenv
 
 
 Navigate to the **Web** tab and take a look at the *WSGI file* for each of your web apps. At the top (if it's using a virtualenv), you'll find a line that contains the line `activate_this`. That will include the path to your virtualenv.
