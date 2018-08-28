@@ -9,11 +9,11 @@
 .. type: text
 -->
 
-Let's Encrypt provide free SSL certificates for HTTPS. It's possible
+Let's Encrypt provide free SSL certificates for HTTPS. It's easy
 to get a Let's Encrypt certificate working on PythonAnywhere.
 Here's how:
 
-* **Tip**: _free sites at yourusername.pythonanywhere.com already have HTTPS, you don't need letsencrypt for them._
+* **Tip**: _free sites at yourusername.pythonanywhere.com already have HTTPS, you don't need your own certificate for them._
 
 ## Make sure you've enabled the PythonAnywhere API
 
@@ -41,7 +41,7 @@ to install the PythonAnywhere helper scripts:
 ## Install dehydrated
 
 We use a package called "dehydrated" to get our Let's Encrypt certificate.
-To get it, run the following in the Bash console:
+To install it, run the following in the Bash console:
 
     :::bash
     git clone https://github.com/lukas2511/dehydrated.git ~/dehydrated
@@ -63,8 +63,7 @@ mapping (replacing "YOURUSERNAME" with your actual username):
 * Static URL: `/.well-known/acme-challenge`
 * Static Path: `/home/YOURUSERNAME/letsencrypt/wellknown`
 
-The static files table needs to include at least an entry like the one below (with a different username in the second
-column):
+The result should look like this (with a different username in the second column):
 
 <img alt="Let's Encrypt static files setup" src="/letsencrypt-staticfiles.png" style="border: 2px solid lightblue; max-width: 70%;">
 
@@ -133,8 +132,8 @@ your `letsencrypt` directory and your certificate and key will be in there.
 
 ## Install the certificate
 
-Just run the following PythonAnywhere helper script (replacing WWW.YOURDOMAIN.COM)
-with your actual domain name:
+To install the certificate, just run the following PythonAnywhere helper script (replacing WWW.YOURDOMAIN.COM
+with your actual domain name):
 
     pa_install_webapp_letsencrypt_ssl.py WWW.YOURDOMAIN.COM
 
