@@ -1,4 +1,3 @@
-
 <!--
 .. title: Using SSL on your own domain
 .. slug: SSLOwnDomains
@@ -10,24 +9,51 @@
 .. type: text
 -->
 
+We supply an HTTPS certificate for all websites that are subdomains of
+`pythonanywhere.com` -- so your website at *yourusername*`.pythonanywhere.com`
+handles HTTPS by default. But if you create a website with a custom domain, you
+need to get a certificate. This is because only the owner of a domain can create
+a certificate for it, to stop people from (say) creating certs for
+`www.google.com`.
+
+If you're just getting started, we recommend you use
+[Let's Encrypt](/pages/LetsEncrypt) -- they're the  easiest way to get a
+certificate for your domain.  But their certificates need to be
+renewed every three months or so, and there are some restrictions on the type
+of certificate they support, so later on you might need to get a certificate
+from a commercial provider like GoDaddy.   This page explains how that works.
 
 
+## In brief, if you already understand how certificates work
 
-## In brief
+You need two files, saved into your file storage on PythonAnywhere.   The
+exact location doesn't matter.
 
-
-We need you to point us to the location of two files, saved into your files area somewhere:
-
-  * The **Private Key**, which should be **unencrypted**, ie it should start with `----BEGIN PRIVATE KEY` (or BEGIN RSA PRIVATE KEY)
+  * The **Private Key**, which should be **unencrypted**, ie it should start with `----BEGIN PRIVATE KEY` (or `BEGIN RSA PRIVATE KEY`)
   * The **Combined Certificate**, which consists of your certificate *and* the certificate chain sent to you by your vendor. It should have several BEGIN/END CERTICATE blocks.
 
+Once you have those sorted, go down to the "Installing the certificate" section
+further down this page.
 
-## Detailed instructions
 
+## Detailed instructions, for people who are new to all this
 
-To enable SSL/HTTPS for your custom domain (that is, not `yourusername.pythonanywhere.com`, which gets it automatically), you'll need to get an SSL certificate. We don't sell them ourselves, so the first thing is to identify someone who will provide you with a certificate -- an SSL certificate vendor. An excellent choice for free certificates is [Let's Encrypt](/pages/LetsEncrypt), though you do have to renew the certificate every three months. Other companies charge for the certificates, but the certificates last longer. You may find that your domain name registrar provides them ([GoDaddy](//www.godaddy.com/) and Namecheap certainly do), so if you've found their customer service to be good, you might want to use them.
+We (PythonAnywhere) don't sell certificates ourselves, so the first thing is to
+identify someone who will provide you with a certificate -- an SSL certificate
+vendor. You may find that your domain name registrar provides them
+([GoDaddy](//www.godaddy.com/) and Namecheap certainly do), so if you've found
+their customer service to be good, you might want to use them.
 
-To get the certificate, you'll need to send them a text file called a "Certificate Signing Request" (CSR), which is basically an encoded representation of a request to a certificate-issuing organisation (a "Certification Authority", or CA -- your certificate vendor may be a CA themselves, or they may resell certificates from a CA) saying "please give me a SSL certificate for the following domain, signed by yourselves, that can only be unlocked using my private key." And in order to generate one of those, you'll need to generate a private cryptographic key. Here are detailed instructions on how to do that on PythonAnywhere.
+To get the certificate, you'll need to send them a text file called a
+"Certificate Signing Request" (CSR), which is basically an encoded
+representation of a request to a certificate-issuing organisation (a
+"Certification Authority", or CA -- your certificate vendor may be a CA
+themselves, or they may resell certificates from a CA) saying "please give me a
+SSL certificate for the following domain, signed by yourselves, that can only be
+unlocked using my private key." And in order to generate one of those, you'll
+need to generate a private cryptographic key.
+
+Here are detailed instructions on how to do that on PythonAnywhere.
 
   * From a Bash console on PythonAnywhere, generate the private key and CSR using the openssl command, like this (all on one line, replacing yourdomain.com appropriately):
     * `openssl req -new -newkey rsa:2048 -nodes -keyout yourdomain.com.key -out yourdomain.com.csr`
@@ -45,24 +71,74 @@ To get the certificate, you'll need to send them a text file called a "Certifica
   * Once you have the certificate and the chain, create a new file which has your certificate at the top, then the chain afterwards. (You may have to add a newline so that you don't get the END line of your certificate on the same line as the BEGIN for the first line of the chain.) Save that as yourdomain.com.combined.cert
   * Get your private key: This is the private key that you would have created as part of the process of generating the CSR. You will need to give it to us unencrypted, so make sure that the key starts with the line `-----BEGIN PRIVATE KEY-----`. if you see something like `Proc-Type: 4,ENCRYPTED` then it's encrypted and you need to decrypt it before we can use it: `openssl rsa -in server.key.encrypted -out server.key`
 
-Finally tell us in a "Send feedback" message (link at the top right of this page) where in your file storage on PythonAnywhere we can find the yourdomain.com.key and the yourdomain.com.combined.cert files, and which website it's for. We can take it from there.
+
+## Installing the certificate
+
+Once you've got the certificate and the key, and prepared your combined
+certificate file, you need to install it -- that is, let the PythonAnywhere
+web-serving system know that it should use your certificate and key for your
+site.
+
+### Enable the PythonAnywhere API
+
+The first step to do that is to make sure you have an API token set up for your
+account; go to the "Account" page and then click the "API token" tab. If you see
+this:
+
+<img alt="API token set up" src="/api-token-set-up.png" style="border: 2px solid lightblue; max-width: 70%;">
+
+...then you're all set. If, however, you see this:
+
+<img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
+
+...then you need to click the button to generate a key.
 
 
-## Verifying your key and certificate match
+### Install the PythonAnywhere helper scripts
 
-In the whole key-generation, csr-signing, cert receiving, file-concatenating dance, it is easy to get confused, particularly if you're managing more than one key or cert.  There's a step you can take right at the end to verify that your private-key/cert pair actually match.  Run these two commands:
+Start a *new* Bash console (old ones won't have API access) and run this command
+to install the PythonAnywhere helper scripts:
 
-    openssl rsa -noout -modulus -in yourdomain.com.key | openssl md5
-    openssl x509 -noout -modulus -in yourdomain.com.combined.cert | openssl md5
+    pip3.6 install --user --upgrade pythonanywhere
 
-*([source](https://kb.wisc.edu/middleware/page.php?id=4064))*
+(If you're on our "classic" image and don't have Python 3.6 available, you can use pip3.5 instead.)
 
-The output from the two commands (a hash of your public key) should match -- if they don't, it means the private key doesn't match the cert, and you need to start again, or check a different key.
+## Install the certificate
 
+To install the certificate, just run the following PythonAnywhere helper script (replacing WWW.YOURDOMAIN.COM
+with your actual domain name and adjusting the paths to point to the combined
+certificate and private key):
 
+    pa_install_webapp_ssl.py WWW.YOURDOMAIN.COM /home/yourusername/something/combined-cert.pem /home/yourusername/something/private-key.pem
+
+It should print out something like this:
+
+    < Setting up SSL for www.yourdomain.com via API >
+       \
+        ~<:>>>>>>>>>
+    < Reloading www.yourdomain.com via API >
+       \
+        ~<:>>>>>>>>>
+      _________________________________________________________________
+    /                                                                   \
+    | That's all set up now :-) Your new certificate will expire         |
+    | on 12 November 2018, so shortly before then you should             |
+    | renew it and install the new certificate.                          |
+    \                                                                   /
+      -----------------------------------------------------------------
+       \
+        ~<:>>>>>>>>>
+
+If you get any errors, just email us at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+
+You're all set!  However, when your certificate expires (you can see that
+the script told you when that will happen) you'll need to renew it and
+then install the new certificate with the same command.
 
 
 ## Forcing HTTPS
 
 
-For some sites, you might not only want to offer an HTTPS connection to your users -- you might want to force all access to your site to go through HTTPS. [Here are some hints on how to do that for different web frameworks](/pages/ForcingHTTPS).
+For some sites, you might not only want to offer an HTTPS connection to your
+users -- you might want to force all access to your site to go through HTTPS.
+[Here's how to do that](/pages/ForcingHTTPS).
