@@ -15,9 +15,33 @@ Here's how:
 
 * **Tip**: _free sites at yourusername.pythonanywhere.com already have HTTPS, you don't need letsencrypt for them._
 
-We use a package called "dehydrated" to get our Let's Encrypt certificate
-(we don't use the standard one because it needs all kinds root privileges).
-To get it, run the following in a Bash console in your home directory:
+## Make sure you've enabled the PythonAnywhere API
+
+The first step to do that is to make sure you have an API token set up for your
+account; go to the "Account" page and then click the "API token" tab. If you see
+this:
+
+<img alt="API token set up" src="/api-token-set-up.png" style="border: 2px solid lightblue; max-width: 70%;">
+
+...then you're all set. If, however, you see this:
+
+<img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
+
+...then you need to click the button to generate a key.
+
+## Install the PythonAnywhere helper scripts
+
+Start a *new* Bash console (old ones won't have API access) and run this command
+to install the PythonAnywhere helper scripts:
+
+    pip3.6 install --user --upgrade pythonanywhere
+
+(If you're on our "classic" image and don't have Python 3.6 available, you can use pip3.5 instead.)
+
+## Install dehydrated
+
+We use a package called "dehydrated" to get our Let's Encrypt certificate.
+To get it, run the following in the Bash console:
 
     :::bash
     git clone https://github.com/lukas2511/dehydrated.git ~/dehydrated
@@ -28,8 +52,12 @@ Now we need some directories to store our keys, certificates and associated file
     mkdir -p ~/letsencrypt/wellknown
     cd ~/letsencrypt
 
-You'll also need your PythonAnywhere site to be able to serve static
-files from your `wellknown` directory. Head over to web app tab and set up a new
+(Don't forget the `cd` command -- you'll get problems later if you do.)
+
+## Set up static file mappings
+
+You'll need your PythonAnywhere site to be able to serve static
+files from the `wellknown` directory you just created. Head over to web app tab and set up a new
 mapping (replacing "YOURUSERNAME" with your actual username):
 
 * Static URL: `/.well-known/acme-challenge`
@@ -45,6 +73,8 @@ you can turn it on again once you've got the certificate.
 
 Next, reload your web app using the button at the top of the page.
 
+## Configure dehydrated
+
 Now we'll need to create a simple config file. Go back to the Bash console, and
 create it like this (replacing "YOURUSERNAME" with your actual username):
 
@@ -56,6 +86,8 @@ from PythonAnywhere, you need to register with them by running this command:
 
     :::bash
     ~/dehydrated/dehydrated --register --accept-terms
+
+## Generate the certificate
 
 Now we need to actually request a certificate (replace "WWW.YOURDOMAIN.COM" with
 the actual hostname of your website as it's specified on the "Web" page):
@@ -99,9 +131,36 @@ your `letsencrypt` directory and your certificate and key will be in there.
 * **Keep your `/home/YOURUSERNAME/letsencrypt` directory safe**. It contains
   the information necessary for you to renew your certs.
 
-To get your certificate installed email support@pythonanywhere.com to let us
-know that you want us to install your certificate. Include your username, the
-directory path to the certificates, and the domain name and we'll do the rest.
+## Install the certificate
+
+Just run the following PythonAnywhere helper script (replacing WWW.YOURDOMAIN.COM)
+with your actual domain name:
+
+    pa_install_webapp_letsencrypt_ssl.py WWW.YOURDOMAIN.COM
+
+It should print out something like this:
+
+    < Setting up SSL for www.yourdomain.com via API >
+       \
+        ~<:>>>>>>>>>
+    < Reloading www.yourdomain.com via API >
+       \
+        ~<:>>>>>>>>>
+      _________________________________________________________________
+    /                                                                   \
+    | That's all set up now :-) Your new certificate will expire         |
+    | on 12 November 2018, so shortly before then you should             |
+    | renew it (see https://help.pythonanywhere.com/pages/LetsEncrypt/)  |
+    | and install the new certificate.                                   |
+    \                                                                   /
+      -----------------------------------------------------------------
+       \
+        ~<:>>>>>>>>>
+
+If you get any errors, just email us at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+
+You're all set!  However, when your certificate expires (you can see that
+the script told you when that will happen) you'll need to renew it.
 
 
 ## Certificate renewal
@@ -114,7 +173,9 @@ just need to re-run:
     cd ~/letsencrypt
     ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01
 
-and then let us know that you have a new certificate and where we can find it.
+and then run the script again:
+
+    pa_install_webapp_letsencrypt_ssl.py WWW.YOURDOMAIN.COM
 
 
 ## Checking expiration date
