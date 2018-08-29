@@ -88,11 +88,11 @@ from PythonAnywhere, you need to register with them by running this command:
 
 ## Generate the certificate
 
-Now we need to actually request a certificate (replace "WWW.YOURDOMAIN.COM" with
+Now we need to actually request a certificate (replace "www.yourdomain.com" with
 the actual hostname of your website as it's specified on the "Web" page):
 
     :::bash
-    ~/dehydrated/dehydrated --config ~/letsencrypt/config --cron --domain WWW.YOURDOMAIN.COM --out ~/letsencrypt --challenge http-01
+    ~/dehydrated/dehydrated --config ~/letsencrypt/config --cron --domain www.yourdomain.com --out ~/letsencrypt --challenge http-01
 
 If you get a warning saying something like this:
 
@@ -132,10 +132,10 @@ your `letsencrypt` directory and your certificate and key will be in there.
 
 ## Install the certificate
 
-To install the certificate, just run the following PythonAnywhere helper script (replacing WWW.YOURDOMAIN.COM
+To install the certificate, just run the following PythonAnywhere helper script (replacing www.yourdomain.com
 with your actual domain name):
 
-    pa_install_webapp_letsencrypt_ssl.py WWW.YOURDOMAIN.COM
+    pa_install_webapp_letsencrypt_ssl.py www.yourdomain.com
 
 It should print out something like this:
 

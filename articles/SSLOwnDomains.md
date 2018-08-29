@@ -105,11 +105,11 @@ to install the PythonAnywhere helper scripts:
 
 ## Install the certificate
 
-To install the certificate, just run the following PythonAnywhere helper script (replacing WWW.YOURDOMAIN.COM
+To install the certificate, just run the following PythonAnywhere helper script (replacing www.yourdomain.com
 with your actual domain name and adjusting the paths to point to the combined
 certificate and private key):
 
-    pa_install_webapp_ssl.py WWW.YOURDOMAIN.COM /home/yourusername/something/combined-cert.pem /home/yourusername/something/private-key.pem
+    pa_install_webapp_ssl.py www.yourdomain.com /home/yourusername/something/combined-cert.pem /home/yourusername/something/private-key.pem
 
 It should print out something like this:
 
