@@ -15,6 +15,6 @@
 
 ## How do I delete my PythonAnywhere account?
 
-Drop us an email to [support@pythonanywhere.com](support@pythonanywhere.com)
+Drop us an email to [support@pythonanywhere.com](mailto:support@pythonanywhere.com)
 and we can delete your account, along with all files and data.
 
