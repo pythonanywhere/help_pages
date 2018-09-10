@@ -174,7 +174,7 @@ just need to re-run:
 
 and then run the script again:
 
-    pa_install_webapp_letsencrypt_ssl.py WWW.YOURDOMAIN.COM
+    pa_install_webapp_letsencrypt_ssl.py www.yourdomain.com
 
 
 ## Checking expiration date
