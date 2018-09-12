@@ -27,31 +27,32 @@ Create a new web app using the "manual config" option, or visit one of your exis
 We recommend using *virtualenvwrapper*, a handy command-line tool, to create your virtualenv. Here's an example:
 
     $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.6
-
-
     Running virtualenv with interpreter /usr/bin/python3.6
     Using base prefix '/usr'
-    New python executable in myvirtualenv/bin/python3.6
-    Also creating executable in myvirtualenv/bin/python
-    Installing setuptools, pip...done.
-
+    New python executable in /home/myusername/.virtualenvs/myvirtualenv/bin/python3.6
+    Also creating executable in /home/myusername/.virtualenvs/myvirtualenv/bin/python
+    Installing setuptools, pip, wheel...done.
+    virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/predeactivate
+    virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/postdeactivate
+    virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/preactivate
+    virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/postactivate
+    virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/get_env_details
 
     (myvirtualenv) $ which python
-    /home/myusername/.virtualenvs/bin/python
+    /home/myusername/.virtualenvs/myvirtualenv/bin/python
+
     (myvirtualenv) $ deactivate
     $ which python
     /usr/bin/python
+
     $ workon myvirtualenv
     (myvirtualenv) $ which python
-    /home/myusername/.virtualenvs/bin/python
-
-
+    /home/myusername/.virtualenvs/myvirtualenv/bin/python
     (myvirtualenv) $ python
-    Python 3.6.0 (default, Apr 11 2014, 13:05:11)
-    [GCC 4.8.2] on linux
+    Python 3.6.0 (default, Jan 13 2017, 00:00:00) 
+    [GCC 4.8.4] on linux
     Type "help", "copyright", "credits" or "license" for more information.
-    >>>
-
+    >>> 
 
   * You can specify whichever version of Python you like for your virtualenv, but *it must match the version of python you've chosen for your web app*
   * Once you create your virtualenv, you need to **activate** it. It's automatically activate straight after you create it with `mkvirtualenv`, and you can re-activate it later with `workon myvirtualenv`.
