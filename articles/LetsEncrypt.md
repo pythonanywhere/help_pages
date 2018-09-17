@@ -164,6 +164,11 @@ the script told you when that will happen) you'll need to renew it.
 
 ## Certificate renewal
 
+**Tip**: _If you followed these instructions originally before mid-August 2018,
+and have just come back here to renew the certificate, you will need to go through
+the first two sections ("Make sure you've enabled the PythonAnywhere API" and
+"Install the PythonAnywhere helper scripts") before running these commands._
+
 To renew your certificate, assuming you've left the static file mapping in
 place and still have your `letsencrypt` and `letsencrypt.sh` directories, you
 just need to re-run:
@@ -172,7 +177,7 @@ just need to re-run:
     cd ~/letsencrypt
     ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01
 
-and then run the script again:
+and then run the certificate installation script again:
 
     pa_install_webapp_letsencrypt_ssl.py www.yourdomain.com
 
