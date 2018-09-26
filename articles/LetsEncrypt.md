@@ -50,7 +50,6 @@ Now we need some directories to store our keys, certificates and associated file
 
     :::bash
     mkdir -p ~/letsencrypt/wellknown
-    cd ~/letsencrypt
 
 (Don't forget the `cd` command -- you'll get problems later if you do.)
 
@@ -84,6 +83,7 @@ Next, if this is the first time you've ever created a Let's Encrypt certificate
 from PythonAnywhere, you need to register with them by running this command:
 
     :::bash
+    cd ~/letsencrypt
     ~/dehydrated/dehydrated --register --accept-terms
 
 ## Generate the certificate
@@ -92,6 +92,7 @@ Now we need to actually request a certificate (replace "www.yourdomain.com" with
 the actual hostname of your website as it's specified on the "Web" page):
 
     :::bash
+    cd ~/letsencrypt
     ~/dehydrated/dehydrated --config ~/letsencrypt/config --cron --domain www.yourdomain.com --out ~/letsencrypt --challenge http-01
 
 If you get a warning saying something like this:
