@@ -76,7 +76,7 @@ In your WSGI file, skip down to the flask section, uncomment it, and make it loo
     import sys
     path = '/home/yourusername/mysite'
     if path not in sys.path:
-       sys.path.append(path)
+       sys.path.insert(0, path)
 
     from flask_app import app as application
 
