@@ -149,7 +149,8 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all webapps</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration.</td><td style="width: 30%">POST parameters: domain_name, python_version</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration.  Use (for example) "python36" to
+    specify Python 3.6.</td><td style="width: 30%">POST parameters: domain_name, python_version</td></tr>
 </table>
 
 
