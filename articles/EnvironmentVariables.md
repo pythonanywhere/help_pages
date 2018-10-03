@@ -34,8 +34,8 @@ You can run something like this in a Bash console, or edit the .env file directl
 using our "Files" tab:
 ```bash
 cd ~/my-project-dir
-echo "SECRET_KEY=sekritvalue" >> .env
-echo "OTHER_SECRET=somethingelse" >> .env
+echo "export SECRET_KEY=sekritvalue" >> .env
+echo "export OTHER_SECRET=somethingelse" >> .env
 # etc
 ```
 
