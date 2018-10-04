@@ -191,10 +191,10 @@ Assuming your files are in the default directories, you can run this command:
 
     openssl x509 -enddate -noout -in ~/letsencrypt/www.yourdomain.com/cert.pem
 
-and if you have multiple domains, you can create a bash script like this:
+and if you have multiple domains, you can create a bash script in your `letsencrypt` directory called `check_expirations.sh` that contains lines like this:
 
     echo www.domain1.com expires $(openssl x509 -enddate -noout -in ~/letsencrypt/www.domain1.com/cert.pem)
     echo www.domain2.com expires $(openssl x509 -enddate -noout -in ~/letsencrypt/www.domain2.com/cert.pem)
     echo www.domain3.com expires $(openssl x509 -enddate -noout -in ~/letsencrypt/www.domain3.com/cert.pem)
 
-which you can run with `bash check_expirations.sh`
+which you can then run with `bash ~/letsencrypt/check_expirations.sh`.
