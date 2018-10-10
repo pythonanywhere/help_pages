@@ -51,8 +51,6 @@ Now we need some directories to store our keys, certificates and associated file
     :::bash
     mkdir -p ~/letsencrypt/wellknown
 
-(Don't forget the `cd` command -- you'll get problems later if you do.)
-
 ## Set up static file mappings
 
 You'll need your PythonAnywhere site to be able to serve static
