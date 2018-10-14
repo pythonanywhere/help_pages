@@ -13,8 +13,11 @@
 # Getting a MongoDB server
 
 We don't provide Mongo servers ourselves, so you'll need to get one from an
-external provider.  Many of our customers are using [mLab](https://mlab.com/).
-For best performance, you should provision it in the AWS us-east-1 datacenter.
+external provider.  Because this will require non-HTTP external Internet access,
+you'll need a paid account.
+
+Many of our customers are using [mLab](https://mlab.com/); for best performance,
+you should provision it in the AWS us-east-1 datacenter.
 
 # Connecting to it.
 
