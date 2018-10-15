@@ -202,7 +202,7 @@ Most days, this will fail with a message like this from the dehydrated script:
 Followed by a message from the `pa_install_webapp_letsencrypt_ssl.py` saying
 something like this:
 
-   POST to set SSL details via API failed, got <Response [400]>:{"cert":["Certificate has not changed."]}
+    POST to set SSL details via API failed, got <Response [400]>:{"cert":["Certificate has not changed."]}
 
 ...but this is harmless.  When your certificate really does have just 30 days to
 go, it will succeed and your certificate will be renewed, and the new one
