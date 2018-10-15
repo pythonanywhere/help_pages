@@ -158,7 +158,9 @@ It should print out something like this:
 If you get any errors, just email us at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 
 You're all set!  However, when your certificate expires (you can see that
-the script told you when that will happen) you'll need to renew it.
+the script told you when that will happen) you'll need to renew it.  See below
+to find out how to do that -- or, indeed, how to set things up so that you don't
+have to remember to do anything!
 
 
 ## Certificate renewal
@@ -168,9 +170,13 @@ and have just come back here to renew the certificate, you will need to go throu
 the first two sections ("Make sure you've enabled the PythonAnywhere API" and
 "Install the PythonAnywhere helper scripts") before running these commands._
 
+Let's Encrypt certificates expire after 90 days, but you can renew them when
+they're 60 days old -- meaning that you can renew one and get the new certificate
+installed before the old one expires.
+
 To renew your certificate, assuming you've left the static file mapping in
 place and still have your `letsencrypt` and `letsencrypt.sh` directories, you
-just need to re-run:
+just need to re-run the dehydrated command:
 
     :::bash
     cd ~/letsencrypt
@@ -179,6 +185,28 @@ just need to re-run:
 and then run the certificate installation script again:
 
     pa_install_webapp_letsencrypt_ssl.py www.yourdomain.com
+
+...but so that you don't need to remember to do that, you can set up a daily
+scheduled task to do it for you.   Go to the "Tasks" tab, and set up a daily task
+with this command:
+
+    cd ~/letsencrypt && ~/dehydrated/dehydrated --cron --domain www.yourdomain.com --out . --challenge http-01 && pa_install_webapp_letsencrypt_ssl.py www.yourdomain.com
+
+Don't forget to replace both instances of `www.yourdomain.com` with your actual
+website's hostname.
+
+Most days, this will fail with a message like this from the dehydrated script:
+
+    Valid till Nov 12 15:23:59 2018 GMT (Longer than 30 days). Skipping renew!
+
+Followed by a message from the `pa_install_webapp_letsencrypt_ssl.py` saying
+something like this:
+
+   POST to set SSL details via API failed, got <Response [400]>:{"cert":["Certificate has not changed."]}
+
+...but this is harmless.  When your certificate really does have just 30 days to
+go, it will succeed and your certificate will be renewed, and the new one
+installed.
 
 
 ## Checking expiration date
