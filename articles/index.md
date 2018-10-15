@@ -103,14 +103,14 @@ And some tips for specific web frameworks:
     * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
     * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
     * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
-    * [How to scale a Django Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/15/django-on-pythonanywhere-tutorial/) (external link)
+    * [How to scale a Django Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/15/django-on-pythonanywhere-tutorial/) (external link to Memcachier)
 
   * Flask
     * [A beginner's guide to building a simple database-backed Flask website on PythonAnywhere](http://blog.pythonanywhere.com/121/)
     * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
     * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
     * [Using SQLAlchemy with MySQL](/pages/UsingSQLAlchemywithMySQL)
-    * [How to scale a Flask Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/01/flask-on-pythonanywhere-tutorial/) (external link)
+    * [How to scale a Flask Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/01/flask-on-pythonanywhere-tutorial/) (external link to Memcachier)
 
   * Web2Py
     * ["Admin is disabled because insecure channel (web2py error)"](/pages/AdminIsDisabledBecauseInsecureChannel)
