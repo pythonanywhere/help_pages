@@ -34,7 +34,7 @@ this:
 Start a *new* Bash console (old ones won't have API access) and run this command
 to install the PythonAnywhere helper scripts:
 
-    pip3.6 install --user --upgrade pythonanywhere
+    pip3.5 install --user --upgrade pythonanywhere
 
 (If you're on our "classic" image and don't have Python 3.6 available, you can use pip3.5 instead.)
 
