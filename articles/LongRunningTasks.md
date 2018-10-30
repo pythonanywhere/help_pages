@@ -10,10 +10,4 @@
 -->
 
 
-PythonAnywhere consoles can run for a long time, but we do occasionally have to
-bounce our servers for maintenance. So, while you can usually keep a console
-program running for a long time, you will occasionally find it resets itself.
-
-If you want to keep a process running more or less permanently, or have it
-restart automatically, and you have a **paid** account, the best solution is to use
-what we call an "Always-on task".
+See our page on [Always-on Tasks](/pages/AlwaysOnTasks).
