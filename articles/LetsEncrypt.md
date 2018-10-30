@@ -27,7 +27,7 @@ this:
 
 <img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
 
-...then you need to click the button to generate a key.
+...then you need to click the button to generate a key, and then either export a new environment variable `API_TOKEN=yourapitoken` into your current console or start a new console.
 
 ## Install the PythonAnywhere helper scripts
 

@@ -34,6 +34,8 @@ Once you've generated your token, you can copy and paste it for use in your scri
 it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populated environment variable,
 `$API_TOKEN`.
 
+You will need to reload your webapp and start new consoles for this environment variable to be in place.
+
 
 # Endpoints
 
