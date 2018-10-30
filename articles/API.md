@@ -34,6 +34,8 @@ Once you've generated your token, you can copy and paste it for use in your scri
 it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populated environment variable,
 `$API_TOKEN`.
 
+You will need to reload your webapp and start new consoles for this environment variable to be in place.
+
 
 # Endpoints
 
@@ -91,7 +93,8 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Deletes the file at the specified path. This method can be used to
+delete log files that are not longer required.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 
