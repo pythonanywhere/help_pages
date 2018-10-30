@@ -90,7 +90,7 @@ To do that in ***Python 3***, you simply add `flush=True` to your `print` statem
 
     print("Entering the main run loop", flush=True)
 
-In Python 2, it's a little more long-winded.  First, you need to add
+In ***Python 2***, it's a little more long-winded.  First, you need to add
 
     import sys
 
