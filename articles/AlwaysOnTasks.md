@@ -48,6 +48,41 @@ column; the next button allows you to edit it, the next to pause (or unpause) it
 and the last one deletes it.
 
 
+## Using virtualenvs in always-on tasks
+
+If you want to use a virtualenv for your task, there are two possibilities:
+
+### If you use virtualenvwrapper
+
+Virtualenvwrapper is the system that provides the `mkvirtualenv` and `workon`
+commands, so if you used the former to create your virtualenv and use the latter
+when you want to do stuff using it, you can use them for your always-on task
+too.   Let's say that your virtualenv is called `my-env` and you want to run the
+script located at `/home/yourusername/something/script.py` -- the command to do
+that in the always-on task "command" input would be this:
+
+    workon my-env && python /home/yourusername/something/script.py
+
+
+### If you use the venv module
+
+If you use Python 3's built-in `venv` module -- that is, you did something like
+this to create it:
+
+    python3 -m venv my-env
+
+...and you use this to activate it:
+
+    /home/yourusername/my-env/bin/activate
+
+...then you can use the same command to activate it before running it.
+Let's say that your virtualenv is called `my-env` and you want to run the
+script located at `/home/yourusername/something/script.py` -- the command to do
+that in the always-on task "command" input would be this:
+
+    /home/yourusername/my-env/bin/activate && python /home/yourusername/something/script.py
+
+
 ## Debugging always-on tasks
 
 ### The task gets stuck in "Starting"
