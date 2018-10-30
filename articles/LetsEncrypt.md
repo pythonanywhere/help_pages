@@ -30,9 +30,13 @@ this:
 ...then you need to click the button to generate a key.
 
 Once you've generated your key, it needs to be available in a console. Either:
+    
+* start a new Bash console
+* run the following in your current Bash console
+  
+        :::bash
+        export API_TOKEN=yourapitoken 
 
-1. export a new environment variable `API_TOKEN=yourapitoken` into your current console
-2. start a new console
 
 ## Install the PythonAnywhere helper scripts
 
