@@ -47,9 +47,11 @@ neeeds):
 * respond immediately to the user and let them know the request
   is now in state "pending"
 
-* set up a **Scheduled task** whose job it is to monitor your
-  task queue (eg the database), and pick jobs off one by one.
-  Include some code to update the job status (eg, pending, under way,
+* set up an **Always-on task** (if you have a paid account). You can use a
+  **Scheduled task** instead, if you don't have a paid account, but your queue
+  will only be processed when the scheduled task is scheduled. The job of the
+  task is to monitor your task queue (eg the database), and pick jobs off one
+  by one. Include some code to update the job status (eg, pending, under way,
   complete...)
 
 * give the user a way of checking on the progress of the job, either
