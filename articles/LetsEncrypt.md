@@ -30,12 +30,12 @@ this:
 ...then you need to click the button to generate a key.
 
 Once you've generated your key, it needs to be available in a console. Either:
-    
+
 * start a new Bash console
 * run the following in your current Bash console
-  
+
         :::bash
-        export API_TOKEN=yourapitoken 
+        export API_TOKEN=yourapitoken
 
 
 ## Install the PythonAnywhere helper scripts
@@ -44,8 +44,6 @@ Start a *new* Bash console (old ones won't have API access) and run this command
 to install the PythonAnywhere helper scripts:
 
     pip3.5 install --user --upgrade pythonanywhere
-
-(If you're on our "classic" image and don't have Python 3.6 available, you can use pip3.5 instead.)
 
 ## Install dehydrated
 
