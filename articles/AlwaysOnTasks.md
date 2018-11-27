@@ -73,14 +73,14 @@ this to create it:
 
 ...and you use this to activate it:
 
-    /home/yourusername/my-env/bin/activate
+    source /home/yourusername/my-env/bin/activate
 
 ...then you can use the same command to activate it before running it.
 Let's say that your virtualenv is called `my-env` and you want to run the
 script located at `/home/yourusername/something/script.py` -- the command to do
 that in the always-on task "command" input would be this:
 
-    /home/yourusername/my-env/bin/activate && python /home/yourusername/something/script.py
+    source /home/yourusername/my-env/bin/activate && python /home/yourusername/something/script.py
 
 
 ## Debugging always-on tasks
