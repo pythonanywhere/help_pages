@@ -1,6 +1,6 @@
 
 <!--
-.. title: I'm getting a "502 Bad Gateway / Backend" error. What to do next?
+.. title: I'm getting a "502 Bad Gateway / Backend" or a "504-loadbalancer" error. What to do next?
 .. slug: 502BadGateway
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
