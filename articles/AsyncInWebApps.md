@@ -34,7 +34,9 @@ third party services, and collate it for the user.
 ## The Async solution: a task queue
 
 The solution is to use some sort of task queue, and complete
-the work asynchronously. 
+the work asynchronously.  If you're using Django, a good solution
+might be to use the [Django Background Tasks](https://django-background-tasks.readthedocs.io/en/latest/)
+module, which does a lot of this for you.
 
 Here's a high-level overview of what a solution could look like
 (everyone's requirements are different, so adapt this to your own
@@ -55,12 +57,12 @@ neeeds):
   complete...)
 
 * give the user a way of checking on the progress of the job, either
-  by asking them to refresh the page, or perhaps setting up an 
+  by asking them to refresh the page, or perhaps setting up an
   Ajax polling system.
 
 
-See [our help page on long-running tasks](/pages/LongRunningTasks) for
-information on how to set up an "always-on" task to do your async work.
+See [our help page on always-on tasks](/pages/AlwaysOnTasks) for
+information on how to set one up to do your async work.
 
 
 ## Don't jump to using async too quickly
