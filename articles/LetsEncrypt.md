@@ -31,12 +31,13 @@ this:
 
 Once you've generated your key, it needs to be available in a console. Either:
 
-* start a new Bash console
-* run the following in your current Bash console
+* Start a new Bash console
+* Or, if you're using an SSH session, or want to use an existing Bash console, run the following:
 
         :::bash
         export API_TOKEN=yourapitoken
 
+    ...replacing *yourapitoken* with the token from the previous step.
 
 ## Install the PythonAnywhere helper scripts
 
