@@ -11,7 +11,7 @@
 
 
 If you have a paid account on PythonAnywhere, you can set up web apps on your
-own domain -- that is, a domain that is not *your-username*`.pythonanywhere.com`
+a custom domain -- that is, a domain that is not *your-username*`.pythonanywhere.com`
 
 There are three steps
 
