@@ -18,8 +18,8 @@ and Firefox will just say "Your connection is not secure".
 You do not need to do this for a non-custom domain (that is, one at *yourusername*`.pythonanywhere.com`)
 because we supply an certificate so that they handle HTTPS by default.
 
-But once you've created a website on custom domain, we need to get a certificate
-for you, and for this we need to prove that the PythonAnywhere is the host for
+But once you've created a website on a custom domain, we need to get a certificate
+for you, and for this we need to prove that PythonAnywhere is the host for
 the domain.  This is a security thing -- it stops us from doing nefarious things
 like trying to get a certificate for `www.google.com` ;-)
 
