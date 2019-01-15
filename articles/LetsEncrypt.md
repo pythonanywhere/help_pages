@@ -9,6 +9,16 @@
 .. type: text
 -->
 
+## Warning!  This page is out-of-date
+
+You can now have a Let's Encrypt certificate managed by PythonAnywhere -- we
+handle all the details of getting it, installing it, and managing renewals
+for you.  So you don't need to do any of the stuff below any more.
+
+We're keeping the page around for historical reasons, though :-)
+
+## Here's the old process for managing Let's Encrypt certificates:
+
 Let's Encrypt provide free SSL certificates for HTTPS. It's easy
 to get a Let's Encrypt certificate working on PythonAnywhere.
 Here's how:
