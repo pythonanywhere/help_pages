@@ -1,6 +1,6 @@
 <!--
 .. title: Setting up a custom domain on PythonAnywhere
-.. slug: OwnDomains
+.. slug: CustomDomains
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
 .. category:
