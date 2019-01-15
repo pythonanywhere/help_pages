@@ -128,7 +128,7 @@ version.   This is called "forcing HTTPS", and is described on
 
     <img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
 
-    ...then you need to click the button to generate a key.
+    ...then you need to click the button to generate a token.
 
 
   * Install the PythonAnywhere helper scripts.  Start a *new* Bash console (old
