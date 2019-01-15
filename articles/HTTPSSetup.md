@@ -1,5 +1,5 @@
 <!--
-.. title: Using SSL on your own domain
+.. title: How to set up an HTTPS/SSL certificate for a custom domain
 .. slug: HTTPSSetup
 .. date: 2019-01-15 12:49:28 UTC+00:00
 .. tags:
@@ -16,8 +16,7 @@ will get a security error -- specically, Chrome will say something like "NET::ER
 and Firefox will just say "Your connection is not secure".
 
 You do not need to do this for a non-custom domain (that is, one at *yourusername*`.pythonanywhere.com`)
-because we supply an certificate for all websites that are subdomains of
-`pythonanywhere.com` -- so they handle HTTPS by default.
+because we supply an certificate so that they handle HTTPS by default.
 
 But once you've created a website on custom domain, we need to get a certificate
 for you, and for this we need to prove that the PythonAnywhere is the host for
@@ -59,12 +58,12 @@ To set up a free, auto-renewing Let's Encrypt certificate, follow these steps:
     <img alt="Let's Encrypt all set up" src="/https-setup-security-section-letsencrypt-installed.png" style="border: 2px solid lightblue; max-width: 70%;">
 
 Once that's done, you're all set!  Just go to the HTTPS URL for your site, like
-https://www.yourdomain.com, and you'll see that the site is now marked as secure.
+http*s*://www.yourdomain.com, and you'll see that the site is now marked as secure.
 
 If you want to make your site even more secure, you can set it up so that when
 people visit the non-secure URL they are automatically redirected to the secure
 version.   This is called "forcing HTTPS", and is described on
-[this help page]((/pages/ForcingHTTPS).
+[this help page](/pages/ForcingHTTPS).
 
 
 
