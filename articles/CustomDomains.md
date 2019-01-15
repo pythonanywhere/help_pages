@@ -10,8 +10,8 @@
 -->
 
 
-If you have a paid account on PythonAnywhere, you can set up web apps on your
-a custom domain -- that is, a domain that is not *your-username*`.pythonanywhere.com`
+If you have a paid account on PythonAnywhere, you can set up web apps on a
+custom domain -- that is, a domain that is not *your-username*`.pythonanywhere.com`
 
 There are three steps
 
@@ -70,7 +70,7 @@ Once again, you should specify the
 fully-qualified domain name -- that is, `www.yourdomain.com`
 
 
-##Configuring the domain at the domain registrar
+## Configuring the domain at the domain registrar
 
 Once you've purchased your domain and created the new webapp config on
 PythonAnywhere, you'll want to find the configuration screen on your domain
@@ -78,13 +78,13 @@ provider that allows you to set up a CNAME record.
 
 The CNAME record will point (say) www.yourdomain.com to the value specified on
 the "Web" tab for your application; this will be of the form
-**webapp-XXXX.pythonanywhere.com**.
+`webapp-XXXX.pythonanywhere.com`.
 This tells [the domain name system](//en.wikipedia.org/wiki/Domain_Name_System)
 that when someone asks for your website, they should get it from PythonAnywhere.
 
-CNAME records have two parts. The **Alias** and the *Canonical Name*. The alias
-in this case should be **www**. The address should be the value from the "Web"
-tab.
+CNAME records have two parts. The **Alias** and the **Canonical Name**. The alias
+in this case should be `www`. The address should be the value from the "Web"
+tab -- the one like `webapp-XXXX.pythonanywhere.com`.
 
 Different DNS providers call them different things.
 
@@ -92,7 +92,7 @@ Different DNS providers call them different things.
   * Canonical Name: the address, FQDN, Fully Qualified Domain Name, or Host Name.
 
 
-##Notes for specific DNS providers
+## Notes for specific DNS providers
 
 **GoDaddy**
 
@@ -112,7 +112,7 @@ the other will be "I|fr".   You should delete these when you set up your
 CNAME.
 
 
-##Testing your configuration
+## Testing your configuration
 
 CNAME changes can take a little while to propagate from your registrar to the
 rest of the Internet. You can see whether the change has reached PythonAnywhere
