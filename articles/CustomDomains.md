@@ -28,7 +28,6 @@ these *after* you've done the steps above:
 
 ## Purchasing a domain name
 
-
 We don't recommend any particular domain registrar, they're all pretty similar.
 Just google around, compare prices (they should all be very similar), and pick
 the one that seems to have the friendliest user interface.
@@ -94,22 +93,11 @@ Different DNS providers call them different things.
 
 ## Notes for specific DNS providers
 
-**GoDaddy**
+Here's how to set up a CNAME for some popular registrars:
 
-Their help page about setting up a CNAME is here:
-[https://ca.godaddy.com/help/add-a-cname-record-19236](https://ca.godaddy.com/help/add-a-cname-record-19236)
-
-**Gandi.net**
-
-Their help page about setting up a CNAME is here:
-[https://wiki.gandi.net/en/dns/zone/cname-record](https://wiki.gandi.net/en/dns/zone/cname-record)
-
-**OVH**
-
-By default, OVH create a couple of "TXT" records when you register a domain with
-them, and these can cause problems.   One will have the content "3|welcome" and
-the other will be "I|fr".   You should delete these when you set up your
-CNAME.
+  * [GoDaddy](https://ca.godaddy.com/help/add-a-cname-record-19236)
+  * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain)
+  * [Gandi](https://wiki.gandi.net/en/dns/zone/cname-record)
 
 
 ## Testing your configuration
@@ -127,4 +115,41 @@ how far the propagation has got.
 
 If your CNAME is still not working after a couple of hours, you should
 double-check your setup.
+
+
+## Recommended: set up HTTPS for a secure site.
+
+There are two steps to do for this:
+
+  1. [Set up an HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
+  1. [Force HTTPS on your web app](/pages/ForcingHTTPS)
+
+
+## Optional: Set up a naked domain redirect
+
+Most people want their site set up so that when someone goes to
+`http://yourdomain.com/` they are redirected to `http://www.yourdomain.com/`,
+or if they go to `http://yourdomain.com/foo` they are redirected to
+`http://www.yourdomain.com/foo`, and so on.
+
+The easiest way to do this is normally to set it up with your domain provider;
+almost all of them provide it as a free service.   Here are the links for some
+popular registrars:
+
+  * [GoDaddy](https://uk.godaddy.com/help/forward-a-domain-12123)
+  * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/385/2237/how-to-redirect-a-url-for-a-domain)
+  * [Gandi](https://docs.gandi.net/en/domain_names/common_operations/web_forwarding.html)
+  * [Google Domains](https://webmasters.stackexchange.com/a/90405)
+
+If you are using a different registrar, searching for "forward naked domain" plus
+the name of your registrar will probably find the appropriate help page.
+
+If your registrar doesn't support domain redirects, then we know of two options,
+both free:
+
+  * [wwwizer](http://wwwizer.com/naked-domain-redirect)
+  * [Naked SSL](https://www.nakedssl.com/)
+
+
+
 
