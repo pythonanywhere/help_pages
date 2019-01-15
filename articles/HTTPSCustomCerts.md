@@ -115,55 +115,52 @@ version.   This is called "forcing HTTPS", and is described on
 
 ### Installing a certificate from the command line
 
-#### Enable the PythonAnywhere API
+  * Make sure that the combined certificate and private key files are stored inside your file storage
+    on PythonAnywhere.
 
-The first step to do that is to make sure you have an API token set up for your
-account; go to the "Account" page and then click the "API token" tab. If you see
-this:
+  * Enable the PythonAnywhere API: the first step to do that is to make sure you have an API token set up for your
+    account; go to the "Account" page and then click the "API token" tab. If you see
+    this:
 
-<img alt="API token set up" src="/api-token-set-up.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="API token set up" src="/api-token-set-up.png" style="border: 2px solid lightblue; max-width: 70%;">
 
-...then you're all set. If, however, you see this:
+    ...then you're all set. If, however, you see this:
 
-<img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
 
-...then you need to click the button to generate a key.
+    ...then you need to click the button to generate a key.
 
 
-#### Install the PythonAnywhere helper scripts
+  * Install the PythonAnywhere helper scripts.  Start a *new* Bash console (old
+    ones won't have API access) and run this command to install the PythonAnywhere helper scripts:
 
-Start a *new* Bash console (old ones won't have API access) and run this command
-to install the PythonAnywhere helper scripts:
+        pip3.6 install --user --upgrade pythonanywhere
 
-    pip3.6 install --user --upgrade pythonanywhere
+    (If you're on our "classic" image and don't have Python 3.6 available, you can use pip3.5 instead.)
 
-(If you're on our "classic" image and don't have Python 3.6 available, you can use pip3.5 instead.)
+  * Install the certificate: just run the following PythonAnywhere helper script
+    (replacing www.yourdomain.com with your actual domain name and adjusting the
+    paths to point to the combined certificate and private key):
 
-#### Install the certificate
+        pa_install_webapp_ssl.py www.yourdomain.com /home/yourusername/something/combined-cert.pem /home/yourusername/something/private-key.pem
 
-To install the certificate, just run the following PythonAnywhere helper script (replacing www.yourdomain.com
-with your actual domain name and adjusting the paths to point to the combined
-certificate and private key):
+    It should print out something like this:
 
-    pa_install_webapp_ssl.py www.yourdomain.com /home/yourusername/something/combined-cert.pem /home/yourusername/something/private-key.pem
-
-It should print out something like this:
-
-    < Setting up SSL for www.yourdomain.com via API >
-       \
-        ~<:>>>>>>>>>
-    < Reloading www.yourdomain.com via API >
-       \
-        ~<:>>>>>>>>>
-      _________________________________________________________________
-    /                                                                   \
-    | That's all set up now :-) Your new certificate will expire         |
-    | on 12 November 2018, so shortly before then you should             |
-    | renew it and install the new certificate.                          |
-    \                                                                   /
-      -----------------------------------------------------------------
-       \
-        ~<:>>>>>>>>>
+        < Setting up SSL for www.yourdomain.com via API >
+           \
+            ~<:>>>>>>>>>
+        < Reloading www.yourdomain.com via API >
+           \
+            ~<:>>>>>>>>>
+          _________________________________________________________________
+        /                                                                   \
+        | That's all set up now :-) Your new certificate will expire         |
+        | on 12 November 2018, so shortly before then you should             |
+        | renew it and install the new certificate.                          |
+        \                                                                   /
+          -----------------------------------------------------------------
+           \
+            ~<:>>>>>>>>>
 
 If you get any errors, just email us at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 
