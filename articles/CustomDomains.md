@@ -22,7 +22,7 @@ There are three steps
 There's are two optional, but recommended steps, to make your site secure.  Do
 these *after* you've done the steps above:
 
-  4. [Set up an HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
+  4. [Set up an HTTPS/SSL certificate](/pages/HTTPSSetup)
   5. [Force HTTPS on your website](/pages/ForcingHTTPS)
 
 
@@ -41,12 +41,13 @@ going too much into the technical details, a CNAME means that you don't need
 to do any DNS configuration beyond the initial setup; we can manage everything
 for you, so if (for example) the IP address associated with your website gets
 blocked in some country, or if it's subjected to a denial-of-service attack,
-we can move your website over to a different IP address.
+we can move your website over to a different IP address without you needing to
+do anything.
 
 The one restriction that CNAMEs have is that they cannot be used for "naked" or "apex"
 domains.  To make that more concrete, you can use `www.yourdomain.com` or
 `somethingelse.yourdomain.com` for the website, but not `yourdomain.com`.
-But that's doesn't have to be a problem; you can host your site on `www.yourdomain.com`
+But that doesn't have to be a problem; you can host your site on `www.yourdomain.com`
 and then set things up so that people who visit `yourdomain.com` are automatically
 redirected to `www.yourdomain.com`.  There's more information on that last bit later on.
 
@@ -119,14 +120,17 @@ bunch of different places around the Internet, which will give you a feel for
 how far the propagation has got.
 
 If your CNAME is still not working after a couple of hours, you should
-double-check your setup.
+double-check your setup.  If you can't work out what is wrong, email us at
+[support@pythonanywhere.com](support@pythonanywhere.com), including a screenshot
+of the settings as you have configured them on your registrar's DNS setup
+page.
 
 
 ## Recommended: set up HTTPS for a secure site.
 
 There are two steps to do for this:
 
-  1. [Set up an HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
+  1. [Set up an HTTPS/SSL certificate for your domain](/pages/HTTPSSetup)
   1. [Force HTTPS on your website](/pages/ForcingHTTPS)
 
 
@@ -149,7 +153,7 @@ popular registrars:
 If you are using a different registrar, searching for "forward naked domain" plus
 the name of your registrar will probably find the appropriate help page.
 
-If your registrar doesn't support domain redirects, then we know of two options,
+If your registrar doesn't support domain redirects, we know of two alternatives,
 both free:
 
   * [wwwizer](http://wwwizer.com/naked-domain-redirect)
