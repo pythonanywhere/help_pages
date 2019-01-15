@@ -34,25 +34,47 @@ Just google around, compare prices (they should all be very similar), and pick
 the one that seems to have the friendliest user interface.
 
 
-##Creating a PythonAnywhere web app for your new domain
+## Creating a PythonAnywhere website for your new domain
 
-**PythonAnywhere web app does not exist**
+For best performance and reliability on PythonAnywhere, we *strongly* recommend
+that you use a CNAME to point your domain at our servers.  Without
+going too much into the technical details, a CNAME means that you don't need
+to do any DNS configuration beyond the initial setup; we can manage everything
+for you, so if (for example) the IP address associated with your webapp gets
+blocked in some country, or if it's subjected to a denial-of-service attack,
+we can move your website over to a different IP address.
 
-Just click the "Add a new web app" button on the Web tab, specify the domain on
-the first step, and go on to choose your Python version, framework and so on.
+The one restriction that CNAMEs have is that they cannot be used for "naked" or "apex"
+domains.  To make that more concrete, you can use `www.yourdomain.com` or
+`somethingelse.yourdomain.com` for the website, but not `yourdomain.com`.
+But that's doesn't have to be a problem; you can host your site on `www.yourdomain.com`
+and then set things up so that people who visit `yourdomain.com` are automatically
+redirected to `www.yourdomain.com`.  There's more information on that last bit later on.
 
-**PythonAnywhere web app already exists**
+Given all that, here's how to create the website:
+
+**If you don't have a web app for it yet**
+
+Just click the "Add a new web app" button on the Web tab.  In the first step,
+it will ask you for the domain name to use.  You should specify the
+fully-qualified domain name -- that is, `www.yourdomain.com`.  Next go on to
+choose your Python version, framework and so on.
+
+
+**If you already have a web app that you want to use**
 
 [This help page explains how to use a new domain for existing webapp](https://help.pythonanywhere.com/pages/UsingANewDomainForExistingWebApp),
 for example if the app you want to show is currently displayed at
 `jane.pythonanywhere.com`, and you want it to appear at `www.yourdomain.com`.
+Once again, you should specify the
+fully-qualified domain name -- that is, `www.yourdomain.com`
 
 
 ##Configuring the domain at the domain registrar
 
 Once you've purchased your domain and created the new webapp config on
 PythonAnywhere, you'll want to find the configuration screen on your domain
-provider that allows you to set up a *CNAME*.
+provider that allows you to set up a CNAME record.
 
 The CNAME record will point (say) www.yourdomain.com to the value specified on
 the "Web" tab for your application; this will be of the form
@@ -64,10 +86,10 @@ CNAME records have two parts. The **Alias** and the *Canonical Name*. The alias
 in this case should be **www**. The address should be the value from the "Web"
 tab.
 
-Different DNS providers call them different things. So:
+Different DNS providers call them different things.
 
-  * Alias, AKA: domain name, Alias name,
-  * Canonical Name, AKA: the address, FQDN, Fully Qualified Domain Name, or Host Name.
+  * Alias: domain name, Alias name, or just "name"
+  * Canonical Name: the address, FQDN, Fully Qualified Domain Name, or Host Name.
 
 
 ##Notes for specific DNS providers
@@ -106,10 +128,3 @@ how far the propagation has got.
 If your CNAME is still not working after a couple of hours, you should
 double-check your setup.
 
-
-##Domains without a www prefix (naked domains)
-
-One small problem with setting up DNS like this is that it doesn't allow
-"naked domains" -- that is, you can have your site at `www.yourdomain.com` or
-`somethingelse.yourdomain.com`, but not at just `yourdomain.com`.
-[Here's some more information about that, and some recommendations](/pages/NakedDomains).

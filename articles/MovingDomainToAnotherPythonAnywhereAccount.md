@@ -16,7 +16,7 @@ account with minimal downtime:
 
 1. setup your new account, and transfer all the settings and files over to the
    new account. This may include:
-    - a git clone to get your source code over to the new account 
+    - a git clone to get your source code over to the new account
     - a database backup from the old account and restore to the new account database. See our help pages for doing [MySQL](/pages/MySQLBackupRestore) and [Postgres](/pages/RegularPostgresBackups) backup and restores.
     - [transfer over](/pages/UploadingAndDownloadingFiles) any other files on disk that your website is using that isn't in version control
     - install any libraries you had installed on your old account. Make sure
@@ -44,4 +44,4 @@ account with minimal downtime:
    your `newaccount.pythonanywhere.com` website to `www.mywebsite.com`
 5. take the new cname (`webapp-XXXXXX.pythonanywhere.com`) generated after the
    rename, and change the CNAME record at your domain registrar. See the bottom
-   half of [this](/pages/OwnDomains) help page for more details.
+   half of [this](/pages/CustomDomains) help page for more details.

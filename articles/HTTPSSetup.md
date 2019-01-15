@@ -24,7 +24,7 @@ the domain.  This is a security thing -- it stops us from doing nefarious things
 like trying to get a certificate for `www.google.com` ;-)
 
 The good news is that this is pretty easy from your side.  Once you've got
-[the DNS stuff](/pages/OwnDomains) set up so that your custom domain is pointed
+[the DNS stuff](/pages/CustomDomains) set up so that your custom domain is pointed
 at PythonAnywhere's servers, and it is correctly handling non-secure requests to
 its HTTP URLs, we can get a certificate for you using a free
 service called [Let's Encrypt](https://letsencrypt.org/).  It's just a couple

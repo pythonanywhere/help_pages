@@ -30,4 +30,4 @@ there are two steps:
  * After you've done that, you'll see a new "DNS setup" section on the "Web"
    tab.  This will have a "CNAME" value, which you'll need to use in some
    configuration with the company you bought the domain from.  There's
-   [more information about CNAME setup here](/pages/OwnDomains#configuring-the-domain-at-the-domain-registrar).
+   [more information about CNAME setup here](/pages/CustomDomains#configuring-the-domain-at-the-domain-registrar).
