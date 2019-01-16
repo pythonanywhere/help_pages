@@ -15,6 +15,8 @@ You can now have a Let's Encrypt certificate managed by PythonAnywhere -- we
 handle all the details of getting it, installing it, and managing renewals
 for you.  So you don't need to do any of the stuff below any more.
 
+[Click this link for the details](/pages/HTTPSSetup).
+
 We're keeping the page around for historical reasons, though :-)
 
 ## Here's the old process for managing Let's Encrypt certificates:
