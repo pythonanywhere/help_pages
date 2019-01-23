@@ -12,7 +12,7 @@
 In order for a website to prove that it really is the site it says it is, it needs
 an HTTPS certificate.  Once you've set up a website on a custom domain on PythonAnywhere, you'll need
 to have one, as otherwise people who visit the site over HTTPS
-will get a security error -- specically, Chrome will say something like "NET::ERR_CERT_COMMON_NAME_INVALID"
+will get a security error -- specifically, Chrome will say something like "NET::ERR_CERT_COMMON_NAME_INVALID"
 and Firefox will just say "Your connection is not secure".
 
 You do not need to do this for a non-custom domain (that is, one at *yourusername*`.pythonanywhere.com`)
