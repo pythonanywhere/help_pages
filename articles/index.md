@@ -124,8 +124,8 @@ And some tips for specific web frameworks:
     * [Using Tornado (WSGI-only mode)](/pages/UsingTornado)
     * [Using Web.py](/pages/WebDotPyWSGIConfig)
     * [Using Dash](/pages/DashWSGIConfig)
+    * [Using Jam.py](/pages/jampy)
     * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
-
 
 
 
