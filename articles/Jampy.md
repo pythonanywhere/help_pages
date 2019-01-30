@@ -13,7 +13,7 @@ Go to the [Web Tab](https://www.pythonanywhere.com/web_app_setup) and hit **Add 
 
 In the Code section specify Source code and Working directory as `/home/username/project_folder`
 
-In the WSGI configuration file: `/var/www/username_pythonanywhere_com_wsgi.py` file add the following code
+In the WSGI configuration file (`/var/www/username_pythonanywhere_com_wsgi.py`), add the following code
 
     :::python
     import os
