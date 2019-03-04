@@ -33,6 +33,6 @@ Check out the [GitHub help pages](//help.github.com/linux-set-up-git/#_set_up_ss
 ##Free account restrictions
 
 
-Be aware that free users are restricted to a [whitelist](https://www.pythonanywhere.com/whitelist/) of sites, and to the HTTP/HTTPS protocol. We also allow the pure-git protocol certain popular services like github and bitbucket.
+Be aware that free users are restricted to a [whitelist](https://www.pythonanywhere.com/whitelist/) of sites, and to the HTTP/HTTPS protocol. We also allow the pure-git protocol to certain popular services like github and bitbucket.
 
 So you should be able to use bitbucket or github as normal. If you're storing your git or hg repository on your own server, then you'll need to use https in your repo URLs instead of the `git@` syntax...
