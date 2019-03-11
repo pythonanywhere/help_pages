@@ -12,7 +12,7 @@
 
 
 
-The Save &amp; Run button defaults to Python 3.6. If you want to use Python 2,
+The Save &amp; Run button defaults to Python 3.7. If you want to use Python 2,
 you can do so by inserting a special line at the top of your file, called a
 [hashbang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29):
 
@@ -33,5 +33,12 @@ Or, for example:
 
 
 will load python 3.4 instead of 3.6.
+
+You can also use a hashbang to run your script in a virtualenv that you've
+defined by pointing it at the python executable in the virtualenv.
+
+    :::python
+    #!/home/myusername/.virtualenvs/myvenv/bin/python
+    print("hello from python in a virtualenv")
 
 **NB** the hashbang has to be the very first line in the file.
