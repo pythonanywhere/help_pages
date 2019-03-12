@@ -45,7 +45,7 @@ However, they do provide an API to tell them about new IP addresses that they
 should allow to connect, so you can combine that with the
 [ipify service](https://www.ipify.org/), which tells you what IP address your
 code is using right now, to make your code automatically whitelist the IP it's
-running on when it starts up.  Nicolas Otieza has kindly provided us with code
+running on when it starts up.  Nicolas Oteiza has kindly provided us with code
 to do that; you just need to
 [install the ipify module](https://help.pythonanywhere.com/pages/InstallingNewModules/) and then use this,
 replacing the bits inside the `<>`s:
