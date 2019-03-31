@@ -114,7 +114,7 @@ connection timeouts. We set a 5-minute timeout on idle database connections, so
 you'll want to handle unexpected disconnects, either manually with some sort of
 try/except, or, if you're using an ORM, by setting a timeout on the longevity
 of workers in your connection pool. SQLAlchemy has a pool_recycle argument,
-for example: <http://docs.sqlalchemy.org/en/rel_0_9/core/pooling.html#setting-pool-recycle>
+for example: <https://docs.sqlalchemy.org/en/latest/core/pooling.html?#setting-pool-recycle>
 
 
 ## Backup and restore
