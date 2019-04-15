@@ -66,6 +66,9 @@ and then use code like this:
 This example uses the `mysql-connector` library, but you can use any MySQL
 library you like.
 
+If you have trouble with the SSH Tunnel connection, the project provides a
+helpful [troubleshooting guide](https://github.com/pahaz/sshtunnel/blob/master/Troubleshoot.rst)
+
 
 ### Manual SSH tunnelling
 
