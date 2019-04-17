@@ -37,12 +37,17 @@ or if they go to `http://yourdomain.com/foo` they are redirected to
 `http://www.yourdomain.com/foo`, and so on. This is the best solution, and many
 domain name registrars/DNS providers support it, often calling it something
 like "web site redirection" or "URL forwarding". If you're using
-[GoDaddy](//www.godaddy.com/), you may find 
+[GoDaddy](//www.godaddy.com/), you may find
 [this post](//webmasters.stackexchange.com/questions/9849/how-to-forward-non-www-to-www-using-godaddy-dns-manager)
-useful. 
+useful.
 
-We also have users recommend the free service from 
-<http://wwwizer.com/naked-domain-redirect>.
+If your registrar doesn't support redirection, many users have recommended
+the free service from [WWWizer](http://wwwizer.com/naked-domain-redirect), which
+has been around for some time; there's also a new, also free, service from
+[NakedSSL](https://www.nakedssl.com/) which can handle HTTPS redirection -- that
+is, from `https://yourdomain.com` to `https://www.yourdomain.com`, which we
+think is unique to them.
+
 
 
 ## Solution 2: Set up (and pay for) a separate web app for your naked domain.
