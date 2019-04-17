@@ -41,7 +41,7 @@ like "web site redirection" or "URL forwarding". If you're using
 [this post](//webmasters.stackexchange.com/questions/9849/how-to-forward-non-www-to-www-using-godaddy-dns-manager)
 useful. 
 
-We've also had one user recommend
+We also have users recommend the free service from 
 <http://wwwizer.com/naked-domain-redirect>.
 
 
