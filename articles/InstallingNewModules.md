@@ -50,7 +50,7 @@ However, in a virtualenv, the `--user` mentioned above is not needed. In fact
 using `--user` will cause an error in a virtualenv.
 
 You can specify which Python version to use for your virtualenv using the
-`--path` option.  So, to create a new Python 3.6 virtualenv, run this command:
+`--python` option.  So, to create a new Python 3.6 virtualenv, run this command:
 
     :::bash
     $ mkvirtualenv my-virtualenv --python=python3.6

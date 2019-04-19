@@ -55,10 +55,10 @@ You may have noticed a *Virtualenv path* option. Let's go and create a virtualen
 
 Go to the "Consoles" tab and start a *Bash console*
 
-    14:50 ~ $ mkvirtualenv --python=/usr/bin/python3.6 myproject
+    14:50 ~ $ mkvirtualenv --python=python3.6 myproject
 
 
-***TIP: if you want to use Python 2 for your virtualenv, use `mkvirtualenv --python=/usr/bin/python2.7 myproject`***
+***TIP: if you want to use Python 2 for your virtualenv, use `mkvirtualenv --python=python2.7 myproject`***
 
 ***TIP: if you see an error saying `mkvirtualenv: command not found`, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper).***
 
