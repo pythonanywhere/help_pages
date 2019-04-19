@@ -60,13 +60,13 @@ or, if using virtualenvwrapper:
 Using the appropriate Python version:
 
     :::bash
-    virtualenv --python=/usr/bin/pythonX.Y /home/myusername/path/to/virtualenv
+    virtualenv --python=pythonX.Y /home/myusername/path/to/virtualenv
 
 
 or, with virtualenvwrappper
 
     :::bash
-    mkvirtualenv --python=/usr/bin/pythonX.Y my-virtualenv-name
+    mkvirtualenv --python=pythonX.Y my-virtualenv-name
 
 
 
