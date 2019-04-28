@@ -24,7 +24,7 @@ abbreviated to PyPI.
 If you were to install Python on your own machine, you'd just get the standard library; if you wanted
 Flask and the others, you'd need to install them separately.   PythonAnywhere, in order to make it easy
 to get started, has a [*lot*](https://www.pythonanywhere.com/batteries_included/) of them pre-installed.
-But it doesn't have everything -- there are 111,690 packages on PyPI as of this writing, so you can see
+But it doesn't have everything -- there are 177,776 packages on PyPI as of this writing, so you can see
 how that might be a bit impractical.
 
 The normal way to install packages from PyPI is using a tool called `pip`.  It can install things three
