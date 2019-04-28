@@ -19,7 +19,7 @@ There are three steps
   1. Create a new entry on the [Web tab](https://www.pythonanywhere.com/web_app_setup) for your new domain
   1. Create a CNAME record with your domain provider, pointing at the new website
 
-There's are two optional, but recommended steps, to make your site secure.  Do
+These are two optional, but recommended steps, to make your site secure.  Do
 these *after* you've done the steps above:
 
   4. [Set up an HTTPS/SSL certificate](/pages/HTTPSSetup)
