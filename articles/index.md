@@ -180,6 +180,7 @@ Here are some guides for some of the common things people want to do:
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
+  * [Setting the timezone for your code](/pages/SettingTheTimezone)
   * [Working with PDFs and converting document formats](/pages/PDF)
   * [Can I use IPv6?](/pages/IPv6)
   * [Can I use Pgame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
