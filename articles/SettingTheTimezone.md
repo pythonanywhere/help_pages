@@ -22,7 +22,10 @@ New York time.  For websites, you need to do something similar at the top of the
 WSGI file:
 
     import os
+    import time
+    
     os.environ["TZ"] = "America/New_York"
+    time.tzset()
 
 For the correct specification strings for other timezones, check out
 [this Wikipedia page](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
