@@ -137,7 +137,7 @@ Oh no!  Here's our most common explanations and solutions to console problems:
   * [Why do I get a "403 Forbidden" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
   * [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
   * [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
-  * ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuotaExceeded)
+  * ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuota)
 
 
 Some technical problems with consoles that sometimes come up:
