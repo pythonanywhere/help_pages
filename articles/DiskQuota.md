@@ -39,3 +39,6 @@ It's usually safe to just delete them all:
 
 You can also clean up any old, unused virtualenvs with `rmvirtualenv my-old-venv-name`.
 
+Other tips for freeing up disk space:
+* Uninstall python packages you don't need anymore with `pip uninstall <package name> --user`
+* Delete your cache files with `rm -rf ~/.cache/*`
