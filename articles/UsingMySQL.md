@@ -47,7 +47,7 @@ yourself.  Start a bash console inside the virtualenv, then:
 
 For Python 2.7
 
-    pip install mysql-python
+    pip install --no-binary :all: mysql-python
 
 For Python 3.x
 
