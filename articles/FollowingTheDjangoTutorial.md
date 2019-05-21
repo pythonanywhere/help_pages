@@ -14,7 +14,7 @@
 
 We &lt;3 Django at PythonAnywhere, we use it ourselves. Their tutorial is excellent, but there's a couple of small things that are different about the PythonAnywhere environment, compared to a regular PC.
 
-This guides pertains to the tutorial for Django 2.0: <https://docs.djangoproject.com/en/2.0/intro/tutorial01/>
+This guides pertains to the tutorial for Django 2.2: <https://docs.djangoproject.com/en/2.2/intro/tutorial01/>
 
 This document is not a replacement for the official django tutorial, instead, it's meant to be a companion guide -- the django tutorial is meant to be your primary guide, but when you read each section of the django tutorial, you should also take a look at the corresponding section notes in this guide, for additional instructions.
 
@@ -75,9 +75,9 @@ Apart from the **Files** tab, you can also use the `tree` command from the bash 
 
 You will probably quickly realize that the Django development server on
 [PythonAnywere](https://www.pythonanywhere.com/) (ie. the `manage.py runserver`
-command) doesn't work.  If you try and run it, you're likely to see an error saying 
+command) doesn't work.  If you try and run it, you're likely to see an error saying
 *That port is already in use*. And in any case, it won't be able to create a dev server
-you can access, because our console servers aren't publicly accessible over the 
+you can access, because our console servers aren't publicly accessible over the
 Internet (they're actually different machines from our web servers).
 
 Instead, you need to do 3 things:
@@ -86,10 +86,10 @@ Instead, you need to do 3 things:
    a website with at `myusername.pythonanywhere.com` and
    that we should listen and try to respond to any web traffic that comes to us
    for that domain.
-   
+
 2. Configure the web app to be run inside the virtualenv that you just set up -
    this lets us know which versions of python and django we should be using.
-   
+
 3. Configure the web app so that we know what actual code to run.
 
 
@@ -97,7 +97,7 @@ Let's take this step by step.
 
 First, to create a web app on PythonAnywhere, open up a new browser tab and go
 to our **Web** tab. Click **Add a new web app**, choose **Manual
-configuration** and then **Python 3.6**. 
+configuration** and then **Python 3.6**.
 
 * *TIP: Make sure you choose "Manual configuration", not "Django" when creating your webapp. We need the manual option to make sure we get Django 2 from our virtualenv*
 
@@ -166,7 +166,7 @@ We support different databases, but using SQlite, the default, is probably simpl
 
 ### Playing with the API
 
-Everything in this section should work fine in your Bash console. 
+Everything in this section should work fine in your Bash console.
 
 (A minor thing: if you want a better interactive interpreter for `manage.py shell`, do a
 
