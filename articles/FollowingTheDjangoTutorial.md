@@ -57,7 +57,7 @@ It's probably a good idea to keep a bash console open at all times in one browse
 The first command the tutorial asks you to run is to check the installed version:
 
     python -m django --version
-    # This should show something like 2.0.2.
+    # This should show something like 2.2.1.
     # If it shows anything else, you've probably forgotten to activate your virtualenv!
 
 
