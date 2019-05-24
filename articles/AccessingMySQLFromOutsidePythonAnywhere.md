@@ -161,7 +161,7 @@ Download and install PuTTY from [here](https://www.putty.org).  Once you've done
 
 * Start PuTTY and enter ssh.pythonanywhere.com into the "Host name" field
 * In the "Category" tree on the left, open Connection -> SSH -> Tunnels
-* Enter "Source port" 3306, and set "Destination" to "micarchive.mysql.pythonanywhere-services.com:3306".
+* Enter "Source port" 3306, and set "Destination" to **yourusername**`.mysql.pythonanywhere-services.com:3306`.
 * Click the "Open" button, and enter the username and password you would use to log in to the PythonAnywhere website.
 * Once it's connected, leave PuTTY running -- it will manage the SSH tunnel.
 
