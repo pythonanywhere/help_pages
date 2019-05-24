@@ -70,6 +70,28 @@ If you have trouble with the SSH Tunnel connection, the project provides a
 helpful [troubleshooting guide](https://github.com/pahaz/sshtunnel/blob/master/Troubleshoot.rst)
 
 
+### Klipfolio
+
+Klipfolio is an online business dashboard tool; you can connect it to your
+PythonAnywhere MySQL server by setting up a datasource and using an SSH tunnel.
+The settings are:
+
+| Host:  | **your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com** |
+| Port:  | 3306 |
+| Database:  | **your database name, eg yourusername$mydatabase** |
+| Driver:  | MySQL |
+| Username:  | **your PythonAnywhere database username** |
+| Password:  | **your PythonAnywhere database password** |
+
+Then click the arrow next to the "Use an SSH tunnel" option -- this will reveal
+new Host, Port, Username and Password inputs:
+
+| Host:  | ssh.pythonanywhere.com |
+| Port:  | 22 |
+| Username:  | **your PythonAnywhere username** |
+| Password:  | **the password you use to log in to the PythonAnywhere website** |
+
+
 ### Manual SSH tunnelling
 
 For other tools, you can set up a tunnel that pretends to be a MySQL server
