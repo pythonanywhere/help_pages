@@ -152,7 +152,7 @@ You can also use this technique to give Python code access to the database
 instead of using the the `sshtunnel` technique.
 
 
-### Using PuTTY on Windows
+#### Using PuTTY on Windows
 
 The `ssh` command is not normally installed on Windows, but you can use a tool
 called PuTTY instead:
