@@ -76,6 +76,8 @@ Klipfolio is an online business dashboard tool; you can connect it to your
 PythonAnywhere MySQL server by setting up a datasource and using an SSH tunnel.
 The settings are:
 
+| Setting  | Value |
+|--|--|
 | Host:  | **your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com** |
 | Port:  | 3306 |
 | Database:  | **your database name, eg yourusername$mydatabase** |
@@ -86,6 +88,8 @@ The settings are:
 Then click the arrow next to the "Use an SSH tunnel" option -- this will reveal
 new Host, Port, Username and Password inputs:
 
+| Setting  | Value |
+|--|--|
 | Host:  | ssh.pythonanywhere.com |
 | Port:  | 22 |
 | Username:  | **your PythonAnywhere username** |
