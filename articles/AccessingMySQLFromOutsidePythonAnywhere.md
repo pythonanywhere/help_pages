@@ -22,7 +22,7 @@ a secure SSH connection to our systems, then sends the MySQL stuff over it.
 There are a number of ways to do this:
 
 
-### MySQL Workbench
+## MySQL Workbench
 
 If you're running MySQL Workbench, you can configure it to connect use a tunnel with settings like this:
 
@@ -43,7 +43,7 @@ If you're running MySQL Workbench, you can configure it to connect use a tunnel 
 * It's also a good idea to set the *Edit -> Preferences -> SQL Editor -> DBMS_Connection keep alive interval* setting to 200, to avoid any "lost connection" issues due to our 5-minute connection timeout.
 
 
-### From Python code
+## From Python code
 
 If you're running Python code on your local machine, and you want it to access
 your MySQL database, you can install [the `sshtunnel` package](https://pypi.python.org/pypi/sshtunnel)
@@ -75,7 +75,7 @@ If you have trouble with the SSH Tunnel connection, the project provides a
 helpful [troubleshooting guide](https://github.com/pahaz/sshtunnel/blob/master/Troubleshoot.rst)
 
 
-### Klipfolio
+## Klipfolio
 
 Klipfolio is an online business dashboard tool; you can connect it to your
 PythonAnywhere MySQL server by setting up a datasource and telling it to use an SSH tunnel.
@@ -101,7 +101,7 @@ new Host, Port, Username and Password inputs:
 | Password:  | **the password you use to log in to the PythonAnywhere website** |
 
 
-### Manual SSH tunnelling
+## Manual SSH tunnelling
 
 For other tools that you want to run on your own machine, you can set up a tunnel that pretends to be a MySQL server
 running on your machine but actually sends data over SSH to your PythonAnywhere
@@ -109,7 +109,7 @@ MySQL instance.  If you're using a Mac or Linux, you probably already have the
 right tool installed -- the `ssh` command.  If you're using Windows, see the "Using PuTTY on Windows"
 section below.
 
-#### Using SSH (Linux/Mac)
+### Using SSH (Linux/Mac)
 
 As long as you're not running a MySQL instance locally, just invoke SSH locally
 (that is, on your own machine -- not on PythonAnywhere) like this, replacing
@@ -138,7 +138,7 @@ which will forward everything on to the MySQL server on PythonAnywhere.
 
 Now skip down to the "Using the tunnel" section below.
 
-#### Using PuTTY on Windows
+### Using PuTTY on Windows
 
 The `ssh` command is not normally installed on Windows, but you can use a tool
 called PuTTY instead:
@@ -158,7 +158,7 @@ After all of that, you'll have a server running on your computer (hostname
 which will forward everything on to the MySQL server on PythonAnywhere.
 
 
-#### Using the tunnel
+### Using the tunnel
 
 At this point, you should be able to run code that connects to MySQL using this local server.
 For example, you could use the code that is inside the `with` statement in the
