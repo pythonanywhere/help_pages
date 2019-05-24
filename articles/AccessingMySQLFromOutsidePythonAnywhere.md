@@ -101,7 +101,10 @@ new Host, Port, Username and Password inputs:
 For other tools, you can set up a tunnel that pretends to be a MySQL server
 running on your machine but actually sends data over SSH to your PythonAnywhere
 MySQL instance.  If you're using a Mac or Linux, you probably already have the
-right tools installed.
+right tool installed -- the `ssh` command.  If you're using Windows, see the "Using PuTTY on Windows"
+section below.
+
+#### Using SSH (Linux/Mac)
 
 As long as you're not running a MySQL instance locally, just invoke SSH locally
 (that is, on your own machine -- not on PythonAnywhere) like this (replacing
@@ -147,6 +150,26 @@ as this is not the default for MySQL.  For example:
 
 You can also use this technique to give Python code access to the database
 instead of using the the `sshtunnel` technique.
+
+
+### Using PuTTY on Windows
+
+The `ssh` command is not normally installed on Windows, but you can use a tool
+called PuTTY instead:
+
+Download and install PuTTY from [here](https://www.putty.org).  Once you've done that:
+
+* Start PuTTY and enter ssh.pythonanywhere.com into the "Host name" field
+* In the "Category" tree on the left, open Connection -> SSH -> Tunnels
+* Enter "Source port" 3306, and set "Destination" to "micarchive.mysql.pythonanywhere-services.com:3306".
+* Click the "Open" button, and enter the username and password you would use to log in to the PythonAnywhere website.
+* Once it's connected, leave PuTTY running -- it will manage the SSH tunnel.
+
+After all of that, you'll have a server running on your computer (hostname
+localhost, port 3306) and you can use the code that would normally go inside the
+"with" statement in our sample Python code to try to connect, replacing the
+tunnel.local_bind_port with the number 3306.
+
 
 
 *Many thanks to user Cartroo for the first version of this guide!*
