@@ -72,14 +72,22 @@ The process for downloading multiple files is just the same, but in reverse.
 ##SFTP (paying accounts only)
 
 If you have a paid account, you can use SFTP, which is a form of FTP-over-SSH.
-Use your normal username and password and connect to
-ssh.pythonanywhere.com.
 
-From the command-line, use `sftp <username>@ssh.pythonanywhere.com`.
+The SSH server for your account depends on which one of our sites you signed up
+to:
 
-Filezilla also supports SFTP; just use `ssh.pythonanywhere.com` as the server
+* If you're using our global, US-hosted site at `www.pythonanywhere.com`, then the
+  SSH server's hostname is `ssh.pythonanywhere.com`
+* If you're using our EU-hosted site at `eu.pythonanywhere.com`, then the
+  SSH server's hostname is `ssh.eu.pythonanywhere.com`
+
+Use your normal username and password and connect.
+
+To use SFTP, from the command-line, use `sftp <username>@<ssh server hostname>`.
+
+Filezilla also supports SFTP; just use `ssh.pythonanywhere.com` or `ssh.eu.pythonanywhere.com` as the server
 (if you're entering it into the box at the top of the main screen, you'll need
-to specify SFTP there too, like this: `sftp://ssh.pythonanywhere.com`.)
+to specify SFTP there too, like this: `sftp://<ssh server hostname>`.)
 
 **NOTE:** If your `.bashrc` outputs *anything* to the console when you connect,
 the SFTP connection will not work. SFTP from the command line will give you an
@@ -91,12 +99,14 @@ an error like `Connection timed out after 20 seconds of inactivity`.
 
 Paid accounts can also use the `rsync` command; run the following command on your local machine:
 
-    rsync -avzhe ssh <LOCAL_FILE_PATH> <USER_NAME>@ssh.pythonanywhere.com:<DESTINATION_DIRECTORY>
+    rsync -avzhe ssh <LOCAL_FILE_PATH> <USER_NAME>@<SSH SERVER HOSTNAME>:<DESTINATION_DIRECTORY>
+
+...where `SSH_SERVER_HOSTNAME` is as described in the "SFTP" section above.
 
 To grab a file (or directories) from your pythonanywhere account to your local
 machine, run the following from your local machine:
 
-    rsync -avzhe ssh <USER_NAME>@ssh.pythonanywhere.com:<PYTHONANYWHERE_FILE_PATH> <LOCAL_DIRECTORY>
+    rsync -avzhe ssh <USER_NAME>@<SSH SERVER HOSTNAME>:<PYTHONANYWHERE_FILE_PATH> <LOCAL_DIRECTORY>
 
 If you have a another server somewhere, you could also rsync between that and
 PythonAnywhere. PythonAnywhere will only listen to port 22, but to configure

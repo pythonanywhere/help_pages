@@ -13,11 +13,19 @@
 
 
 If you have a paid-for PythonAnywhere account, you can access it via ssh.
-Here's how:
+The SSH server for your account depends on which one of our sites you signed up
+to:
+
+* If you're using our global, US-hosted site at `www.pythonanywhere.com`, then the
+  SSH server's hostname is `ssh.pythonanywhere.com`
+* If you're using our EU-hosted site at `eu.pythonanywhere.com`, then the
+  SSH server's hostname is `ssh.eu.pythonanywhere.com`
+
+Here's how to use that:
 
 From a command line with ssh installed
 
-    ssh <username>@ssh.pythonanywhere.com
+    ssh <username>@<ssh server hostname>
 
 
 The server's fingerprint is:
@@ -41,7 +49,7 @@ to `~/.ssh/authorized_keys` in order to enable passwordless logins.
 Sometimes, for some reason, you may not be able to login using SSH. The
 starting point to working out what is going wrong is to run:
 
-    ssh -v <username>@ssh.pythonanywhere.com
+    ssh -v <username>@<ssh server hostname>
 
 
 ###Filezilla, etc
