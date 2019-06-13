@@ -13,12 +13,13 @@
 # Getting a MongoDB server
 
 We don't provide Mongo servers ourselves, so you'll need to get one from an
-external provider.  Because this will require non-HTTP external Internet access,
-you'll need a paid account.
+external provider (many of our customers are using [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)).
+For best performance, you should provision your server in the AWS `us-east-1`
+datacenter if you're using our US-based site at `www.pythonanywhere.com`, or the
+`eu-central-1` datacenter if you're using our EU site at `eu.pythonanywhere.com`.
 
-Many of our customers are using [mLab](https://mlab.com/) and [MongoDB Atlas];
-for best performance, you should provision your server in the AWS us-east-1
-datacenter.
+Because this will require non-HTTP external Internet access,
+you'll need a paid account.
 
 
 # Connecting to it.
