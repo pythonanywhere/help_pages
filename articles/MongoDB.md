@@ -29,11 +29,20 @@ If you're connecting from a console or a scheduled task, just use the regular
 object with the normal parameters
 to specify the server, the username and the password..
 
-If you're connecting from a web app, there are a few extra parameters to add:
+If you're connecting from a web app, and you're using Flask, we recommend that
+you use the [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+extension, which works well in a multiprocessing environment like websites
+on our system.
+
+If you're not using Flask, or are just using the "raw" PyMongo API in Flask,
+there are a few extra parameters you need to to add to your call to
+`pymongo.MongoClient`:
 
     connectTimeoutMS=30000, socketTimeoutMS=None, socketKeepAlive=True, connect=False, maxPoolsize=1
 
-These are necessary to make it work without threads in a multiprocessing environment.
+This handles the bulk of the stuff that would otherwise be handled by Flask-PyMongo
+if you were using it.
+
 
 # Whitelisting your IP address for MongoDB Atlas
 
