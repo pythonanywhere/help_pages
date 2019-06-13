@@ -58,8 +58,8 @@ A more secure solution is to use the MongoDB Atlas API to them about new IP
 addresses that they should allow to connect.  You can combine that with the
 [ipify service](https://www.ipify.org/), which tells you what IP address your
 code is using right now, to make your code automatically whitelist the IP it's
-running on when it starts up.  Nicolas Oteiza has kindly provided us with code
-to do that; you just need to
+running on when it starts up.  The following code (based on code provided by
+Nicolas Oteiza) will do that. You just need to
 [install the ipify module](https://help.pythonanywhere.com/pages/InstallingNewModules/) and then use this,
 replacing the bits inside the `<>`s:
 
@@ -68,18 +68,27 @@ replacing the bits inside the `<>`s:
     from requests.auth import HTTPDigestAuth
     from ipify import get_ip
 
-    base_url = "https://cloud.mongodb.com/api/atlas/v1.0"
-    GROUP_ID = '<your-group-or-project-id>'
-    whitelist_ep = "/groups/" + GROUP_ID + "/whitelist"
-    url = '{}{}'.format(base_url, whitelist_ep)
-
+    atlas_group_id = "<your group ID aka project ID -- check the Project / Settings section inside Atlas>"
+    atlas_username = "<your atlas username/email, eg. jane@example.com>"
+    atlas_api_key = "<your atlas API key>"
     ip = get_ip()
 
-    r =requests.post(
-        url,
-        auth=HTTPDigestAuth('<your-mongo-user-name>', '<your-api-key>'),
-        json=[{'ipAddress': ip, 'comment': '<your-comment>'}]  # the comment is optional
+    resp = requests.post(
+        "https://cloud.mongodb.com/api/atlas/v1.0/groups/{atlas_group_id}/whitelist".format(atlas_group_id=atlas_group_id),
+        auth=HTTPDigestAuth(atlas_username, atlas_api_key),
+        json=[{'ipAddress': ip, 'comment': 'From PythonAnywhere'}]  # the comment is optional
     )
+    if resp.status_code in (200, 201):
+        print("MongoDB Atlas whitelist request successful", flush=True)
+    else:
+        print(
+            "MongoDB Atlas whitelist request problem: status code was {status_code}, content was {content}".format(
+                status_code=resp.status_code, content=resp.content
+            ),
+            flush=True
+        )
 
-
+If there are any problems whitelisting your IP address (for example, if the
+API key is wrong) then you will find the error messages in the program's output;
+for websites, it will be in the server log file (linked from the "Web" page).
 
