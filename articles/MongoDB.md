@@ -51,8 +51,11 @@ to connect to your Mongo instance; this can be a bit tricky on PythonAnywhere,
 because the precise IP address will depend on the time your code runs, and
 whether it's running in a website's code, or in a task, or in a console.
 
-However, they do provide an API to tell them about new IP addresses that they
-should allow to connect, so you can combine that with the
+The easiest, solution, though certainly not the most secure, is to whitelist the
+CIDR `0.0.0.0/0`, which is a "whitelist" containing every IP address on the Internet.
+
+A more secure solution is to use the MongoDB Atlas API to them about new IP
+addresses that they should allow to connect.  You can combine that with the
 [ipify service](https://www.ipify.org/), which tells you what IP address your
 code is using right now, to make your code automatically whitelist the IP it's
 running on when it starts up.  Nicolas Oteiza has kindly provided us with code
