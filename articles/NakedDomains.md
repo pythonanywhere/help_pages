@@ -78,7 +78,7 @@ They normally don't support HTTPS, however.  This is generally not a problem
 because all you're trying to handle is people typing URLs into a browser.  If
 someone types `yourdomain.com` or `http://yourdomain.com`, they'll get your
 site.  The only case that won't work is if they type `https://yourdomain.com`,
-including the `s` after `http` which pretty much no-one is ever going to do.
+including the `s` after `http`, which pretty much no-one is ever going to do.
 However, if you think that people are going to do it for your site, then see the
 "HTTPS redirection" section below.
 
