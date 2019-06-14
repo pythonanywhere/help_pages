@@ -80,8 +80,8 @@ explain specific parts of it later.
 The most important part of this is the piece labeled "ANSWER SECTION". This
 shows how the DNS system is handling your domain.
 
-Since www.yourdomain.com is a
-correctly configured CNAME, it points to webapp-12345.pythonanywhere.com (the
+Since `www.yourdomain.com` is a
+correctly configured CNAME, it points to `webapp-12345.pythonanywhere.com` (the
 first line of the section).  The second line shows what IP address that
 ultimately resolves to.
 
