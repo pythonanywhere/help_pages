@@ -42,7 +42,7 @@ essentially the same thing.
 ## Your website on `yourdomain.com`
 
 So for a website, you generally want people to be able to visit it by typing in
-either of the normal versions of the address, with one with the `www.` at the
+either of the normal versions of the address, the one with the `www.` at the
 start or the one without.  If you put your website on just one of them, some
 people will use the other one and get confused when they don't see anything.
 
