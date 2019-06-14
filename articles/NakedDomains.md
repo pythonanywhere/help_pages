@@ -106,7 +106,7 @@ but they seem pretty solid to us so far :-)
 
 ## Solution 2: Set up (and pay for) a separate web app for your naked domain.
 
-This will cost a little more beause you'll need to create two websites inside
+This will cost a little more because you'll need to create two websites inside
 PythonAnywhere for it:
 
 * One at `www.yourdomain.com` for the "official" version.
