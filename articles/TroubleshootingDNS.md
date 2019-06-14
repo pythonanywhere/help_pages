@@ -17,6 +17,8 @@ understand how DNS works.
 
 ## `yourdomain.com` is not `www.yourdomain.com`
 
+This is the cause of about 80% of problems with DNS setup :-)
+
 Technically speaking those two addresses are completely different things -- you
 could have one website on one, and a completely different one on the other.  You should
 set up your website on `www.yourdomain.com` and then set up `yourdomain.com` to
