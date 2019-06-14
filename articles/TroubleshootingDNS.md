@@ -78,3 +78,8 @@ Things that could be wrong:
 We have also a [a seperate help page](/pages/DNSPrimer/) that describes a little
 about how DNS works. It's a great place to start if you're confused and don't
 understand what's really going on with your custom domain.
+
+## Still having trouble?
+
+If you want to [contact us](mailto:support@pythonanywhere.com) remember to attach a screenshots of your DNS configuration.
+

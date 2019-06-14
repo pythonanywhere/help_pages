@@ -169,4 +169,5 @@ both free:
 
 We have [a separate page](/pages/TroubleshootingDNS/) dedicated to handling specific problems.
 
+If you want to [contact us](mailto:support@pythonanywhere.com) remember to attach a screenshots of your DNS configuration.
 
