@@ -1,6 +1,6 @@
 <!--
 .. title: How DNS works: a beginner's guide
-.. slug: How DNS works: a beginner's guide
+.. slug: DNSPrimer
 .. date: 2019-06-14 14:35:28 UTC+01:00
 .. tags:
 .. category:
