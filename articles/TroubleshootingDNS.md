@@ -9,13 +9,13 @@
 .. type: text
 -->
 
-# How DNS works
+## How DNS works
 
 We have a blog post that describes a little about how DNS works
 [here](https://blog.pythonanywhere.com/175/). It's a great place to start if
 you're confused and don't know what's going on with your custom domain.
 
-# How to check if your CNAME is properly set up
+## How to check if your CNAME is properly set up
 
 `dig` is a tool that can be used to talk to the DNS system to get information
 about a domain name. We have it installed on PythonAnywhere, so you can run it
@@ -59,7 +59,12 @@ at least an hour.
 Things that could be wrong:
 * No "ANSWER SECTION": The domain does not exist in the DNS system.
 
-# See also:
+## yourdomain.com is not www.yourdomain.com
 
-* [Custom Domains](/pages/CustomDomains/)
+You need to give special treatment to your naked domain. It is handled
+differently then subdomains. As it is a common source of confusion we have a
+[separate help page](/pages/NakedDomains/) dedicated to that problem.
+
+## See also:
+
 * [Naked Domains](/pages/NakedDomains/)
