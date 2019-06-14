@@ -9,11 +9,25 @@
 .. type: text
 -->
 
-## How DNS works
+## Make sure that you went through Custom Domains help page
 
-We have a blog post that describes a little about how DNS works
-[here](https://blog.pythonanywhere.com/175/). It's a great place to start if
-you're confused and don't know what's going on with your custom domain.
+If you have trouble coupling your domain with website on PythonAnywhere be sure
+you went through our [Custom Domains help page](/pages/CustomDomains/). If you
+still experience problems we prepared a set of solutions for the most common ones
+and a background information to help you understand how DNS works.
+
+## yourdomain.com is not www.yourdomain.com
+
+You need to give special treatment to your naked domain. It is handled
+differently then subdomains. As it is a common source of confusion we have a
+[separate help page](/pages/NakedDomains/) dedicated to that problem.
+
+## We were unable to find a CNAME for your domain.
+
+If you see "We were unable to find a CNAME for your domain." message but your
+website loads normally it usually mean that your name server provider (usually
+it happens for Cloudflare using [CNAME Flattening](/pages/NakedDomains/)) sets redirection in a way that
+makes us unable to identify a CNAME. It's fine.
 
 ## How to check if your CNAME is properly set up
 
@@ -59,12 +73,8 @@ at least an hour.
 Things that could be wrong:
 * No "ANSWER SECTION": The domain does not exist in the DNS system.
 
-## yourdomain.com is not www.yourdomain.com
+## How DNS works
 
-You need to give special treatment to your naked domain. It is handled
-differently then subdomains. As it is a common source of confusion we have a
-[separate help page](/pages/NakedDomains/) dedicated to that problem.
-
-## See also:
-
-* [Naked Domains](/pages/NakedDomains/)
+We have also a [a seperate help page](/pages/DNSPrimer/) that describes a little
+about how DNS works. It's a great place to start if you're confused and don't
+understand what's really going on with your custom domain.

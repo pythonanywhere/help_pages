@@ -140,6 +140,7 @@ There are two steps to do for this:
 
 
 ## Optional: Set up a naked domain redirect
+*Note that we have a [separate help page](/pages/NakedDomains/) dedicated to that topic.*
 
 Most people want their site set up so that when someone goes to
 `http://yourdomain.com/` they are redirected to `http://www.yourdomain.com/`,
@@ -164,6 +165,8 @@ both free:
   * [wwwizer](http://wwwizer.com/naked-domain-redirect)
   * [Naked SSL](https://www.nakedssl.com/)
 
+## Still having trouble?
 
+We have [a separate page](/pages/TroubleshootingDNS/) dedicated to handling specific problems.
 
 
