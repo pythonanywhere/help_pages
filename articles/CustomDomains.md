@@ -125,49 +125,33 @@ bunch of different places around the Internet, which will give you a feel for
 how far the propagation has got.
 
 If your CNAME is still not working after a couple of hours, you should
-double-check your setup.  If you can't work out what is wrong, email us at
-[support@pythonanywhere.com](support@pythonanywhere.com), including a screenshot
-of the settings as you have configured them on your registrar's DNS setup
-page.
+double-check your setup.  If it all looks OK, but the site isn't working,
+[check out our DNS troubleshooting page](/pages/TroubleshootingDNS).
 
 
 ## Recommended: set up HTTPS for a secure site.
 
-There are two steps to do for this:
+Once you have website working, you should set up HTTPS.  There are two steps to
+do for this:
 
   1. [Set up an HTTPS/SSL certificate for your domain](/pages/HTTPSSetup)
   1. [Force HTTPS on your website](/pages/ForcingHTTPS)
 
 
 ## Optional: Set up a naked domain redirect
-*Note that we have a [separate help page](/pages/NakedDomains/) dedicated to that topic.*
 
 Most people want their site set up so that when someone goes to
 `http://yourdomain.com/` they are redirected to `http://www.yourdomain.com/`,
 or if they go to `http://yourdomain.com/foo` they are redirected to
-`http://www.yourdomain.com/foo`, and so on.
-
-The easiest way to do this is normally to set it up with your domain provider;
-almost all of them provide it as a free service.   Here are the links for some
-popular registrars:
-
-  * [GoDaddy](https://uk.godaddy.com/help/forward-a-domain-12123)
-  * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/385/2237/how-to-redirect-a-url-for-a-domain)
-  * [Gandi](https://docs.gandi.net/en/domain_names/common_operations/web_forwarding.html)
-  * [Google Domains](https://webmasters.stackexchange.com/a/90405)
-
-If you are using a different registrar, searching for "forward naked domain" plus
-the name of your registrar will probably find the appropriate help page.
-
-If your registrar doesn't support domain redirects, we know of two alternatives,
-both free:
-
-  * [wwwizer](http://wwwizer.com/naked-domain-redirect)
-  * [Naked SSL](https://www.nakedssl.com/)
+`http://www.yourdomain.com/foo`, and so on.  Check out [this help page](/pages/NakedDomains)
+for details on how to do that.
 
 ## Still having trouble?
 
-We have [a separate page](/pages/TroubleshootingDNS/) dedicated to handling specific problems.
+We have [a separate page](/pages/TroubleshootingDNS/) dedicated to handling
+specific problems -- 95% of DNS problems can be sorted quickly by following the
+instructions there.
 
-If you want to [contact us](mailto:support@pythonanywhere.com) remember to attach a screenshots of your DNS configuration.
+If you still can't get it working, [contact us](mailto:support@pythonanywhere.com) -- please
+attach a screenshot of the DNS configuration you've set up on your registrar's site.
 

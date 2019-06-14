@@ -84,10 +84,17 @@ However, if you think that people are going to do it for your site, then see the
 
 Many domain name registrars/DNS providers provide HTTP redirection as a free
 service as part of the domain registration fee, often calling it something
-like "web site redirection" or "URL forwarding". If you're using
-[GoDaddy](//www.godaddy.com/), you may find
-[this post](//webmasters.stackexchange.com/questions/9849/how-to-forward-non-www-to-www-using-godaddy-dns-manager)
-useful.
+like "web site redirection" or "URL forwarding".
+
+Here are links to the appropriate documentation for some popular registrars:
+
+  * [GoDaddy](https://uk.godaddy.com/help/forward-a-domain-12123)
+  * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/385/2237/how-to-redirect-a-url-for-a-domain)
+  * [Gandi](https://docs.gandi.net/en/domain_names/common_operations/web_forwarding.html)
+  * [Google Domains](https://webmasters.stackexchange.com/a/90405)
+
+If you are using a different registrar, searching for "forward naked domain" plus
+the name of your registrar will probably find the appropriate help page.
 
 If your registrar doesn't support redirection, lots of people hosting on
 PythonAnywhere use the free service from
