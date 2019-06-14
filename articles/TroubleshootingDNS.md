@@ -22,7 +22,7 @@ could have one website on one, and a completely different one on the other.  You
 set up your website on `www.yourdomain.com` and then set up `yourdomain.com` to
 redirect to `www.yourdomain.com` as a separate step.
 
-The name of your website on the "Web" page inside PythonAnywhere is needs to be
+The name of your website on the "Web" page inside PythonAnywhere needs to be
 an exact match for the address that people use to visit it, so in all but the most
 unusual cases it *should* include the `www`.  So if right now you just have
 `yourdomain.com` there instead of `www.yourdomain.com`, then use the "pencil" icon next
