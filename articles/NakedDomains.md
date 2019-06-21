@@ -35,15 +35,15 @@ are configured.   Likewise if you managed to set up a website for
 Back in the early days of the Internet, this was unsurprising -- people would
 expect to have to enter the address of the web server for the website (and of
 the FTP server for the FTP site, and soon).  But nowadays, it's a bit confusing.
-Most importantly people see `yourdomain.com` and `www.yourdomain.com` as being
+People see `yourdomain.com` and `www.yourdomain.com` as being
 essentially the same thing.
 
 
 ## Your website on `yourdomain.com`
 
 So for a website, you generally want people to be able to visit it by typing in
-either of the normal versions of the address, the one with the `www.` at the
-start or the one without.  If you put your website on just one of them, some
+either of the normal versions of the address -- the one with the `www.` at the
+start, or the one without.  If you put your website on just one of them, some
 people will use the other one and get confused when they don't see anything.
 
 What we recommend is that you have the "official" version of your website on
