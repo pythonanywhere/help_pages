@@ -34,7 +34,7 @@ one based in the EU and one in the US.  If you're in the EU, then go to:
 
 If you're anywhere else in the world, go to:
 
- * [https://ww.pythonanywhere.com/](https://www.pythonanywhere.com/)
+ * [https://www.pythonanywhere.com/](https://www.pythonanywhere.com/)
 
 You'll wind up here:
 
