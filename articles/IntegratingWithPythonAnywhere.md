@@ -45,7 +45,7 @@ Python online in less than a minute" button (they both go to the same place):
 
 <img alt="PythonAnywhere plans page" src="/integrating-pa-plans-page.png" style="border: 2px solid lightblue; max-width: 70%;">
 
-Now sign up:
+Now click the "Create a Beginner account" button to create a free account:
 
 <img alt="PythonAnywhere signup page" src="/integrating-pa-signup-page.png" style="border: 2px solid lightblue; max-width: 70%;">
 
