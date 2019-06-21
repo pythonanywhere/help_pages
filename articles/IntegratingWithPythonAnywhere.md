@@ -30,11 +30,11 @@ documentation :-)
 The first step is, of course, to go to PythonAnywhere.  We have two sites,
 one based in the EU and one in the US.  If you're in the EU, then go to:
 
-    * [https://eu.pythonanywhere.com/](https://eu.pythonanywhere.com/)
+ * [https://eu.pythonanywhere.com/](https://eu.pythonanywhere.com/)
 
 If you're anywhere else in the world, go to:
 
-    * [https://ww.pythonanywhere.com/](https://www.pythonanywhere.com/)
+ * [https://ww.pythonanywhere.com/](https://www.pythonanywhere.com/)
 
 You'll wind up here:
 
@@ -79,21 +79,21 @@ working in the future, and creates a new one for you to use.
 The full documentation for the PythonAnywhere API is [here](/pages/API).  What
 we need to do to get a website running is:
 
-    * Check if the user already has a website
-    * If not, create it
-    * Upload the files that make up the website's code
-    * Upload a WSGI file, which connects the website's code to the web server
-    * Upload any static file routes (eg. "URLs starting `/static/` should be served from such-and-such a directory)
-    * Reload the website so that the changes are all live.
+ * Check if the user already has a website
+ * If not, create it
+ * Upload the files that make up the website's code
+ * Upload a WSGI file, which connects the website's code to the web server
+ * Upload any static file routes (eg. "URLs starting `/static/` should be served from such-and-such a directory)
+ * Reload the website so that the changes are all live.
 
 The easiest way to show the details of that is through an example, so we've
 created one: [https://github.com/pythonanywhere/upload-website](https://github.com/pythonanywhere/upload-website).
 
 In that repository, we have:
 
-    * A super-simple example of a Flask site, with code, a template, and a static CSS file.
-    * An upload script.
-    * A requirements file.
+ * A super-simple example of a Flask site, with code, a template, and a static CSS file, in the `src` directory.
+ * An upload script, `upload.py`.
+ * A requirements file.
 
 The upload script is the most interesting part of it.  When you run it, it will
 prompt you for a username, an API token, and the PythonAnywhere region you
