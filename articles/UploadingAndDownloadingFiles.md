@@ -36,7 +36,7 @@ Mercurial or Subversion. You can then "push" your code up to
 GitHub. You also get all the benefits of using a version
 control system, the ability to go back to older versions of files, etc.
 
-Follow the instructions on either Github ("[create a
+Follow the instructions on either GitHub ("[create a
 repo](https://help.github.com/articles/create-a-repo)") or Bitbucket
 ("[set up a repository](https://confluence.atlassian.com/get-started-with-bitbucket/set-up-a-repository-861178557.html)"), both
 of which have excellent documentation, for how to get started.
