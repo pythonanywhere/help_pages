@@ -74,6 +74,11 @@ account and do stuff -- so keep it secret.  If someone does somehow get hold of 
 you can revoke it on this page by clicking the red button -- that stops it from
 working in the future, and creates a new one for you to use.
 
+### End of sample signup instructions
+
+...we now return to a slightly more expert-oriented guide for doing the actual
+integration :-)
+
 ## Using the PythonAnywhere API
 
 The full documentation for the PythonAnywhere API is [here](/pages/API).  What
