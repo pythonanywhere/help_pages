@@ -19,7 +19,7 @@
 # Getting started and Authentication
 
 The PythonAnywhere API uses token-based authentication.  You can get your token
-from the [Accounts page](https://www.pythonanywhere.com/account/#api_token)
+from your Account page on the API Token tab.
 
 It's used in a header called `Authorization`, and the value is encoded as the
 string "Token", followed by a space, followed by your token, like this:
@@ -28,7 +28,7 @@ string "Token", followed by a space, followed by your token, like this:
 'Authorization': 'Token {}'.format(token)
 ```
 
-Again, you can see a nice example on the [Accounts page](https://www.pythonanywhere.com/account/#api_token)
+Again, you can see a nice example on your Account page on the API Token tab
 
 Once you've generated your token, you can copy and paste it for use in your scripts.  You can also access
 it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populated environment variable,
@@ -39,7 +39,8 @@ You will need to reload your webapp and start new consoles for this environment 
 
 # Endpoints
 
-All endpoints are hosted at *https://www.pythonanywhere.com/*
+All endpoints are hosted at *https://www.pythonanywhere.com/* or
+*https://eu.pythonanywhere.com/* depending on where your account is registered.
 
 
 ## Consoles
@@ -92,7 +93,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Downloads the file at the specified path.</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Uploads a file to the specified file path.  Contents should be in a
 multipart-encoded file with the name "content".  The attached filename is
 ignored.
