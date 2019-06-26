@@ -42,7 +42,6 @@ You will need to reload your webapp and start new consoles for this environment 
 All endpoints are hosted at *https://www.pythonanywhere.com/*
 
 
-
 ## Consoles
 
 ### /api/v0/user/{username}/consoles/
@@ -89,12 +88,21 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 ## Files
 
-### /api/v0/user/{username}/files/path{path}/
+### /api/v0/user/{username}/files/path{path}
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Uploads a file to the specified file path.  Contents should be in a
+multipart-encoded file with the name "content".  The attached filename is
+ignored.
+If the directories in the given path do not exist, they will be created.
+Any file already present at the specified path will be overwritten.
+Returns 201 on success if a file has been created, or 200 if an existing
+file has been updated.</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Deletes the file at the specified path. This method can be used to
-delete log files that are not longer required.</td><td style="width: 30%">(no parameters)</td></tr>
+delete log files that are not longer required.
+Returns 204 on success.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 
@@ -152,8 +160,8 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all webapps</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration.  Use (for example) "python36" to
-    specify Python 3.6.</td><td style="width: 30%">POST parameters: domain_name, python_version</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration.   Use (for example) "python36" to
+specify Python 3.6.</td><td style="width: 30%">POST parameters: domain_name, python_version</td></tr>
 </table>
 
 
@@ -185,6 +193,8 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 `cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 
