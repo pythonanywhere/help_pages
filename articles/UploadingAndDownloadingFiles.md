@@ -85,9 +85,12 @@ Use your normal username and password and connect.
 
 To use SFTP, from the command-line, use `sftp <username>@<ssh server hostname>`.
 
-Filezilla also supports SFTP; just use `ssh.pythonanywhere.com` or `ssh.eu.pythonanywhere.com` as the server
+[Filezilla](https://filezilla-project.org/) also supports SFTP; just use `ssh.pythonanywhere.com` or `ssh.eu.pythonanywhere.com` as the server
 (if you're entering it into the box at the top of the main screen, you'll need
 to specify SFTP there too, like this: `sftp://<ssh server hostname>`.)
+
+[WinSCP](https://winscp.net/eng/index.php) is also a good option if you want to
+use SFTP from a Windows machine.
 
 **NOTE:** If your `.bashrc` outputs *anything* to the console when you connect,
 the SFTP connection will not work. SFTP from the command line will give you an
