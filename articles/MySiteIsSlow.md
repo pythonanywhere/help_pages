@@ -67,8 +67,8 @@ def my_view_function(request):
     print('{timestamp} -- request started'.format(timestamp=datetime.utcnow().isoformat())
     # rest of your code as before
 
-    print('{timestamp} -- request started'.format(timestamp=datetime.utcnow().isoformat())
-    return resposne
+    print('{timestamp} -- request ended'.format(timestamp=datetime.utcnow().isoformat())
+    return response
 
 
 At the very least, you'd want some prints at the beginning and end of your views, then perhaps also:
