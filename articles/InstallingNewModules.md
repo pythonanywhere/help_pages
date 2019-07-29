@@ -38,7 +38,9 @@ Please note, the command line option before the module name is quite literally `
 don't need to replace it with your username, or to add your username to the
 command line!
 
-Do let us know if there are any packages you think should be part of our standard "batteries included".
+Do let us know if there are any packages you think should be part of our
+standard "batteries included" -- just use the "Send feedback" link above, or
+send us a message at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 
 
 ##2\. Using a virtualenv
