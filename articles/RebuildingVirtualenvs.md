@@ -20,6 +20,8 @@
 
 Navigate to the **Web** tab and take a look at the *WSGI file* for each of your web apps. At the top (if it's using a virtualenv), you'll find a line that contains the line `activate_this`. That will include the path to your virtualenv.
 
+  **_NOTE:_** If you can't find that line, read this: https://help.pythonanywhere.com/pages/UpgradingToTheNewVirtualenvSystem
+
   * If the path starts with `/home/myusername/.virtualenvs/...`, then you're using virtualenvwrapper.
 
 The instructions below will contain instructions for people who use plain `virtualenv` and `virtualenvwrapper`. Use a **Bash console** to enter these commands.
