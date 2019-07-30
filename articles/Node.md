@@ -1,6 +1,5 @@
-
 <!--
-.. title: Using NVM to get the most updated version of node
+.. title: Using NVM to get the most up-to-date version of node
 .. slug: Node
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
