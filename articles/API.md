@@ -87,6 +87,20 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>"type" into the console.  Add a "\n" for return.</td><td style="width: 30%">POST parameter: input</td></tr>
 </table>
 
+## Cpu
+
+### /api/v0/user/{username}/cpu/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about cpu usage in json format:
+<pre>{
+    "daily_cpu_limit_seconds": &lt;int&gt;,
+    "next_reset_time": &lt;isoformat&gt;,
+    "daily_cpu_total_usage_seconds": &lt;float&gt;
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
 ## Files
 
 ### /api/v0/user/{username}/files/path{path}
@@ -185,9 +199,7 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td style="width: 30%">POST parameters: none</td></tr>
 </table>
 
-
 ### /api/v0/user/{username}/webapps/{domain_name}/ssl/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
@@ -198,18 +210,14 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 `cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
-
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
 </table>
 
-
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no parameters)</td></tr>
