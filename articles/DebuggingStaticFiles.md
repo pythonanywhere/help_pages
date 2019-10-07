@@ -43,6 +43,23 @@ By identifying these 3 pieces of information, you may already be able to figure
 out what the problem is -- the static files mapping should be able to transform
 the URL to the path on disk, exactly.
 
+## How the static files mapping finds your file
+
+Let's work through an example to show how the static files system finds your
+file. 
+
+If you have a css file that is referred to by */static/path/to/myfile.css* in
+your HTML, you could use any of the following static files mappings (the first 2 columns
+are the values that should be in the *Static files* table and the last is where
+there needs to be a file for the mapping to work):
+
+| URL                | Directory                       | Where the file must be                            |
+| :----------------- | :------------------------------ | :------------------------------------------------ |
+| /static            | /home/username/mysite/assets/   | /home/username/mysite/assets/path/to/myfile.css   |
+| /static/path/      | /home/username/mysite/assets/   | /home/username/mysite/assets/to/myfile.css        |
+| /static/path/to/   | /home/username/mysite/assets/   | /home/username/mysite/assets/myfile.css           |
+
+
 ### Common problems:
 
 * The file is missing on disk
