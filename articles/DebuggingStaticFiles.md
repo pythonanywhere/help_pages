@@ -53,14 +53,36 @@ your HTML, you could use any of the following static files mappings (the first 2
 are the values that should be in the *Static files* table and the last is where
 there needs to be a file for the mapping to work):
 
-| URL                | Directory                       | Where the file must be                            |
-| :----------------- | :------------------------------ | :------------------------------------------------ |
-| /static            | /home/username/mysite/assets/   | /home/username/mysite/assets/path/to/myfile.css   |
-| /static/path/      | /home/username/mysite/assets/   | /home/username/mysite/assets/to/myfile.css        |
-| /static/path/to/   | /home/username/mysite/assets/   | /home/username/mysite/assets/myfile.css           |
+
+<table border="1">
+<tr>
+<th colspan="2" style="padding-left: 1em; padding-right: 1em">Entry in Static files table</th>
+<th rowspan="2" style="padding-left: 1em; padding-right: 1em">Where the file must be</th>
+</tr>
+<tr>
+<th style="padding-left: 1em; padding-right: 1em">URL</th>
+<th style="padding-left: 1em; padding-right: 1em">Directory</th>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em">/static</td>
+<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/</td>
+<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/path/to/myfile.css</td>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em">/static/path/</td>
+<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/</td>
+<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/to/myfile.css</td>
+</tr>
+<tr>
+<td style="padding-left: 1em; padding-right: 1em">/static/path/to/</td>
+<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/</td>
+<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/myfile.css</td>
+</tr>
+</table>
 
 
-### Common problems:
+
+## Common problems:
 
 * The file is missing on disk
 
@@ -77,7 +99,7 @@ there needs to be a file for the mapping to work):
 
 * Your static files mapping is not active yet.  You may need to reload your web app.
 
-* You've used a relative path instead of an absolute path in the URL (eg
+* You've used a relative path instead of an absolute path in the URL in your HTML (eg
   'static/css/myfile.css' instead of '/static/css/myfile.css' -- this will work
   for some paths on your site but not others.  best to use absolute paths
   everywhere)
