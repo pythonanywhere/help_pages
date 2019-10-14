@@ -90,7 +90,7 @@ on PythonAnywhere, add a `TEST` key to your database definition in
         'default': {
              ...
             'TEST': {
-              NAME: '<your username>$test_<your database name>',
+              'NAME': '<your username>$test_<your database name>',
 
 More info here: https://docs.djangoproject.com/en/1.10/ref/settings/#test
 
