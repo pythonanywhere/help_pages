@@ -46,7 +46,7 @@ with Display():
     try:
         browser.get('http://www.google.com')
         print browser.title #this should print "Google"
-  
+	#print(browser.title) for versions greater than python 2.7
     finally:
         browser.quit()
 ```
