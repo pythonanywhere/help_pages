@@ -125,7 +125,7 @@ and see if that fixes it.
 
 ## How DNS works
 
-We have also a [a seperate help page](/pages/DNSPrimer/) that describes a little
+We have also a [a separate help page](/pages/DNSPrimer/) that describes a little
 about how DNS works. It's a great place to start if you're confused and don't
 understand what's really going on with your custom domain.
 
