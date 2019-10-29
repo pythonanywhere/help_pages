@@ -103,7 +103,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 ## Files
 
-### /api/v0/user/{username}/files/path{path}
+### /api/v0/user/{username}/files/path/{path}
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
