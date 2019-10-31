@@ -115,7 +115,20 @@ Students' home folders will be mounted into your own account. So just as your ho
 
 *Later on, Iolanta can use the Bash console to actually run each student's python code and see if it works.*
 
-  * Incidentally, there are smarter ways of copying multiple files around in the Bash shell, using wildcards like *, ask us!
+### A more advanced example
+
+If you want to copy multiple files to all of your students home directories, you
+can use a Bash for loop and a wildcard.  Here's an example, which assumes that
+the teacher's username is `theteacher` -- it would copy the files `script.py` and
+`db.sqlite3` from the teacher's home directory into every student's home directory:
+
+    for homedir in /home/!(theteacher); do
+        cp ~/script.py $homedir
+        cp ~/db.sqlite3 $homedir
+    done
+
+The first line is an iteration over every directory in `/home` *apart from* `theteacher`,
+and then the contents of the `for` loop are just normal copy commands.
 
 
 ## Some limitations
