@@ -48,7 +48,8 @@ To make your account completely secure, there are things you can do too.
   passwords -- are completely different to your main login password.
 * It should go without saying these days, but look out for phishing.  We won't
   send you any emails asking for your password, and we will only ask for your
-  password to be entered on `www.pythonanywhere.com`.  Check the address bar
+  password to be entered on `www.pythonanywhere.com` or `eu.pythonanywhere.com`,
+  depending on which one you signed up on.  Check the address bar
   in your browser before typing in your password!
 * Don't leave a computer that's logged in to PythonAnywhere unattended in a
   public area.

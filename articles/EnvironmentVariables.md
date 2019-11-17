@@ -17,7 +17,7 @@ app](http://12factor.net/config) for example.  While this advice isn't perfectly
 adapted to a Platform-as-a-Service environment like PythonAnywhere, it can be made
 to work.  Here's how.
 
-We'll use the example of setting the Django `SECRET_KEY` setting, since it's a 
+We'll use the example of setting the Django `SECRET_KEY` setting, since it's a
 common one.
 
 In brief, you need to set the environment variable in two different places:
@@ -25,7 +25,7 @@ In brief, you need to set the environment variable in two different places:
 * In a *postactivate* script for it to work in Bash consoles
 * In your *WSGI file* for it to work in the web app itself.
 
-To avoid duplication, we recommend using a **.env file** and a tool called 
+To avoid duplication, we recommend using a **.env file** and a tool called
 [python-dotenv](https://github.com/theskumar/python-dotenv) to load it.
 
 ## Start by saving your environment variables into a .env file in your project folder
@@ -68,6 +68,11 @@ project_folder = os.path.expanduser('~/my-project-dir')  # adjust as appropriate
 load_dotenv(os.path.join(project_folder, '.env'))
 ```
 
+Save this change, and your code will now have access to the variable from `os.getenv`,
+so with the Django `SECRET_KEY` setting, you can just add this to your `settings.py`:
+
+    import os
+    SECRET_KEY = os.getenv("SECRET_KEY")
 
 Hit save, reload your web app, and it should now have access to the variable.
 
@@ -103,4 +108,4 @@ my-project-virtualenv` and then trying to run eg `echo $SECRET_KEY`
 ### All done!
 
 Your environment variables should now load automatically, both in your webapp,
-and in your virtualenv.  
+and in your virtualenv.

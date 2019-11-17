@@ -17,3 +17,5 @@
 
         ::python
         python -c "from gluon.main import save_password; save_password(raw_input('admin password: '),443)"
+
+  * Reload your webapp.

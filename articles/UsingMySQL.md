@@ -47,7 +47,7 @@ yourself.  Start a bash console inside the virtualenv, then:
 
 For Python 2.7
 
-    pip install mysql-python
+    pip install --no-binary :all: mysql-python
 
 For Python 3.x
 
@@ -90,7 +90,7 @@ on PythonAnywhere, add a `TEST` key to your database definition in
         'default': {
              ...
             'TEST': {
-              NAME: '<your username>$test_<your database name>',
+              'NAME': '<your username>$test_<your database name>',
 
 More info here: https://docs.djangoproject.com/en/1.10/ref/settings/#test
 

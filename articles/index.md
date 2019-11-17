@@ -81,6 +81,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to use a custom domain for your web app](/pages/CustomDomains) (including CNAME setup)
   * [How to set up an HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
+  * [Troubleshooting DNS problems](/pages/TroubleshootingDNS)
   * [How to use our static files service, and why you might want to](/pages/StaticFiles)
   * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
   * [How to handle slow/async work in a web app](/pages/AsyncInWebApps)
@@ -137,7 +138,7 @@ Oh no!  Here's our most common explanations and solutions to console problems:
   * [Why do I get a "403 Forbidden" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
   * [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
   * [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
-  * ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuotaExceeded)
+  * ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuota)
 
 
 Some technical problems with consoles that sometimes come up:

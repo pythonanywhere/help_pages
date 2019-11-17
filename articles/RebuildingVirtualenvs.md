@@ -12,23 +12,19 @@
 
 
 
-*If you need to rebuild your virtualenv following a system upgrade*
+*If you need to rebuild your virtualenv following a system image upgrade*
 
 
-##1) Identify your virtualenv
+The instructions below will contain instructions for people who use plain
+`virtualenv` and `virtualenvwrapper`; make sure that you use the appropriate ones
+for the kind of virtualenv you're using.  Use a **Bash console** to enter the
+commands.
 
+##1) Use a requirements.txt file to record what packages you're using
 
-Navigate to the **Web** tab and take a look at the *WSGI file* for each of your web apps. At the top (if it's using a virtualenv), you'll find a line that contains the line `activate_this`. That will include the path to your virtualenv.
-
-  * If the path starts with `/home/myusername/.virtualenvs/...`, then you're using virtualenvwrapper.
-
-The instructions below will contain instructions for people who use plain `virtualenv` and `virtualenvwrapper`. Use a **Bash console** to enter these commands.
-
-
-##2) Use a requirements.txt file to record what packages you're using
-
-
-If you've already got a `requirements.txt` file, you can skip this bit, although you may want to just do the bit where we double-check what version of Python we're using.
+If you've already got a `requirements.txt` file, you can skip this bit, although
+you may want to just do the bit where we double-check what version of Python
+we're using.
 
   1. Activate your virtualenv, using `source /home/myusername/path/to/virtualenv/bin/activate` or, if you're using virtualenvwrapper `workon my-virtualenv-name`
   2. Save the list of packages to a requirements file
@@ -40,12 +36,12 @@ If you've already got a `requirements.txt` file, you can skip this bit, although
 
 
 
-##3) Delete your old virtualenv
+##2) Remove your old virtualenv
 
+Using plain virtualenvs:
 
     :::bash
     rm -rf /home/myusername/path/to/virtualenv
-
 
 or, if using virtualenvwrapper:
 
@@ -53,15 +49,12 @@ or, if using virtualenvwrapper:
     rmvirtualenv my-virtualenv-name
 
 
+##3) Create a new virtualenv
 
-##4) Rebuild a new virtualenv
-
-
-Using the appropriate Python version:
+Using the appropriate Python version in place of `X.Y`:
 
     :::bash
     virtualenv --python=pythonX.Y /home/myusername/path/to/virtualenv
-
 
 or, with virtualenvwrappper
 
@@ -70,19 +63,24 @@ or, with virtualenvwrappper
 
 
 
-##5) Reinstall your packages
-
+##4) Reinstall your packages
 
     :::bash
     pip install -r /tmp/requirements.txt  # or path to your existing requirements.txt
 
 
+##5) Restart your web app.
 
-##6) Restart your web app.
+On the **Web** tab, use the "Reload" button to restart your website code using the
+new virtualenvs -- don't forget to do this for all of your websites if you have several.
+
+You will also need to restart any always-on tasks that use them --
+just disable them, then enable them again.  Scheduled tasks that use virtualenvs
+will pick them up the next time they run.
 
 
-Back on the **Web** tab.
+##6) All done!
 
-If you have multipe web apps with multiple different virtualenvs, you'll need to do this for each one, obviously.
-
-We're here to help! If you get stuck or confused, just drop us a note, and we'll be happy to help.
+We're here to help! If you get stuck or confused, just drop us a note at
+[support@pythonanywhere.com](mailto:support@pythonanywhere.com], and we'll
+be happy to help.

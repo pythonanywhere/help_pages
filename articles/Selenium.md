@@ -45,8 +45,8 @@ with Display():
     # to make sure we always clean up at the end
     try:
         browser.get('http://www.google.com')
-        print browser.title #this should print "Google"
-  
+        print(browser.title) #this should print "Google"
+	
     finally:
         browser.quit()
 ```
