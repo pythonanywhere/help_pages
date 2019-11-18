@@ -28,6 +28,8 @@ string "Token", followed by a space, followed by your token, like this:
 'Authorization': 'Token {}'.format(token)
 ```
 
+**Note: Make sure you don't use "Authentication" instead of "Authorization". This is a very common mistake.**
+
 Again, you can see a nice example on your Account page on the API Token tab
 
 Once you've generated your token, you can copy and paste it for use in your scripts.  You can also access
@@ -49,8 +51,17 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all your consoles</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new console object (NB does not actually start the process. Only
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all your consoles as an array of dictionaries that have this format: <pre>{
+    "id": 42069000,
+    "user": "username",
+    "executable": "bash",
+    "arguments": "",
+    "working_directory": null,
+    "name": "Nice Bash Console",
+    "console_url": "/user/username/consoles/42069000/",
+    "console_frame_url": "/user/username/consoles/42069000/frame/",
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new console object. Response format is the same as the dictionaries you get when making a GET request here. (NB does not actually start the process. Only
 connecting to the console in a browser will do that).</td><td style="width: 30%">executable, arguments, working_directory</td></tr>
 </table>
 
@@ -59,7 +70,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>View consoles shared with you.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>View consoles shared with you. Format is the same as /consoles/.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 
@@ -67,7 +78,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a console instance.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a console instance. Format is the same as /consoles/.</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Kill a console.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
@@ -76,7 +87,9 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get the most recent output from the console (approximately 500 characters).</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get the most recent output from the console (approximately 500 characters).<pre>{
+    "output": "\r\nThis is some text\r\n",
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 
@@ -142,8 +155,7 @@ Returns 204 on success.</td><td style="width: 30%">(no parameters)</td></tr>
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns a list of the contents of a directory, and its subdirectories
-as a list. Paths ending in slash/ represent directories.  Limited to
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns a recursive list of the contents of a directory and its subdirectories. The response is an array of strings with absolute file paths. Paths ending in slash/ represent directories.  Limited to
 1000 results.</td><td style="width: 30%">Query parameter: path</td></tr>
 </table>
 
@@ -153,7 +165,21 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your scheduled tasks</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your scheduled tasks as an array of dictionaries with this format: <pre>{
+    "id": 133700,
+    "url": "/api/v0/user/dull/schedule/133700/",
+    "user": "username",
+    "command": "rm -rf /*",
+    "expiry": "2020-04-1",
+    "enabled": true,
+    "logfile": "/user/username/files/var/log/...",
+    "extend_url": "/user/dull/schedule/task/133700/extend",
+    "interval": "daily",
+    "hour": 5,
+    "minute": 0,
+    "printable_time": "05:00",
+    "can_enable": false,
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new scheduled task</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
 </table>
 
@@ -162,7 +188,7 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a scheduled task.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a scheduled task. Format is the same as /schedule/</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Endpoints for scheduled tasks</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for scheduled tasks</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Delete an scheduled task</td><td style="width: 30%">(no parameters)</td></tr>
@@ -174,8 +200,18 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all webapps</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration.   Use (for example) "python36" to
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all webapps as an array of dictionaries with this format: <pre>{
+    "id": 042069,
+    "user": "username",
+    "domain_name": "username.pythonanywhere.com",
+    "python_version": "3.7",
+    "source_directory": "/home/username/site",
+    "working_directory": "/home/username/",
+    "virtualenv_path": "/home/username/mystupidvenv",
+    "expiry": "2020-04-1",
+    "force_https": true,
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration. Use (for example) "python36" to
 specify Python 3.6.</td><td style="width: 30%">POST parameters: domain_name, python_version</td></tr>
 </table>
 
@@ -203,7 +239,9 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
+`cert` and `private_key` when posting.<br/>On .pythonanywhere.com subdomains, you will get this response:<pre>{
+    "cert_type": "pythonanywhere-subdomain",
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
@@ -213,7 +251,11 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain. Returns dictionaries with this format:<pre>{
+    "id": 100000,
+    "url": "/nice/",
+    "path": "/home/username/totally/nothing/suspicious/here/",
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
 </table>
 
@@ -224,4 +266,40 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
   <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+
+# Error Messages
+When an error occurs when using the API, the JSON response will have a `detail` field containing the error message, like this:
+
+<pre>{
+    "detail": "Not found.",
+}</pre>
+
+These are the different possible error messages:
+
+<table class="table table-striped">
+  <tr><th>HTTP Status</th><th>Message</th><th>Description</th></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">404</td><td style="width: 1px; white-space: nowrap;">Not found.</td><td style="width: 1px; white-space: nowrap;">Occurs when trying to access something that doesn't exist (such as an invalid console ID).<br/>If you try access an API endpoint that does not exist (such as /api/v0/poop/), an HTML 404 page will be the response.</tr></td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">403</td><td style="width: 1px; white-space: nowrap;">You have reached your maximum number of scheduled tasks</td><td style="width: 1px; white-space: nowrap;">Occurs when you attempt to create a new scheduled task when you have reached your scheduled task limit</td></tr>
+</table>
+
+## Status
+If a task is successful, you will get this response for some endpoints:
+<pre>{
+    "status": "OK",
+}</pre>
+
+Some endpoints also use this format to report errors:
+<pre>{
+    "status": "ERROR",
+    "error_type": "...",
+    "error_message": "...",
+}</pre>
+
+These errors always have a 400 HTTP status. These are the types of errors with this format:
+<table class="table table-striped">
+  <tr><th>error_type</th><th>error_message</th><th>Cause</th></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">domain_name_error</td><td style="width: 1px; white-space: nowrap;">You do not have permission to create webapps on custom domains. Please upgrade</td><td>When you try to make a web app with a custom domain on a free account</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">domain_name_error</td><td style="width: 1px; white-space: nowrap;">The only .pythonanywhere.com address you can register is username.pythonanywhere.com</td><td>When you try making a web app with a .pythonanywhere.com domain other than your username.<br/>This error message will contain your username; not "username" shown in the example.</tr>
 </table>
