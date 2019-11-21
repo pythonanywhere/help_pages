@@ -42,7 +42,6 @@ You will need to reload your webapp and start new consoles for this environment 
 All endpoints are hosted at *https://www.pythonanywhere.com/* or
 *https://eu.pythonanywhere.com/* depending on where your account is registered.
 
-
 ## Consoles
 
 ### /api/v0/user/{username}/consoles/
@@ -86,7 +85,6 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>"type" into the console.  Add a "\n" for return.</td><td style="width: 30%">POST parameter: input</td></tr>
 </table>
-
 ## Cpu
 
 ### /api/v0/user/{username}/cpu/
@@ -103,7 +101,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 ## Files
 
-### /api/v0/user/{username}/files/path/{path}
+### /api/v0/user/{username}/files/path{path}
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
@@ -192,6 +190,22 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 </table>
 
 
+### /api/v0/user/{username}/webapps/{domain_name}/disable/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Disable the webapp.</td><td style="width: 30%">POST parameters: none</td></tr>
+</table>
+
+
+### /api/v0/user/{username}/webapps/{domain_name}/enable/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Enable the webapp.</td><td style="width: 30%">POST parameters: none</td></tr>
+</table>
+
+
 ### /api/v0/user/{username}/webapps/{domain_name}/reload/
 
 <table class="table table-striped">
@@ -199,7 +213,9 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td style="width: 30%">POST parameters: none</td></tr>
 </table>
 
+
 ### /api/v0/user/{username}/webapps/{domain_name}/ssl/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
@@ -210,14 +226,18 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 `cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
+
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
 </table>
 
+
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/{id}/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no parameters)</td></tr>
@@ -225,3 +245,4 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
+
