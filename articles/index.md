@@ -190,6 +190,7 @@ Here are some guides for some of the common things people want to do:
   * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalWhitelists)
   * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
   * [My website using TensorFlow doesn't work](/pages/MachineLearningInWebsiteCode)
+  * [Updating Python Version/System Image](/pages/ChangeSystemImage)
 
 
 And here's some very brief FAQ answers about common requests:
