@@ -1,4 +1,3 @@
-
 <!--
 .. title: Can I use Postgres on PythonAnywhere?
 .. slug: Postgres
@@ -11,11 +10,9 @@
 -->
 
 
-
 Yes! But you need a paying account.
 
-If you want to use a Postgres server run by us:
------------------------------------------------
+## If you want to use a Postgres server run by us:
 
   * If you have a free account, go to the Account page, and click on one of the
     buttons for upgrading to a paid account. In the dialog that appears, switch
@@ -35,9 +32,14 @@ Once that's done, go to the "Databases" tab, then click the "Postgres" button.
 You'll have a new option to create a Postgres server and specify the
 adminstrator password.
 
+### Connecting to your Postgres server from outside PythonAnywhere
 
-If you want to use a Postgres server run by some other service
---------------------------------------------------------------
+If you're using a Postgres server that's run by us, and you want to connect
+to it from outside PythonAnywhere (for example, from your own machine),
+you can follow [these instructions](/pages/AccessingPostgresFromOutsidePythonAnywhere).
+
+
+## If you want to use a Postgres server run by some other service
 
 Just upgrade to any paid PythonAnywhere plan -- the cheapest one will work
 just fine.  You don't need to check the "Postgres" option -- that is for
@@ -47,3 +49,4 @@ need.
 Paid PythonAnywhere accounts have unrestricted Internet access
 so once the upgrade has gone through, you will be able to connect to your
 remote Postgres instance.
+
