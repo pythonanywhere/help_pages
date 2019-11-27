@@ -36,6 +36,7 @@ and give the connection a name on the "General" tab, then set up the stuff on th
 | Username:  | **any user you have set up on your Postgres server, eg. super** |
 | Password:  | **the password corresponding to that user** |
 
+
 Now set up the tunnel: select the "SSH Tunnel" tab, then enter these settings:
 
 | Setting  | Value |
@@ -46,6 +47,9 @@ Now set up the tunnel: select the "SSH Tunnel" tab, then enter these settings:
 | Username:  | **your PythonAnywhere username** |
 | Authentication:  | Password |
 | Password:  | **the password you use to log in to the PythonAnywhere website** |
+
+
+Once that's done, just connect as normal.
 
 
 ## TablePlus
@@ -100,14 +104,15 @@ section below.
 
 As long as you're not running a Postgres instance locally, just invoke SSH locally
 (that is, on your own machine -- not on PythonAnywhere) like this, replacing
-**username** with your PythonAnywhere username and **10123** with the port number
+**username** with your PythonAnywhere username -- note that it appears twice in the
+command -- and **10123** with the port number
 on the "Postgres" tab of the "Databases" page:
 
     :::bash
     ssh -L 5432:username.postgres.pythonanywhere-services.com:10123 username@ssh.pythonanywhere.com
 
 That -L option means "forward LOCAL port 5432 to REMOTE host
-`username.mysql.pythonanywhere-services.com` port 10123".
+`username.postgres.pythonanywhere-services.com` port 10123".
 
 If you are running a Postgres instance locally, then it will probably already be using
 local port 5432, which means that the `ssh` command won't be able to.  You can modify your SSH invocation
@@ -142,7 +147,7 @@ Download and install PuTTY from [here](https://www.putty.org).  Once you've done
 * Once it's connected, leave PuTTY running -- it will manage the SSH tunnel.
 
 After all of that, you'll have a server running on your computer (hostname
-127.0.0.1, port 5432 -- or 3333 or something else if you have MySQL running locally),
+127.0.0.1, port 5432 -- or 3333 or something else if you have Postgres running locally),
 which will forward everything on to the Postgres server on PythonAnywhere.
 
 
@@ -150,5 +155,6 @@ which will forward everything on to the Postgres server on PythonAnywhere.
 
 At this point, you should be able to run code that connects to Postgres using this local server.
 For example, you could use the code that is inside the `with` statement in the
-"From Python code" section above.
+"From Python code" section above, replacing `tunnel.local_bind_port` with the
+port you specified in either SSH or PuTTY -- 5432, or 3333 or something else if you have Postgres running locally.
 
