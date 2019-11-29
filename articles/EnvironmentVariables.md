@@ -59,7 +59,8 @@ echo python-dotenv >> requirements.txt
 
 Click over to the [Web tab](https://www.pythonanywhere.com/web_app_setup/) for your web app,
 and click on the link to your **WSGI file**.  In here, you can set your environment variable
-using Python syntax:
+using Python code; this needs to go *before* the code that actually loads
+your website (that is, before the call to `get_wsgi_application`).
 
 ```python
 import os
