@@ -276,7 +276,9 @@ Databases:
   * [Database character sets (UTF8/Unicode etc)](/pages/DatabaseCharacterSets)
   * [Importing a database you have stored on your own machine to PythonAnwyhere](/pages/ImportingYourLocalDatabaseToPythonAnywhere)
   * [Accessing your MySQL database from outside PythonAnywhere](/pages/AccessingMySQLFromOutsidePythonAnywhere)
-
+  * [Accessing your PostgreSQL database from outside PythonAnywhere](/pages/AccessingPostgresFromOutsidePythonAnywhere)
+  
+  
 Scheduled tasks (similar to cron):
 
   * [Using the "Schedule" tab](/pages/ScheduledTasks)
