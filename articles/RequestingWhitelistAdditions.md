@@ -20,10 +20,10 @@ to hack into and generally spam other websites.
 
 ## Requesting an addition to the whitelist
 
-We only whitelist sites that have an official, public, documented API -- ie, sites
+**We only whitelist sites that have an official, public, documented API** -- ie, sites
 that are designed and intended for machine consumption rather than human consumption.
 
-If you would like us to whitelist a site, send us an email or feedback request, including:
+If you would like us to whitelist a site, send us an email or feedback request. **You must provide**:
 
 * a link to the API documentation. Particularly to documentation that states
   the domain where the API is published.
