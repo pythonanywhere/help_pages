@@ -78,7 +78,7 @@ Eg, if you have a file at `/home/myusername/myproject/static/css/base.css`, go v
 
 
 Django does have an alternative for serving static files during development,
-which can avoid then need for you to run `collectstatic` whenever you make
+which can avoid the need for you to run `collectstatic` whenever you make
 changes to your files, but it comes at the cost of putting an extra processing
 burden on the Python parts of your app. If you really want to use this, you'll
 find more info in the [django
