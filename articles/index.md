@@ -259,7 +259,6 @@ Web apps:
   * [Python 3 web apps](/pages/Python3WebApps)
 
   * [Batteries included](https://www.pythonanywhere.com/batteries_included/): a list of all Python modules installed by default on PythonAnywhere
-  * [Installing the Quant Software Toolkit on PythonAnywhere](/pages/InstallingQSTKonPythonAnywhere)
   * [Rebuilding a Virtualenv](/pages/RebuildingVirtualenvs)
 
 
@@ -277,8 +276,8 @@ Databases:
   * [Importing a database you have stored on your own machine to PythonAnwyhere](/pages/ImportingYourLocalDatabaseToPythonAnywhere)
   * [Accessing your MySQL database from outside PythonAnywhere](/pages/AccessingMySQLFromOutsidePythonAnywhere)
   * [Accessing your PostgreSQL database from outside PythonAnywhere](/pages/AccessingPostgresFromOutsidePythonAnywhere)
-  
-  
+
+
 Scheduled tasks (similar to cron):
 
   * [Using the "Schedule" tab](/pages/ScheduledTasks)
