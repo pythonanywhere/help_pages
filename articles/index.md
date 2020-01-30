@@ -184,13 +184,13 @@ Here are some guides for some of the common things people want to do:
   * [Setting the timezone for your code](/pages/SettingTheTimezone)
   * [Working with PDFs and converting document formats](/pages/PDF)
   * [Can I use IPv6?](/pages/IPv6)
-  * [Can I use Pgame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
+  * [Can I use Pygame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
   * [Using Selenium](/pages/selenium)
   * [Does PythonAnywhere have an API?](/pages/API)
   * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalWhitelists)
   * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
   * [My website using TensorFlow doesn't work](/pages/MachineLearningInWebsiteCode)
-  * [Updating Python Version/System Image](/pages/ChangeSystemImage)
+  * [Fonts](/pages/Fonts)
 
 
 And here's some very brief FAQ answers about common requests:
