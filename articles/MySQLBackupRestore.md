@@ -14,7 +14,7 @@ To back up your MySQL database, you can use the `mysqldump` command-line tool.
 
 ## Backing up a database using mysqldump
 
-We'll need to arm ourselves with 2 pieces of information, all three of which you can find on the **Databases tab** from your PythonAnywhere dashboard.
+We'll need to arm ourselves with 2 pieces of information, both of which you can find on the **Databases tab** from your PythonAnywhere dashboard.
 
 - the **hostname** of your mysql server.  You can find this on the "Databases" tab, it's usually something like `yourusername.mysql.pythonanywhere-services.com`
 
