@@ -56,7 +56,8 @@ first to see whether we're already working on something.
 
 * We pay USD 50-100 for bug reports with low severity or need a very
   complicated and unlikely sequence of events to be exploited. We pay USD
-  100-500 for bugs that are more directly exploitable.
+  100-500 for bugs that are more directly exploitable. We only pay out bug
+  bounties to the first report (not subsequent reports of the same bug).
 
 
 ## Bug classes we're very interested in
