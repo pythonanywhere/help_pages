@@ -20,7 +20,7 @@ For example:
 
     :::python
     #!/usr/bin/python2.7
-    print "hello from python 2"
+    print "hello from python 2.7"
 
 
 Will load Python 2,
@@ -29,7 +29,7 @@ Or, for example:
 
     :::python
     #!/usr/bin/python3.4
-    print("hello from python 3.3")
+    print("hello from python 3.4")
 
 
 will load python 3.4 instead of 3.6.
