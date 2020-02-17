@@ -32,7 +32,8 @@ Or, for example:
     print("hello from python 3.4")
 
 
-will load python 3.4 instead of 3.6.
+will load python 3.4 instead of the version of Python that is the default for
+your account.
 
 You can also use a hashbang to run your script in a virtualenv that you've
 defined by pointing it at the python executable in the virtualenv.
