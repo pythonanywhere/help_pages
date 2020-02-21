@@ -20,7 +20,7 @@ For example:
 
     :::python
     #!/usr/bin/python2.7
-    print "hello from python 2"
+    print "hello from python 2.7"
 
 
 Will load Python 2,
@@ -29,10 +29,11 @@ Or, for example:
 
     :::python
     #!/usr/bin/python3.4
-    print("hello from python 3.3")
+    print("hello from python 3.4")
 
 
-will load python 3.4 instead of 3.6.
+will load python 3.4 instead of the version of Python that is the default for
+your account.
 
 You can also use a hashbang to run your script in a virtualenv that you've
 defined by pointing it at the python executable in the virtualenv.

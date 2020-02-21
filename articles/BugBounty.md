@@ -38,6 +38,8 @@ first to see whether we're already working on something.
   So the fact that the attacker may be able to, eg, brute force an email reset
   as well, isn't something we consider a serious additional security risk.
 
+* We do not pay bug bounties for these "bugs".
+
 
 ## Bug classes we're interested in
 
@@ -52,6 +54,11 @@ first to see whether we're already working on something.
   access account information) about another user/account registered on
   PythonAnywhere?
 
+* We pay USD 50-100 for bug reports with low severity or need a very
+  complicated and unlikely sequence of events to be exploited. We pay USD
+  100-500 for bugs that are more directly exploitable. We only pay out bug
+  bounties to the first report (not subsequent reports of the same bug).
+
 
 ## Bug classes we're very interested in
 
@@ -61,3 +68,4 @@ first to see whether we're already working on something.
 
 * Sandbox escape in consoles, web apps and scheduled tasks
 
+* We may pay upwards of USD 1000 for high severity bugs.
