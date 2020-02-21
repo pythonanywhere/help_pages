@@ -31,7 +31,7 @@ and give the connection a name on the "General" tab, then set up the stuff on th
 
 | Setting  | Value |
 |--|--|
-| Host name/address:  | **your PythonAnywhere database hostname, eg. yourusername.postgres.pythonanywhere-services.com** |
+| Host name/address:  | **your PythonAnywhere database hostname, eg. yourusername-1234.postgres.pythonanywhere-services.com** |
 | Port:  | **the port from the Postgres tab of the "Databases" page inside PythonAnywhere** |
 | Username:  | **any user you have set up on your Postgres server, eg. super** |
 | Password:  | **the password corresponding to that user** |
@@ -75,7 +75,7 @@ and then use code like this:
     with sshtunnel.SSHTunnelForwarder(
         ('ssh.pythonanywhere.com'),
         ssh_username='your PythonAnywhere username', ssh_password='the password you use to log in to the PythonAnywhere website',
-        remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.postgres.pythonanywhere-services.com', the port on the databases page)
+        remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername-1234.postgres.pythonanywhere-services.com', the port on the databases page)
     ) as tunnel:
         connection = psycopg2.connect(
             user='a postgres user', password='password for the postgres user',
@@ -104,22 +104,23 @@ section below.
 
 As long as you're not running a Postgres instance locally, just invoke SSH locally
 (that is, on your own machine -- not on PythonAnywhere) like this, replacing
-**username** with your PythonAnywhere username -- note that it appears twice in the
-command -- and **10123** with the port number
-on the "Postgres" tab of the "Databases" page:
+**username** with your PythonAnywhere username, **10123** with the port number
+on the "Postgres" tab of the "Databases" page, and changing the hostname from
+`yourusername-1234.postgres.pythonanywhere-services.com` to the one on the "Databases" page
+likewise:
 
     :::bash
-    ssh -L 5432:username.postgres.pythonanywhere-services.com:10123 username@ssh.pythonanywhere.com
+    ssh -L 5432:yourusername-1234.postgres.pythonanywhere-services.com:10123 username@ssh.pythonanywhere.com
 
 That -L option means "forward LOCAL port 5432 to REMOTE host
-`username.postgres.pythonanywhere-services.com` port 10123".
+`yourusername-1234.postgres.pythonanywhere-services.com` port 10123".
 
 If you are running a Postgres instance locally, then it will probably already be using
 local port 5432, which means that the `ssh` command won't be able to.  You can modify your SSH invocation
 to use any other port -- this one would use the local post 3333.
 
     :::bash
-    ssh -L 3333:username.postgres.pythonanywhere-services.com:10123 username@ssh.pythonanywhere.com
+    ssh -L 3333:yourusername-1234.postgres.pythonanywhere-services.com:10123 username@ssh.pythonanywhere.com
 
 **REMEMBER** You need to keep your this `ssh` process open at all times while
 you're accessing your PythonAnywhere Postgres server from your local machine! As
@@ -142,7 +143,7 @@ Download and install PuTTY from [here](https://www.putty.org).  Once you've done
 * In the "Category" tree on the left, open Connection -> SSH -> Tunnels
 * If you don't have a Postgres database running on your local machine, enter "Source port" 5432.  If you
   do have one running, use some other port, for example 3333.
-* Set "Destination" to *your-username*`.postgres.pythonanywhere-services.com:`*your-postgres-port*,
+* Set "Destination" to *the hostname from the databases page*:`*your-postgres-port*,
 * Click the "Open" button, and enter the username and password you would use to log in to the PythonAnywhere website.
 * Once it's connected, leave PuTTY running -- it will manage the SSH tunnel.
 
