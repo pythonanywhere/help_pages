@@ -171,6 +171,10 @@ Once you've done that, here are some solutions to common problems
 
 # I'm trying to figure out how to get a particular tool or feature to work
 
+PythonAnywhere already has many of the Python modules that you might want to
+use installed. There is a complete list of them available on our [Batteries
+included page](https://www.pythonanywhere.com/batteries_included/)
+
 Here are some guides for some of the common things people want to do:
 
   * [Installing new Python modules for yourself](/pages/InstallingNewModules)
@@ -258,7 +262,6 @@ Web apps:
   * [Switching to the new virtualenv system](/pages/UpgradingToTheNewVirtualenvSystem)
   * [Python 3 web apps](/pages/Python3WebApps)
 
-  * [Batteries included](https://www.pythonanywhere.com/batteries_included/): a list of all Python modules installed by default on PythonAnywhere
   * [Rebuilding a Virtualenv](/pages/RebuildingVirtualenvs)
 
 
