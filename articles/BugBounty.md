@@ -69,3 +69,8 @@ first to see whether we're already working on something.
 * Sandbox escape in consoles, web apps and scheduled tasks
 
 * We may pay upwards of USD 1000 for high severity bugs.
+
+
+##
+
+Send reports to support@pythonanywhere.com
