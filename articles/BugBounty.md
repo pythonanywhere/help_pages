@@ -21,8 +21,14 @@ first to see whether we're already working on something.
 
 Please only report vulnerabilities for:
 
-* `www.pythonanywhere.com` and `eu.pythonanywhere.com` -- please note that these are two instances of the same site, so a bug reported against one of them counts as a bug against the other.  We will not pay a bounty for a bug on `eu.pythonanywhere.com` if a bounty has already been paid for the same bug on `www.pythonanywhere.com`, and vice versa
+* `www.pythonanywhere.com` and `eu.pythonanywhere.com` -- please note that these
+  are two instances of the same site, so a bug reported against one of them counts
+  as a bug against the other.  We will not pay a bounty for a bug on `eu.pythonanywhere.com`
+  if a bounty has already been paid for the same bug on `www.pythonanywhere.com`,
+  and vice versa.
+
 * `blog.pythonanywhere.com`
+
 * `help.pythonanywhere.com`
 
 As we are a web-hosting company, our users may have created websites that have bugs using our platform.
@@ -52,24 +58,19 @@ are welcome to contact their owners directly.
 
 ## Bug classes we're interested in
 
-* General XSS, CSRF etc. - Can you get a user that is logged in to PythonAnywhere to do
+* General XSS, CSRF etc. -- can you get a user that is logged in to PythonAnywhere to do
   something malicious to their own account by e.g. having them follow a link?
 
-* Cross-user exploits - Can you do something bad to another user on PythonAnywhere
+* Cross-user exploits -- can you do something bad to another user on PythonAnywhere
   from your account? Unless you're a teacher doing something malicious to your
   students - there's an explicit trust relationship, there.
 
-* Information leakage - Can you learn something private (see their files,
+* Information leakage -- can you learn something private (see their files,
   access account information) about another user/account registered on
   PythonAnywhere?
 
-* We pay USD 50-100 for bug reports with low severity or need a very
-  complicated and unlikely sequence of events to be exploited. We pay USD
-  100-500 for bugs that are more directly exploitable. We only pay out bug
-  bounties to the first report (not subsequent reports of the same bug).
 
-
-## Bug classes we're very interested in
+## Bug classes we're *very* interested in
 
 * Session/cookie hijacking
 
@@ -77,9 +78,19 @@ are welcome to contact their owners directly.
 
 * Sandbox escape in consoles, web apps and scheduled tasks
 
-* We may pay upwards of USD 1000 for high severity bugs.
 
 
 ## Reporting
 
 Send reports to [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+
+
+## Payouts
+
+* We only pay out bug bounties to the first report (not subsequent reports of the same bug).
+* We pay USD 50-100 for bug reports that we deem low severity, or which need a very
+  complicated and unlikely sequence of events to be exploited.
+* We pay USD 100-500 for bugs that we deem more serious, and are directly exploitable.
+* We may pay upwards of USD 1000 for bugs that we deem high severity.
+
+
