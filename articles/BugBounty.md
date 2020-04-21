@@ -21,9 +21,9 @@ first to see whether we're already working on something.
 
 Please only report vulnerabilities for:
 
-    * `www.pythonanywhere.com` and `eu.pythonanywhere.com` -- please note that these are two instances of the same site, so a bug reported against one of them counts as a bug against the other.  We will not pay a bounty for a bug on `eu.pythonanywhere.com` if a bounty has already been paid for the same bug on `www.pythonanywhere.com`, and vice versa
-    * `blog.pythonanywhere.com`
-    * `help.pythonanywhere.com`
+* `www.pythonanywhere.com` and `eu.pythonanywhere.com` -- please note that these are two instances of the same site, so a bug reported against one of them counts as a bug against the other.  We will not pay a bounty for a bug on `eu.pythonanywhere.com` if a bounty has already been paid for the same bug on `www.pythonanywhere.com`, and vice versa
+* `blog.pythonanywhere.com`
+* `help.pythonanywhere.com`
 
 As we are a web-hosting company, our users may have created websites that have bugs using our platform.
 These might be hosted at URLs like *username.pythonanywhere.com*.
