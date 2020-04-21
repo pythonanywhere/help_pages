@@ -41,11 +41,11 @@ are welcome to contact their owners directly.
 
 * "I can run code on your servers" - Yup. That's our business.
 
-* Self XSS - If you can execute XSS-style attacks against your own account by
+* Self XSS -- If you can execute XSS-style attacks against your own account by
   uploading a file and then loading it in the browser, that's not particularly
   interesting to us.
 
-* Auto-pwnage - "If I run this code it does something bad to my
+* Auto-pwnage -- "If I run this code it does something bad to my
   account/files/web apps"
 
 * Attacks that assume a users' login session has already been compromised.  If an attacker has
@@ -58,25 +58,25 @@ are welcome to contact their owners directly.
 
 ## Bug classes we're interested in
 
-* General XSS, CSRF etc. -- can you get a user that is logged in to PythonAnywhere to do
+* General XSS, CSRF etc. -- Can you get a user that is logged in to PythonAnywhere to do
   something malicious to their own account by e.g. having them follow a link?
 
-* Cross-user exploits -- can you do something bad to another user on PythonAnywhere
+* Cross-user exploits -- Can you do something bad to another user on PythonAnywhere
   from your account? Unless you're a teacher doing something malicious to your
   students - there's an explicit trust relationship, there.
 
-* Information leakage -- can you learn something private (see their files,
+* Information leakage -- Can you learn something private (see their files,
   access account information) about another user/account registered on
   PythonAnywhere?
 
 
 ## Bug classes we're *very* interested in
 
-* Session/cookie hijacking
+* Session/cookie hijacking.
 
-* OS-level privilege escalation in consoles, web apps and scheduled tasks
+* OS-level privilege escalation in consoles, web apps, Jupyter notebooks and scheduled/always-on tasks.
 
-* Sandbox escape in consoles, web apps and scheduled tasks
+* Sandbox escape in consoles, web apps, Jupyter notebooks and scheduled/always-on tasks.
 
 
 
