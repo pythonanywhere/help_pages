@@ -22,35 +22,54 @@ a secure SSH connection to our systems, then sends the Postgres stuff over it.
 There are a number of ways to do this:
 
 
-## pgadmin
+## pgAdmin
 
-If you're running pgadmin, you can configure it to connect using a tunnel.  Open up
-the ["Server" dialog](https://www.pgadmin.org/docs/pgadmin4/4.14/server_dialog.html),
+If you're running pgadmin, you can use SSH in a local terminal to create an SSH
+tunnel from your machine to PythonAnywhere and then connect to the local port
+using pgAdmin.
+
+First, we create the SSH tunnel:
+
+    :::bash
+    ssh -4 -L 9999:postgres-server-hostname:postgres-server-port username@ssh.pythonanywhere.com
+    
+where you should:
+
+| replace                  | with                                                                                                  |
+|--|--|
+| postgres-server-hostname | **your PythonAnywhere database hostname, eg. yourusername-1234.postgres.pythonanywhere-services.com** |
+| postgres-server-port     | **the port from the Postgres tab of the "Databases" page inside PythonAnywhere**                      |
+| username                 | **your PythonAnywhere username**                                                                      |
+
+----
+
+When this has worked, it will appear that you have SSHed into your
+PythonAnywhere account. As long as that SSH session is active, your SSH tunnel
+will be in-place. The local side of your SSH tunnel will be at port 9999. 
+
+If that doesn't work because you get an error like:
+
+    :::text
+    cannot listen to port: 9999
+    
+You can try any other port number greater than 1024 and less than 65536. Be
+sure to use the correct port in the next step.
+
+Now open the ["Server" dialog](https://www.pgadmin.org/docs/pgadmin4/4.14/server_dialog.html) in pgAdmin,
 and give the connection a name on the "General" tab, then set up the stuff on the
-"Connection" tab as you normally would:
-
-| Setting  | Value |
-|--|--|
-| Host name/address:  | **your PythonAnywhere database hostname, eg. yourusername-1234.postgres.pythonanywhere-services.com** |
-| Port:  | **the port from the Postgres tab of the "Databases" page inside PythonAnywhere** |
-| Username:  | **any user you have set up on your Postgres server, eg. super** |
-| Password:  | **the password corresponding to that user** |
+"Connection" tab:
 
 
-Now set up the tunnel: select the "SSH Tunnel" tab, then enter these settings:
+| Setting            | Value                                                           |
+|--------------------|-----------------------------------------------------------------|
+| Host name/address: | localhost                                                       |
+| Port:              | 9999                                                            |
+| Username:          | **any user you have set up on your Postgres server, eg. super** |
+| Password:          | **the password corresponding to that user**                     |
 
-| Setting  | Value |
-|--|--|
-| Use SSH tunneling:  | Yes |
-| Tunnel host:  | ssh.pythonanywhere.com |
-| Tunnel port:  | 22 |
-| Username:  | **your PythonAnywhere username** |
-| Authentication:  | Password |
-| Password:  | **the password you use to log in to the PythonAnywhere website** |
-
-
-Once that's done, just connect as normal.
-
+----
+Then you should be able to connect from pgAdmin to your PythonAnywhere Postgres
+database.
 
 ## TablePlus
 
