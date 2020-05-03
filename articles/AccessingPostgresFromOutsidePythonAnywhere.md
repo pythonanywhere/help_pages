@@ -19,6 +19,11 @@ However, if you have a paid account, you can access your database
 from outside using a technique called an SSH tunnel, which essentially makes
 a secure SSH connection to our systems, then sends the Postgres stuff over it.
 
+* If you're using our global, US-hosted site at `www.pythonanywhere.com`, then the
+  SSH server's hostname is `ssh.pythonanywhere.com`
+* If you're using our EU-hosted site at `eu.pythonanywhere.com`, then the
+  SSH server's hostname is `ssh.eu.pythonanywhere.com`
+
 There are a number of ways to do this:
 
 
