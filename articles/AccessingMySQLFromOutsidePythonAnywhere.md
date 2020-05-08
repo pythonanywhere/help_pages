@@ -22,7 +22,7 @@ a secure SSH connection to our systems, then sends the MySQL stuff over it.
 There are a number of ways to do this.  The first thing you need to know is
 the SSH hostname for your account:
 
-* If your account is on our US-based system at `www.pythonanywhere.com`, then the SSH hostname is `ssh.pythonanywhere.com`
+* If your account is on our global, US-based system at `www.pythonanywhere.com`, then the SSH hostname is `ssh.pythonanywhere.com`
 * If your account is on our EU-based system at `eu.pythonanywhere.com`, then the SSH hostname is `ssh.eu.pythonanywhere.com`
 
 Armed with that, you can do one of the following:
@@ -121,8 +121,6 @@ setup dialog:
 You should also be aware that there is a problem in PyCharm where it does not
 recognise database names with dollar signs in them (which all databases have
 on PythonAnywhere.  They have [posted a workaround for that on their site](https://youtrack.jetbrains.com/issue/DBE-10067).
-
-
 
 
 ## Manual SSH tunnelling
