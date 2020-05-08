@@ -19,7 +19,13 @@ However, if you have a paid account, you can access your MySQL database
 from outside using a technique called an SSH tunnel, which essentially makes
 a secure SSH connection to our systems, then sends the MySQL stuff over it.
 
-There are a number of ways to do this:
+There are a number of ways to do this.  The first thing you need to know is
+the SSH hostname for your account:
+
+* If your account is on our US-based system at `www.pythonanywhere.com`, then the SSH hostname is `ssh.pythonanywhere.com`
+* If your account is on our EU-based system at `eu.pythonanywhere.com`, then the SSH hostname is `ssh.eu.pythonanywhere.com`
+
+Armed with that, you can do one of the following:
 
 
 ## MySQL Workbench
@@ -28,7 +34,7 @@ If you're running MySQL Workbench, you can configure it to connect use a tunnel 
 
 | Setting  | Value |
 |--|--|
-| SSH Hostname:  | ssh.pythonanywhere.com |
+| SSH Hostname:  | **your SSH hostname** |
 | SSH Username:  | **your PythonAnywhere username** |
 | SSH Password:  | **the password you use to log in to the PythonAnywhere website** |
 | SSH Key file:  | **should not be necessary when you specify the password** |
@@ -56,7 +62,7 @@ and then use code like this:
     sshtunnel.TUNNEL_TIMEOUT = 5.0
 
     with sshtunnel.SSHTunnelForwarder(
-        ('ssh.pythonanywhere.com'),
+        ('your SSH hostname'),
         ssh_username='your PythonAnywhere username', ssh_password='the password you use to log in to the PythonAnywhere website',
         remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
     ) as tunnel:
@@ -95,10 +101,28 @@ new Host, Port, Username and Password inputs:
 
 | Setting  | Value |
 |--|--|
-| Host:  | ssh.pythonanywhere.com |
+| Host:  | **your SSH hostname** |
 | Port:  | 22 |
 | Username:  | **your PythonAnywhere username** |
 | Password:  | **the password you use to log in to the PythonAnywhere website** |
+
+
+## JetBrains PyCharm
+
+You can set up the SSH tunnelling from the SSH/SSL tab of the PyCharm connection
+setup dialog:
+
+<img alt="PyCharm SSH tunnelling dialog" src="/pycharm-ssh-tunnel-dialog.png" style="border: 2px solid lightblue; max-width: 70%;">
+
+* The "proxy host" should be your SSH hostname
+* The "proxy user" should be your PythonAnywhere username
+* The "proxy password" should be the password you use to log in to our website (not your MySQL password)
+
+You should also be aware that there is a problem in PyCharm where it does not
+recognise database names with dollar signs in them (which all databases have
+on PythonAnywhere.  They have [posted a workaround for that on their site](https://youtrack.jetbrains.com/issue/DBE-10067).
+
+
 
 
 ## Manual SSH tunnelling
@@ -113,10 +137,11 @@ section below.
 
 As long as you're not running a MySQL instance locally, just invoke SSH locally
 (that is, on your own machine -- not on PythonAnywhere) like this, replacing
-**username** with your PythonAnywhere username:
+**username** with your PythonAnywhere username and **yoursshhostname** with
+your SSH hostname:
 
     :::bash
-    ssh -L 3306:username.mysql.pythonanywhere-services.com:3306 username@ssh.pythonanywhere.com
+    ssh -L 3306:username.mysql.pythonanywhere-services.com:3306 username@yoursshhostname
 
 That -L option means "forward LOCAL port 3306 to REMOTE host
 `username.mysql.pythonanywhere-services.com` port 3306".
@@ -126,7 +151,7 @@ local port 3306, which means that the `ssh` command won't be able to.  You can m
 to use any other port -- this one would use the local post 3333.
 
     :::bash
-    ssh -L 3333:username.mysql.pythonanywhere-services.com:3306 username@ssh.pythonanywhere.com
+    ssh -L 3333:username.mysql.pythonanywhere-services.com:3306 username@yoursshhostname
 
 **REMEMBER** You need to keep your this `ssh` process open at all times while
 you're accessing your PythonAnywhere MySQL server from your local machine! As
@@ -145,7 +170,7 @@ called PuTTY instead:
 
 Download and install PuTTY from [here](https://www.putty.org).  Once you've done that:
 
-* Start PuTTY and enter ssh.pythonanywhere.com into the "Host name" field
+* Start PuTTY and enter your SSH hostname into the "Host name" field
 * In the "Category" tree on the left, open Connection -> SSH -> Tunnels
 * If you don't have a MySQL database running on your local machine, enter "Source port" 3306.  If you
   do have one running, use some other port, for example 3333.
