@@ -91,7 +91,7 @@ Send reports to [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 * We pay US$50-100 for bug reports that we deem low severity, or which need a very
   complicated and unlikely sequence of events to be exploited.
 * We pay US$100-500 for bugs that we deem more serious, and are directly exploitable.
-* We may pay upwards of US$1000 for bugs that we deem high severity.
+* We may pay upwards of US$1000 for bugs that we deem very high severity.
 * Payouts are made by PayPal, and you are responsible for any fees you incur receiving the payout.
 
 
