@@ -178,7 +178,7 @@ included page](https://www.pythonanywhere.com/batteries_included/)
 Here are some guides for some of the common things people want to do:
 
   * [Installing new Python modules for yourself](/pages/InstallingNewModules)
-  * [How do I keep a console running forever? Or, how do I make a program that restarts automatically?](/pages/AlwaysOnTasks)
+  * [Always-on tasks: how do I keep a console running forever? Or, how do I make a program that restarts automatically?](/pages/AlwaysOnTasks)
   * [How to I run an async task queue like celery?](/pages/AsyncInWebApps)
   * [Can I use matplotlib to generate graphs from my data?](/pages/MatplotLibGraphs)
   * [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
