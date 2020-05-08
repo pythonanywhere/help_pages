@@ -114,7 +114,7 @@ setup dialog:
 
 <img alt="PyCharm SSH tunnelling dialog" src="/pycharm-ssh-tunnel-dialog.png" style="border: 2px solid lightblue; max-width: 70%;">
 
-* The "proxy host" should be your SSH hostname
+* The "proxy host" should be your SSH hostname (see the options for that at the top of this help page)
 * The "proxy user" should be your PythonAnywhere username
 * The "proxy password" should be the password you use to log in to our website (not your MySQL password)
 
