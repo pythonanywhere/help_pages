@@ -51,7 +51,7 @@ We have lots of beginners on PythonAnywhere! Here's a very quick step-by-step tu
 
 And here are some common questions and guides for beginners:
 
-  * [How can I use Python 2 with the "Save &amp; Run" button?](/pages/SaveAndRunPythonVersion)
+  * [How can I use a specific version of Python with the "Save &amp; Run" button?](/pages/SaveAndRunPythonVersion)
   * [Installing new Python modules for yourself](/pages/InstallingNewModules)
   * [Using the file browser](/pages/FileBrowser)
   * [The file editor](/pages/FileEditor)
