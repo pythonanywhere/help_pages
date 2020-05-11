@@ -123,6 +123,69 @@ recognise database names with dollar signs in them (which all databases have
 on PythonAnywhere.  They have [posted a workaround for that on their site](https://youtrack.jetbrains.com/issue/DBE-10067).
 
 
+## Sequel-Pro
+
+*Contributed by a customer*
+
+I prefer Sequel-Pro, which is a very good looking and easy to use interface for
+you to have the convenience of managing your database. The limitation is that
+Sequel-Pro can only be installed on a Mac computer, not Windows.
+
+### Initial installation
+
+It is important to upgrade Sequel-Pro to 1.1.2, the most recent version.
+After you install the 1.1.2 version, you will need to move the downloaded
+software to your MacBook Applications. You can simply go to Finder to check the
+Devices from there. You will find your downloaded Sequel-Pro. Just move it to
+Applications in Finder. You will need to confirm this from the admin authority.
+After you successfully move Sequel-Pro to Applications, you can launch it from
+your Applications.
+
+The first thing you need to do on Sequel-Pro is to configure local server and
+import a database from your own computer directory. You will enter the following
+information from the "Standard" option of connections.
+
+| Setting  | Value |
+|--|--|
+| Host: | 127.0.0.1 |
+| Username: | root |
+| Password: | root |
+| Port: | 8889 |
+
+After entering the above information, you will be able to see that you are
+running your SQL testing environment. Just select "Add Database" from the
+"Choose Database" drop-down menu. You can then test it from there, and import a
+local database to Sequel-Pro.
+
+### Connecting to PythonAnywhere
+
+Now, you are ready to connect your Sequel-Pro to your database that you have
+previously set up on to Pythonanywhere.
+
+To do this, you will need to use the SSH option, rather than the Standard one
+you used earlier. You will then be asked to provide information on both MySQL
+Host and SSH Host information. You will need to enter all the required boxes
+correctly to have the access to your PythonAnywhere database. Here are the
+details:
+
+| Setting  | Value |
+|--|--|
+| Name: | (you can write whatever you want) |
+| MySQL Host: | **your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com** |
+| Username: | **your PythonAnywhere database username** |
+| Password: | **your PythonAnywhere database password** |
+| Database: | (optional, so you can leave it blank) |
+| Port: | 3306 |
+| SSH Host: | **your SSH hostname** |
+| SSH User: | **your PythonAnywhere username** |
+| SSH Password: | **the password you use to log in to the PythonAnywhere website** |
+| SSH Port: | (optional, so you can leave it blank) |
+
+After entering all the above information correctly, you will successfully be
+connected to your database in Pythonanywhere. Your fun of managing your own
+database starts right away.
+
+
 ## Manual SSH tunnelling
 
 For other tools that you want to run on your own machine, you can set up a tunnel that pretends to be a MySQL server
