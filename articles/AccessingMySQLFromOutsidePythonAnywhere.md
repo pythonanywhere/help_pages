@@ -125,7 +125,7 @@ on PythonAnywhere.  They have [posted a workaround for that on their site](https
 
 ## Sequel-Pro
 
-*Contributed by a customer*
+*Contributed by Baodong Liu*
 
 I prefer Sequel-Pro, which is a very good looking and easy to use interface for
 you to have the convenience of managing your database. The limitation is that
