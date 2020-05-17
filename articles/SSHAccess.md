@@ -40,25 +40,25 @@ The password is the same password you use to login to the web site.
 
 ### Passwordless logins
 
-You can also use public/private keys in order to enable passwordless logins via SSH.
+You can also use public/private keys to enable passwordless logins via SSH.
 
 Just add your public keys to the file `~/.ssh/authorized_keys` -- it's a plain-text
 file with one key per line.
 
-If you don't have a public/pricate key pair yet, you can generate one by running the following command on your system:
+If you don't have a public/private key pair yet, you can generate one by running the following command on your system:
 
-	$ ssh-keygen -t rsa -b 2048
-	Generating public/private rsa key pair.
-	Enter file in which to save the key (/home/username/.ssh/id_rsa): 
-	Enter passphrase (empty for no passphrase): 
-	Enter same passphrase again: 
-	Your identification has been saved in /home/username/.ssh/id_rsa.
-	Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+    $ ssh-keygen -t rsa -b 2048
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/username/.ssh/id_rsa): 
+    Enter passphrase (empty for no passphrase): 
+    Enter same passphrase again: 
+    Your identification has been saved in /home/username/.ssh/id_rsa.
+    Your public key has been saved in /home/username/.ssh/id_rsa.pub.
 
 Running the following command copies the generated keys to the pythonanywhere server:
 
-	$ ssh-copy-id <username>@<ssh server hostname>
-	<username>@<ssh server hostname>'s password: 
+    $ ssh-copy-id <username>@<ssh server hostname>
+    <username>@<ssh server hostname>'s password: 
 
 The next time you use `ssh <username>@<ssh server hostname>`, your password will not be prompted! 
 
