@@ -52,19 +52,8 @@ ${pythonanywhere.feedback_dialog_html()}
     </div>
 </div>
 ${base.late_load_js()}
-    <script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
-    <!-- fancy dates -->
-    <script>
-    moment.locale("${momentjs_locales[lang]}");
-    fancydates(${date_fanciness}, ${js_date_format});
-    </script>
-    <!-- end fancy dates -->
+    <script type="javascript" src="/assets/js/pretty.js"/>
     <%block name="extra_js"></%block>
-    % if annotations and post and not post.meta('noannotations'):
-        ${notes.code()}
-    % elif not annotations and post and post.meta('annotations'):
-        ${notes.code()}
-    % endif
 ${pythonanywhere.late_load_javascript()}
 ${body_end}
 ${template_hooks['body_end']()}

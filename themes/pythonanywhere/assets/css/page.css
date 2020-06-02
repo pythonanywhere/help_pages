@@ -1,0 +1,50 @@
+
+html, body {height: 100%;}
+#id_copyright_div {position: relative !important;}
+
+#tipue_search_input {
+    margin-left: 36px !important;
+}
+.ui-dialog-titlebar-close span {
+    margin-left: -8px !important;
+    margin-top: -8px !important;
+}
+
+### Styles for implementing logged in iframe
+#id_feedback_container {
+    position: fixed;
+    left: 0;
+    top: 10%;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 10;
+}
+.floaty-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.hidden {
+    display: none;
+}
+
+.fullscreen-main-navbar {
+    padding: 5px 10px 5px 10px;
+}
+
+#id_logo {
+    height: 35px; 
+}
+
+#header-container {
+    min-height: 100%; 
+    position: relative;
+}
+
+#tipue_search_content {
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+    padding: 20px !important;
+    display:none;
+}

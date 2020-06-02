@@ -41,7 +41,7 @@ might normally use `plt.show()` to display your graph on screen you should use
 
 Once you've done that, you can view the graph from your browser using a URL
 like this:
-`http://www.pythonanywhere.com/user/your-username/files/home/your-username/graph.png`
+`https://www.pythonanywhere.com/user/your-username/files/home/your-username/graph.png`
 
 
 ## What do do if you're seeing errors about Tkinter

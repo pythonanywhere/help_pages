@@ -4,28 +4,12 @@
 <%namespace name="pythonanywhere" file="pythonanywhere.tmpl" import="*" />
 <%def name="html_headstart()">
 <!DOCTYPE html>
-<html
-\
-% if use_open_graph or (twitter_card and twitter_card['use_twitter_cards']) or (comment_system == 'facebook'):
-prefix='\
-%if use_open_graph or (twitter_card and twitter_card['use_twitter_cards']):
-og: http://ogp.me/ns# \
-%endif
-%if use_open_graph:
-article: http://ogp.me/ns/article# \
-%endif
-%if comment_system == 'facebook':
-fb: http://ogp.me/ns/fb# \
-%endif
-'\
-%endif
-\
-% if is_rtl:
-dir="rtl" \
-% endif
-\
-lang="${lang}">
+<html lang="${lang}">
     <head>
+    <meta 
+        http-equiv="Content-Security-Policy" 
+        content="default-src 'none'; img-src 'self' https://www.pythonanywhere.com; script-src 'self' https://code.jquery.com https://www.google-analytics.com; font-src 'self' https://www.pythonanywhere.com https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://www.pythonanywhere.com; frame-src https://www.pythonanywhere.com; connect-src 'self'"
+    >
     <meta charset="utf-8">
     %if description:
     <meta name="description" content="${description}">
@@ -44,10 +28,6 @@ lang="${lang}">
             <link rel="${name}" href="${file}" sizes="${size}"/>
         %endfor
     %endif
-
-    % if comment_system == 'facebook':
-        <meta property="fb:app_id" content="${comment_system_id}">
-    % endif
 
     %if prevlink:
         <link rel="prev" href="${prevlink}" type="text/html">
@@ -69,23 +49,12 @@ lang="${lang}">
 
 <%def name="late_load_js()">
     %if use_bundles:
-        %if use_cdn:
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-            <script src="/assets/js/all.js"></script>
-        %else:
-            <script src="/assets/js/all-nocdn.js"></script>
-        %endif
+        <script src="/assets/js/all-nocdn.js"></script>
     %else:
-        %if use_cdn:
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        %else:
-            <script src="/assets/js/jquery.min.js"></script>
-            <script src="/assets/js/bootstrap.min.js"></script>
-            <script src="/assets/js/moment-with-locales.min.js"></script>
-            <script src="/assets/js/fancydates.js"></script>
-        %endif
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/moment-with-locales.min.js"></script>
+        <script src="/assets/js/fancydates.js"></script>
         <script src="/assets/js/jquery.colorbox-min.js"></script>
     %endif
     %if colorbox_locales[lang]:
