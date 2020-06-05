@@ -13,13 +13,15 @@
 
 # Disclaimer
 
-**Warning: our API is new and in beta and not officially supported, and may change at any time, and it is not to be relied upon, and may cause unpredictable growth of extra ears. Extra ears not guaranteed.**
+**Warning: our API is new and in beta and not officially supported, and may
+change at any time, and it is not to be relied upon, and may cause unpredictable
+growth of extra ears. Extra ears not guaranteed.**
 
 
 # Getting started and Authentication
 
 The PythonAnywhere API uses token-based authentication.  You can get your token
-from your Account page on the API Token tab.
+from [your Account page on the API Token tab](https://www.pythonanywhere.com/account/#api_token).
 
 It's used in a header called `Authorization`, and the value is encoded as the
 string "Token", followed by a space, followed by your token, like this:
@@ -28,7 +30,31 @@ string "Token", followed by a space, followed by your token, like this:
 'Authorization': 'Token {}'.format(token)
 ```
 
-Again, you can see a nice example on your Account page on the API Token tab
+For example, this code using the `requests` module would get the details of your
+CPU usage on PythonAnywhere; you would just need to change the three variables
+at the top to match your actual username, your API token, and the correct host:
+
+* `www.pythonanywhere.com` if your account is on our US-based system.
+* `eu.pythonanywhere.com` if your account is on our EU-based system.
+
+```python
+import requests
+username = 'your username'
+token = 'your token'
+host = 'your host'
+
+response = requests.get(
+    'https://{host}/api/v0/user/{username}/cpu/'.format(
+        host=host, username=username
+    ),
+    headers={'Authorization': 'Token {token}'.format(token=token)}
+)
+if response.status_code == 200:
+    print('CPU quota info:')
+    print(response.content)
+else:
+    print('Got unexpected status code {}: {!r}'.format(response.status_code, response.content))
+```
 
 Once you've generated your token, you can copy and paste it for use in your scripts.  You can also access
 it at any time from PythonAnywhere consoles, webapps and tasks in a pre-populated environment variable,
