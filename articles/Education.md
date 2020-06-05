@@ -41,8 +41,8 @@ In the education beta, we're just seeing if we can add a little icing to the cak
 
 As an alternative to reading through the worked example on this page, try can try this instead:
 
-<a href="//www.pythonanywhere.com/task_helpers/start/6-education/" class="btn">
-    <img alt="trophy icon" src="//www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
+<a href="https://www.pythonanywhere.com/task_helpers/start/6-education/" class="btn">
+    <img alt="trophy icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
     &nbsp;
     Click here to follow through an education features mini-tutorial from your account
 </a>

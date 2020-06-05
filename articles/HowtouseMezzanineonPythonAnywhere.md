@@ -31,7 +31,7 @@ Start by creating a virtualenv -- a "virtual environment" which has only the pyt
     # you can also use --system-site-packages, see below
 
 
-  * ASIDE: If you use *--system-site-packages*, you'll get all of the pythonanywhere [batteries included system pacakges](//www.pythonanywhere.com/batteries_included/) like numpy, scipy etc, available in your virtualenv. the difference will be that you will then be able to install your own, upgraded version over the top, which is what we're doing with the mezzanine package.
+  * ASIDE: If you use *--system-site-packages*, you'll get all of the pythonanywhere [batteries included system pacakges](https://www.pythonanywhere.com/batteries_included/) like numpy, scipy etc, available in your virtualenv. the difference will be that you will then be able to install your own, upgraded version over the top, which is what we're doing with the mezzanine package.
 
 You will now be "in" the virtualenv. You can tell whenever your virtualenv is active, because its name appears in the bash prompt:
 
