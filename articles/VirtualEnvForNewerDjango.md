@@ -29,7 +29,7 @@ team had just released a point update to 1.10.2.  If you want to upgrade to
 that, or later to 1.11, a virtualenv makes it easy.
 
 *(If you're on our old
-[system image](https:https://www.pythonanywhere.com/batteries_included/), you'll be on an
+[system image](https://www.pythonanywhere.com/batteries_included/), you'll be on an
 even earlier version of Django, so this guide is even more pertinent.)*
 
 
