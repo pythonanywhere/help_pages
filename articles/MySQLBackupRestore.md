@@ -24,7 +24,7 @@ Armed with these two, you should open up a **Bash console**, and then run the fo
 
 ```bash
 cd
-mysqldump -u yourusername -h yourusername.mysql.pythonanywhere-services.com 'yourusername$dbname'  > db-backup.sql
+mysqldump -u yourusername -h yourusername.mysql.pythonanywhere-services.com --set-gtid-purged=OFF 'yourusername$dbname'  > db-backup.sql
 ```
 
 > The 'single-quotes' around the database name are required, because of the '$' character in the full database name.
@@ -44,7 +44,7 @@ If you later need to restore, run the following command:
 mysql -u yourusername -h yourusername.mysql.pythonanywhere-services.com 'yourusername$dbname'  < db-backup.sql
 ```
 
-Be aware that this will completely delete any existing data in the database though! 
+Be aware that this will completely delete any existing data in the database though!
 
 
 ## Scheduling the backup as a task
