@@ -93,8 +93,11 @@ tab -- the one like `webapp-XXXX.pythonanywhere.com`.
 
 Different DNS providers call them different things.
 
-  * Alias: domain name, Alias name, or just "name"
-  * Canonical Name: the address, FQDN, Fully Qualified Domain Name, or Host Name.
+  * Alias: domain name, alias name, host, or just "name"
+  * Canonical Name: the address, FQDN, Fully Qualified Domain Name, points to, or Host Name.
+
+Specifically, if you're using GoDaddy, the alias is called the "host", and the canonical name
+is called "points to".
 
 If you're using OVH as your registrar, you may also see that they've automatically
 created a TXT record for `www.yourdomain.com` with a value of `"3|welcome"` --
