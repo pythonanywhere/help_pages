@@ -14,43 +14,8 @@
 
 If you have a paid PythonAnywhere plan, and you have a Microsoft SQL Server
 database elsewhere on the Internet that you want to connect to (we don't host
-SQL Server ourselves) then you have two options in terms of Python packages
-to use.
-
-### pymssql
-
-This is the easiest option.  Just connect to it like this:
-
-    host = "123.456.789.012"
-    username = "yourusername"
-    password = "yourpassword"
-    database = "yourdatabasename"
-
-    conn = pymssql.connect(host, username, password, database)
-    cursor = conn.cursor()
-
-...changing the `host`, `username`, `password` and `database` variables
-appropriately, of course.
-
-One thing to look out for -- if your SQL Server
-instance is on Azure, then your username is "username@databasename".  For
-example, if your database is `mydatabase.database.windows.net` and your username
-is `jim`,then the username you should use in the `pymssql.connect` would be
-`jim@mydatabase`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
-for more information.
-
-If you have problems connecting to your database, there's [a great troubleshooting
-guide on the `pymssql` site](http://pymssql.org/en/stable/faq.html).  One
-particularly useful trick is to set the `TDSDUMP` environment variable, which
-makes the system print out loads of debugging data.  Check out the link above
-for details.
-
-
-### pyodbc
-
-This is much trickier to set up, so if you can use `pymssql` then we definitely
-recommend that option.   But if you have a bunch of scripts that already use
-`pyodbc` and need them to work on PythonAnywhere, it is possible.
+SQL Server ourselves) then the best package to use is `pyodbc`.  It can be
+a little fiddly to set up, though.
 
 The aim is to create a ODBC *Data Source Name* (DSN) called `sqlserverdatasource`
 that your pyodbc code will be able to use to connect to the database.  To do this:
@@ -95,7 +60,7 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
     ...again, changing `YOUR_PYTHONANYWHERE_USERNAME`, `YOUR_SQL_SERVER_USERID`,
     and `YOUR_SQL_SERVER_PASSWORD` appropriately.
 
-    **Note:** just as with pymssql, if you're using an Azure-hosted database, you need to specify both
+    **Note:** if you're using an Azure-hosted database, you need to specify both
     the username and the server name in `YOUR_SQL_SERVER_USERID`, separated by an `@`.  For example,
     `yourusername@yourservername`.  See [this help page](https://blogs.msdn.microsoft.com/cdndevs/2015/05/21/python-and-data-sql-database-on-azure-as-a-data-source-for-python-applications/)
     for more information.
