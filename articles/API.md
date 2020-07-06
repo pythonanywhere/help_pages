@@ -68,6 +68,33 @@ You will need to reload your webapp and start new consoles for this environment 
 All endpoints are hosted at *https://www.pythonanywhere.com/* or
 *https://eu.pythonanywhere.com/* depending on where your account is registered.
 
+## Always_On
+
+### /api/v0/user/{username}/always_on/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your always-on tasks</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create and start a new always-on task</td><td style="width: 30%">command, enabled</td></tr>
+</table>
+
+### /api/v0/user/{username}/always_on/{id}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about an always-on task.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Stop and delete an always-on task</td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+### /api/v0/user/{username}/always_on/{id}/restart/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
+</table>
+
 ## Consoles
 
 ### /api/v0/user/{username}/consoles/
