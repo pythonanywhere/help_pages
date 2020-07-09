@@ -31,6 +31,8 @@ Please only report vulnerabilities for:
 
 * `help.pythonanywhere.com`
 
+* `integration.pythonanywhere.com`
+
 As we are a web-hosting company, our users may have created websites that have bugs using our platform.
 These might be hosted at URLs like *username.pythonanywhere.com*.
 Do not report bugs in those sites to us;  if you can find contact details on the sites, you
