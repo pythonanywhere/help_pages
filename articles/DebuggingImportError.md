@@ -89,10 +89,10 @@ Python that you have specified as the one to use for your website on the "Web" p
     $ pythonX.Y -i /var/www/www_my_domain_com_wsgi.py
 
 
-Or, if you're using a virtualenv, activate it first, and then you can just use
-`python` (because the version to use is "baked into" the virtualenv:
+Or, if you're using a virtualenv, start a Bash console that is using that virtualenv
+using the "Start a console in this virtualenv" link on the "Web" page, and then you can just use
+`python` (because the version to use is "baked into" the virtualenv):
 
-    $ workon my-virtualenv
     (my-virtualenv)$ python -i /var/www/www_my_domain_com_wsgi.py
 
 
@@ -184,8 +184,9 @@ does it give you the path to your package, or to a system package? if the former
 
 If you're using a virtualenv, just double-check that the Python version of your virtualenv is the same as the one on the web tab.
 
-  * you can check the virtualenv version with `python --version` (remember to activate your virtualenv fist with `workon my-virtualenv-name` first)
-  * you can check the webapp python version on the **Web** tab, it's indicated near the top.
+  * There will be an error in the "Virtualenv" section of the "Web" page if the versions do not match.
+  * You can check the virtualenv version with `python --version` (remember to activate your virtualenv fist with `workon my-virtualenv-name` first)
+  * You can check the webapp python version on the **Web** tab, it's indicated near the top.
 
 
 ##Python version mismatch
