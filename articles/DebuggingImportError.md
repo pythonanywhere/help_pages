@@ -178,7 +178,6 @@ What happens if you open up a console and type
 
 does it give you the path to your package, or to a system package? if the latter, it's best to rename your own module to avoid the conflict.
 
-
 ##Check virtualenv Python versions
 
 
@@ -186,3 +185,10 @@ If you're using a virtualenv, just double-check that the Python version of your 
 
   * you can check the virtualenv version with `python --version` (remember to activate your virtualenv fist with `workon my-virtualenv-name` first)
   * you can check the webapp python version on the **Web** tab, it's indicated near the top.
+
+
+##Python version mismatch
+
+If you manually install packages with pip (in the userspace), the packages will be installed in a specific directory like /home/your_username/.local/lib/python3.8 . You can easily import modules on that folder and you can also manually run the wsgi file succesfully.
+But if you configure your web application to run under another version of Python, for example Bottle with Python 3.7, it will not be able to see that folder and the import will fail.
+
