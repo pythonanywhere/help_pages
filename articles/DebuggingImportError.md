@@ -1,4 +1,3 @@
-
 <!--
 .. title: Debugging with sys.path / ImportError issues
 .. slug: DebuggingImportError
@@ -21,24 +20,28 @@ When you say:
     :::python
     from foo.bar import baz
 
-
-
-Python will start by looking for a *module* named foo, and then inside that a module named bar, and then inside that for an object named baz (which may be a regular python object, or another module)
+...Python will start by looking for a *module* named foo, and then inside that
+a module named bar, and then inside that for an object named baz (which may be
+a regular python object, or another module)
 
 A **module** is defined as:
 
   * either a Python file
-    * ie a file on disk that ends in .py and contains valid Python (syntax errors, for example, will stop you from being able to import a file)
+    * that is, a file on disk that ends in .py and contains valid Python (syntax errors, for example, will stop you from being able to import a file)
 
-  * or a folder which contains Python files.
-    * for a folder to become a module, it must contain a special file called `__init__.py`
+  * or a directory (aka folder) which contains Python files.
+    * for a directory to become a module, it must contain a special file called `__init__.py`
 
-When a module is actually a folder, the things you can import from it are:
+When a module is actually a directory, the things you can import from it are:
 
-  * any other modules that are inside the folder (ie, more .py files and folders)
-  * any objects defined or imported inside the `__init__.py` of the folder
+  * any other modules that are inside the directory (ie, more .py files and directory)
+  * any objects defined or imported inside the `__init__.py` of the directory
 
-Finally, where does Python look for modules? It looks in each directory specified in the special "sys.path" variable. Typically (but not always), sys.path contains some default folders, including the current working directory, and the standard "packages" directory for that system, usually called site-packages, which is where pip installs stuff to.
+Finally, where does Python look for modules? It looks in each directory
+specified in the special `sys.path` variable. Typically (but not always),
+`sys.path` contains some default folders, including the current working
+directory, and the standard "packages" directory for that system, usually called
+site-packages, which is where pip installs stuff to.
 
 So `from foo.bar import baz` could work in a few different ways:
 
@@ -69,40 +72,38 @@ Or:
 
 What this means is that you need to get a few things right for an import to work:
 
-1. The dot-notation has to work: from foo.bar import baz means foo has to be a module folder, and bar can either be a folder or a file, as long as it somehow contains a thing called baz. Spelling mistakes, including capitalization, matter
-2. The top-level "foo" must be inside a folder that's on your sys.path.
-3. If you have multiple modules called "foo" on your sys.path, that will probably lead to confusion. Python will just pick the first one.
+1. The dot-notation has to work: from foo.bar import baz means foo has to be a module directory, and bar can either be a directory or a file, as long as it somehow contains a thing called baz. Spelling mistakes, including capitalization, matter
+2. The top-level `foo` must be inside a directory that's on your sys.path.
+3. If you have multiple modules called `foo` on your sys.path, that will probably lead to confusion. Python will just pick the first one.
 
 
 ##Debugging sys.path issues in web apps
 
 
 
-###can you run the wsgi file itself?
+###Can you run the wsgi file itself?
+
+Try running this, making sure that you replace the `X.Y` with the version of
+Python that you have specified as the one to use for your website on the "Web" page:
+
+    $ pythonX.Y -i /var/www/www_my_domain_com_wsgi.py
 
 
-    $ python3.6 -i /var/www/www_my_domain_com_wsgi.py
-
-
-Or, if you're using python 2:
-
-    $ python2.7 -i /var/www/www_my_domain_com_wsgi.py
-
-
-Or, if you're using a virtualenv, activate it first:
+Or, if you're using a virtualenv, activate it first, and then you can just use
+`python` (because the version to use is "baked into" the virtualenv:
 
     $ workon my-virtualenv
     (my-virtualenv)$ python -i /var/www/www_my_domain_com_wsgi.py
 
 
-If this shows any errors and won't even load python (eg syntax errors), you'll need to fix them.
+If this shows any errors and won't even load python (eg. syntax errors), you'll need to fix them.
 
 If it loads OK, it will drop you into a Python shell. Try doing the import manually at the command line. Then, check whether they really are coming from where you think they are:
 
     :::python
     from foo.bar import baz
     import foo
-    print(foo)  # this should show the path to the module.  Is it what you expect?
+    print(foo.__file__)  # this should show the path to the module.  Is it what you expect?
     import sys
     print('\n'.join(sys.path)) # does this show the files and folders you need?
 
@@ -112,7 +113,10 @@ If it loads OK, it will drop you into a Python shell. Try doing the import manua
 ##Django-specific issues
 
 
-In Django, we sometimes don't import modules directly in the WSGI file, but we do specify a dot-notation import path to the settings in an environment variable. Django will try and import it later, so you need to get this right as if it was an import.
+In Django, we sometimes don't import modules directly in the WSGI file, but we
+do specify a dot-notation import path to the settings in an environment
+variable. Django will try and import it later, so you need to get this right as
+if it was an import.
 
 eg:
 
@@ -134,9 +138,6 @@ What this implies is that you have a directory tree that looks like this:
             |-- __init__.py
             `-- settings.py
 
-
-NB - this is the typical django project structure for django versions greater than 1.4. You will probably need to use a virtualenv to get this to work, see [VirtualenvForNewerDjango](/pages/VirtualEnvForNewerDjango)
-
 If in doubt, try the
 
     python -i /var/www/www_my_domain_com_wsgi.py
@@ -154,7 +155,7 @@ If in doubt, try the
 
 eg, if your wsgi file does `from myapp import settings`, can you run:
 
-    python /path/to/myapp/settings.py
+    pythonX.Y /path/to/myapp/settings.py
 
 
 ?
@@ -173,10 +174,10 @@ What happens if you open up a console and type
 
     :::python
     import package
-    print(package)
+    print(package.__file__)
 
 
-does it give you the path to your package, or to a system package? if the latter, it's best to rename your own module to avoid the conflict.
+does it give you the path to your package, or to a system package? if the former, it's best to rename your own module to avoid the conflict.
 
 ##Check virtualenv Python versions
 
@@ -189,6 +190,19 @@ If you're using a virtualenv, just double-check that the Python version of your 
 
 ##Python version mismatch
 
-If you manually install packages with pip (in the userspace), the packages will be installed in a specific directory like /home/your_username/.local/lib/python3.8 . You can easily import modules on that folder and you can also manually run the wsgi file succesfully.
-But if you configure your web application to run under another version of Python, for example Bottle with Python 3.7, it will not be able to see that folder and the import will fail.
+If you manually install packages with pip, the packages will
+be installed *only* for the specific Python version that you specified when
+installing them.  For example, if you install a package like this:
+
+    pip3.8 install --user foo
+
+...then the package `foo` will only be installed for Python 3.8.
+
+That means that if your website is configured to use a different Python version (say, 3.7)
+on the "Web" page, it will not be able to use the `foo` package.
+
+This can be confusing, because if you are running code elsewhere using Python 3.8,
+it will work.  That's why it's important to make sure that you use the right
+version of Python when running your WSGI file in the "Can you run the wsgi file itself?"
+section above.
 
