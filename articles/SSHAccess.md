@@ -70,6 +70,11 @@ starting point to working out what is going wrong is to run:
 
     ssh -v <username>@<ssh server hostname>
 
+If the SSH port appears closed to you, this is likely that you failed to
+authenticate several times, and your IP has been banned for a little while.
+This mechanism is necessary to protect the SSH service from hackers hammering
+the service. So, check your credentials, check the IP address again, and
+try again a little later (something like an hour later).
 
 ### Filezilla, etc
 
