@@ -1,4 +1,3 @@
-
 <!--
 .. title: How to use a virtualenv in your web app (to get newer versions of django, flask etc)
 .. slug: Virtualenvs
@@ -18,15 +17,31 @@ A [virtualenv](/pages/VirtualenvsExplained) is a way to create a python environm
 ##Using a virtualenv in your web app
 
 
-Create a new web app using the "manual config" option, or visit one of your existing web apps, and you'll see a section called "Virtualenvs" in the config tab. This allows you to specify the path to an existing virtualenv. Read on for instructions on how to create one.
+You can use a virtualenv in a new web app (created using the “Manual configuration” option) or in your existing web apps. To use a virtualenv in your web app, do the following:
+1. Create a virtualenv
+1. Install packages into your virtualenv
+1. Configure your app to use this virtualenv
 
 
-##Creating a virtualenv
 
+##Step 1: Create a virtualenv
 
-We recommend using *virtualenvwrapper*, a handy command-line tool, to create your virtualenv. Here's an example:
+Go to the **Consoles** tab and start a Bash console.
+
+We recommend using *virtualenvwrapper*, a handy command-line tool, to create your virtualenv.
+
+Specify which Python version to use for your virtualenv using the `--python` option, but note that it must match the version of Python you've chosen for your web app. So, to create a new Python 3.6 virtualenv, run this command:
+
 
     $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.6
+
+...or similarly for Python 2.7:
+
+    $ mkvirtualenv myvirtualenv --python=/usr/bin/python2.7
+
+You’ll see your virtualenv being created
+
+
     Running virtualenv with interpreter /usr/bin/python3.6
     Using base prefix '/usr'
     New python executable in /home/myusername/.virtualenvs/myvirtualenv/bin/python3.6
@@ -37,35 +52,18 @@ We recommend using *virtualenvwrapper*, a handy command-line tool, to create you
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/preactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/postactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/get_env_details
-
+    
     (myvirtualenv) $ which python
     /home/myusername/.virtualenvs/myvirtualenv/bin/python
 
-    (myvirtualenv) $ deactivate
-    $ which python
-    /usr/bin/python
+NOTE: If you see a `command not found` error when trying to run `mkvirtualenv`, you'll find some installation instructions here: [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper)
 
-    $ workon myvirtualenv
-    (myvirtualenv) $ which python
-    /home/myusername/.virtualenvs/myvirtualenv/bin/python
-    (myvirtualenv) $ python
-    Python 3.6.0 (default, Jan 13 2017, 00:00:00) 
-    [GCC 4.8.4] on linux
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> 
-
-  * You can specify whichever version of Python you like for your virtualenv, but *it must match the version of python you've chosen for your web app*
-  * Once you create your virtualenv, you need to **activate** it. It's automatically activate straight after you create it with `mkvirtualenv`, and you can re-activate it later with `workon myvirtualenv`.
-  * You can tell whether your virtualenv is active, because its name appears in your prompt -- you see `(myvirtualenv) $`.
+Once your virtualenv is ready and active, you’ll see `(myvirtualenv) $` in your prompt.
 
 
-##Installing virtualenvwrapper if you need to
+##Step 2: Install packages into your virtualenv
 
-
-If you see a `command not found` error when trying to run `mkvirtualenv`, you'll find some installation instructions here: [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper)
-
-
-##Installing stuff into your virtualenv
+Install the required packages into your virtualenv using `pip`. You can just use pip without the Python version number or `--user` flag.
 
 
     $ workon myvirtualenv
@@ -86,13 +84,37 @@ If you see a `command not found` error when trying to run `mkvirtualenv`, you'll
 
 
 
-##Using your virtualenv back in your web app
+##Step 3: Configure your app to use this virtualenv
 
 
-Now that you have a virtualenv, and you know its path, you can go and enter it back in the **Web** tab.
+Now that you have a virtualenv, and know its path, configure your app to use this virtualenv. 
 
-Go to the Virtualenv section, and enter the path: `/home/myusername/.virtualenvs/myvirtualenv`
+Go to the **Web** tab, and in the Virtualenv section, enter the path: `/home/myusername/.virtualenvs/myvirtualenv`
 
-  * TIP: if you're using virtualenvwrapper, you can just enter the name of the virtualenv, *myvirtualenv*, and the system will automatically guess the rest of the path (*/home/myusername/.virtualenvs etc*) after you hit ok
+  * TIP: if you're using virtualenvwrapper, you can just enter the name of the virtualenv, *myvirtualenv*, and the system will automatically guess the rest of the path (*/home/myusername/.virtualenvs etc*) after you hit ok.
 
 Now, **Reload** your web app, and you should find it has access to all the packages in your virtualenv, instead of the system ones.
+
+##Deactivating and reactivating your virtualenv
+
+Once you create your virtualenv, you need to activate it. It's automatically activated straight after you create it with `mkvirtualenv`, and you can re-activate it later with `workon`.
+
+Re-activate using `workon`:
+
+    $ workon myvirtualenv
+    (myvirtualenv) $ which python
+    /home/myusername/.virtualenvs/myvirtualenv/bin/python
+    (myvirtualenv) $ python
+    Python 3.6.0 (default, Jan 13 2017, 00:00:00) 
+    [GCC 4.8.4] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> 
+    
+To deactivate, use `deactivate`:
+
+    (myvirtualenv) $ deactivate
+    $ which python
+    /usr/bin/python
+
+
+
