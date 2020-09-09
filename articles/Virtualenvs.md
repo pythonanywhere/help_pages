@@ -18,9 +18,12 @@ A [virtualenv](/pages/VirtualenvsExplained) is a way to create a python environm
 
 
 You can use a virtualenv in a new web app (created using the “Manual configuration” option) or in your existing web apps. To use a virtualenv in your web app, do the following:
+
 1. Create a virtualenv
-1. Install packages into your virtualenv
-1. Configure your app to use this virtualenv
+
+2. Install packages into your virtualenv
+
+3. Configure your app to use this virtualenv
 
 
 
