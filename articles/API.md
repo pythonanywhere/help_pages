@@ -299,10 +299,8 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get TLS/HTTPS info.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Set TLS/HTTPS info.<br>To use auto-renewing certificates from Let's Encrypt, use the `cert_type` parameter with a value of `letsencrypt-auto-renew`.</td><td style="width: 30%">cert, private_key,<br>cert_type</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
