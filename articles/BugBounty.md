@@ -96,4 +96,6 @@ Send reports to [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 * We may pay upwards of US$1000 for bugs that we deem very high severity.
 * Payouts are made by PayPal, and you are responsible for any fees you incur receiving the payout.
 
+## Not a bugs - common source of security researchers confusion
 
+* Users can create multiple accounts with one email.

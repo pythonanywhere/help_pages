@@ -68,7 +68,8 @@ You will need to reload your webapp and start new consoles for this environment 
 All endpoints are hosted at *https://www.pythonanywhere.com/* or
 *https://eu.pythonanywhere.com/* depending on where your account is registered.
 
-## Always_On
+
+## Always On Tasks
 
 ### /api/v0/user/{username}/always_on/
 
@@ -77,6 +78,7 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your always-on tasks</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create and start a new always-on task</td><td style="width: 30%">command, enabled</td></tr>
 </table>
+
 
 ### /api/v0/user/{username}/always_on/{id}/
 
@@ -87,6 +89,7 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Stop and delete an always-on task</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
+
 
 ### /api/v0/user/{username}/always_on/{id}/restart/
 
@@ -138,6 +141,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>"type" into the console.  Add a "\n" for return.</td><td style="width: 30%">POST parameter: input</td></tr>
 </table>
+
 ## Cpu
 
 ### /api/v0/user/{username}/cpu/
@@ -158,7 +162,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Downloads the file at the specified path.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td></td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Uploads a file to the specified file path.  Contents should be in a
 multipart-encoded file with the name "content".  The attached filename is
 ignored.
@@ -217,6 +221,30 @@ as a list. Paths ending in slash/ represent directories.  Limited to
   <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Endpoints for scheduled tasks</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for scheduled tasks</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Delete an scheduled task</td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+## Students
+
+### /api/v0/user/{username}/students/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns a list of students of the current user
+<pre>{
+    "students": [
+        {"username": &lt;string&gt;},
+        {"username": &lt;string&gt;},
+        ...
+    ]
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+
+### /api/v0/user/{username}/students/{student}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td></td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 ## Webapps
@@ -297,5 +325,25 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
   <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+
+### /api/v0/user/{username}/webapps/{domain_name}/static_headers/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static headers for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
+</table>
+
+
+### /api/v0/user/{username}/webapps/{domain_name}/static_headers/{id}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL, name and value of a particular header.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static header. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
