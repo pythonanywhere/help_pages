@@ -116,7 +116,13 @@ which isn't very helpful for debugging!
 
 The solution is to force Python to flush the output buffer after each print.
 
-To do that in ***Python 3***, you simply add `flush=True` to your `print` statements
+In ***both Python 2 and 3*** you can launch the intepreter with an `-u` option:
+
+    python3 -u /path/to/script.py
+
+Alternatively, you can achieve that in code.
+
+In ***Python 3***, you simply add `flush=True` to your `print` statements
 -- for example, you would replace
 
     print("Entering the main run loop")
