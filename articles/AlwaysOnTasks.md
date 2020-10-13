@@ -69,7 +69,7 @@ that in the always-on task "command" input would be this:
 If you use Python 3's built-in `venv` module -- that is, you did something like
 this to create it:
 
-    python3 -m venv my-env
+    python3.6 -m venv my-env
 
 ...and you use this to activate it:
 
@@ -118,7 +118,7 @@ The solution is to force Python to flush the output buffer after each print.
 
 In ***both Python 2 and 3*** you can launch the intepreter with an `-u` option:
 
-    python3 -u /path/to/script.py
+    python3.6 -u /path/to/script.py
 
 Alternatively, you can achieve that in code.
 
