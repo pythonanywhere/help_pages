@@ -120,10 +120,8 @@ In ***both Python 2 and 3*** you can launch the intepreter with an `-u` option:
 
     python3.6 -u /path/to/script.py
 
-Alternatively, you can achieve that in code.
-
-In ***Python 3***, you simply add `flush=True` to your `print` statements
--- for example, you would replace
+Alternatively, you can achieve that in code; in ***Python 3***, you simply add
+`flush=True` to your `print` statements -- for example, you would replace
 
     print("Entering the main run loop")
 
