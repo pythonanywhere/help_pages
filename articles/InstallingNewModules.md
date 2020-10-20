@@ -84,3 +84,13 @@ security warnings.
 You need to enter the location of your virtualenv on the "Web" tab to use it in
 a web app. Check out the [example here](/pages/VirtualEnvForNewerDjango)
 
+
+
+##3\. Installers that print out excessive amounts
+
+Some packages, when they are installing, print out huge amounts of stuff, and
+that can cause problems -- you'll get an error saying this:
+
+    Your console is printing so much that it's interfering with other users, so it has been closed
+
+To avoid this, you can add the `-q` command-line flag to your `pip` command.
