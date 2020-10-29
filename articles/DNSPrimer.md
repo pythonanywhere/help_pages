@@ -238,8 +238,12 @@ would look up the IP address for `webapp-123456.pythonanywhere.com` and would
 reply (bending the truth a little that "`yourdomain.com` has an A record
 pointing to the IP address 1.2.3.4".
 
-Because this is not a part of the DNS standard, we don't officially support
-these, but they will in general work, and they're certainly better than using
+Their advantage over CNAME records is that they can be created for naked
+domains, so you can use one to host a site at `yourdomain.com` on PythonAnywhere
+without needing to use an A record.
+
+However, because they are not a part of the DNS standard, we don't officially support
+them.  Still, they will in general work, and they're better than using
 an A record.
 
 
