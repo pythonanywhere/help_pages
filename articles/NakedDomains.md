@@ -48,12 +48,18 @@ people will use the other one and get confused when they don't see anything.
 
 What we recommend is that you have the "official" version of your website on
 `www.yourdomain.com`, and then set things up so that `yourdomain.com`
-automatically redirects people to that official version.
+automatically redirects people to that official version.  The rest of this
+page explains how to do that last step.
 
 This is better than doing it the other way around because the DNS setup for
 naked domains is more complicated and fragile, because you can't use CNAMEs for
 them -- there's more information about that in our
-[help page about the basics of DNS](/pages/DNSPrimer).
+[help page about the basics of DNS](/pages/DNSPrimer).  (If you're completely
+set on using a naked domain, we recommend that you use an ALIAS record rather
+than an A record to point to it -- however, that's not officially supported as
+either part of the DNS specification or by us, so only do that if you really
+know what you're doing -- if you're new to this, then use the
+`www.yourdomain.com` address.)
 
 What we very strongly recommend against is having two separate copies of your
 website, one at `yourdomain.com` and one at `www.yourdomain.com`.  More about
