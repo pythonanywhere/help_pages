@@ -226,7 +226,7 @@ registrars, and also some links to third-party services if you need to use them.
 ##### Sidebar: ALIAS records
 
 Some DNS providers support what they call "ALIAS" records.  These are not part
-of the DNS standard, but they way they work is that you create a record that
+of the DNS standard, but the way they work is that you create a record that
 looks a bit like a CNAME -- it maps from a domain name of yours to a hostname.
 The way they work internally is that when a client requests the domain, the DNS
 provider just does the lookup for the hostname that the domain name points to
