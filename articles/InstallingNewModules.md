@@ -17,7 +17,7 @@
 ##Installing Python modules on PythonAnywhere
 
 
-You can install new modules into PythonAnywhere by using a **Bash Console**
+Your account has many modules [already installed](https://www.pythonanywhere.com/batteries_included/). You can install new modules into PythonAnywhere by using a **Bash Console**
 
 
 ##1\. Using the --user flag
