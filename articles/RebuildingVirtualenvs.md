@@ -82,5 +82,5 @@ will pick them up the next time they run.
 ##6) All done!
 
 We're here to help! If you get stuck or confused, just drop us a note at
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com], and we'll
+[support@pythonanywhere.com](mailto:support@pythonanywhere.com), and we'll
 be happy to help.
