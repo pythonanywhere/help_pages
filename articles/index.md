@@ -145,9 +145,6 @@ Some technical problems with consoles that sometimes come up:
 
   * [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
   * [The "Starting encrypted connection" message never disappears](/pages/StartingEncryptedConnection)
-  * [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
-
-
 
 # I'm looking at an error message in my web app
 
