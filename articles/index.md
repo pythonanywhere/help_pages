@@ -14,7 +14,8 @@
 
 Many of your questions about PythonAnywhere are likely to be answered below. If
 not, the best place to get support is in
-our [**Forums**](https://www.pythonanywhere.com/forums/). We monitor them to make
+our [**Forums**](https://www.pythonanywhere.com/forums/) and
+[**EU Forums**](https://eu.pythonanywhere.com/forums/). We monitor them to make
 sure that every question gets answered, and you get the added benefit that
 other PythonAnywhere customers can help you out too. They're also a nice place
 for a chat ![:-\)](/smile.png)
@@ -43,11 +44,10 @@ one that describes what you're looking for help with!
 
 We have lots of beginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
 
-<a href="https://www.pythonanywhere.com/task_helpers/start/1-start_python/" class="btn">
-    <img alt="keyboard icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png">
-    &nbsp;
-     I want to start learning Python
-</a>
+<img alt="keyboard icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png">
+&nbsp; I want to start learning Python
+<a href="https://www.pythonanywhere.com/task_helpers/start/1-start_python/">[account in US servers]</a>
+<a href="https://eu.pythonanywhere.com/task_helpers/start/1-start_python/">[account in EU servers]</a>
 
 And here are some common questions and guides for beginners:
 
@@ -67,11 +67,11 @@ This section assumes you have started building a web app on your local PC, and y
 
 Here is a step-by-step tutorial that walks you through the general outline of how to set up an existing web app on PythonAnywhehre
 
-<a href="https://www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/" class="btn">
-    <img alt="computer icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png">
-    &nbsp;
-     I have built a web app on my local PC and want to deploy it on PythonAnywhere
-</a>
+<img alt="computer icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png">
+&nbsp;
+I have built a web app on my local PC and want to deploy it on PythonAnywhere
+<a href="https://www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/">[account in US servers]</a>
+<a href="https://eu.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/">[account in EU servers]</a>
 
 And here are some popular how-to guides and help pages for common webapp issues:
 
@@ -149,9 +149,8 @@ Some technical problems with consoles that sometimes come up:
 # I'm looking at an error message in my web app
 
 
-Oh no!  But fear not -- the likelihood is that we've seen someone else with this error before, and we know how to fix it.
-
-If you haven't already, the first step is to look in your **error log** -- you'll find a link to it on the [Web tab](https://www.pythonanywhere.com/web_app_setup/).
+If you haven't already, the first step is to look in your **error
+log** -- you'll find a link to it on the **Web tab** ([account in US servers](https://www.pythonanywhere.com/web_app_setup/); [account in EU servers](https://eu.pythonanywhere.com/web_app_setup/)).
 
 Once you've done that, here are some solutions to common problems
 
@@ -213,13 +212,10 @@ Welcome!  We have lots of teachers and students on board.  Check out this page f
 
 Or you can run through this step-by-step tutorial if you prefer:
 
-<a href="https://www.pythonanywhere.com/task_helpers/start/6-education/" class="btn">
-    <img alt="trophy icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
-    &nbsp;
-    I want to check out the Education Beta features
-</a>
-
-
+<img alt="trophy icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
+&nbsp; I want to check out the Education Beta features
+<a href="https://www.pythonanywhere.com/task_helpers/start/6-education/">[account in US servers]</a>
+<a href="https://eu.pythonanywhere.com/task_helpers/start/6-education/">[account in EU servers]</a>
 
 # A few other topics
 
@@ -294,23 +290,20 @@ Other Languages:
 
 # A few other step-by-step guides
 
-<a href="https://www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/" class="btn">
-    <img alt="fishies icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png">
-    &nbsp;
-    I want to follow the Django Tutorial
-</a>
+<img alt="fishies icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png">
+&nbsp; I want to follow the Django Tutorial
+<a href="https://www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/">[account in US servers]</a>
+<a href="https://eu.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/">[account in EU servers]</a>
 
-<a href="https://www.pythonanywhere.com/task_helpers/start/3-web_app/" class="btn">
-    <img alt="cloud icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png">
-    &nbsp;
-    I want to create a web application
-</a>
+<img alt="cloud icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png">
+&nbsp; I want to create a web application
+<a href="https://www.pythonanywhere.com/task_helpers/start/3-web_app/">[account in US servers]</a>
+<a href="https://eu.pythonanywhere.com/task_helpers/start/3-web_app/">[account in EU servers]</a>
 
-<a href="https://www.pythonanywhere.com/task_helpers/start/5-github/" class="btn">
-    <img alt="github icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png">
-    &nbsp;
-    I want to clone and hack on my GitHub project
-</a>
+<img alt="github icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png">
+&nbsp; I want to clone and hack on my GitHub project
+<a href="https://www.pythonanywhere.com/task_helpers/start/5-github/">[account in US servers]</a>
+<a href="https://eu.pythonanywhere.com/task_helpers/start/5-github/">[account in EU servers]</a>
 
 # Security
 
