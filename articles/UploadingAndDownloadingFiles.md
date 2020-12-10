@@ -52,15 +52,19 @@ might want to take a look at Bede Kelly's
 
 ##Uploading a zip file
 
-The alternative is to compress your project folder on your own PC, and upload
-it using the **Files tab**. Then, open a **Bash console** to run `unzip` to
+An alternative that you can use in a free account is to compress your project folder on your own PC, and upload
+it using the **Files** page. Then, open a **Bash console** to run `unzip` to
 decompress the zipfile you've uploaded.
 
-If your file is too large to upload -- that is, more than 200MiB, you may have to split it up into
+If your file is too large to upload -- that is, more than 100MiB -- you will have to split it up into
 chunks and stitch them back together afterwards. Split the files locally into
-50mb files:
+50mb files, for example by using this command in Bash (if you're using Linux
+or the "Git Bash" tools on Windows), or in a Terminal on a Mac:
 
     split -b 50m huge_file
+
+...or by using a tool like [GSplit](https://www.gdgsoft.com/gsplit) on a Windows
+machine.
 
 Upload them to PythonAnywhere, then get them back together with:
 
@@ -81,11 +85,12 @@ to:
 * If you're using our EU-hosted site at `eu.pythonanywhere.com`, then the
   SSH server's hostname is `ssh.eu.pythonanywhere.com`
 
-Use your normal username and password and connect.
+Use your normal username and password and connect; note that the username
+is case-sensitive.
 
 To use SFTP, from the command-line, use `sftp <username>@<ssh server hostname>`.
 
-[Filezilla](https://filezilla-project.org/) also supports SFTP; just use `ssh.pythonanywhere.com` or `ssh.eu.pythonanywhere.com` as the server
+For a graphical user interface, [Filezilla](https://filezilla-project.org/) also supports SFTP; just use `ssh.pythonanywhere.com` or `ssh.eu.pythonanywhere.com` as the server
 (if you're entering it into the box at the top of the main screen, you'll need
 to specify SFTP there too, like this: `sftp://<ssh server hostname>`.)
 
