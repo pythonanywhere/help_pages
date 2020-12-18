@@ -58,7 +58,7 @@ Given all that, here's how to create the website:
 Just click the "Add a new web app" button on the Web tab.  In the first step,
 it will ask you for the domain name to use.  You should specify the
 fully-qualified domain name -- that is, `www.yourdomain.com`, not just
-`domain.com`.  Next go on to choose your Python version, framework and so on.
+`yourdomain.com`.  Next go on to choose your Python version, framework and so on.
 
 
 **If you already have a website that you want to use**
@@ -68,7 +68,7 @@ for example if the site you want to show is currently displayed at
 `jane.pythonanywhere.com`, and you want it to appear at `www.yourdomain.com`.
 Once again, you should specify the
 fully-qualified domain name -- that is, `www.yourdomain.com` rather than
-`domain.com`.
+`yourdomain.com`.
 
 
 ## Configuring the domain at the domain registrar
