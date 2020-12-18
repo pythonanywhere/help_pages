@@ -14,8 +14,12 @@
 
 ## Whitelist explanation
 
-Our whitelist is in place to prevent malicious users from using free accounts
-to hack into and generally spam other websites.
+Our whitelist is in place to prevent malicious users from using *free* accounts
+to hack into and generally spam other websites anonymously.
+
+It does not apply to paid
+accounts, as we can link them to real people via the payment details, so they
+have unrestricted Internet access.
 
 
 ## Requesting an addition to the whitelist
