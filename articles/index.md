@@ -189,7 +189,7 @@ Here are some guides for some of the common things people want to do:
   * [Does PythonAnywhere have an API?](/pages/API)
   * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalWhitelists)
   * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
-  * [My website using TensorFlow doesn't work](/pages/MachineLearningInWebsiteCode)
+  * Machine learning: [what to do if your website using Keras, TensorFlow or PyTorch doesn't work](/pages/MachineLearningInWebsiteCode)
   * [Fonts](/pages/Fonts)
 
 
