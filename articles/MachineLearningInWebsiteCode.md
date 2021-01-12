@@ -39,3 +39,5 @@ solution to that:
 import torch
 torch.set_num_threads(1)
 ```
+
+*Many thanks to Eden Canlilar for that solution!*
