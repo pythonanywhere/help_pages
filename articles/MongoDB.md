@@ -88,6 +88,11 @@ replacing the bits inside the `<>`s:
             flush=True
         )
 
+
+If there is not a version of the ipify module that works with the version of
+Python that you are using, you can just use the REST interface to ipify. There
+is a complete example on the "Code Samples" page on the ipify web site.
+
 If there are any problems whitelisting your IP address (for example, if the
 API key is wrong) then you will find the error messages in the program's output;
 for websites, it will be in the server log file (linked from the "Web" page).
