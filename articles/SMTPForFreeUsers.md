@@ -74,8 +74,8 @@ like "Please log in via your web browser and then try again."
 
 The solution to this seems to be:
 
-    1. Confirm that recent logins really were from you on the [Google account security page](https://myaccount.google.com/security)
-    2. Unlock the account by [entering a captcha](http://www.google.com/accounts/DisplayUnlockCaptcha).
+  1. Confirm that recent logins really were from you on the [Google account security page](https://myaccount.google.com/security)
+  2. Unlock the account by [entering a captcha](http://www.google.com/accounts/DisplayUnlockCaptcha).
 
 Doing this should unlock the account, though it can take up to an hour to take effect.
 
