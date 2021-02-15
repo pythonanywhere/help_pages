@@ -52,6 +52,27 @@ But if you try and call app.run(), it conflicts with our web worker and breaks
 stuff.   Similarly if you try and manually bind to a local port.
 
 
+## Python 3.7 and Django 3 on the Earlgrey system image
+There is a bug in Python 3.7.0 (which is the version that the Earlgrey system
+image has installed) that prevents Django 3 admin pages from working. If you
+use Django 3 and Python 3.7 on Earlgrey, then your web app will crash whenever
+you visit an admin page.
+
+
+## Don't call django.setup in your web app code
+`django.setup` is a function that is used to initialise Django in a script so
+that you can use Django features in it. It re-initialises the logging
+system. When you call it in a web app, it breaks the logging and you will see a
+large number of log lines like this in your server log:
+
+
+    :::text
+    --- Logging error ---
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/logging/handlers.py", line 940, in emit#012    self.socket.sendto(msg, self.address)
+    OSError: [Errno 9] Bad file descriptor
+
+
 ## Look for any slow code that might be timing out
 
 We set a 5-minute timeout on web requests.  Look through your **server log**
