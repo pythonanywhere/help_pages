@@ -1,13 +1,15 @@
 <!--
 .. title: Changing your system image
 .. slug: ChangingSystemImage
-.. date: 2021-08-12 14:35:28 UTC+01:00
+.. date: 2021-02-18 14:35:28 UTC+01:00
 .. tags:
 .. category:
 .. link:
 .. description:
 .. type: text
 -->
+
+**That works only on [eu.pythonanywhere.com](https://eu.pythonanywhere.com/) at the moment**
 
 You can change your account's system image from the "Account" page. This will
 leave all of your files and data as they are, but will change the operating
