@@ -26,7 +26,8 @@ Unfortunately we don't have a good solution for this if you're using TensorFlow
 
 However, if you're using Keras with a TensorFlow backend, you can work around
 the issue -- just switch to using the Theano backend instead.   That has been
-confirmed to work.
+confirmed to work, but only for Keras up to version 2.3.1. Unfortunately Keras 
+is TensorFlow-only [since 2.4](https://github.com/keras-team/keras/releases/tag/2.4.0).
 
 
 ## PyTorch
