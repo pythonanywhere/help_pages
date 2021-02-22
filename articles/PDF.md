@@ -10,7 +10,9 @@
 .. type: text
 -->
 
-So you need to read or write PDFs?  Or maybe convert some html to pdf, or the other way round?  Or read word documents and extract text from them?  Hopefully PythonAnywhere already has a tool preinstalled which can help.
+So you need to read or write PDFs?  Or maybe convert some HTML to PDF, or the
+other way round?  Or read Word documents and extract text from them?  Hopefully
+PythonAnywhere already has a tool preinstalled which can help.
 
 This isn't a comprehensive guide, but here a few pointers:
 
@@ -21,9 +23,9 @@ Try doing a search for "pdf" on the [PythonAnywhere "Batteries Included" list of
 
 A couple of tips:
 
-* "pdftk" only works in [Docker consoles](https://blog.pythonanywhere.com/119/), and it won't work for web apps.  Ask us if you want to trial this.
+* "pdftk" only works in with our new virtualization system.  Ask us if you want to trial this; it can be switched on easily.  However, it will only work in consoles, websites, always-on and scheduled tasks -- not from Jupyter notebooks or over SSH.
 
-* We also have "weasyprint" installed, which is meant to have Pdf capabilities
+* We also have "weasyprint" installed, which is meant to have PDF capabilities
 
 
 ## Preinstalled binaries
