@@ -25,7 +25,7 @@ that allows you to find out the IDN equivalent of an non-ASCII domain, and
 vice versa.
 
 So let's say you've bought 蟒蛇云端.cn, and want to set up a website at
-[http://www.蟒蛇云端.cn/](http://www.蟒蛇云端.cn/) on PythonAnywhere.  All you need to do is go to the
+`http://www.蟒蛇云端.cn/` on PythonAnywhere.  All you need to do is go to the
 "Web" tab, create a new website using the IDN version of the domain, "www.xn--9kqp59h3ohr4a.cn",
 and then proceed as normal.  Once it's created, you'll get the value you
 need to provide for a CNAME with your registrar, and you're all set!  When
