@@ -111,5 +111,6 @@ there needs to be a file for the mapping to work):
   ignored and myfile.html will be served for all URLs.
 
 If you still can't figure it out, drop us an email to
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+[support@pythonanywhere.com](mailto:support@pythonanywhere.com) with the
+details of the specific example that you used for your debugging.
 
