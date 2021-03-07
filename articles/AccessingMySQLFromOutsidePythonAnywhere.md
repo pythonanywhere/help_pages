@@ -30,7 +30,7 @@ Armed with that, you can do one of the following:
 
 ## MySQL Workbench
 
-If you're running MySQL Workbench, you can configure it to connect use a tunnel with settings like this:
+If you're running MySQL Workbench, you can configure it to connect use a tunnel with settings like this using "Standard TCP/IP over SSH":
 
 | Setting  | Value |
 |--|--|
