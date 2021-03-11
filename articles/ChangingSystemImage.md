@@ -9,8 +9,6 @@
 .. type: text
 -->
 
-**That works only on [eu.pythonanywhere.com](https://eu.pythonanywhere.com/) at the moment**
-
 You can change your account's system image from the "Account" page. This will
 leave all of your files and data as they are, but will change the operating
 system files to provide different versions of Python and different pre-installed
