@@ -48,6 +48,8 @@ Because the pre-installed Python modules will be upgraded,
 the change might break any code you have that relies on the old
 installed versions.
 
+You can check what packages are installed in which system image [here](https://www.pythonanywhere.com/batteries_included/).
+
 ### Virtualenvs
 
 Because of the changes to the point releases of Python
