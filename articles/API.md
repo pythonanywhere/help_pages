@@ -72,16 +72,12 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 ## Always On Tasks
 
 ### /api/v0/user/{username}/always_on/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your always-on tasks</td><td style="width: 30%">(no parameters)</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create and start a new always-on task</td><td style="width: 30%">command, enabled</td></tr>
 </table>
-
-
 ### /api/v0/user/{username}/always_on/{id}/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about an always-on task.</td><td style="width: 30%">(no parameters)</td></tr>
@@ -89,15 +85,12 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Stop and delete an always-on task</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
-
-
 ### /api/v0/user/{username}/always_on/{id}/restart/
-
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
 </table>
-
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
 ## Consoles
 
 ### /api/v0/user/{username}/consoles/
@@ -154,6 +147,36 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
     "next_reset_time": &lt;isoformat&gt;,
     "daily_cpu_total_usage_seconds": &lt;float&gt;
 }</pre></td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+## Default Python3 Version
+
+### /api/v0/user/{username}/default_python3_version/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about user's current and available default Python 3 version
+in json format:
+<pre>{
+    "default_python3_version": &lt;str&gt;,
+    "available_python3_versions": [&lt;str&gt;],
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Sets default Python 3 version for user.</td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+## Default Save And Run Python Version
+
+### /api/v0/user/{username}/default_save_and_run_python_version/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about user's current and available Python version used for
+the "Run" button in the editor, in json format:
+<pre>{
+    "default_save_and_run_python_version": &lt;str&gt;,
+    "available_python_versions": [&lt;str&gt;],
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Sets Python version used for the "Run" button in the editor.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 ## Files
@@ -245,6 +268,21 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td></td><td style="width: 30%">(no parameters)</td></tr>
+</table>
+
+## System Image
+
+### /api/v0/user/{username}/system_image/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about user's current and available system images
+in json format:
+<pre>{
+    "system_image": &lt;str&gt;,
+    "available_system_images": [&lt;str&gt;],
+}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Sets system image for user.</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
 
 ## Webapps
@@ -346,4 +384,3 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
   <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
   <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static header. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
 </table>
-
