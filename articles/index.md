@@ -179,6 +179,7 @@ Here are some guides for some of the common things people want to do:
   * [How to I run an async task queue like celery?](/pages/AsyncInWebApps)
   * [Can I use matplotlib to generate graphs from my data?](/pages/MatplotLibGraphs)
   * [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
+  * [How do I solve authentication errors from Gmail when sending emails from my code?](/pages/GmailAppSpecificPasswords)
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
   * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
   * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
