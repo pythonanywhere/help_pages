@@ -1,4 +1,3 @@
-
 <!--
 .. title: How to set environment variables for your web apps (for SECRET_KEY etc)
 .. slug: environment-variables-for-web-apps
@@ -76,6 +75,10 @@ so with the Django `SECRET_KEY` setting, you can just add this to your `settings
     SECRET_KEY = os.getenv("SECRET_KEY")
 
 Hit save, reload your web app, and it should now have access to the variable.
+
+> Note: do *not* use `os.environ.get` instead of `os.getenv`.  The former caches
+> the contents of the system environment the first time that the `os` module is
+> imported, so it won't see the changes that `load_dotenv` makes.
 
 
 ## For Bash consoles:  load your .env file in your virtualenv *postactivate* script
