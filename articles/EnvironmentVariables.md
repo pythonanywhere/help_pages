@@ -50,6 +50,11 @@ pip3.6 install --user python-dotenv
 echo python-dotenv >> requirements.txt
 ```
 
+Make sure that you have at least version 0.8 of the `python-dotenv` package, as
+older versions can't handle the `export` at the start of lines in the `.env`
+file.
+
+
 ## For your web app itself:  loading your .env file in your *WSGI file*
 
 > This will ensure the environment variables is available to the worker
@@ -75,10 +80,6 @@ so with the Django `SECRET_KEY` setting, you can just add this to your `settings
     SECRET_KEY = os.getenv("SECRET_KEY")
 
 Hit save, reload your web app, and it should now have access to the variable.
-
-> Note: do *not* use `os.environ.get` instead of `os.getenv`.  The former caches
-> the contents of the system environment the first time that the `os` module is
-> imported, so it won't see the changes that `load_dotenv` makes.
 
 
 ## For Bash consoles:  load your .env file in your virtualenv *postactivate* script
