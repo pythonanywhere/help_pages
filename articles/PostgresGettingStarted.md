@@ -13,7 +13,7 @@
 
 ## Activate your server
 
-If you haven't activated your postres server yet, see [this page](/pages/Postgres/)
+If you haven't activated your postgres server yet, see [this page](/pages/Postgres/)
 
 ## Create your superuser password
 
