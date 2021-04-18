@@ -1,4 +1,3 @@
-
 <!--
 .. title: How to run the web2py scheduler on PythonAnywhere
 .. slug: Web2pyScheduler
@@ -11,52 +10,34 @@
 -->
 
 
-
-The [web2py scheduler](//web2py.com/book/default/chapter/04#Scheduler-%28experimental%29)
-is a way to process asynchronous jobs from web2py. The way to get it running on
-PythonAnywhere is to use a **Scheduled Task**, which runs once a day.
-
-This is the usual [long-running tasks hack](/pages/LongRunningTasks) on
-PythonAnywhere -- because we can't guarantee to keep a process running forever,
-the workaround is to have a scheduled task that runs periodically, and restarts
-the task if it's died, or just quits if it sees it's already running.
-
-Here's some example code -- you'll need to adapt this to match your own web2py
-apps' names:
-
-    :::python
-    #/usr/bin/env python
-    import os
-    import socket
-    import subprocess
-    import sys
-    filename = os.path.abspath(__file__)  # we use this to generate a unique socket name
-
-    # we use a local socket as a lock.
-    # it can only be bound once, and will be released if the process dies
-    # we want to keep the socket open until the very end of
-    # our script so we use a global variable to avoid going
-    # out of scope and being garbage-collected
-    lock_socket = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
-
-    try:
-        lock_socket.bind('\0' + filename)
-    except socket.error:
-        print("Failed to acquire lock, task must already be running")
-        sys.exit()
-
-    subprocess.call(["python", "web2py/web2py.py", "-K", "my_web2py_app_name"])
+The [web2py scheduler](//web2py.com/books/default/chapter/29/4#web2py-Scheduler)
+is a way to process asynchronous jobs from web2py.  You can run it in a paid
+account without problems on PythonAnywhere; it's a bit less useful in a free
+account.
 
 
-Save that code to a file in your home folder, it doesn't matter where, make
-it executable using a bash console like this:
+## In a paid account
 
-    :::bash
-    chmod +x /path/to/your.file
+The way to get it running on PythonAnywhere in a paid account is to use an
+[Always-on task](https://help.pythonanywhere.com/pages/AlwaysOnTasks).
+
+Just create one on the "Tasks" page, with the following command:
+
+```bash
+cd ~; python web2py/web2py.py -K my_web2py_app_name
+```
+
+You should replace `my_web2py_app_name` with the actual app name, and if you've
+installed Web2py in a directory different to `web2py` in your home directory,
+you'll need to change that too.
 
 
-...and then
-set it to run as a scheduled task -- once a day, or even once an hour if you
-have a paying account. For example, if you save it to
-`/home/yourusername/run-web2py-scheduler-for-myapp.py`, you can just enter that
-full path as the scheduled task.
+
+## In a free account
+
+Unfortunately there's no good way to make it work in a free account, because
+you don't have access to always-on tasks.  However, if the things you are trying
+to schedule happen at roughly the same time each day, you can create a scheduled
+task that will run just before that time, and use the same command as in the
+example above.
+
