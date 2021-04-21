@@ -61,7 +61,7 @@ If you're running DBeaver, you can configure it with the following settings:
 | Password:            | **the password you use to log in to the PythonAnywhere website**                              |
 | Local port:          | **3306 if you are not running a local database, else a random number you pick**               |
 | Remote port:         | **3306**                                                                                      |
-| Keep-Alive interval: | **"0"**  */otherwise connection will fail/*                                               |
+| Keep-Alive interval: | **0**  */otherwise connection will fail/*                                                 |
 | MySQL Hostname:      | **your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com** |
 | MySQL Server Port:   | 3306                                                                                      |
 
