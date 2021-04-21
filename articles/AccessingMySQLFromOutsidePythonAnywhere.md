@@ -50,7 +50,7 @@ If you're running MySQL Workbench, you can configure it with settings like this 
 
 
 ## DBeaver
-If you're running DBeaver, you can configure it with following settings:
+If you're running DBeaver, you can configure it with the following settings:
 
 * Check "Use SSH tunnel" in *Connect to new database -> Mysql -> SSH tab*
 
@@ -67,7 +67,7 @@ If you're running DBeaver, you can configure it with following settings:
 
 
 * Test tunnel configuration... (should be successfull)
-* Go to *Main tab*
+* Go to the *Main tab*
 
 | Setting      | Value                                                                                                                                    |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------|
