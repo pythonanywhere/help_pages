@@ -48,6 +48,42 @@ If you're running MySQL Workbench, you can configure it to connect use a tunnel 
 
 * It's also a good idea to set the *Edit -> Preferences -> SQL Editor -> DBMS_Connection keep alive interval* setting to 200, to avoid any "lost connection" issues due to our 5-minute connection timeout.
 
+## DBeaver
+If you're running DBeaver, you can configure it to connect use a tunnel over SSH":
+
+* connect to new database
+* mysql
+* ssh tab
+* check "use ssh tunnel"
+* use these settings:
+
+| Setting  | Value |
+|--|--|
+| Host/IP:  | **your SSH hostname (ssh.eu.pythonanywhere.com or ssh.pythonanywhere.com)** |
+| User Name:  | **your PythonAnywhere username** |
+| Password:  | **the password you use to log in to the PythonAnywhere website** |
+| Local port:  | **3306 if you are not running a local database, else a random number you pick** |
+| Remote port:  | **3306** |
+| Keep-Alive interval:  | **"0", this crashes if not "0"** |
+| MySQL Hostname:  | **your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com** |
+| MySQL Server Port:  | 3306 |
+
+* Test tunnel configuration
+* should be successfull
+* Main tab
+* use these settings:
+
+| Setting  | Value |
+|--|--|
+| Server Host:  | **your PythonAnywhere database hostname (username.mysql.eu.pythonanywhere-services.com or username.mysql.pythonanywhere-services.com)** |
+| Port:  | **3306** |
+| Username:  | **your PythonAnywhere username** |
+| Password:  | **the password you use to log in to the PythonAnywhere website** |
+
+* Test Connection...
+* should be successfull
+* click "ok"
+
 
 ## From Python code
 
