@@ -10,9 +10,7 @@
 -->
 
 NVM allows you to install and run different versions of node (and to manage and
-install their "global packages" separately).  Using it, you can run versions of
-Node up to 10.16.0 on PythonAnywhere.  Later versions are, unfortunately not
-compatible with the way our system works.
+install their "global packages" separately).
 
 First download the git repo
 
@@ -22,7 +20,8 @@ Now hook up your shell to use nvm
 
     source ~/nvm/nvm.sh
 
-To automatically run this every time you start a bash shell, add it to your *bashrc*:
+To automatically run this every time you start a bash shell, add it to your *bashrc*
+by running this Bash command (once only):
 
     echo 'source ~/nvm/nvm.sh' >> ~/.bashrc
 
@@ -30,11 +29,11 @@ You can now do a `nvm ls-remote` to see what versions of node are available, and
 
     nvm ls-remote
     #...
-    nvm install v6.11.4
+    nvm install v14.16.0
 
-You can run `nvm use v6.11.4` to use the new node. To set that as default, set up an nvm alias:
+You can run `nvm use v14.16.0` to use the new node. To set that as default, set up an nvm alias:
 
-    nvm alias default v6.11.4
+    nvm alias default v14.16.0
 
 This will also solve any permission problems involved with installing with `npm
-install --global` will work without needing to specify a prefix.
+install --global` -- it will work without needing to specify a prefix.
