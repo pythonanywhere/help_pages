@@ -24,7 +24,7 @@ Armed with these two, you should open up a **Bash console**, and then run the fo
 
 ```bash
 cd
-mysqldump -u yourusername -h yourusername.mysql.pythonanywhere-services.com --set-gtid-purged=OFF 'yourusername$dbname'  > db-backup.sql
+mysqldump -u yourusername -h yourusername.mysql.pythonanywhere-services.com --set-gtid-purged=OFF --no-tablespaces --column-statistics=0 'yourusername$dbname'  > db-backup.sql
 ```
 
 > The 'single-quotes' around the database name are required, because of the '$' character in the full database name.
