@@ -17,7 +17,8 @@ and a [bug bounty program](https://help.pythonanywhere.com/pages/BugBounty) to
 encourage security researchers to tell us about any issues before they become
 problems, to strict internal policies determining when our support staff are
 allowed to look at your stuff (basically, never without your permission unless
-your code is causing major systemwide problems).
+your code is causing major systemwide problems, or is provably involved in
+illegal activities).
 
 ###What you can do
 
