@@ -107,8 +107,14 @@ and then use code like this:
         # Do stuff
         connection.close()
 
-This example uses [the `MySQLdb` library](https://mysqlclient.readthedocs.io/index.html), but you can use any MySQL
-library you like.
+This example uses [the mysqlclient library](https://mysqlclient.readthedocs.io/index.html), which
+you can install on your machine with
+
+```
+pip install mysqlclient
+```
+
+...but you can use any MySQL library you like.
 
 If you have trouble with the SSH Tunnel connection, the project provides a
 helpful [troubleshooting guide](https://github.com/pahaz/sshtunnel/blob/master/Troubleshoot.rst)
