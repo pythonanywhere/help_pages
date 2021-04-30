@@ -87,7 +87,7 @@ If you're running Python code on your local machine, and you want it to access
 your MySQL database, you can install [the `sshtunnel` package](https://pypi.python.org/pypi/sshtunnel)
 and then use code like this:
 
-    import mysql.connector
+    import MySQLdb
     import sshtunnel
 
     sshtunnel.SSH_TIMEOUT = 5.0
@@ -98,15 +98,16 @@ and then use code like this:
         ssh_username='your PythonAnywhere username', ssh_password='the password you use to log in to the PythonAnywhere website',
         remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
     ) as tunnel:
-        connection = mysql.connector.connect(
-            user='your PythonAnywhere username', password='your PythonAnywhere database password',
+        connection = MySQLdb.connect(
+            user='your PythonAnywhere username',
+            passwd='your PythonAnywhere database password',
             host='127.0.0.1', port=tunnel.local_bind_port,
-            database='your database name, eg yourusername$mydatabase',
+            db='your database name, eg yourusername$mydatabase',
         )
         # Do stuff
         connection.close()
 
-This example uses the `mysql-connector` library, but you can use any MySQL
+This example uses [the `MySQLdb` library](https://mysqlclient.readthedocs.io/index.html), but you can use any MySQL
 library you like.
 
 If you have trouble with the SSH Tunnel connection, the project provides a
