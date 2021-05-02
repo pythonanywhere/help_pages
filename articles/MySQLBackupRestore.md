@@ -24,6 +24,13 @@ Armed with these two, you should open up a **Bash console**, and then run the fo
 
 ```bash
 cd
+mysqldump -u yourusername -h yourusername.mysql.pythonanywhere-services.com --set-gtid-purged=OFF --no-tablespaces 'yourusername$dbname'  > db-backup.sql
+```
+
+If you're doing the backup using MySQL Distrib 8.0, you may add `--column-statistics=0` option as well:
+
+```bash
+cd
 mysqldump -u yourusername -h yourusername.mysql.pythonanywhere-services.com --set-gtid-purged=OFF --no-tablespaces --column-statistics=0 'yourusername$dbname'  > db-backup.sql
 ```
 
