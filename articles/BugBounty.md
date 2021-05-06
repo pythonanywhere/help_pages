@@ -50,6 +50,9 @@ are welcome to contact their owners directly.
 * Auto-pwnage -- "If I run this code it does something bad to my
   account/files/web apps"
 
+* Attacks that assume that accounts need to have unique email addresses. We
+  allow multiple accounts to have the same email address.
+
 * Attacks that assume a users' login session has already been compromised.  If an attacker has
   access to a logged-in session by a user, we pretty much consider that "game over" already,
   since the attacker already has full access to all the users' files and data etc.
