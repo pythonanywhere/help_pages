@@ -181,7 +181,7 @@ the "Run" button in the editor, in json format:
 
 ## Files
 
-### /api/v0/user/{username}/files/path{path}
+### /api/v0/user/{username}/files/path/{path}
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
