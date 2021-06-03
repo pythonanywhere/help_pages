@@ -35,12 +35,12 @@ third party services, and collate it for the user.
 
 The solution is to use some sort of task queue, and complete
 the work asynchronously.  If you're using Django, a good solution
-might be to use the [Django Background Tasks](https://django-background-tasks.readthedocs.io/en/latest/)
+might be to use the [Django-Q](https://django-q.readthedocs.io/en/latest/index.html)
 module, which does a lot of this for you.
 
 Here's a high-level overview of what a solution could look like
 (everyone's requirements are different, so adapt this to your own
-neeeds):
+needs):
 
 * register the user's request for work somewhere by storing
   the details of the request somewhere, eg on the filesystem,
