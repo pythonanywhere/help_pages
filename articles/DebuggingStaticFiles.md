@@ -56,27 +56,27 @@ there needs to be a file for the mapping to work):
 
 <table border="1">
 <tr>
-<th colspan="2" style="padding-left: 1em; padding-right: 1em">Entry in Static files table</th>
-<th rowspan="2" style="padding-left: 1em; padding-right: 1em">Where the file must be</th>
+<th colspan="2">Entry in Static files table</th>
+<th rowspan="2">Where the file must be</th>
 </tr>
 <tr>
-<th style="padding-left: 1em; padding-right: 1em">URL</th>
-<th style="padding-left: 1em; padding-right: 1em">Directory</th>
+<th>URL</th>
+<th>Directory</th>
 </tr>
 <tr>
-<td style="padding-left: 1em; padding-right: 1em">/static</td>
-<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/</td>
-<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/path/to/myfile.css</td>
+<td>/static</td>
+<td>/home/username/mysite/assets/</td>
+<td>/home/username/mysite/assets/path/to/myfile.css</td>
 </tr>
 <tr>
-<td style="padding-left: 1em; padding-right: 1em">/static/path/</td>
-<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/</td>
-<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/to/myfile.css</td>
+<td>/static/path/</td>
+<td>/home/username/mysite/assets/</td>
+<td>/home/username/mysite/assets/to/myfile.css</td>
 </tr>
 <tr>
-<td style="padding-left: 1em; padding-right: 1em">/static/path/to/</td>
-<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/</td>
-<td style="padding-left: 1em; padding-right: 1em">/home/username/mysite/assets/myfile.css</td>
+<td>/static/path/to/</td>
+<td>/home/username/mysite/assets/</td>
+<td>/home/username/mysite/assets/myfile.css</td>
 </tr>
 </table>
 

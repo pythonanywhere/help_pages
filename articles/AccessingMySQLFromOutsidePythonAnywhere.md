@@ -151,7 +151,7 @@ new Host, Port, Username and Password inputs:
 You can set up the SSH tunnelling from the SSH/SSL tab of the PyCharm connection
 setup dialog:
 
-<img alt="PyCharm SSH tunnelling dialog" src="/pycharm-ssh-tunnel-dialog.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PyCharm SSH tunnelling dialog" src="/pycharm-ssh-tunnel-dialog.png" class="bordered-image">
 
 * The "proxy host" should be your SSH hostname (see the options for that at the top of this help page)
 * The "proxy user" should be your PythonAnywhere username

@@ -19,7 +19,7 @@ someone visits `http://www.yoursite.com/` they're automatically redirected to
 `https://www.yoursite.com/`.   This is something you can set up on the
 "Web" page:
 
-<img alt="Force HTTPS button" src="/force-https.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="Force HTTPS button" src="/force-https.png" class="bordered-image">
 
 Click on the slider to activate it, and then reload your website using the
 button at the top -- you're all set.

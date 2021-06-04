@@ -38,24 +38,24 @@ To set up a free, auto-renewing Let's Encrypt certificate, follow these steps:
 
   * Go to the "Web" page, and select your website from the list on the left:
 
-    <img alt="The 'Web' page" src="/https-setup-web-app-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="The 'Web' page" src="/https-setup-web-app-page.png" class="bordered-image">
 
   * Scroll down to the "Security" section:
 
-    <img alt="The 'Security' section of the 'Web' page" src="/https-setup-security-section-no-cert.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="The 'Security' section of the 'Web' page" src="/https-setup-security-section-no-cert.png" class="bordered-image">
 
     ...and click the pencil icon next to the "None" on the "HTTPS certificate" line
     to edit your certificate.
 
   * Select the "Auto-renewed Let's Encrypt certificate" option:
 
-    <img alt="Selected auto-renewed Let's Encrypt certificate option" src="/https-setup-security-section-editor-letsencrypt-selected.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="Selected auto-renewed Let's Encrypt certificate option" src="/https-setup-security-section-editor-letsencrypt-selected.png" class="bordered-image">
 
     ...and click the "Save" button.
 
   * After a brief pause, you should get a message saying that it's all set up:
 
-    <img alt="Let's Encrypt all set up" src="/https-setup-security-section-letsencrypt-installed.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="Let's Encrypt all set up" src="/https-setup-security-section-letsencrypt-installed.png" class="bordered-image">
 
 Once that's done, you're all set!  Just go to the HTTPS URL for your site, like
 http*s*://www.yourdomain.com, and you'll see that the site is now marked as secure.

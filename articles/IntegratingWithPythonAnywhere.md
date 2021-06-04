@@ -38,16 +38,16 @@ If you're anywhere else in the world, go to:
 
 You'll wind up here:
 
-<img alt="PythonAnywhere front page" src="/integrating-pa-front-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PythonAnywhere front page" src="/integrating-pa-front-page.png" class="bordered-image">
 
 Click either the "Pricing and signup" link to the top right, or the "Start running
 Python online in less than a minute" button (they both go to the same place):
 
-<img alt="PythonAnywhere plans page" src="/integrating-pa-plans-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PythonAnywhere plans page" src="/integrating-pa-plans-page.png" class="bordered-image">
 
 Now click the "Create a Beginner account" button to create a free account:
 
-<img alt="PythonAnywhere signup page" src="/integrating-pa-signup-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PythonAnywhere signup page" src="/integrating-pa-signup-page.png" class="bordered-image">
 
 Make a note of the username you choose, you'll need it later.  You'll be taken
 to the dashboard; take the tour if you like!  Also, don't forget to confirm
@@ -58,15 +58,15 @@ The next step is to generate an API token, which is what allows programs outside
 PythonAnywhere to connect to the site and make changes on your behalf.  Click
 the "Account" link near the top right and you'll be taken here:
 
-<img alt="PythonAnywhere account page" src="/integrating-pa-account-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PythonAnywhere account page" src="/integrating-pa-account-page.png" class="bordered-image">
 
 Select the "API token" tab near the center of the page:
 
-<img alt="PythonAnywhere API tab with no token" src="/integrating-pa-api-no-token-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PythonAnywhere API tab with no token" src="/integrating-pa-api-no-token-page.png" class="bordered-image">
 
 Click the "Create a new API token" button:
 
-<img alt="PythonAnywhere API tab with no token" src="/integrating-pa-api-with-token-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="PythonAnywhere API tab with no token" src="/integrating-pa-api-with-token-page.png" class="bordered-image">
 
 That string of letters and numbers (`d870f0cac74964b27db563aeda9e418565a0d60d` in
 the screenshot) is an API token, and anyone who has it can access your PythonAnywhere

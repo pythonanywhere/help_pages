@@ -81,7 +81,7 @@ database.
 If you're using TablePlus, you can use the settings from this diagram provided by
 devwon (Hyerin Won):
 
-<img alt="TablePlus Postgres connection setup" src="/postgres-tableplus.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="TablePlus Postgres connection setup" src="/postgres-tableplus.png" class="bordered-image">
 
 
 ## From Python code

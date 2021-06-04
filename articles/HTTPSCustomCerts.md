@@ -84,23 +84,23 @@ site.  You can do that from a bash console, or using the web interface.
 
   * Go to the "Web" page:
 
-     <img alt="The 'Web' page" src="/https-setup-web-app-page.png" style="border: 2px solid lightblue; max-width: 70%;">
+     <img alt="The 'Web' page" src="/https-setup-web-app-page.png" class="bordered-image">
 
     ...and click the pencil icon next to the "None" on the "HTTPS certificate" line
     to edit your certificate.
 
   * Select the "Custom certificate" option:
 
-    <img alt="Selected custom certificate option" src="/https-setup-security-section-editor-custom-selected.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="Selected custom certificate option" src="/https-setup-security-section-editor-custom-selected.png" class="bordered-image">
 
   * Copy/paste your private key and your certificate chain into the text boxes:
 
-    <img alt="Entered private key and certificate" src="/https-setup-security-section-editor-cert-and-key-added.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="Entered private key and certificate" src="/https-setup-security-section-editor-cert-and-key-added.png" class="bordered-image">
 
   * Click the save button; after a few moments, you should see that the
     certificate has been installed:
 
-    <img alt="Custom certificate installed" src="/https-setup-security-section-editor-custom-cert-installed.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="Custom certificate installed" src="/https-setup-security-section-editor-custom-cert-installed.png" class="bordered-image">
 
 Once that's done, you're all set!  Just go to the HTTPS URL for your site, like
 http*s*://www.yourdomain.com, and you'll see that the site is now marked as secure.
@@ -122,11 +122,11 @@ version.   This is called "forcing HTTPS", and is described on
     account; go to the "Account" page and then click the "API token" tab. If you see
     this:
 
-    <img alt="API token set up" src="/api-token-set-up.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="API token set up" src="/api-token-set-up.png" class="bordered-image">
 
     ...then you're all set. If, however, you see this:
 
-    <img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
+    <img alt="API token not set up" src="/api-token-needs-generation.png" class="bordered-image">
 
     ...then you need to click the button to generate a token.
 

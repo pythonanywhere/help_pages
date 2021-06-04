@@ -252,9 +252,32 @@ table {
 table th {
     padding-left: 1em;
     padding-right: 1em;
+    background: #f8f8f8;
+    border-bottom: solid 1px lightblue;
 }
 
 table td {
     padding-left: 1em;
     padding-right: 1em;
+}
+
+.bordered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid lightblue; 
+    max-width: 70%;
+}
+
+pre.code {
+    border: 2px solid lightblue; 
+}
+
+.method {
+    width: 1px; 
+    white-space: nowrap;
+}
+
+.params {
+    width: 30%;
 }

@@ -22,7 +22,7 @@ what we call an "Always-on task".
 To create one, go to the Tasks page, and look near the bottom -- you'll see a
 table that looks like this:
 
-<img alt="Always-on tasks table" src="/always-on-tasks-table.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="Always-on tasks table" src="/always-on-tasks-table.png" class="bordered-image">
 
 To set up an always-on task, you just need to enter the full command to run
 it into the input field -- for example,
@@ -34,7 +34,7 @@ below, with a state of "Starting".   You can refresh the table using the icon
 near the top right, and you'll see that after a while it goes into a "Running"
 state.
 
-<img alt="Always-on tasks table" src="/always-on-task-running.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="Always-on tasks table" src="/always-on-task-running.png" class="bordered-image">
 
 The program will continue to run, apart from during system maintenence.  If it
 crashes for any reason -- even if there's a hardware failure on the machine where

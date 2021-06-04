@@ -67,39 +67,44 @@ You will need to reload your webapp and start new consoles for this environment 
 
 All endpoints are hosted at *https://www.pythonanywhere.com/* or
 *https://eu.pythonanywhere.com/* depending on where your account is registered.
-
-
-## Always On Tasks
+## Always_On
 
 ### /api/v0/user/{username}/always_on/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your always-on tasks</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create and start a new always-on task</td><td style="width: 30%">command, enabled</td></tr>
+  <tr><td class="method">GET</td><td class="description">List all of your always-on tasks</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create and start a new always-on task</td><td class="params">command, enabled</td></tr>
 </table>
+
+
 ### /api/v0/user/{username}/always_on/{id}/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about an always-on task.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Stop and delete an always-on task</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Return information about an always-on task.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, enabled</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, enabled</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Stop and delete an always-on task</td><td class="params">(no parameters)</td></tr>
 </table>
+
+
 ### /api/v0/user/{username}/always_on/{id}/restart/
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Endpoints for always-on tasks</td><td style="width: 30%">command, enabled</td></tr>
+  <tr><td class="method">POST</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, enabled</td></tr>
 </table>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
+
 ## Consoles
 
 ### /api/v0/user/{username}/consoles/
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all your consoles</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new console object (NB does not actually start the process. Only
-connecting to the console in a browser will do that).</td><td style="width: 30%">executable, arguments, working_directory</td></tr>
+  <tr><td class="method">GET</td><td class="description">List all your consoles</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new console object (NB does not actually start the process. Only
+connecting to the console in a browser will do that).</td><td class="params">executable, arguments, working_directory</td></tr>
 </table>
 
 
@@ -107,7 +112,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>View consoles shared with you.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">View consoles shared with you.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -115,8 +120,8 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a console instance.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Kill a console.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Return information about a console instance.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Kill a console.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -124,7 +129,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get the most recent output from the console (approximately 500 characters).</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Get the most recent output from the console (approximately 500 characters).</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -132,7 +137,7 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>"type" into the console.  Add a "\n" for return.</td><td style="width: 30%">POST parameter: input</td></tr>
+  <tr><td class="method">POST</td><td class="description">"type" into the console.  Add a "\n" for return.</td><td class="params">POST parameter: input</td></tr>
 </table>
 
 ## Cpu
@@ -141,42 +146,42 @@ connecting to the console in a browser will do that).</td><td style="width: 30%"
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about cpu usage in json format:
+  <tr><td class="method">GET</td><td class="description">Returns information about cpu usage in json format:
 <pre>{
     "daily_cpu_limit_seconds": &lt;int&gt;,
     "next_reset_time": &lt;isoformat&gt;,
     "daily_cpu_total_usage_seconds": &lt;float&gt;
-}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+}</pre></td><td class="params">(no parameters)</td></tr>
 </table>
 
-## Default Python3 Version
+## Default_Python3_Version
 
 ### /api/v0/user/{username}/default_python3_version/
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about user's current and available default Python 3 version
+  <tr><td class="method">GET</td><td class="description">Returns information about user's current and available default Python 3 version
 in json format:
 <pre>{
     "default_python3_version": &lt;str&gt;,
     "available_python3_versions": [&lt;str&gt;],
-}</pre></td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Sets default Python 3 version for user.</td><td style="width: 30%">(no parameters)</td></tr>
+}</pre></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Sets default Python 3 version for user.</td><td class="params">(no parameters)</td></tr>
 </table>
 
-## Default Save And Run Python Version
+## Default_Save_And_Run_Python_Version
 
 ### /api/v0/user/{username}/default_save_and_run_python_version/
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about user's current and available Python version used for
+  <tr><td class="method">GET</td><td class="description">Returns information about user's current and available Python version used for
 the "Run" button in the editor, in json format:
 <pre>{
     "default_save_and_run_python_version": &lt;str&gt;,
     "available_python_versions": [&lt;str&gt;],
-}</pre></td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Sets Python version used for the "Run" button in the editor.</td><td style="width: 30%">(no parameters)</td></tr>
+}</pre></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Sets Python version used for the "Run" button in the editor.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 ## Files
@@ -185,17 +190,17 @@ the "Run" button in the editor, in json format:
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td></td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Uploads a file to the specified file path.  Contents should be in a
+  <tr><td class="method">GET</td><td class="description"></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Uploads a file to the specified file path.  Contents should be in a
 multipart-encoded file with the name "content".  The attached filename is
 ignored.
 If the directories in the given path do not exist, they will be created.
 Any file already present at the specified path will be overwritten.
 Returns 201 on success if a file has been created, or 200 if an existing
-file has been updated.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Deletes the file at the specified path. This method can be used to
+file has been updated.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Deletes the file at the specified path. This method can be used to
 delete log files that are not longer required.
-Returns 204 on success.</td><td style="width: 30%">(no parameters)</td></tr>
+Returns 204 on success.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -203,7 +208,7 @@ Returns 204 on success.</td><td style="width: 30%">(no parameters)</td></tr>
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Start sharing a file.  Returns 201 on success, or 200 if file was already shared.</td><td style="width: 30%">POST parameter: path</td></tr>
+  <tr><td class="method">POST</td><td class="description">Start sharing a file.  Returns 201 on success, or 200 if file was already shared.</td><td class="params">POST parameter: path</td></tr>
 </table>
 
 
@@ -211,8 +216,8 @@ Returns 204 on success.</td><td style="width: 30%">(no parameters)</td></tr>
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Check sharing status for a path.  Returns 404 if path not currently shared.</td><td style="width: 30%">Query parameter: path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Stop sharing a path.  Returns 204 on successful unshare.</td><td style="width: 30%">Query parameter: path</td></tr>
+  <tr><td class="method">GET</td><td class="description">Check sharing status for a path.  Returns 404 if path not currently shared.</td><td class="params">Query parameter: path</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Stop sharing a path.  Returns 204 on successful unshare.</td><td class="params">Query parameter: path</td></tr>
 </table>
 
 
@@ -220,9 +225,9 @@ Returns 204 on success.</td><td style="width: 30%">(no parameters)</td></tr>
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns a list of the contents of a directory, and its subdirectories
+  <tr><td class="method">GET</td><td class="description">Returns a list of the contents of a directory, and its subdirectories
 as a list. Paths ending in slash/ represent directories.  Limited to
-1000 results.</td><td style="width: 30%">Query parameter: path</td></tr>
+1000 results.</td><td class="params">Query parameter: path</td></tr>
 </table>
 
 ## Schedule
@@ -231,8 +236,8 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all of your scheduled tasks</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new scheduled task</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
+  <tr><td class="method">GET</td><td class="description">List all of your scheduled tasks</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new scheduled task</td><td class="params">command, enabled, interval, hour, minute</td></tr>
 </table>
 
 
@@ -240,10 +245,10 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a scheduled task.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Endpoints for scheduled tasks</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Endpoints for scheduled tasks</td><td style="width: 30%">command, enabled, interval, hour, minute</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Delete an scheduled task</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Return information about a scheduled task.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Endpoints for scheduled tasks</td><td class="params">command, enabled, interval, hour, minute</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Endpoints for scheduled tasks</td><td class="params">command, enabled, interval, hour, minute</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Delete an scheduled task</td><td class="params">(no parameters)</td></tr>
 </table>
 
 ## Students
@@ -252,14 +257,14 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns a list of students of the current user
+  <tr><td class="method">GET</td><td class="description">Returns a list of students of the current user
 <pre>{
     "students": [
         {"username": &lt;string&gt;},
         {"username": &lt;string&gt;},
         ...
     ]
-}</pre></td><td style="width: 30%">(no parameters)</td></tr>
+}</pre></td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -267,22 +272,22 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td></td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">DELETE</td><td class="description"></td><td class="params">(no parameters)</td></tr>
 </table>
 
-## System Image
+## System_Image
 
 ### /api/v0/user/{username}/system_image/
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Returns information about user's current and available system images
+  <tr><td class="method">GET</td><td class="description">Returns information about user's current and available system images
 in json format:
 <pre>{
     "system_image": &lt;str&gt;,
     "available_system_images": [&lt;str&gt;],
-}</pre></td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Sets system image for user.</td><td style="width: 30%">(no parameters)</td></tr>
+}</pre></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Sets system image for user.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 ## Webapps
@@ -291,9 +296,9 @@ in json format:
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all webapps</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new webapp with manual configuration.   Use (for example) "python36" to
-specify Python 3.6.</td><td style="width: 30%">POST parameters: domain_name, python_version</td></tr>
+  <tr><td class="method">GET</td><td class="description">List all webapps</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new webapp with manual configuration.   Use (for example) "python36" to
+specify Python 3.6.</td><td class="params">POST parameters: domain_name, python_version</td></tr>
 </table>
 
 
@@ -301,11 +306,11 @@ specify Python 3.6.</td><td style="width: 30%">POST parameters: domain_name, pyt
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Return information about a web app's configuration</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Delete the webapp.  This will take the site offline.
-Config is backed up in /var/www, and your code is not touched.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Return information about a web app's configuration</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualenv_path, force_https</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualenv_path, force_https</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Delete the webapp.  This will take the site offline.
+Config is backed up in /var/www, and your code is not touched.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -313,7 +318,7 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Disable the webapp.</td><td style="width: 30%">POST parameters: none</td></tr>
+  <tr><td class="method">POST</td><td class="description">Disable the webapp.</td><td class="params">POST parameters: none</td></tr>
 </table>
 
 
@@ -321,7 +326,7 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Enable the webapp.</td><td style="width: 30%">POST parameters: none</td></tr>
+  <tr><td class="method">POST</td><td class="description">Enable the webapp.</td><td class="params">POST parameters: none</td></tr>
 </table>
 
 
@@ -329,7 +334,7 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td style="width: 30%">POST parameters: none</td></tr>
+  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td></tr>
 </table>
 
 
@@ -337,12 +342,12 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td style="width: 30%">python_version, source_directory, virtualenv_path, force_https</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td class="params">python_version, source_directory, virtualenv_path, force_https</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -350,8 +355,8 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static files mappings for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
+  <tr><td class="method">GET</td><td class="description">List all the static files mappings for a domain.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new static files mapping. (webapp restart required)</td><td class="params">url, path</td></tr>
 </table>
 
 
@@ -359,10 +364,10 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL and path of a particular mapping.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static files mapping. (webapp restart required)</td><td style="width: 30%">url, path</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static files mapping. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Get URL and path of a particular mapping.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Modify a static files mapping. (webapp restart required)</td><td class="params">url, path</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify a static files mapping. (webapp restart required)</td><td class="params">url, path</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Remove a static files mapping. (webapp restart required)</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
@@ -370,8 +375,8 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>List all the static headers for a domain.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">POST</td><td>Create a new static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
+  <tr><td class="method">GET</td><td class="description">List all the static headers for a domain.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new static header. (webapp restart required)</td><td class="params">url, name, value</td></tr>
 </table>
 
 
@@ -379,8 +384,9 @@ Config is backed up in /var/www, and your code is not touched.</td><td style="wi
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td style="width: 1px; white-space: nowrap;">GET</td><td>Get URL, name and value of a particular header.</td><td style="width: 30%">(no parameters)</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PUT</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">PATCH</td><td>Modify a static header. (webapp restart required)</td><td style="width: 30%">url, name, value</td></tr>
-  <tr><td style="width: 1px; white-space: nowrap;">DELETE</td><td>Remove a static header. (webapp restart required)</td><td style="width: 30%">(no parameters)</td></tr>
+  <tr><td class="method">GET</td><td class="description">Get URL, name and value of a particular header.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Modify a static header. (webapp restart required)</td><td class="params">url, name, value</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify a static header. (webapp restart required)</td><td class="params">url, name, value</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Remove a static header. (webapp restart required)</td><td class="params">(no parameters)</td></tr>
 </table>
+

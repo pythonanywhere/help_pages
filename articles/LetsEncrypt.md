@@ -33,11 +33,11 @@ The first step to do that is to make sure you have an API token set up for your
 account; go to the "Account" page and then click the "API token" tab. If you see
 this:
 
-<img alt="API token set up" src="/api-token-set-up.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="API token set up" src="/api-token-set-up.png" class="bordered-image">
 
 ...then you're all set. If, however, you see this:
 
-<img alt="API token not set up" src="/api-token-needs-generation.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="API token not set up" src="/api-token-needs-generation.png" class="bordered-image">
 
 ...then you need to click the button to generate a key.
 
@@ -82,7 +82,7 @@ mapping (replacing "YOURUSERNAME" with your actual username):
 
 The result should look like this (with a different username in the second column):
 
-<img alt="Let's Encrypt static files setup" src="/letsencrypt-staticfiles.png" style="border: 2px solid lightblue; max-width: 70%;">
+<img alt="Let's Encrypt static files setup" src="/letsencrypt-staticfiles.png" class="bordered-image">
 
 If you're using our password-protection feature for your web app, you'll also need to switch that off for the duration of this procedure;
 you can turn it on again once you've got the certificate.
