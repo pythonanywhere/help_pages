@@ -274,14 +274,14 @@ HIDDEN_CATEGORIES = []
 INDEX_PATH = "blog"
 
 # Create per-month archives instead of per-year
-# CREATE_MONTHLY_ARCHIVE = False
+CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-# CREATE_SINGLE_ARCHIVE = False
+CREATE_SINGLE_ARCHIVE = False
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
-# CREATE_FULL_ARCHIVES = False
+CREATE_FULL_ARCHIVES = False
 # If monthly archives or full archives are created, adds also one archive per day
-# CREATE_DAILY_ARCHIVE = False
+CREATE_DAILY_ARCHIVE = False
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -662,7 +662,12 @@ PRETTY_URLS = True
 # Note: most Nikola-specific extensions are done via the Nikola plugin system,
 #       with the MarkdownExtension class and should not be added here.
 MARKDOWN_EXTENSIONS = [
-    "fenced_code", "codehilite", "tables", "markdown.extensions.toc", "markdown.extensions.attr_list"
+    "markdown.extensions.fenced_code",
+    "markdown.extensions.codehilite",
+    "markdown.extensions.extra",
+    "markdown.extensions.tables",
+    "markdown.extensions.toc",
+    "markdown.extensions.attr_list"
 ]
 
 # Extra options to pass to the pandoc comand.
@@ -778,7 +783,7 @@ EXTRA_HEAD_DATA = """
 
 # If you hate "Filenames with Capital Letters and Spaces.md", you should
 # set this to true.
-UNSLUGIFY_TITLES = True
+FILE_METADATA_UNSLUGIFY_TITLES = True
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}

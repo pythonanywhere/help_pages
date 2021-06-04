@@ -1,6 +1,7 @@
 *.pyc
 .idea/
 .doit.db
+.doit.db.db
 cache/
 output/
 .venv/
