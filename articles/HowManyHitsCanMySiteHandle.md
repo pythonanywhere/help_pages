@@ -1,5 +1,5 @@
 <!--
-.. title: 403 Forbidden error
+.. title: How many per second hits can my site handle?
 .. slug: HowManyHitsCanMySiteHandle
 .. date: 2021-06-05 14:35:28 UTC+01:00
 .. tags:
@@ -9,11 +9,7 @@
 .. type: text
 -->
 
-## How many hits per second can my site handle?
-
-One frequently asked question is "how many hits per second can my site handle?"
-
-The answer is a little involved, because it depends on two things: how long your
+The answer to this question is a little involved, because it depends on two things: how long your
 code takes to handle each request, and how many worker processes you have handling
 those requests.
 
