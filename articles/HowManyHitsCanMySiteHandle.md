@@ -26,7 +26,7 @@ copies of your code running, which means that you can handle more simultaneous
 requests.
 
 
-### What happens when a request comes in to your site
+## What happens when a request comes in to your site
 
 Each request that comes in to PythonAnywhere is put onto a queue for the particular
 site it has been sent to.  Your worker processes spend their time watching the queue for incoming requests.
@@ -44,7 +44,7 @@ request, then one worker can handle 5 requests/second, two workers can handle 10
 and so on.
 
 
-### What if you have more requests coming in than your workers can handle
+## What if you have more requests coming in than your workers can handle
 
 Let's say that you take 0.2 seconds to handle a request and have two workers, but
 then 50 requests come in within one second.  What will happen is that they will
@@ -66,7 +66,7 @@ the error code "502-backend").
 So it's important to make sure that you have enough workers to handle your traffic.
 
 
-### How to estimate how many workers you need
+## How to estimate how many workers you need
 
 Because this is all dependent on how long your code takes to run, the first thing
 is to find out what that is!  If you look at your site's access logs, you'll see
@@ -94,7 +94,7 @@ requests per second, and if you need to be able to handle 15 requests a second a
 peak times of the day, that means you need three workers.
 
 
-### How to find out if your workers were all busy at a particular time.
+## How to find out if your workers were all busy at a particular time.
 
 If you're looking at your logs and seeing a time when your site was slow, or if
 people who use your site have contacted you to ask why it was slow at a particular
@@ -108,7 +108,7 @@ At some time in the future we'll find a way to expose this on the "Web" page to 
 things a bit easier!
 
 
-### Any questions?
+## Any questions?
 
 Hopefully the above will clarify how to work out how many workers you need for your
 site, but if you have any questions or suggestions on how to make things easier to
