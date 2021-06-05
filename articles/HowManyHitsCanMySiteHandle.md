@@ -36,7 +36,7 @@ watching the queue.
 
 This means that under normal operation, each request will be handled pretty much
 in the amount of time that your code takes to run -- there is a tiny overhead for
-the request going onto the queue and coming off it, but that's significantly less
+the request going onto the queue and coming off it, but that's less
 than a millisecond so you're unlikely to be able to measure it.
 
 So if, say, your code takes 0.2 seconds to handle a typical
@@ -71,8 +71,10 @@ So it's important to make sure that you have enough workers to handle your traff
 Because this is all dependent on how long your code takes to run, the first thing
 is to find out what that is!  If you look at your site's access logs, you'll see
 one line for each request to the site.  At the end of each line, there is a response-time
-field -- that is the number of seconds it took for the system to respond to that request.
-So you can use that; it's worth noting that what you need is the average time taken --
+field -- that is the number of seconds it took for the system to respond to that request,
+so you can use that.
+
+It's worth noting that what you need is the average time taken --
 that will depend on which views are accessed most.  For example, if you have 9 views that
 take 0.1 seconds, but one that takes 5 seconds, the average would depend on the relative
 frequency that each one is hit.  If the slow view is hit rarely, it won't matter
