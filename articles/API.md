@@ -67,6 +67,8 @@ You will need to reload your webapp and start new consoles for this environment 
 
 All endpoints are hosted at *https://www.pythonanywhere.com/* or
 *https://eu.pythonanywhere.com/* depending on where your account is registered.
+
+
 ## Always_On
 
 ### /api/v0/user/{username}/always_on/
@@ -74,7 +76,7 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">List all of your always-on tasks</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Create and start a new always-on task</td><td class="params">command, enabled</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create and start a new always-on task</td><td class="params">command, description, enabled</td></tr>
 </table>
 
 
@@ -83,8 +85,8 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Return information about an always-on task.</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">PUT</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, enabled</td></tr>
-  <tr><td class="method">PATCH</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, enabled</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, description, enabled</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, description, enabled</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Stop and delete an always-on task</td><td class="params">(no parameters)</td></tr>
 </table>
 
@@ -93,7 +95,7 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">POST</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, enabled</td></tr>
+  <tr><td class="method">POST</td><td class="description">Endpoints for always-on tasks</td><td class="params">command, description, enabled</td></tr>
 </table>
 
 ## Consoles
@@ -169,6 +171,21 @@ in json format:
   <tr><td class="method">PATCH</td><td class="description">Sets default Python 3 version for user.</td><td class="params">(no parameters)</td></tr>
 </table>
 
+## Default_Python_Version
+
+### /api/v0/user/{username}/default_python_version/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">Returns information about user's current and available default Python version
+in json format:
+<pre>{
+    "default_python_version": &lt;str&gt;,
+    "available_python_versions": [&lt;str&gt;],
+}</pre></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Sets default Python version for user.</td><td class="params">(no parameters)</td></tr>
+</table>
+
 ## Default_Save_And_Run_Python_Version
 
 ### /api/v0/user/{username}/default_save_and_run_python_version/
@@ -237,7 +254,7 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">List all of your scheduled tasks</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Create a new scheduled task</td><td class="params">command, enabled, interval, hour, minute</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new scheduled task</td><td class="params">command, enabled, interval, hour, minute, description</td></tr>
 </table>
 
 
@@ -246,8 +263,8 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Return information about a scheduled task.</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">PUT</td><td class="description">Endpoints for scheduled tasks</td><td class="params">command, enabled, interval, hour, minute</td></tr>
-  <tr><td class="method">PATCH</td><td class="description">Endpoints for scheduled tasks</td><td class="params">command, enabled, interval, hour, minute</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Endpoints for scheduled tasks</td><td class="params">command, enabled, interval, hour, minute, description</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Endpoints for scheduled tasks</td><td class="params">command, enabled, interval, hour, minute, description</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Delete an scheduled task</td><td class="params">(no parameters)</td></tr>
 </table>
 
