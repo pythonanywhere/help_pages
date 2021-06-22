@@ -53,30 +53,34 @@ You can check what packages are installed in which system image [here](https://w
 ### Virtualenvs
 
 Because of the changes to the point releases of Python
-(for example, 3.7.0 might be replaced with 3.7.5), any
+(for example, 3.7.5 might be replaced with 3.7.10), any
 virtualenvs you have might break -- virtualenvs are not always portable from one
 point release to another.
 
 ## Default Python versions
 
 Along with system image each PythonAnywhere account has a set of
-default Python versions.
+default Python versions:
 
-One of them is the default Python 3 version used by `python3` and
+* One of them is the default Python version used by `python` and
+`pip` in Bash consoles. (We are no longer forced to bind it to `python2.7` as 
+it was before glastonbury system image.)
+
+* Another one is the default Python 3 version used by `python3` and
 `pip3` in Bash consoles.
 
-Another one is the default Python used when "Run" button in our
+* The third one is the default Python used when "Run" button in our
 in-browser editor is pressed.
 
 Each system image has a range of available Python versions.
 When one of those defaults is not available after the system
-image change it will be automaticaly set to the most recent available
+image change it will be automatically set to the most recent available
 Python version.
 
 For example you might have system image set to "classic" with default
 `python3` set to `python3.3`. You update your system image to
 "fishnchips" in which Python 3.3 is not available any more. So your
-default `python3` is automaticaly set to `python3.8` which is the
+default `python3` is automatically set to `python3.8` which is the
 default "fishnchips" Python version.
 
 ### Available Python versions for system images
@@ -93,6 +97,7 @@ default "fishnchips" Python version.
       <th>3.6</th>
       <th>3.7</th>
       <th>3.8</th>
+      <th>3.9</th>
     </tr>
   </thead>
   <tbody>
@@ -103,6 +108,7 @@ default "fishnchips" Python version.
       <td>X</td>
       <td>X</td>
       <td>X</td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -117,6 +123,7 @@ default "fishnchips" Python version.
       <td>X</td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>earlgrey</td>
@@ -128,6 +135,7 @@ default "fishnchips" Python version.
       <td>X</td>
       <td>X</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>fishnchips</td>
@@ -135,6 +143,19 @@ default "fishnchips" Python version.
       <td>X</td>
       <td></td>
       <td></td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td>X</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>glastonbury</td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+      <td>X</td>
       <td>X</td>
       <td>X</td>
       <td>X</td>
