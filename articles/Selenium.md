@@ -22,16 +22,16 @@ First, you will need to update selenium for your account/virtualenv. For example
 and then you can run Selenium with Chrome using code like this:
 
 ```python
-    from selenium import webdriver
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    browser = webdriver.Chrome(options=chrome_options)
-    try:
-        browser.get("https://www.google.com")
-        print("Page title was '{}'".format(browser.title))
-    finally:
-        browser.quit()
+from selenium import webdriver
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+browser = webdriver.Chrome(options=chrome_options)
+try:
+    browser.get("https://www.google.com")
+    print("Page title was '{}'".format(browser.title))
+finally:
+    browser.quit()
 ```
 
 
