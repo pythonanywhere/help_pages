@@ -85,81 +85,20 @@ default "fishnchips" Python version.
 
 ### Available Python versions for system images
 
-<table class="python-versions">
-  <thead>
-    <tr>
-      <th></th>
-      <th>2.6</th>
-      <th>2.7</th>
-      <th>3.3</th>
-      <th>3.4</th>
-      <th>3.5</th>
-      <th>3.6</th>
-      <th>3.7</th>
-      <th>3.8</th>
-      <th>3.9</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>classic</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>dangermouse</td>
-      <td></td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>earlgrey</td>
-      <td></td>
-      <td>X</td>
-      <td></td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>fishnchips</td>
-      <td></td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>glastonbury</td>
-      <td></td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-  </tbody>
-</table>
+|            |2.6|2.7|3.3|3.4|3.5|3.6|3.7|3.8|3.9|
+|------------|---|---|---|---|---|---|---|---|---|
+|classic     |  X|  X|  X|  X|  X|   |   |   |   |
+|dangermouse |   |  X|  X|  X|  X|  X|   |   |   |
+|earlgrey    |   |  X|   |  X|  X|  X|  X|   |   |
+|fishnchips  |   |  X|   |   |  X|  X|  X|  X|   |
+|glastonbury |   |  X|   |   |  X|  X|  X|  X|  X|
+
+
+### Base Ubuntu version for each system image
+|            |Ubuntu version|
+|------------|--------------|
+|classic     | 14.04        |
+|dangermouse | 14.04        |
+|earlgrey    | 16.04        |
+|fishnchips  | 16.04        |
+|glastonbury | 20.04        |
