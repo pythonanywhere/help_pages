@@ -57,6 +57,12 @@ Because of the changes to the point releases of Python
 virtualenvs you have might break -- virtualenvs are not always portable from one
 point release to another.
 
+### Cached versions of `pip` and packages installed with `pip`
+
+It's also advised to clear the `~/.cache` folder, since packages
+stored there might be picked up when creating new virtualenvs leading
+to confusion.
+
 ## Default Python versions
 
 Along with system image each PythonAnywhere account has a set of
