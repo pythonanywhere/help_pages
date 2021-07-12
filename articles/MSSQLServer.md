@@ -26,7 +26,6 @@ that your pyodbc code will be able to use to connect to the database.  To do thi
         [FreeTDS]
         Description = TDS driver (Sybase/MS SQL)
         Driver = /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so
-        Setup = /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so
         CPTimeout =
         CPReuse =
         FileUsage = 1
