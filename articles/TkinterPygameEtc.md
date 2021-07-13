@@ -20,7 +20,7 @@ help you to build Python apps that write graphics to your desktop screen (GUI
 = graphical user interface).
 
 The problem is that PythonAnywhere is a server-side, or "headless"
-environment, which means it doesn't have access your GUI. When you run code on
+environment, which means it doesn't have access to your GUI. When you run code on
 PythonAnywhere, it runs on our servers, and it doesn't have any way to talk
 directly to your local display and be able to display graphics on it.
 
