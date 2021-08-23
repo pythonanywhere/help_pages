@@ -24,6 +24,10 @@ requests, and their API endpoint are on our whitelist.  This is the most
 reliable option, and works well so long as your code isn't limited to using
 SMTP.
 
+Here's how you do it:
+* [on Mailgun](https://documentation.mailgun.com/en/latest/quickstart-sending.html#how-to-start-sending-email)
+* [on Sendgrid](https://docs.sendgrid.com/api-reference/mail-send/mail-send)
+
 
 ## Use Gmail's SMTP servers
 
