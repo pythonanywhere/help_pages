@@ -16,6 +16,8 @@ First download the git repo
 
     git clone https://github.com/creationix/nvm.git
 
+If you're using a *free account*, we recommend using a shallow clone with `--depth 1` option.
+
 Now hook up your shell to use nvm
 
     source ~/nvm/nvm.sh
