@@ -10,16 +10,19 @@
 .. type: text
 -->
 
-*** NOTE *** These instructions are for the system image fishnchips or later.
-If you have an older system image, you will need to update your system image to
+*** NOTE *** These instructions are for the system image **fishnchips** or later.
+If you have an older system image, you will need to 
+[update your system image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to
 use these instructions.
 
-First, you will need to update selenium for your account/virtualenv. For example, if you're using Python 3.7, run this in a Bash console:
+*If you're on fishnchips system image*, you will need to update
+selenium for your account/virtualenv. For example, if you're using
+Python 3.7, run this in a Bash console:
 
     pip3.7 install --user --upgrade selenium
 
 
-and then you can run Selenium with Chrome using code like this:
+You can run Selenium with Chrome using code like this:
 
 ```python
 from selenium import webdriver

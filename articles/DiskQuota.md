@@ -44,7 +44,7 @@ is being used in various places in your file storage:
 The files in `/tmp/` are the most common cause of an unexpected quota max-out.
 It's usually safe to just delete them all:
 
-    rm -rf /tmp/*
+    rm -rf /tmp/* /tmp/.*
 
 You can also clean up any old, unused virtualenvs with `rmvirtualenv my-old-venv-name`.
 

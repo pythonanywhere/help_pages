@@ -14,7 +14,9 @@ install their "global packages" separately).
 
 First download the git repo
 
-    git clone https://github.com/creationix/nvm.git
+    git clone --depth 1 https://github.com/creationix/nvm.git
+
+(We recommend a shallow clone to avoid cloning the whole `nvm` git history. With the `--depth 1`option we instruct `git` to copy only the latest revision of the repo, which will take considerably less disk space.)
 
 Now hook up your shell to use nvm
 
