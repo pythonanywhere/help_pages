@@ -47,13 +47,23 @@ And not just *myfile.txt*.
 
 ```python
 import os
-THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+THIS_FOLDER = os.path.dirname(__file__)
 my_file = os.path.join(THIS_FOLDER, 'myfile.txt')
 ```
 
 code like this, based on deriving the current path from Python's magic
 `__file__` variable, will work both locally and on the server, both on
 Windows and on Linux...
+
+Note that python's magic `__file__` returns the absolute path by default as of python 3.4, with the sole exception of `__main__.__file__`.
+If you are using an earlier version, this quick addition will do the trick:
+
+
+```python
+import os
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+my_file = os.path.join(THIS_FOLDER, 'myfile.txt')
+```
 
 
 ## Another possibility: case-sensitivity
