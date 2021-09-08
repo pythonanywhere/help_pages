@@ -19,7 +19,7 @@ MarkupSafe==2.0.1
 natsort==7.1.1
 Nikola==8.1.3
 piexif==1.1.3
-Pillow==8.2.0
+Pillow==8.3.2
 Pygments==2.9.0
 pyinotify==0.9.6
 PyRSS2Gen==1.1
