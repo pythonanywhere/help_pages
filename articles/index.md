@@ -34,6 +34,9 @@ If you want help about Python programming generally (as opposed to
 PythonAnywhere), you can
 [buy 1:1 live Python help at Codementor](https://www.codementor.io/python-experts?utm_source=pythonanywhere&utm_medium=text-link&utm_content=forums&utm_campaign=pa-q1).
 
+We also have a page that lists books and courses [here](/pages/Learning)
+
+
 
 The help pages have the following sections -- hopefully you can jump straight to
 one that describes what you're looking for help with!
