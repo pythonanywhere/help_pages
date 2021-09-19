@@ -78,7 +78,7 @@ virtualenv
 
 Now go to the **Virtualenv** section, and enter your virtualenv name:
 *my-virtualenv*. When you hit enter, you'll see it updates to the full path to
-your virtuaelenv (*/home/yourusername/.virtualenvs/my-virtualenv*).
+your virtualenv (*/home/yourusername/.virtualenvs/my-virtualenv*).
 
 Finally, go edit the wsgi configuration file. You'll find a link to it near the
 top of the Web tab.
@@ -131,7 +131,7 @@ crash your app**', and you'll see a 504 error on your site, as detailed in
 [Flask504Error](/pages/Flask504Error)
 
 Thankfully, most Flask tutorials out there suggest you put the `app.run()`
-inside an `if __name__ = '__main__':` clause, which will be OK, because that
+inside an `if __name__ == '__main__':` clause, which will be OK, because that
 won't get run when we import it.
 
 This is ok
