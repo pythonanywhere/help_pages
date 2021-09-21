@@ -9,4 +9,4 @@
 .. type: text
 -->
 
-See [Dealing with 504 or 502 errors in Flask applications](/pages/Flask504Error).
+See [Dealing with 504 or 502 errors in Flask applications](/pages/Flask504And502Errors).
