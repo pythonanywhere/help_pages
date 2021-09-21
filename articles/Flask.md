@@ -118,8 +118,8 @@ that looks something like this:
 That won't work on PythonAnywhere -- the only way your app will appear on the
 public internet is if it's configured via the web tab, with a wsgi file.
 
-More importantly, **'if app.run() gets called when we import your code, it will
-crash your app**', and you'll see a 504 or a 502 error on your site, as detailed in
+More importantly, **if `app.run()` gets called when we import your code, it will
+crash your app**, and you'll see a 504 or a 502 error on your site, as detailed in
 [this help page](/pages/Flask504And502Errors).
 
 Thankfully, most Flask tutorials out there suggest you put the `app.run()`
