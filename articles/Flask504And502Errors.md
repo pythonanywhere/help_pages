@@ -37,7 +37,7 @@ If you want to be able to run your code on your own machine in test mode, then
 you can guard the `app.run()` like this:
 
 ```python
-if __name__ == '__main__':`
+if __name__ == '__main__':
     app.run()
 ```
 
