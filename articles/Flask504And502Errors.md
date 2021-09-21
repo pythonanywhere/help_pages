@@ -1,5 +1,5 @@
 <!--
-.. title: Dealing with 504 and 502 errors in flask applications
+.. title: Dealing with 504 and 502 errors in Flask applications
 .. slug: Flask504And502Errors
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
