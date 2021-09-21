@@ -112,7 +112,7 @@ And some tips for specific web frameworks:
   * Flask
     * [A beginner's guide to building a simple database-backed Flask website on PythonAnywhere](http://blog.pythonanywhere.com/121/)
     * [General flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
-    * [Dealing with a 504 error in Flask applications](/pages/Flask504Error)
+    * [Dealing with 504 or 502 errors in Flask applications](/pages/Flask504And502Errors)
     * [Using SQLAlchemy with MySQL](/pages/UsingSQLAlchemywithMySQL)
     * [How to scale a Flask Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/01/flask-on-pythonanywhere-tutorial/) (external link to Memcachier)
 
