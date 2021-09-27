@@ -69,6 +69,12 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 *https://eu.pythonanywhere.com/* depending on where your account is registered.
 
 
+# Rate-limits
+
+Each endpoint has a 40 requests per minute rate limit, apart from the `send_input`
+endpoint on consoles, which is 120 requests per minute.
+
+
 ## Always_On
 
 ### /api/v0/user/{username}/always_on/
