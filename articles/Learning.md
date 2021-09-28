@@ -23,14 +23,14 @@ are good or that our users have told us are worth doing.
 ### Django for Everybody by Chuck Severance
 
 Chuck's courses are great and we highly recommend them!  [Django for everybody](https://www.dj4e.com)
-is a great option for learning, well, Django :-) It's also available [on Coursera](https://www.coursera.org/learn/django-build-web-apps)
+is a great option for learning, well, Django :-) It's also available [on Coursera](https://www.coursera.org/learn/django-build-web-apps).
 
 
 ### Django Girls
 
-[Django Girls](https://djangogirls.org/en/) is an organisation devoted to running
+Django Girls is an organisation devoted to running
 workshops introducing women to programming, and if you are interested in doing one of them,
-check out their website.
+check out [their website](https://djangogirls.org/en/).
 
 Even if you're not able to go to one of their workshops, their online
 [Django tutorial](https://tutorial.djangogirls.org/en/) is an excellent introduction
@@ -51,13 +51,13 @@ We haven't tried these ourselves, but people have written to us recommending the
 
 ### Code First Girls
 
-[Code First Girls ](https://codefirstgirls.org.uk/) provide a range of courses to women and non-binary people in the UK
+[Code First Girls ](https://codefirstgirls.org.uk/) provide a range of courses to women and non-binary people in the UK.
 
 
 ### Books
 
-* [Think Python by Allen B. Downey](https://greenteapress.com/wp/think-python/) is great for people who already know other programming languages
-* [Head First Python by Paul Barry](https://www.oreilly.com/library/view/head-first-python/9781491919521/) is a better choice if Python is your first programming language
+* [Think Python by Allen B. Downey](https://greenteapress.com/wp/think-python/) is great for people who already know other programming languages.
+* [Head First Python by Paul Barry](https://www.oreilly.com/library/view/head-first-python/9781491919521/) is a better choice if Python is your first programming language.
 
 
 
