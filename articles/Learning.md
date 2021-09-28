@@ -22,7 +22,8 @@ are good or that our users have told us are worth doing.
 
 ### Django for Everybody by Chuck Severance
 
-Chuck's courses are great and we highly recommend them!  [Django for everybody](https://www.dj4e.com) [also on coursera](https://www.coursera.org/learn/django-build-web-apps)
+Chuck's courses are great and we highly recommend them!  [Django for everybody](https://www.dj4e.com)
+is a great option for learning, well, Django :-) It's also available [on Coursera](https://www.coursera.org/learn/django-build-web-apps)
 
 
 ### Django Girls
