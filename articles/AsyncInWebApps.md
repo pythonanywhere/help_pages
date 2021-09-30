@@ -60,15 +60,14 @@ needs):
   by asking them to refresh the page, or perhaps setting up an
   Ajax polling system.
 
-
-See [our help page on always-on tasks](/pages/AlwaysOnTasks) for
-information on how to set one up to do your async work.
-
 ### Further reading
 
 If you want to see an example of a task queue in a web app, check
 [our blog post](https://blog.pythonanywhere.com/198/)
 which shows how to implement it step by step.
+
+See [our help page on always-on tasks](/pages/AlwaysOnTasks) for
+information on how to set one up to do your async work.
 
 ## Don't jump to using async too quickly
 
