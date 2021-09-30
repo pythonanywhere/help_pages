@@ -64,6 +64,11 @@ needs):
 See [our help page on always-on tasks](/pages/AlwaysOnTasks) for
 information on how to set one up to do your async work.
 
+### Further reading
+
+If you want to see an example of a task queue in a web app, check
+[our blog post](https://blog.pythonanywhere.com/198/)
+which shows how to implement it step by step.
 
 ## Don't jump to using async too quickly
 
@@ -88,10 +93,3 @@ worth thinking about a task queue.
   seem to be hanging around longer than a single request/response cycle are
   assumed to be orphan processes by the system, and are liable to get killed at
   unpredictable times.
-
-
-## Further reading
-
-If you want to see an example of a task queue in a web app, check
-[our blog post](https://blog.pythonanywhere.com/198/)
-which shows how to implement it step by step.
