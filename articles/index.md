@@ -34,7 +34,7 @@ If you want help about Python programming generally (as opposed to
 PythonAnywhere), you can
 [buy 1:1 live Python help at Codementor](https://www.codementor.io/python-experts?utm_source=pythonanywhere&utm_medium=text-link&utm_content=forums&utm_campaign=pa-q1).
 
-We also have a page that lists books and courses [here](/pages/Learning)
+We also have a page that lists books and courses the people have recommended to us [here](/pages/Learning).
 
 
 
@@ -60,6 +60,7 @@ And here are some common questions and guides for beginners:
   * [The file editor](/pages/FileEditor)
   * [Changing the font size in a PythonAnywhere console](/pages/ChangingFontSize)
   * [How do I share my code online?](/pages/ShareMyCodeOnline)
+  * [What is a good tutorial for learning Python?](/pages/Learning)
 
 <!-- TODO: how do I edit a file?  How do I run a script? -->
 
