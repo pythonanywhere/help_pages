@@ -40,7 +40,7 @@ If you're running MySQL Workbench, you can configure it with settings like this 
 | SSH Key file:  | **should not be necessary when you specify the password** |
 | MySQL Hostname:  | **your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com** |
 | MySQL Server Port:  | 3306 |
-| Username:  | **your PythonAnywhere username** |
+| Username:  | **your PythonAnywhere database username** |
 | Password:  | **your PythonAnywhere database password** |
 | Default Schema:  | **your database name, eg yourusername$mydatabase** |
 
@@ -73,8 +73,8 @@ If you're running DBeaver, you can configure it with the following settings:
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | Server Host: | **your PythonAnywhere db hostname (username.mysql.eu.pythonanywhere-services.com or username.mysql.pythonanywhere-services.com)**        |
 | Port:        | **3306**                                                                                                                                 |
-| Username:    | **your PythonAnywhere username**                                                                                                         |
-| Password:    | **the password you use to log in to the PythonAnywhere website**                                                                         |
+| Username:    | **your PythonAnywhere database username**                                                                                                         |
+| Password:    | **your PythonAnywhere database password**
 
 
 * Test Connection... (should be successfull)
@@ -99,7 +99,7 @@ and then use code like this:
         remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
     ) as tunnel:
         connection = MySQLdb.connect(
-            user='your PythonAnywhere username',
+            user='your PythonAnywhere database username',
             passwd='your PythonAnywhere database password',
             host='127.0.0.1', port=tunnel.local_bind_port,
             db='your database name, eg yourusername$mydatabase',
