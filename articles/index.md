@@ -97,6 +97,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
   * [Using International Domain Names](/pages/InternationalDomainNames) -- that is, ones with non-ASCII/Unicode characters in them
   * [How do I create a web app that redirects from one domain to another?](/pages/RedirectWebApp)
+  * [How many hits can my site handle?](/pages/HowManyHitsCanMySiteHandle) -- a guide to making sure that you have the right number of worker processes
 
 
 And some tips for specific web frameworks:
