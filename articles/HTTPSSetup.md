@@ -67,4 +67,16 @@ version.   This is called "forcing HTTPS", and is described on
 
 
 
+### TLS version support
+
+By default, our servers only support recent, secure versions of TLS, the protocol
+that HTTPS uses for secure connections.  Some older devices (eg. Windows 7, Android
+devices from before 2014) only support the older, non-secure versions.  There's
+more information (including how to get your website to support those old versions)
+on our [TLS version support page](/pages/TLSVersionSupport).
+
+
+
+
+
 
