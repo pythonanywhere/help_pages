@@ -51,8 +51,8 @@ them have been identified.  As of this writing:
 
 ### Which versions does PythonAnywhere support?
 
-> The following section describes our EU system as of 2021-10-11.  Our US
-> system will have the same behaviour starting 2021-10-20.
+**The following section describes our EU system as of 2021-10-11.  Our US
+system will have the same behaviour starting 2021-10-20.**
 
 By default on PythonAnywhere, websites that we host are only available over TLS
 1.2 and 1.3.  The reason we do not support older TLS versions is that an
