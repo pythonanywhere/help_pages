@@ -13,7 +13,8 @@
 
 By default we support TLS 1.2 and 1.3 for websites; older protocol versions can
 be supported for custom domains -- if you have old devices connecting to your
-site and you need to use them, then [contact us](support@pythonanywhere.com).
+site and you need to use them, then [contact us](support@pythonanywhere.com) --
+but do note that this will mean reduced security for your site.
 
 
 ## In more detail...
