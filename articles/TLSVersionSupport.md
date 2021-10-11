@@ -9,12 +9,14 @@
 .. type: text
 -->
 
-### TL;DR for those who know the background
+## TL;DR for those who know the background
 
 By default we support TLS 1.2 and 1.3 for websites; older protocol versions can
 be supported for custom domains -- if you have old devices connecting to your
 site and you need to use them, then [contact us](support@pythonanywhere.com).
 
+
+## In more detail...
 
 ### What is TLS?
 
