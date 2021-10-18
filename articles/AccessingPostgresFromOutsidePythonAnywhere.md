@@ -115,6 +115,9 @@ library you like.
 If you have trouble with the SSH Tunnel connection, the project provides a
 helpful [troubleshooting guide](https://github.com/pahaz/sshtunnel/blob/master/Troubleshoot.rst)
 
+If you're getting intermittent connection errors, try increasing one or both of
+the timeouts that are set on `sshtunnel`.
+
 
 ## Manual SSH tunnelling
 
