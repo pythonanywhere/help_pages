@@ -79,7 +79,9 @@ provider that allows you to set up a CNAME record.
 
 The CNAME record will point `www.yourdomain.com` to the value specified on
 the "Web" tab for your application; this value will be of the form
-`webapp-XXXX.pythonanywhere.com` where `XXXX` is some number or other.
+`webapp-XXXX.pythonanywhere.com` where `XXXX` is some number or other (unless your site
+is set up to support [legacy versions of TLS](/pages/TLSVersionSupport), in which case
+it will be the value from that page).
 Setting up this kind of record tells [the domain name system](//en.wikipedia.org/wiki/Domain_Name_System)
 that when someone asks for your website, they should get it from one of the servers
 that make up PythonAnywhere.
