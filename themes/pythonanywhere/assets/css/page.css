@@ -39,7 +39,11 @@ html, body {height: 100%;}
 
 #header-container {
     position: relative;
-    background: #139FD7;
+}
+
+.fullscreen-main-navbar {
+    background-color: #139FD7;
+    color: #FFFFFF;
     font-size: 12px;
 }
 
