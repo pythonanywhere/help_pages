@@ -6877,23 +6877,6 @@ code {
     border: none;
 }
 
-#id_feedback_dialog_blurb_big {
-    font-weight: bold;
-    font-size: larger;
-    margin-bottom: 0.25em;
-    margin-top: 0.25em;
-}
-
-#id_feedback_dialog_text {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    width: 562px;
-}
-
-#id_feedback_dialog_email_address {
-    width: 562px;
-}
-
 .default_prompt {
     font-style: italic;
     color: #808080;
@@ -6905,28 +6888,6 @@ code {
     width: 90%;
 }
 
-#id_feedback_dialog_error, #id_feedback_dialog_rate_limit_error {
-    font-size: smaller;
-    margin-top: 3ex;
-    float: left;
-}
-
-#id_feedback_dialog_spinner {
-    margin-right: 1ex;
-}
-
-#id_feedback_dialog_ok_button {
-    font-weight: bold;
-}
-
-#ui-dialog-title-id_feedback_dialog {
-    background-color: transparent;
-    color: #000;
-}
-
-#id_feedback_dialog {
-    background-color: transparent;
-}
 
 #id_copyright_div {
     position: absolute;

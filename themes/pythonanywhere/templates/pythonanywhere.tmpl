@@ -11,19 +11,12 @@
     <nav class="navbar top-nav hidden-xs">
         <div class="container">
             <ul id="id_header_links" class="nav navbar-nav navbar-right">
-                <li><a id="id_feedback_link" class="feedback_link btn-link">Send feedback</a></li>
                 <li><a id="id_forums_link" class="btn-link" href="https://www.pythonanywhere.com/forums/">Forums</a></li>
                 <li><a id="id_help_link" class="btn-link" href="/">Help</a></li>
                 <li><a href="//blog.pythonanywhere.com/" class="btn-link" id="id_blog_link">Blog</a></li>
             </ul>
         </div>
     </nav>
-</%def>
-
-<%def name="feedback_dialog_html()">
-    <div id="id_feedback_container" class="hidden">
-      <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
-    </div>
 </%def>
 
 <%def name="pa_search()">
@@ -45,6 +38,5 @@
   ## Note: we use a newer jquery ui here to be compatible with the jquery
   ## that is used by the search
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/assets/js/feedback.js"></script>
   <script type="text/javascript" src="/assets/js/google.js"></script>
 </%def>
