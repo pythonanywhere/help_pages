@@ -52,6 +52,10 @@ html, body {height: 100%;}
     color: #FFFFFF;
 }
 
+#id_signup_link {
+    font-weight: bold;
+}
+
 #tipue_search_content {
     margin-left: auto !important;
     margin-right: auto !important;
