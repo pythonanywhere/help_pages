@@ -8,26 +8,27 @@
 </%def>
 
 <%def name="header_html()">
-  <div id="header-container">
-  <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
-  <div class="extra-nav-content">
-    ### Leave this block alone.
-    %if search_form:
-      ${search_form}
-    %endif
-  </div>
-  <div class="fullscreen-mini-nav">
-    <ul id="id_header_links" class="nav navbar-nav navbar-right help-links">
-    <li><a id="id_feedback_link" class="feedback_link btn-link">Send feedback</a></li>
-    <li><a id="id_forums_link" class="btn-link" href="https://www.pythonanywhere.com/forums/">Forums</a></li>
-    <li><a id="id_help_link" class="btn-link" href="/">Help</a></li>
-    <li><a href="//blog.pythonanywhere.com/" class="btn-link" id="id_blog_link">Blog</a></li>
-  </ul>
-  </div>
-
-  </nav>
-
-  <div id="tipue_search_content"></div>
+    <div id="header-container">
+        <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
+            <div class="extra-nav-content">
+                ### Leave this block alone.
+                %if search_form:
+                    ${search_form}
+                %endif
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="fullscreen-mini-nav">
+                    <ul id="id_header_links" class="nav navbar-nav navbar-right help-links">
+                        <li><a id="id_feedback_link" class="feedback_link btn-link">Send feedback</a></li>
+                        <li><a id="id_forums_link" class="btn-link" href="https://www.pythonanywhere.com/forums/">Forums</a></li>
+                        <li><a id="id_help_link" class="btn-link" href="/">Help</a></li>
+                        <li><a href="//blog.pythonanywhere.com/" class="btn-link" id="id_blog_link">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="tipue_search_content"></div>
 </%def>
 
 <%def name="feedback_dialog_html()">
