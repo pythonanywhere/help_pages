@@ -48,7 +48,7 @@ html, body {height: 100%;}
     padding: 0;
 }
 
-.fullscreen-main-navbar .fullscreen-mini-nav .help-links li a.btn-link {
+.fullscreen-main-navbar .help-links a {
     color: #FFFFFF;
 }
 
