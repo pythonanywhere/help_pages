@@ -46,7 +46,8 @@ instance, any library that uses httplib2 on Python 3 e.g. `twilio`)
 
 ## Upgrading your account
 
-Paying users have unrestricted access.  You can [upgrade your account here](https://www.pythonanywhere.com/pricing/).
+Paying users have unrestricted access.  You can [upgrade your account here if you're on our US site](https://www.pythonanywhere.com/pricing/),
+or [from here if you're on our EU site](https://eu.pythonanywhere.com/pricing/).
 
 After you upgrade you'll need to kill any old consoles and start new ones to get your
 new Internet settings.  You'll also need to restart any webapps and scheduled tasks.
