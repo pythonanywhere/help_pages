@@ -45,6 +45,7 @@ html, body {height: 100%;}
     background-color: #139FD7;
     color: #FFFFFF;
     font-size: 12px;
+    padding: 0;
 }
 
 #tipue_search_content {

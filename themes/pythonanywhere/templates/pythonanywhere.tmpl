@@ -10,12 +10,6 @@
 <%def name="header_html()">
     <div id="header-container">
         <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
-            <div class="extra-nav-content">
-                ### Leave this block alone.
-                %if search_form:
-                    ${search_form}
-                %endif
-            </div>
             <div class="col-md-6 col-md-offset-3">
                 <div class="fullscreen-mini-nav">
                     <ul id="id_header_links" class="nav navbar-nav navbar-right help-links">
@@ -28,13 +22,22 @@
             </div>
         </nav>
     </div>
-    <div id="tipue_search_content"></div>
 </%def>
 
 <%def name="feedback_dialog_html()">
     <div id="id_feedback_container" class="hidden">
       <iframe id="id_feedback_frame" name="feedback_frame" class="floaty-iframe" src="https://www.pythonanywhere.com/feedback/form/"></iframe>
     </div>
+</%def>
+
+<%def name="pa_search()">
+    <div class="extra-nav-content">
+        ### Leave this block alone.
+        %if search_form:
+            ${search_form}
+        %endif
+    </div>
+    <div id="tipue_search_content"></div>
 </%def>
 
 <%def name="pa_logo()">
