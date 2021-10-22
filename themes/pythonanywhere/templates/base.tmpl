@@ -15,8 +15,15 @@ ${template_hooks['extra_head']()}
 
 ${pythonanywhere.header_html()}
 ${pythonanywhere.feedback_dialog_html()}
-${pythonanywhere.pa_logo()}
-${pythonanywhere.pa_search()}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            ${pythonanywhere.pa_logo()}
+            ${pythonanywhere.pa_search()}
+        </div>
+    </div>
+</div>
 
 <!-- End of Menubar -->
 <div class="container-fluid" id="content" role="main">
