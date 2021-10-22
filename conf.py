@@ -741,7 +741,6 @@ BODY_END = """
 """
 EXTRA_HEAD_DATA = """
 <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
-<link rel="stylesheet" type="text/css" href="https://www.pythonanywhere.com/static/anywhere/styles/bootstrap_base.css">
 """
 
 
