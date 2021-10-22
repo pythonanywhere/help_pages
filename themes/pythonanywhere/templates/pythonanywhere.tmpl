@@ -10,9 +10,6 @@
 <%def name="header_html()">
   <div id="header-container">
   <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
-  <div class="navbar-header">
-    <a class="brand" href="https://www.pythonanywhere.com/"><img id="id_logo" src="https://www.pythonanywhere.com/static/anywhere/images/PA-logo.svg" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
-  </div>
   <div class="extra-nav-content">
     ### Leave this block alone.
     %if search_form:
@@ -39,10 +36,17 @@
     </div>
 </%def>
 
+<%def name="pa_logo()">
+  <div class="navbar-header">
+    <a class="brand" href="https://www.pythonanywhere.com/"><img id="id_logo" src="https://www.pythonanywhere.com/static/anywhere/images/PA-logo.svg" title="PythonAnywhere logo" alt="PythonAnywhere logo"></a>
+  </div>
+</%def>
+
+
 <%def name="late_load_javascript()">
   ## Note: we use a newer jquery ui here to be compatible with the jquery
   ## that is used by the search
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
   <script type="text/javascript" src="/assets/js/feedback.js"></script>
   <script type="text/javascript" src="/assets/js/google.js"></script>
-    </%def>
+</%def>
