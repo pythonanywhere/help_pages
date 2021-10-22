@@ -56,6 +56,10 @@ html, body {height: 100%;}
     font-weight: bold;
 }
 
+.extra-nav-content {
+    float: right;
+}
+
 #tipue_search_content {
     margin-left: auto !important;
     margin-right: auto !important;
