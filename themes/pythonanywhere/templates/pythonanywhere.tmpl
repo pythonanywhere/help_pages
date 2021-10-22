@@ -8,18 +8,16 @@
 </%def>
 
 <%def name="header_html()">
-    <div id="header-container">
-        <nav class="navbar navbar-default fullscreen-main-navbar help-navbar">
-            <div class="col-md-6 col-md-offset-3">
-                <ul id="id_header_links" class="nav navbar-nav navbar-right help-links">
-                    <li><a id="id_feedback_link" class="feedback_link btn-link">Send feedback</a></li>
-                    <li><a id="id_forums_link" class="btn-link" href="https://www.pythonanywhere.com/forums/">Forums</a></li>
-                    <li><a id="id_help_link" class="btn-link" href="/">Help</a></li>
-                    <li><a href="//blog.pythonanywhere.com/" class="btn-link" id="id_blog_link">Blog</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar top-nav hidden-xs">
+        <div class="container">
+            <ul id="id_header_links" class="nav navbar-nav navbar-right">
+                <li><a id="id_feedback_link" class="feedback_link btn-link">Send feedback</a></li>
+                <li><a id="id_forums_link" class="btn-link" href="https://www.pythonanywhere.com/forums/">Forums</a></li>
+                <li><a id="id_help_link" class="btn-link" href="/">Help</a></li>
+                <li><a href="//blog.pythonanywhere.com/" class="btn-link" id="id_blog_link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
 </%def>
 
 <%def name="feedback_dialog_html()">
