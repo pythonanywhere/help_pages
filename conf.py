@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import getpass
 import time
 
+username = getpass.getuser()
 
 BLOG_AUTHOR = "PythonAnywere"  # (translatable)
 BLOG_TITLE = "PythonAnywhere help"  # (translatable)
-SITE_URL = "https://help.pythonanywhere.com/"
+SITE_URL = f"https://{username}.pythonanywhere.com/"
 
-BASE_URL = "https://help.pythonanywhere.com/"
+BASE_URL = f"https://{username}.pythonanywhere.com/"
 BLOG_EMAIL = "support@pythonanywhere.com"
 BLOG_DESCRIPTION = "Help pages for PythonAnywhere"  # (translatable)
 
@@ -333,7 +335,7 @@ REDIRECTIONS = []
 # in a `nikola deploy` command as you like.
 DEPLOY_COMMANDS = {
     'default': [
-        "rsync -rav --delete output/ /home/help/helpsite/output",
+        f"rsync -rav --delete output/ /home/{username}/nikola-output",
     ]
 }
 
