@@ -48,6 +48,10 @@ html, body {height: 100%;}
     padding: 0;
 }
 
+.fullscreen-main-navbar .fullscreen-mini-nav .help-links li a.btn-link {
+    color: #FFFFFF;
+}
+
 #tipue_search_content {
     margin-left: auto !important;
     margin-right: auto !important;
