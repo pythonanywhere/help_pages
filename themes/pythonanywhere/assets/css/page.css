@@ -34,17 +34,18 @@ html, body {height: 100%;}
 }
 
 #id_logo {
-    height: 35px; 
+    height: 35px;
 }
 
 #header-container {
-    min-height: 100%; 
     position: relative;
+    background: #139FD7;
+    font-size: 12px;
 }
 
 #tipue_search_content {
-    margin-left: auto !important; 
-    margin-right: auto !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
     padding: 20px !important;
     display:none;
 }
