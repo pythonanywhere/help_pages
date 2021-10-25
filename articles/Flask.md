@@ -126,7 +126,7 @@ Thankfully, most Flask tutorials out there suggest you put the `app.run()`
 inside an `if __name__ == '__main__':` clause, which will be OK, because that
 won't get run when we import it.
 
-This is ok
+This is ok:
 
     :::python
     app = Flask(__name__)
