@@ -15,12 +15,13 @@ If you have an older system image, you will need to
 [update your system image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to
 use these instructions.
 
-*If you're on fishnchips system image*, you will need to update
-selenium for your account/virtualenv. For example, if you're using
+*If you're on the fishnchips system image*, you will need to update
+selenium for your account/virtualenv to 3.141.0. For example, if you're using
 Python 3.7, run this in a Bash console:
 
-    pip3.7 install --user --upgrade selenium
+    pip3.7 install --user selenium==3.141.0
 
+Note that selenium>=4.0.0 won't work on PythonAnywhere right now.
 
 You can run Selenium with Chrome using code like this:
 
