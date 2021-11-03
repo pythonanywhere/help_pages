@@ -25,6 +25,12 @@ the SSH hostname for your account:
 * If your account is on our global, US-based system at `www.pythonanywhere.com`, then the SSH hostname is `ssh.pythonanywhere.com`
 * If your account is on our EU-based system at `eu.pythonanywhere.com`, then the SSH hostname is `ssh.eu.pythonanywhere.com`
 
+Note the difference in hostnames for both SSH and MySQL:
+| Hostname  | SSH | MySQL | 
+|--|--|--|
+| Global-US | `ssh.pythonanywhere.com` | *username*`.mysql.pythonanywhere-services.com` |
+| EU | `ssh.eu.pythonanywhere.com` | *username*`.mysql.eu.pythonanywhere-services.com` | 
+
 Armed with that, you can do one of the following:
 
 
