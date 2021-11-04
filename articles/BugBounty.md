@@ -89,6 +89,8 @@ are welcome to contact their owners directly.
 
 Send reports to [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 
+All reports must be accompanied by a proof of concept that we can reproduce.
+
 
 ## Payouts
 
