@@ -17,7 +17,7 @@ are good or that our users have told us are worth doing.
 
 ### kikodo
 
-[kikodo](https://www.kikodo.io/) provide a range of free and paid courses in the basics of Python
+[kikodo](https://www.kikodo.io/) provide a range of free and paid courses in the basics of Python.
 
 
 ### Django for Everybody by Chuck Severance
