@@ -23,7 +23,8 @@ Try doing a search for "pdf" on the [PythonAnywhere "Batteries Included" list of
 
 A couple of tips:
 
-* "pdftk" only works in with our new virtualization system.  Ask us if you want to trial this; it can be switched on easily.  However, it will only work in consoles, websites, always-on and scheduled tasks -- not from Jupyter notebooks or over SSH.
+* "pdftk" will only work in consoles, websites, always-on and scheduled tasks
+  -- not from Jupyter notebooks or over SSH.
 
 * We also have "weasyprint" installed, which is meant to have PDF capabilities
 

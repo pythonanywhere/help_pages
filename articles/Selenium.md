@@ -11,9 +11,10 @@
 -->
 
 *** NOTE *** These instructions are for the system image **fishnchips** or later.
-If you have an older system image, you will need to 
-[update your system image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to
-use these instructions.
+If you have an older system image, you will need to [update your system
+image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
+instructions. Also note that selenium will only work in tasks, web apps and
+consoles. It will not work in notebooks and over SSH.
 
 *If you're on the fishnchips system image*, you will need to update
 selenium for your account/virtualenv to 3.141.0. For example, if you're using
