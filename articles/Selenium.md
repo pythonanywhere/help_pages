@@ -17,12 +17,10 @@ instructions. Also note that selenium will only work in tasks, web apps and
 consoles. It will not work in notebooks and over SSH.
 
 *If you're on the fishnchips system image*, you will need to update
-selenium for your account/virtualenv to 3.141.0. For example, if you're using
+selenium for your account/virtualenv to the latest version. For example, if you're using
 Python 3.7, run this in a Bash console:
 
-    pip3.7 install --user selenium==3.141.0
-
-Note that selenium>=4.0.0 won't work on PythonAnywhere right now.
+    pip3.7 install --user --upgrade selenium
 
 You can run Selenium with Chrome using code like this:
 
