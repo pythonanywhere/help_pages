@@ -231,7 +231,7 @@ WRITE_TAG_CLOUD = True
 #        "blogging": "Meta-blog posts about blogging about blogging.",
 #        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
 #    },
-#}
+# }
 
 
 # If you do not want to display a tag publicly, you can mark it as hidden.
@@ -264,7 +264,7 @@ HIDDEN_TAGS = ['mathjax']
 #        "blogging": "Meta-blog posts about blogging about blogging.",
 #        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
 #    },
-#}
+# }
 
 # If you do not want to display a category publicly, you can mark it as hidden.
 # The category will not be displayed on the category list page.
@@ -379,12 +379,12 @@ DEPLOY_COMMANDS = {
 # Many filters are shipped with Nikola. A list is available in the manual:
 # <https://getnikola.com/handbook.html#post-processing-filters>
 #
-# from nikola import filters
-# FILTERS = {
-#    ".html": [filters.typogrify],
-#    ".js": [filters.closure_compiler],
-#    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
-# }
+from nikola import filters
+FILTERS = {
+    ".html": [filters.add_header_permalinks, filters.deduplicate_ids],
+    # ".js": [filters.closure_compiler],
+    # ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
+}
 
 # Expert setting! Create a gzipped copy of each generated file. Cheap server-
 # side optimization for very high traffic sites or low memory servers.
