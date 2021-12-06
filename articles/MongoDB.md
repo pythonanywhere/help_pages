@@ -54,7 +54,7 @@ whether it's running in a website's code, or in a task, or in a console.
 The easiest, solution, though certainly not the most secure, is to accesslist the
 CIDR `0.0.0.0/0`, which is a "accesslist" containing every IP address on the Internet.
 
-A more secure solution is to use the MongoDB Atlas API to them about new IP
+A more secure solution is to use the MongoDB Atlas API to tell them about new IP
 addresses that they should allow to connect.  You can combine that with the
 [ipify service](https://www.ipify.org/), which tells you what IP address your
 code is using right now, to make your code automatically accesslist the IP it's
