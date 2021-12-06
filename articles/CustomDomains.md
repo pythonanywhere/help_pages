@@ -11,7 +11,7 @@
 
 
 If you have a paid account on PythonAnywhere, you can set up websites on a
-custom domain -- that is, a domain that is not *your-username*`.pythonanywhere.com`
+custom domain -- that is, a domain that is not `your-username.pythonanywhere.com`
 
 There are three steps
 
@@ -157,7 +157,7 @@ for details on how to do that.
 
 Usually custom domain means a domain you own, but we made possible to create 
 custom subdomains based on username. You could name your web 
-*whatever-<your-username>*`.pythonanywhere.com` and it would work. It's still
+`whatever-yourusername.pythonanywhere.com` and it would work. It's still
 available to paid accounts only. 
 
 
