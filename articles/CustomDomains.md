@@ -105,6 +105,7 @@ If you're using OVH as your registrar, you may also see that they've automatical
 created a TXT record for `www.yourdomain.com` with a value of `"3|welcome"` --
 you'll need to delete that, as a domain can't have both a TXT record and a CNAME.
 
+See [here](/pages/DNSPrimer) for more information about how DNS works. 
 
 
 ## Notes for specific DNS providers
@@ -150,6 +151,15 @@ Most people want their site set up so that when someone goes to
 or if they go to `http://yourdomain.com/foo` they are redirected to
 `http://www.yourdomain.com/foo`, and so on.  Check out [this help page](/pages/NakedDomains)
 for details on how to do that.
+
+
+## Optional: Use custom PythonAnywhere subdomain
+
+Usually custom domain means a domain you own, but we made possible to create 
+custom subdomains based on username. You could name your web 
+*whatever-<your-username>*`.pythonanywhere.com` and it would work. It's still
+available to paid accounts only. 
+
 
 ## Still having trouble?
 
