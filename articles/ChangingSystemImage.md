@@ -54,8 +54,9 @@ You can check what packages are installed in which system image [here](https://w
 
 Because of the changes to the point releases of Python
 (for example, 3.7.5 might be replaced with 3.7.10), any
-virtualenvs you have might break -- virtualenvs are not always portable from one
-point release to another.
+virtualenvs you have might break -- virtualenvs are not always 
+portable from one point release to another. You will need to 
+[rebuild](/pages/RebuildingVirtualenvs).
 
 ### Cached versions of `pip` and packages installed with `pip`
 

@@ -12,7 +12,7 @@
 
 
 
-*If you need to rebuild your virtualenv following a system image upgrade*
+*If you need to rebuild your virtualenv following a [system image upgrade](/pages/ChangingSystemImage)*
 
 
 The instructions below will contain instructions for people who use plain
