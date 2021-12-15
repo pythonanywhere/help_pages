@@ -11,9 +11,12 @@
 
 
 If you have a paid account on PythonAnywhere, you can set up websites on a
-custom domain -- that is, a domain that is not `your-username.pythonanywhere.com`
+custom domain -- that is, a domain that is not `your-username.pythonanywhere.com`.
 
-There are three steps
+> If you don't own a domain name of your own and want to have a second website as
+> a subdomain of our domain, check out our help page on [Using Custom PythonAnywhere Subdomains](/pages/CustomPythonAnywhereSubdomains).
+
+There are three steps to getting a site running on your own custom domain:
 
   1. (if you haven't already), purchase a domain name from a [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar).
   1. Create a new entry on the [Web tab](https://www.pythonanywhere.com/web_app_setup) for your new domain
@@ -105,7 +108,7 @@ If you're using OVH as your registrar, you may also see that they've automatical
 created a TXT record for `www.yourdomain.com` with a value of `"3|welcome"` --
 you'll need to delete that, as a domain can't have both a TXT record and a CNAME.
 
-See [here](/pages/DNSPrimer) for more information about how DNS works. 
+See [here](/pages/DNSPrimer) for more information about how DNS works.
 
 
 ## Notes for specific DNS providers
@@ -152,13 +155,6 @@ or if they go to `http://yourdomain.com/foo` they are redirected to
 `http://www.yourdomain.com/foo`, and so on.  Check out [this help page](/pages/NakedDomains)
 for details on how to do that.
 
-
-## Optional: Use custom PythonAnywhere subdomain
-
-Usually custom domain means a domain you own, but we made possible to create 
-custom subdomains based on username. You could name your web 
-`whatever-yourusername.pythonanywhere.com` and it would work. It's still
-available to paid accounts only. 
 
 
 ## Still having trouble?
