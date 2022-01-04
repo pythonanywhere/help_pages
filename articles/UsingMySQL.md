@@ -122,6 +122,15 @@ for example: <https://docs.sqlalchemy.org/en/latest/core/pooling.html?#setting-p
 See [this article on mysqldump](/pages/MySQLBackupRestore).
 
 
+## Deleting existing database
+
+Start a MySQL console and run the following command:
+
+    drop database `<your_username>$<your_database_name>`;
+
+replacing placeholders in brackets respectively with your username and the database name that should be deleted.
+
+
 ## Character sets, UTF-8, internationalization, etc
 
 See [this article on character sets](/pages/DatabaseCharacterSets).
