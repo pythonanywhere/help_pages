@@ -92,7 +92,7 @@ on PythonAnywhere, add a `TEST` key to your database definition in
             'TEST': {
               'NAME': '<your username>$test_<your database name>',
 
-More info here: https://docs.djangoproject.com/en/1.10/ref/settings/#test
+More info here: <https://docs.djangoproject.com/en/3.2/ref/settings/#test>
 
 We suggest you use a form like `<your username>$test_<your database name>`.
 Create this database from the PythonAnywhere Databases tab and Django will
