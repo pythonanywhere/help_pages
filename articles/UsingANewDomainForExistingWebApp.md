@@ -11,7 +11,9 @@
 -->
 
 If you have a free account on PythonAnywhere, you can run a website at the
-domain *yourusername*`.pythonanywhere.com`.  But if you have a paid account,
+domain *yourusername*`.pythonanywhere.com`, if your account is hosted on our US
+system, or at *yourusername*`.eu.pythonanywhere.com`, if you're hosted on our EU
+system.  But if you have a paid account,
 you can run the site on any domain that you own.
 
 If you already have a web application up and running on PythonAnywhere and you
