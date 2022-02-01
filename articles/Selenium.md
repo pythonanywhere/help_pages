@@ -29,6 +29,7 @@ You can run Selenium with Chrome using code like this:
 ```python
 from selenium import webdriver
 chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--no-sandbox”)
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 browser = webdriver.Chrome(options=chrome_options)
@@ -50,7 +51,7 @@ and the Tasks page to manually find and kill any leftover Chrome processes.
 
 ## Paid account may be required
 
-Free users are currently restricted to a 
+Free users are currently restricted to a
 [whitelist](https://www.pythonanywhere.com/whitelist/)
 of sites.  If you want to use Selenium to talk to a site
 that's not on the list, you'll need to upgrade to a paid
