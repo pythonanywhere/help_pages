@@ -21,11 +21,13 @@ datacenter if you're using our US-based site at `www.pythonanywhere.com`, or the
 Because this will require non-HTTP external Internet access,
 you'll need a paid account.
 
+There is a complete step-by-step tutorial on [our blog](https://blog.pythonanywhere.com/178/).
+
 
 # Connecting to it.
 
 If you're connecting from a console or a scheduled task, just use the regular
-[PyMongo](https://api.mongodb.com/python/current/), creating a `MongoClient`
+[PyMongo](https://pymongo.readthedocs.io/), creating a `MongoClient`
 object with the normal parameters
 to specify the server, the username and the password..
 
@@ -38,7 +40,15 @@ If you're not using Flask, or are just using the "raw" PyMongo API in Flask,
 there are a few extra parameters you need to to add to your call to
 `pymongo.MongoClient`:
 
+
+For pymongo < 4:
+
     connectTimeoutMS=30000, socketTimeoutMS=None, socketKeepAlive=True, connect=False, maxPoolsize=1
+
+
+For pymongo >= 4:
+
+    connectTimeoutMS=30000, socketTimeoutMS=None, connect=False, maxPoolsize=1
 
 This handles the bulk of the stuff that would otherwise be handled by Flask-PyMongo
 if you were using it.
