@@ -94,3 +94,13 @@ that can cause problems -- you'll get an error saying this:
     Your console is printing so much that it's interfering with other users, so it has been closed
 
 To avoid this, you can add the `-q` command-line flag to your `pip` command.
+
+
+
+##4\. Installing non-Python packages
+
+You don't have root access to the computers where your code runs on PythonAnywhere,
+so you can't use tools like `apt` to install packages.  However, for non-Python tools that
+can be downloaded and compiled from source using `make`, there are
+[some tricks that will often work](/pages/CompilingCPrograms).
+
