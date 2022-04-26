@@ -65,3 +65,15 @@ cycle is meant to be fast.  Instead, build some sort of queue of jobs,
 and use a scheduled task to process those jobs.  More info [here](/pages/AsyncInWebApps/)
 
 
+## Page crash errors
+Sometimes your code may fail with an error like this:
+
+```
+Message: unknown error: session deleted because of page crash
+```
+
+If you get this, try adding the option
+
+```python
+chrome_options.add_argument('--disable-dev-shm-usage')
+```
