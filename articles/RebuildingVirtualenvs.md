@@ -65,6 +65,8 @@ or, with virtualenvwrappper
 
 ##4) Reinstall your packages
 
+Activate the new virtualenv and reinstall packages
+
     :::bash
     pip install -r /tmp/requirements.txt  # or path to your existing requirements.txt
 
