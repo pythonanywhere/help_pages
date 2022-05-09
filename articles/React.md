@@ -1,5 +1,5 @@
 <!--
-.. title: How to connect production React frontend with Python backend
+.. title: How to connect production React frontend with a Python backend
 .. slug: React
 .. date: 2022-05-09
 .. tags:
