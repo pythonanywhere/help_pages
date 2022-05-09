@@ -139,6 +139,7 @@ Adjust the static files mappings to serve the React ones (use your
   
 If you want your admin to have a proper CSS, add this as well:
 
+| <!-- -->      | <!-- -->                           |
 |---------------|------------------------------------|
 | /static/admin	| /home/username/mysite/static/admin |
 
