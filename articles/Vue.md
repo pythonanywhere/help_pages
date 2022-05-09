@@ -119,7 +119,7 @@ urlpatterns = [
 ]
 ```
 
-## settings.py
+## `settings.py`
 
 In `~/mysite/mysite/settings.py`:
 
