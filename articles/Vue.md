@@ -104,6 +104,21 @@ Then edit `~/mysite/templates/base.html` file:
 </html>
 ```
 
+## urls.py
+
+Adjust `~/mysite/mysite/urls.py` to serve the `base.html` template:
+
+```py
+from django.contrib import admin
+from django.urls import path
+from django.views.generic import TemplateView
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", TemplateView.as_view(template_name="base.html"), name="app"),
+]
+```
+
 ## settings.py
 
 In `~/mysite/mysite/settings.py`:
