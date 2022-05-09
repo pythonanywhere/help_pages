@@ -144,7 +144,10 @@ If you want your admin to have a proper CSS, add this as well:
 | /static/admin	| /home/username/mysite/static/admin |
 
 Reload the web app and you should see the default React page when you
-visit it.
+visit it. It may display a message "Edit src/App.js and save to
+reload" -- note that that will not work automatically on
+PythonAnywhere, since it is not possible to run a development server
+on PythonAnywhere, you'd need to build React files again instead.
 
 
 # Flask
@@ -176,4 +179,7 @@ Adjust the static files mappings to serve the React ones (use your
 | /static/	   | /home/username/mysite/frontend/build/static |
 
 Reload the web app and you should see the default React page when you
-visit it.
+visit it. It may display a message "Edit src/App.js and save to
+reload" -- note that that will not work automatically on
+PythonAnywhere, since it is not possible to run a development server
+on PythonAnywhere, you'd need to build React files again instead.
