@@ -307,5 +307,4 @@ and reload the web app (use your **username** instead of "username"):
 |--------------|---------------------------------------------|
 | /static/	   | /home/username/mysite/frontend/dist/static  |
 
-Reload the web app and you should see the default Vue page after
-visiting it.
+You should now see the default Vue page when you visit your web app.
