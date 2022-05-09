@@ -53,7 +53,7 @@ vue create frontend
 
 # Django
 
-We assume you created a Django web app in `~/mysite` with our wizard
+It's assumed you created a Django web app in `~/mysite` with our wizard
 on the Web app page.
 
 ## Installing dependencies
@@ -238,6 +238,9 @@ You should now see the default Vue page when you visit your web app.
 
 
 # Flask
+
+It's assumed you created a Flask web app in `~/mysite` with our wizard
+on the Web app page.
 
 ## Build the Vue app
 

@@ -79,7 +79,7 @@ located:
 
 # Django
 
-We assume you created a Django web app in `~/mysite` with our wizard on the Web app
+It's assumed you created a Django web app in `~/mysite` with our wizard on the Web app
 page.
 
 ## `settings.py`
@@ -146,7 +146,7 @@ If you want your admin to have a proper CSS, add this as well:
 
 # Flask
 
-We assume you created a Flask web app in `~/mysite` with our wizard on the Web app
+It's assumed you created a Flask web app in `~/mysite` with our wizard on the Web app
 page.
 
 ## `flask_app.py`
