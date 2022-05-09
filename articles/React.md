@@ -132,11 +132,13 @@ urlpatterns = [
 
 Adjust the static files mappings to serve the React ones:
 
-  | /static/	   | /home/username/mysite/frontend/build/static |
+| URL          | Directory                                   |
+|--------------|---------------------------------------------|
+| /static/	   | /home/username/mysite/frontend/build/static |
   
 If you want your admin to have a proper CSS, add this as well:
 
-  | /static/admin/ | /home/username/mysite/static/admin          |
+| /static/admin	| /home/username/mysite/static/admin |
 
 Reload the web app and you should see the default React page when you
 visit it.
@@ -165,7 +167,9 @@ def index():
 
 Adjust the static files mappings to serve the React ones:
 
-  | /static/	   | /home/username/mysite/frontend/build/static |
+| URL          | Directory                                   |
+|--------------|---------------------------------------------|
+| /static/	   | /home/username/mysite/frontend/build/static |
 
 Reload the web app and you should see the default React page when you
 visit it.
