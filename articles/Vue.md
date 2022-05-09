@@ -175,7 +175,7 @@ module.exports = {
 ```
 
 Note that the value of `publicPath` will affect the routing and static
-files mappings (see: [below](#Static-files-mappings)) -- in our example the Vue assets will be
+files mappings (see: [below](#static-files-mappings)) -- in our example the Vue assets will be
 looked for in `username.pythonawhere.com/dist`, and the assets will be
 found in `~/mysite/frontend/dists`.
 
