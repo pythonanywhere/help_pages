@@ -104,7 +104,7 @@ Then edit `~/mysite/templates/base.html` file:
 </html>
 ```
 
-## urls.py
+## `urls.py`
 
 Adjust `~/mysite/mysite/urls.py` to serve the `base.html` template:
 
@@ -282,7 +282,7 @@ the configuration file above:
 ...
 ```
 
-## flask_app.py
+## `flask_app.py`
 
 Edit the `~/mysite/flask_app.py` file to serve the default
 `inbox.html` template provided by the Vue build (make sure that the

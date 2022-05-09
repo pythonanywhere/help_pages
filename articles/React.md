@@ -82,7 +82,7 @@ located:
 We assume you created a Django web app in `~/mysite` with our wizard on the Web app
 page.
 
-## settings.py
+## `settings.py`
 
 Open `~/mysite/mysite/settings.py`.
 
@@ -114,7 +114,7 @@ STATICFILES_DIRS = [
 ]
 ```
 
-## urls.py
+## `urls.py`
 
 Let's use a simple `TemplateView` serving `index.html` provided by the
 frontend app:
@@ -152,7 +152,7 @@ visit it.
 We assume you created a Flask web app in `~/mysite` with our wizard on the Web app
 page.
 
-##  flask_app.py
+## `flask_app.py`
 
 Open `~/mysite/flask_app.py` and edit it so it contains:
 
