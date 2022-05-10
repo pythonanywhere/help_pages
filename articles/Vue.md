@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-> Warning -- you may need at least the basic Hacker plan because of
+> Note -- you may need at least the basic Hacker plan because of
 > the amount of disk space required to install Vue with all its
 > dependencies and CPU seconds consummed during the installation
 
