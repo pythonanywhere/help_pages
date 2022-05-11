@@ -31,7 +31,7 @@ help page](https://help.pythonanywhere.com/pages/Node/).
 
 # Creating a scaffold Vue frontend app
 
-Install vue:
+Install Vue:
 
 ```sh
 npm install -g @vue/cli
@@ -53,149 +53,38 @@ vue create frontend
 
 # Django
 
-It's assumed you created a Django web app in `~/mysite` with our wizard
-on the Web app page.
-
-## Installing dependencies
-
-We will need
+It's assumed you created a Django web app in `~/mysite` with our
+wizard on the Web app page.  The solution presented below assumes as
+well that Vue takes care about the templates (and possibly routing
+too), so that database connections will be performed in the client
+(browser) via API calls.  If you prefer to partially render the
+templates server-side (Django driven) and create templates in Django,
+you will need extra dependencies allowing rendering the Vue's bundle
+via Django (see:
 [django-webpack-loader](https://pypi.org/project/django-webpack-loader/)
-for Django, and
-[webpack-bundle-tracker](https://github.com/django-webpack/webpack-bundle-tracker)
-for Vue.
+and
+[webpack-bundle-tracker](https://github.com/django-webpack/webpack-bundle-tracker)).
 
-Make sure you're using a correct `pip` command (see: [this help
-page](https://help.pythonanywhere.com/pages/InstallingNewModules/)):
-
-```sh
-pip install django-webpack-loader
-```
-
-Again, assuming that the Vue app has been created in `~/mysite/frontend`:
-
-```sh
-cd ~/mysite/frontend
-npm install --save-dev webpack-bundle-tracker
-```
-
-## Create a `base.html` template to render the Vue app
-
-```sh
-cd ~/mysite
-mkdir templates
-```
-
-Then edit `~/mysite/templates/base.html` file:
-
-```python
-{% load render_bundle from webpack_loader %}
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        {% render_bundle 'app' 'css' %}
-        <title>Django Vue App</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        {% render_bundle 'app' 'js' %}
-    </body>
-</html>
-```
-
-## `urls.py`
-
-Adjust `~/mysite/mysite/urls.py` to serve the `base.html` template:
-
-```py
-from django.contrib import admin
-from django.urls import path
-from django.views.generic import TemplateView
-
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", TemplateView.as_view(template_name="base.html"), name="app"),
-]
-```
-
-## `settings.py`
-
-In `~/mysite/mysite/settings.py`:
-
-Add `django-webpack-loader` to installed applications:
-
-```python
-INSTALLED_APPS = [
-    ...
-    "webpack_loader",
-]
-```
-
-Than, assuming that `BASE_DIR` is a `pathlib.Path` object (you may need to
-adjust the syntax if you use `os.path` instead), tell Django where to
-look for our new `base.html` template:
-
-```python
-TEMPLATES = [
-    {
-        ...
-        'DIRS': [ BASE_DIR / "templates" ],
-        ...
-    },
-]
-```
-
-Also add a `WEBPACK_LOADER` environment variable containing, among
-other settings, the path to the `webpack-stats.json` file:
-
-```python
-FRONTEND_DIR = BASE_DIR / "frontend"
-WEBPACK_LOADER = {
-  'DEFAULT': {
-    'CACHE': not DEBUG,
-    'STATS_FILE': FRONTEND_DIR / 'webpack-stats.json',
-    'POLL_INTERVAL': 0.1,
-    'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-  }
-}
-```
-
-See also [django-webpack-loader's
-documentation](https://github.com/django-webpack/django-webpack-loader#configuring-the-settings-file)
-for reference.
-
-# Build the Vue app
+## Build the Vue app
 
 First, update the `vue.config.js` file in the Vue app's directory
-(`~/mysite/frontend/`):
+(`~/mysite/frontend/`) to :
 
 ```js
-const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
+    ...
     publicPath: "/dist",
     outputDir: "./dist/",
-    chainWebpack: config => {
-        config.optimization.splitChunks(false)
-
-        config.plugin('BundleTracker').use(BundleTracker, [
-            {
-                filename: './webpack-stats.json'
-            }
-        ])
-
-    }
+    ...
 };
 ```
 
 Note that the value of `publicPath` will affect the routing and static
-files mappings (see: [below](#static-files-mappings)) -- in our example the Vue assets will be
-looked for in `username.pythonawhere.com/dist`, and the assets will be
-found in `~/mysite/frontend/dists`.
-
-Also `webpack-stats.json` file path must match the path provided in
-`WEBPACK_LOADER["STATS_FILE"]` in the `settings.py` file (see: [above](#settingspy)).
+files mappings (see: [below](#static-files-mappings)) -- in our
+example the Vue assets will be looked for in
+`username.pythonawhere.com/dist`, and the assets will be found in
+`~/mysite/frontend/dists`.
 
 See also the [Vue documentation](https://cli.vuejs.org/config/) for reference.
 
@@ -205,8 +94,9 @@ Then, still in `~/mysite/frontend`, run:
 npm run build
 ```
 
-The successful build should add `dist` directory and the
-`webpack-stats.js` file according to the configuration in the `vue.config.js`:
+The successful build should add `dist` directory according to the
+configuration in the `vue.config.js`, with `index.html` template
+inside:
 
 ```sh
 ~/mysite/frontend $ tree -I node_modules
@@ -221,7 +111,45 @@ The successful build should add `dist` directory and the
 │       ├── app.e82b6041.js
 │       └── app.e82b6041.js.map
 ...
-└── webpack-stats.js
+```
+
+## `urls.py`
+
+Adjust `~/mysite/mysite/urls.py` to serve the `base.html` template:
+
+```py
+from django.contrib import admin
+from django.urls import path, re_path
+from django.views.generic import TemplateView
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    # you can put the API endpoints here
+    ...
+    re_path("^.*$", TemplateView.as_view(template_name="index.html")),
+]
+```
+
+**Note**: the solution above, using `re_path` and a regex pattern for
+the url, assumes that all urls that are not caught by the previous urls
+(the admin one and, say, APIs) will be forward to Vue.
+
+## `settings.py`
+
+In `~/mysite/mysite/settings.py`:
+
+Than, assuming that `BASE_DIR` is a `pathlib.Path` object (you may need to
+adjust the syntax if you use `os.path` instead), tell Django where to
+look for Vue generated templates (`index.html` in our case):
+
+```python
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [ BASE_DIR / "frontend/dist" ],
+        ...
+    },
+]
 ```
 
 ## Static files mappings
