@@ -16,13 +16,12 @@ image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
 instructions. Also note that selenium will only work in tasks, web apps and
 consoles. It will not work in notebooks and over SSH.
 
-*If you're on the fishnchips system image*, you will need to update
-selenium for your account/virtualenv to 3.141.0. For example, if you're using
-Python 3.7, run this in a Bash console:
+*If you're on the fishnchips system image*, the latest version of selenium
+confirmed working (as of 2022-06-13) is `4.1.3`, and we recommend upgrading it
+for your account/virtualenv to this version. For example, if you're using Python
+3.7, run this in a Bash console:
 
-    pip3.7 install --user selenium==3.141.0
-
-Note that selenium>=4.0.0 won't work on PythonAnywhere right now.
+    pip3.7 install --user selenium==4.1.3
 
 You can run Selenium with Chrome using code like this:
 
