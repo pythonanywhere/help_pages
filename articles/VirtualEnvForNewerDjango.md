@@ -23,16 +23,16 @@ virtualenvs, each with its own versions of installed packages. On
 PythonAnywhere, this is a great way to use newer (or older) versions of
 software than the ones we have installed.
 
-One reason you might want to do this is to use a newer version of Django. For
-example (at the time of writing) our system default is 1.10, but the Django
-team had just released a point update to 1.10.2.  If you want to upgrade to
-that, or later to 1.11, a virtualenv makes it easy.
+One reason you might want to do this is to use a newer version of Django.  For
+example in current ["glastonbury" system image](https://www.pythonanywhere.com/batteries_included/) our system default is 3.2.3, 
+but the latest version released by Django Team (as of May 2022) is 4.0.4.  If you want to upgrade to
+that, a virtualenv makes it easy.
 
 *(If you're on our old
 [system image](https://www.pythonanywhere.com/batteries_included/), you'll be on an
 even earlier version of Django, so this guide is even more pertinent.)*
 
-
+***TIP: If you are on old system image, you may also want to [update it](https://help.pythonanywhere.com/pages/ChangingSystemImage)***
 
 ###Instructions
 
@@ -55,7 +55,7 @@ You may have noticed a *Virtualenv path* option. Let's go and create a virtualen
 
 Go to the "Consoles" tab and start a *Bash console*
 
-    14:50 ~ $ mkvirtualenv --python=python3.6 myproject
+    14:50 ~ $ mkvirtualenv --python=python3.9 myproject
 
 
 ***TIP: if you want to use Python 2 for your virtualenv, use `mkvirtualenv --python=python2.7 myproject`***

@@ -36,8 +36,8 @@ you use the [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
 extension, which works well in a multiprocessing environment like websites
 on our system.
 
-If you're not using Flask, or are just using the "raw" PyMongo API in Flask,
-there are a few extra parameters you need to to add to your call to
+If you're just using the "raw" PyMongo API, there are a few extra parameters
+you need to to add to your call to
 `pymongo.MongoClient`:
 
 
