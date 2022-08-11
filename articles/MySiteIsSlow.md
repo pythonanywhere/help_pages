@@ -120,7 +120,7 @@ def my_view_function(request):
 There are three nested for loops in there!  If you have lots of things and lots of widgets and lots of attributes, that could take a very long time to complete.
 
 
-* **TIP**: _Wherever you can, try to offload busy loops to the database.  The databse can search for things faster than you can in Python_
+* **TIP**: _Wherever you can, try to offload busy loops to the database.  The database can search for things faster than you can in Python_
 
 
 ### third party services, API calls, etc
