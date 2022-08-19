@@ -1,4 +1,3 @@
-
 <!--
 .. title: Using a virtualenv in an IPython notebook
 .. slug: IPythonNotebookVirtualenvs
@@ -33,7 +32,17 @@ Follow these steps:
         workon my-virtualenv-name  # activate your virtualenv, if you haven't already
         pip install jupyter==<jupyter version from above>
 
-3. You should now be able to see your kernel in the IPython notebook menu:
+3. If you're on the Haggis system image, run the following:
+
+        :::bash
+        ipython kernel install --name "venv-name" --user
+
+    The name that you give to the kernel can be anything as long as it only
+    contains ASCII letters and numbers and these separators: - . _ (hyphen,
+    period, and underscore)
+
+
+4. You should now be able to see your kernel in the IPython notebook menu:
    `Kernel -> Change kernel` and be able to switch to it (you may need to
    refresh the page before it appears in the list). IPython will remember
    which kernel to use for that notebook from then on.
