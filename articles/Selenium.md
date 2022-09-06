@@ -10,18 +10,30 @@
 .. type: text
 -->
 
-*** NOTE *** These instructions are for the system image **fishnchips** or later.
+*** NOTE *** These instructions are for the system image **fishnchips, glastonbury or haggis**.
 If you have an older system image, you will need to [update your system
 image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
 instructions. Also note that selenium will only work in tasks, web apps and
 consoles. It will not work in notebooks and over SSH.
 
-*If you're on the fishnchips system image*, the latest version of selenium
-confirmed working (as of 2022-06-13) is `4.1.3`, and we recommend upgrading it
-for your account/virtualenv to this version. For example, if you're using Python
-3.7, run this in a Bash console:
+The latest versions of selenium confirmed to be working are:
 
+| System Image | Version | Confirmed  |
+|--------------|---------|------------|
+| fishnchips   | 4.1.3   | 2022-09-06 |
+| glastonbury  | 4.4.3   | 2022-09-06 |
+| fishnchips   | 4.4.3   | 2022-09-06 |
+
+<br />
+
+We recommend upgrading selenium for your account/virtualenv to this version. 
+For example, if you're using Python 3.7, run this in a Bash console:
+
+
+```bash
     pip3.7 install --user selenium==4.1.3
+```
+
 
 You can run Selenium with Chrome using code like this:
 
