@@ -48,14 +48,15 @@ Because the pre-installed Python modules will be upgraded,
 the change might break any code you have that relies on the old
 installed versions.
 
-You can check what packages are installed in which system image [here](https://www.pythonanywhere.com/batteries_included/).
+You can check what packages are installed in which system
+image [here](https://www.pythonanywhere.com/batteries_included/).
 
 ### Virtualenvs
 
 Because of the changes to the point releases of Python
 (for example, 3.7.5 might be replaced with 3.7.10), any
-virtualenvs you have might break -- virtualenvs are not always 
-portable from one point release to another. You will need to 
+virtualenvs you have might break -- virtualenvs are not always
+portable from one point release to another. You will need to
 [rebuild](/pages/RebuildingVirtualenvs).
 
 ### Cached versions of `pip` and packages installed with `pip`
@@ -70,14 +71,14 @@ Along with system image each PythonAnywhere account has a set of
 default Python versions:
 
 * One of them is the default Python version used by `python` and
-`pip` in Bash consoles. (We are no longer forced to bind it to `python2.7` as 
-it was before glastonbury system image.)
+  `pip` in Bash consoles. (We are no longer forced to bind it to `python2.7` as
+  it was before glastonbury system image.)
 
 * Another one is the default Python 3 version used by `python3` and
-`pip3` in Bash consoles.
+  `pip3` in Bash consoles.
 
 * The third one is the default Python used when "Run" button in our
-in-browser editor is pressed.
+  in-browser editor is pressed.
 
 Each system image has a range of available Python versions.
 When one of those defaults is not available after the system
@@ -92,20 +93,22 @@ default "fishnchips" Python version.
 
 ### Available Python versions for system images
 
-|            |2.6|2.7|3.3|3.4|3.5|3.6|3.7|3.8|3.9|
-|------------|---|---|---|---|---|---|---|---|---|
-|classic     |  X|  X|  X|  X|  X|   |   |   |   |
-|dangermouse |   |  X|  X|  X|  X|  X|   |   |   |
-|earlgrey    |   |  X|   |  X|  X|  X|  X|   |   |
-|fishnchips  |   |  X|   |   |  X|  X|  X|  X|   |
-|glastonbury |   |  X|   |   |  X|  X|  X|  X|  X|
-
+|             |2.6|2.7|3.3|3.4|3.5|3.6|3.7|3.8|3.9|3.10|
+|-------------|---|---|---|---|---|---|---|---|---|----|
+| classic     | X | X | X | X | X |   |   |   |   |    |
+| dangermouse |   | X | X | X | X | X |   |   |   |    |
+| earlgrey    |   | X |   | X | X | X | X |   |   |    |
+| fishnchips  |   | X |   |   | X | X | X | X |   |    |
+| glastonbury |   | X |   |   | X | X | X | X | X |    |
+| haggis      |   | X |   |   |   | X | X | X | X | X  |
 
 ### Base Ubuntu version for each system image
-|            |Ubuntu version|
-|------------|--------------|
-|classic     | 14.04        |
-|dangermouse | 14.04        |
-|earlgrey    | 16.04        |
-|fishnchips  | 16.04        |
-|glastonbury | 20.04        |
+
+|             |Ubuntu version|
+|-------------|--------------|
+| classic     | 14.04        |
+| dangermouse | 14.04        |
+| earlgrey    | 16.04        |
+| fishnchips  | 16.04        |
+| glastonbury | 20.04        |
+| haggis      | 20.04        |
