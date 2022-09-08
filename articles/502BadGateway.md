@@ -52,13 +52,6 @@ But if you try and call app.run(), it conflicts with our web worker and breaks
 stuff.   Similarly if you try and manually bind to a local port.
 
 
-## Python 3.7 and Django 3 on the Earlgrey system image
-There is a bug in Python 3.7.0 (which is the version that the Earlgrey system
-image has installed) that prevents Django 3 admin pages from working. If you
-use Django 3 and Python 3.7 on Earlgrey, then your web app will crash whenever
-you visit an admin page.
-
-
 ## Don't call django.setup in your web app code
 `django.setup` is a function that is used to initialise Django in a script so
 that you can use Django features in it. It re-initialises the logging
@@ -82,6 +75,12 @@ a worker was killed taking too long to process a request.
 If you need to do some heavy processing or number crunching in your web app,
 check out the tips [here](/pages/AsyncInWebApps)
 
+
+## Python 3.7 and Django 3 on the Earlgrey system image
+There is a bug in Python 3.7.0 (which is the version that the Earlgrey system
+image has installed) that prevents Django 3 admin pages from working. If you
+use Django 3 and Python 3.7 on Earlgrey, then your web app will crash whenever
+you visit an admin page.
 
 
 ## Contact support if nothing else works
