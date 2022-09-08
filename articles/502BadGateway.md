@@ -62,7 +62,7 @@ large number of log lines like this in your server log:
     :::text
     --- Logging error ---
     Traceback (most recent call last):
-      File "/usr/lib/python3.8/logging/handlers.py", line 940, in emit#012    self.socket.sendto(msg, self.address)
+      File "/usr/lib/python3.10/logging/handlers.py", line 940, in emit#012    self.socket.sendto(msg, self.address)
     OSError: [Errno 9] Bad file descriptor
 
 

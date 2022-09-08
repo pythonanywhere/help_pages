@@ -27,7 +27,7 @@ table that looks like this:
 To set up an always-on task, you just need to enter the full command to run
 it into the input field -- for example,
 
-    python3.6 /home/yourusername/a-directory/a-script.py
+    python3.10 /home/yourusername/a-directory/a-script.py
 
 -- and click "Create".  It will appear in the table
 below, with a state of "Starting".   You can refresh the table using the icon
@@ -69,7 +69,7 @@ that in the always-on task "command" input would be this:
 If you use Python 3's built-in `venv` module -- that is, you did something like
 this to create it:
 
-    python3.6 -m venv my-env
+    python3.10 -m venv my-env
 
 ...and you use this to activate it:
 
@@ -95,7 +95,7 @@ If the error you see in the log is something like "permission denied", it's
 probably because you've entered the path to a Python script in the "Command"
 field instead of a command.   Remember, you need to specify
 
-    python3.6 /path/to/script.py
+    python3.10 /path/to/script.py
 
 ...rather than
 
@@ -118,7 +118,7 @@ The solution is to force Python to flush the output buffer after each print.
 
 In ***both Python 2 and 3*** you can launch the intepreter with an `-u` option:
 
-    python3.6 -u /path/to/script.py
+    python3.10 -u /path/to/script.py
 
 Alternatively, you can achieve that in code; in ***Python 3***, you simply add
 `flush=True` to your `print` statements -- for example, you would replace

@@ -17,7 +17,7 @@ There are two ways to fix this.
 The ugly/hacky way is to add a specific static files mapping pointing at the django admin css folder:
 
   * url: `/static/admin`
-  * path: `/usr/local/lib/python3.4/dist-packages/django/contrib/admin/static/admin/` (or the path to the same folder inside your virtualenv, if you're using one)
+  * path: `/usr/local/lib/python3.10/dist-packages/django/contrib/admin/static/admin/` (or the path to the same folder inside your virtualenv, if you're using one)
 
 But that's an ugly hack, and you'll soon run into problems with the rest of your CSS not loading.
 
