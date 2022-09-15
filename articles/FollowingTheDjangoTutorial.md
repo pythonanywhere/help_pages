@@ -14,7 +14,7 @@
 
 We &lt;3 Django at PythonAnywhere, we use it ourselves. Their tutorial is excellent, but there's a couple of small things that are different about the PythonAnywhere environment, compared to a regular PC.
 
-This guides pertains to the tutorial for Django 2.2: <https://docs.djangoproject.com/en/2.2/intro/tutorial01/>
+This guides pertains to the tutorial for Django 4.1: <https://docs.djangoproject.com/en/4.1/intro/tutorial01/>
 
 This document is not a replacement for the official django tutorial, instead, it's meant to be a companion guide -- the django tutorial is meant to be your primary guide, but when you read each section of the django tutorial, you should also take a look at the corresponding section notes in this guide, for additional instructions.
 
@@ -30,22 +30,22 @@ So we recommend you keep both the django tutorial and this page open side-by-sid
 
 The preinstalled versions of Django on PythonAnywhere are a little out of date, but you can use a *virtualenv* to install your own versions. We'll use a nifty helper tool called virtualenvwrapper. Open up a **Bash Console** and:
 
-    mkvirtualenv django2 --python=/usr/bin/python3.6
-    pip install django ## this may take a couple of minutes
+    mkvirtualenv django4 --python=/usr/bin/python3.10
+    pip install django
 
 
   * TIP: *if you see an error saying mkvirtualenv: command not found, check out [InstallingVirtualenvWrapper](/pages/InstallingVirtualenvWrapper)*.
 
-Once you've created your virtualenv, you'll be able to see that it's active because your command prompt, which normally says something like `17:18 ~ $` will get prefixed with a little `(django2)`, like this:
+Once you've created your virtualenv, you'll be able to see that it's active because your command prompt, which normally says something like `17:18 ~ $` will get prefixed with a little `(django4)`, like this:
 
-    (django2)17:18 ~ $
+    (django4)17:18 ~ $
 
 
 ***--&gt; Always make sure your virtualenv is active when working on the django tutorial***
 
 If you need to reactivate it later, maybe if you close your bash console and open a new one, the command is:
 
-    workon django2
+    workon django4
 
 
 It's probably a good idea to keep a bash console open at all times in one browser tab, with the virtualenv activated, so you can flick back and forth.
@@ -57,7 +57,7 @@ It's probably a good idea to keep a bash console open at all times in one browse
 The first command the tutorial asks you to run is to check the installed version:
 
     python -m django --version
-    # This should show something like 2.2.1.
+    # This should show something like 4.1.1.
     # If it shows anything else, you've probably forgotten to activate your virtualenv!
 
 
@@ -97,7 +97,7 @@ Let's take this step by step.
 
 First, to create a web app on PythonAnywhere, open up a new browser tab and go
 to our **Web** tab. Click **Add a new web app**, choose **Manual
-configuration** and then **Python 3.6**.
+configuration** and then **Python 3.10**.
 
 * *TIP: Make sure you choose "Manual configuration", not "Django" when creating your webapp. We need the manual option to make sure we get Django 2 from our virtualenv*
 

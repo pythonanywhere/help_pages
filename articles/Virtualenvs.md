@@ -36,26 +36,23 @@ We recommend using *virtualenvwrapper*, a handy command-line tool, to create you
 Specify which Python version to use for your virtualenv using the `--python` option, but note that it must match the version of Python you've chosen for your web app. So, to create a new Python 3.6 virtualenv, run this command:
 
 
-    $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.6
-
-...or similarly for Python 2.7:
-
-    $ mkvirtualenv myvirtualenv --python=/usr/bin/python2.7
+    $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.10
 
 You’ll see your virtualenv being created
 
 
-    Running virtualenv with interpreter /usr/bin/python3.6
-    Using base prefix '/usr'
-    New python executable in /home/myusername/.virtualenvs/myvirtualenv/bin/python3.6
-    Also creating executable in /home/myusername/.virtualenvs/myvirtualenv/bin/python
-    Installing setuptools, pip, wheel...done.
+    created virtual environment CPython3.10.5.final.0-64 in 18417ms
+      creator CPython3Posix(dest=/home/myusername/.virtualenvs/myvirtualenv, clear=False, no_vcs_ignore=False, global=False)
+      seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/myusername/.local/share/virtualenv)
+        added seed packages: pip==22.1.2, setuptools==62.6.0, wheel==0.37.1
+      activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/predeactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/postdeactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/preactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/postactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/get_env_details
-    
+
+  
     (myvirtualenv) $ which python
     /home/myusername/.virtualenvs/myvirtualenv/bin/python
 
@@ -108,8 +105,7 @@ Re-activate using `workon`:
     (myvirtualenv) $ which python
     /home/myusername/.virtualenvs/myvirtualenv/bin/python
     (myvirtualenv) $ python
-    Python 3.6.0 (default, Jan 13 2017, 00:00:00) 
-    [GCC 4.8.4] on linux
+    Python 3.10.5 (main, Jul 22 2022, 17:09:35) [GCC 9.4.0] on linux
     Type "help", "copyright", "credits" or "license" for more information.
     >>> 
     

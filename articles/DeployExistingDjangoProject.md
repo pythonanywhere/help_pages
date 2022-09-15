@@ -52,7 +52,7 @@ In your Bash console, create a virtualenv, naming it after your project, and
 choosing the version of Python you want to use:
 
 ```bash
-$ mkvirtualenv --python=/usr/bin/python3.8 mysite-virtualenv
+$ mkvirtualenv --python=/usr/bin/python3.10 mysite-virtualenv
 (mysite-virtualenv)$ pip install django
 # or, if you have a requirements.txt:
 (mysite-virtualenv)$ pip install -r requirements.txt

@@ -15,7 +15,7 @@
 There are 3 main things to do:
 
   * set `STATIC_ROOT` in settings.py
-  * run `python2.7 manage.py collectstatic` (or `python3.5` or `python3.6` as appropriate)
+  * run `python3.10 manage.py collectstatic` (or `python3.9` or `python3.8` as appropriate)
   * set up a Static Files entry on the PythonAnywhere Web tab.
 
 Optionally, you can also customise `STATIC_URL`, if you want to use a static URL prefix other than */static/*
