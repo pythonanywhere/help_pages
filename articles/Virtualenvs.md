@@ -33,7 +33,9 @@ Go to the **Consoles** tab and start a Bash console.
 
 We recommend using *virtualenvwrapper*, a handy command-line tool, to create your virtualenv.
 
-Specify which Python version to use for your virtualenv using the `--python` option, but note that it must match the version of Python you've chosen for your web app. So, to create a new Python 3.6 virtualenv, run this command:
+Specify which Python version to use for your virtualenv using the `--python`
+option, but note that it must match the version of Python you've chosen for your
+web app. So, to create a new Python 3.10 virtualenv, run this command:
 
 
     $ mkvirtualenv myvirtualenv --python=/usr/bin/python3.10
@@ -52,7 +54,7 @@ You’ll see your virtualenv being created
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/postactivate
     virtualenvwrapper.user_scripts creating /home/myusername/.virtualenvs/myvirtualenv/bin/get_env_details
 
-  
+
     (myvirtualenv) $ which python
     /home/myusername/.virtualenvs/myvirtualenv/bin/python
 
@@ -87,7 +89,7 @@ Install the required packages into your virtualenv using `pip`. You can just use
 ##Step 3: Configure your app to use this virtualenv
 
 
-Now that you have a virtualenv, and know its path, configure your app to use this virtualenv. 
+Now that you have a virtualenv, and know its path, configure your app to use this virtualenv.
 
 Go to the **Web** tab, and in the Virtualenv section, enter the path: `/home/myusername/.virtualenvs/myvirtualenv`
 
@@ -107,8 +109,8 @@ Re-activate using `workon`:
     (myvirtualenv) $ python
     Python 3.10.5 (main, Jul 22 2022, 17:09:35) [GCC 9.4.0] on linux
     Type "help", "copyright", "credits" or "license" for more information.
-    >>> 
-    
+    >>>
+
 To deactivate, use `deactivate`:
 
     (myvirtualenv) $ deactivate
