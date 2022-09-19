@@ -13,7 +13,7 @@ itsdangerous==2.0.1
 Jinja2==3.0.1
 livereload==2.6.3
 lxml==4.9.1
-Mako==1.1.4
+Mako==1.2.2
 Markdown==3.3.4
 MarkupSafe==2.0.1
 natsort==7.1.1
