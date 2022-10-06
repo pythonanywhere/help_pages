@@ -28,10 +28,11 @@ notify_outdated_conda: false
 ```
 
 This will do 2 things:
-* prevent the activattion `conda` base environment automatically each time
-you start a Bash console.
-* it will turn off upgrade notifications, because it is not possible for users
-to upgrade `conda` and attempts to do that will lead to confusing errors.
+
+  * prevent the activattion `conda` base environment automatically each time
+    you start a Bash console.
+  * it will turn off upgrade notifications, because it is not possible for users
+    to upgrade `conda` and attempts to do that will lead to confusing errors.
 
 
 # Initializing conda
