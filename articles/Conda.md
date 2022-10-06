@@ -27,12 +27,11 @@ auto_activate_base: false
 notify_outdated_conda: false
 ```
 
-That will prevent to activate `conda` base environment automatically each time
+This will do 2 things:
+* prevent the activattion `conda` base environment automatically each time
 you start a Bash console.
-
-Also, as it's not possible for users to upgrade `conda`, and attempts to do it
-could lead to confusing errors, we recommend switching off the upgrade
-notifications, too.
+* it will turn off upgrade notifications, because it is not possible for users
+to upgrade `conda` and attempts to do that will lead to confusing errors.
 
 
 # Initializing conda
@@ -49,10 +48,10 @@ You will need to start a new Bash console for this to have effect.
 # Creating an environment
 
 With conda initialized, you should have a `conda` command available in a Bash
-console.  To confirm it, just run it.
+console.  To confirm that it's working, just run it.
 
 As the `base` `conda` environment is read only, you need to create your own
-environment to be able to install packages to it.  For example, to create a new
+environment to be able to install packages into it.  For example, to create a new
 environment called `my_env` with `requests` installed, run:
 
 ```
@@ -72,15 +71,15 @@ further instructions:
 #     $ conda deactivate
 ```
 
-The environments will be created by default at `~/.conda/envs/`.
+By default, environments will be created in `~/.conda/envs/`.
 
 
 # Caveats and limitations
 
 ## Disk quota limitations
 
-Creating a new conda environment may take a substantial part of your disk quota,
-so it may require a paid account.
+Conda environments take a lot of disk space, so creating a new conda environment 
+may take a substantial part of your disk quota, so it may require a paid account.
 
 A tip: if you want to check how much disk space is used by your `conda`
 environments and packages, run `du -hs ~/.conda`.  To learn more about disk
