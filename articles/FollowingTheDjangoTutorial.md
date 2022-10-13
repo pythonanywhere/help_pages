@@ -56,9 +56,11 @@ It's probably a good idea to keep a bash console open at all times in one browse
 
 The first command the tutorial asks you to run is to check the installed version:
 
-    python -m django --version
-    # This should show something like 4.1.1.
-    # If it shows anything else, you've probably forgotten to activate your virtualenv!
+```sh
+python -m django --version
+# This should show something like 4.1.x
+# If it shows a version lower than 4.1, you've probably forgotten to activate your virtualenv!
+```
 
 
 
@@ -107,8 +109,8 @@ will allow you to easily hit reload on your web app, or find your error log, and
 things like that.
 
 Second, go to the **Virtualenv section** of your web app and enter the name of our virtualenv,
-**django2**.  When you click confirm, you should find completes to a full path like this:
-*/home/myusername/.virtualenvs/django2*.
+**django4**.  When you click confirm, you should find completes to a full path like this:
+*/home/myusername/.virtualenvs/django4*.
 
 Finally, your wsgi.py file is how we know what code to run for you. Find the
 link to **edit your wsgi file**, delete everything and replace it with this:
