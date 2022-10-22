@@ -15,7 +15,6 @@ In the Code section specify Source code and Working directory as `/home/username
 
 In the WSGI configuration file (`/var/www/username_pythonanywhere_com_wsgi.py`), add the following code
 
-    :::python
     import os
     import sys
     path = '/home/username/project_folder'
