@@ -12,13 +12,17 @@
 
 ## How do I delete my PythonAnywhere account?
 
-Just email us and we can delete all of your files and data from our system --
-we'll need to do a quick security check to make sure that it really is you and
-not a hacker spoofing emails from your address, though.
+Just email us at [usercare@anaconda.com](mailto:usercare@anaconda.com)
+and we can delete all of your files and data from our system -- we'll
+need to do a quick security check to make sure that it really is you
+and not a hacker spoofing emails from your address, though.
 
-* If your account is on our US system at `www.pythonanywhere.com`, email us
-  at [liveusercare@pythonanywhere.com](mailto:liveusercare@pythonanywhere.com)
-* If your account is on our EU system at `eu.pythonanywhere.com`, email us
-  at [euusercare@pythonanywhere.com](mailto:euusercare@pythonanywhere.com)
+If you want your request to be processed quickly and efficiently,
+write from the **email address** that you **registered your account**
+with, and use the following form:
 
+**Subject**: Delete account "your-username"
+
+**Body**: I request to permanently delete my PythonAnywhere account
+"your-username" with all its files and data.
 
