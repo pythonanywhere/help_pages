@@ -85,28 +85,26 @@ When one of those defaults is not available after the system
 image change it will be automatically set to the most recent available
 Python version.
 
-For example you might have system image set to "classic" with default
-`python3` set to `python3.3`. You update your system image to
-"fishnchips" in which Python 3.3 is not available any more. So your
-default `python3` is automatically set to `python3.8` which is the
-default "fishnchips" Python version.
+For example you might have your system image set to "glastonbury" with the default
+`python3` set to `python3.5`. You update your system image to
+"haggis" in which Python 3.5 is not available any more. So your
+default `python3` is automatically set to `python3.10` which is the
+default "haggis" Python version.
 
 ### Available Python versions for system images
 
-|             |2.6|2.7|3.3|3.4|3.5|3.6|3.7|3.8|3.9|3.10|
-|-------------|---|---|---|---|---|---|---|---|---|----|
-| classic     | X | X | X | X | X |   |   |   |   |    |
-| dangermouse |   | X | X | X | X | X |   |   |   |    |
-| earlgrey    |   | X |   | X | X | X | X |   |   |    |
-| fishnchips  |   | X |   |   | X | X | X | X |   |    |
-| glastonbury |   | X |   |   | X | X | X | X | X |    |
-| haggis      |   | X |   |   |   | X | X | X | X | X  |
+|             |2.7|3.3|3.4|3.5|3.6|3.7|3.8|3.9|3.10|
+|-------------|---|---|---|---|---|---|---|---|----|
+| dangermouse | X | X | X | X | X |   |   |   |    |
+| earlgrey    | X |   | X | X | X | X |   |   |    |
+| fishnchips  | X |   |   | X | X | X | X |   |    |
+| glastonbury | X |   |   | X | X | X | X | X |    |
+| haggis      | X |   |   |   | X | X | X | X | X  |
 
 ### Base Ubuntu version for each system image
 
 |             |Ubuntu version|
 |-------------|--------------|
-| classic     | 14.04        |
 | dangermouse | 14.04        |
 | earlgrey    | 16.04        |
 | fishnchips  | 16.04        |
