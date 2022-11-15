@@ -33,7 +33,7 @@ a MongoDB instance from [mLab](https://mlab.com/)
 provider you choose has the option to place your database in a specific Amazon Web
 Services Availability Zone, then putting it in:
 
-- `us-east-1`, if your account is on our **US** branch (you log in via [www.pythonanywhere.com](www.pythonanywhere.com))
-- `eu-central-1`, if your account is on our **EU** branch (you log in via [eu.pythonanywhere.com](eu.pythonanywhere.com))
+- `us-east-1`, if your account is on our **US** branch (you log in via [www.pythonanywhere.com](https://www.pythonanywhere.com))
+- `eu-central-1`, if your account is on our **EU** branch (you log in via [eu.pythonanywhere.com](https://eu.pythonanywhere.com))
 
 will put it very close to our servers and give the best performance.
