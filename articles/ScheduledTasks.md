@@ -1,4 +1,3 @@
-
 <!--
 .. title: Scheduled tasks
 .. slug: ScheduledTasks
@@ -11,63 +10,102 @@
 -->
 
 
-
 ## PythonAnywhere Scheduled Tasks
 
+Scheduled tasks provide the ability to run your code periodically at a set time.
+To set one up, go to the "Tasks" tab on your
+[Dashboard](https://www.pythonanywhere.com/dashboard/). Using the form at the top
+of the page:
 
-Go to the Tasks tab on your
-[Dashboard](https://www.pythonanywhere.com/dashboard/). From there you can set
-up tasks to run daily at a particular time of day, or — for paying customers —
-hourly at a particular number of minutes past the hour. It's rather like a
-simple version of Unix's cron utility.
+* In a free account, you can set up one task to run at a particular time every
+  day.  The task can run for up to two hours.
+* In a paid account, you can create up to 20 tasks, and they can either run at
+  a particular time every day, or every hour at a particular number of minutes
+  past the hour.  (The limit of 20 is "soft" -- if you need more, within reason,
+  then you can contact us to get it raised for your account.)  Each task can run for
+  up to 12 hours.
 
-
-## Scheduling Python scripts to run
-
-You can just enter the full path to your file, eg
-
-```
-/home/myusername/myproject/myscript.py
-```
-
-And it will be run using the scheduler's default Python version (currrently Python 2.7)
+The details of how to set the task up are below.
 
 
-## Specifying another Python version
+## Timing
 
-If you want to use a different version of Python, put a "hashbang" line at the
-start of your file — for example, starting your file with:
-
-    :::bash
-    #!/usr/bin/python3.10
-
-...will make it run using Python 3.10.  (the advantage of
-doing it this way is that the "run" button in the editor
-also takes into account hashbangs).
+Set the timing for the task using the fields at the start of the form.
 
 
-Alternatively, you can explicitly specify the python executable to use in the scheduled tasks page, so, instead of
+## Specifying what to run: the simple version
 
+The easiest way to specify the code to run is to enter the full path to your
+Python script:
 
 ```
 /home/myusername/myproject/myscript.py
 ```
 
-Use
+If you do that, it will be run using your account's default Python version
+(which you can specify on the "System image" tab of the "Account" page).
 
+
+## More advanced use
+
+If what you enter into the form is not a path to a Python script, the scheduler
+will treat it as a Bash command to run.  This makes it possible to configure
+things to run in a more detailed way:
+
+
+### Using a different Python version
+
+For example, if your default
+Python version is 3.10, but you want to run the script with 3.9, then you could
+just schedule this Bash command:
 
 ```
-python3.10 /home/myusername/myproject/myscript.py
+python3.9 /home/myusername/myproject/myscript.py
+```
+
+### Passing in command-line arguments
+
+If your script takes command-line arguments, you can pass them in.  When doing
+this, you'll need
+to specify the Python command to use, so you could use an explicit version like
+in the example above, but you can also specify the default Python version just
+by using the `python` command:
+
+```
+python /home/myusername/myproject/myscript.py arg1 arg2 arg3
 ```
 
 
+### Using a virtualenv
 
-## Using a virtualenv
+Bash commands can be comprised of several sub-commands, which can be run in
+sequence by separating them with `&&`, so you could run a script using the
+virtualenv called `myenv` like this:
 
-See the article called [How do I run a scheduled task inside a virtualenv](/pages/VirtualEnvInScheduledTasks)
+```
+source virtualenvwrapper.sh && workon myenv && python /home/myusername/myproject/myscript.py
+```
+
+### Running non-Python scripts
+
+If you have a script that is written in a different language to Python, you
+can schedule it so long as Bash recognises it as executable.  There are two
+things you need to do to achieve that:
+
+1. Include a ['hashbang'](https://en.wikipedia.org/wiki/Shebang_(Unix)) at the
+   start of the file.  For example, if your script is a series of Bash commands,
+   the very first line would be `#!/bin/bash`
+2. Make sure that has execute permission.  You can use the Bash `chmod` command
+   for that -- for example:
+
+```
+chmod +x /home/myusername/myproject/myscript.sh
+```
 
 
-## Make sure you take account of the working directory
+## Common issues
+
+### Make sure you take account of the working directory
 
 This can easily trip you up -- if you access another file in your script (that is, you
 open it for reading or writing -- not if you `import` code from it), you need to
@@ -104,17 +142,4 @@ directory as your script, then this code changes the above example to make that 
         data = f.read()
 
 (Don't forget to `import os` at the top of your file if you use that code!)
-
-
-## Non-Python scripts
-
-Non-Python scripts will have to have executable permissions set; to do this, run the following
-command from a bash console
-
-    :::bash
-    chmod +x /path/to/your.file
-
-Then use the same hash-bang syntax to specify which interpreter to
-use — eg. #!/bin/bash.
-
 
