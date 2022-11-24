@@ -283,9 +283,8 @@ Databases:
 
 Scheduled tasks (similar to cron):
 
-  * [Using the "Schedule" tab](/pages/ScheduledTasks)
-  * [Can I pass command-line arguments and parameters to my scheduled tasks?](/pages/ScheduledTaskParameters)
-  * [How do I run a scheduled task inside a virtualenv](/pages/VirtualEnvInScheduledTasks)
+  * [Setting up scheduled tasks](/pages/ScheduledTasks)
+
 
 Other Languages:
 

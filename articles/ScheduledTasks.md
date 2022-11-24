@@ -21,11 +21,11 @@ of the page:
   day.  The task can run for up to two hours.
 * In a paid account, you can create up to 20 tasks, and they can either run at
   a particular time every day, or every hour at a particular number of minutes
-  past the hour.  (The limit of 20 is "soft" -- if you need more, within reason,
-  then you can contact us to get it raised for your account.)  Each task can run for
-  up to 12 hours.
+  past the hour.  Each task can run for
+  up to 12 hours.  (The limit of 20 tasks is "soft" -- if you need more, within reason,
+  then you can contact us to get it raised for your account.)
 
-The details of how to set the task up are below.
+The details of how to set a task up are below.
 
 
 ## Timing
@@ -93,14 +93,17 @@ can schedule it so long as Bash recognises it as executable.  There are two
 things you need to do to achieve that:
 
 1. Include a ['hashbang'](https://en.wikipedia.org/wiki/Shebang_(Unix)) at the
-   start of the file.  For example, if your script is a series of Bash commands,
-   the very first line would be `#!/bin/bash`
+   start of the file to tell Bash which interpreter to us.  For example, if your script is written in Ruby,
+   the very first line would be `#!/usr/bin/ruby`
 2. Make sure that has execute permission.  You can use the Bash `chmod` command
    for that -- for example:
 
 ```
-chmod +x /home/myusername/myproject/myscript.sh
+chmod +x /home/myusername/myproject/myscript.rb
 ```
+
+(At a rather meta level, you could also schedule a Bash script that way by specifying
+`/bin/bash` in the hashbang.)
 
 
 ## Common issues
