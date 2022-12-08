@@ -57,12 +57,12 @@ In order to completely secure the connection between Cloudflare and your site
 running on PythonAnywhere, they will provide you with what they call an "origin"
 certificate, and its associated private key.  You can upload that in the "HTTPS
 certificate" part of the "Security" section of the "Web" page on PythonAnywhere.
-It is a *Custom* certificate; the "Auto-renewed Let's Encrypt certificate" system
+It is a "Custom" certificate; the "Auto-renewed Let's Encrypt certificate" system
 won't work with Cloudflare.
 
 > Note: you will get a warning saying something like "Mismatch between
 > certificate Common Name (CloudFlare Origin Certificate) and webapp
-> (www.yourdomain.com).  This is a similar issue to the CNAME warning above, and
+> (www.yourdomain.com)".  This is a similar issue to the CNAME warning above, and
 > is also something you can ignore.
 
 
