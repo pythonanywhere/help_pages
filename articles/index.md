@@ -198,6 +198,7 @@ Here are some guides for some of the common things people want to do:
   * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
   * Machine learning: [what to do if your website using Keras, TensorFlow or PyTorch doesn't work](/pages/MachineLearningInWebsiteCode)
   * [Fonts](/pages/Fonts)
+  * [Using Cloudflare with PythonAnywhere](/pages/Cloudflare)
 
 
 And here's some very brief FAQ answers about common requests:
