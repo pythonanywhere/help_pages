@@ -25,6 +25,11 @@ Or maybe:
 IOError : No such file or directory
 ```
 
+Or:
+
+```text
+FileNotFoundError: [Errno 2] No such file or directory: 'myfile.txt'
+```
 
 Are you saying something like: "Curses!  It works on my machine?"?
 
@@ -46,9 +51,9 @@ And not just *myfile.txt*.
 
 
 ```python
-import os
-THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-my_file = os.path.join(THIS_FOLDER, 'myfile.txt')
+from pathlib import Path
+THIS_FOLDER = Path(__file__).parent.resolve()
+my_file = THIS_FOLDER / "myfile.txt"
 ```
 
 code like this, based on deriving the current path from Python's magic
