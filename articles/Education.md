@@ -122,6 +122,7 @@ can use a Bash for loop and a wildcard.  Here's an example, which assumes that
 the teacher's username is `theteacher` -- it would copy the files `script.py` and
 `db.sqlite3` from the teacher's home directory into every student's home directory:
 
+    shopt -s extglob
     for homedir in /home/!(theteacher); do
         cp ~/script.py $homedir
         cp ~/db.sqlite3 $homedir
