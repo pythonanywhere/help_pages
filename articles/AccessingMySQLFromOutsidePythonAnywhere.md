@@ -27,10 +27,10 @@ the SSH hostname for your account:
 
 Note the difference in hostnames for both SSH and MySQL:
 
-| Hostname  | SSH | MySQL | 
+| Hostname  | SSH | MySQL |
 |--|--|--|
 | Global-US | `ssh.pythonanywhere.com` | *username*`.mysql.pythonanywhere-services.com` |
-| EU | `ssh.eu.pythonanywhere.com` | *username*`.mysql.eu.pythonanywhere-services.com` | 
+| EU | `ssh.eu.pythonanywhere.com` | *username*`.mysql.eu.pythonanywhere-services.com` |
 
 Armed with that, you can do one of the following:
 
@@ -53,7 +53,12 @@ If you're running MySQL Workbench, you can configure it with settings like this 
 
 * You may also need to allow ssh login based management as one of the mysql workbench options under *server connections -> remote management*.
 
-* It's also a good idea to set the *Edit -> Preferences -> SQL Editor -> DBMS_Connection keep alive interval* setting to 200, to avoid any "lost connection" issues due to our 5-minute connection timeout.
+* It's also a good idea to set the *Edit -> Preferences -> SQL Editor -> DBMS_Connection keep alive interval* setting to
+  200, to avoid any "lost connection" issues due to our 5-minute connection timeout.
+
+* If you're running really long-running commands (for example, dumps of large tables) and you get client-side timeouts,
+  you can also set *Edit → Preferences → SQL Editor → DBMS connection read time out (in seconds)*, which has a default of
+  600, to something larger, like 6000.
 
 
 ## DBeaver
