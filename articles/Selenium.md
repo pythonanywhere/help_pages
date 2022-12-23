@@ -22,7 +22,7 @@ The latest versions of selenium confirmed to be working are:
 |--------------|---------|------------|
 | fishnchips   | 4.1.3   | 2022-09-06 |
 | glastonbury  | 4.4.3   | 2022-09-06 |
-| fishnchips   | 4.4.3   | 2022-09-06 |
+| haggis       | 4.7.2   | 2022-12-23 |
 
 <br />
 
