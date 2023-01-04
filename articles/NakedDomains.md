@@ -110,11 +110,9 @@ some time.
 
 ### HTTPS redirection
 
-There's also a new free service from
+There's also a "low-cost single domain plan" service from
 [NakedSSL](https://www.nakedssl.com/) which can handle HTTPS redirection -- that
-is, from `https://yourdomain.com` to `https://www.yourdomain.com`, which we
-think is unique to them.  Because it's new, we can't recommend it unreservedly,
-but they seem pretty solid to us so far :-)
+is, from `https://yourdomain.com` to `https://www.yourdomain.com`.
 
 
 ## Solution 2: Set up (and pay for) a separate web app for your naked domain.
