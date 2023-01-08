@@ -135,7 +135,7 @@ Save the file, then go back to the **Web** tab and hit the **Reload** button. No
 
 #### fixing the DisallowedHost error
 
-If you try and click through to yoru site now, you will see an error page (`Invalid HTTP_HOST header`) instead of the Django welcome page. This is because your page is on the internet, and is access via the url/domain that you just setup (eg. `myusername.pythonanywhere.com`) is different from running a server locally and accessing it locally.
+If you try and click through to your site now, you will see an error page (`Invalid HTTP_HOST header`) instead of the Django welcome page. This is because your page is on the internet, and is access via the url/domain that you just setup (eg. `myusername.pythonanywhere.com`) is different from running a server locally and accessing it locally.
 
 You will need to tell Django what site it's processing requests for by going to
 the **Files** tab, and editing `mysite/settings.py`. Find `ALLOWED_HOSTS` in
