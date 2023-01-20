@@ -86,6 +86,14 @@ virtualenv called `myenv` like this:
 source virtualenvwrapper.sh && workon myenv && python /home/myusername/myproject/myscript.py
 ```
 
+Alternatively, you can use path to the `python` executable from the virtualenv.
+To get the path, run `which python` command in a Bash console, *when the venv is
+activated*.  Then use this path in the task's command, like:
+
+```
+/path/to/venv/bin/python /home/myusername/myproject/myscript.py
+```
+
 ### Running non-Python scripts
 
 If you have a script that is written in a different language to Python, you
