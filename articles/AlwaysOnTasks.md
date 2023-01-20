@@ -50,7 +50,8 @@ and the last one deletes it.
 
 ## Using virtualenvs in always-on tasks
 
-If you want to use a virtualenv for your task, there are two possibilities:
+If you want to use a virtualenv for your task, there are (at least) three
+possibilities:
 
 ### If you use virtualenvwrapper
 
@@ -61,7 +62,7 @@ too.   Let's say that your virtualenv is called `my-env` and you want to run the
 script located at `/home/yourusername/something/script.py` -- the command to do
 that in the always-on task "command" input would be this:
 
-    workon my-env && python /home/yourusername/something/script.py
+    source virtualenvwrapper.sh && workon my-env && python /home/yourusername/something/script.py
 
 
 ### If you use the venv module
@@ -81,6 +82,14 @@ script located at `/home/yourusername/something/script.py` -- the command to do
 that in the always-on task "command" input would be this:
 
     source /home/yourusername/my-env/bin/activate && python /home/yourusername/something/script.py
+
+### Use `python` from the venv directly
+
+Alternatively, you can use path to the `python` executable from the virtualenv.
+To get the path, run `which python` command in a Bash console, *when the venv is
+activated*.  Then use this path in the task's command, like:
+
+    /path/to/venv/bin/python /home/myusername/myproject/myscript.py
 
 
 ## Debugging always-on tasks
