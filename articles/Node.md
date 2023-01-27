@@ -16,7 +16,8 @@ First download the git repo
 
     git clone --depth 1 https://github.com/creationix/nvm.git
 
-(We recommend a shallow clone to avoid cloning the whole `nvm` git history. With the `--depth 1`option we instruct `git` to copy only the latest revision of the repo, which will take considerably less disk space.)
+(We recommend a shallow clone to avoid cloning the whole `nvm` git history. With the `--depth 1`option we instruct `git`
+to copy only the latest revision of the repo, which will take considerably less disk space.)
 
 Now hook up your shell to use nvm
 
@@ -27,15 +28,16 @@ by running this Bash command (once only):
 
     echo 'source ~/nvm/nvm.sh' >> ~/.bashrc
 
-You can now do a `nvm ls-remote` to see what versions of node are available, and then install them.  Here's how you'd install v6.11.4 for example:
+You can now do a `nvm ls-remote` to see what versions of node are available, and then install them. Here's how you'd
+install v18.12.1 for example:
 
     nvm ls-remote
     #...
-    nvm install v14.16.0
+    nvm install v18.12.1
 
-You can run `nvm use v14.16.0` to use the new node. To set that as default, set up an nvm alias:
+You can run `nvm use v18.12.1` to use the new node. To set that as default, set up an nvm alias:
 
-    nvm alias default v14.16.0
+    nvm alias default v18.12.1
 
 This will also solve any permission problems involved with installing with `npm
 install --global` -- it will work without needing to specify a prefix.
