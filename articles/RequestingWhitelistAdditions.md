@@ -25,11 +25,14 @@ payment details -- so they have unrestricted Internet access.
 We only whitelist sites that have an official, public, documented API -- ie, sites
 that are designed and intended for machine consumption rather than human consumption.
 
-If you would like us to whitelist a site, send us an email or feedback request, including:
+If you would like us to whitelist a site, you can submit a request [on this page](https://support.anaconda.com/hc/en-us/requests/new);
+select the "Anaconda Notebooks/PythonAnywhere Allow List Request" option.  You
+will need to provide:
 
-* a link to the API documentation. Particularly to documentation that states
+* Your email address, so that we can let you know when it's done, or if we have questions.
+* A link to the API documentation. Particularly to documentation that states
   the domain where the API is published.
-* the domain or domains (including subdomains) that the API is served from.
+* The domain or domains (including subdomains) that the API is served from.
 
 
 ## GitLab instances
