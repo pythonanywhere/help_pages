@@ -1,4 +1,4 @@
-Custom<!--
+<!--
 .. title: SMTP for free users
 .. slug: SMTPForFreeUsers
 .. date: 2015-05-13 14:35:28 UTC+01:00
@@ -10,7 +10,7 @@ Custom<!--
 -->
 
 Free users are restricted to HTTP/HTTPS only, to a
-[whitelist of sites](https://www.pythonanywhere.com/whitelist/). Because
+[allowlist of sites](https://www.pythonanywhere.com/whitelist/). Because
 most email services work over SMTP, which is not HTTP or HTTPS, that means you
 cannot normally use SMTP on Free accounts.  Here are some solutions to work around
 that.
@@ -20,7 +20,7 @@ that.
 
 Services like [Mailgun](http://mailgun.com/) or
 [sendgrid](https://sendgrid.com/) allow you to send email using HTTP(S)
-requests, and their API endpoint are on our whitelist.  This is the most
+requests, and their API endpoint are on our allowlist.  This is the most
 reliable option, and works well so long as your code isn't limited to using
 SMTP.
 

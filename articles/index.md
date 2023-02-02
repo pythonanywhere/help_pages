@@ -194,7 +194,7 @@ Here are some guides for some of the common things people want to do:
   * [Can I use Pygame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
   * [Using Selenium](/pages/selenium)
   * [Does PythonAnywhere have an API?](/pages/API)
-  * [What do I do if a server I want to connect to has a whitelist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalWhitelists)
+  * [What do I do if a server I want to connect to has an allowlist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalAllowlists)
   * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
   * Machine learning: [what to do if your website using Keras, TensorFlow or PyTorch doesn't work](/pages/MachineLearningInWebsiteCode)
   * [Fonts](/pages/Fonts)

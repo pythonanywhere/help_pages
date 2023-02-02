@@ -14,7 +14,7 @@
 If you have an older system image, you will need to [update your system
 image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
 instructions. Also note that selenium will only work in tasks, web apps and
-consoles. It will also work in notebooks, but only on **haggis**. It will not work over SSH. 
+consoles. It will also work in notebooks, but only on **haggis**. It will not work over SSH.
 
 The latest versions of selenium confirmed to be working are:
 
@@ -26,7 +26,7 @@ The latest versions of selenium confirmed to be working are:
 
 <br />
 
-We recommend upgrading selenium for your account/virtualenv to this version. 
+We recommend upgrading selenium for your account/virtualenv to this version.
 For example, if you're using Python 3.7, run this in a Bash console:
 
 
@@ -63,7 +63,7 @@ and the Tasks page to manually find and kill any leftover Chrome processes.
 ## Paid account may be required
 
 Free users are currently restricted to a
-[whitelist](https://www.pythonanywhere.com/whitelist/)
+[allowlist](https://www.pythonanywhere.com/whitelist/)
 of sites.  If you want to use Selenium to talk to a site
 that's not on the list, you'll need to upgrade to a paid
 account.

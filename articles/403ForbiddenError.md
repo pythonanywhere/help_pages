@@ -15,7 +15,7 @@
 ## Why do I get a "403 Forbidden" or "[Errno 111] Connection refused" error when accessing a website from PythonAnywhere?
 
 
-Free accounts' internet access goes via a proxy "whitelist". [Here is the list
+Free accounts' internet access goes via a proxy "allowlist". [Here is the list
 of sites currently allowed](https://www.pythonanywhere.com/whitelist/).
 
 We operate this to prevent malicious users from using our site to hack into and
@@ -35,7 +35,7 @@ with the project about proxy support.
 
 ## Proxy Details
 
-In order to make a connection to a whitelisted site, you will need to connect
+In order to make a connection to a site that is on the allowlist, you will need to connect
 through our proxy server. This is an HTTP proxy at `proxy.server:3128`. Most
 Python libraries recognise and use the setting that we supply (for
 instance, with `requests`, you don't need to do anything special), others need
@@ -53,7 +53,7 @@ After you upgrade you'll need to kill any old consoles and start new ones to get
 new Internet settings.  You'll also need to restart any webapps and scheduled tasks.
 
 
-## Requesting an addition to the whitelist
+## Requesting an addition to the allowlist
 
-See [this page](/pages/RequestingWhitelistAdditions/)
+See [this page](/pages/RequestingAllowlistAdditions/)
 

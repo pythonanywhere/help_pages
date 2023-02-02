@@ -115,12 +115,12 @@ DSN to the one you put in square brackes in `odbc.ini`.  For example:
 
 ### Static IPs
 
-Some database-in-the-cloud providers expect you to set up a whitelist containing
+Some database-in-the-cloud providers expect you to set up an allowlist containing
 all of the IP addresses that you expect to connect to your database from.  This
 can be problematic because PythonAnywhere code can run on different machines
 with different IP addresses.
 
-[This page has some suggestions on what to do](/pages/StaticIPForExternalWhitelists)
+[This page has some suggestions on what to do](/pages/StaticIPForExternalAllowlists)
 
 
 
