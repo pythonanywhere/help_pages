@@ -57,7 +57,9 @@ Because of the changes to the point releases of Python
 (for example, 3.7.5 might be replaced with 3.7.10), any
 virtualenvs you have might break -- virtualenvs are not always
 portable from one point release to another. You will need to
-[rebuild](/pages/RebuildingVirtualenvs).
+[rebuild](/pages/RebuildingVirtualenvs).  Also, *make sure* the Python
+version you were previously using is available on the new system image
+(see **Available Python versions** table below).
 
 ### Cached versions of `pip` and packages installed with `pip`
 
