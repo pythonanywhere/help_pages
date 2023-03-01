@@ -102,7 +102,7 @@ default "haggis" Python version.
 
 ### Python packages installed
 
-We don not preinstall packages into all Python version in all system images.
+We don not preinstall packages into all Python versions in all system images.
 You can check what packages are installed in which system
 image [here](https://www.pythonanywhere.com/batteries_included/).
 
