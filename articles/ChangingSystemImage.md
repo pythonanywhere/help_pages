@@ -48,9 +48,6 @@ Because the pre-installed Python modules will be upgraded,
 the change might break any code you have that relies on the old
 installed versions.
 
-You can check what packages are installed in which system
-image [here](https://www.pythonanywhere.com/batteries_included/).
-
 ### Virtualenvs
 
 Because of the changes to the point releases of Python
@@ -102,6 +99,12 @@ default "haggis" Python version.
 | fishnchips  | X |   |   | X | X | X | X |   |    |
 | glastonbury | X |   |   | X | X | X | X | X |    |
 | haggis      | X |   |   |   | X | X | X | X | X  |
+
+### Python packages installed
+
+We don not preinstall packages into all Python version in all system images.
+You can check what packages are installed in which system
+image [here](https://www.pythonanywhere.com/batteries_included/).
 
 ### Base Ubuntu version for each system image
 
