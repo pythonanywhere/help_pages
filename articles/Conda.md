@@ -14,6 +14,8 @@
 **Warning: Although it is possible to use `conda` on PythonAnywhere, it's still
 an experimental feature.**
 
+** Conda is only available in the haggis system image and more recent ones **
+
 
 # Creating the `.condarc` (optional)
 
