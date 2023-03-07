@@ -70,8 +70,9 @@ Along with system image each PythonAnywhere account has a set of
 default Python versions:
 
 * One of them is the default Python version used by `python` and
-  `pip` in Bash consoles. (We are no longer forced to bind it to `python2.7` as
-  it was before glastonbury system image.)
+  `pip` in Bash consoles. (If your system image is "glastonbury" or older, these
+  must be `python2.7` because the older operating system that those images use
+  require it to be set up that way.)
 
 * Another one is the default Python 3 version used by `python3` and
   `pip3` in Bash consoles.
@@ -92,13 +93,12 @@ default "haggis" Python version.
 
 ### Available Python versions for system images
 
-|             |2.7|3.3|3.4|3.5|3.6|3.7|3.8|3.9|3.10|
-|-------------|---|---|---|---|---|---|---|---|----|
-| dangermouse | X | X | X | X | X |   |   |   |    |
-| earlgrey    | X |   | X | X | X | X |   |   |    |
-| fishnchips  | X |   |   | X | X | X | X |   |    |
-| glastonbury | X |   |   | X | X | X | X | X |    |
-| haggis      | X |   |   |   | X | X | X | X | X  |
+|             |2.7|3.4|3.5|3.6|3.7|3.8|3.9|3.10|
+|-------------|---|---|---|---|---|---|---|----|
+| earlgrey    | X | X | X | X | X |   |   |    |
+| fishnchips  | X |   | X | X | X | X |   |    |
+| glastonbury | X |   | X | X | X | X | X |    |
+| haggis      | X |   |   | X | X | X | X | X  |
 
 ### Python packages installed
 
@@ -110,7 +110,6 @@ image [here](https://www.pythonanywhere.com/batteries_included/).
 
 |             |Ubuntu version|
 |-------------|--------------|
-| dangermouse | 14.04        |
 | earlgrey    | 16.04        |
 | fishnchips  | 16.04        |
 | glastonbury | 20.04        |
