@@ -45,7 +45,7 @@ pip freeze > /tmp/requirements.txt
 Next, check which Python version you are using:
 
 ```bash
-python --version`
+python --version
 ```
 
 Finally, deactivate the virtualenv
