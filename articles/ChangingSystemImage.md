@@ -26,6 +26,9 @@ recent one will be at the bottom of the list.
 > You will not be able to switch to a system image that is older than the one
 > it had when you originally signed up.
 
+We recommend that you read the rest of this page (in particular the part about
+virtualenvs, if you are using them) before making the change.
+
 ## Using the new system image
 
 Once you have changed the image, code that is currently running will
@@ -54,7 +57,9 @@ Because of the changes to the point releases of Python
 (for example, 3.7.5 might be replaced with 3.7.10), any
 virtualenvs you have might break -- virtualenvs are not always
 portable from one point release to another. You will need to
-[rebuild](/pages/RebuildingVirtualenvs).  Also, *make sure* the Python
+[rebuild](/pages/RebuildingVirtualenvs), and please note that this will require
+you to gather information about the existing virtualenv before you change
+the system image.  Also, *make sure* the Python
 version you were previously using is available on the new system image
 (see **Available Python versions** table below).
 

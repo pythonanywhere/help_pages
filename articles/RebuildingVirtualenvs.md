@@ -1,4 +1,3 @@
-
 <!--
 .. title: Rebuilding a Virtualenv
 .. slug: RebuildingVirtualenvs
@@ -10,79 +9,94 @@
 .. type: text
 -->
 
+If you are doing a [system image upgrade](/pages/ChangingSystemImage), you are
+likely to need to rebuild your virtualenvs.
 
+There are two steps to this process; firstly, *before* you change the image, you
+will need to gather information about the virtualenv.  Then, *after* you have
+changed it, you will be able to build a new one using that information.
 
-*If you need to rebuild your virtualenv following a [system image upgrade](/pages/ChangingSystemImage)*
-
-
-The instructions below will contain instructions for people who use plain
+The instructions below contain instructions for people who use plain
 `virtualenv` and `virtualenvwrapper`; make sure that you use the appropriate ones
 for the kind of virtualenv you're using.  Use a **Bash console** to enter the
 commands.
 
-##1) Use a requirements.txt file to record what packages you're using
+##1) Before the system image change
 
-If you've already got a `requirements.txt` file, you can skip this bit, although
-you may want to just do the bit where we double-check what version of Python
-we're using.
+Firstly, activate the virtualenv.  If you're using virtualenvwrapper:
 
-  1. Activate your virtualenv, using `source /home/myusername/path/to/virtualenv/bin/activate` or, if you're using virtualenvwrapper `workon my-virtualenv-name`
-  2. Save the list of packages to a requirements file
-    * `pip freeze > /tmp/requirements.txt`
-  3. Double-check which version of python is in your virtualenv
-    * `python --version`
-  4. Deactivate the virtualenv
-    * `deactivate`
+```bash
+workon my-virtualenv-name
+```
+
+Or, if you're using a plain one:
+
+```bash
+source /home/myusername/path/to/virtualenv/bin/activate
+```
+
+Next, generate a `requirements.txt` file to record what packages you're using.
+If you've already got a file like that, you can skip this, but otherwise:
+
+```bash
+pip freeze > /tmp/requirements.txt
+```
+
+Next, check which Python version you are using:
+
+```bash
+python --version`
+```
+
+Finally, deactivate the virtualenv
+
+```bash
+deactivate
+```
+
+Now you have saved the information you need about the virtualenv, so you can
+change the system image.
 
 
+##2) After the system image change
 
-##2) Remove your old virtualenv
+We recommend that you create a new virtualenv with a different name, just in
+case something goes wrong in its creation.
 
-Using plain virtualenvs:
+The first step is to identify the version of Python that you are going to use; check
+that the version that you identified when gathering data about your old virtualenv
+is available in the new system image by looking at the table at the bottom of the
+[system images page](/pages/ChangingSystemImage).  Note that the version that you
+got above will be a full three-part version, for example 3.9.13.  The numbers after the second "."
+are not important here; for example, if you got 3.9.13, any image that supported 3.9 would be OK.
+
+Once you've determined the Python version, create the new virtualenv -- this will
+only need the first two digits from the version number, eg. 3.9.  If you're using
+virtualenvwrapper, create it like this:
 
     :::bash
-    rm -rf /home/myusername/path/to/virtualenv
+    mkvirtualenv --python=pythonX.Y my-new-virtualenv-name
 
-or, if using virtualenvwrapper:
-
-    :::bash
-    rmvirtualenv my-virtualenv-name
-
-
-##3) Create a new virtualenv
-
-Using the appropriate Python version in place of `X.Y`:
+Or, for a plain virtualenv:
 
     :::bash
-    virtualenv --python=pythonX.Y /home/myusername/path/to/virtualenv
+    virtualenv --python=pythonX.Y /home/myusername/path/to/new-virtualenv
 
-or, with virtualenvwrappper
-
-    :::bash
-    mkvirtualenv --python=pythonX.Y my-virtualenv-name
-
-
-
-##4) Reinstall your packages
-
-First ensure your new virtualenv is activated, then:
+Next, you can reinstall your packages.  Ensure your new virtualenv is activated, then:
 
     :::bash
     pip install -r /tmp/requirements.txt  # or path to your existing requirements.txt
 
+Once that's done, you can start using it.
 
-##5) Restart your web app.
-
-On the **Web** tab, use the "Reload" button to restart your website code using the
-new virtualenvs -- don't forget to do this for all of your websites if you have several.
-
-You will also need to restart any always-on tasks that use them --
-just disable them, then enable them again.  Scheduled tasks that use virtualenvs
-will pick them up the next time they run.
+If your virtualenv is used in a website, change the virtualenv setting on the "Web"
+page, and then click the green "Reload" button to restart the site using it.
+For always-on and scheduled tasks, change the command used to run them to pick up the new virtualenv
+-- you will normally have a `workon` command, or use a specific path to the Python
+interpreter to specify the virtualenv for those.
 
 
-##6) All done!
+##3) All done!
 
 We're here to help! If you get stuck or confused, just drop us a note at
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com), and we'll
-be happy to help.
+[support@pythonanywhere.com](mailto:support@pythonanywhere.com).
