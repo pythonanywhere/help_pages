@@ -35,7 +35,7 @@ configure it like this:
     app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_recycle' : 280}
     db.init_app(app)
 
-For older versions (before version 3), you use slightly different configuration:
+For older versions (before version 2.4.0), you use slightly different configuration:
 
     :::python
     app.config["SQLALCHEMY_POOL_RECYCLE"] = 280
