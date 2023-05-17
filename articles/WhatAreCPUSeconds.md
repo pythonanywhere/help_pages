@@ -13,7 +13,7 @@
 
 
 With every PythonAnywhere account, you get a number of CPU-seconds included each day.
-This applies to all code run through our in-browser consoles, and in your scheduled tasks.
+This applies to all code run through our in-browser consoles and in your scheduled tasks.
 It does not currently apply to your web apps.
 
 A CPU-second is one second of full-power usage on a server-grade CPU.
@@ -22,10 +22,10 @@ using any CPU power (maybe it's not running, or it's waiting for input or for a
 web request to return) then it's not using any CPU seconds.
 
 If you use up all of your included CPU seconds, don't worry! You can always buy
-more — and even if you don't, your processes will still run, in the tarpit.
+more — and even if you don't, your processes will still run in the tarpit.
 
 Tarpitted processes run at a lower priority than users who haven't hit their
-limit yet, but they get any spare capacity that we have on our server cluster,
+limit, but they get any spare capacity that we have on our server cluster,
 unless they're using gigabytes of RAM.
 
 Here's [more info about the tarpit](https://www.pythonanywhere.com/tarpit/).
