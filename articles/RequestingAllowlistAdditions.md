@@ -25,7 +25,8 @@ payment details -- so they have unrestricted Internet access.
 We only add sites to the list if they have an official, public, documented API -- ie, sites
 that are designed and intended for machine consumption rather than human consumption.
 
-If you would like us to allowlist a site, you can submit a request [on this page](https://support.anaconda.com/hc/en-us/requests/new);
+If you would like us to allowlist a site, you can submit a request 
+[on this page](https://support.anaconda.com/hc/en-us/requests/new?ticket_form_id=12899057104787);
 select the "Anaconda Notebooks/PythonAnywhere Allow List Request" option.  You
 will need to provide:
 
