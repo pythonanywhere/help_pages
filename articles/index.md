@@ -156,6 +156,7 @@ Some technical problems with consoles that sometimes come up:
 
 If you haven't already, the first step is to look in your **error
 log** -- you'll find a link to it on the **Web tab** ([account in US servers](https://www.pythonanywhere.com/web_app_setup/); [account in EU servers](https://eu.pythonanywhere.com/web_app_setup/)).
+There's [more information about the error log here](/pages/InternalServerError).
 
 Once you've done that, here are some solutions to common problems
 
