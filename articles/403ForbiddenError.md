@@ -15,7 +15,8 @@
 ## Why do I get a "403 Forbidden" or "[Errno 111] Connection refused" error when accessing a website from PythonAnywhere?
 
 
-Free accounts' internet access goes via a proxy "allowlist". [Here is the list
+Free accounts' internet access goes via a proxy "allowlist"; they can only access
+sites that are on that list.  [Here is the list
 of sites currently allowed](https://www.pythonanywhere.com/whitelist/).
 
 We operate this to prevent malicious users from using our site to hack into and
