@@ -13,7 +13,7 @@
 
 ## Why do we have an allowlist?
 
-Our allowlist is in place to prevent malicious users from using *free* accounts
+Our allowlist is in place to prevent malicious actors from using *free* accounts
 to hack into and generally spam other websites anonymously.
 
 It does not apply to paid accounts, as we can link them to real people via the
