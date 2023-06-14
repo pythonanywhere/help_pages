@@ -1,3 +1,13 @@
+<!--
+.. title: How do I use jam.py on PythonAnywhere?
+.. slug: Jampy
+.. date: 2015-05-13 14:35:28 UTC+01:00
+.. tags:
+.. category:
+.. link:
+.. description:
+.. type: text
+-->
 
 In the Application Builder, set the Persistent connection attribute in the Project parameters to false.
 
