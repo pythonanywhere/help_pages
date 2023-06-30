@@ -51,6 +51,8 @@ If you're running MySQL Workbench, you can configure it with settings like this 
 | Password:  | **your PythonAnywhere database password** |
 | Default Schema:  | **your database name, eg yourusername$mydatabase** |
 
+<img alt="MySQL Workspace connection dialog" src="/MySQL_workspace_login.png" class="bordered-image">
+
 * You may also need to allow ssh login based management as one of the mysql workbench options under *server connections -> remote management*.
 
 * It's also a good idea to set the *Edit -> Preferences -> SQL Editor -> DBMS_Connection keep alive interval* setting to
