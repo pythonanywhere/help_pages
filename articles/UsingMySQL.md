@@ -135,3 +135,24 @@ replacing placeholders in brackets respectively with your username and the datab
 
 See [this article on character sets](/pages/DatabaseCharacterSets).
 
+
+## Caveat: you don't have system administration privileges on PythonAnywhere
+
+If you see an error containing the message like this:
+
+    1227, 'Access denied; you need (at least one of) the SYSTEM_VARIABLES_ADMIN or SESSION_VARIABLES_ADMIN privileges
+
+it probably means that you try to use some settings that require 
+[system variable privileges](https://dev.mysql.com/doc/refman/8.0/en/system-variable-privileges.html)
+which PythonAnywhere users don't have.
+
+For example, if you use Django framework, such settings could look like:
+
+    :::python
+    DATABASES = {
+        ...
+        "OPTIONS": {
+            "init_command": "SET innodb_strict_mode=1",
+        },
+        ...
+    }
