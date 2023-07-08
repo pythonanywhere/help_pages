@@ -38,6 +38,12 @@ is being used in various places in your file storage:
 
     du -hs /tmp ~/.[!.]* ~/* | sort -h
 
+## How to find the amount of disk space used
+
+Number of bytes used in your file storage: 
+Open up a **Bash console** and use this command to find out how many bytes are used:
+
+    du -s -B 1 /tmp ~/.[!.]* ~/* | awk '{s+=$1}END{print s}'
 
 ## Cleaning up unused files
 
