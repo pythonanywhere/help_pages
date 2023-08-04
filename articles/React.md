@@ -163,6 +163,19 @@ def index():
     return app.send_static_file('index.html')
 ```
 
+You can also define a [catch-all endpoint for all routes](https://flask.palletsprojects.com/en/2.1.x/patterns/singlepageapplications/), which can be helpful when using react-router:
+
+```python
+from flask import Flask
+
+app = Flask(__name__, static_folder='app')
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    return app.send_static_file("index.html")
+```
+
 ## Static files mappings
 
 Adjust the static files mappings to serve the React ones (use your
