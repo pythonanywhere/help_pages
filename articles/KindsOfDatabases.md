@@ -25,7 +25,7 @@ if you're interested in it (or something else entirely), let us know!
 ### Connecting to external databases
 
 If you have a paid plan, you can connect to databases outside PythonAnywhere.  This
-means that you can get, say, a Redis instance from [Redis Labs](https://redislabs.com/),
+means that you can get, say, a Redis instance from [Redis](https://redis.com/),
 a MongoDB instance from [mLab](https://mlab.com/)
 (check out [this help page](/pages/MongoDB) for some hints about that), or a
 [Microsoft SQL Server](/pages/MSSQLServer) instance from
