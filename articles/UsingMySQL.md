@@ -16,11 +16,10 @@ well as the ability to create new databases.
 
 You can start a new MySQL console to access your databases from this tab too, or
 alternatively you can open a MySQL shell with the following command from a
-bash console or ssh session:
+bash console or [ssh session](/pages/AccessingMySQLFromOutsidePythonAnywhere):
 
     :::bash
     mysql -u USERNAME -h HOSTNAME -p 'USERNAME$DATABASENAME'
-
 
 In this:
 
@@ -54,9 +53,7 @@ For Python 3.x
     pip install mysqlclient
 
 
-
 ## MySQL with Django
-
 
 To configure Django to access a MySQL database on PythonAnywhere, you need to do
 this in your settings file:
@@ -72,12 +69,10 @@ this in your settings file:
         }
     }
 
-
 Again, you can get the username and hostname details from the "Databases" tab.
 
 
 ## MySQL with Django tests
-
 
 When you run Django tests that use the database, Django tries to create a
 database called *test_&lt;original database name&gt;* and that will fail because
@@ -107,7 +102,6 @@ To use MySQL with web2py, you'll need to change your DAL constructor:
 
 
 ## Handling connection timeout errors
-
 
 If you're seeing unexpected 'disconnected' errors, it may be due to our
 connection timeouts. We set a 5-minute timeout on idle database connections, so

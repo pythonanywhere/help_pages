@@ -322,3 +322,15 @@ Or, if you had to use port 3333 because you had a local MySQL server:
 
 
 *Many thanks to user Cartroo for the first version of this guide!*
+
+## Debugging the SSH connection
+
+If you're having issues with the SSH connection, start with checking if you typed your PythonAnywhere username correctly while creating the tunnel -- the username is **case-sensitive**, so if your username is "MyUsername", then you have to use that -- "myusername" won't work.
+
+If you eliminate that, and still can't connect, this command is a good starting point for further debugging:
+
+    :::bash
+    ssh -v <username>@<ssh hostname>
+
+For more details about SSH and PythonAnywhere check [this page](/pages/SSHAccess).
+

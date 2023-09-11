@@ -24,7 +24,7 @@ Try doing a search for "pdf" on the [PythonAnywhere "Batteries Included" list of
 A couple of tips:
 
 * "pdftk" will only work in consoles, websites, always-on and scheduled tasks
-  -- not from Jupyter notebooks or over SSH.
+  -- **not** from Jupyter notebooks or over SSH.
 
 * We also have "weasyprint" installed, which is meant to have PDF capabilities
 
@@ -42,8 +42,6 @@ You should see a whole bunch of potentially useful binaries which  you can call 
 ![](/pdf_tools_in_bash.png)
 
 We also have **Abiword** installed, and it has some command-line options for converting word documents and others.  Check out this [article about using abiword at the command-line](http://www.aboutlinux.info/2005/08/use-abiword-to-convert-filetypes-on.html) for example.
-
-
 
 If you find something useful, let us know!  [support@pythonanywhere.com](support@pythonanywhere.com)
 

@@ -209,3 +209,16 @@ If you're using TablePlus, you can use the settings from this diagram provided b
 devwon (Hyerin Won):
 
 <img alt="TablePlus Postgres connection setup" src="/postgres-tableplus.png" class="bordered-image">
+
+
+## Debugging the SSH connection
+
+If you're having issues with the SSH connection, start with checking if you typed your PythonAnywhere username correctly while creating the tunnel -- the username is **case-sensitive**, so if your username is "MyUsername", then you have to use that -- "myusername" won't work.
+
+If you eliminate that, and still can't connect, this command is a good starting point for further debugging:
+
+    :::bash
+    ssh -v <username>@<ssh hostname>
+
+For more details about SSH and PythonAnywhere check [this page](/pages/SSHAccess).
+

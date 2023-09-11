@@ -86,7 +86,7 @@ to:
   SSH server's hostname is `ssh.eu.pythonanywhere.com`
 
 Use your normal username and password and connect; note that the username
-is case-sensitive.
+is **case-sensitive** (also, see [this help page](/pages/SSHAccess) to get more information about SSH on PythonAnywhere).
 
 To use SFTP, from the command-line, use `sftp <username>@<ssh server hostname>`.
 

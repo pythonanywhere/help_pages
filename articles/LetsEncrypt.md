@@ -44,7 +44,7 @@ this:
 Once you've generated your key, it needs to be available in a console. Either:
 
 * Start a new Bash console
-* Or, if you're using an SSH session, or want to use an existing Bash console, run the following:
+* Or, if you're using an [SSH session](/pages/SSHAccess), or want to use an existing Bash console, run the following:
 
         :::bash
         export API_TOKEN=yourapitoken
