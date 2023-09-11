@@ -11,11 +11,7 @@
 -->
 
 
-
-
-
-##Using external version control systems with PythonAnywhere
-
+## Using external version control systems with PythonAnywhere
 
 Rather than uploading and downloading files manually, you might prefer to pull
 in a whole repository of source code from somewhere like [GitHub](//www.github.com/)
@@ -35,8 +31,7 @@ Check out the [GitHub help pages](//help.github.com/linux-set-up-git/#_set_up_ss
 for more info.
 
 
-##Free account restrictions
-
+## Free account restrictions
 
 Be aware that free users are restricted to an [allowlist](https://www.pythonanywhere.com/whitelist/)
 of sites, and to the HTTP/HTTPS protocol. We also allow the pure-git protocol to certain popular services like github and bitbucket.

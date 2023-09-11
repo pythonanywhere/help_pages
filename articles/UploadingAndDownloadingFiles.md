@@ -16,7 +16,7 @@ solutions below, and remember we're always here to help! The "Send feedback"
 button is just a short click away...
 
 
-##The file upload button
+## The file upload button
 
 If you just want to upload one file, and it's smaller than 100MiB in size, you
 can just upload it on the "Files" page -- look for the orange button.   Similarly,
@@ -26,8 +26,7 @@ This is useful for quick updates, but less good if you want to transfer multiple
 -- for example, all of the code for a website.
 
 
-
-##Using a code sharing site like GitHub or BitBucket
+## Using a code sharing site like GitHub or BitBucket
 
 The very best way to manage your code files is to use a source code control system (or VCS) like Git,
 Mercurial or Subversion. You can then "push" your code up to
@@ -50,7 +49,7 @@ might want to take a look at Bede Kelly's
 [cloneall](https://asciinema.org/a/10136).
 
 
-##Uploading a zip file
+## Uploading a zip file
 
 An alternative that you can use in a free account is to compress your project folder on your own PC, and upload
 it using the **Files** page. Then, open a **Bash console** to run `unzip` to
@@ -73,7 +72,7 @@ Upload them to PythonAnywhere, then get them back together with:
 The process for downloading multiple files is just the same, but in reverse.
 
 
-##SFTP (paying accounts only)
+## SFTP (paying accounts only)
 
 If you have a paid account, you can use SFTP, which is a form of FTP-over-SSH.
 
@@ -103,7 +102,7 @@ error like this: `Received message too long 1651664225` and Filezilla will give
 an error like `Connection timed out after 20 seconds of inactivity`.
 
 
-##Rsync (paying accounts only)
+## Rsync (paying accounts only)
 
 Paid accounts can also use the `rsync` command; run the following command on your local machine:
 

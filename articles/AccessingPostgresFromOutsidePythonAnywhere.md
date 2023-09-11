@@ -39,7 +39,7 @@ sshtunnel.SSH_TIMEOUT = 5.0
 sshtunnel.TUNNEL_TIMEOUT = 5.0
 
 postgres_hostname = "yourusername-1234.postgres.pythonanywhere-services.com"  # You will have your own here
-postgres_host_port = 1234  #  You will have your own port here 
+postgres_host_port = 1234  #  You will have your own port here
 
 with sshtunnel.SSHTunnelForwarder(
         ('ssh.pythonanywhere.com'),
@@ -67,7 +67,7 @@ the timeouts that are set on `sshtunnel`.
 
 ## Manual SSH tunnelling
 
-For other tools that you want to run on your own machine, you can set up a tunnel that pretends 
+For other tools that you want to run on your own machine, you can set up a tunnel that pretends
 to be a Postgres server running on your machine but actually sends data over SSH to your PythonAnywhere
 Postgres instance. If you're using a Mac or Linux, you probably already have the
 right tool installed -- the `ssh` command. If you're using Windows, see the "Using PuTTY on Windows"
