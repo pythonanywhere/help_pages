@@ -16,7 +16,7 @@ well as the ability to create new databases.
 
 You can start a new MySQL console to access your databases from this tab too, or
 alternatively you can open a MySQL shell with the following command from a
-bash console or [ssh session](/pages/AccessingMySQLFromOutsidePythonAnywhere):
+bash console or [ssh session](/pages/SSHAccess):
 
     :::bash
     mysql -u USERNAME -h HOSTNAME -p 'USERNAME$DATABASENAME'
