@@ -63,7 +63,21 @@ change the system image.
 We recommend that you create a new virtualenv with a different name, just in
 case something goes wrong in its creation.
 
-The first step is to identify the version of Python that you are going to use; check
+The first step is to remove the `.cache` directory from your home directory,
+because it may have versions of packages that pip will think are the right ones,
+but will only work with the old system image:
+
+```bash
+rm -rf ~/.cache/
+```
+
+> The `mysqlclient` library is particularly prone to problems like this; if
+> after the change over you start getting errors like
+> `NameError: name '_mysql' is not defined`, it is likely that you
+> have a version of it that was installed from the cache
+> and is not compatible with the updated system image.
+
+The next step is to identify the version of Python that you are going to use; check
 that the version that you identified when gathering data about your old virtualenv
 is available in the new system image by looking at the table at the bottom of the
 [system images page](/pages/ChangingSystemImage).  Note that the version that you

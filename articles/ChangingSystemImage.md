@@ -67,7 +67,10 @@ version you were previously using is available on the new system image
 
 It's also advised to clear the `~/.cache` folder, since packages
 stored there might be picked up when creating new virtualenvs leading
-to confusion.
+to confusion.  In particular, if after the change over you start getting
+errors like `NameError: name '_mysql' is not defined`, it is likely that you
+have a version of the `mysqlclient` library that was installed from the cache
+and is not compatible with the updated system image.
 
 ## Default Python versions
 
