@@ -22,6 +22,8 @@ One of the things that was giving me pause was running an always-on task for the
 
 I’m very satisfied with my solution. The initial call to fnUpdateMatListfromSAP starts a django-q process and holds on to the pid (process id).  While I’ve got it, I make the pid do double duty by being the key in my table which records and reports processing status.  When all processing is complete and the results are presented, the result HTML/Javascript does a final ajax call to do cleanup: kill the status record for this run, kill the django-q process and delete the temporary table used to present results.  This means my users cannot refresh the page containing the results, but that’s acceptable in my case.
 
+It's worth repeating that if your asynchronous code is automatically run without user intervention or your users frequently run your async code, an always-on task for the django-q process (or whatever broker/cluster you use) is probably your best bet.  
+
 =======
 
 Later on I’ll explain the code below in some detail, but for now, I’ll simply present it with the hope that you will find either the code or the techniques useful.
