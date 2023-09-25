@@ -69,7 +69,7 @@ which shows how to implement it step by step.
 See [our help page on always-on tasks](/pages/AlwaysOnTasks) for
 information on how to set one up to do your async work.
 
-If your asynchronous code is run on-demand and too infrequently to justify an always-on task, you may find this example helpful (/pages/)
+If your asynchronous code is run on-demand and too infrequently to justify an always-on task, you may find [this example](/articles/AsyncTasks-without-AlwaysOnProcess) helpful
 
 ## Don't jump to using async too quickly
 
