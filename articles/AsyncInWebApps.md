@@ -69,6 +69,8 @@ which shows how to implement it step by step.
 See [our help page on always-on tasks](/pages/AlwaysOnTasks) for
 information on how to set one up to do your async work.
 
+If your asynchronous code is run on-demand and too infrequently to justify an always-on task, you may find this example helpful (/pages/)
+
 ## Don't jump to using async too quickly
 
 It's easy to take this too far.  If all you're doing is wanting to send
