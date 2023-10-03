@@ -9,15 +9,21 @@
 .. type: text
 -->
 
+# Disclaimer
+
 Deployment of FastAPI-based (and other async) web apps on PythonAnywhere is experimental feature that is possible to use, but not guaranteed to work yet.
 
 Important limitations to know about:
 
- * http only (we are working on https) 
- * programmatic access with api only
+ * HTTPS only on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
+ * programmatic access with API only
  * no stability of the interface guaranteed
 
-I you are brave enough to try it, here is quick guide how to do it.
+If you are brave enough to try it, here is a quick guide how to do it.
+
+# Prerequisites
+
+## API token
 
 The first step when using the API is to get an API token -- this is what you use to authenticate yourself with our servers when using it.  To do that, log in to PythonAnywhere, and go to the "Account" page using the link at the top right.  Click on the "API token" tab; if you don't already have a token, it will look like this:
 
@@ -27,16 +33,26 @@ Click the "Create a new API token" button to get your token, and you'll see this
 
 <img width="500" src="/images/file-api-with-token-page.png">
 
-That string of letters and numbers (`d870f0cac74964b27db563aeda9e418565a0d60d` in the screenshot) is an API token, and anyone who has it can access your PythonAnywhere account and do stuff -- so keep it secret. If someone does somehow get hold of it, you can revoke it on this page by clicking the red button -- that stops it from working in the future, and creates a new one for you to use.
+That string of letters and numbers (`d870f0cac74964b27db563aeda9e418565a0d60d` in the screenshot) is the API token, and anyone who has it can access your PythonAnywhere account and do stuff -- so keep it secret. If someone does somehow get hold of it, you can revoke it on this page by clicking the red button -- that stops it from working in the future, and creates a new one for you to use.
 
 Now you can use our experimental API to deploy your FastAPI web app.
 
-We suggest that you create virtual environment with `fastapi` and `uvicorn` installed (we assume that in the guide below)
+## Virtual environment
 
-To create an environment called `fast_venv` run `makevirtualenv fast_venv --python=python3.10` and then `pip install uvicorn fastapi`
+We suggest to create a virtual environment with `fastapi` and `uvicorn` installed (it's assumed in the following guide).
+
+To create an environment called `fast_venv` run:
+
+```bash
+mkvirtualenv fast_venv --python=python3.10 
+# and then 
+pip install uvicorn fastapi
+```
 
 
-Create a file `my_fastapi_app.py` with a simple minimal code:
+## The code of your web app
+
+Create a directory `~/my_fastapi/` with `main.py` file in it containing the following code:
 
 ```python
 from fastapi import FastAPI
@@ -45,40 +61,135 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-        return {"message":"Hello from FastAPI"}
+    return {"message":"Hello from FastAPI"}
 ```
 
-and put it into directory `/home/XXXX/fast_api_app` where XXXX is your PythonAnywhere username.
 
-Now you can run simple code to start your app:
+# Manage your web app via API
+
+## Create
+
+Now you can run this simple code to create your app (for simplicity, we assume the
+PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it:
 
 ```python
+from pprint import pprint
 from urllib.parse import urljoin
 
 import requests
 
-api_token = "YOUR TOKEN HERE"
-username = "YOUR USERNAME HERE"
-pythonanywhere_host = "www.pythonanywhere.com"
 
-api_base = "https://{pythonanywhere_host}/api/v1/user/{username}/".format(
-    pythonanywhere_host=pythonanywhere_host,
-    username=username,
+api_token = "YOUR TOKEN HERE"
+headers = {"Authorization": f"Token {api_token}"}
+
+username = "xanthippe"  # update to match your USERNAME!
+
+pythonanywhere_host = "www.pythonanywhere.com"  # or "eu.pythonanywhere.com" if your account is hosted on our EU servers 
+pythonanywhere_domain = "pythonanywhere.com"  # or "eu.pythonanywhere.com"
+
+# make sure you don't use this domain already!
+domain_name = f"{username}.{pythonanywhere_domain}"
+
+api_base = f"https://{pythonanywhere_host}/api/v1/user/{username}/"
+command = (
+    f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn "
+    "--uds $DOMAIN_SOCKET"  # DOMAIN_SOCKET is an environment variable provided by us
+    "my_fastapi.main:app "
 )
 
-requests.post(
+response = requests.post(
     urljoin(api_base, "websites/"),
-    headers={"Authorization": "Token {api_token}".format(api_token=api_token)},
+    headers=headers,
     json={
-        "domain_name": f"{username}.pythonanywhere.com", 
+        "domain_name": domain_name, 
         "enabled": True, 
-        "webapp": {"command": f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn my_fastapi_app:app --uds $DOMAIN_SOCKET"}
+        "webapp": {"command": command}
     },
 )
+pprint(response.json())
 ```
 
-If you go to XXXX.pythonanywhere.com where XXXX is your PythonAnywhere username you should get `{"message":"Hello from FastAPI"}` back.
+If everything was successful, you should see something like:
 
-TODO:
- * other operations, list, delete, patch, enable/disable
- * explain uds
+```python
+{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+ 'enabled': True,
+ 'id': 42,
+ 'user': 'xanthippe,
+ 'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+                       'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+            'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+                         'enabled': True}],
+            'id': 42}}
+```
+
+Finally, if you go to `domain_name` you should get `{"message":"Hello from FastAPI"}` back.
+
+However, this web app will not currently appear in the UI on your PythonAnywhere account!
+
+## Delete
+
+To delete your FastAPI web app, use the following code -- mind the `/` at the end of the endpoint!
+
+```python
+
+# the same setup as above...
+
+response = requests.delete(
+    urljoin(api_base, f"websites/{domain_name}/"),
+    headers=headers
+)
+print(response)
+```
+
+You should get `204` on successful delete.
+
+## Reload (or disable/enable)
+
+If you want to change the code of your web app, you need to disable and re-enable it, after making the changes.  That's an equivalent of reloading the web app.
+
+```python
+
+# the same setup as above...
+
+endpoint = urljoin(api_base, f"websites/{domain_name}/")
+# disable:
+requests.patch(endpoint, headers=headers, json={"enabled": False})
+# enable:
+requests.patch(endpoint, headers=headers, json={"enabled": True})
+```
+
+However, if you'd like to update the serving `command`, you'd need to delete the current app, and re-deploy it with a new one. 
+
+To only disable the web app, just run the first request (setting the `enabled` state to `False`).  Once you want to re-enable it, you can set it to `True` again.
+
+# Supported UI features
+
+## Logs
+
+You can access the logs using the **Files** tab and going to `/var/log` directory.
+
+Sample logs (when serving with 
+[the default uvicorn logging](https://github.com/encode/uvicorn/blob/40b99b8436c0c261e3a85d10e291424072946292/uvicorn/config.py#L74)
+) would look like:
+
+* **error log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.error.log`:
+
+```text
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on unix socket /var/sockets/xanthippe.eu.pythonanywhere.com/app.sock (Press CTRL+C to quit)
+```
+
+* **server log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.server.log`:
+
+```text
+INFO:      - "GET / HTTP/1.1" 200 OK
+```
+
+**Access log** will show the `nginx` logs, similarly to other PythonAnywhere web apps.
+
+<!-- # TODO: -->
+<!--  * other operations, list, delete, patch, enable/disable -->
+<!--  * explain uds -->
