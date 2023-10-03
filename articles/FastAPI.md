@@ -16,7 +16,9 @@ Deployment of FastAPI-based (and other async) web apps on PythonAnywhere is expe
 Important limitations to know about:
 
  * HTTPS only on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
- * programmatic access with API only
+ * no support for static files mappings
+ * no support for HTTP password
+ * programmatic management with API only (no web UI)
  * no stability of the interface guaranteed
 
 If you are brave enough to try it, here is a quick guide how to do it.
