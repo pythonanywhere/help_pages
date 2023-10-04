@@ -64,10 +64,10 @@ Here's an example:
 from datetime import datetime
 
 def my_view_function(request):
-    print('{timestamp} -- request started'.format(timestamp=datetime.utcnow().isoformat())
+    print('{timestamp} -- request started'.format(timestamp=datetime.utcnow().isoformat()))
     # rest of your code as before
 
-    print('{timestamp} -- request ended'.format(timestamp=datetime.utcnow().isoformat())
+    print('{timestamp} -- request ended'.format(timestamp=datetime.utcnow().isoformat()))
     return response
 
 
