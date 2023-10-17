@@ -172,7 +172,9 @@ To only disable the web app, just run the first request (setting the `enabled` s
 You can access the logs from the **Files** page or from a console; they're located
 in `/var/log`.
 
-* The **error log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.error.log`:
+### The error log
+
+For example, `/var/log/xanthippe.eu.pythonanywhere.com.error.log`.
 
 By default, uvicorn logs its status messages to the standard error stream, so
 if all is well you'll see something like this:
@@ -189,7 +191,9 @@ for incoming requests on an internal [unix socket](https://en.wikipedia.org/wiki
 That socket is internal to our web-hosting system -- you won't be able to see
 it in a console or on the "Files" page inside PythonAnywhere.
 
-* The **server log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.server.log`:
+### The server log
+
+For example, `/var/log/xanthippe.eu.pythonanywhere.com.server.log`.
 
 By default, uvicorn logs incoming requests to the standard output stream, so
 you'll see something like this:
@@ -198,7 +202,9 @@ you'll see something like this:
 INFO:      - "GET / HTTP/1.1" 200 OK
 ```
 
-* The **Access log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.access.log`:
+### The access log
+
+For example, `/var/log/xanthippe.eu.pythonanywhere.com.access.log`.
 
 This will also show incoming requests, but will be formatted similarly to other
 PythonAnywhere web apps -- for example:
