@@ -41,14 +41,14 @@ Now you can use our experimental API to deploy your FastAPI web app.
 
 ## Virtual environment
 
-We suggest to create a virtual environment with `fastapi` and `uvicorn` installed (it's assumed in the following guide).
+We suggest that you create a virtual environment with `requests`, `fastapi` and `uvicorn` installed (it's assumed in the following guide).
 
 To create an environment called `fast_venv` run:
 
 ```bash
-mkvirtualenv fast_venv --python=python3.10 
-# and then 
-pip install uvicorn fastapi
+mkvirtualenv fast_venv --python=python3.10
+# and then
+pip install requests "uvicorn[standard]" fastapi
 ```
 
 
@@ -86,7 +86,7 @@ headers = {"Authorization": f"Token {api_token}"}
 
 username = "xanthippe"  # update to match your USERNAME!
 
-pythonanywhere_host = "www.pythonanywhere.com"  # or "eu.pythonanywhere.com" if your account is hosted on our EU servers 
+pythonanywhere_host = "www.pythonanywhere.com"  # or "eu.pythonanywhere.com" if your account is hosted on our EU servers
 pythonanywhere_domain = "pythonanywhere.com"  # or "eu.pythonanywhere.com"
 
 # make sure you don't use this domain already!
@@ -95,7 +95,7 @@ domain_name = f"{username}.{pythonanywhere_domain}"
 api_base = f"https://{pythonanywhere_host}/api/v1/user/{username}/"
 command = (
     f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn "
-    "--uds $DOMAIN_SOCKET"  # DOMAIN_SOCKET is an environment variable provided by us
+    "--uds $DOMAIN_SOCKET "  # DOMAIN_SOCKET is an environment variable provided by us
     "my_fastapi.main:app "
 )
 
@@ -103,8 +103,8 @@ response = requests.post(
     urljoin(api_base, "websites/"),
     headers=headers,
     json={
-        "domain_name": domain_name, 
-        "enabled": True, 
+        "domain_name": domain_name,
+        "enabled": True,
         "webapp": {"command": command}
     },
 )
@@ -161,7 +161,7 @@ requests.patch(endpoint, headers=headers, json={"enabled": False})
 requests.patch(endpoint, headers=headers, json={"enabled": True})
 ```
 
-However, if you'd like to update the serving `command`, you'd need to delete the current app, and re-deploy it with a new one. 
+However, if you'd like to update the serving `command`, you'd need to delete the current app, and re-deploy it with a new one.
 
 To only disable the web app, just run the first request (setting the `enabled` state to `False`).  Once you want to re-enable it, you can set it to `True` again.
 
@@ -171,11 +171,14 @@ To only disable the web app, just run the first request (setting the `enabled` s
 
 You can access the logs using the **Files** tab and going to `/var/log` directory.
 
-Sample logs (when serving with 
+Sample logs (when serving with
 [the default uvicorn logging](https://github.com/encode/uvicorn/blob/40b99b8436c0c261e3a85d10e291424072946292/uvicorn/config.py#L74)
 ) would look like:
 
-* **error log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.error.log`:
+* The **error log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.error.log`:
+
+By default, uvicorn logs its status messages to the standard error stream, so
+if all is well you'll see something like this:
 
 ```text
 INFO:     Started server process [1]
@@ -184,13 +187,28 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on unix socket /var/sockets/xanthippe.eu.pythonanywhere.com/app.sock (Press CTRL+C to quit)
 ```
 
-* **server log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.server.log`:
+The last line is uvicorn saying that it has successfully started, and is listening
+for incoming requests on an internal [unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket).
+That socket is internal to our web-hosting system -- you won't be able to see
+it in a console or on the "Files" page inside PythonAnywhere.
+
+* The **server log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.server.log`:
+
+By default, uvicorn logs incoming requests to the standard output stream, so
+you'll see something like this:
 
 ```text
 INFO:      - "GET / HTTP/1.1" 200 OK
 ```
 
-**Access log** will show the `nginx` logs, similarly to other PythonAnywhere web apps.
+* The **Access log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.access.log`:
+
+This will also show incoming requests, but will be formatted similarly to other
+PythonAnywhere web apps -- for example:
+
+```text
+1.2.3.4 - - [17/Oct/2023:13:14:00 +0000] "GET / HTTP/1.1" 200 32 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "1.2.3.4" response-time=0.286
+```
 
 <!-- # TODO: -->
 <!--  * other operations, list, delete, patch, enable/disable -->
