@@ -72,7 +72,8 @@ async def root():
 ## Create
 
 Now you can run this simple code to create your app (for simplicity, we assume the
-PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it:
+PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it. Don't
+worry about the details of the uvicorn command for now, [we'll explain it later](#technical-details).
 
 ```python
 from pprint import pprint
@@ -95,7 +96,7 @@ domain_name = f"{username}.{pythonanywhere_domain}"
 api_base = f"https://{pythonanywhere_host}/api/v1/user/{username}/"
 command = (
     f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn "
-    "--uds $DOMAIN_SOCKET "  # DOMAIN_SOCKET is an environment variable provided by us
+    "--uds $DOMAIN_SOCKET "
     "my_fastapi.main:app "
 )
 
@@ -129,6 +130,84 @@ Finally, if you go to `domain_name` you should get `{"message":"Hello from FastA
 
 However, this web app will not currently appear in the UI on your PythonAnywhere account!
 
+
+## Getting and listing webapps
+
+If you do a "get" request to the `websites/` API endpoint, you'll get a list
+of your websites:
+
+```python
+
+# the same setup as above...
+
+endpoint = urljoin(api_base, "websites/")
+response = requests.get(endpoint, headers=headers)
+pprint(response.json())
+```
+
+...will give you something like this:
+
+```python
+[
+    {'domain_name': 'xanthippe.eu.pythonanywhere.com',
+     'enabled': True,
+     'id': 42,
+     'user': 'xanthippe,
+     'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+                           'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+                'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+                             'enabled': True}],
+                'id': 42}}
+]
+```
+
+Likewise, you can get the information about a particular website by getting
+it:
+
+```python
+
+# the same setup as above...
+
+endpoint = urljoin(api_base, f"websites/{domain_name}/")
+response = requests.get(endpoint, headers=headers)
+pprint(response.json())
+```
+
+...and you'll get this:
+
+```python
+{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+ 'enabled': True,
+ 'id': 42,
+ 'user': 'xanthippe,
+ 'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+                       'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+            'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+                         'enabled': True}],
+            'id': 42}}
+```
+
+
+## Reload (or disable/enable)
+
+If you want to change the code of your web app, you need to disable and re-enable it, after making the changes.  That's an equivalent of reloading the web app.
+
+```python
+
+# the same setup as above...
+
+endpoint = urljoin(api_base, f"websites/{domain_name}/")
+# disable:
+requests.patch(endpoint, headers=headers, json={"enabled": False})
+# enable:
+requests.patch(endpoint, headers=headers, json={"enabled": True})
+```
+
+However, `enabled` is the only property of the website that you can patch -- if you'd like to update the serving `command`, you'll need to delete the current app, and re-deploy it with a new one.
+
+To only disable the web app, just run the first request (setting the `enabled` state to `False`).  Once you want to re-enable it, you can set it to `True` again.
+
+
 ## Delete
 
 To delete your FastAPI web app, use the following code -- mind the `/` at the end of the endpoint!
@@ -146,24 +225,6 @@ print(response)
 
 You should get `204` on successful delete.
 
-## Reload (or disable/enable)
-
-If you want to change the code of your web app, you need to disable and re-enable it, after making the changes.  That's an equivalent of reloading the web app.
-
-```python
-
-# the same setup as above...
-
-endpoint = urljoin(api_base, f"websites/{domain_name}/")
-# disable:
-requests.patch(endpoint, headers=headers, json={"enabled": False})
-# enable:
-requests.patch(endpoint, headers=headers, json={"enabled": True})
-```
-
-However, if you'd like to update the serving `command`, you'd need to delete the current app, and re-deploy it with a new one.
-
-To only disable the web app, just run the first request (setting the `enabled` state to `False`).  Once you want to re-enable it, you can set it to `True` again.
 
 # Supported UI features
 
@@ -187,7 +248,7 @@ INFO:     Uvicorn running on unix socket /var/sockets/xanthippe.eu.pythonanywher
 ```
 
 The last line is uvicorn saying that it has successfully started, and is listening
-for incoming requests on an internal [unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket).
+for incoming requests on an internal [unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket).
 That socket is internal to our web-hosting system -- you won't be able to see
 it in a console or on the "Files" page inside PythonAnywhere.
 
@@ -213,6 +274,49 @@ PythonAnywhere web apps -- for example:
 1.2.3.4 - - [17/Oct/2023:13:14:00 +0000] "GET / HTTP/1.1" 200 32 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "1.2.3.4" response-time=0.286
 ```
 
-<!-- # TODO: -->
-<!--  * other operations, list, delete, patch, enable/disable -->
-<!--  * explain uds -->
+
+# Technical details
+
+If you just want to get FastAPI up and running, all you need to do is follow
+the recipe above.  However, if you'd like to understand a bit more about what is
+going on, read on!
+
+The command that we are providing for our FastAPI site in the instructions above is this:
+
+```text
+/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn my_fastapi.main:app --uds $DOMAIN_SOCKET
+```
+
+Breaking that down:
+
+* `/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn` is the path to uvicorn in your virtualenv
+* `my_fastapi.main:app` is telling uvicorn, which is running in your home directory `/home/xanthippe/`, to load up the ASGI app called `app` from the file `my_fastapi/main.py`
+* `--uds $DOMAIN_SOCKET` is telling uvicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
+
+As we mentioned above, that domain socket (which will be something like
+`/var/sockets/xanthippe.eu.pythonanywhere.com/app.sock`) is internal to the
+part of our system that serves websites; you won't be able to see
+it in a console or on the "Files" page inside PythonAnywhere.
+
+If you want to use an ASGI framework that is not FastAPI, you should be able to
+get it up an running just by changing the first argument to point to the ASGI
+object that your framework exports.
+
+But in addition, you can even use our new website hosting system to host non-ASGI
+servers!  It supports any server that is able to listen for incoming requests on a unix domain socket.
+You'll just need to work out the appropriate incantation to tell it how to
+listen on the socket provided in `$DOMAIN_SOCKET`.
+
+FastAPI is the most popular async framework, so that what's we're focusing on here, but we may
+roll out instructions for other popular ASGI and non-ASGI servers later.
+
+
+
+
+
+
+
+
+
+
+
