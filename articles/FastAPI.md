@@ -169,11 +169,8 @@ To only disable the web app, just run the first request (setting the `enabled` s
 
 ## Logs
 
-You can access the logs using the **Files** tab and going to `/var/log` directory.
-
-Sample logs (when serving with
-[the default uvicorn logging](https://github.com/encode/uvicorn/blob/40b99b8436c0c261e3a85d10e291424072946292/uvicorn/config.py#L74)
-) would look like:
+You can access the logs from the **Files** page or from a console; they're located
+in `/var/log`.
 
 * The **error log**, e.g. `/var/log/xanthippe.eu.pythonanywhere.com.error.log`:
 
