@@ -11,15 +11,15 @@
 
 # Disclaimer
 
-Deployment of FastAPI-based (and other async) web apps on PythonAnywhere is experimental feature that is possible to use, but not guaranteed to work yet.
+Deployment of FastAPI-based (and other async) web apps on PythonAnywhere is an experimental feature that is possible to use, but not guaranteed to work yet.
 
-Important limitations to know about:
+Some important limitations to know about:
 
- * HTTPS only on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
- * no support for static files mappings
- * no support for HTTP password
- * programmatic management with API only (no web UI)
- * no stability of the interface guaranteed
+ * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
+ * There is no support for static file mappings
+ * There is no support for HTTP password
+ * There is no web UI for creating and managing ASGI websites -- it's API-only
+ * We do not guarantee that the API interface will remain the same.
 
 If you are brave enough to try it, here is a quick guide how to do it.
 
@@ -54,7 +54,7 @@ pip install requests "uvicorn[standard]" fastapi
 
 ## The code of your web app
 
-Create a directory `~/my_fastapi/` with `main.py` file in it containing the following code:
+Create a directory `~/my_fastapi/` with a `main.py` file in it containing the following code:
 
 ```python
 from fastapi import FastAPI
@@ -126,9 +126,14 @@ If everything was successful, you should see something like:
             'id': 42}}
 ```
 
-Finally, if you go to `domain_name` you should get `{"message":"Hello from FastAPI"}` back.
+Now, if you go to the website URL defined in `domain_name` you should get
 
-However, this web app will not currently appear in the UI on your PythonAnywhere account!
+```text
+{"message":"Hello from FastAPI"}
+```
+
+You have a working FastAPI website hosted on PythonAnywhere!  However, this site
+will not currently appear on the "Web" page inside your PythonAnywhere account.
 
 
 ## Getting and listing webapps
@@ -148,17 +153,15 @@ pprint(response.json())
 ...will give you something like this:
 
 ```python
-[
-    {'domain_name': 'xanthippe.eu.pythonanywhere.com',
-     'enabled': True,
-     'id': 42,
-     'user': 'xanthippe,
-     'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
-                           'my_fastapi.main:app --uds $DOMAIN_SOCKET',
-                'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
-                             'enabled': True}],
-                'id': 42}}
-]
+[{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+  'enabled': True,
+  'id': 42,
+  'user': 'xanthippe,
+  'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+                        'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+             'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+                          'enabled': True}],
+             'id': 42}}]
 ```
 
 Likewise, you can get the information about a particular website by getting
@@ -198,9 +201,11 @@ If you want to change the code of your web app, you need to disable and re-enabl
 
 endpoint = urljoin(api_base, f"websites/{domain_name}/")
 # disable:
-requests.patch(endpoint, headers=headers, json={"enabled": False})
+response = requests.patch(endpoint, headers=headers, json={"enabled": False})
+print(response)
 # enable:
-requests.patch(endpoint, headers=headers, json={"enabled": True})
+response = requests.patch(endpoint, headers=headers, json={"enabled": True})
+print(response)
 ```
 
 However, `enabled` is the only property of the website that you can patch -- if you'd like to update the serving `command`, you'll need to delete the current app, and re-deploy it with a new one.
@@ -279,7 +284,7 @@ PythonAnywhere web apps -- for example:
 
 If you just want to get FastAPI up and running, all you need to do is follow
 the recipe above.  However, if you'd like to understand a bit more about what is
-going on, read on!
+going on, or to build on these instructions to do more than just FastAPI, read on!
 
 The command that we are providing for our FastAPI site in the instructions above is this:
 
