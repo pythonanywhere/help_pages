@@ -66,6 +66,9 @@ async def root():
     return {"message":"Hello from FastAPI"}
 ```
 
+**Caveat**: If your app's code consists of multiple files which are not located in your home
+directory, you'd need to add extra argument (`--app-dir`) to the `uvicorn` command,
+see [technical details](#technical-details) section below.
 
 # Manage your web app via API
 
@@ -315,13 +318,29 @@ listen on the socket provided in `$DOMAIN_SOCKET`.
 FastAPI is the most popular async framework, so that what's we're focusing on here, but we may
 roll out instructions for other popular ASGI and non-ASGI servers later.
 
+## Optional arguments
 
+* `--app-dir <path>`: add this argument to the command if your app's code uses multiple files that are not currently on the Python path.
 
+For example if you have file structure like this:
 
+```
+foo/
+└── bar
+    ├── main.py
+    └── baz
+        ├── module_a.py
+        └── module_b.py
+```
 
+where `foo` is a directory in your home directory, and `main.py` relies on imports from `baz/module_*` files, then your command should look like this:
 
-
-
-
-
+```python
+command = (
+    f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn "
+    f"--app-dir /home/{username}/foo/bar"
+    "--uds $DOMAIN_SOCKET "
+    "main:app "
+)
+```
 
