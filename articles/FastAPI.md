@@ -68,7 +68,9 @@ async def root():
 
 **Caveat**: If your app's code consists of multiple files which are not located in your home
 directory, you'd need to add extra argument (`--app-dir`) to the `uvicorn` command,
-see [technical details](#technical-details) section below.
+see 
+[Optional `uvicorn` command arguments](https://fastapiguide.pythonanywhere.com/#optional-uvicorn-command-arguments)
+section below.
 
 # Manage your web app via API
 
@@ -76,7 +78,8 @@ see [technical details](#technical-details) section below.
 
 Now you can run this simple code to create your app (for simplicity, we assume the
 PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it. Don't
-worry about the details of the uvicorn command for now, [we'll explain it later](#technical-details).
+worry about the details of the uvicorn command for now, 
+[we'll explain it later](https://fastapiguide.pythonanywhere.com/#technical-details).
 
 ```python
 from pprint import pprint
