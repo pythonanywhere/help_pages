@@ -318,7 +318,7 @@ listen on the socket provided in `$DOMAIN_SOCKET`.
 FastAPI is the most popular async framework, so that what's we're focusing on here, but we may
 roll out instructions for other popular ASGI and non-ASGI servers later.
 
-## Optional arguments
+## Optional `uvicorn` command arguments
 
 * `--app-dir <path>`: add this argument to the command if your app's code uses multiple files that are not currently on the Python path.
 
