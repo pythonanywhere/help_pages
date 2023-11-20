@@ -39,8 +39,10 @@ can just clone it from a **Bash Console**:
 
 ```bash
 # for example
-$ git clone https://github.com/myusername/myproject.git
+$ git clone git@github.com:myusername/myproject.git
 ```
+
+Remember to [set up your ssh key](https://help.pythonanywhere.com/pages/ExternalVCS) on [GitHub](https://github.com/) before cloning, if you haven't already.
 
 That's the solution we recommend, but there are a few different methods
 documented on the [uploading and downloading files](/pages/UploadingAndDownloadingFiles) help page.
