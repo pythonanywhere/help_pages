@@ -11,5 +11,7 @@
 
 Usually custom domain means a domain you own, but we made possible to create
 custom subdomains based on username. You could name your web
-`whatever-yourusername.pythonanywhere.com` and it would work. It's still
+`whatever-yourusername.pythonanywhere.com` (
+or `whatever-yourusername.eu.pythonanywhere.com` on EU system) and it would
+work. It's still
 available to paid accounts only.
