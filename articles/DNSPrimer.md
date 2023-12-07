@@ -202,7 +202,7 @@ There is one case where CNAMEs can be problematic, though:
 
 One problem with CNAMEs is that in general, you can't use them for "naked"
 domains.  A naked domain is the domain name that you buy from your registrar,
-omething like `yourdomain.com` -- without anything like `www.` in front of it.
+something like `yourdomain.com` -- without anything like `www.` in front of it.
 For [relatively arcane technical reasons](https://medium.freecodecamp.org/why-cant-a-domain-s-root-be-a-cname-8cbab38e5f5c)
 a naked domain can't use a CNAME, only subdomains like `www.yourdomain.com` --
 and so if you want `yourdomain.com` without the `www.` to point to
