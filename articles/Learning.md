@@ -37,6 +37,13 @@ Even if you're not able to go to one of their workshops, their online
 to Django for anyone of any gender.
 
 
+### Practical Python Programming
+
+David Beazley's [Practical Python Programming](https://dabeaz-course.github.io/practical-python/) --
+David is a well-known figure in Python circles, and this is an amazing course
+if you already have programming experience in other languages.
+
+
 ### Udemy courses
 
 We haven't tried these ourselves, but people have written to us recommending them:
