@@ -341,7 +341,7 @@ where `foo` is a directory in your home directory, and `main.py` relies on impor
 ```python
 command = (
     f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn "
-    f"--app-dir /home/{username}/foo/bar"
+    f"--app-dir /home/{username}/foo/bar "
     "--uds $DOMAIN_SOCKET "
     "main:app "
 )
