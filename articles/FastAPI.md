@@ -15,6 +15,7 @@ Deployment of FastAPI-based (and other async) web apps on PythonAnywhere is an e
 
 Some important limitations to know about:
 
+ * There is a bug with hanlding usernames with upper-case letters in them; you'll need an all-lower-case one to try FastAPI right now.
  * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
  * There is no support for static file mappings
  * There is no support for HTTP password
@@ -68,7 +69,7 @@ async def root():
 
 **Caveat**: If your app's code consists of multiple files which are not located in your home
 directory, you'd need to add extra argument (`--app-dir`) to the `uvicorn` command,
-see 
+see
 [Optional `uvicorn` command arguments](https://fastapiguide.pythonanywhere.com/#optional-uvicorn-command-arguments)
 section below.
 
@@ -78,7 +79,7 @@ section below.
 
 Now you can run this simple code to create your app (for simplicity, we assume the
 PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it. Don't
-worry about the details of the uvicorn command for now, 
+worry about the details of the uvicorn command for now,
 [we'll explain it later](https://fastapiguide.pythonanywhere.com/#technical-details).
 
 ```python
