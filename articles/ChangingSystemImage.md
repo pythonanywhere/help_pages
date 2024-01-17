@@ -114,7 +114,17 @@ We don not preinstall packages into all Python versions in all system images.
 You can check what packages are installed in which system
 image [here](https://www.pythonanywhere.com/batteries_included/).
 
-### Base Ubuntu version for each system image
+## Database Server Versions
+
+Changing the system image will not affect your database servers. Only client
+tools will be updated.
+
+To update your MySQL or PostgreSQL server version, you need to contact support
+at support@pythonanywhere.com, and they will handle the update for you. Updating
+the server version involves a brief downtime for your account, so a convenient 
+time can be agreed upon.
+
+## Base Ubuntu version for each system image
 
 |             |Ubuntu version|
 |-------------|--------------|
