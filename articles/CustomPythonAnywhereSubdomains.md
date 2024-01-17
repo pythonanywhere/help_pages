@@ -9,9 +9,18 @@
 .. type: text
 -->
 
-Usually custom domain means a domain you own, but we made possible to create
-custom subdomains based on username. You could name your web
-`whatever-yourusername.pythonanywhere.com` (
-or `whatever-yourusername.eu.pythonanywhere.com` on EU system) and it would
-work. It's still
-available to paid accounts only.
+The "Your own domain" option on our "Add a new web app" dialog is normally used
+to specify a domain that you own -- something like `www.yourdomain.com`.
+
+However, if you don't own a domain, or don't want to use a fully custom one,
+you can also use a custom subdomain of `pythonanywhere.com`.  It must of the
+format
+
+    something-yourusername.pythonanywhere.com
+
+...or, on our EU system:
+
+    something-yourusername.eu.pythonanywhere.com
+
+...where the "something" can be any combination of numbers and letters, and the
+"yourusername" is your normal PythonAnywhere username.
