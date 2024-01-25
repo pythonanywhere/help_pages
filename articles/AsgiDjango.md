@@ -15,7 +15,6 @@ Deployment of Django async web apps on PythonAnywhere is an experimental feature
 
 Some important limitations to know about:
 
- * There is a bug with hanlding usernames with upper-case letters in them; you'll need an all-lower-case one to try async Django right now.
  * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com` or `username.pythonanywhere.com`)
  * There is no support for static file mappings
  * There is no support for HTTP password
@@ -30,11 +29,11 @@ If you are brave enough to try it, here is a quick guide how to do it.
 
 The first step when using the API is to get an API token -- this is what you use to authenticate yourself with our servers when using it.  To do that, log in to PythonAnywhere, and go to the "Account" page using the link at the top right.  Click on the "API token" tab; if you don't already have a token, it will look like this:
 
-<img width="500" src="/images/file-api-no-token-page.png">
+<img alt="API token not set up" src="/api-token-needs-generation.png" class="bordered-image">
 
 Click the "Create a new API token" button to get your token, and you'll see this:
 
-<img width="500" src="/images/file-api-with-token-page.png">
+<img alt="API token set up" src="/api-token-set-up.png" class="bordered-image">
 
 That string of letters and numbers (`d870f0cac74964b27db563aeda9e418565a0d60d` in the screenshot) is the API token, and anyone who has it can access your PythonAnywhere account and do stuff -- so keep it secret. If someone does somehow get hold of it, you can revoke it on this page by clicking the red button -- that stops it from working in the future, and creates a new one for you to use.
 
