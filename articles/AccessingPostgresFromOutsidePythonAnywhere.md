@@ -188,7 +188,7 @@ If that doesn't work because you get an error like:
 You can try any other port number greater than 1024 and less than 65536. Be
 sure to use the correct port in the next step.
 
-Now open the ["Server" dialog](https://www.pgadmin.org/docs/pgadmin4/4.14/server_dialog.html) in pgAdmin,
+Now open the ["Server" dialog](https://www.pgadmin.org/docs/pgadmin4/latest/server_dialog.html) in pgAdmin,
 and give the connection a name on the "General" tab, then set up the stuff on the
 "Connection" tab:
 
