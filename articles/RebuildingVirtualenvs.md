@@ -21,7 +21,7 @@ The instructions below contain instructions for people who use plain
 for the kind of virtualenv you're using.  Use a **Bash console** to enter the
 commands.
 
-##1) Before the system image change
+## 1) Before the system image change
 
 Firstly, activate the virtualenv.  If you're using virtualenvwrapper:
 
@@ -58,7 +58,9 @@ Now you have saved the information you need about the virtualenv, so you can
 change the system image.
 
 
-##2) After the system image change
+## 2) After the system image change
+
+First of all, **start a fresh Bash console**.
 
 We recommend that you create a new virtualenv with a different name, just in
 case something goes wrong in its creation.
@@ -110,7 +112,7 @@ For always-on and scheduled tasks, change the command used to run them to pick u
 interpreter to specify the virtualenv for those.
 
 
-##3) All done!
+## 3) All done!
 
 We're here to help! If you get stuck or confused, just drop us a note at
 [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
