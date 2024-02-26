@@ -31,5 +31,5 @@ Start a MySQL console and run the following command:
     drop database `<your_username>$<your_database_name>`;
 
 replacing placeholders in brackets respectively with your `username` and the
-`database name` that should be deleted.  See ["Using MySQL"](https://help.pythonanywhere.com/pages/UsingMySQL/#deleting-existing-database) 
+`database name` that should be deleted.  See ["Using MySQL"](/pages/UsingMySQL/#deleting-existing-database) 
 help page or more details.

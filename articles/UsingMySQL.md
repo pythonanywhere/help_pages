@@ -116,6 +116,11 @@ for example: <https://docs.sqlalchemy.org/en/latest/core/pooling.html?#setting-p
 See [this article on mysqldump](/pages/MySQLBackupRestore).
 
 
+## Checking MySQL database size
+
+See [this help page](/pages/MySQLDatabaseSize).
+
+
 ## Deleting existing database
 
 Start a MySQL console and run the following command:
