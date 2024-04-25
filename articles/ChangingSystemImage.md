@@ -101,12 +101,11 @@ default "haggis" Python version.
 
 ### Available Python versions for system images
 
-|             |2.7|3.4|3.5|3.6|3.7|3.8|3.9|3.10|
-|-------------|---|---|---|---|---|---|---|----|
-| earlgrey    | X | X | X | X | X |   |   |    |
-| fishnchips  | X |   | X | X | X | X |   |    |
-| glastonbury | X |   | X | X | X | X | X |    |
-| haggis      | X |   |   | X | X | X | X | X  |
+|             |2.7|3.5|3.6|3.7|3.8|3.9|3.10|
+|-------------|---|---|---|---|---|---|----|
+| fishnchips  | X | X | X | X | X |   |    |
+| glastonbury | X | X | X | X | X | X |    |
+| haggis      | X |   | X | X | X | X | X  |
 
 ### Python packages installed
 
@@ -128,7 +127,6 @@ time can be agreed upon.
 
 |             |Ubuntu version|
 |-------------|--------------|
-| earlgrey    | 16.04        |
 | fishnchips  | 16.04        |
 | glastonbury | 20.04        |
 | haggis      | 20.04        |
