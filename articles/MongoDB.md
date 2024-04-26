@@ -69,19 +69,21 @@ addresses that they should allow to connect.  You can combine that with the
 [ipify service](https://www.ipify.org/), which tells you what IP address your
 code is using right now, to make your code automatically accesslist the IP it's
 running on when it starts up.  The following code (based on code provided by
-Nicolas Oteiza and modified by Amitoz Azad) will do that. You just need to
-[install the ipify module](https://help.pythonanywhere.com/pages/InstallingNewModules/) and then use this,
-replacing the bits inside the `<>`s:
+Nicolas Oteiza and modified by Amitoz Azad) will do that. You just need to replace 
+the bits inside the `<>`s:
 
 
     import requests
     from requests.auth import HTTPDigestAuth
-    from ipify import get_ip
+
+    def get_public_ip():
+        response = requests.get("https://api.ipify.org")
+        return response.text
 
     atlas_group_id = "<your group ID aka project ID -- check the Project / Settings section inside Atlas>"
     atlas_api_key_public = "<your atlas public API key>"
     atlas_api_key_private = "<your atlas private API key>"
-    ip = get_ip()
+    ip = get_public_ip()
 
     resp = requests.post(
         "https://cloud.mongodb.com/api/atlas/v1.0/groups/{atlas_group_id}/accessList".format(atlas_group_id=atlas_group_id),
@@ -98,10 +100,6 @@ replacing the bits inside the `<>`s:
             flush=True
         )
 
-
-If there is not a version of the ipify module that works with the version of
-Python that you are using, you can just use the REST interface to ipify. There
-is a complete example on the "Code Samples" page on the ipify web site.
 
 If there are any problems accesslisting your IP address (for example, if the
 API key is wrong) then you will find the error messages in the program's output;
