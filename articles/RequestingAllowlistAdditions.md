@@ -19,6 +19,8 @@ to hack into and generally spam other websites anonymously.
 It does not apply to paid accounts, as we can link them to real people via the
 payment details -- so they have unrestricted Internet access.
 
+You will find the list of sites currently allowed for free accounts [here](https://www.pythonanywhere.com/whitelist/).
+
 
 ## Requesting an addition to the allowlist
 
