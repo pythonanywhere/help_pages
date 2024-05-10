@@ -49,18 +49,24 @@ If you don't have a public/private key pair yet, you can generate one by running
 
     $ ssh-keygen -t rsa -b 2048
     Generating public/private rsa key pair.
-    Enter file in which to save the key (/home/username/.ssh/id_rsa): 
-    Enter passphrase (empty for no passphrase): 
-    Enter same passphrase again: 
+    Enter file in which to save the key (/home/username/.ssh/id_rsa):
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
     Your identification has been saved in /home/username/.ssh/id_rsa.
     Your public key has been saved in /home/username/.ssh/id_rsa.pub.
 
 Running the following command copies the generated keys to the pythonanywhere server:
 
     $ ssh-copy-id <username>@<ssh server hostname>
-    <username>@<ssh server hostname>'s password: 
+    <username>@<ssh server hostname>'s password:
 
-The next time you use `ssh <username>@<ssh server hostname>`, your password will not be prompted! 
+The next time you use `ssh <username>@<ssh server hostname>`, your password will not be prompted!
+
+
+### VS code
+
+If you're using the VS Code remote development extension to connect via SSH,
+you'll need to use version 0.107 -- later versions currently do not work.
 
 
 ### Debugging
