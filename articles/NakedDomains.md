@@ -72,47 +72,57 @@ There are a couple of ways you can do this:
 
 ## Solution 1: Use a redirection service
 
-This is the solution we recommend -- it's easiest and cheapest.  If you use a
-redirection service:
+This is the solution we recommend -- it's normally easiest and cheapest,
+especially because most domain registrars offer it as part of your registration.
+
+If you use a redirection service:
 
 * When someone goes to `http://yourdomain.com/` they are redirected to
 `http://www.yourdomain.com/`
 * If they go to `http://yourdomain.com/foo` they are redirected to
 `http://www.yourdomain.com/foo`, and so on.
 
-They normally don't support HTTPS, however.  This is generally not a problem
+Things get a little more complex with HTTPS -- it's easy to set up a redirect
+that goes *to* an `https://` URL, but ones that come *from* an HTTPS URL are
+not supported by all redirection services.
+
+This is normally not a problem,
 because all you're trying to handle is people typing URLs into a browser.  If
 someone types `yourdomain.com` or `http://yourdomain.com`, they'll get your
 site.  The only case that won't work is if they type `https://yourdomain.com`,
 including the `s` after `http`, which pretty much no-one is ever going to do.
-However, if you think that people are going to do it for your site, then see the
-"HTTPS redirection" section below.
 
-Many domain name registrars/DNS providers provide HTTP redirection as a free
-service as part of the domain registration fee, often calling it something
-like "web site redirection" or "URL forwarding".
+But there's one exception to this: if you're using a domain that is on the
+[HSTS preload list](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security).
+With those, even if someone explicitly typed `http://yourdomain.com`
+into their browser, the browser would rewrite it to `https://yourdomain.com` and
+try to go there.  Right now, there is only one top-level domain that enforces
+that, `.dev`.  It's possible that others will appear in the future.
 
-Here are links to the appropriate documentation for some popular registrars:
+So, with all that said, which redirection service should you use?  Most domain
+providers offer it as a free service as part of your domain registration:
 
-  * [GoDaddy](https://uk.godaddy.com/help/forward-a-domain-12123)
-  * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/385/2237/how-to-redirect-a-url-for-a-domain)
-  * [Gandi](https://docs.gandi.net/en/domain_names/common_operations/web_forwarding.html)
-  * [Google Domains](https://webmasters.stackexchange.com/a/90405)
+  * [Gandi](https://docs.gandi.net/en/domain_names/common_operations/web_forwarding.html) offer both HTTP and HTTPS redirects.
+  * [GoDaddy](https://uk.godaddy.com/help/forward-a-domain-12123) offer HTTP-only redirects.
+  * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/385/2237/how-to-redirect-a-url-for-a-domain) offer HTTP-only redirects.
 
-If you are using a different registrar, searching for "forward naked domain" plus
-the name of your registrar will probably find the appropriate help page.
+> If you are using a different registrar, searching for "forward naked domain" plus
+> the name of your registrar will probably find the appropriate help page.
+> Links for other registrars would be very welcome!  Just [email us](mailto:support@pythonanywhere.com).
 
-If your registrar doesn't support redirection, lots of people hosting on
-PythonAnywhere use the free service from
-[WWWizer](http://wwwizer.com/naked-domain-redirect), which has been around for
-some time.
+If you're using Gandi, you're fine -- you can set up a redirect that's both
+HTTP and HTTPS, and everything will work.  Likewise if you're using a registrar
+that's not listed above, that *does* offer redirects from HTTPS URLs.
 
+If you're using a registrar that doesn't support redirects from HTTPS, you're
+probably still fine, for the reasons mentioned above -- unless your domain is a
+`.dev` one.
 
-### HTTPS redirection
-
-There's also a "low-cost single domain plan" service from
-[NakedSSL](https://www.nakedssl.com/) which can handle HTTPS redirection -- that
-is, from `https://yourdomain.com` to `https://www.yourdomain.com`.
+If you're on `.dev`, or need redirects from `https://yourdomain.com` for some other
+reason, and your registrar doesn't support it, you'll need to use a third-party
+provider.  A good option is [NakedSSL](https://www.nakedssl.com/), though unfortunately
+they charge for the service.  Or alternatively, you could migrate your domain
+to another registrar that provides it for free, like Gandi.
 
 
 ## Solution 2: Set up (and pay for) a separate web app for your naked domain.
