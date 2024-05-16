@@ -96,8 +96,10 @@ But there's one exception to this: if you're using a domain that is on the
 [HSTS preload list](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security).
 With those, even if someone explicitly typed `http://yourdomain.com`
 into their browser, the browser would rewrite it to `https://yourdomain.com` and
-try to go there.  Right now, there is only one top-level domain that enforces
-that, `.dev`.  It's possible that others will appear in the future.
+try to go there.  Some top-level domains (TLDs) that enforce this are `.android`, `.app`, `.bank`, `.dev`,
+and `.foo`, but there are many more and it's likely that others will appear in
+the future.  So if (for example) you have `yourdomain.android` you'll need to
+handle redirects from `https://yourdomain.android` to `https://www.yourdomain.android`.
 
 So, with all that said, which redirection service should you use?  Most domain
 providers offer it as a free service as part of your domain registration:
@@ -115,8 +117,8 @@ HTTP and HTTPS, and everything will work.  Likewise if you're using a registrar
 that's not listed above, that *does* offer redirects from HTTPS URLs.
 
 If you're using a registrar that doesn't support redirects from HTTPS, you're
-probably still fine, for the reasons mentioned above -- unless your domain is a
-`.dev` one.
+probably still fine, for the reasons mentioned above -- unless your domain is an
+HSTS one.
 
 If you're on `.dev`, or need redirects from `https://yourdomain.com` for some other
 reason, and your registrar doesn't support it, you'll need to use a third-party
