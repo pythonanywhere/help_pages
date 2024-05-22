@@ -194,6 +194,7 @@ Here are some guides for some of the common things people want to do:
   * [Can I use IPv6?](/pages/IPv6)
   * [Can I use Pygame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
   * [Using Selenium](/pages/selenium)
+  * [Using Playwright](/pages/Playwright)
   * [Does PythonAnywhere have an API?](/pages/API)
   * [What do I do if a server I want to connect to has an allowlist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalAllowlists)
   * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
