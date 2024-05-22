@@ -80,9 +80,9 @@ If you're using SQLAlchemy directly, you configure it like this:
     engine = create_engine('mysql+mysqldb://...', pool_recycle=280)
 
 
-## Using SQLAlchemy outside view functions in websites
+## Using Flask-SQLAlchemy outside view functions in websites
 
-Sometimes you will continue to get connection errors when using SQLAlchemy in a
+Sometimes you will continue to get connection errors when using Flask-SQLAlchemy in a
 website even when you've set `pool_recycle` correctly.  They can look like the
 one above, or they can look like this:
 
