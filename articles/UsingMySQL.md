@@ -72,7 +72,7 @@ this in your settings file:
 Again, you can get the username and hostname details from the "Databases" tab.
 
 
-## MySQL with Django tests
+### MySQL with Django tests
 
 When you run Django tests that use the database, Django tries to create a
 database called *test_&lt;original database name&gt;* and that will fail because
@@ -92,6 +92,12 @@ More info here: <https://docs.djangoproject.com/en/3.2/ref/settings/#test>
 We suggest you use a form like `<your username>$test_<your database name>`.
 Create this database from the PythonAnywhere Databases tab and Django will
 happily use it and run your tests.
+
+## MySQL with Flask
+
+We strongly recommend that you use the [Flask-SQLAlchemy](https://pypi.org/project/Flask-SQLAlchemy/)
+module for this.  Check out [this help page](/pages/UsingSQLAlchemywithMySQL)
+for more details.
 
 
 ## MySQL with web2py
@@ -141,7 +147,7 @@ If you see an error containing the message like this:
 
     1227, 'Access denied; you need (at least one of) the SYSTEM_VARIABLES_ADMIN or SESSION_VARIABLES_ADMIN privileges
 
-it probably means that you try to use some settings that require 
+it probably means that you try to use some settings that require
 [system variable privileges](https://dev.mysql.com/doc/refman/8.0/en/system-variable-privileges.html)
 which PythonAnywhere users don't have.
 

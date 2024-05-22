@@ -91,7 +91,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
   * [How to handle slow/async work in a web app](/pages/AsyncInWebApps)
   * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
   * [How to move a domain from one PythonAnywhere user account to another](/pages/MovingDomainToAnotherPythonAnywhereAccount)
-  * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
+  * [Using MySQL](/pages/UsingMySQL)
   * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
   * [My site is slow!](/pages/MySiteIsSlow)
   * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
