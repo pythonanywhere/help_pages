@@ -11,13 +11,6 @@
 -->
 
 
-# Disclaimer
-
-**Warning: our API is new and in beta and not officially supported, and may
-change at any time, and it is not to be relied upon, and may cause unpredictable
-growth of extra ears. Extra ears not guaranteed.**
-
-
 # Getting started and Authentication
 
 The PythonAnywhere API uses token-based authentication.  You can get your token
