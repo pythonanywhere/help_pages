@@ -43,7 +43,7 @@ Now you can use our experimental API to deploy your FastHTML web app.
 
 We suggest that you create a virtual environment with `requests`, `python-fasthtml`, `sqlite-utils` and `uvicorn` installed (it's assumed in the following guide).
 
-To create an environment called `fasthtml_venv` run this code in a Bash console:
+To create an environment called `fasthtml_venv` run these commands in a Bash console:
 
 ```bash
 mkvirtualenv fasthtml_venv --python=python3.10
