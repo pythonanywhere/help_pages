@@ -43,7 +43,7 @@ Now you can use our experimental API to deploy your FastHTML web app.
 
 We suggest that you create a virtual environment with `requests`, `python-fasthtml`, `sqlite-utils` and `uvicorn` installed (it's assumed in the following guide).
 
-To create an environment called `fasthtml_venv` run:
+To create an environment called `fasthtml_venv` run this code in a Bash console:
 
 ```bash
 mkvirtualenv fasthtml_venv --python=python3.10
@@ -57,7 +57,7 @@ pip install requests "uvicorn[standard]" python-fasthtml sqlite-utils
 Create a directory `~/my_fasthtml/` with a `main.py` file in it containing the following code:
 
 ```python
-from fasthtml.all import FastHTML, H1, Title, P
+from fasthtml.common import FastHTML, H1, Title, P
 
 app = FastHTML()
 rt = app.route
@@ -77,7 +77,7 @@ section below.
 
 ## Create
 
-Now you can run this simple code to create your app (for simplicity, we assume the
+Now you can run run `python` in your virtualenv, and run this code to create your app (for simplicity, we assume the
 PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it. Don't
 worry about the details of the uvicorn command for now,
 [we'll explain it later](#technical-details).
