@@ -41,7 +41,7 @@ Now you can use our experimental API to deploy your FastHTML web app.
 
 ## Virtual environment
 
-We suggest that you create a virtual environment with `requests`, `fastapi` and `uvicorn` installed (it's assumed in the following guide).
+We suggest that you create a virtual environment with `requests`, `python-fasthtml`, `sqlite-utils` and `uvicorn` installed (it's assumed in the following guide).
 
 To create an environment called `fasthtml_venv` run:
 
@@ -63,7 +63,7 @@ app = FastHTML()
 rt = app.route
 
 @rt("/")
-def get(): 
+def get():
     return Title("Hello from FastHTML on PythonAnywhere"), H1("Hello world!"), P("I'm FastHTML on PythonAnywhere!")
 ```
 
@@ -141,7 +141,9 @@ I'm FastHTML on PythonAnywhere!
 ```
 
 You have a working FastHTML website hosted on PythonAnywhere!  However, this site
-will not currently appear on the "Web" page inside your PythonAnywhere account.
+will not currently appear on the "Web" page inside your PythonAnywhere account;
+we have a user interface that is a work-in-progress, though, and if you'd like
+to try that out, [drop us a line](mailto:support@pythonanywhere.com).
 
 
 ## Getting and listing webapps
