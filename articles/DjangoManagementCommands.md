@@ -68,7 +68,7 @@ From the error message, you can see that there is a way to write some extra code
 to do it.  But we'd actually recommend a different way: [custom `django-admin`
 commands](https://docs.djangoproject.com/en/5.0/howto/custom-management-commands/),
 also known as custom management commandss.  The Django documentation page we
-linked to just there is a useful resource, but here's a simpler example.
+linked to just there is a useful resource, but here are some simpler examples.
 
 
 ## Custom management commands for use in consoles and scheduled tasks
@@ -94,7 +94,7 @@ code like this:
 Comment.objects.filter(timestamp__lt=datetime.now() - timedelta(days=1)).delete()
 ```
 
-If you were to put that (with the appropriate imports) into a script and scheduled
+If you were to put that (with the appropriate imports) into a script and run
 it, you'd get the `ImproperlyConfigured` exception described above.  However,
 you can get it working with a management command.  Let's say that the code for
 your `Comment` class was in `~/mysite/comments/models.py`.  You could create a
@@ -115,27 +115,32 @@ class Command(BaseCommand):
         Comment.objects.filter(timestamp__lt=datetime.now() - timedelta(days=1)).delete()
 ```
 
-Now you can call it in a scheduled task.  Let's say that your Django site is *not*
-using a virtualenv; you could just schedule this:
-
-```bash
-~/mysite/manage.py delete_old_comments
-```
-
-That Bash code would start up Django's normal `manage.py` system, which of course
-loads in all of the settings and connects to the database for you, then run the
-code in side the `handle` function, doing the work you need.
-
-Of course, it's not limited to scheduled tasks!  If you wanted to run that
-management command ad-hoc during the day, you could just start a Bash console
-and
+With that, you could easily run it ad-hoc in a Bash console:
 
 ```bash
 cd ~/mysite
 ./manage.py delete_old_comments
 ```
 
-You could make it more complex if you wanted; perhaps you might want to add in
+That would start up Django's normal `manage.py` system, which of course
+loads in all of the settings and connects to the database for you, then run the
+code in side the `handle` function, doing the work you need.
+
+But you could also call it in a scheduled task.  Let's say that your Django site is *not*
+using a virtualenv; you could just schedule this:
+
+```bash
+~/mysite/manage.py delete_old_comments
+```
+
+If you *were* using a virtualenv -- say, one that you had created using `mkvirtualenv`
+and called `myenv` you would just need to activate it first:
+
+```bash
+workon myenv; ~/mysite/manage.py delete_old_comments
+```
+
+You could also make it more complex if you wanted; perhaps you might want to add in
 a command-line option to change the number of days old a comment would have to
 be before it was deleted.  Check out the [documentation](https://docs.djangoproject.com/en/latest/howto/custom-management-commands/)
 for details.
@@ -149,11 +154,13 @@ It's a script that is started, and is expected to keep running forever. Ideally
 you would like it to be re-started if it ever crashes (or it there's a hardware
 issue or system maintenance on the machine where it's running, or something like
 that).  The right way to set that up on PythonAnywhere would be to use an
-[always-on task](/pages/AlwaysOnTasks).
+[always-on task](/pages/AlwaysOnTasks).  But you want it to have access to the
+Django stuff -- the objects that you have stored in your database.
 
 How would you use a custom management command for that?  Let's say that what you
-wanted was to receive messages from users of the messaging service that specified
-the name of a user, and would return their most recent comment on your site.  It's
+wanted was to receive messages from users of some messaging service like WhatsApp, Signal or Telegram.
+Each incoming message would specify
+the name of a user, and the bot would respond with a message containing that user's most recent comment on your site.  It's
 an always-on task that is connected to the database via Django, and to the
 messaging service.
 
@@ -180,8 +187,8 @@ echo stuff back by saying
 message.reply(f"You just said {message.contents}")
 ```
 
-So now, let's use that imaginary API to write a custom management command that
-builds the more complex bot that was described earlier, to reply to each message
+Let's use that imaginary API to write a custom management command that
+implements the more complex bot that was described earlier, to reply to each message
 with the most recent comment left on our site by the user with the username provided
 in the message:
 
@@ -210,7 +217,7 @@ class Command(BaseCommand):
 ```
 
 ...and there you have it!  A custom management command that can connect to the
-fictional WhatsSignaGram library and interact with its users, returning the
+fictional WhatsSignaGram library and interact with its users and the Django-managed database, returning the
 most recent comment for a user when asked.
 
 Of course, in a real-world example your code for the bot would be likely to be
