@@ -96,7 +96,9 @@ Comment.objects.filter(timestamp__lt=datetime.now() - timedelta(days=1)).delete(
 
 If you were to put that (with the appropriate imports) into a script and run
 it, you'd get the `ImproperlyConfigured` exception shown above.  However,
-you can get it working with a management command.  Let's say that the code for
+you can get it working with a management command.
+
+Let's say that the code for
 your `Comment` class was in `~/mysite/comments/models.py`.  You could create a
 new file at `~/mysite/comments/management/commands/delete_old_comments.py`, and
 in there you would put code like this:
@@ -109,7 +111,7 @@ from comments.models import Comment
 
 
 class Command(BaseCommand):
-    help = "Deletes comments more than 24 hours old"
+    help = "Delete comments more than 24 hours old"
 
     def handle(self, *args, **options):
         Comment.objects.filter(timestamp__lt=datetime.now() - timedelta(days=1)).delete()
@@ -123,11 +125,12 @@ cd ~/mysite
 ```
 
 That would start up Django's normal `manage.py` system, which of course
-loads in all of the settings and connects to the database for you, then run the
-code in side the `handle` function, doing the work you need.
+loads in all of the settings and connects to the database for you, then would run the
+code in side the `handle` function, doing the work that you need.
 
-But you could also call it in a scheduled task.  Let's say that your Django site is *not*
-using a virtualenv; you could just schedule this:
+You could also call it in a scheduled task, which would achieve the once-per-day
+deletion that we want.  Let's say that your Django site is *not*
+using a virtualenv; you could just schedule this to run daily:
 
 ```bash
 ~/mysite/manage.py delete_old_comments
