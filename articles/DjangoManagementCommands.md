@@ -13,7 +13,7 @@ Django is a really useful and powerful web framework; indeed, the web interface
 and API for PythonAnywhere itself are all Django-based.
 
 One thing that makes it
-particularly useful is its powerful ORM, where you can work with the data that
+particularly useful is its powerful ORM system, where you can work with the data that
 your website needs just by using normal Python classes and objects.  If you want
 to set the field to say that the user with username `joe` is active, you can just
 write this:
@@ -65,7 +65,7 @@ run in that context, but throwaway scripts need something to do all of that setu
 for them.
 
 From the error message, you can see that there is a way to write some extra code
-to do it.  But we'd actually recommend a different way: [custom `django-admin`
+to do it.  But we'd recommend a different way: [custom `django-admin`
 commands](https://docs.djangoproject.com/en/5.0/howto/custom-management-commands/),
 also known as custom management commands.  The Django documentation page we
 linked to just there is a useful resource, but here are some simpler examples.
@@ -95,7 +95,7 @@ Comment.objects.filter(timestamp__lt=datetime.now() - timedelta(days=1)).delete(
 ```
 
 If you were to put that (with the appropriate imports) into a script and run
-it, you'd get the `ImproperlyConfigured` exception described above.  However,
+it, you'd get the `ImproperlyConfigured` exception shown above.  However,
 you can get it working with a management command.  Let's say that the code for
 your `Comment` class was in `~/mysite/comments/models.py`.  You could create a
 new file at `~/mysite/comments/management/commands/delete_old_comments.py`, and
@@ -134,7 +134,7 @@ using a virtualenv; you could just schedule this:
 ```
 
 If you *were* using a virtualenv -- say, one that you had created using `mkvirtualenv`
-and called `myenv` you would just need to activate it first:
+and called `myenv` -- you would just need to activate it first:
 
 ```bash
 workon myenv; ~/mysite/manage.py delete_old_comments
@@ -200,7 +200,7 @@ from comments.models import Comment
 
 
 class Command(BaseCommand):
-    help = "Comment WhatsSignaGram bot"
+    help = "WhatsSignaGram bot to provide the most recent comment for a user"
 
     def handle(self, *args, **options):
         bot_connection = whatssignagram.Connection(secret="z4vk14=yzfm*35+%c^=&yc*jcp9y$1al1^(^v-%ahk$j0ssz!k")
@@ -216,9 +216,23 @@ class Command(BaseCommand):
                 message.reply(f"Last comment for {username} was {comments.last().text}")
 ```
 
-...and there you have it!  A custom management command that can connect to the
+You would save that in (say) `~/mysite/comments/management/commands/comment_bot.py`
+and it could be run with `manage.py` by providing the first parameter `comment_bot`.
+So, just as with scheduled tasks, if you were *not* using a virtualenv; you could
+just specify this as the command for your always-on task:
+
+```bash
+~/mysite/manage.py comment_bot
+```
+
+...and if you *were* using a virtualenv called `myenv`, you would just need to activate it first:
+
+```bash
+workon myenv; ~/mysite/manage.py comment_bot
+```
+So there you have it!  A custom management command that can connect to the
 fictional WhatsSignaGram library and interact with its users and the Django-managed database, returning the
-most recent comment for a user when asked.
+most recent comment for a user when asked, running as an always-on task.
 
 Of course, in a real-world example your code for the bot would be likely to be
 more complicated.  But there's no problem with splitting things out into multiple
