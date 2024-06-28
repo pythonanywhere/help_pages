@@ -55,7 +55,7 @@ Traceback (most recent call last):
     raise ImproperlyConfigured(
 django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment
  variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
- ```
+```
 
 This is because all of the setup -- reading the settings, connecting to the database,
 and so on -- is handled when a Django website is started, so your view functions
