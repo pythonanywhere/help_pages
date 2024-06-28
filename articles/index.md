@@ -102,13 +102,13 @@ And here are some popular how-to guides and help pages for common webapp issues:
 
 And some tips for specific web frameworks:
 
-
   * Django
     * [Deploying an existing Django project on PythonAnywhere](/pages/DeployExistingDjangoProject)
     * [How can I use a more recent version of Django for a new project](/pages/VirtualEnvForNewerDjango)
     * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
     * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
     * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
+    * [Running Django code in consoles, scheduled and always-on tasks with custom management commands](/pages/DjangoManagementCommands)
     * [How to scale a Django Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/15/django-on-pythonanywhere-tutorial/) (external link to Memcachier)
 
   * Flask
