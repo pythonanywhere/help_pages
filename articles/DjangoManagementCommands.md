@@ -67,7 +67,7 @@ for them.
 From the error message, you can see that there is a way to write some extra code
 to do it.  But we'd actually recommend a different way: [custom `django-admin`
 commands](https://docs.djangoproject.com/en/5.0/howto/custom-management-commands/),
-also known as custom management commandss.  The Django documentation page we
+also known as custom management commands.  The Django documentation page we
 linked to just there is a useful resource, but here are some simpler examples.
 
 
@@ -90,7 +90,7 @@ deleted comments that were older than 24 hours, but a nice simple solution would
 be to have a [scheduled task](/pages/ScheduledTasks/) that kicked off every day at the same time and ran
 code like this:
 
-```
+```python
 Comment.objects.filter(timestamp__lt=datetime.now() - timedelta(days=1)).delete()
 ```
 
@@ -151,7 +151,7 @@ for details.
 Custom management commands don't have to just be one-shot utility functions like that.
 Let's say that you have simple bot that is connected to a messaging service.
 It's a script that is started, and is expected to keep running forever. Ideally
-you would like it to be re-started if it ever crashes (or it there's a hardware
+you would like it to be re-started if it ever crashes (or if there's a hardware
 issue or system maintenance on the machine where it's running, or something like
 that).  The right way to set that up on PythonAnywhere would be to use an
 [always-on task](/pages/AlwaysOnTasks).  But you want it to have access to the
@@ -225,7 +225,7 @@ more complicated.  But there's no problem with splitting things out into multipl
 functions, or indeed across multiple files.  For example, the above code could
 just as easily be this:
 
-```
+```python
 import whatssignagram
 
 from django.core.management.base import BaseCommand, CommandError
@@ -254,7 +254,7 @@ class Command(BaseCommand):
 ```
 
 ...and `do_bot_loop` could easily be split into different functions as the complexity
-of the bot grew over time.
+of the bot grew over time, and even moved to a separate module.
 
 
 ## Conclusion
