@@ -10,7 +10,9 @@
 -->
 
 Django is a really useful and powerful web framework; indeed, the web interface
-and API for PythonAnywhere itself are all Django-based.  One thing that makes it
+and API for PythonAnywhere itself are all Django-based.
+
+One thing that makes it
 particularly useful is its powerful ORM, where you can work with the data that
 your website needs just by using normal Python classes and objects.  If you want
 to set the field to say that the user with username `joe` is active, you can just
@@ -69,7 +71,7 @@ also known as custom management commandss.  The Django documentation page we
 linked to just there is a useful resource, but here's a simpler example.
 
 
-### Custom management commands for use in consoles and scheduled tasks
+## Custom management commands for use in consoles and scheduled tasks
 
 Imagine that you were writing a site where people could leave comments, but you
 wanted all comments that were more than 24 hours old to be deleted once a day
@@ -139,7 +141,7 @@ be before it was deleted.  Check out the [documentation](https://docs.djangoproj
 for details.
 
 
-### Custom management commands in always-on tasks
+## Custom management commands in always-on tasks
 
 Custom management commands don't have to just be one-shot utility functions like that.
 Let's say that you have simple bot that is connected to a messaging service.
@@ -248,7 +250,7 @@ class Command(BaseCommand):
 of the bot grew over time.
 
 
-### Conclusion
+## Conclusion
 
 Django's custom management commands are an easy way to be able to connect to your
 Django site's functions and data from scripts that aren't running as part of the
