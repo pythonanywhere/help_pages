@@ -12,26 +12,26 @@
 # Disclaimer
 
 Deployment of ASGI-based (and other async) websites on PythonAnywhere is an
-experimental feature that is possible to use, but not guaranteed to work yet.
+experimental feature.  Some important limitations to know about:
 
-Some important limitations to know about:
-
- * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
- * There is no support for static file mappings
- * There is no support for HTTP password
- * There is no web UI for creating and managing ASGI websites -- it's API-only
- * We do not guarantee that the API interface will remain the same.
+ * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`).
+ * There is no support for static file mappings.
+ * There is no support for HTTP password.
+ * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
+ * We do not guarantee that the command line syntax and the API interface will remain the same.
 
 If you are brave enough to try it, here is a quick guide how to do it using our
 API.
 
-**Note** if you're just getting started with ASGI-based sites, we recommend that
+**Note:** if you're just getting started with ASGI-based sites on
+PythonAnywhere, we recommend that
 you set them up using our `pa` command-line tool.  This provides the same
 functionality as the API, but wrapped up so that you can quickly and easily use
 it from Bash.  The API is generally only a better option if you're trying to
 automate things.
 
-We have some help pages on using the `pa` command-line tool:
+We have some help pages on using the `pa` command-line tool, and we suggest that
+you go through at least one of these first before trying to use the API:
 
 * [FastAPI](/pages/FastAPI)
 * [FastHTML](/pages/FastHTML)
@@ -62,29 +62,38 @@ somehow get hold of it, you can revoke it on this page by clicking the red
 button -- that stops it from working in the future, and creates a new one for
 you to use.
 
-Now you can use our experimental API to deploy your website.  We'll use FastAPI
+Now you can use our experimental API to deploy your website.  Note down the API
+token, as you'll be using it in the code samples below.
+
+## Creating a simple website to test against
+
+We'll use FastAPI
 as the example in this page, but the others are similar -- you'd just need to
 change the command provided when creating the site, just as you would when using
 the `pa` command-line tool.
 
 ### Virtual environment
 
-We suggest that you create a virtual environment with `requests`, `fastapi` and
-`uvicorn` installed (it's assumed in the following guide).
+Firstly, create a virtual environment with `requests`, `fastapi` and
+`uvicorn` installed.
 
 To create an environment called `fast_venv` run:
 
 ```bash
 mkvirtualenv fast_venv --python=python3.10
-# and then
+```
+
+...and then install the requirements:
+
+```bash
 pip install requests "uvicorn[standard]" fastapi
 ```
 
 
 ### The code of your website
 
-Create a directory `~/my_fastapi/` with a `main.py` file in it containing the
-following code:
+Create a directory `~/my_fastapi/`.  In that directory, create a file called
+`main.py`, with the following code:
 
 ```python
 from fastapi import FastAPI
@@ -100,10 +109,19 @@ async def root():
 
 ### Create
 
-Now you can run this simple code to create your website (for simplicity, we assume the
-PythonAnywhere username is `xanthippe`); the `domain_name` and the `command` are
-the same as the parameters that you would provide to the command-line tools, and
-the rest is the boilerplate you need to write to access the API using `requests`.
+Now you can access the API to create your website.  Run `python` in your Bash
+console, and then use the following code.  Don't forget to replace
+`YOUR TOKEN HERE` with your actual API token, `YOURUSERNAME` with your
+PythonAnywhere username, and to use the correct values for `pythonanywhere_host`
+and `pythonanywhere_domain` based on whether your account is on our US-based
+system at `www.pythonanywhere.com`, or our EU-based system at
+`eu.pythonanywhere.com`.
+
+
+(for simplicity, we assume the
+PythonAnywhere username is `xanthippe`);
+
+To run it, , and then
 
 ```python
 from pprint import pprint
@@ -112,10 +130,10 @@ from urllib.parse import urljoin
 import requests
 
 
-api_token = "YOUR TOKEN HERE"
+api_token = "YOUR TOKEN HERE" # Update to match your real API token
 headers = {"Authorization": f"Token {api_token}"}
 
-username = "xanthippe"  # update to match your USERNAME!
+username = "YOURUSERNAME"  # update to match your username!
 
 pythonanywhere_host = "www.pythonanywhere.com"  # or "eu.pythonanywhere.com" if your account is hosted on our EU servers
 pythonanywhere_domain = "pythonanywhere.com"  # or "eu.pythonanywhere.com"
@@ -142,16 +160,21 @@ response = requests.post(
 pprint(response.json())
 ```
 
+If you've used the `pa` command-line tool previously, you'll probably spot that
+the `domain_name` and the `command` are
+the same as the parameters that you would use with it.  The rest is the
+boilerplate you need to write to access the API using `requests`.
+
 If everything was successful, you should see something like:
 
 ```python
-{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
  'enabled': True,
  'id': 42,
- 'user': 'xanthippe,
- 'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+ 'user': 'YOURUSERNAME,
+ 'webapp': {'command': '/home/YOURUSERNAME/.virtualenvs/fast_venv/bin/uvicorn '
                        'my_fastapi.main:app --uds $DOMAIN_SOCKET',
-            'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+            'domains': [{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
                          'enabled': True}],
             'id': 42}}
 ```
@@ -182,13 +205,13 @@ pprint(response.json())
 ...will give you something like this:
 
 ```python
-[{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+[{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
   'enabled': True,
   'id': 42,
-  'user': 'xanthippe,
-  'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+  'user': 'YOURUSERNAME,
+  'webapp': {'command': '/home/YOURUSERNAME/.virtualenvs/fast_venv/bin/uvicorn '
                         'my_fastapi.main:app --uds $DOMAIN_SOCKET',
-             'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+             'domains': [{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
                           'enabled': True}],
              'id': 42}}]
 ```
@@ -208,13 +231,13 @@ pprint(response.json())
 ...and you'll get this:
 
 ```python
-{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
  'enabled': True,
  'id': 42,
- 'user': 'xanthippe,
- 'webapp': {'command': '/home/xanthippe/.virtualenvs/fast_venv/bin/uvicorn '
+ 'user': 'YOURUSERNAME,
+ 'webapp': {'command': '/home/YOURUSERNAME/.virtualenvs/fast_venv/bin/uvicorn '
                        'my_fastapi.main:app --uds $DOMAIN_SOCKET',
-            'domains': [{'domain_name': 'xanthippe.eu.pythonanywhere.com',
+            'domains': [{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
                          'enabled': True}],
             'id': 42}}
 ```
