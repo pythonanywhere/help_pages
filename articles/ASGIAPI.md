@@ -54,7 +54,7 @@ Click the "Create a new API token" button to get your token, and you'll see this
 
 <img alt="API token set up" src="/api-token-set-up.png" class="bordered-image">
 
-That string of letters and numbers (`d870f0cac74964b27db563aeda9e418565a0d60d`
+That string of letters and numbers (masked out
 in the screenshot) is the API token, and anyone who has it can access your
 PythonAnywhere account and do stuff -- so keep it secret. If someone does
 somehow get hold of it, you can revoke it on this page by clicking the red

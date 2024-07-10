@@ -23,7 +23,7 @@ experimental feature.  Some important limitations to know about:
  * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
 
-If you are brave enough to try it, here is a quick guide how to do it :-)
+If you are brave enough to try it, here is a quick guide on how to do it :-)
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ this:
 
 <img alt="API token set up" src="/api-token-set-up.png" class="bordered-image">
 
-That string of letters and numbers (`d870f0cac74964b27db563aeda9e418565a0d60d`
+That string of letters and numbers (masked out
 in the screenshot) is the API token, and anyone who has it can access your
 PythonAnywhere account and do stuff -- so keep it secret. If someone does
 somehow get hold of it, you can revoke it on this page by clicking the red
@@ -54,15 +54,14 @@ you to use.
 
 Now you can use our command-line tools or our experimental API to deploy your
 ASGI website.  This help page will show you how to use the command-line
-tools, which don't need you to note down the API token -- once it has been
+tools, so you don't need to note down the API token -- once it has been
 generated, it's available to any code running inside Bash consoles on
 PythonAnywhere.
 
 ### Installing the command-line tools
 
-As a first step, start a fresh Bash console, which will have the API token
-available.  In there, you need to install the latest version of our command-line
-tools.
+As a first step, start a fresh Bash console, and in there, install the latest
+version of our command-line tools.
 
 ```bash
 pip install --upgrade pythonanywhere
@@ -386,9 +385,9 @@ As an example, let's use the command that we specified for FastHTML
 Breaking that down:
 
 * `/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn` is the path to uvicorn in your virtualenv.  Uvicorn is an ASGI container program -- it can run any ASGI-based Python web framework, like FastHTML, FastAPI, or recent versions of Django.
-* `--app-dir /home/YOURUSERNAME/my_fasthtml` is the directory containing your website's code.
+* `--app-dir /home/YOURUSERNAME/my_fasthtml` is the directory containing your website's code -- in this example, the FastHTML example.
 * `--uds $DOMAIN_SOCKET` is telling uvicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
-* `main:app` is telling uvicorn, which is looking for code in the specified `app-dir`, to load up the ASGI app called `app` from the file `main.py`
+* `main:app` is telling uvicorn, which is looking for code in the specified `app-dir`, to load up the ASGI app called `app` from the file `main.py`.  If you're using Django, it will be a little more complicated because of the way Django nests directories.
 
 As we mentioned above, that domain socket (which will be something like
 `/var/sockets/YOURUSERNAME.pythonanywhere.com/app.sock`) is internal to the
@@ -397,15 +396,18 @@ it in a console or on the "Files" page inside PythonAnywhere.
 
 If you want to use an ASGI framework that is not one of the ones we have examples
 for above, you should be able to
-get it up an running just by changing the first argument to point to the ASGI
-object that your framework exports.
+get it up and running by:
+
+* Installing the framework into your virtualenv.
+* Adjusting the `app-dir` to point to the location of your code.
+* Changing the last argument to point to the ASGI object that your framework exports.
 
 But in addition, you can even use our new website hosting system to host non-ASGI
 servers!  It supports any server that is able to listen for incoming requests on a unix domain socket.
 You'll just need to work out the appropriate incantation to tell it how to
 listen on the socket provided in `$DOMAIN_SOCKET`.
 
-### The API
+## The API
 
 If you want to control your ASGI site programatically, using Python code rather
 than the `pa` command-line tool, check out [this help page](/pages/ASGIAPI).
