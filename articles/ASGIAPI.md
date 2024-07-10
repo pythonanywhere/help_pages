@@ -14,9 +14,8 @@
 Deployment of ASGI-based (and other async) websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
- * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`).
+ * HTTPS is only available on default PythonAnywhere subdomains (e.g. `YOURUSERNAME.pythonanywhere.com`).
  * There is no support for static file mappings.
- * There is no support for HTTP password.
  * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
 
