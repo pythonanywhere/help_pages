@@ -192,7 +192,7 @@ run this:
 django-admin startproject asyncdjango
 ```
 
-Modify `~/asyncdjango/asyncdjango/url.py` to look like this:
+Modify `~/asyncdjango/asyncdjango/urls.py` to look like this:
 
 ```python
 from django.urls import path
@@ -248,6 +248,10 @@ If everything was successful, you should see something like:
 Now, if you go to the website URL defined in `domain` you should get something
 back from your website -- exactly what, of course, depends on which of the
 frameworks you chose agove.
+
+*Note:* as of this writing, there is a bug that means that you might get a 404
+not found page for a few seconds before the site comes up.  If you get that,
+just refresh the page in your browser.  We're on the case :-)
 
 You have a working ASGI website hosted on PythonAnywhere!  However, this site
 will not currently appear on the "Web" page inside your PythonAnywhere account;
