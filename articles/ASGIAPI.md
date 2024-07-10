@@ -107,7 +107,7 @@ async def root():
 
 ## Managing your website via the API
 
-### Create
+### Creating it
 
 Now you can access the API to create your website.  Run `python` in your Bash
 console, and then use the following code.  Don't forget to replace
@@ -116,12 +116,6 @@ PythonAnywhere username, and to use the correct values for `pythonanywhere_host`
 and `pythonanywhere_domain` based on whether your account is on our US-based
 system at `www.pythonanywhere.com`, or our EU-based system at
 `eu.pythonanywhere.com`.
-
-
-(for simplicity, we assume the
-PythonAnywhere username is `xanthippe`);
-
-To run it, , and then
 
 ```python
 from pprint import pprint
@@ -185,7 +179,8 @@ Now, if you go to the website URL defined in `domain_name` you should get
 {"message":"Hello from FastAPI"}
 ```
 
-You have a working FastAPI website hosted on PythonAnywhere!
+You have a working FastAPI website hosted on PythonAnywhere, created via our
+API.
 
 
 ### Getting and listing websites
@@ -216,8 +211,8 @@ pprint(response.json())
              'id': 42}}]
 ```
 
-Likewise, you can get the information about a particular website by getting
-it:
+Likewise, you can get the information about a particular website by adding its
+domain name, and a trailing slash, to the URL:
 
 ```python
 
@@ -228,7 +223,7 @@ response = requests.get(endpoint, headers=headers)
 pprint(response.json())
 ```
 
-...and you'll get this:
+You'll get something like this:
 
 ```python
 {'domain_name': 'YOURUSERNAME.pythonanywhere.com',
