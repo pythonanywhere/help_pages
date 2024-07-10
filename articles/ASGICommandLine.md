@@ -15,13 +15,16 @@ This help page explains how to set up an ASGI site on PythonAnywhere -- for
 example, one based on the FastHTML or FastAPI frameworks, or using the latest
 Django async features.
 
-Deployment of ASGI (and other async) websites on PythonAnywhere is an
+*Note:* deployment of ASGI (and other async) websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
  * HTTPS is only available on default PythonAnywhere subdomains (e.g. `YOURUSERNAME.pythonanywhere.com`).
  * There is no support for static file mappings.
  * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
+ * We have not worked out the long-term pricing for ASGI sites, which will probably
+   differ from the way we charge for traditional WSGI ones.  We're 99.9% certain that
+   there will be a way to host them in a free plan, though!
 
 If you are brave enough to try it, here is a quick guide on how to do it :-)
 
@@ -52,16 +55,16 @@ somehow get hold of it, you can revoke it on this page by clicking the red
 button -- that stops it from working in the future, and creates a new one for
 you to use.
 
-Now you can use our command-line tools or our experimental API to deploy your
+Now you can use our command-line tool or our experimental API to deploy your
 ASGI website.  This help page will show you how to use the command-line
-tools, so you don't need to note down the API token -- once it has been
+tool, so you don't need to note down the API token -- now that it has been
 generated, it's available to any code running inside Bash consoles on
 PythonAnywhere.
 
 ### Installing the command-line tools
 
 As a first step, start a fresh Bash console, and in there, install the latest
-version of our command-line tools.
+version of our command-line tool.
 
 ```bash
 pip install --upgrade pythonanywhere
@@ -277,7 +280,7 @@ pa website get --domain YOURUSERNAME.pythonanywhere.com
 ...which will display something like this:
 
 ```text
-STUFF
+TODO: need a bugfix in the pa command for this.
 ```
 
 ### Reloading

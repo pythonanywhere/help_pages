@@ -18,6 +18,9 @@ experimental feature.  Some important limitations to know about:
  * There is no support for static file mappings.
  * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
+ * We have not worked out the long-term pricing for ASGI sites, which will probably
+   differ from the way we charge for traditional WSGI ones.  We're 99.9% certain that
+   there will be a way to host them in a free plan, though!
 
 If you are brave enough to try it, here is a quick guide how to do it using our
 API.
