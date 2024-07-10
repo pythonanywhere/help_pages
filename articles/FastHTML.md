@@ -312,3 +312,9 @@ command = (
 )
 ```
 
+### The API
+
+If you want to control your ASGI site programatically, using Python code rather
+than the `pa` command-line tool, check out [this help page](/pages/ASGIAPI).
+
+
