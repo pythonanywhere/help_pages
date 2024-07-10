@@ -16,20 +16,21 @@ experimental feature that is possible to use, but not guaranteed to work yet.
 
 Some important limitations to know about:
 
- * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`)
- * There is no support for static file mappings
- * There is no support for HTTP password
- * There is no web UI for creating and managing ASGI websites -- it's API and command-line only
+ * HTTPS is only available on default PythonAnywhere subdomains (e.g. `username.eu.pythonanywhere.com`).
+ * There is no support for static file mappings.
+ * There is no support for HTTP password.
+ * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
 
 If you are brave enough to try it, here is a quick guide how to do it :-)
 
-# Prerequisites
-
 ## API token
 
-The first step when using the API is to get an API token -- this is what you use
-to authenticate yourself with our servers when using it.  To do that, log in to
+This help page explains how to manage your websites using our command-line
+tools rather than the API, but you'll need to generate an API token so that
+those tools know how to connect to PythonAnywhere.
+
+To do that, log in to
 PythonAnywhere, and go to the "Account" page using the link at the top right.
 Click on the "API token" tab; if you don't already have a token, it will look
 like this:
@@ -50,12 +51,15 @@ you to use.
 
 Now you can use our command-line tools or our experimental API to deploy your
 FastHTML website.  This help page will show you how to use the command-line
-tools.
+tools, which don't need you to note down the API token -- once it has been
+generated, it's available to any code running inside Bash consoles on
+PythonAnywhere.
 
 ## First step: install the command-line tools
 
-We'll be managing the website from a Bash console on PythonAnywhere, so the
-first step is to install the command-line tools.  In a fresh Bash console, run
+As a first step, start a fresh Bash console, which will have the API token
+available.  In there, you need to install the latest version of our command-line
+tools.
 
 ```bash
 pip install --upgrade pythonanywhere

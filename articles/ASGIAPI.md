@@ -11,7 +11,7 @@
 
 # Disclaimer
 
-Deployment of FastAPI-based (and other async) websites on PythonAnywhere is an
+Deployment of ASGI-based (and other async) websites on PythonAnywhere is an
 experimental feature that is possible to use, but not guaranteed to work yet.
 
 Some important limitations to know about:
@@ -64,7 +64,8 @@ you to use.
 
 Now you can use our experimental API to deploy your website.  We'll use FastAPI
 as the example in this page, but the others are similar -- you'd just need to
-change the command provided when creating the site..
+change the command provided when creating the site, just as you would when using
+the `pa` command-line tool.
 
 ### Virtual environment
 
@@ -100,9 +101,9 @@ async def root():
 ### Create
 
 Now you can run this simple code to create your website (for simplicity, we assume the
-PythonAnywhere username is `xanthippe`) -- we will use `uvicorn` to serve it. Don't
-worry about the details of the uvicorn command for now,
-[we'll explain it later](#technical-details).
+PythonAnywhere username is `xanthippe`); the `domain_name` and the `command` are
+the same as the parameters that you would provide to the command-line tools, and
+the rest is the boilerplate you need to write to access the API using `requests`.
 
 ```python
 from pprint import pprint
@@ -221,8 +222,8 @@ pprint(response.json())
 
 ### Reload
 
-If you want to change the code of your website, you need to reload it using
-the API to pick up those changes:
+If you have changed the code of your website, you need to reload it using
+the API to pick up the new code:
 
 ```python
 
@@ -234,7 +235,7 @@ print(response)
 ```
 
 
-### Reload (or disable/enable)
+### Disabling and enabling
 
 If you want to temporarily disable your site without deleting it, or if you've
 previously disabled it and you wnat to enable it, here's what you do:
