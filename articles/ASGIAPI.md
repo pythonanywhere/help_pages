@@ -29,14 +29,12 @@ functionality as the API, but wrapped up so that you can quickly and easily use
 it from Bash.  The API is generally only a better option if you're trying to
 automate things.
 
-We have some help pages on using the `pa` command-line tool, and we suggest that
-you go through at least one of these first before trying to use the API:
+We have [a help page on using the `pa` command-line tool](/pages/ASGICommandLine),
+and we suggest that you go through at least one of the examples there before
+trying the API.
 
-* [FastAPI](/pages/FastAPI)
-* [FastHTML](/pages/FastHTML)
-* [DjangoI](/pages/AsgiDjango)
+If you've already done that, then read on!
 
-The rest of this page explains how to use the API instead.
 
 ## Prerequisites
 
