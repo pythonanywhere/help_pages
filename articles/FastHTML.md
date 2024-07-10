@@ -11,7 +11,7 @@
 
 # Disclaimer
 
-Deployment of FastHTML-based (and other async) web apps on PythonAnywhere is an
+Deployment of FastHTML-based (and other async) websites on PythonAnywhere is an
 experimental feature that is possible to use, but not guaranteed to work yet.
 
 Some important limitations to know about:
@@ -49,7 +49,7 @@ button -- that stops it from working in the future, and creates a new one for
 you to use.
 
 Now you can use our command-line tools or our experimental API to deploy your
-FastHTML web app.  This help page will show you now to use the command-line
+FastHTML website.  This help page will show you how to use the command-line
 tools.
 
 ## First step: install the command-line tools
@@ -61,7 +61,11 @@ first step is to install the command-line tools.  In a fresh Bash console, run
 pip install --upgrade pythonanywhere
 ```
 
-This will make a new command, `pa` available, which we'll be using later.
+(As of this writing, it will print out an error about `typing-extensions`, but
+you can ignore that.)
+
+Running that install will make a new command, `pa` available, which we'll be
+using later.
 
 
 ## Creating a simple test website
@@ -81,7 +85,7 @@ pip install python-fasthtml
 ```
 
 
-### The code of your web app
+### The code of your website
 
 Create a directory `~/my_fasthtml/` with a `main.py` file in it containing the following code:
 
@@ -97,14 +101,14 @@ def get():
 ```
 
 
-## Managing your web app
+## Managing your website
 
 ### Creating it
 
 In Bash, to deploy your website to your subdomain -- that is, to
 *yourusername*`.pythonanywhere.com` if you're on our US system, or
-*yourusername*`.eu.pythonanywhere.com` if you're on the EU system, just run this
-command, replacing the domain argument as appropriate, and putting your own
+*yourusername*`.eu.pythonanywhere.com` if you're on the EU system -- just run this
+command.  You'll need to replace the domain argument as appropriate, and put your own
 username in place of `YOURUSERNAME` in the command:
 
 ```bash
@@ -132,7 +136,7 @@ we have a user interface that is a work-in-progress, though, and if you'd like
 to try that out, [drop us a line](mailto:support@pythonanywhere.com).
 
 
-### Getting and listing webapps
+### Getting and listing websites
 
 You can get a list of ASGI websites from PythonAnywhere with this command:
 
@@ -243,7 +247,7 @@ INFO:      - "GET / HTTP/1.1" 200 OK
 For example, `/var/log/YOURUSERNAME.pythonanywhere.com.access.log`.
 
 This will also show incoming requests, but will be formatted similarly to other
-PythonAnywhere web apps -- for example:
+PythonAnywhere websites -- for example:
 
 ```text
 1.2.3.4 - - [17/Oct/2023:13:14:00 +0000] "GET / HTTP/1.1" 200 32 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" "1.2.3.4" response-time=0.286
@@ -264,7 +268,7 @@ The command that we are providing for our FastHTML site in the instructions abov
 
 Breaking that down:
 
-* `/home/YOURUSERNAME/.virtualenvs/fasthtml_venv/bin/uvicorn` is the path to uvicorn in your virtualenv
+* `/home/YOURUSERNAME/.virtualenvs/fasthtml_venv/bin/uvicorn` is the path to uvicorn in your virtualenv.  Uvicorn is an ASGI container program -- it can run any ASGI-based Python web framework, like FastHTML, FastAPI, or recent versions of Django.
 * `my_fasthtml.main:app` is telling uvicorn, which is running in your home directory `~`, to load up the ASGI app called `app` from the file `my_fasthtml/main.py`
 * `--uds $DOMAIN_SOCKET` is telling uvicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
 
