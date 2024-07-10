@@ -104,16 +104,19 @@ def get():
 In Bash, to deploy your website to your subdomain -- that is, to
 *yourusername*`.pythonanywhere.com` if you're on our US system, or
 *yourusername*`.eu.pythonanywhere.com` if you're on the EU system, just run this
-command, replacing the domain argument as appropriate:
+command, replacing the domain argument as appropriate, and putting your own
+username in place of `YOURUSERNAME` in the command:
 
 ```bash
-pa website create --domain YOURUSERNAME.pythonanywhere.com --command ~/.virtualenvs/fasthtml_venv/bin/uvicorn --uds $DOMAIN_SOCKET my_fasthtml.main:app
+pa website create --domain YOURUSERNAME.pythonanywhere.com --command '/home/YOURUSERNAME/.virtualenvs/fasthtml_venv/bin/uvicorn --uds $DOMAIN_SOCKET my_fasthtml.main:app'
 ```
 
 If everything was successful, you should see something like:
 
-```python
-STUFF HERE
+```text
+< All done! Your site is now live at YOURUSERNAME.pythonanywhere.com. >
+   \
+    ~<:>>>>>>>>>
 ```
 
 Now, if you go to the website URL defined in `domain` you should get
@@ -140,13 +143,15 @@ pa website get
 You'll get something like this:
 
 ```text
-STUFF
+domain name                      enabled
+-------------------------------  ---------
+YOURUSERNAME.pythonanywhere.com  True
 ```
 
 And you can get the details for one website like this:
 
 ```bash
-pa website get --domain=YOURUSERNAME.pythonanywhere.com
+pa website get --domain YOURUSERNAME.pythonanywhere.com
 ```
 
 ...which will display something like this:
@@ -161,29 +166,38 @@ If you change the code of your website, you'll need to reload it to activate
 those changes:
 
 ```bash
-pa website reload --domain=YOURUSERNAME.pythonanywhere.com
+pa website reload --domain YOURUSERNAME.pythonanywhere.com
 ```
 
 If all goes well, you'll see this:
 
 ```text
-STUFF
+< Website YOURUSERNAME.pythonanywhere.com has been reloaded! >
+   \
+    ~<:>>>>>>>>>
 ```
 
+...and if you visit the site, you'll see that it's been updated to run your new
+code.
 
 ### Delete
 
 To delete your website, use this:
 
 ```bash
-pa website delete --domain=YOURUSERNAME.pythonanywhere.com
+pa website delete --domain YOURUSERNAME.pythonanywhere.com
 ```
 
 If all goes well, you'll see this:
 
 ```text
-STUFF
+< Website YOURUSERNAME.pythonanywhere.com has been deleted! >
+   \
+    ~<:>>>>>>>>>
 ```
+
+...and the website will be gone, and replaced with our default "Coming Soon!"
+page.
 
 
 ## Supported UI features
@@ -196,7 +210,7 @@ console; they're located in `/var/log`.
 
 #### The error log
 
-For example, `/var/log/xanthippe.eu.pythonanywhere.com.error.log`.
+For example, `/var/log/YOURUSERNAME.pythonanywhere.com.error.log`.
 
 By default, uvicorn logs its status messages to the standard error stream, so
 if all is well you'll see something like this:
@@ -205,7 +219,7 @@ if all is well you'll see something like this:
 INFO:     Started server process [1]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on unix socket /var/sockets/xanthippe.eu.pythonanywhere.com/app.sock (Press CTRL+C to quit)
+INFO:     Uvicorn running on unix socket /var/sockets/YOURUSERNAME.pythonanywhere.com/app.sock (Press CTRL+C to quit)
 ```
 
 The last line is uvicorn saying that it has successfully started, and is listening
@@ -215,7 +229,7 @@ it in a console or on the "Files" page inside PythonAnywhere.
 
 #### The server log
 
-For example, `/var/log/xanthippe.eu.pythonanywhere.com.server.log`.
+For example, `/var/log/YOURUSERNAME.pythonanywhere.com.server.log`.
 
 By default, uvicorn logs incoming requests to the standard output stream, so
 you'll see something like this:
@@ -226,7 +240,7 @@ INFO:      - "GET / HTTP/1.1" 200 OK
 
 #### The access log
 
-For example, `/var/log/xanthippe.eu.pythonanywhere.com.access.log`.
+For example, `/var/log/YOURUSERNAME.pythonanywhere.com.access.log`.
 
 This will also show incoming requests, but will be formatted similarly to other
 PythonAnywhere web apps -- for example:
@@ -245,17 +259,17 @@ going on, or to build on these instructions to do more than just FastHTML, read 
 The command that we are providing for our FastHTML site in the instructions above is this:
 
 ```text
-~/.virtualenvs/fasthtml_venv/bin/uvicorn my_fasthtml.main:app --uds $DOMAIN_SOCKET
+/home/YOURUSERNAME/.virtualenvs/fasthtml_venv/bin/uvicorn my_fasthtml.main:app --uds $DOMAIN_SOCKET
 ```
 
 Breaking that down:
 
-* `~/.virtualenvs/fasthtml_venv/bin/uvicorn` is the path to uvicorn in your virtualenv
+* `/home/YOURUSERNAME/.virtualenvs/fasthtml_venv/bin/uvicorn` is the path to uvicorn in your virtualenv
 * `my_fasthtml.main:app` is telling uvicorn, which is running in your home directory `~`, to load up the ASGI app called `app` from the file `my_fasthtml/main.py`
 * `--uds $DOMAIN_SOCKET` is telling uvicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
 
 As we mentioned above, that domain socket (which will be something like
-`/var/sockets/xanthippe.eu.pythonanywhere.com/app.sock`) is internal to the
+`/var/sockets/YOURUSERNAME.pythonanywhere.com/app.sock`) is internal to the
 part of our system that serves websites; you won't be able to see
 it in a console or on the "Files" page inside PythonAnywhere.
 
