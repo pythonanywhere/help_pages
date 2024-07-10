@@ -7,13 +7,16 @@ def root():
     return redirect("/pages/")
 
 @app.route('/pages/FastHTML')
+@app.route('/pages/FastHTML/')
 def fasthtml_redirect():
     return redirect("/pages/ASGICommandLine")
 
 @app.route('/pages/FastAPI')
+@app.route('/pages/FastAPI/')
 def fastapi_redirect():
     return redirect("/pages/ASGICommandLine")
 
 @app.route('/pages/AsgiDjango')
+@app.route('/pages/AsgiDjango/')
 def asgi_django_redirect():
     return redirect("/pages/ASGICommandLine")
