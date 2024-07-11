@@ -15,7 +15,7 @@ This help page explains how to set up an ASGI site on PythonAnywhere -- for
 example, one based on the FastHTML or FastAPI frameworks, or using the latest
 Django async features.
 
-*Note:* deployment of ASGI (and other async) websites on PythonAnywhere is an
+**Note:** deployment of ASGI (and other async) websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
  * HTTPS is only available on default PythonAnywhere subdomains (e.g. `YOURUSERNAME.pythonanywhere.com`).
@@ -281,10 +281,15 @@ And you can get the details for one website like this:
 pa website get --domain YOURUSERNAME.pythonanywhere.com
 ```
 
-...which will display something like this:
+...which will display something like this (the command will of course vary based
+on the framework you're using):
 
 ```text
-TODO: need a bugfix in the pa command for this.
+-----------  -------------------------------------------------------------------------------------------------------------------------
+domain name  YOURUSERNAME.pythonanywhere.com
+enabled      True
+command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/my_fastapi --uds $DOMAIN_SOCKET main:app
+-----------  -------------------------------------------------------------------------------------------------------------------------
 ```
 
 ### Reloading
