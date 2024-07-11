@@ -388,16 +388,16 @@ If you just want to get an ASGI site up and running, all you need to do is follo
 the recipe above.  However, if you'd like to understand a bit more about what is
 going on, or to build on these instructions to do more than just ASGI, read on!
 
-As an example, let's use the command that we specified for FastHTML
+As an example, let's use the command that we specified for FastAPI
 
 ```text
-/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/my_fasthtml --uds $DOMAIN_SOCKET main:app
+/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/my_fastapi --uds $DOMAIN_SOCKET main:app
 ```
 
 Breaking that down:
 
 * `/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn` is the path to uvicorn in your virtualenv.  Uvicorn is an ASGI container program -- it can run any ASGI-based Python web framework, like FastHTML, FastAPI, or recent versions of Django.
-* `--app-dir /home/YOURUSERNAME/my_fasthtml` is the directory containing your website's code -- in this example, the FastHTML example.
+* `--app-dir /home/YOURUSERNAME/my_fastapi` is the directory containing your website's code -- in this example, the FastAPI example.
 * `--uds $DOMAIN_SOCKET` is telling uvicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
 * `main:app` is telling uvicorn, which is looking for code in the specified `app-dir`, to load up the ASGI app called `app` from the file `main.py`.  If you're using Django, it will be a little more complicated because of the way Django nests directories.
 
