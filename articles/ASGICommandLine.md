@@ -12,7 +12,7 @@
 # Disclaimer
 
 This help page explains how to set up an ASGI site on PythonAnywhere -- for
-example, one based on the FastAPI framework, or using the latest
+example, one based on the FastHTML or FastAPI frameworks, or using the latest
 Django async features.
 
 **Note:** deployment of ASGI (and other async) websites on PythonAnywhere is an
@@ -82,9 +82,52 @@ using later.
 Now we'll create a simple site that we can deploy.  Exactly how you do that
 depends on the web framework you want to use:
 
+* [FastHTML](#fasthtml)
 * [FastAPI](#fastapi)
 * [Django](#django)
 
+
+### FastHTML
+
+Firstly, create a virtual environment with `python-fasthtml`
+installed.  In your Bash console:
+
+```bash
+mkvirtualenv my_venv --python=python3.10
+```
+
+...and then:
+
+```
+pip install python-fasthtml
+```
+
+Next, we'll create a minimal FastHTML site.  Create a directory `~/my_fasthtml/`
+and inside it create a file called `main.py`, containing the following code:
+
+```python
+from fasthtml.common import FastHTML, H1, Title, P
+
+app = FastHTML()
+rt = app.route
+
+@rt("/")
+def get():
+    return Title("Hello from FastHTML on PythonAnywhere"), H1("Hello world!"), P("I'm FastHTML on PythonAnywhere!")
+```
+
+That's enough setup!  The only other thing you'll need to know to run your site
+is the *command* that you will later on provide when creating it; we'll explain
+the details of this later on, but for now, just note down that it should be this:
+
+```bash
+/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/my_fasthtml --uds $DOMAIN_SOCKET main:app
+```
+
+...with `YOURUSERNAME` replaced by your actual username, but with everything else
+exactly as it is.
+
+Now you can move on to [creating your website](#creating-your-website)
 
 ### FastAPI
 
@@ -353,7 +396,7 @@ As an example, let's use the command that we specified for FastAPI
 
 Breaking that down:
 
-* `/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn` is the path to uvicorn in your virtualenv.  Uvicorn is an ASGI container program -- it can run any ASGI-based Python web framework, like FastAPI, or recent versions of Django.
+* `/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn` is the path to uvicorn in your virtualenv.  Uvicorn is an ASGI container program -- it can run any ASGI-based Python web framework, like FastHTML, FastAPI, or recent versions of Django.
 * `--app-dir /home/YOURUSERNAME/my_fastapi` is the directory containing your website's code -- in this example, the FastAPI example.
 * `--uds $DOMAIN_SOCKET` is telling uvicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
 * `main:app` is telling uvicorn, which is looking for code in the specified `app-dir`, to load up the ASGI app called `app` from the file `main.py`.  If you're using Django, it will be a little more complicated because of the way Django nests directories.
