@@ -317,6 +317,8 @@ in json format:
 
 ## Webapps
 
+These endpoints are for the old, WSGI-based web apps
+
 ### /api/v0/user/{username}/webapps/
 
 <table class="table table-striped">
@@ -416,6 +418,8 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
 </table>
 
 ## Websites
+
+These endpoints are for the new, ASGI-based web sites
 
 ### /api/v1/user/{username}/websites/
 
