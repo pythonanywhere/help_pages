@@ -67,7 +67,9 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 Each endpoint has a 40 requests per minute rate limit, apart from the `send_input`
 endpoint on consoles, which is 120 requests per minute.
 
+
 ## Always_On
+
 ### /api/v0/user/{username}/always_on/
 
 <table class="table table-striped">
@@ -113,6 +115,8 @@ connecting to the console in a browser will do that).</td><td class="params">exe
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">View consoles shared with you.</td><td class="params">(no parameters)</td></tr>
 </table>
+
+
 ### /api/v0/user/{username}/consoles/{id}/
 
 <table class="table table-striped">
@@ -149,6 +153,15 @@ connecting to the console in a browser will do that).</td><td class="params">exe
     "next_reset_time": &lt;isoformat&gt;,
     "daily_cpu_total_usage_seconds": &lt;float&gt;
 }</pre></td><td class="params">(no parameters)</td></tr>
+</table>
+
+## Databases
+
+### /api/v0/user/{username}/databases/mysql/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description"></td><td class="params">(no parameters)</td></tr>
 </table>
 
 ## Default_Python3_Version
@@ -194,6 +207,48 @@ the "Run" button in the editor, in json format:
     "available_python_versions": [&lt;str&gt;],
 }</pre></td><td class="params">(no parameters)</td></tr>
   <tr><td class="method">PATCH</td><td class="description">Sets Python version used for the "Run" button in the editor.</td><td class="params">(no parameters)</td></tr>
+</table>
+
+## Domains
+
+### /api/v1/user/{username}/domains/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">List all domains</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new domain</td><td class="params">domain_name, enabled, webapp</td></tr>
+</table>
+
+
+### /api/v1/user/{username}/domains/{domain_name}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">Get information about the domain</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify the domain</td><td class="params">domain_name, enabled, webapp</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Remove the domain</td><td class="params">(no parameters)</td></tr>
+</table>
+
+
+### /api/v1/user/{username}/domains/{domain_name}/ssl/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">Get and set TLS/HTTPS info. POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Get and set TLS/HTTPS info. POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td class="params">domain_name, enabled, webapp</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Get and set TLS/HTTPS info. POST parameters to the right are incorrect, use
+`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
+</table>
+
+## Features
+
+### /api/v0/user/{username}/features/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description"></td><td class="params">(no parameters)</td></tr>
 </table>
 
 ## Files
@@ -242,7 +297,92 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 1000 results.</td><td class="params">Query parameter: path</td></tr>
 </table>
 
+## Panels
+
+### /api/v1/user/{username}/panels/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">List all domains with their webapp details in json format:
+<pre>[
+    {
+        'id': &lt;int&gt;,
+        'user': &lt;str&gt;,
+        'domain_name': &lt;str&gt;,
+        'enabled': &lt;bool&gt;,
+        'webapp': {
+            'id': &lt;str&gt;,
+            'command': &lt;str&gt;,
+            'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+        },
+        'logfiles': {
+            'access': &lt;str&gt;,
+            'server': &lt;str&gt;,
+            'error': &lt;str&gt;,
+        }
+    }
+]</pre></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new domain and associated webapp
+
+Returns information about created website (domain with webapp)
+in json format:
+<pre>{
+    'id': &lt;int&gt;,
+    'user': &lt;str&gt;,
+    'domain_name': &lt;str&gt;,
+    'enabled': &lt;bool&gt;,
+    'webapp': {
+        'id': &lt;str&gt;,
+        'command': &lt;str&gt;,
+        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+    },
+    'logfiles': {
+        'access': &lt;str&gt;,
+        'server': &lt;str&gt;,
+        'error': &lt;str&gt;,
+    }
+}</pre>
+<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">domain_name, enabled, webapp</td></tr>
+</table>
+
+
+### /api/v1/user/{username}/panels/{domain_name}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">Get information about the domain and its webapp
+in json format:
+<pre>{
+    'id': &lt;int&gt;,
+    'user': &lt;str&gt;,
+    'domain_name': &lt;str&gt;,
+    'enabled': &lt;bool&gt;,
+    'webapp': {
+        'id': &lt;str&gt;,
+        'command': &lt;str&gt;,
+        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+    },
+    'logfiles': {
+        'access': &lt;str&gt;,
+        'server': &lt;str&gt;,
+        'error': &lt;str&gt;,
+    }
+}</pre>
+<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify the domain/webapp</td><td class="params">domain_name, enabled, webapp</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Remove the domain and webapp</td><td class="params">(no parameters)</td></tr>
+</table>
+
+
+### /api/v1/user/{username}/panels/{domain_name}/reload/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td></tr>
+</table>
+
 ## Schedule
+
 ### /api/v0/user/{username}/schedule/
 
 <table class="table table-striped">
@@ -318,10 +458,8 @@ specify Python 3.6.</td><td class="params">POST parameters: domain_name, python_
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Return information about a web app's configuration</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">PUT</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualen
-v_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
-  <tr><td class="method">PATCH</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtual
-env_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Delete the webapp.  This will take the site offline.
 Config is backed up in /var/www, and your code is not touched.</td><td class="params">(no parameters)</td></tr>
 </table>
@@ -333,6 +471,7 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">POST</td><td class="description">Disable the webapp.</td><td class="params">POST parameters: none</td></tr>
 </table>
+
 
 ### /api/v0/user/{username}/webapps/{domain_name}/enable/
 
@@ -357,8 +496,7 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
   <tr><td class="method">GET</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
   <tr><td class="method">POST</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_passw
-ord</td></tr>
+`cert` and `private_key` when posting.</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
 </table>
@@ -402,3 +540,88 @@ ord</td></tr>
   <tr><td class="method">PATCH</td><td class="description">Modify a static header. (webapp restart required)</td><td class="params">url, name, value</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Remove a static header. (webapp restart required)</td><td class="params">(no parameters)</td></tr>
 </table>
+
+## Websites
+
+### /api/v1/user/{username}/websites/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">List all domains with their webapp details in json format:
+<pre>[
+    {
+        'id': &lt;int&gt;,
+        'user': &lt;str&gt;,
+        'domain_name': &lt;str&gt;,
+        'enabled': &lt;bool&gt;,
+        'webapp': {
+            'id': &lt;str&gt;,
+            'command': &lt;str&gt;,
+            'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+        },
+        'logfiles': {
+            'access': &lt;str&gt;,
+            'server': &lt;str&gt;,
+            'error': &lt;str&gt;,
+        }
+    }
+]</pre></td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new domain and associated webapp
+
+Returns information about created website (domain with webapp)
+in json format:
+<pre>{
+    'id': &lt;int&gt;,
+    'user': &lt;str&gt;,
+    'domain_name': &lt;str&gt;,
+    'enabled': &lt;bool&gt;,
+    'webapp': {
+        'id': &lt;str&gt;,
+        'command': &lt;str&gt;,
+        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+    },
+    'logfiles': {
+        'access': &lt;str&gt;,
+        'server': &lt;str&gt;,
+        'error': &lt;str&gt;,
+    }
+}</pre>
+<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">domain_name, enabled, webapp</td></tr>
+</table>
+
+
+### /api/v1/user/{username}/websites/{domain_name}/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">GET</td><td class="description">Get information about the domain and its webapp
+in json format:
+<pre>{
+    'id': &lt;int&gt;,
+    'user': &lt;str&gt;,
+    'domain_name': &lt;str&gt;,
+    'enabled': &lt;bool&gt;,
+    'webapp': {
+        'id': &lt;str&gt;,
+        'command': &lt;str&gt;,
+        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+    },
+    'logfiles': {
+        'access': &lt;str&gt;,
+        'server': &lt;str&gt;,
+        'error': &lt;str&gt;,
+    }
+}</pre>
+<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">(no parameters)</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify the domain/webapp</td><td class="params">domain_name, enabled, webapp</td></tr>
+  <tr><td class="method">DELETE</td><td class="description">Remove the domain and webapp</td><td class="params">(no parameters)</td></tr>
+</table>
+
+
+### /api/v1/user/{username}/websites/{domain_name}/reload/
+
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td></tr>
+</table>
+
