@@ -104,8 +104,8 @@ and then use code like this:
     import MySQLdb
     import sshtunnel
 
-    sshtunnel.SSH_TIMEOUT = 5.0
-    sshtunnel.TUNNEL_TIMEOUT = 5.0
+    sshtunnel.SSH_TIMEOUT = 10.0
+    sshtunnel.TUNNEL_TIMEOUT = 10.0
 
     with sshtunnel.SSHTunnelForwarder(
         ('your SSH hostname'),

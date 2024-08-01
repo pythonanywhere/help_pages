@@ -35,8 +35,8 @@ and then use code like this:
 import psycopg2
 import sshtunnel
 
-sshtunnel.SSH_TIMEOUT = 5.0
-sshtunnel.TUNNEL_TIMEOUT = 5.0
+sshtunnel.SSH_TIMEOUT = 10.0
+sshtunnel.TUNNEL_TIMEOUT = 10.0
 
 postgres_hostname = "yourusername-1234.postgres.pythonanywhere-services.com"  # You will have your own here
 postgres_host_port = 1234  #  You will have your own port here
