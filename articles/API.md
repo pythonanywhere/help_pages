@@ -209,48 +209,6 @@ the "Run" button in the editor, in json format:
   <tr><td class="method">PATCH</td><td class="description">Sets Python version used for the "Run" button in the editor.</td><td class="params">(no parameters)</td></tr>
 </table>
 
-## Domains
-
-### /api/v1/user/{username}/domains/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description">List all domains</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Create a new domain</td><td class="params">domain_name, enabled, webapp</td></tr>
-</table>
-
-
-### /api/v1/user/{username}/domains/{domain_name}/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description">Get information about the domain</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">PATCH</td><td class="description">Modify the domain</td><td class="params">domain_name, enabled, webapp</td></tr>
-  <tr><td class="method">DELETE</td><td class="description">Remove the domain</td><td class="params">(no parameters)</td></tr>
-</table>
-
-
-### /api/v1/user/{username}/domains/{domain_name}/ssl/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description">Get and set TLS/HTTPS info. POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Get and set TLS/HTTPS info. POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">domain_name, enabled, webapp</td></tr>
-  <tr><td class="method">DELETE</td><td class="description">Get and set TLS/HTTPS info. POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
-</table>
-
-## Features
-
-### /api/v0/user/{username}/features/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description"></td><td class="params">(no parameters)</td></tr>
-</table>
-
 ## Files
 
 ### /api/v0/user/{username}/files/path{path}
@@ -295,90 +253,6 @@ Returns 204 on success.</td><td class="params">(no parameters)</td></tr>
   <tr><td class="method">GET</td><td class="description">Returns a list of the contents of a directory, and its subdirectories
 as a list. Paths ending in slash/ represent directories.  Limited to
 1000 results.</td><td class="params">Query parameter: path</td></tr>
-</table>
-
-## Panels
-
-### /api/v1/user/{username}/panels/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description">List all domains with their webapp details in json format:
-<pre>[
-    {
-        'id': &lt;int&gt;,
-        'user': &lt;str&gt;,
-        'domain_name': &lt;str&gt;,
-        'enabled': &lt;bool&gt;,
-        'webapp': {
-            'id': &lt;str&gt;,
-            'command': &lt;str&gt;,
-            'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
-        },
-        'logfiles': {
-            'access': &lt;str&gt;,
-            'server': &lt;str&gt;,
-            'error': &lt;str&gt;,
-        }
-    }
-]</pre></td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Create a new domain and associated webapp
-
-Returns information about created website (domain with webapp)
-in json format:
-<pre>{
-    'id': &lt;int&gt;,
-    'user': &lt;str&gt;,
-    'domain_name': &lt;str&gt;,
-    'enabled': &lt;bool&gt;,
-    'webapp': {
-        'id': &lt;str&gt;,
-        'command': &lt;str&gt;,
-        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
-    },
-    'logfiles': {
-        'access': &lt;str&gt;,
-        'server': &lt;str&gt;,
-        'error': &lt;str&gt;,
-    }
-}</pre>
-<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">domain_name, enabled, webapp</td></tr>
-</table>
-
-
-### /api/v1/user/{username}/panels/{domain_name}/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description">Get information about the domain and its webapp
-in json format:
-<pre>{
-    'id': &lt;int&gt;,
-    'user': &lt;str&gt;,
-    'domain_name': &lt;str&gt;,
-    'enabled': &lt;bool&gt;,
-    'webapp': {
-        'id': &lt;str&gt;,
-        'command': &lt;str&gt;,
-        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
-    },
-    'logfiles': {
-        'access': &lt;str&gt;,
-        'server': &lt;str&gt;,
-        'error': &lt;str&gt;,
-    }
-}</pre>
-<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">PATCH</td><td class="description">Modify the domain/webapp</td><td class="params">domain_name, enabled, webapp</td></tr>
-  <tr><td class="method">DELETE</td><td class="description">Remove the domain and webapp</td><td class="params">(no parameters)</td></tr>
-</table>
-
-
-### /api/v1/user/{username}/panels/{domain_name}/reload/
-
-<table class="table table-striped">
-  <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td></tr>
 </table>
 
 ## Schedule
