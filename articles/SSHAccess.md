@@ -47,13 +47,13 @@ file with one key per line.
 
 If you don't have a public/private key pair yet, you can generate one by running the following command on your system:
 
-    $ ssh-keygen -t rsa -b 2048
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/home/username/.ssh/id_rsa):
+    $ ssh-keygen -t ed25519
+    Generating public/private ed25519 key pair.
+    Enter file in which to save the key (/home/username/.ssh/id_ed25519):
     Enter passphrase (empty for no passphrase):
     Enter same passphrase again:
-    Your identification has been saved in /home/username/.ssh/id_rsa.
-    Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+    Your identification has been saved in /home/username/.ssh/id_ed25519.
+    Your public key has been saved in /home/username/.ssh/id_ed25519.pub.
 
 Running the following command copies the generated keys to the pythonanywhere server:
 
