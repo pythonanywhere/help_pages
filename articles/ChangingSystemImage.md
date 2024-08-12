@@ -101,11 +101,7 @@ default "haggis" Python version.
 
 ### Available Python versions for system images
 
-|             |2.7|3.5|3.6|3.7|3.8|3.9|3.10|
-|-------------|---|---|---|---|---|---|----|
-| fishnchips  | X | X | X | X | X |   |    |
-| glastonbury | X | X | X | X | X | X |    |
-| haggis      | X |   | X | X | X | X | X  |
+See [Supported Python versions on PythonAnywhere](/pages/PythonVersions).
 
 ### Python packages installed
 
@@ -120,7 +116,7 @@ tools will be updated.
 
 To update your MySQL or PostgreSQL server version, you need to contact support
 at support@pythonanywhere.com, and they will handle the update for you. Updating
-the server version involves a brief downtime for your account, so a convenient 
+the server version involves a brief downtime for your account, so a convenient
 time can be agreed upon.
 
 ## Base Ubuntu version for each system image

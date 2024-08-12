@@ -151,8 +151,8 @@ Some technical problems with consoles that sometimes come up:
   * [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
   * [The "Starting encrypted connection" message never disappears](/pages/StartingEncryptedConnection)
 
-# I'm looking at an error message in my web app
 
+# I'm looking at an error message in my web app
 
 If you haven't already, the first step is to look in your **error
 log** -- you'll find a link to it on the **Web tab** ([account in US servers](https://www.pythonanywhere.com/web_app_setup/); [account in EU servers](https://eu.pythonanywhere.com/web_app_setup/)).
@@ -210,6 +210,7 @@ And here's some very brief FAQ answers about common requests:
   * Can I use Redis?  Again, only via an external service like redislabs.  Although you can use redislite
   * Can I use websockets, or run my own socket server?  I'm afraid not --  we only support Python apps that implement the WSGI protocol
   * How do I reload my webapp automatically?  You can now use our [API](/pages/API) for this :)
+  * [Which Python versions does PythonAnywhere support?](/pages/PythonVersions)
 
 
 
