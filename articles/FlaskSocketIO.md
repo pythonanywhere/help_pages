@@ -12,6 +12,8 @@
 # Disclaimer
 
 This help page explains how to set up an Flask-SocketIO site on PythonAnywhere.
+We have a separate help page for [ASGI-based websites](/pages/ASGICommandLine) like
+FastAPI, FastHTML and the most recent versions of Django.
 
 **Note:** deployment of async websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
@@ -54,7 +56,7 @@ button -- that stops it from working in the future, and creates a new one for
 you to use.
 
 Now you can use our command-line tool or our experimental API to deploy your
-ASGI website.  This help page will show you how to use the command-line
+Flask-SocketIO website.  This help page will show you how to use the command-line
 tool, so you don't need to note down the API token -- now that it has been
 generated, it's available to any code running inside Bash consoles on
 PythonAnywhere.
@@ -103,7 +105,7 @@ socketio = SocketIO(app, async_mode=async_mode, cors_allowed_origins="*")
 Then save the file.
 
 Next, you should create a virtual environment with `flask-socketio`, `gunicorn`
-and `eventlet` installed.  Got back to your Bash console, and run this:
+and `eventlet` installed.  Go back to your Bash console, and run this:
 
 ```bash
 mkvirtualenv my_venv --python=python3.10
@@ -149,7 +151,7 @@ website!
 not found page for a few seconds before the site comes up.  If you get that,
 just refresh the page in your browser.  We're on the case :-)
 
-You have a working Flask-SocketIO website hosted on PythonAnywhere!  However, this site
+You have a working Flask-SocketIO website hosted on PythonAnywhere.  However, this site
 will not currently appear on the "Web" page inside your PythonAnywhere account;
 we have a user interface that is a work-in-progress, though, and if you'd like
 to try that out, [drop us a line](mailto:support@pythonanywhere.com).
@@ -249,7 +251,7 @@ if all is well you'll see something like this:
 [2024-08-20 15:28:23 +0000] [2] [INFO] Booting worker with pid: 2
 ```
 
-The second line is uvicorn saying that it has successfully started, and is listening
+The second line is gunicorn saying that it has successfully started, and is listening
 for incoming requests on an internal [unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket).
 That socket is internal to our web-hosting system -- you won't be able to see
 it in a console or on the "Files" page inside PythonAnywhere.
@@ -296,7 +298,7 @@ Breaking that down:
 * `--worker-class eventlet -w 1` is telling gunicorn to use an eventlet inner loop with one worker
 * `--chdir /home/YOURUSERNAME/Flask-SocketIO/example` is making it change the working directory to the one containing your website's code -- in this example, the Flask-SocketIO example.
 * `--bind unix:${DOMAIN_SOCKET}` is telling gunicorn to listen for incoming requests on a unix domain socket -- the location of that socket is provided by our system in the environment variable `DOMAIN_SOCKET`
-* `app:app` is telling gunicorn, which is looking for code in the working directory it switched to with the `--chdir`, to load up the ASGI app called `app` from the file `app.py`.
+* `app:app` is telling gunicorn, which is looking for code in the working directory it switched to with the `--chdir`, to load up the async app called `app` from the file `app.py`.
 
 As we mentioned above, that domain socket (which will be something like
 `/var/sockets/YOURUSERNAME.pythonanywhere.com/app.sock`) is internal to the
@@ -315,7 +317,7 @@ newest version of Django.  You can find out how to use those on [our ASGI help p
 
 ## The API
 
-If you want to control your ASGI site programatically, using Python code rather
+If you want to control your async site programatically, using Python code rather
 than the `pa` command-line tool, check out [this help page](/pages/ASGIAPI).
 
 
