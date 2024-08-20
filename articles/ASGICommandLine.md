@@ -13,7 +13,8 @@
 
 This help page explains how to set up an ASGI site on PythonAnywhere -- for
 example, one based on the FastHTML or FastAPI frameworks, or using the latest
-Django async features.
+Django async features.  We have a separate help page for [Flask-SocketIO](/pages/FlaskSocketIO),
+which uses a non-ASGI system.
 
 **Note:** deployment of ASGI (and other async) websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
