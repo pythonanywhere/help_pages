@@ -13,7 +13,7 @@ The "Your own domain" option on our "Add a new web app" dialog is normally used
 to specify a domain that you own -- something like `www.yourdomain.com`.
 
 However, if you don't own a domain, or don't want to use a fully custom one,
-you can also use a custom subdomain of `pythonanywhere.com`.  It must of the
+you can also use a custom subdomain of `pythonanywhere.com`.  It must be of the
 format
 
     something-yourusername.pythonanywhere.com
