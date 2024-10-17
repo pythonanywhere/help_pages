@@ -38,24 +38,8 @@ This help page explains how to manage your websites using our `pa` command-line
 tool rather than the API, but you'll need to generate an API token so that
 that tool knows how to connect to PythonAnywhere.
 
-To do that, log in to
-PythonAnywhere, and go to the "Account" page using the link at the top right.
-Click on the "API token" tab; if you don't already have a token, it will look
-like this:
-
-<img alt="API token not set up" src="/api-token-needs-generation.png" class="bordered-image">
-
-Click the "Create a new API token" button to get your token, and you'll see
-this:
-
-<img alt="API token set up" src="/api-token-set-up.png" class="bordered-image">
-
-That string of letters and numbers (masked out
-in the screenshot) is the API token, and anyone who has it can access your
-PythonAnywhere account and do stuff -- so keep it secret. If someone does
-somehow get hold of it, you can revoke it on this page by clicking the red
-button -- that stops it from working in the future, and creates a new one for
-you to use.
+First, you will need an API token. [This page](/pages/GettingYourAPIToken) will
+show you how to get that.
 
 Now you can use our command-line tool or our experimental API to deploy your
 ASGI website.  This help page will show you how to use the command-line
