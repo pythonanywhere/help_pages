@@ -14,7 +14,6 @@
 Deployment of ASGI-based (and other async) websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
- * HTTPS is only available on default PythonAnywhere subdomains (e.g. `YOURUSERNAME.pythonanywhere.com`).
  * There is no support for static file mappings.
  * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
@@ -236,6 +235,38 @@ You'll get something like this:
                          'enabled': True}],
             'id': 42}}
 ```
+
+
+### Enabling HTTPS for custom domains
+
+```python
+
+# the same setup as above...
+
+endpoint = urljoin(api_base, f"domains/{domain_name}/ssl/")
+response = requests.post(endpoint, headers=headers, json={'cert_type': 'letsencrypt-auto-renew'})
+pprint(response.json())
+```
+
+You'll get something like this:
+
+```python
+{'status': 'OK'}
+```
+
+to let you know that it has been applied.
+
+
+
+### Using a custom domain for your web app
+
+If you are using a custom domain, there will be an extra field called `cname`
+in the output above. This is the CNAME that you can use in your DNS settings
+for your web app. For more details on setting up DNS for a custom domain, see
+[https://help.pythonanywhere.com/pages/DNSPrimer/](https://help.pythonanywhere.com/pages/DNSPrimer/), 
+[https://help.pythonanywhere.com/pages/CustomDomains/](https://help.pythonanywhere.com/pages/CustomDomains/), 
+[https://help.pythonanywhere.com/pages/NakedDomains/ ](https://help.pythonanywhere.com/pages/NakedDomains/) and 
+[https://help.pythonanywhere.com/pages/TroubleshootingDNS/](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
 
 
 ### Reload

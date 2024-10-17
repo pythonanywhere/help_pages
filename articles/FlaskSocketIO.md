@@ -18,7 +18,6 @@ FastAPI, FastHTML and the most recent versions of Django.
 **Note:** deployment of async websites on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
- * HTTPS is only available on default PythonAnywhere subdomains (e.g. `YOURUSERNAME.pythonanywhere.com`).
  * There is no support for static file mappings.
  * There is no web UI for creating and managing async websites -- it's API and command-line only.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
@@ -187,6 +186,25 @@ domain name  YOURUSERNAME.pythonanywhere.com
 enabled      True
 command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/gunicorn --worker-class eventlet -w 1 --chdir /home/YOURUSERNAME/Flask-SocketIO/example --bind unix:${DOMAIN_SOCKET} app:app
 -----------  -------------------------------------------------------------------------------------------------------------------------
+```
+
+### Using a custom domain for your web app
+
+If you are using a custom domain, there will be an extra field called `cname`
+in the output above. This is the CNAME that you can use in your DNS settings
+for your web app. For more details on setting up DNS for a custom domain, see
+[https://help.pythonanywhere.com/pages/DNSPrimer/](https://help.pythonanywhere.com/pages/DNSPrimer/), 
+[https://help.pythonanywhere.com/pages/CustomDomains/](https://help.pythonanywhere.com/pages/CustomDomains/), 
+[https://help.pythonanywhere.com/pages/NakedDomains/ ](https://help.pythonanywhere.com/pages/NakedDomains/) and 
+[https://help.pythonanywhere.com/pages/TroubleshootingDNS/](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
+
+
+### Enabling HTTPS for your custom domain webapp
+
+You can get a Let's Encrypt certificate for your custom domain using the API too:
+
+```bash
+pa create_autorenew_cert --domain YOURUSERNAME.pythonanywhere.com
 ```
 
 ### Reloading
