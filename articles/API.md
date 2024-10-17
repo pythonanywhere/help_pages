@@ -366,33 +366,31 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
 ></tr>
 </table>
 
-
-### /api/v0/user/{username}/webapps/{domain_name}/ssl/
+### /api/v0/user/{username}/webapps/{domain_name}/ssl/                                                                                                                            [108/1033]
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">GET</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+  <tr><td class="method">GET</td><td class="description"><p>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.
 
-POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
+<p>POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
 an auto-renewing Let's Encrypt certificate.</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+  <tr><td class="method">POST</td><td class="description"><p>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.
 
-POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
+<p>POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
 an auto-renewing Let's Encrypt certificate.</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username
 , password_protection_password</td></tr>
-  <tr><td class="method">DELETE</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
+  <tr><td class="method">DELETE</td><td class="description"><p>Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
 `cert` and `private_key` when posting.
 
-POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
+<p>POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
 an auto-renewing Let's Encrypt certificate.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
 
-                                                                                                                                                                                    [84/550]
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">List all the static files mappings for a domain.</td><td class="params">(no parameters)</td></tr>
@@ -434,6 +432,7 @@ an auto-renewing Let's Encrypt certificate.</td><td class="params">(no parameter
 
 ### /api/v1/user/{username}/websites
 
+                                                                                                                                                                                   [43/1033]
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">POST</td><td class="description">Create a new domain and associated webapp
@@ -460,7 +459,6 @@ in json format:
 </table>
 
 
-                                                                                                                                                                                    [17/550]
 ### /api/v1/user/{username}/websites/
 
 <table class="table table-striped">
@@ -509,7 +507,6 @@ in json format:
 
 
 ### /api/v1/user/{username}/websites/{domain_name}/
-
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
