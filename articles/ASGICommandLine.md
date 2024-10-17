@@ -20,7 +20,9 @@ which uses a non-ASGI system.
 experimental feature.  Some important limitations to know about:
 
  * There is no support for static file mappings.
- * There is no web UI for creating and managing ASGI websites -- it's API and command-line only.
+ * There is a very limited web UI for creating and managing async websites.
+   Contact [support@pythonanywhere.com](mailto:support@pythonanywhere.com] if
+   you would like us to enable it for your account.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
  * We have not worked out the long-term pricing for ASGI sites, which will probably
    differ from the way we charge for traditional WSGI ones.  We're 99.9% certain that
