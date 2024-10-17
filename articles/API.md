@@ -67,8 +67,7 @@ All endpoints are hosted at *https://www.pythonanywhere.com/* or
 Each endpoint has a 40 requests per minute rate limit, apart from the `send_input`
 endpoint on consoles, which is 120 requests per minute.
 
-
-## Always_On
+## Always_On                                                                                                                                                                       [407/550]
 
 ### /api/v0/user/{username}/always_on/
 
@@ -133,8 +132,7 @@ connecting to the console in a browser will do that).</td><td class="params">exe
   <tr><td class="method">GET</td><td class="description">Get the most recent output from the console (approximately 500 characters).</td><td class="params">(no parameters)</td></tr>
 </table>
 
-
-### /api/v0/user/{username}/consoles/{id}/send_input/
+### /api/v0/user/{username}/consoles/{id}/send_input/                                                                                                                              [341/550]
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
@@ -198,6 +196,7 @@ in json format:
 
 ### /api/v0/user/{username}/default_save_and_run_python_version/
 
+                                                                                                                                                                                   [278/550]
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Returns information about user's current and available Python version used for
@@ -233,7 +232,8 @@ Returns 204 on success.</td><td class="params">(no parameters)</td></tr>
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">POST</td><td class="description">Start sharing a file.  Returns 201 on success, or 200 if file was already shared.</td><td class="params">POST parameter: path</td></tr>
+  <tr><td class="method">POST</td><td class="description">Start sharing a file.  Returns 201 on success, or 200 if file was already shared.</td><td class="params">POST parameter: path</td>
+</tr>
 </table>
 
 
@@ -259,6 +259,7 @@ as a list. Paths ending in slash/ represent directories.  Limited to
 
 ### /api/v0/user/{username}/schedule/
 
+                                                                                                                                                                                   [216/550]
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">List all of your scheduled tasks</td><td class="params">(no parameters)</td></tr>
@@ -317,8 +318,6 @@ in json format:
 
 ## Webapps
 
-These endpoints are for the old, WSGI-based web apps
-
 ### /api/v0/user/{username}/webapps/
 
 <table class="table table-striped">
@@ -328,14 +327,16 @@ These endpoints are for the old, WSGI-based web apps
 specify Python 3.6.</td><td class="params">POST parameters: domain_name, python_version</td></tr>
 </table>
 
-
+                                                                                                                                                                                   [148/550]
 ### /api/v0/user/{username}/webapps/{domain_name}/
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Return information about a web app's configuration</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">PUT</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
-  <tr><td class="method">PATCH</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
+  <tr><td class="method">PUT</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, sourc
+e_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
+  <tr><td class="method">PATCH</td><td class="description">Modify configuration of a web app. (NB a reload is usually required to apply changes).</td><td class="params">python_version, sou
+rce_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Delete the webapp.  This will take the site offline.
 Config is backed up in /var/www, and your code is not touched.</td><td class="params">(no parameters)</td></tr>
 </table>
@@ -361,7 +362,8 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td></tr>
+  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td
+></tr>
 </table>
 
 
@@ -370,16 +372,27 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
+`cert` and `private_key` when posting.
+
+POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
+an auto-renewing Let's Encrypt certificate.</td><td class="params">(no parameters)</td></tr>
   <tr><td class="method">POST</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username, password_protection_password</td></tr>
+`cert` and `private_key` when posting.
+
+POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
+an auto-renewing Let's Encrypt certificate.</td><td class="params">python_version, source_directory, virtualenv_path, force_https, password_protection_enabled, password_protection_username
+, password_protection_password</td></tr>
   <tr><td class="method">DELETE</td><td class="description">Get and set TLS/HTTPS info.  POST parameters to the right are incorrect, use
-`cert` and `private_key` when posting.</td><td class="params">(no parameters)</td></tr>
+`cert` and `private_key` when posting.
+
+POST {'cert_type': 'letsencrypt-auto-renew'} to this endpoint to enable
+an auto-renewing Let's Encrypt certificate.</td><td class="params">(no parameters)</td></tr>
 </table>
 
 
 ### /api/v0/user/{username}/webapps/{domain_name}/static_files/
 
+                                                                                                                                                                                    [84/550]
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">List all the static files mappings for a domain.</td><td class="params">(no parameters)</td></tr>
@@ -419,8 +432,35 @@ Config is backed up in /var/www, and your code is not touched.</td><td class="pa
 
 ## Websites
 
-These endpoints are for the new, ASGI-based web sites
+### /api/v1/user/{username}/websites
 
+<table class="table table-striped">
+  <tr><th>Method</th><th>Description</th><th>Parameters</th>
+  <tr><td class="method">POST</td><td class="description">Create a new domain and associated webapp
+
+Returns information about created website (domain with webapp)
+in json format:
+<pre>{
+    'id': &lt;int&gt;,
+    'user': &lt;str&gt;,
+    'domain_name': &lt;str&gt;,
+    'enabled': &lt;bool&gt;,
+    'webapp': {
+        'id': &lt;str&gt;,
+        'command': &lt;str&gt;,
+        'domains': [{'domain_name': &lt;str&gt;, 'enabled': &lt;bool&gt;}]
+    },
+    'logfiles': {
+        'access': &lt;str&gt;,
+        'server': &lt;str&gt;,
+        'error': &lt;str&gt;,
+    }
+}</pre>
+<code>logfiles</code> paths are ready to be used in the <code>files</code> API</td><td class="params">domain_name, enabled, webapp</td></tr>
+</table>
+
+
+                                                                                                                                                                                    [17/550]
 ### /api/v1/user/{username}/websites/
 
 <table class="table table-striped">
@@ -470,6 +510,7 @@ in json format:
 
 ### /api/v1/user/{username}/websites/{domain_name}/
 
+
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">Get information about the domain and its webapp
@@ -500,6 +541,6 @@ in json format:
 
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
-  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td></tr>
+  <tr><td class="method">POST</td><td class="description">Reload the webapp to reflect changes to configuration and/or source code on disk.</td><td class="params">POST parameters: none</td
+></tr>
 </table>
-
