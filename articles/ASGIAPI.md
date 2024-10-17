@@ -237,6 +237,17 @@ You'll get something like this:
 ```
 
 
+### Using a custom domain for your web app
+
+If you are using a custom domain, there will be an extra field called `cname`
+in the output above. This is the CNAME that you can use in your DNS settings
+for your web app. For more details on setting up DNS for a custom domain, see
+[https://help.pythonanywhere.com/pages/DNSPrimer/](https://help.pythonanywhere.com/pages/DNSPrimer/), 
+[https://help.pythonanywhere.com/pages/CustomDomains/](https://help.pythonanywhere.com/pages/CustomDomains/), 
+[https://help.pythonanywhere.com/pages/NakedDomains/ ](https://help.pythonanywhere.com/pages/NakedDomains/) and 
+[https://help.pythonanywhere.com/pages/TroubleshootingDNS/](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
+
+
 ### Enabling HTTPS for custom domains
 
 ```python
@@ -255,18 +266,6 @@ You'll get something like this:
 ```
 
 to let you know that it has been applied.
-
-
-
-### Using a custom domain for your web app
-
-If you are using a custom domain, there will be an extra field called `cname`
-in the output above. This is the CNAME that you can use in your DNS settings
-for your web app. For more details on setting up DNS for a custom domain, see
-[https://help.pythonanywhere.com/pages/DNSPrimer/](https://help.pythonanywhere.com/pages/DNSPrimer/), 
-[https://help.pythonanywhere.com/pages/CustomDomains/](https://help.pythonanywhere.com/pages/CustomDomains/), 
-[https://help.pythonanywhere.com/pages/NakedDomains/ ](https://help.pythonanywhere.com/pages/NakedDomains/) and 
-[https://help.pythonanywhere.com/pages/TroubleshootingDNS/](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
 
 
 ### Reload
