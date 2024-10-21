@@ -40,9 +40,9 @@ trying the API.
 If you've already done that, then read on!
 
 
-## Prerequisites
+# Prerequisites
 
-### API token
+## API token
 
 First, you will need an API token. [This page](/pages/GettingYourAPIToken) will
 show you how to get that.
@@ -57,7 +57,7 @@ as the example in this page, but the others are similar -- you'd just need to
 change the command provided when creating the site, just as you would when using
 the `pa` command-line tool.
 
-### Virtual environment
+## Virtual environment
 
 Firstly, create a virtual environment with `requests`, `fastapi` and
 `uvicorn` installed.
@@ -75,7 +75,7 @@ pip install requests "uvicorn[standard]" fastapi
 ```
 
 
-### The code of your website
+## The code of your website
 
 Create a directory `~/my_fastapi/`.  In that directory, create a file called
 `main.py`, with the following code:
@@ -90,9 +90,9 @@ async def root():
     return {"message":"Hello from FastAPI"}
 ```
 
-## Managing your website via the API
+# Managing your website via the API
 
-### Creating it
+## Creating it
 
 Now you can access the API to create your website.  Run `python` in your Bash
 console, and then use the following code.  Don't forget to replace
@@ -168,7 +168,7 @@ You have a working FastAPI website hosted on PythonAnywhere, created via our
 API.
 
 
-### Getting and listing websites
+## Getting and listing websites
 
 If you do a "get" request to the `websites/` API endpoint, you'll get a list
 of your websites:
@@ -223,18 +223,19 @@ You'll get something like this:
 ```
 
 
-### Using a custom domain for your web app
+## Using a custom domain for your web app
 
 If you are using a custom domain, there will be an extra field called `cname`
 in the output above. This is the CNAME that you can use in your DNS settings
-for your web app. For more details on setting up DNS for a custom domain, see
-[https://help.pythonanywhere.com/pages/DNSPrimer/](https://help.pythonanywhere.com/pages/DNSPrimer/), 
-[https://help.pythonanywhere.com/pages/CustomDomains/](https://help.pythonanywhere.com/pages/CustomDomains/), 
-[https://help.pythonanywhere.com/pages/NakedDomains/ ](https://help.pythonanywhere.com/pages/NakedDomains/) and 
-[https://help.pythonanywhere.com/pages/TroubleshootingDNS/](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
+for your web app. For more details on setting up DNS for a custom domain, see:
+
+- [How DNS works: a beginner's guide](https://help.pythonanywhere.com/pages/DNSPrimer/),
+- [Setting up a custom domain on PythonAnywhere](https://help.pythonanywhere.com/pages/CustomDomains/),
+- [Naked domains](https://help.pythonanywhere.com/pages/NakedDomains/),
+- [Troubleshooting DNS](https://help.pythonanywhere.com/pages/TroubleshootingDNS/).
 
 
-### Enabling HTTPS for custom domains
+## Enabling HTTPS for custom domains
 
 ```python
 
@@ -254,7 +255,7 @@ You'll get something like this:
 to let you know that it has been applied.
 
 
-### Reload
+## Reload
 
 If you have changed the code of your website, you need to reload it using
 the API to pick up the new code:
@@ -269,7 +270,7 @@ print(response)
 ```
 
 
-### Disabling and enabling
+## Disabling and enabling
 
 If you want to temporarily disable your site without deleting it, or if you've
 previously disabled it and you wnat to enable it, here's what you do:
@@ -292,7 +293,7 @@ you'd like to update the serving `command`, you'll need to delete the current
 site, and re-deploy it with a new one.
 
 
-### Delete
+## Delete
 
 To delete your website, use the following code -- mind the `/` at the end of the endpoint!
 

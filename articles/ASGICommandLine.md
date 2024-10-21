@@ -30,9 +30,9 @@ experimental feature.  Some important limitations to know about:
 
 If you are brave enough to try it, here is a quick guide on how to do it :-)
 
-## Prerequisites
+# Prerequisites
 
-### API token
+## API token
 
 This help page explains how to manage your websites using our `pa` command-line
 tool rather than the API, but you'll need to generate an API token so that
@@ -47,7 +47,7 @@ tool, so you don't need to note down the API token -- now that it has been
 generated, it's available to any code running inside Bash consoles on
 PythonAnywhere.
 
-### Installing the command-line tools
+## Installing the command-line tools
 
 As a first step, start a fresh Bash console, and in there, install the latest
 version of our command-line tool.
@@ -63,7 +63,7 @@ Running that install will make a new command, `pa` available, which we'll be
 using later.
 
 
-## Creating a simple test website
+# Creating a simple test website
 
 Now we'll create a simple site that we can deploy.  Exactly how you do that
 depends on the web framework you want to use:
@@ -73,7 +73,7 @@ depends on the web framework you want to use:
 * [Django](#django)
 
 
-### FastHTML
+## FastHTML
 
 Firstly, create a virtual environment with `python-fasthtml`
 installed.  In your Bash console:
@@ -115,7 +115,7 @@ exactly as it is.
 
 Now you can move on to [creating your website](#creating-your-website)
 
-### FastAPI
+## FastAPI
 
 Firstly, create a virtual environment with `fastapi` and `uvicorn`
 installed.  In your Bash console:
@@ -156,7 +156,7 @@ exactly as it is.
 
 Now you can move on to [creating your website](#creating-your-website)
 
-### Django
+## Django
 
 Firstly, create a virtual environment with `django` and `uvicorn`
 installed.  In your Bash console:
@@ -207,9 +207,9 @@ exactly as it is.
 Now you can move on to [creating your website](#creating-your-website)
 
 
-## Managing your website
+# Managing your website
 
-### Creating your website
+## Creating your website
 
 In Bash, to deploy your website to your subdomain -- that is, to
 *yourusername*`.pythonanywhere.com` if you're on our US system, or
@@ -245,7 +245,7 @@ we have a user interface that is a work-in-progress, though, and if you'd like
 to try that out, [drop us a line](mailto:support@pythonanywhere.com).
 
 
-### Getting and listing websites
+## Getting and listing websites
 
 You can get a list of ASGI websites from PythonAnywhere with this command:
 
@@ -279,18 +279,19 @@ command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home
 ```
 
 
-### Using a custom domain for your web app
+## Using a custom domain for your web app
 
 If you are using a custom domain, there will be an extra field called `cname`
 in the output above. This is the CNAME that you can use in your DNS settings
-for your web app. For more details on setting up DNS for a custom domain, see
-[https://help.pythonanywhere.com/pages/DNSPrimer/](https://help.pythonanywhere.com/pages/DNSPrimer/), 
-[https://help.pythonanywhere.com/pages/CustomDomains/](https://help.pythonanywhere.com/pages/CustomDomains/), 
-[https://help.pythonanywhere.com/pages/NakedDomains/ ](https://help.pythonanywhere.com/pages/NakedDomains/) and 
-[https://help.pythonanywhere.com/pages/TroubleshootingDNS/](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
+for your web app. For more details on setting up DNS for a custom domain, see:
+
+- [How DNS works: a beginner's guide](https://help.pythonanywhere.com/pages/DNSPrimer/),
+- [Setting up a custom domain on PythonAnywhere](https://help.pythonanywhere.com/pages/CustomDomains/),
+- [Naked domains](https://help.pythonanywhere.com/pages/NakedDomains/),
+- [Troubleshooting DNS](https://help.pythonanywhere.com/pages/TroubleshootingDNS/).
 
 
-### Enabling HTTPS for your custom domain webapp
+## Enabling HTTPS for your custom domain webapp
 
 You can get a Let's Encrypt certificate for your custom domain using the API too:
 
@@ -298,7 +299,7 @@ You can get a Let's Encrypt certificate for your custom domain using the API too
 pa create_autorenew_cert --domain YOURUSERNAME.pythonanywhere.com
 ```
 
-### Reloading
+## Reloading
 
 If you change the code of your website, you'll need to reload it to activate
 those changes:
@@ -318,7 +319,7 @@ If all goes well, you'll see this:
 ...and if you visit the site, you'll see that it's been updated to run your new
 code.
 
-### Delete
+## Delete
 
 To delete your website, use this:
 
@@ -338,15 +339,15 @@ If all goes well, you'll see this:
 page.
 
 
-## Supported UI features
+# Supported UI features
 
-### Logs
+## Logs
 
 You can access the logs -- the ones that were printed out by the detailed
 version of the `pa website get` command -- from the **Files** page or from a
 console; they're located in `/var/log`.
 
-#### The error log
+### The error log
 
 For example, `/var/log/YOURUSERNAME.pythonanywhere.com.error.log`.
 
@@ -365,7 +366,7 @@ for incoming requests on an internal [unix domain socket](https://en.wikipedia.o
 That socket is internal to our web-hosting system -- you won't be able to see
 it in a console or on the "Files" page inside PythonAnywhere.
 
-#### The server log
+### The server log
 
 For example, `/var/log/YOURUSERNAME.pythonanywhere.com.server.log`.
 
@@ -376,7 +377,7 @@ you'll see something like this:
 INFO:      - "GET / HTTP/1.1" 200 OK
 ```
 
-#### The access log
+### The access log
 
 For example, `/var/log/YOURUSERNAME.pythonanywhere.com.access.log`.
 
@@ -388,7 +389,7 @@ PythonAnywhere websites -- for example:
 ```
 
 
-## Technical details
+# Technical details
 
 If you just want to get an ASGI site up and running, all you need to do is follow
 the recipe above.  However, if you'd like to understand a bit more about what is
@@ -425,7 +426,7 @@ servers!  It supports any server that is able to listen for incoming requests on
 You'll just need to work out the appropriate incantation to tell it how to
 listen on the socket provided in `$DOMAIN_SOCKET`.
 
-## The API
+# The API
 
 If you want to control your ASGI site programatically, using Python code rather
 than the `pa` command-line tool, check out [this help page](/pages/ASGIAPI).
