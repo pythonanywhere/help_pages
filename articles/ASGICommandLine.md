@@ -296,7 +296,7 @@ for your web app. For more details on setting up DNS for a custom domain, see:
 You can get a Let's Encrypt certificate for your custom domain using the API too:
 
 ```bash
-pa website create-autorenew-cert --domain YOURUSERNAME.pythonanywhere.com
+pa website create-autorenew-cert --domain YOURCUSTOMDOMAIN
 ```
 
 ## Reloading
