@@ -198,7 +198,7 @@ is the *command* that you will later on provide when creating it; we'll explain
 the details of this later on, but for now, just note down that it should be this:
 
 ```bash
-/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/asyncdjango --uds $DOMAIN_SOCKET asyncdjango.asgi:application
+/home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/asyncdjango --uds ${DOMAIN_SOCKET} asyncdjango.asgi:application
 ```
 
 ...with `YOURUSERNAME` replaced by your actual username, but with everything else
