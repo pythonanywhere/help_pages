@@ -123,7 +123,7 @@ domain_name = f"{username}.{pythonanywhere_domain}"
 api_base = f"https://{pythonanywhere_host}/api/v1/user/{username}/"
 command = (
     f"/home/{username}/.virtualenvs/fast_venv/bin/uvicorn "
-    "--uds $DOMAIN_SOCKET "
+    "--uds ${DOMAIN_SOCKET} "
     "my_fastapi.main:app "
 )
 
@@ -152,7 +152,7 @@ If everything was successful, you should see something like:
  'id': 42,
  'user': 'YOURUSERNAME,
  'webapp': {'command': '/home/YOURUSERNAME/.virtualenvs/fast_venv/bin/uvicorn '
-                       'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+                       'my_fastapi.main:app --uds ${DOMAIN_SOCKET}',
             'domains': [{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
                          'enabled': True}],
             'id': 42}}
@@ -190,7 +190,7 @@ pprint(response.json())
   'id': 42,
   'user': 'YOURUSERNAME,
   'webapp': {'command': '/home/YOURUSERNAME/.virtualenvs/fast_venv/bin/uvicorn '
-                        'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+                        'my_fastapi.main:app --uds ${DOMAIN_SOCKET}',
              'domains': [{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
                           'enabled': True}],
              'id': 42}}]
@@ -216,7 +216,7 @@ You'll get something like this:
  'id': 42,
  'user': 'YOURUSERNAME,
  'webapp': {'command': '/home/YOURUSERNAME/.virtualenvs/fast_venv/bin/uvicorn '
-                       'my_fastapi.main:app --uds $DOMAIN_SOCKET',
+                       'my_fastapi.main:app --uds ${DOMAIN_SOCKET}',
             'domains': [{'domain_name': 'YOURUSERNAME.pythonanywhere.com',
                          'enabled': True}],
             'id': 42}}
