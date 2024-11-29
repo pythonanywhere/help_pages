@@ -82,7 +82,7 @@ and these are the response headers for a static resource on that page:
 ![Screenshot of static response headers](/cloudflare-response-headers-static.png)
 
 
-## "Naked" (aka "Apex" domains)
+## "Naked" (aka "Apex") domains
 
 If you're a completist and you want to get the naked domain working (that is,
 `yourdomain.com` instead of `www.yourdomain.com`), you need something a bit more
