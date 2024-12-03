@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-> *** NOTE *** These instructions are for the system image **fishnchips, glastonbury or haggis**.
+> *** NOTE *** These instructions are for the system image **glastonbury or haggis**.
 > If you have an older system image, you will need to [update your system
 > image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
 > instructions. Also note that Playwright will only work in tasks, web apps and

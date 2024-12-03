@@ -123,6 +123,5 @@ time can be agreed upon.
 
 |             |Ubuntu version|
 |-------------|--------------|
-| fishnchips  | 16.04        |
 | glastonbury | 20.04        |
 | haggis      | 20.04        |

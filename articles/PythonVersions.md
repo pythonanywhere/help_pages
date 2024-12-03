@@ -20,6 +20,5 @@ supports:
 
 |             |2.7|3.5|3.6|3.7|3.8|3.9|3.10|
 |-------------|---|---|---|---|---|---|----|
-| fishnchips  | X | X | X | X | X |   |    |
 | glastonbury | X | X | X | X | X | X |    |
 | haggis      | X |   | X | X | X | X | X  |

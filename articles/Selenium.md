@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-*** NOTE *** These instructions are for the system image **fishnchips, glastonbury or haggis**.
+*** NOTE *** These instructions are for the system image **glastonbury or haggis**.
 If you have an older system image, you will need to [update your system
 image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
 instructions. Also note that selenium will only work in tasks, web apps and
@@ -20,7 +20,6 @@ The latest versions of selenium confirmed to be working are:
 
 | System Image | Version | Confirmed  |
 |--------------|---------|------------|
-| fishnchips   | 4.1.3   | 2022-09-06 |
 | glastonbury  | 4.4.3   | 2022-09-06 |
 | haggis       | 4.7.2   | 2022-12-23 |
 
