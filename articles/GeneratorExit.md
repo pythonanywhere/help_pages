@@ -1,5 +1,5 @@
 <!--
-.. title: GeneratorExit errors
+.. title: GeneratorExit/OSError: write error messages
 .. slug: GeneratorExit
 .. date: 2017-03-02
 .. tags:
