@@ -1,7 +1,7 @@
 
 <!--
 .. title: Postgres Shared Memory Error
-.. slug: Postgres Shared Memory
+.. slug: PostgresSharedMemory
 .. date: 2024-12-09 11:46:28 UTC
 .. tags:
 .. category:
