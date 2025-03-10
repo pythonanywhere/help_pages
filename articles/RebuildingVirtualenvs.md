@@ -87,7 +87,8 @@ got above will be a full three-part version, for example 3.9.13.  The numbers af
 are not important here; for example, if you got 3.9.13, any image that supported 3.9 would be OK.
 
 Once you've determined the Python version, create the new virtualenv -- this will
-only need the first two digits from the version number, eg. 3.9.  If you're using
+only need the first two parts of the version number (eg. 3.9 or 3.12 -- not a full version
+like 3.12.4).  If you're using
 virtualenvwrapper, create it like this:
 
     :::bash
