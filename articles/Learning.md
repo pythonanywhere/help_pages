@@ -52,7 +52,7 @@ We haven't tried these ourselves, but people have written to us recommending the
 * [Complete Python Bootcamp From Zero to Hero in Python](https://www.udemy.com/course/complete-python-bootcamp/) by Jose Portilla
 * [Django 3 - Full Stack Websites with Python Web Development](https://www.udemy.com/course/django-3-make-websites-with-python-tutorial-beginner-learn-bootstrap/) by Nick Walter
 * [100 Days of Code - The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/) by Dr Angela Wu
-* [The Python Mega Course: Build 10 Real World Applications](https://www.udemy.com/course/the-python-mega-course/) by Ardit Sulce
+* [Python Mega Course: Learn Python in 60 Days, Build 20 Apps](https://www.udemy.com/course/the-python-mega-course/) by Ardit Sulce
 * [Python | Sıfırdan İleri Seviye Programlama](https://www.udemy.com/course/sifirdan-ileri-seviyeye-python/) by Mustafa Murat Coşkun (in Turkish)
 
 
