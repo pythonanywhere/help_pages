@@ -19,7 +19,8 @@ system image**.
 
 ## Changing the system image
 
-Just click on the "pencil" icon next to the name of your current image, and
+Go to the "Account" page, and click on the "System image" tab there.  You'll see
+a "pencil" icon next to the name of your current image, so click on that and
 you'll get a dropdown where you can select the one to switch to. The most
 recent one will be at the bottom of the list.
 
@@ -59,27 +60,27 @@ virtualenvs you have might break -- virtualenvs are not always
 portable from one point release to another. You will need to
 [rebuild](/pages/RebuildingVirtualenvs), and please note that this will require
 you to gather information about the existing virtualenv before you change
-the system image.  Also, *make sure* the Python
+the system image.  Also, make sure the Python
 version you were previously using is available on the new system image
-(see **Available Python versions** table below).
+by checking [this page](/pages/PythonVersions).
 
 ### Cached versions of `pip` and packages installed with `pip`
 
-It's also advised to clear the `~/.cache` folder, since packages
+We also recommend that you clear the `~/.cache` folder, since packages
 stored there might be picked up when creating new virtualenvs leading
-to confusion.  In particular, if after the change over you start getting
+to confusion.  In particular, if after the changeover you start getting
 errors like `NameError: name '_mysql' is not defined`, it is likely that you
 have a version of the `mysqlclient` library that was installed from the cache
 and is not compatible with the updated system image.
 
 ## Default Python versions
 
-Along with system image each PythonAnywhere account has a set of
+Along with a system image, your PythonAnywhere account has a set of
 default Python versions:
 
 * One of them is the default Python version used by `python` and
-  `pip` in Bash consoles. (If your system image is "glastonbury" or older, these
-  must be `python2.7` because the older operating system that those images use
+  `pip` in Bash consoles. (If your system image is "glastonbury", these
+  must be `python2.7` because the older operating system that it uses
   require it to be set up that way.)
 
 * Another one is the default Python 3 version used by `python3` and
@@ -88,36 +89,33 @@ default Python versions:
 * The third one is the default Python used when "Run" button in our
   in-browser editor is pressed.
 
-Each system image has a range of available Python versions.
+Each system image has [a range of available Python versions](/pages/PythonVersions).
+
 When one of those defaults is not available after the system
-image change it will be automatically set to the most recent available
-Python version.
-
-For example you might have your system image set to "haggis" with the default
+image change, it will be automatically set to the most recent available
+Python version.  For example you might have your system image set to "haggis" with the default
 `python3` set to `python3.6`. You update your system image to
-"innit" in which Python 3.6 is not available any more. So your
-default `python3` is automatically set to `python3.13` which is the
-default "innit" Python version.
-
-### Available Python versions for system images
-
-See [Supported Python versions on PythonAnywhere](/pages/PythonVersions).
+"innit", in which Python 3.6 is not available any more. So your
+default `python3` is automatically set to `python3.13`, which is the
+default Python version in "innit".
 
 ### Python packages installed
 
-We don not preinstall packages into all Python versions in all system images.
+We do not pre-install packages into all Python versions in all system images.
 You can check what packages are installed in which system
 image [here](https://www.pythonanywhere.com/batteries_included/).
 
+
 ## Database Server Versions
 
-Changing the system image will not affect your database servers. Only client
-tools will be updated.
+Changing the system image will not affect your database servers. Only the client
+tools (for example, the `mysql` bash command) will be updated.
 
-To update your MySQL or PostgreSQL server version, you need to contact support
-at support@pythonanywhere.com, and they will handle the update for you. Updating
-the server version involves a brief downtime for your account, so a convenient
-time can be agreed upon.
+To update your MySQL or PostgreSQL server version, you need to contact us
+at [support@pythonanywhere.com](mailto:support@pythonanywhere.com), and we will handle the update for you. Updating
+the server version involves a brief downtime for your account, so we'll coordinate
+timing with you.
+
 
 ## Base Ubuntu version for each system image
 
