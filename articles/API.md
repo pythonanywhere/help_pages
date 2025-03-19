@@ -322,8 +322,8 @@ in json format:
 <table class="table table-striped">
   <tr><th>Method</th><th>Description</th><th>Parameters</th>
   <tr><td class="method">GET</td><td class="description">List all webapps</td><td class="params">(no parameters)</td></tr>
-  <tr><td class="method">POST</td><td class="description">Create a new webapp with manual configuration.   Use (for example) "python36" to
-specify Python 3.6.</td><td class="params">POST parameters: domain_name, python_version</td></tr>
+  <tr><td class="method">POST</td><td class="description">Create a new webapp with manual configuration.   Use (for example) "python310" to
+specify Python 3.10.</td><td class="params">POST parameters: domain_name, python_version</td></tr>
 </table>
 
 

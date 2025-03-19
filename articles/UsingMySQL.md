@@ -18,8 +18,9 @@ You can start a new MySQL console to access your databases from this tab too, or
 alternatively you can open a MySQL shell with the following command from a
 bash console or [ssh session](/pages/SSHAccess):
 
-    :::bash
-    mysql -u USERNAME -h HOSTNAME -p 'USERNAME$DATABASENAME'
+```bash
+mysql -u USERNAME -h HOSTNAME -p 'USERNAME$DATABASENAME'
+```
 
 In this:
 
@@ -44,13 +45,9 @@ just `import MySQLdb`.
 If you *are* using a virtualenv, you'll need to install the correct package
 yourself.  Start a bash console inside the virtualenv, then:
 
-For Python 2.7
-
-    pip install mysqlclient==1.4.6
-
-For Python 3.x
-
-    pip install mysqlclient
+```bash
+pip install mysqlclient
+```
 
 
 ## MySQL with Django
@@ -80,12 +77,13 @@ Django does not have permissions to create a new database. To run Django tests
 on PythonAnywhere, add a `TEST` key to your database definition in
 `settings.py`. Like this:
 
-    :::python
-    DATABASES = {
-        'default': {
-             ...
-            'TEST': {
-              'NAME': '<your username>$test_<your database name>',
+```python
+DATABASES = {
+    'default': {
+         ...
+        'TEST': {
+          'NAME': '<your username>$test_<your database name>',
+```
 
 More info here: <https://docs.djangoproject.com/en/3.2/ref/settings/#test>
 
@@ -101,6 +99,7 @@ for more details.
 
 
 ## MySQL with web2py
+
 To use MySQL with web2py, you'll need to change your DAL constructor:
 
     :::python
@@ -145,13 +144,15 @@ See [this article on character sets](/pages/DatabaseCharacterSets).
 
 If you see an error containing the message like this:
 
-    1227, 'Access denied; you need (at least one of) the SYSTEM_VARIABLES_ADMIN or SESSION_VARIABLES_ADMIN privileges
+```
+1227, 'Access denied; you need (at least one of) the SYSTEM_VARIABLES_ADMIN or SESSION_VARIABLES_ADMIN privileges
+```
 
 it probably means that you try to use some settings that require
 [system variable privileges](https://dev.mysql.com/doc/refman/8.0/en/system-variable-privileges.html)
 which PythonAnywhere users don't have.
 
-For example, if you use Django framework, such settings could look like:
+For example, if you use Django, the settings could look like:
 
     :::python
     DATABASES = {

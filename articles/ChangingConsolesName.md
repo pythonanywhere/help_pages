@@ -1,4 +1,3 @@
-
 <!--
 .. title: Changing a console's Name
 .. slug: ChangingConsolesName
@@ -10,13 +9,10 @@
 .. type: text
 -->
 
+## How to change a console's name
 
+When you create a new console in PythonAnywhere, it will have a name like "Python 3.10 console 121212"
 
-
-
-##How to change a console's name
-
-
-When you create a new console in PythonAnywhere, it will have a name like "Python 2.7 console 121212" 
-
-To change it to something more memorable, go to the console, and look up at the top right of the page; you'll see the console's name there. Click on the name to change it. 
+To change it to something more memorable, go to the console, and look up at the
+top right of the page; you'll see the console's name there. Click on the name to
+change it.

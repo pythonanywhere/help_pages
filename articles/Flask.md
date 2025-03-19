@@ -47,7 +47,7 @@ name.
 Open up a  new Bash console from your [Dashboard](https://www.pythonanywhere.com/consoles) and run
 
     :::bash
-    mkvirtualenv --python=/usr/bin/python3.6 my-virtualenv  # use whichever python version you prefer
+    mkvirtualenv --python=/usr/bin/python3.13 my-virtualenv  # use whichever python version you prefer
     pip install flask
 
 
