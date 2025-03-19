@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-Which versions of Python you have available to you depend on the
+Which versions of Python you have available to you depends on the
 system image that your account uses.  The system image is essentially the
 version of the operating system that your code runs under, and is set when
 you initially create your account, but you can
