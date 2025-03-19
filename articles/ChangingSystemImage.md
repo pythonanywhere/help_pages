@@ -93,10 +93,10 @@ Each system image has [a range of available Python versions](/pages/PythonVersio
 
 When one of those defaults is not available after the system
 image change, it will be automatically set to the most recent available
-Python version.  For example you might have your system image set to "haggis" with the default
+Python version.  For example, you might have your system image set to "haggis", with the default
 `python3` set to `python3.6`. You update your system image to
-"innit", in which Python 3.6 is not available any more. So your
-default `python3` is automatically set to `python3.13`, which is the
+"innit", in which Python 3.6 is not available any more.  Your
+default `python3` will automatically be set to `python3.13`, which is the
 default Python version in "innit".
 
 ### Python packages installed
