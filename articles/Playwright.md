@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-> ***NOTE*** Please note that Playwright will only work in scheduled/always-on tasks, web apps and
+> **PLEASE NOTE:** Playwright will only work in scheduled/always-on tasks, web apps and
 > consoles. It will also work in notebooks, except on the legacy "glastonbury"
 > [system image](/pages/ChangingSystemImage). It currently will **not work** over SSH.
 
