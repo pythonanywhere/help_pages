@@ -14,7 +14,7 @@
 **Warning: Although it is possible to use `conda` on PythonAnywhere, it's still
 an experimental feature.**
 
-** Conda is only available in the haggis system image and more recent ones **
+Conda is only available in the "haggis" and "innit" system images
 
 
 # Creating the `.condarc` (optional)
@@ -81,7 +81,7 @@ By default, environments will be created in `~/.conda/envs/`.
 
 ## Disk quota limitations
 
-Conda environments take a lot of disk space, so creating a new conda environment 
+Conda environments take a lot of disk space, so creating a new conda environment
 may take a substantial part of your disk quota, so it may require a paid account.
 
 A tip: if you want to check how much disk space is used by your `conda`

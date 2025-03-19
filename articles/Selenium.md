@@ -1,4 +1,3 @@
-
 <!--
 .. title: Using Selenium on PythonAnywhere
 .. slug: selenium
@@ -10,11 +9,9 @@
 .. type: text
 -->
 
-*** NOTE *** These instructions are for the system image **glastonbury or haggis**.
-If you have an older system image, you will need to [update your system
-image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
-instructions. Also note that selenium will only work in tasks, web apps and
-consoles. It will also work in notebooks, but only on **haggis**. It will **not work** over SSH.
+> ***NOTE*** Please note that Selenium will only work in scheduled/always-on tasks, web apps and
+> consoles. It will also work in notebooks, except on the legacy "glastonbury"
+> [system image](/pages/ChangingSystemImage). It currently will **not work** over SSH.
 
 The latest versions of selenium confirmed to be working are:
 
@@ -22,17 +19,14 @@ The latest versions of selenium confirmed to be working are:
 |--------------|---------|------------|
 | glastonbury  | 4.4.3   | 2022-09-06 |
 | haggis       | 4.7.2   | 2022-12-23 |
-
-<br />
+| innit        | 4.26.1  | 2025-03-19 |
 
 We recommend upgrading selenium for your account/virtualenv to this version.
-For example, if you're using Python 3.7, run this in a Bash console:
-
+For example, if you're using Python 3.10, run this in a Bash console:
 
 ```bash
-    pip3.7 install --user selenium==4.1.3
+pip3.10 install --user selenium==4.26.1
 ```
-
 
 You can run Selenium with Chrome using code like this:
 
@@ -70,12 +64,13 @@ account.
 
 ## Don't use selenium from your web app
 
-Selenium with a browser are too slow to start up, and the request/response
+Selenium and the browser take a long time to start up, and the request/response
 cycle is meant to be fast.  Instead, build some sort of queue of jobs,
 and use a scheduled task to process those jobs.  More info [here](/pages/AsyncInWebApps/)
 
 
 ## Page crash errors
+
 Sometimes your code may fail with an error like this:
 
 ```

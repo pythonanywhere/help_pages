@@ -54,7 +54,7 @@ installed versions.
 ### Virtualenvs
 
 Because of the changes to the point releases of Python
-(for example, 3.7.5 might be replaced with 3.7.10), any
+(for example, 3.10.5 might be replaced with 3.10.12), any
 virtualenvs you have might break -- virtualenvs are not always
 portable from one point release to another. You will need to
 [rebuild](/pages/RebuildingVirtualenvs), and please note that this will require
@@ -93,11 +93,11 @@ When one of those defaults is not available after the system
 image change it will be automatically set to the most recent available
 Python version.
 
-For example you might have your system image set to "glastonbury" with the default
-`python3` set to `python3.5`. You update your system image to
-"haggis" in which Python 3.5 is not available any more. So your
-default `python3` is automatically set to `python3.10` which is the
-default "haggis" Python version.
+For example you might have your system image set to "haggis" with the default
+`python3` set to `python3.6`. You update your system image to
+"innit" in which Python 3.6 is not available any more. So your
+default `python3` is automatically set to `python3.13` which is the
+default "innit" Python version.
 
 ### Available Python versions for system images
 
@@ -125,3 +125,4 @@ time can be agreed upon.
 |-------------|--------------|
 | glastonbury | 20.04        |
 | haggis      | 20.04        |
+| innit       | 22.04        |

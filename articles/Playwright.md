@@ -9,11 +9,9 @@
 .. type: text
 -->
 
-> *** NOTE *** These instructions are for the system image **glastonbury or haggis**.
-> If you have an older system image, you will need to [update your system
-> image](https://help.pythonanywhere.com/pages/ChangingSystemImage/) to use these
-> instructions. Also note that Playwright will only work in tasks, web apps and
-> consoles. It will also work in notebooks, but only on **haggis**. It will **not work** over SSH.
+> ***NOTE*** Please note that Playwright will only work in scheduled/always-on tasks, web apps and
+> consoles. It will also work in notebooks, except on the legacy "glastonbury"
+> [system image](/pages/ChangingSystemImage). It currently will **not work** over SSH.
 
 If you have a paid account on PythonAnywhere, you can use Playwright to access
 other sites using a headless browser -- for example, for scraping.  Installing
