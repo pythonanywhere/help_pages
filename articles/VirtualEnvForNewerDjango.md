@@ -1,5 +1,5 @@
 <!--
-.. title: VirtualEnv for newer Django
+.. title: Virtualenvs for newer Django
 .. slug: VirtualEnvForNewerDjango
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
@@ -45,7 +45,7 @@ site we generate for you.
 You may have noticed a *Virtualenv path* option on the "Web" page. Let's go and create a virtualenv, so we have something to put in there.
 
 
-### Creating the virtualenv and installing (eg) django
+### Creating the virtualenv and installing Django
 
 Go to the "Consoles" tab and start a *Bash console*
 
@@ -107,8 +107,8 @@ mysite
 
 ### Using the virtualenv in your web app
 
-Now go back to the **Web** tab and edit the WSGI file for your web app (There's
-a link on the web app tab) and delete everything except the Django section and
+Now go back to the "Web" page and edit the WSGI file for your web app (there's
+a link on the page) and delete everything except the Django section, and
 then uncomment the Django section. Your WSGI file should look something like
 this:
 
@@ -130,7 +130,7 @@ from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 ```
 
-Then, back on the "Web" page itself, edit the path to your virtualenv in the
+Then, back on the "Web" page, edit the path to your virtualenv in the
 Virtualenv section. You can specify the full path,
 `/home/myusername/.virtualenvs/myproject`, or just the short name of the
 virtualenv, `myproject`, and the system will automatically expand it to the
