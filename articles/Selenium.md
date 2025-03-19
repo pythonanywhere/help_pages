@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-> ***NOTE*** Please note that Selenium will only work in scheduled/always-on tasks, web apps and
+> **PLEASE NOTE:** Selenium will only work in scheduled/always-on tasks, web apps and
 > consoles. It will also work in notebooks, except on the legacy "glastonbury"
 > [system image](/pages/ChangingSystemImage). It currently will **not work** over SSH.
 
@@ -22,7 +22,7 @@ The latest versions of selenium confirmed to be working are:
 | innit        | 4.26.1  | 2025-03-19 |
 
 We recommend upgrading selenium for your account/virtualenv to this version.
-For example, if you're using Python 3.10, run this in a Bash console:
+For example, if you're using Python 3.10 on "innit", run this in a Bash console:
 
 ```bash
 pip3.10 install --user selenium==4.26.1
