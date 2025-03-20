@@ -130,7 +130,7 @@ code in side the `handle` function, doing the work that you need.
 
 You could also call it in a scheduled task, which would achieve the once-per-day
 deletion that we want.  Let's say that your Django site is *not*
-using a virtualenv; you could just schedule this to run daily:
+using a [virtualenv](/pages/VirtualenvsExplained); you could just schedule this to run daily:
 
 ```bash
 ~/mysite/manage.py delete_old_comments

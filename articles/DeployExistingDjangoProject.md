@@ -50,7 +50,7 @@ documented on the [uploading and downloading files](/pages/UploadingAndDownloadi
 
 # Create a virtualenv and install Django and any other requirements
 
-In your Bash console, create a virtualenv, naming it after your project, and
+In your Bash console, create a [virtualenv](/pages/VirtualenvsExplained), naming it after your project, and
 choosing the version of Python you want to use:
 
 ```bash

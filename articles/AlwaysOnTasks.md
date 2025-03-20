@@ -50,7 +50,7 @@ and the last one deletes it.
 
 ## Using virtualenvs in always-on tasks
 
-If you want to use a virtualenv for your task, there are (at least) three
+If you want to use a [virtualenv](/pages/VirtualenvsExplained) for your task, there are (at least) three
 possibilities:
 
 ### If you use virtualenvwrapper

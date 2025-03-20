@@ -17,7 +17,7 @@ If you have a paid account on PythonAnywhere, you can use Playwright to access
 other sites using a headless browser -- for example, for scraping.  Installing
 it is a little different to how you might do so locally.
 
-You'll need to install it into a virtualenv, because it's not compatible with
+You'll need to install it into a [virtualenv](/pages/VirtualenvsExplained), because it's not compatible with
 some of our pre-installed packages.  So, for example:
 
 ```bash

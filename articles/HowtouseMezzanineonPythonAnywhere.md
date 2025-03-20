@@ -22,7 +22,7 @@ The default version of mezzanine available on PythonAnywhere is a little old. To
 ###Creating a virtualenv
 
 
-Start by creating a virtualenv -- a "virtual environment" which has only the python packages you want, rather than the system default ones. This allows you to use the latest version of mezzanine.
+Start by creating a [virtualenv](/pages/VirtualenvsExplained) -- a "virtual environment" which has only the python packages you want, rather than the system default ones. This allows you to use the latest version of mezzanine.
 
     :::bash
     source virtualenvwrapper.sh

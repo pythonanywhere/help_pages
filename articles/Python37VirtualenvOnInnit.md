@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-If you're using our "innit" system image, and want to create a virtualenv to use
+If you're using our "innit" system image, and want to create a [virtualenv](/pages/VirtualenvsExplained) to use
 Python 3.7, you'll need to specify which version of `pip` you want -- otherwise
 the `mkvirtualenv` command will install a version that isn't compatible with that
 version of Python.  Here's an example of how to do that:

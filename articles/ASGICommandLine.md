@@ -75,7 +75,7 @@ depends on the web framework you want to use:
 
 ## FastHTML
 
-Firstly, create a virtual environment with `python-fasthtml`
+Firstly, create a [virtualenv](/pages/VirtualenvsExplained) with `python-fasthtml`
 installed.  In your Bash console:
 
 ```bash
@@ -117,7 +117,7 @@ Now you can move on to [creating your website](#creating-your-website)
 
 ## FastAPI
 
-Firstly, create a virtual environment with `fastapi` and `uvicorn`
+Firstly, create a [virtualenv](/pages/VirtualenvsExplained) with `fastapi` and `uvicorn`
 installed.  In your Bash console:
 
 ```bash
@@ -158,7 +158,7 @@ Now you can move on to [creating your website](#creating-your-website)
 
 ## Django
 
-Firstly, create a virtual environment with `django` and `uvicorn`
+Firstly, create a [virtualenv](/pages/VirtualenvsExplained) with `django` and `uvicorn`
 installed.  In your Bash console:
 
 ```bash

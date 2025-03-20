@@ -10,7 +10,8 @@
 -->
 
 If you are doing a [system image upgrade](/pages/ChangingSystemImage), you are
-likely to need to rebuild your virtualenvs.
+likely to need to rebuild your [virtualenvs](/pages/VirtualenvsExplained) if you
+are using any.
 
 There are two steps to this process; firstly, *before* you change the image, you
 will need to gather information about the virtualenv.  Then, *after* you have

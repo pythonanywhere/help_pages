@@ -59,7 +59,7 @@ the `pa` command-line tool.
 
 ## Virtual environment
 
-Firstly, create a virtual environment with `requests`, `fastapi` and
+Firstly, create a [virtualenv](/pages/VirtualenvsExplained) with `requests`, `fastapi` and
 `uvicorn` installed.
 
 To create an environment called `fast_venv` run:

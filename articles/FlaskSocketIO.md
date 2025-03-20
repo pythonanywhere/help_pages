@@ -88,7 +88,7 @@ socketio = SocketIO(app, async_mode=async_mode, cors_allowed_origins="*")
 
 Then save the file.
 
-Next, you should create a virtual environment with `flask-socketio`, `gunicorn`
+Next, you should create a [virtualenv](/pages/VirtualenvsExplained) with `flask-socketio`, `gunicorn`
 and `eventlet` installed.  Go back to your Bash console, and run this:
 
 ```bash

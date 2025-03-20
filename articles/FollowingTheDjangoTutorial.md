@@ -28,7 +28,7 @@ So we recommend you keep both the django tutorial and this page open side-by-sid
 ### Creating a virtualenv and Installing Django into it
 
 
-The preinstalled versions of Django on PythonAnywhere are a little out of date, but you can use a *virtualenv* to install your own versions. We'll use a nifty helper tool called virtualenvwrapper. Open up a **Bash Console** and:
+The preinstalled versions of Django on PythonAnywhere are a little out of date, but you can use a [virtualenv](/pages/VirtualenvsExplained) to install your own versions. We'll use a nifty helper tool called virtualenvwrapper. Open up a **Bash Console** and:
 
     mkvirtualenv django4 --python=/usr/bin/python3.10
     pip install django

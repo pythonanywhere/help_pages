@@ -44,7 +44,9 @@ name.
 
 ## Setting up your virtualenv
 
-Open up a  new Bash console from your [Dashboard](https://www.pythonanywhere.com/consoles) and run
+We recommend using a [virtualenv](/pages/VirtualenvsExplained) to run a Flask
+project that you've uploaded.  Open up a new Bash console from the
+["Consoles" page](https://www.pythonanywhere.com/consoles) and run
 
     :::bash
     mkvirtualenv --python=/usr/bin/python3.13 my-virtualenv  # use whichever python version you prefer
