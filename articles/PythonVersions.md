@@ -10,7 +10,10 @@
 -->
 
 Which versions of Python you have available to you depends on the
-system image that your account uses.  The system image is essentially the
+system image that your account uses.  You can see which one that is on
+the "System Image" tab of the "Account" page.
+
+The system image is essentially the
 version of the operating system that your code runs under, and is set when
 you initially create your account, but you can
 [change it to a more recent one](/pages/ChangingSystemImage) later on.
