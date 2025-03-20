@@ -1,4 +1,3 @@
-
 <!--
 .. title: The PythonAnywhere help pages
 .. slug: index
@@ -9,8 +8,6 @@
 .. description:
 .. type: text
 -->
-
-
 
 Many of your questions about PythonAnywhere are likely to be answered below. If
 not, the best place to get support is in
@@ -36,9 +33,7 @@ PythonAnywhere), you can
 
 We also have a page that lists books and courses the people have recommended to us [here](/pages/Learning).
 
-
-
-The help pages have the following sections -- hopefully you can jump straight to
+The help pages below have the following sections -- hopefully you can jump straight to
 one that describes what you're looking for help with!
 
 [TOC]
@@ -54,15 +49,13 @@ We have lots of beginners on PythonAnywhere! Here's a very quick step-by-step tu
 
 And here are some common questions and guides for beginners:
 
-  * [How can I use a specific version of Python with the "Save &amp; Run" button?](/pages/SaveAndRunPythonVersion)
   * [Installing new Python modules for yourself](/pages/InstallingNewModules)
+  * [How can I use a specific version of Python with the "Save &amp; Run" button?](/pages/SaveAndRunPythonVersion)
   * [Using the file browser](/pages/FileBrowser)
   * [The file editor](/pages/FileEditor)
   * [Changing the font size in a PythonAnywhere console](/pages/ChangingFontSize)
   * [How do I share my code online?](/pages/ShareMyCodeOnline)
   * [What is a good tutorial for learning Python?](/pages/Learning)
-
-<!-- TODO: how do I edit a file?  How do I run a script? -->
 
 
 # I've got an existing web app that I'm trying to deploy
