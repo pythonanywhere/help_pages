@@ -264,8 +264,6 @@ Web apps:
 
   * [How to create a web application on PythonAnywhere](/pages/WebAppBasics)
   * [Reloading the web application after you've made changes](/pages/ReloadWebApp)
-  * [Python 3 web apps](/pages/Python3WebApps)
-
   * [Rebuilding a Virtualenv](/pages/RebuildingVirtualenvs)
 
 
