@@ -18,6 +18,8 @@ version of Python.  Here's an example of how to do that:
 mkvirtualenv myvirtualenv --python=python3.7 --pip 24.0
 ```
 
+Version 24.0 is the last version of `pip` that was compatible with Python 3.7.
+
 You will also have to activate the virtualenv after making it -- normally,
 `mkvirtualenv` does that for you automatically, but if it's run with the `--pip`
 option it doesn't.  So:
