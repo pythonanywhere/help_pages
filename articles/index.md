@@ -230,7 +230,7 @@ Or you can run through this step-by-step tutorial if you prefer:
   * [How do I share my code online?](/pages/ShareMyCodeOnline)
   * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
   * [How do I get streaming/buffering to work?](/pages/Buffering)
-  * [How to use a virtualenv in an IPython Notebook](/pages/IPythonNotebookVirtualenvs)
+  * [How to use a virtualenv in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
   * [What are these virtualenv things, anyway?](/pages/VirtualenvsExplained)
   * [How do I completely delete my account?](/pages/DeleteAccount)
 

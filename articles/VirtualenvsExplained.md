@@ -9,66 +9,38 @@
 .. type: text
 -->
 
-The Python programming language has a bunch of packages build in, the
-["Standard Library"](https://docs.python.org/3/library/index.html), which do a lot of useful things.
-However, most code that you write will probably use packages that aren't officially part of Python --
-they're separate open-source packages, which are maintained by separate groups of people.
+A virtualenv is way to create an isolated Python environment with specific installed
+packages inside it.
 
-For example, a simple Flask app might depend on three: the [Flask](http://flask.pocoo.org/) framework,
-[Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/),
-and the underlying [SQLAlchemy]((http://www.sqlalchemy.org/)) package that Flask-SQLAlchemy depends on.
-There's an official website that lists almost
-all of the popular Python packages, the [Python Package Index](https://pypi.org/), normally
-abbreviated to PyPI.
+When you run your code normally -- as a website, a scheduled
+task, or in any other way -- it doesn't run in a virtualenv, but in the
+*system environment*.
 
-If you were to install Python on your own machine, you'd just get the standard library; if you wanted
-Flask and the others, you'd need to install them separately.   PythonAnywhere, in order to make it easy
-to get started, has a [*lot*](https://www.pythonanywhere.com/batteries_included/) of them pre-installed.
-But it doesn't have everything -- there are 616,882 packages on PyPI as of this writing, so you can see
-how that might be a bit impractical.
+But with appropriate setup, it can run in a virtualenv.  When you do that, the
+running code will only see the specific packages that are installed in that env.
 
-The normal way to install packages from PyPI is using a tool called `pip`.  It can install things three
-different ways:
+This means that you can have different virtualenvs for different uses.  For example,
+if you had two websites, they could each use a different virtualenv so that they
+could use different packages.  If one website needed Flask version
+3.10.0, and another needed version 4.0.0, you could run both inside the same
+PythonAnywhere account by making them use different virtualenvs with the appropriate
+versions installed.
 
-1. For the entire system, so that every Python program you run has access to it.  Unfortunately you can't
-   do this on PythonAnywhere -- everyone has the same system image.
+You don't need to use virtualenvs to run your code on PythonAnywhere -- indeed,
+when you're getting started, it's best not to, and to use the system environment instead.  We have a lot of
+[useful packages pre-installed](https://www.pythonanywhere.com/batteries_included/),
+so you can just use them.  Doing that has the advantage that unlike virtualenvs,
+the packages in the system environment don't use up any of your disk space.
 
-2. Just for your own user account, so just your programs (and no-one else's) have access to it.  Other
-   people on the system would have to install it too in order to use it.  This is possible on PythonAnywhere,
-   but it's not the best way, which is:
+But if you start needed extra modules that are not pre-installed, or if you want
+to manage which specific versions of different packages you're using, they're a good idea.
 
-3. Into a virtualenv.  A virtualenv, or "virtual environment", is a separate directory in your home
-   directory that contains non-system packages that you've chosen to install into the virtualenv.
-   When you run some Python code (or in your website setup) you can say "use the virtualenv called X",
-   and then that code will have access to the standard library and the virtualenv's packages -- nothing else.
+Here's how to use them in various parts of PythonAnywhere:
 
-So why is that useful?  It's basically because code changes over time.  You can be pretty certain that
-the Python core developers won't change things drastically in a new version in a manner that will cause
-your code to stop working -- or, at least, they won't do it without plenty of warning.   But the same
-doesn't necessarily hold for other packages.
-
-*(I'm going to use Flask as an example of a rapidly-changing package below, which isn't remotely fair --
-the Flask team are super-careful about not breaking people's stuff without warning.  But the risks still
-hold -- maybe you might miss their announcement that they were going to change things.  Or, more likely,
-you might encounter a problem with a package with a less-careful maintainer.)*
-
-Let's say you create a website based on Flask 3.10.0.  You have it up and running, and people are using it.
-One day, you decide to write a new, separate website.   You've heard that the latest version of Flask,
-4.0.0, has lots of great new stuff in it, so you install it on PythonAnywhere so that you can use the new things.
-
-Unfortunately, what you didn't realise was that 4.0.0 wasn't backward-compatible with 3.10.0. -- that is, the code
-that you wrote with 3.10.0. doesn't work with 4.0.0.   Your popular site is broken, and people start sending you
-grumpy emails.  So now you need to either roll back your account to the older version of Flask and write your new site using
-3.10.0, or you need to change all of your old code to work with the new version.
-
-If you've not done much development before, this may sound like a kind of abstract, "let's worry about it later"
-kind of problem.   And it is, and would be... right up until the point you found yourself frantically dealing
-with version compatibility problems and cursing the day you thought it might be a good idea to learn to code.
-
-So how would a virtualenv have helped in this case?  Well, when you wrote your first app, you would have created
-a virtualenv for it.  Into that virtualenv, you'd install Flask 3.10.0, and you'd have configured the website to
-use that virtualenv.
-
-When you started work on your new website later, and decided you wanted access to all of that Flask 4.0.0 goodness,
-you'd create a completely new virtualenv, install 4.0.0 into that, and set up the new website to use it.
-The two would be isolated from each other.   Disaster averted!
+  * Websites:
+    * [General advice for virtualenvs in websites](/pages/Virtualenvs)
+    * [Virtualenvs for Django specifically](/pages/VirtualEnvForNewerDjango)
+  * [How to use them in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
+  * [Using them in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)
+  * [Using them in scheduled tasks](/pages/ScheduledTasks#using-a-virtualenv)
+  * [Specifying a virtualenv to be used when running from the editor](/pages/SaveAndRunPythonVersion)
