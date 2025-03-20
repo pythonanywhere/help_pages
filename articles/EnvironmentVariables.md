@@ -92,7 +92,7 @@ Here's how to load up the environnment variables from your .env file in a Bash c
 set -a; source ~/my-project-dir/.env; set +a
 ```
 
-Assuming you're using a [Virtualenv](/pages/Virtualenvs) for your web app, and also
+Assuming you're using a [virtualenv for your website](/pages/VirtualEnvForWebsites), and also
 assuming you're using virtualenvwrapper/workon, a
 convenient place to set an environment variable to be available in your Bash
 console sessions is in a special script called "postactivate" that gets run

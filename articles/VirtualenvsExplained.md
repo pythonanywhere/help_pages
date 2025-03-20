@@ -68,7 +68,7 @@ Here's how to use your virtualenvs in the parts of PythonAnywhere outside of Bas
 
   * [Specifying a virtualenv to be used when running from the editor](/pages/SaveAndRunPythonVersion)
   * Websites:
-    * [General advice for virtualenvs in websites](/pages/Virtualenvs)
+    * [General advice for virtualenvs in websites](/pages/VirtualEnvForWebsites)
     * [Virtualenvs for Django specifically](/pages/VirtualEnvForNewerDjango)
   * [Using virtualenvs in scheduled tasks](/pages/ScheduledTasks#using-a-virtualenv)
   * [Using virtualenvs in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)

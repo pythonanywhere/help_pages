@@ -74,7 +74,7 @@ And here are some popular how-to guides and help pages for common webapp issues:
 
   * [Can I use FTP/Filezilla? How should I upload my code to PythonAnywhere?](/pages/UploadingAndDownloadingFiles)
   * [Debugging import errors and sys.path issues in your WSGI file](/pages/DebuggingImportError)
-  * [Using a virtualenv for your web app](/pages/Virtualenvs)
+  * [Using a virtualenv for your web app](/pages/VirtualEnvForWebsites)
   * [How to use a custom domain for your web app](/pages/CustomDomains) (including CNAME setup)
   * [How to set up an HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
   * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
