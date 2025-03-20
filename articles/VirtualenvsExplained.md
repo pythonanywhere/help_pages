@@ -32,15 +32,16 @@ when you're getting started, it's best not to, and to use the system environment
 so you can just use them.  Doing that has the advantage that unlike virtualenvs,
 the packages in the system environment don't use up any of your disk space.
 
-But if you start needed extra modules that are not pre-installed, or if you want
-to manage which specific versions of different packages you're using, they're a good idea.
+But if you need extra modules that are not pre-installed, or if you want
+to manage which specific versions of different packages you're using, using
+a virtualenv is a good idea.
 
 Here's how to use them in various parts of PythonAnywhere:
 
   * Websites:
     * [General advice for virtualenvs in websites](/pages/Virtualenvs)
     * [Virtualenvs for Django specifically](/pages/VirtualEnvForNewerDjango)
-  * [How to use them in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
-  * [Using them in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)
-  * [Using them in scheduled tasks](/pages/ScheduledTasks#using-a-virtualenv)
+  * [How to use virtualenvs in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
+  * [Using virtualenvs in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)
+  * [Using virtualenvs in scheduled tasks](/pages/ScheduledTasks#using-a-virtualenv)
   * [Specifying a virtualenv to be used when running from the editor](/pages/SaveAndRunPythonVersion)
