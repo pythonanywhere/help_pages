@@ -36,12 +36,38 @@ But if you need extra modules that are not pre-installed, or if you want
 to manage which specific versions of different packages you're using, using
 a virtualenv is a good idea.
 
-Here's how to use them in various parts of PythonAnywhere:
+To create a virtualenv, we recommend using the `mkvirtualenv` Bash command.  This will
+create a virtualenv in the directory `.virtualenvs` in your home directory:
 
+```bash
+mkvirtualenv myvirtualenv --python=python3.13
+```
+
+That command will create a virtualenv called `myvirtualenv` using Python version 3.13.
+When it completes, you'll see a prompt that has the virtualenv's name at the start,
+like this:
+
+```
+(myvirtualenv) 13:01 ~ $
+```
+
+When that is at the start of your Bash prompt, your virtualenv is active -- if you
+run a Python script, it will only see the packages in the virtualenv.  You can then
+use the `pip` command to install the packages that you need.
+
+If you want to activate the virtualenv in the future -- let's say, if you're using
+a new Bash console where it's not already active -- you use the `workon` command:
+
+```
+workon myvirtualenv
+```
+
+Here's how to use your virtualenvs in the parts of PythonAnywhere outside of Bash consoles:
+
+  * [Specifying a virtualenv to be used when running from the editor](/pages/SaveAndRunPythonVersion)
   * Websites:
     * [General advice for virtualenvs in websites](/pages/Virtualenvs)
     * [Virtualenvs for Django specifically](/pages/VirtualEnvForNewerDjango)
-  * [How to use virtualenvs in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
-  * [Using virtualenvs in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)
   * [Using virtualenvs in scheduled tasks](/pages/ScheduledTasks#using-a-virtualenv)
-  * [Specifying a virtualenv to be used when running from the editor](/pages/SaveAndRunPythonVersion)
+  * [Using virtualenvs in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)
+  * [How to use virtualenvs in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
