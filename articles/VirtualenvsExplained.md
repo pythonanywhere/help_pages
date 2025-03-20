@@ -46,7 +46,8 @@ mkvirtualenv myvirtualenv --python=python3.13
 That command will create a virtualenv called `myvirtualenv` using Python version 3.13.
 Note that the version of Python that you specify must be one
 [that is available in your account's system image](/pages/PythonVersions).
-When it completes, you'll see a prompt that has the virtualenv's name at the start,
+
+When the command completes, you'll see a prompt that has the virtualenv's name at the start,
 like this:
 
 ```
