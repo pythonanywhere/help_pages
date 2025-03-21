@@ -46,12 +46,20 @@ class GenerateLLMsText(Task):
             'clean': True,
         }
 
+        # Get the destination directory from PAGES config
+        pages_config = self.site.config.get("PAGES", [])
+        dest_dir = "pages"  # Default fallback
+        for pattern, directory, template in pages_config:
+            if pattern.startswith("articles/"):
+                dest_dir = directory
+                break
+
         # Generate individual .md files for each article
         for article_path in article_files:
             # Get the base filename without extension
             article_basename = os.path.splitext(os.path.basename(article_path))[0]
-            # Create the target .md file path in the output directory
-            md_target = os.path.join(self.kw['output_folder'], f"{article_basename}.md")
+            # Create the target .md file path in the output directory with pages subdirectory
+            md_target = os.path.join(self.kw['output_folder'], dest_dir, f"{article_basename}.md")
 
             yield {
                 'basename': self.name,
@@ -66,6 +74,14 @@ class GenerateLLMsText(Task):
         """Create the root /llms.txt index file."""
         output_path = os.path.join(self.kw['output_folder'], 'llms.txt')
         site_name = self.site.config.get('SITE_NAME', 'Documentation Site')
+
+        # Get the destination directory from PAGES config
+        pages_config = self.site.config.get("PAGES", [])
+        dest_dir = "pages"  # Default fallback
+        for pattern, directory, template in pages_config:
+            if pattern.startswith("articles/"):
+                dest_dir = directory
+                break
 
         # Create directory if it doesn't exist
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -89,8 +105,8 @@ class GenerateLLMsText(Task):
                     # Fall back to filename if post not found or no title
                     title = article_basename.replace('_', ' ')
 
-                # Create a link to the .md file
-                f.write(f"- [{title}](/{article_basename}.md)\n")
+                # Create a link to the .md file with the pages/ prefix
+                f.write(f"- [{title}](/{dest_dir}/{article_basename}.md)\n")
 
         self.logger.info(f"Created llms.txt index at {output_path}")
         return True
@@ -121,6 +137,9 @@ class GenerateLLMsText(Task):
 
             # Process content - fix internal links
             content = self.process_markdown_links(content)
+
+            # Ensure directory exists
+            os.makedirs(os.path.dirname(target_path), exist_ok=True)
 
             # Write the processed markdown
             with open(target_path, 'w', encoding='utf-8') as f:
