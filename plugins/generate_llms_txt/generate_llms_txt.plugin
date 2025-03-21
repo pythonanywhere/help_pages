@@ -1,0 +1,13 @@
+[Core]
+Name = generate_llms_txt
+Module = generate_llms_txt
+
+[Nikola]
+MinVersion = 8.0.0
+PluginCategory = Task
+
+[Documentation]
+Author = Giles Thomas (with Claude's help)
+Version = 0.1
+Website = https://help.pythonanywhere.com
+Description = Generates LLM-friendly markdown versions of site content at /llms.txt
