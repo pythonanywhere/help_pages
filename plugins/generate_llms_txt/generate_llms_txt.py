@@ -89,7 +89,7 @@ class GenerateLLMsText(Task):
 
         with open(output_path, 'w') as f:
             f.write(f"# {site_name} - LLM-Friendly Documentation\n\n")
-            f.write(f"This is the machine-readable documentation index for {site_description}.\n\n")
+            f.write(f"> This is the machine-readable documentation index for {site_description}.\n\n")
 
             f.write("## All Articles\n\n")
 
