@@ -135,8 +135,25 @@ class GenerateLLMsText(Task):
             with open(source_path, 'r', encoding='utf-8') as f:
                 content = f.read()
 
+            # Get post object from Nikola
+            post = self.get_post_by_source_path(source_path)
+            title = None
+            if post and post.title():
+                title = post.title()
+
+            # Remove front matter
+            # Handle Nikola-style comment front matter
+            if '<!--' in content and '-->' in content:
+                start = content.find('<!--')
+                end = content.find('-->', start) + 3
+                content = content[end:].lstrip()
+
             # Process content - fix internal links
             content = self.process_markdown_links(content)
+
+            # Add title as a single-# header if we found one
+            if title:
+                content = f"# {title}\n\n{content}"
 
             # Ensure directory exists
             os.makedirs(os.path.dirname(target_path), exist_ok=True)
