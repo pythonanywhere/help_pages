@@ -80,13 +80,37 @@ class GenerateLLMsText(Task):
             for article_path in sorted(article_files):
                 # Get the base filename without extension
                 article_basename = os.path.splitext(os.path.basename(article_path))[0]
-                # Create a title from the filename (replace underscores with spaces)
-                title = article_basename.replace('_', ' ')
+
+                # Get post object from Nikola
+                post = self.get_post_by_source_path(article_path)
+                if post and post.title():
+                    title = post.title()
+                else:
+                    # Fall back to filename if post not found or no title
+                    title = article_basename.replace('_', ' ')
+
                 # Create a link to the .md file
                 f.write(f"- [{title}](/{article_basename}.md)\n")
 
         self.logger.info(f"Created llms.txt index at {output_path}")
         return True
+
+    def get_post_by_source_path(self, source_path):
+        """Get the Nikola post object for a given source file path."""
+        # Convert to absolute path if needed
+        source_path = os.path.abspath(source_path)
+
+        # Iterate through all posts to find the matching one
+        for post in self.site.timeline:
+            if os.path.abspath(post.source_path) == source_path:
+                return post
+
+        # Try pages too, since articles are likely pages
+        for page in self.site.pages:
+            if os.path.abspath(page.source_path) == source_path:
+                return page
+
+        return None
 
     def create_md_file(self, source_path, target_path):
         """Create an individual .md file."""
