@@ -6,7 +6,6 @@ Creates /llms.txt and corresponding .md files for articles.
 import os
 import re
 import glob
-from pathlib import Path
 from nikola.plugin_categories import Task
 from nikola import utils
 
@@ -75,7 +74,6 @@ class GenerateLLMsText(Task):
         output_path = os.path.join(self.kw['output_folder'], 'llms.txt')
         site_name = self.site.config.get('BLOG_TITLE', 'Documentation site')
         site_description = str(self.site.config.get('BLOG_DESCRIPTION', 'Documentation site'))
-        print(f"site_description = {site_description!r}")
         site_description = site_description[0].lower() + site_description[1:]
 
         # Get the destination directory from PAGES config
@@ -111,7 +109,6 @@ class GenerateLLMsText(Task):
                 # Create a link to the .md file with the pages/ prefix
                 f.write(f"- [{title}](/{dest_dir}/{article_basename}.md)\n")
 
-        self.logger.info(f"Created llms.txt index at {output_path}")
         return True
 
     def get_post_by_source_path(self, source_path):
@@ -165,7 +162,6 @@ class GenerateLLMsText(Task):
             with open(target_path, 'w', encoding='utf-8') as f:
                 f.write(content)
 
-            self.logger.info(f"Created LLM markdown file at {target_path}")
             return True
         except Exception as e:
             self.logger.error(f"Error creating MD file for {source_path}: {e}")
