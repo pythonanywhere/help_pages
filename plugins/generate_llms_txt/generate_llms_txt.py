@@ -73,7 +73,10 @@ class GenerateLLMsText(Task):
     def create_root_index(self, article_files):
         """Create the root /llms.txt index file."""
         output_path = os.path.join(self.kw['output_folder'], 'llms.txt')
-        site_name = self.site.config.get('SITE_NAME', 'Documentation Site')
+        site_name = self.site.config.get('BLOG_TITLE', 'Documentation site')
+        site_description = str(self.site.config.get('BLOG_DESCRIPTION', 'Documentation site'))
+        print(f"site_description = {site_description!r}")
+        site_description = site_description[0].lower() + site_description[1:]
 
         # Get the destination directory from PAGES config
         pages_config = self.site.config.get("PAGES", [])
@@ -88,7 +91,7 @@ class GenerateLLMsText(Task):
 
         with open(output_path, 'w') as f:
             f.write(f"# {site_name} - LLM-Friendly Documentation\n\n")
-            f.write(f"This is the machine-readable documentation index for {site_name}.\n\n")
+            f.write(f"This is the machine-readable documentation index for {site_description}.\n\n")
 
             f.write("## All Articles\n\n")
 

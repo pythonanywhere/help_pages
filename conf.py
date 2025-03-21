@@ -6,13 +6,13 @@ import time
 
 username = getpass.getuser()
 
-BLOG_AUTHOR = "PythonAnywere"  # (translatable)
-BLOG_TITLE = "PythonAnywhere help"  # (translatable)
+BLOG_AUTHOR = "PythonAnywhere"  # (translatable)
+BLOG_TITLE = "PythonAnywhere Help"  # (translatable)
 SITE_URL = f"https://{username}.pythonanywhere.com/"
 
 BASE_URL = f"https://{username}.pythonanywhere.com/"
 BLOG_EMAIL = "support@pythonanywhere.com"
-BLOG_DESCRIPTION = "Help pages for PythonAnywhere"  # (translatable)
+BLOG_DESCRIPTION = "The help pages for PythonAnywhere"  # (translatable)
 
 DEFAULT_LANG = "en"
 
