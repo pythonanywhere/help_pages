@@ -25,7 +25,7 @@ The sources, if you need to rebuild manually are in `/var/www/nikola-sources`
 
 For whatever reason...
 
-    workon nikola
+    workon nikola-innit
     nikola build
     nikola deploy  # nb this has a hard-coded path to a static files directory for the web app, so don't run it on your own pc
 
@@ -39,9 +39,9 @@ The git post-receive hook (in `/home/help/barerepo.git/hooks`), in case it gets 
     git checkout -f
     echo "begin nikola build: "`date` >> /home/help/deploy-log.txt
     cd $GIT_WORK_TREE
-    /home/help/.virtualenvs/nikola/bin/nikola check --clean-files
+    /home/help/.virtualenvs/nikola-innit/bin/nikola check --clean-files
     rm -f output/assets/js/tipuesearch_content.json
-    /home/help/.virtualenvs/nikola/bin/nikola build
-    /home/help/.virtualenvs/nikola/bin/nikola deploy
+    /home/help/.virtualenvs/nikola-innit/bin/nikola build
+    /home/help/.virtualenvs/nikola-innit/bin/nikola deploy
     echo "deploy completed: "`date` >> /home/help/deploy-log.txt
 

@@ -1,3 +1,5 @@
+# Works with python 3.10 on innit
+# (for nikola-innit venv, see post-receive hook `/home/help/barerepo.git/hooks` as in example in README.md)
 Babel==2.9.1
 blinker==1.6.2
 certifi==2024.7.4
