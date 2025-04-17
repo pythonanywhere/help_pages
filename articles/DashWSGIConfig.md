@@ -20,7 +20,6 @@ Dash apps have a app.server that you need to pass to WSGI. Your wsgi.py will hav
 
 We followed [this Dash tutorial](https://plot.ly/dash/getting-started)
 and created [this website](http://dashingdemo.pythonanywhere.com/) using the 
-code from the first example. You can take a look at the git repo [here]
-(https://github.com/pythonanywhere/dashingdemo).
+code from the first example. You can take a look at the git repo [here](https://github.com/pythonanywhere/dashingdemo).
 
 Other than that, be sure to check out our guide to [Debugging import errors](/pages/DebuggingImportError) for general tips on dealing with problems in your wsgi config.
