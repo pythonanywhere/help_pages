@@ -10,15 +10,17 @@
 -->
 
 If you're using our "innit" system image, and want to create a [virtualenv](/pages/VirtualenvsExplained) to use
-Python 3.7, you'll need to specify which version of `pip` you want -- otherwise
-the `mkvirtualenv` command will install a version that isn't compatible with that
-version of Python.  Here's an example of how to do that:
+Python 3.7, you'll need to specify which versions of `pip`, `setuptools`, and 
+`wheel` you want -- otherwise the `mkvirtualenv` command will install
+versions that aren't compatible with that version of Python.  Here's an example of how to do that:
 
 ```bash
-mkvirtualenv myvirtualenv --python=python3.7 --pip 24.0
+mkvirtualenv myvirtualenv --python=python3.7 --pip 24.0 --setuptools 68.0.0 --wheel 0.42.0
 ```
 
-Version 24.0 is the last version of `pip` that was compatible with Python 3.7.
+Version 24.0 is the last version of `pip`, 68.0.0 is the last version of 
+`setuptools` and 0.42.0 is the last version of `wheel` that are compatible with 
+Python 3.7.
 
 You will also have to activate the virtualenv after making it -- normally,
 `mkvirtualenv` does that for you automatically, but if it's run with the `--pip`
@@ -55,3 +57,24 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 ```
 
+or
+
+```
+Traceback (most recent call last):
+File "<string>", line 36, in <module>
+File "<pip-setuptools-caller>", line 14, in <module>
+File "/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.7/site-packages/setuptools/__init__.py", line 18
+  sys.path.extend(((vendor_path := os.path.join(os.path.dirname(os.path.dirname(__file__)), 'setuptools', '_vendor')) not in sys.path) * [vendor_path])  # fmt: skip
+                                ^
+SyntaxError: invalid syntax
+```
+
+or
+
+```
+File "/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.7/site-packages/wheel/bdist_wheel.py", line 26, in <module>
+  from ._bdist_wheel import bdist_wheel as bdist_wheel
+File "/home/yourusername/.virtualenvs/myvirtualenv/lib/python3.7/site-packages/wheel/_bdist_wheel.py", line 21, in <module>
+  from typing import TYPE_CHECKING, Callable, Iterable, Literal, Sequence, cast
+ImportError: cannot import name 'Literal' from 'typing' (/usr/local/lib/python3.7/typing.py)
+```
