@@ -2,7 +2,7 @@
 <!--
 .. title: How to configure a Dash web app as a pythonanywhere wsgi application
 .. slug: DashWSGIConfig
-.. date: 2016-05-13 14:35:28 UTC+01:00
+.. date: 2017-05-13 14:35:28 UTC+01:00
 .. tags:
 .. category:
 .. link:
