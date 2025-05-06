@@ -159,14 +159,13 @@ And you can get the details for one website like this:
 pa website get --domain YOURUSERNAME.pythonanywhere.com
 ```
 
-...which will display something like this (the command will of course vary based
-on the framework you're using):
+...which will display something like this:
 
 ```text
 -----------  -------------------------------------------------------------------------------------------------------------------------
 domain name  YOURUSERNAME.pythonanywhere.com
 enabled      True
-command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/my_fastapi --uds ${DOMAIN_SOCKET} main:app
+command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/streamlit run /home/YOURUSERNAME/my_streamlit/streamlit_app.py --server.address "unix://${DOMAIN_SOCKET}" --server.enableCORS false --server.enableXsrfProtection false --server.enableWebsocketCompression false
 -----------  -------------------------------------------------------------------------------------------------------------------------
 ```
 
