@@ -22,7 +22,7 @@ experimental feature.  Some important limitations to know about:
    contact [support@pythonanywhere.com](mailto:support@pythonanywhere.com) if you would like us to enable it for your account --
    however, the command-line system is the most complete way to do it.)
  * We do not guarantee that the command line syntax and the API interface will remain the same.
- * We have not worked out the long-term pricing for those sites, which will
+ * We have not worked out the long-term pricing for these sites, which will
    probably differ from the way we charge for traditional WSGI ones.
 
 If you are brave enough to try it, here is a quick guide on how to do it :-)
@@ -58,7 +58,7 @@ version of our command-line tool.
 ```bash
 pip install --upgrade pythonanywhere
 ```
-Running that install will make a new command, `pa` available, which we'll be
+Running that install will make a new command, `pa`, available, which we'll be
 using later.
 
 
@@ -120,10 +120,11 @@ back from your website -- exactly what, of course, depends on which of the
 frameworks you chose agove.
 
 *Note:* as of this writing, there is a bug that means that you might get a 404
-not found page for a few seconds before the site comes up.  If you get that,
+not found page for a few seconds before the site comes up -- or perhaps a warning
+that it does not support HTTPS.  If you get that,
 just refresh the page in your browser.  We're on the case :-)
 
-You have a working Streamlit app hosted on PythonAnywhere!  However, this site
+You now have a working Streamlit app hosted on PythonAnywhere!  However, this site
 will not currently appear on the "Web" page inside your PythonAnywhere account;
 we have a user interface that is a work-in-progress, though, and if you'd like
 to try that out, [drop us a line](mailto:support@pythonanywhere.com).
@@ -131,7 +132,7 @@ to try that out, [drop us a line](mailto:support@pythonanywhere.com).
 
 ## Getting and listing websites
 
-You can get a list of new style websites from PythonAnywhere with this command:
+You can get a list of new-style websites from PythonAnywhere with this command:
 
 ```bash
 pa website get
