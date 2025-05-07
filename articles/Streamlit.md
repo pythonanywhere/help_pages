@@ -9,11 +9,11 @@
 .. type: text
 -->
 
-# Disclaimer
-
 This help page explains how to set up a Streamlit app on PythonAnywhere.
 
-**Note:** deployment of Streamlit apps on PythonAnywhere is an
+## Disclaimer
+
+Deployment of Streamlit apps on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
  * There is no support for static file mappings.
@@ -29,7 +29,7 @@ If you are brave enough to try it, here is a quick guide on how to do it :-)
 
 ## Paid account
 As Streamlit is not installed by default, you will need to install it in a
-virtualenv. The size of the virtualenv with Streamlit and its dependencies is
+virtualenv. The size of a virtualenv with Streamlit and its dependencies is
 too large for a free account, so you will need at least a basic Hacker paid account to
 use it.
 
@@ -86,18 +86,7 @@ cd ~/my_streamlit/
 wget https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/streamlit_app.py
 ```
 
-That's enough setup!  The only other thing you'll need to know to run your site
-is the *command* that you will later on provide when creating it; we'll explain
-the details of this later on, but for now, just note down that it should be this:
-
-```bash
-/home/YOURUSERNAME/.virtualenvs/my_venv/bin/streamlit run /home/YOURUSERNAME/my_streamlit/streamlit_app.py --server.address "unix://${DOMAIN_SOCKET}" --server.enableCORS false --server.enableXsrfProtection false --server.enableWebsocketCompression false
-```
-
-...with the three instances of `YOURUSERNAME` replaced by your actual username, but with everything else
-exactly as it is.
-
-Now you can move on to [creating your website](#creating-your-website)
+That's enough setup!  Now you can move on to [creating your website](#creating-your-website)
 
 # Managing your website
 
@@ -106,14 +95,15 @@ Now you can move on to [creating your website](#creating-your-website)
 In Bash, to deploy your website to your subdomain -- that is, to
 *yourusername*`.pythonanywhere.com` if you're on our US system, or
 *yourusername*`.eu.pythonanywhere.com` if you're on the EU system -- just run
-the following.  You'll need to replace the domain argument as appropriate, and
-put the framework-specific command that you noted down earlier inside the single
-quotes in place of `COMMAND`.
+the following.
 
 
 ```bash
-pa website create --domain YOURUSERNAME.pythonanywhere.com --command 'COMMAND'
+pa website create --domain YOURUSERNAME.pythonanywhere.com --command '/home/YOURUSERNAME/.virtualenvs/my_venv/bin/streamlit run /home/YOURUSERNAME/my_streamlit/streamlit_app.py --server.address "unix://${DOMAIN_SOCKET}" --server.enableCORS false --server.enableXsrfProtection false --server.enableWebsocketCompression false'
 ```
+
+...with the four instances of `YOURUSERNAME` replaced by your actual username, but with everything else
+exactly as it is.
 
 If everything was successful, you should see something like:
 
