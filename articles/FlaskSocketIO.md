@@ -170,6 +170,9 @@ pa website get --domain YOURUSERNAME.pythonanywhere.com
 domain name  YOURUSERNAME.pythonanywhere.com
 enabled      True
 command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/gunicorn --worker-class eventlet -w 1 --chdir /home/YOURUSERNAME/Flask-SocketIO/example --bind unix:${DOMAIN_SOCKET} app:app
+access log   /var/log/YOURUSERNAME.pythonanywhere.com.access.log
+error log    /var/log/YOURUSERNAME.pythonanywhere.com.error.log
+server log   /var/log/YOURUSERNAME.pythonanywhere.com.server.log
 -----------  -------------------------------------------------------------------------------------------------------------------------
 ```
 

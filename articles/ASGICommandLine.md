@@ -275,6 +275,9 @@ on the framework you're using):
 domain name  YOURUSERNAME.pythonanywhere.com
 enabled      True
 command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/uvicorn --app-dir /home/YOURUSERNAME/my_fastapi --uds ${DOMAIN_SOCKET} main:app
+access log   /var/log/YOURUSERNAME.pythonanywhere.com.access.log
+error log    /var/log/YOURUSERNAME.pythonanywhere.com.error.log
+server log   /var/log/YOURUSERNAME.pythonanywhere.com.server.log
 -----------  -------------------------------------------------------------------------------------------------------------------------
 ```
 

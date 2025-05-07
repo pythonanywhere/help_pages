@@ -166,6 +166,9 @@ pa website get --domain YOURUSERNAME.pythonanywhere.com
 domain name  YOURUSERNAME.pythonanywhere.com
 enabled      True
 command      /home/YOURUSERNAME/.virtualenvs/my_venv/bin/streamlit run /home/YOURUSERNAME/my_streamlit/streamlit_app.py --server.address "unix://${DOMAIN_SOCKET}" --server.enableCORS false --server.enableXsrfProtection false --server.enableWebsocketCompression false
+access log   /var/log/YOURUSERNAME.pythonanywhere.com.access.log
+error log    /var/log/YOURUSERNAME.pythonanywhere.com.error.log
+server log   /var/log/YOURUSERNAME.pythonanywhere.com.server.log
 -----------  -------------------------------------------------------------------------------------------------------------------------
 ```
 
