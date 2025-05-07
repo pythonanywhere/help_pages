@@ -11,7 +11,7 @@
 
 # Disclaimer
 
-This help page explains how to set up a Streamlit apps on PythonAnywhere.
+This help page explains how to set up a Streamlit app on PythonAnywhere.
 
 **Note:** deployment of Streamlit apps on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
@@ -20,18 +20,17 @@ experimental feature.  Some important limitations to know about:
  * There is a very limited web UI for creating and managing those websites.
    Contact [support@pythonanywhere.com](mailto:support@pythonanywhere.com) if you would like us to enable it for your account.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
- * We have not worked out the long-term pricing for those sites, which will 
-   probably differ from the way we charge for traditional WSGI ones.  We're 99.9% certain that
-   there will be a way to host them in a free plan, though!
+ * We have not worked out the long-term pricing for those sites, which will
+   probably differ from the way we charge for traditional WSGI ones.
 
 If you are brave enough to try it, here is a quick guide on how to do it :-)
 
 # Prerequisites
 
 ## Paid account
-As Streamlit is not installed by default, you will need to install it in a 
-virtualenv. Size of the virtualenv with Streamlit and its dependencies is 
-too large for free accounts, so you will need a basic Hacker paid account to 
+As Streamlit is not installed by default, you will need to install it in a
+virtualenv. The size of the virtualenv with Streamlit and its dependencies is
+too large for a free account, so you will need at least a basic Hacker paid account to
 use it.
 
 ## API token
@@ -61,7 +60,7 @@ Running that install will make a new command, `pa` available, which we'll be
 using later.
 
 
-# Simple Streamlit app
+# A simple Streamlit app
 
 Firstly, create a [virtualenv](/pages/VirtualenvsExplained) with `streamlit`
 installed.  In your Bash console:
@@ -76,14 +75,15 @@ mkvirtualenv my_venv --python=python3.13
 pip install streamlit
 ```
 
-Next, we'll create a minimal Streamlit app.  Create a directory 
+Next, we'll create a minimal Streamlit app.  Create a directory
 `~/my_streamlit/`
-and inside it get the example Streamlit app, the same that is used in 
+and inside it get the example Streamlit app, the same that is used in
 [official Streamlit tutorial](https://docs.streamlit.io/get-started/tutorials/create-an-app):
 
 ```bash
+mkdir ~/my_streamlit/
+cd ~/my_streamlit/
 wget https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/streamlit_app.py
-
 ```
 
 That's enough setup!  The only other thing you'll need to know to run your site
@@ -94,7 +94,7 @@ the details of this later on, but for now, just note down that it should be this
 /home/YOURUSERNAME/.virtualenvs/my_venv/bin/streamlit run /home/YOURUSERNAME/my_streamlit/streamlit_app.py --server.address "unix://${DOMAIN_SOCKET}" --server.enableCORS false --server.enableXsrfProtection false --server.enableWebsocketCompression false
 ```
 
-...with `YOURUSERNAME` replaced by your actual username, but with everything else
+...with the three instances of `YOURUSERNAME` replaced by your actual username, but with everything else
 exactly as it is.
 
 Now you can move on to [creating your website](#creating-your-website)
