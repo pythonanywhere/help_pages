@@ -17,8 +17,10 @@ Deployment of Streamlit apps on PythonAnywhere is an
 experimental feature.  Some important limitations to know about:
 
  * There is no support for static file mappings.
- * There is a very limited web UI for creating and managing those websites.
-   Contact [support@pythonanywhere.com](mailto:support@pythonanywhere.com) if you would like us to enable it for your account.
+ * The primary way to manage Streamlit sites is via a set of command-line tools or with
+   our API.  (There is a very limited web UI for creating and managing them --
+   contact [support@pythonanywhere.com](mailto:support@pythonanywhere.com) if you would like us to enable it for your account --
+   however, the command-line system is the most complete way to do it.)
  * We do not guarantee that the command line syntax and the API interface will remain the same.
  * We have not worked out the long-term pricing for those sites, which will
    probably differ from the way we charge for traditional WSGI ones.
@@ -95,14 +97,14 @@ That's enough setup!  Now you can move on to [creating your website](#creating-y
 In Bash, to deploy your website to your subdomain -- that is, to
 *yourusername*`.pythonanywhere.com` if you're on our US system, or
 *yourusername*`.eu.pythonanywhere.com` if you're on the EU system -- just run
-the following.
+the following (rather long) command.
 
 
 ```bash
 pa website create --domain YOURUSERNAME.pythonanywhere.com --command '/home/YOURUSERNAME/.virtualenvs/my_venv/bin/streamlit run /home/YOURUSERNAME/my_streamlit/streamlit_app.py --server.address "unix://${DOMAIN_SOCKET}" --server.enableCORS false --server.enableXsrfProtection false --server.enableWebsocketCompression false'
 ```
 
-...with the four instances of `YOURUSERNAME` replaced by your actual username, but with everything else
+...with the three instances of `YOURUSERNAME` replaced by your actual username, but with everything else
 exactly as it is.
 
 If everything was successful, you should see something like:
@@ -169,10 +171,10 @@ If you are using a custom domain, there will be an extra field called `cname`
 in the output above. This is the CNAME that you can use in your DNS settings
 for your web app. For more details on setting up DNS for a custom domain, see:
 
-- [How DNS works: a beginner's guide](https://help.pythonanywhere.com/pages/DNSPrimer/),
-- [Setting up a custom domain on PythonAnywhere](https://help.pythonanywhere.com/pages/CustomDomains/),
-- [Naked domains](https://help.pythonanywhere.com/pages/NakedDomains/),
-- [Troubleshooting DNS](https://help.pythonanywhere.com/pages/TroubleshootingDNS/).
+- [How DNS works: a beginner's guide](https://help.pythonanywhere.com/pages/DNSPrimer/)
+- [Setting up a custom domain on PythonAnywhere](https://help.pythonanywhere.com/pages/CustomDomains/)
+- [Naked domains](https://help.pythonanywhere.com/pages/NakedDomains/)
+- [Troubleshooting DNS](https://help.pythonanywhere.com/pages/TroubleshootingDNS/)
 
 
 ## Enabling HTTPS for your custom domain webapp
