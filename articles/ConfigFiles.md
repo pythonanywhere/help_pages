@@ -76,7 +76,7 @@ Our default `~/.profile` contains a single line:
 source ~/.bashrc
 ```
 
-This line ensures that your .bashrc is loaded when the system starts a
+This line ensures that your `.bashrc` is loaded when the system starts a
 shell to run your code (e.g., in scheduled tasks).
 
 Inside `.bashrc`, you'll find another important line:
@@ -88,8 +88,8 @@ source /etc/bashrc
 This loads a non-editable system-wide config file (`/etc/bashrc`) which
 includes critical environment settings, such as the `PATH`. Without these
 settings, your shell environment might fail to locate key executables like
-python3.10, causing your scripts to fail with errors such as command not
-found.
+`python3.12`, causing your scripts to fail with errors such as `command not
+found`.
 
 If your custom `~/.bash_profile` does not include a call to source `~/.bashrc`,
 it can break your environment and prevent scheduled tasks from running
