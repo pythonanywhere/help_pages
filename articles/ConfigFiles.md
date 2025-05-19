@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-## What are config (dotfiles)?
+## What are config files (aka dotfiles)?
 
 In a Linux environment, config files (often called dotfiles because they
 begin with a dot, like `.bashrc`) are user-specific files that configure
@@ -40,7 +40,7 @@ Python code from the in-browser editor. We recommend not modifying this
 file unless you know exactly what you're doing, as it may affect how your
 scripts are executed.
 
-What are these files for?
+### What are these files for?
 
 - `.bashrc` – Executed when you start a new Bash console. Commonly used for
   defining aliases, functions, and other shell customizations.
