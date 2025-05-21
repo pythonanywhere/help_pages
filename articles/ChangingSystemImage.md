@@ -52,6 +52,12 @@ Because the pre-installed Python modules will be upgraded,
 the change might break any code you have that relies on the old
 installed versions.
 
+### Python versions
+
+The new system image may not support the version of Python that you are using.
+In particular, double-check your websites to see which ones they are using,
+and check it against the [per-system-image list of Python versions](/pages/PythonVersions).
+
 ### Virtualenvs
 
 Because of the changes to the point releases of Python
