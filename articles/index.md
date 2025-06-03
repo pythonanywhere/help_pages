@@ -195,6 +195,7 @@ Here are some guides for some of the common things people want to do:
   * [Fonts](/pages/Fonts)
   * [Using Cloudflare with PythonAnywhere](/pages/Cloudflare)
   * [Installing TA-Lib on PythonAnywhere](/pages/TaLib)
+  * [Using conda](/pages/conda)
 
 
 And here's some very brief FAQ answers about common requests:
