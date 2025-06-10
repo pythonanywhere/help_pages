@@ -50,7 +50,7 @@ Note that the version of Python that you specify must be one
 When the command completes, you'll see a prompt that has the virtualenv's name at the start,
 like this:
 
-```
+```bash
 (myvirtualenv) 13:01 ~ $
 ```
 
@@ -61,7 +61,7 @@ use the `pip` command to install the packages that you need.
 If you want to activate the virtualenv in the future -- let's say, if you're using
 a new Bash console where it's not already active -- you use the `workon` command:
 
-```
+```bash
 workon myvirtualenv
 ```
 
@@ -74,3 +74,29 @@ Here's how to use your virtualenvs in the parts of PythonAnywhere outside of Bas
   * [Using virtualenvs in scheduled tasks](/pages/ScheduledTasks#using-a-virtualenv)
   * [Using virtualenvs in always-on tasks](/pages/AlwaysOnTasks#using-virtualenvs-in-always-on-tasks)
   * [How to use virtualenvs in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
+
+
+# Notes for virtualenvs in `innit`
+Some users have reported issues using virtualenvs in the `innit` system image.
+
+There is a simple explanation for it and also, a simple fix.
+
+The issue arises because we have symlinks in /usr/local/bin for all of the
+versions of Python that `innit` supports. They point to where that Python
+version is actually installed in /usr/bin. However, if a virtualenv is created
+using the /usr/local/bin symlink, then the virtualenv will be broken and you
+will not be able to install anything into it.
+
+The simple fix is to ensure that /usr/bin is on your PATH before /usr/local/bin, then you can use
+
+```bash
+mkvirtualenv -p python3.11 venv
+```
+to create your virtualenv.
+
+Alternatively, you can also just use
+```bash
+mkvirtualenv -p /usr/bin/python3.11 venv
+```
+to create your virtualenv and it will be created correctly.
+
