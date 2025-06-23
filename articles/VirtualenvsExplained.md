@@ -81,13 +81,13 @@ Some users have reported issues using virtualenvs in the `innit` system image.
 
 There is a simple explanation for it and also, a simple fix.
 
-The issue arises because we have symlinks in /usr/local/bin for all of the
+The issue arises because we have symlinks in /usr/bin for all of the
 versions of Python that `innit` supports. They point to where that Python
-version is actually installed in /usr/bin. However, if a virtualenv is created
-using the /usr/local/bin symlink, then the virtualenv will be broken and you
+version is actually installed in /usr/local/bin. However, if a virtualenv is created
+using the /usr/bin symlink, then the virtualenv will be broken and you
 will not be able to install anything into it.
 
-The simple fix is to ensure that /usr/bin is on your PATH before /usr/local/bin, then you can use
+The simple fix is to ensure that /usr/local/bin is on your PATH before /usr/bin, then you can use
 
 ```bash
 mkvirtualenv -p python3.11 venv
@@ -96,7 +96,7 @@ to create your virtualenv.
 
 Alternatively, you can also just use
 ```bash
-mkvirtualenv -p /usr/bin/python3.11 venv
+mkvirtualenv -p /usr/local/bin/python3.11 venv
 ```
 to create your virtualenv and it will be created correctly.
 
