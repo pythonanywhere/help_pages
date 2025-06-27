@@ -33,280 +33,276 @@ PythonAnywhere), you can
 
 We also have a page that lists books and courses the people have recommended to us [here](/pages/Learning).
 
+See details of our education features: [PythonAnywhere Education beta](/pages/Education)
+
+
 The help pages below have the following sections -- hopefully you can jump straight to
 one that describes what you're looking for help with!
 
+
 [TOC]
 
-# I'm a beginner learning Python
 
-We have lots of beginners on PythonAnywhere! Here's a very quick step-by-step tutorial you might want to start with:
+## I'm a beginner learning Python
+
+New to Python? Start here for guides on learning Python programming and getting familiar with the PythonAnywhere platform.
 
 <img alt="keyboard icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_268_keyboard_wireless@2x.png">
 &nbsp; I want to start learning Python
 <a href="https://www.pythonanywhere.com/task_helpers/start/1-start_python/">[account in US servers]</a>
 <a href="https://eu.pythonanywhere.com/task_helpers/start/1-start_python/">[account in EU servers]</a>
 
-And here are some common questions and guides for beginners:
+* [Courses and other learning materials](/pages/Learning)
+* [Installing new Python modules for yourself](/pages/InstallingNewModules)
+* [How can I use a specific version of Python with the "Save & Run" button?](/pages/SaveAndRunPythonVersion)
+* [Using the file browser](/pages/FileBrowser)
+* [The file editor](/pages/FileEditor)
+* [Changing the font size in a PythonAnywhere console](/pages/ChangingFontSize)
+* [How do I share my code online?](/pages/ShareMyCodeOnline)
 
-  * [Installing new Python modules for yourself](/pages/InstallingNewModules)
-  * [How can I use a specific version of Python with the "Save &amp; Run" button?](/pages/SaveAndRunPythonVersion)
-  * [Using the file browser](/pages/FileBrowser)
-  * [The file editor](/pages/FileEditor)
-  * [Changing the font size in a PythonAnywhere console](/pages/ChangingFontSize)
-  * [How do I share my code online?](/pages/ShareMyCodeOnline)
-  * [What is a good tutorial for learning Python?](/pages/Learning)
+## Web Applications and Hosting
 
-
-# I've got an existing web app that I'm trying to deploy
-
-This section assumes you have started building a web app on your local PC, and you're now looking to deploy it to PythonAnywhere.
-
-Here is a step-by-step tutorial that walks you through the general outline of how to set up an existing web app on PythonAnywhehre
+Everything you need to know about creating, configuring, and managing web applications on PythonAnywhere. This covers all major Python web frameworks and deployment options.
 
 <img alt="computer icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_137_computer_service@2x.png">
 &nbsp;
-I have built a web app on my local PC and want to deploy it on PythonAnywhere
+I have a web app on my local PC and want to deploy it on PythonAnywhere
 <a href="https://www.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/">[account in US servers]</a>
 <a href="https://eu.pythonanywhere.com/task_helpers/start/4-deploy-local-web-app/">[account in EU servers]</a>
 
-And here are some popular how-to guides and help pages for common webapp issues:
-
-  * [Can I use FTP/Filezilla? How should I upload my code to PythonAnywhere?](/pages/UploadingAndDownloadingFiles)
-  * [Debugging import errors and sys.path issues in your WSGI file](/pages/DebuggingImportError)
-  * [Using a virtualenv for your web app](/pages/VirtualEnvForWebsites)
-  * [How to use a custom domain for your web app](/pages/CustomDomains) (including CNAME setup)
-  * [How to set up an HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
-  * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
-  * [Troubleshooting DNS problems](/pages/TroubleshootingDNS)
-  * [How to use our static files service, and why you might want to](/pages/StaticFiles)
-  * [How to set environment variables in web apps](/pages/environment-variables-for-web-apps)
-  * [How to handle slow/async work in a web app](/pages/AsyncInWebApps)
-  * [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
-  * [How to move a domain from one PythonAnywhere user account to another](/pages/MovingDomainToAnotherPythonAnywhereAccount)
-  * [Using MySQL](/pages/UsingMySQL)
-  * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
-  * [My site is slow!](/pages/MySiteIsSlow)
-  * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
-  * [Using International Domain Names](/pages/InternationalDomainNames) -- that is, ones with non-ASCII/Unicode characters in them
-  * [How do I create a web app that redirects from one domain to another?](/pages/RedirectWebApp)
-  * [How many hits can my site handle?](/pages/HowManyHitsCanMySiteHandle) -- a guide to making sure that you have the right number of worker processes
-
-
-And some tips for specific web frameworks:
-
-  * Django
-    * [Deploying an existing Django project on PythonAnywhere](/pages/DeployExistingDjangoProject)
-    * [How can I use a more recent version of Django for a new project](/pages/VirtualEnvForNewerDjango)
-    * [How to setup static files under Django](/pages/DjangoStaticFiles) -- STATIC_ROOT in settings.py, `collectstatic`, etc
-    * [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
-    * [How to set SECRET_KEY via an environment variable](/pages/environment-variables-for-web-apps)
-    * [Running Django code in consoles, scheduled and always-on tasks with custom management commands](/pages/DjangoManagementCommands)
-    * [How to scale a Django Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/15/django-on-pythonanywhere-tutorial/) (external link to Memcachier)
-
-  * Flask
-    * [A beginner's guide to building a simple database-backed Flask website on PythonAnywhere](http://blog.pythonanywhere.com/121/)
-    * [General Flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
-    * [Dealing with 504 or 502 errors in Flask applications](/pages/Flask504And502Errors)
-    * [Using SQLAlchemy with MySQL](/pages/UsingSQLAlchemywithMySQL)
-    * [How to scale a Flask Application on PythonAnywhere with Memcache](https://blog.memcachier.com/2018/10/01/flask-on-pythonanywhere-tutorial/) (external link to Memcachier)
-
-  * Web2Py
-    * ["Admin is disabled because insecure channel (web2py error)"](/pages/AdminIsDisabledBecauseInsecureChannel)
-    * [How do I set up different apps for different domains in Web2py?](/pages/MultipleDomainsWeb2py)
-    * [How do I change my admin password in Web2py?](/pages/Web2pyAdminPassword)
-    * [How do I run the web2py scheduler?](/pages/Web2pyScheduler)
-
-  * Others
-    * [How to use Mezzanine on PythonAnywhere](/pages/HowtouseMezzanineonPythonAnywhere)
-    * [Using CherryPy](/pages/UsingCherryPy)
-    * [Using Tornado (WSGI-only mode)](/pages/UsingTornado)
-    * [Using Web.py](/pages/WebDotPyWSGIConfig)
-    * [Using Dash](/pages/DashWSGIConfig)
-    * [Using Jam.py](/pages/jampy)
-    * [How to host a static site on PythonAnywhere](/pages/hosting-a-static-site)
+### Basic Web App Setup
+
+* [How to create a web application on PythonAnywhere](/pages/WebAppBasics)
+* [Deploying an existing Django project on PythonAnywhere](/pages/DeployExistingDjangoProject)
+* [How to host a static site on PythonAnywhere](/pages/HostingAStaticSite)
+
+### Web App Configuration and  Management
 
+* [Reloading the web application after you've made changes](/pages/ReloadWebApp)
+* [Dealing with "there was an error reloading your web app" messages](/pages/ErrorReloadingWebApp)
+* [How do I create a web app that redirects from one domain to another?](/pages/RedirectWebApp)
+* [How to point a new domain at an existing web app in the Web tab](/pages/UsingANewDomainForExistingWebApp)
+* [Global State and Web Apps](/pages/GlobalStateAndWebApps)
+
+### Django
+
+* [How to follow the Django Tutorial on PythonAnywhere](/pages/FollowingTheDjangoTutorial)
+* [How to setup static files under Django](/pages/DjangoStaticFiles)
+* [The Django admin's CSS isn't working](/pages/DjangoAdminCSSNotWorking)
+* [Running Django code in consoles, scheduled and always-on tasks with custom management commands](/pages/DjangoManagementCommands)
+* [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
+* [How can I use a more recent version of Django for a new project](/pages/VirtualEnvForNewerDjango)
 
-
-# I'm looking at an error message in a console
-
-Oh no!  Here's our most common explanations and solutions to console problems:
-
-  * [I get "permission denied" when trying to pip install a new module](/pages/InstallingNewModules)
-  * [Why do I get a "403 Forbidden" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
-  * [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
-  * [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
-  * ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuota)
+### Flask
+* [General Flask tips, including avoiding app.run() and how to run database config with db.create_all()](/pages/Flask)
+* [Dealing with 504 and 502 errors in Flask applications](/pages/Flask504And502Errors)
+* [Using Flask's send_file function with BytesIO](/pages/FlaskSendFileAndBytesIO)
 
+### Web2py
 
-Some technical problems with consoles that sometimes come up:
+* [How do I change my admin password in Web2py?](/pages/Web2pyAdminPassword)
+* [Admin is disabled because insecure channel](/pages/AdminIsDisabledBecauseInsecureChannel)
+* [Web2py: how to do a fake migration to change database hostname](/pages/Web2pyFakeMigration)
+* [How do I run the web2py scheduler?](/pages/Web2pyScheduler)
+* [Migating Web2py from SQLite to MySQL](/pages/MigatingWeb2pyFromSQLiteToMySQL)
+* [How do I set up different apps for different domains in Web2py?](/pages/MultipleDomainsWeb2py)
 
-  * [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
-  * [The "Starting encrypted connection" message never disappears](/pages/StartingEncryptedConnection)
+### Other Frameworks
 
+* [Using Dash](/pages/DashWSGIConfig)
+* [Using CherryPy](/pages/UsingCherryPy)
+* [Using Tornado (WSGI-only mode)](/pages/UsingTornado)
+* [Using Jam.py](/pages/Jampy)
+* [Using Web.py](/pages/WebDotPyWSGIConfig)
+* [How to use Mezzanine on PythonAnywhere](/pages/HowtouseMezzanineonPythonAnywhere)
+* [How to connect production React frontend with a Python backend](/pages/React)
+* [How to connect production Vue frontend with a Python backend](/pages/Vue)
 
-# I'm looking at an error message in my web app
+### ASGI (async) sites (beta)
+* [Using the API to run ASGI sites on PythonAnywhere (beta)](/pages/ASGIAPI)
+* [Deploying ASGI sites on PythonAnywhere (beta)](/pages/ASGICommandLine)
+* [Deploying Flask sites on PythonAnywhere with our experimental website system](/pages/FlaskWithTheNewWebsiteSystem)
+* [Deploying Flask-SocketIO sites on PythonAnywhere (beta)](/pages/FlaskSocketIO)
+* [Deploying Streamlit apps on PythonAnywhere (beta)](/pages/Streamlit)
 
-If you haven't already, the first step is to look in your **error
-log** -- you'll find a link to it on the **Web tab** ([account in US servers](https://www.pythonanywhere.com/web_app_setup/); [account in EU servers](https://eu.pythonanywhere.com/web_app_setup/)).
-There's [more information about the error log here](/pages/InternalServerError).
+## Static Files and Content Delivery
 
-Once you've done that, here are some solutions to common problems
+How to serve static files (CSS, JavaScript, images) efficiently and troubleshoot common static file issues.
 
-  * [Debugging import errors and sys.path issues](/pages/DebuggingImportError)  <--  if you've just started setting up your app, chances are the answer is in here.
-  * [Dealing with "there was an error reloading your web app" messages](/pages/ErrorReloadingWebApp)
-  * [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
-  * [I'm getting a 400 Bad Request error from my Django app](/pages/Django400BadRequest)
-  * [Debugging problems with static files (js, css) not loading](/pages/DebuggingStaticFiles)
-  * [Fixing "OperationalError: 2006 MySQL server has gone away"](/pages/ManagingDatabaseConnections)
-  * [Fixing "OperationalError: 1226 User has exceeded the max_user_connections resource](/pages/ManagingDatabaseConnections)
-  * [I'm seeing lots of `GeneratorExit` or `OSError: write error` messages in my error log](/pages/GeneratorExit)
+* [How to use our static files service, and why you might want to](/pages/StaticFiles)
+* [Debugging problems with static files (js, css) not loading](/pages/DebuggingStaticFiles)
+* [Using Cloudflare with PythonAnywhere](/pages/Cloudflare)
 
+## Domains and HTTPS
 
+Setting up custom domains, SSL certificates, and HTTPS for your web applications.
 
-# I'm trying to figure out how to get a particular tool or feature to work
+* [How DNS works: a beginner's guide](/pages/DNSPrimer)
+* [Troubleshooting DNS problems](/pages/TroubleshootingDNS)
+* [How to use a custom domain for your web app](/pages/CustomDomains)
+* [Using Custom PythonAnywhere Subdomains](/pages/CustomPythonAnywhereSubdomains)
+* [Naked domains](/pages/NakedDomains)
+* [How to move a domain from one PythonAnywhere user account to another](/pages/MovingDomainToAnotherPythonAnywhereAccount)
+* [Using International Domain Names](/pages/InternationalDomainNames)
+* [How to set up an autorenewing HTTPS/SSL certificate for a custom domain](/pages/HTTPSSetup)
+* [How to set up and install a custom HTTPS/SSL certificate for your custom domain](/pages/HTTPSCustomCerts)
+* [How to force HTTPS on your web app](/pages/ForcingHTTPS)
+* [TLS version support](/pages/TLSVersionSupport)
 
-PythonAnywhere already has many of the Python modules that you might want to
-use installed. There is a complete list of them available on our [Batteries
-included page](https://www.pythonanywhere.com/batteries_included/)
+## Web-Related Errors and Troubleshooting
 
-Here are some guides for some of the common things people want to do:
+Common web application errors and how to debug them, including HTTP status codes and framework-specific issues.
 
-  * [Installing new Python modules for yourself](/pages/InstallingNewModules)
-  * [Changing your system image](/pages/ChangingSystemImage)
-  * [Always-on tasks: how do I keep a console running forever? Or, how do I make a program that restarts automatically?](/pages/AlwaysOnTasks)
-  * [How to I run an async task queue like celery?](/pages/AsyncInWebApps)
-  * [Can I use matplotlib to generate graphs from my data?](/pages/MatplotLibGraphs)
-  * [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
-  * [How do I solve authentication errors from Gmail when sending emails from my code?](/pages/GmailAppSpecificPasswords)
-  * [How to force HTTPS on your web app](/pages/ForcingHTTPS)
-  * [Using MySQL (including using MySQL with Python 3)](/pages/UsingMySQL)
-  * [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
-  * [Setting the timezone for your code](/pages/SettingTheTimezone)
-  * [Working with PDFs and converting document formats](/pages/PDF)
-  * [Can I use IPv6?](/pages/IPv6)
-  * [Can I use Pygame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
-  * [Using Selenium](/pages/selenium)
-  * [Using Playwright](/pages/Playwright)
-  * [Does PythonAnywhere have an API?](/pages/API)
-  * [What do I do if a server I want to connect to has an allowlist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalAllowlists)
-  * [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
-  * Machine learning: [what to do if your website using Keras, TensorFlow or PyTorch doesn't work](/pages/MachineLearningInWebsiteCode)
-  * [Fonts](/pages/Fonts)
-  * [Using Cloudflare with PythonAnywhere](/pages/Cloudflare)
-  * [Installing TA-Lib on PythonAnywhere](/pages/TaLib)
-  * [Using conda](/pages/conda)
+* [Why do I get a "403 Forbidden" or "[Errno 111] Connection refused" error when accessing a website from PythonAnywhere?](/pages/403ForbiddenError)
+* [I'm getting a 502 Bad Gateway error. How can I debug?](/pages/502BadGateway)
+* [I'm getting an Internal Server Error on my website](/pages/InternalServerError)
+* [How to handle slow/async work in a web app](/pages/AsyncInWebApps)
+* [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
 
+## Databases
 
-And here's some very brief FAQ answers about common requests:
+Setting up and managing MySQL, PostgreSQL, and other databases on PythonAnywhere, including connections, backups, and external access.
 
-  * **Can I use MongoDB**? It's not built in, but from a paid account you can use an external service like [mLab](https://mlab.com/).  Some [extra hints and tips on using Mongo here](/pages/MongoDB).
-  * **Can I use an external MySQL service?** Probably not (on a free account), unless they have an HTTP api.
-  * Can I use Redis?  Again, only via an external service like redislabs.  Although you can use redislite
-  * Can I use websockets, or run my own socket server?  I'm afraid not --  we only support Python apps that implement the WSGI protocol
-  * How do I reload my webapp automatically?  You can now use our [API](/pages/API) for this :)
-  * [Which Python versions does PythonAnywhere support?](/pages/PythonVersions)
+* [Fixing "OperationalError: 2006 MySQL server has gone away" and "Too many connections"](/pages/ManagingDatabaseConnections)
 
+### MySQL
 
+* [Using MySQL](/pages/UsingMySQL)
+* [Accessing your MySQL database from outside PythonAnywhere](/pages/AccessingMySQLFromOutsidePythonAnywhere)
+* [Backing up (and restoring) MySQL databases using mysqldump](/pages/MySQLBackupRestore)
+* [How do I find out how large my MySQL database is?](/pages/MySQLDatabaseSize)
+* [Using SQLAlchemy with MySQL](/pages/UsingSQLAlchemywithMySQL)
+* [LOAD DATA INFILE doesn't work](/pages/LoadDataInfile)
+* [Importing a database you have stored on your own machine to PythonAnwyhere](/pages/ImportingYourLocalDatabaseToPythonAnywhere)
 
-# I'm a teacher looking to use PythonAnywhere for education
+### PostgreSQL
 
-Welcome!  We have lots of teachers and students on board.  Check out this page for an overview of our education-specific features:
+* [Activating a Postgres server](/pages/Postgres)
+* [Accessing your PostgreSQL database from outside PythonAnywhere](/pages/AccessingPostgresFromOutsidePythonAnywhere)
+* [Creating Postgres backups](/pages/RegularPostgresBackups)
+* [Configuring postgres for your app (eg Django)](/pages/PostgresGettingStarted)
+* [Increasing the number of connections for your Postgres server](/pages/PostgresConnections)
+* [Postgres Shared Memory Error](/pages/PostgresSharedMemory)
 
-  * [General info on our educational features](/pages/Education)
+### Other Databases
 
+* [Databases available on PythonAnywhere](/pages/KindsOfDatabases)
+* [Database character sets (UTF8/Unicode etc)](/pages/DatabaseCharacterSets)
+* [Using MongoDB on PythonAnywhere](/pages/MongoDB)
+* [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
 
-Or you can run through this step-by-step tutorial if you prefer:
 
-<img alt="trophy icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_074_cup@2x.png">
-&nbsp; I want to check out the Education Beta features
-<a href="https://www.pythonanywhere.com/task_helpers/start/6-education/">[account in US servers]</a>
-<a href="https://eu.pythonanywhere.com/task_helpers/start/6-education/">[account in EU servers]</a>
+## Virtualenvs and Package Management
 
-# A few other topics
+Managing Python versions, virtual environments, and packages to isolate your project dependencies.
 
-  * [how to get SSH access to your account](/pages/SSHAccess)
-  * [How to follow the Django Tutorial on PythonAnywhere](/pages/FollowingTheDjangoTutorial)
-  * [I want to embed a live python console on my website](/pages/EmbeddedConsoles)
-  * [How do I share my code online?](/pages/ShareMyCodeOnline)
-  * [Getting the IP address of clients connecting to your web app](/pages/WebAppClientIPAddresses)
-  * [How do I get streaming/buffering to work?](/pages/Buffering)
-  * [How to use a virtualenv in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
-  * [What are these virtualenv things, anyway?](/pages/VirtualenvsExplained)
-  * [How do I completely delete my account?](/pages/DeleteAccount)
+* [What are these virtualenv things, anyway?](/pages/VirtualenvsExplained)
+* [Which Python versions does PythonAnywhere support?](/pages/PythonVersions)
+* [Using a virtualenv for your web app](/pages/VirtualEnvForWebsites)
+* [Rebuilding a Virtualenv](/pages/RebuildingVirtualenvs)
+* [How to use a virtualenv in an Jupyter Notebook](/pages/IPythonNotebookVirtualenvs)
+* [Python 3.7 virtualenvs on the "innit" system image](/pages/Python37VirtualenvOnInnit)
+* [Using conda](/pages/Conda)
 
+## Consoles
 
+Using PythonAnywhere's browser-based consoles and SSH access for command-line development.
 
-# Some older/miscellaneous guides
+* [Changing a console's name](/pages/ChangingConsolesName)
+* [Types of PythonAnywhere consoles](/pages/TypesOfConsoles)
+* [I want to embed a live python console on my website](/pages/EmbeddedConsoles)
+* [The "Starting encrypted connection" message never disappears](/pages/StartingEncryptedConnection)
 
+## File Management and Development Tools
 
-Files:
+Uploading, downloading, and managing your code files and development workflow on PythonAnywhere.
 
-  * [Can I edit my config files?](/pages/ConfigFiles)
-  * [Dropbox (deprecated, for now)](/pages/UsingDropbox)
+* [Can I use FTP/Filezilla? How should I upload my code to PythonAnywhere?](/pages/UploadingAndDownloadingFiles)
+* [Copying and pasting in PythonAnywhere consoles](/pages/CopyAndPaste)
+* [Using external version control systems](/pages/ExternalVCS)
 
-Consoles:
+## Scheduled Tasks and Always-On Tasks
 
-  * [Types of PythonAnywhere consoles](/pages/TypesOfConsoles)
-  * [Copying and pasting in PythonAnywhere consoles](/pages/CopyAndPaste)
-  * [Changing a console's name](/pages/ChangingConsolesName)
-  * [What are CPU-seconds?](/pages/WhatAreCPUSeconds)
-  * [Using external version control systems](/pages/ExternalVCS) (eg. [GitHub](//www.github.com/), [BitBucket](//www.bitbucket.org/))
-  * [Browser extensions that are known to cause problems with PythonAnywhere consoles](/pages/ProblematicExtensions)
+Running Python scripts on a schedule or keeping processes running continuously in the background.
 
-Web apps:
+* [Setting up scheduled tasks](/pages/ScheduledTasks)
+* [Always-on tasks: how do I keep a console running forever? Or, how do I make a program that restarts automatically?](/pages/AlwaysOnTasks)
 
-  * [How to create a web application on PythonAnywhere](/pages/WebAppBasics)
-  * [Reloading the web application after you've made changes](/pages/ReloadWebApp)
+## API and Integration
 
+Using PythonAnywhere's API to programmatically manage your account and integrate with external development tools.
 
-Databases:
+* [Does PythonAnywhere have an API?](/pages/API)
+* [Getting your API token](/pages/GettingYourAPIToken)
+* [Integrating a development environment with PythonAnywhere](/pages/IntegratingWithPythonAnywhere)
 
-  * [Databases available on PythonAnywhere](/pages/KindsOfDatabases)
-  * [Activating a Postgres server](/pages/Postgres)
-  * [Configuring postgres for your app (eg Django)](/pages/PostgresGettingStarted)
-  * [Creating Postgres backups](/pages/RegularPostgresBackups)
-  * [Increasing the number of connections for your Postgres server](/pages/PostgresConnections)
-  * [Connecting to Microsoft SQL Server](/pages/MSSQLServer)
-  * [How do I find out how large my MySQL database is?](/pages/MySQLDatabaseSize)
-  * [Migrating a web2py app from SQLite to MySQL](/pages/MigatingWeb2pyFromSQLiteToMySQL)
-  * [Database character sets (UTF8/Unicode etc)](/pages/DatabaseCharacterSets)
-  * [Importing a database you have stored on your own machine to PythonAnwyhere](/pages/ImportingYourLocalDatabaseToPythonAnywhere)
-  * [Accessing your MySQL database from outside PythonAnywhere](/pages/AccessingMySQLFromOutsidePythonAnywhere)
-  * [Accessing your PostgreSQL database from outside PythonAnywhere](/pages/AccessingPostgresFromOutsidePythonAnywhere)
+## System Configuration and Settings
 
+Configuring your PythonAnywhere environment, including system images, timezones, and environment variables.
 
-Scheduled tasks (similar to cron):
+* [Can I edit my config files?](/pages/ConfigFiles)
+* [Changing your system image](/pages/ChangingSystemImage)
+* [How to set environment variables in web apps](/pages/EnvironmentVariables)
+* [Setting the timezone for your code](/pages/SettingTheTimezone)
+* [Fonts](/pages/Fonts)
 
-  * [Setting up scheduled tasks](/pages/ScheduledTasks)
+## Resource Management and Performance
 
+Understanding and managing your account's resource limits, including disk space, CPU, and RAM usage.
 
-Other Languages:
+* ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuota)
+* [RAM limits](/pages/RAMLimit)
+* [What are CPU-seconds?](/pages/WhatAreCPUSeconds)
+* [My site is slow!](/pages/MySiteIsSlow)
+* [How many hits can my site handle?](/pages/HowManyHitsCanMySiteHandle)
+* [How do I get streaming/buffering to work?](/pages/Buffering)
 
-  * [Setting up Haskell and creating a new Cabal package](/pages/Haskell)
-  * [Setting up a Node project](/pages/Node)
-  * [Testing a simple Javascript project using Jasmine](/pages/jasmine-tests-for-js-projects)
+## Account Management and Security
 
-
-
-# A few other step-by-step guides
-
-<img alt="fishies icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_254_fishes@2x.png">
-&nbsp; I want to follow the Django Tutorial
-<a href="https://www.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/">[account in US servers]</a>
-<a href="https://eu.pythonanywhere.com/task_helpers/start/2-following-the-django-tutorial/">[account in EU servers]</a>
-
-<img alt="cloud icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_232_cloud@2x.png">
-&nbsp; I want to create a web application
-<a href="https://www.pythonanywhere.com/task_helpers/start/3-web_app/">[account in US servers]</a>
-<a href="https://eu.pythonanywhere.com/task_helpers/start/3-web_app/">[account in EU servers]</a>
-
-<img alt="github icon" src="https://www.pythonanywhere.com/static/glyphicons/glyphicons_341_github@2x.png">
-&nbsp; I want to clone and hack on my GitHub project
-<a href="https://www.pythonanywhere.com/task_helpers/start/5-github/">[account in US servers]</a>
-<a href="https://eu.pythonanywhere.com/task_helpers/start/5-github/">[account in EU servers]</a>
-
-# Security
+Managing your PythonAnywhere account, security settings, and account deletion.
 
 * [Securing your PythonAnywhere account](/pages/SecuringYourAccount)
+* [How do I completely delete my account?](/pages/DeleteAccount)
+* [How do I solve authentication errors from Gmail when sending emails from my code?](/pages/GmailAppSpecificPasswords)
 * [Details on the PythonAnywhere Bug Bounty](/pages/BugBounty)
+
+## Networking and External Access
+
+Configuring network access, static IPs, SSH, and external connections for your applications.
+
+* [How to get SSH access to your account](/pages/SSHAccess)
+* [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
+* [Requesting Allowlist additions](/pages/RequestingAllowlistAdditions)
+* [What do I do if a server I want to connect to has an allowlist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalAllowlists)
+* [IPv6](/pages/IPv6)
+
+## Third-Party Services, Libraries and Languages
+
+Using external services and specialized Python libraries with your PythonAnywhere applications.
+
+### Web Scraping and Automation
+
+* [Using Selenium](/pages/Selenium)
+* [Using Playwright](/pages/Playwright)
+* [Can I use matplotlib to generate graphs from my data?](/pages/MatplotLibGraphs)
+* [Machine learning in website code](/pages/MachineLearningInWebsiteCode)
+* [Installing TA-Lib on PythonAnywhere](/pages/TaLib)
+* [How to I get Twilio to work?](/pages/TwilioBehindTheProxy)
+* [Working with PDFs and converting document formats](/pages/PDF)
+* [Using NVM to get the most up-to-date version of node](/pages/Node)
+* [Testing a simple Javascript project using Jasmine](/pages/JasmineTestsForJavaScript)
+* [Haskell](/pages/Haskell)
+* [Can I use Pygame / Tkinter / turtle / GUI packages?](/pages/TkinterPygameEtc)
+* [Compiling C Programs](/pages/CompilingCPrograms)
+
+## General Error Handling and Troubleshooting
+
+Common errors and troubleshooting guides for issues that can occur across different parts of the PythonAnywhere platform.
+
+* [Debugging import errors and sys.path issues in your WSGI file](/pages/DebuggingImportError)
+* [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
+* [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
+* [Typing problems international](/pages/TypingProblemsInternational)
+* [Notebook authentication error](/pages/NotebookAuthenticationError)
+* [I'm seeing lots of `GeneratorExit` or `OSError: write error` messages in my error log](/pages/GeneratorExit)
+* [Browser extensions that are known to cause problems with PythonAnywhere consoles](/pages/ProblematicExtensions)

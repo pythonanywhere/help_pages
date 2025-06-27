@@ -1,6 +1,6 @@
 <!--
 .. title: How to set environment variables for your web apps (for SECRET_KEY etc)
-.. slug: environment-variables-for-web-apps
+.. slug: EnvironmentVariables
 .. date: 2015-12-22 12:35:28 UTC+01:00
 .. tags:
 .. category:

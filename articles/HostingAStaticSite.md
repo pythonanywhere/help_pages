@@ -1,7 +1,7 @@
 
 <!--
 .. title: Hosting a static site
-.. slug: hosting-a-static-site
+.. slug: HostingAStaticSite
 .. date: 2016-05-09 11:35:28 UTC+01:00
 .. tags:
 .. category:

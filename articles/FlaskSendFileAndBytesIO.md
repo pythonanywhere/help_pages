@@ -1,7 +1,7 @@
 <!--
 .. title: Using Flask's send_file function with BytesIO
 .. date: 2020-03-24 17:19:00 UTC+00:00
-.. slug: FlaskSendFileBytesIO
+.. slug: FlaskSendFileAndBytesIO
 .. tags:
 .. category:
 .. link:
