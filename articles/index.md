@@ -235,6 +235,7 @@ Using PythonAnywhere's API to programmatically manage your account and integrate
 * [Does PythonAnywhere have an API?](/pages/API)
 * [Getting your API token](/pages/GettingYourAPIToken)
 * [Integrating a development environment with PythonAnywhere](/pages/IntegratingWithPythonAnywhere)
+* [AI tools (Claude, Copilot, Cursor etc)](/pages/MCP)
 
 ## System Configuration and Settings
 
