@@ -1,7 +1,7 @@
 
 <!--
-.. title: Migating Web2py from SQLite to MySQL
-.. slug: MigatingWeb2pyFromSQLiteToMySQL
+.. title: Migrating Web2py from SQLite to MySQL
+.. slug: MigratingWeb2pyFromSQLiteToMySQL
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
 .. category:
@@ -9,8 +9,6 @@
 .. description:
 .. type: text
 -->
-
-
 
 
 *From PythonAnywhere user mjbeller [in the forums](https://www.pythonanywhere.com/forums/topic/1288/#id_post_8992)*
