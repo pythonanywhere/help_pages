@@ -264,7 +264,7 @@ the API to pick up the new code:
 
 # the same setup as above...
 
-endpoint = urljoin(api_base, f"websites/{domain_name}/reload")
+endpoint = urljoin(api_base, f"websites/{domain_name}/reload/")
 response = requests.post(endpoint, headers=headers)
 print(response)
 ```
