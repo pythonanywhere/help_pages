@@ -163,6 +163,5 @@ We have [a separate page](/pages/TroubleshootingDNS/) dedicated to handling
 specific problems -- 95% of DNS problems can be sorted quickly by following the
 instructions there.
 
-If you still can't get it working, [contact us](mailto:support@pythonanywhere.com) -- please
-attach a screenshot of the DNS configuration you've set up on your registrar's site.
-
+If you still can't get it working, contact us using the "Send feedback" link on your
+account page.

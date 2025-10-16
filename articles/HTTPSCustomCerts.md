@@ -160,7 +160,7 @@ version.   This is called "forcing HTTPS", and is described on
            \
             ~<:>>>>>>>>>
 
-If you get any errors, just email us at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+If you get any errors, just let us know using the "Send feedback" link on your account page.
 
 You're all set!  Just go to the HTTPS URL for your site, like
 http*s*://www.yourdomain.com, and you'll see that the site is now marked as secure.

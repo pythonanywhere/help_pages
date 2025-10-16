@@ -118,7 +118,7 @@ Changing the system image will not affect your database servers. Only the client
 tools (for example, the `mysql` bash command) will be updated.
 
 To update your MySQL or PostgreSQL server version, you need to contact us
-at [support@pythonanywhere.com](mailto:support@pythonanywhere.com), and we will handle the update for you. Updating
+using the "Send feedback" link on your account page, and we will handle the update for you. Updating
 the server version involves a brief downtime for your account, so we'll coordinate
 timing with you.
 

@@ -116,9 +116,3 @@ page, and then click the green "Reload" button to restart the site using it.
 For always-on and scheduled tasks, change the command used to run them to pick up the new virtualenv
 -- you will normally have a `workon` command, or use a specific path to the Python
 interpreter to specify the virtualenv for those.
-
-
-## 3) All done!
-
-We're here to help! If you get stuck or confused, just drop us a note at
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com).

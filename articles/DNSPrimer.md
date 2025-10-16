@@ -359,9 +359,7 @@ CNAME and so on.   One that consistently get good reports from our users is the
 
 ### Conclusion
 
-Hopefully that was all reasonably clear.  You now know the basics of how DNS
-works, and how it interacts with domain registration.   If you've got any
-questions, please drop us a line at
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com) -- and
-additionally, if you think there are other things that you'd like us to add to
-this article, please do let us know!
+Hopefully that was all reasonably clear.  You now know the basics of how DNS works,
+and how it interacts with domain registration.  If you've got any questions, please
+drop us a line on our [Forums](https://www.pythonanywhere.com/forums/) or 
+[EU Forums](https://eu.pythonanywhere.com/forums/)!

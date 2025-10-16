@@ -43,5 +43,4 @@ You should see a whole bunch of potentially useful binaries which  you can call 
 
 We also have **Abiword** installed, and it has some command-line options for converting word documents and others.  Check out this [article about using abiword at the command-line](http://www.aboutlinux.info/2005/08/use-abiword-to-convert-filetypes-on.html) for example.
 
-If you find something useful, let us know!  [support@pythonanywhere.com](support@pythonanywhere.com)
-
+If you find something useful, please share on our [Forums](https://www.pythonanywhere.com/forums/) or on [EU Forums](https://eu.pythonanywhere.com/forums/). 

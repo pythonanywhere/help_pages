@@ -11,10 +11,11 @@
 
 ## TL;DR for those who know the background
 
-By default we support TLS 1.2 and 1.3 for websites; older protocol versions can
-be supported for custom domains -- if you have old devices connecting to your
-site and you need to use them, then [contact us](support@pythonanywhere.com) --
-but do note that this will mean reduced security for your site.
+By default we support TLS 1.2 and 1.3 for websites; older protocol
+versions can be supported for custom domains -- if you have old
+devices connecting to your site and you need to use them, then let us
+know using the "Send feedback" link on your account page -- but do note
+that this will mean reduced security for your site.
 
 
 ## In more detail...
@@ -95,7 +96,7 @@ or `eu.pythonanywhere.com`
 
 It's a two-step process to get that set up:
 
-* Firstly, contact us at [support@pythonanywhere.com](support@pythonanywhere.com) so that we can set things up on the backend servers.
+* Firstly, contact us using the "Send feedback" link on your account page so that we can set things up on the backend servers.
 * Next, update your CNAME -- normally you would point your domain at our servers with a CNAME value of the form `webapp-XXXX.pythonanywhere.com` or `webapp-XXXX.eu.pythonanywhere.com`.  For legacy TLS sites, you would instead need to point it at `legacy-tls.pythonanywhere.com` or `legacy-tls.eu.pythonanywhere.com`
 
 Please note, however, that doing this will make your site potentially vulnerable

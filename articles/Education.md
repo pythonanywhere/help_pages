@@ -1,6 +1,6 @@
 
 <!--
-.. title: PythonAnywhere Education beta
+.. title: PythonAnywhere Education
 .. slug: Education
 .. date: 2015-05-13 14:35:28 UTC+01:00
 .. tags:
@@ -53,7 +53,7 @@ As an alternative to reading through the worked example on this page, try can tr
 
 Users have the ability to nominate their teacher via the [Account page](https://www.pythonanywhere.com/account). So one option is to get your students to sign up for PythonAnywhere accounts one by one, and enter your username into the "teacher" field. This can also be a good way to check out the features of the education beta, by signing up for a second account, and using it as a "fake" student account.
 
-Alternatively, we can bulk-create accounts for all your students if you like. Just get in touch! [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+Alternatively, we can bulk-create accounts for all your students if you like. Just get in touch using the "Send feedback" link on your account page!
 
 
 ## Viewing your students' stuff
@@ -158,11 +158,5 @@ We're waiting on some legal advice re: data protection, so for now, we have to r
 ### IPython Notebook is on paid accounts only
 
 
-Whilst we support the basic IPython console for all accounts, the "notebook" UI, which is particularly popular in scientific fields, is currently a paid-only feature.  But [get in touch](mailto:support@pythonanywhere.com) if you need it for a class, and maybe we can work something out!
-
-
-# Contact us, we want to help!
-
-
-We're determined to make sure that the first few teachers using our platform have a great experience and get some good success stories out of it. So, do get in touch and let us know what you need -- we'll try and go the extra mile, if it means doing manual work in the background to get things working. We're always available via [support@pythonanywhere.com](mailto:support@pythonanywhere.com)
+Whilst we support the basic IPython console for all accounts, the "notebook" UI, which is particularly popular in scientific fields, is currently a paid-only feature.  But get in touch using the "Send feedback" link on your account page, if you need it for a class, and maybe we can work something out!
 

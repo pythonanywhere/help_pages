@@ -104,20 +104,10 @@ time, then sometimes it can be hard to find out whether that was because your wo
 were overloaded by the number of requests, or if it was some other factor.
 
 At present, the best way to find out if it was due to an overload is to ask us
-by email at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).  We do keep metrics showing how many workers
+by using "Send feedback" link on your account page.  We do keep metrics showing how many workers
 were available for each site in a database from which we can extract reports for you.
 At some time in the future we'll find a way to expose this on the "Web" page to make
 things a bit easier!
-
-
-## Any questions?
-
-Hopefully the above will clarify how to work out how many workers you need for your
-site, but if you have any questions or suggestions on how to make things easier to
-understand, just let us know via email at [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
-
-
-
 
 
 

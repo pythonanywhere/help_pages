@@ -129,11 +129,4 @@ We have also a [a separate help page](/pages/DNSPrimer/) that describes a little
 about how DNS works. It's a great place to start if you're confused and don't
 understand what's really going on with your custom domain.
 
-## Still having trouble?
-
-If after puzzling through `dig` output and trying various things, you still
-can't get it to work, then you can
-[contact us](mailto:support@pythonanywhere.com) -- please attach a screenshot
-of how you've set up the DNS configuration on your domain registrar's site, as
-that will help us to tell you what needs to be changed.
 

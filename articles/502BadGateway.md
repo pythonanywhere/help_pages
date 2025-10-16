@@ -74,11 +74,3 @@ a worker was killed taking too long to process a request.
 
 If you need to do some heavy processing or number crunching in your web app,
 check out the tips [here](/pages/AsyncInWebApps)
-
-## Contact support if nothing else works
-
-
-We're always happy to help. Use the "send feedback" button, or post in the
-forums, or email us at
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com). 
-

@@ -20,9 +20,8 @@ in your site.
 Some important limitations to know about:
 
  * There is no support for static file mappings.
- * There is a very limited web UI for creating and managing these new-style websites.
-   Contact [support@pythonanywhere.com](mailto:support@pythonanywhere.com) if
-   you would like us to enable it for your account.
+ * There is a very limited web UI for creating and managing async websites.
+   You can request it by using the "Send feedback" link from your account page.
  * We do not guarantee that the command line syntax and the API interface will remain the same.
  * We have not worked out the long-term pricing for sites hosted this way, which will probably
    differ from the way we charge for traditional ones.  We're 99.9% certain that
@@ -123,10 +122,11 @@ website!
 not found page for a few seconds before the site comes up.  If you get that,
 just refresh the page in your browser.  We're on the case :-)
 
-You have a working Flask website hosted on PythonAnywhere using our experimental website system.  However, this site
-will not currently appear on the "Web" page inside your PythonAnywhere account;
-we have a user interface that is a work-in-progress, though, and if you'd like
-to try that out, [drop us a line](mailto:support@pythonanywhere.com).
+You have a working Flask website hosted on PythonAnywhere using our experimental
+website system.  However, this site will not currently appear on the "Web" page
+inside your PythonAnywhere account; we have a user interface that is a
+work-in-progress, though, and if you'd like to try that out, use the "Send feedback"
+link from your account page to request it.
 
 
 ## Getting and listing websites

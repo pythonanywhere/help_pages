@@ -110,7 +110,6 @@ providers offer it as a free service as part of your domain registration:
 
 > If you are using a different registrar, searching for "forward naked domain" plus
 > the name of your registrar will probably find the appropriate help page.
-> Links for other registrars would be very welcome!  Just [email us](mailto:support@pythonanywhere.com).
 
 If you're using Gandi, you're fine -- you can set up a redirect that's both
 HTTP and HTTPS, and everything will work.  Likewise if you're using a registrar

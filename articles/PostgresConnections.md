@@ -25,6 +25,4 @@ Postgres console:
 (or whatever number of connections you'd like).
 
 Next, you need to restart your Postgres server.   Right now, you need to
-contact us -- just drop us a line at
-[support@pythonanywhere.com](mailto:support@pythonanywhere.com).   Don't
-forget to let us know what your username is!
+contact us -- use the "Send feedback" link from your account page!

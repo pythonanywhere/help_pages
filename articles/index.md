@@ -23,9 +23,8 @@ questions on **StackOverflow**; we check
  daily, and reply if no-one else has already solved the problem.
 
 But if you want to ask your questions in private and get responses over **email**,
-you can use the "Send feedback" link at the top of any page on PythonAnywhere.
-We'll be alerted and will get back to you ASAP.  You can also email us directly
-via [support@pythonanywhere.com](mailto:support@pythonanywhere.com)
+you can use the "Send feedback" link at the top of your account page.
+We'll be alerted and will get back to you within one working day.
 
 If you want help about Python programming generally (as opposed to
 PythonAnywhere), you can
