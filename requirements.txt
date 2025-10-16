@@ -38,4 +38,3 @@ Yapsy==1.12.2
 zipp==3.4.1
 aiohttp
 watchdog
-setuptools==80.9.0
