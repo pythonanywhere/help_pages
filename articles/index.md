@@ -299,6 +299,7 @@ Using external services and specialized Python libraries with your PythonAnywher
 
 Common errors and troubleshooting guides for issues that can occur across different parts of the PythonAnywhere platform.
 
+* [File and directory permissions](/pages/FileAndDirectoryPermissions)
 * [Debugging import errors and sys.path issues in your WSGI file](/pages/DebuggingImportError)
 * [I'm getting "no such file or directory"](/pages/NoSuchFileOrDirectory)
 * [I can't see what I'm typing in the console](/pages/ICantSeeWhatIAmTyping)
