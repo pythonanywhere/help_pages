@@ -9,7 +9,6 @@
 .. type: text
 -->
 
-
 The [web2py scheduler](//web2py.com/books/default/chapter/29/4#web2py-Scheduler)
 is a way to process asynchronous jobs from web2py.  You can run it in a paid
 account without problems on PythonAnywhere; it's a bit less useful in a free
@@ -32,12 +31,8 @@ installed Web2py in a directory different to `web2py` in your home directory,
 you'll need to change that too.
 
 
-
 ## In a free account
 
 Unfortunately there's no good way to make it work in a free account, because
-you don't have access to always-on tasks.  However, if the things you are trying
-to schedule happen at roughly the same time each day, you can create a scheduled
-task that will run just before that time, and use the same command as in the
-example above.
+you don't have access to always-on tasks.
 

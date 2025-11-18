@@ -9,6 +9,7 @@
 .. type: text
 -->
 
+> Warning -- this will only work in paid accounts or free accounts created before 2026-01-15, see [this page](/pages/FreeAccountsFeatures) for more details.
 
 ## PythonAnywhere Scheduled Tasks
 
@@ -17,9 +18,9 @@ To set one up, go to the "Tasks" tab on your
 [Dashboard](https://www.pythonanywhere.com/dashboard/). Using the form at the top
 of the page:
 
-* In a free account, you can set up one task to run at a particular time every
+* If you use a free account created before 2026-01-15, you can set up one task to run at a particular time every
   day.  The task can run for up to two hours.
-* In a paid account, you can create up to 20 tasks, and they can either run at
+* In all paid accounts, you can create up to 20 tasks, and they can either run at
   a particular time every day, or every hour at a particular number of minutes
   past the hour.  Each task can run for
   up to 12 hours.  (The limit of 20 tasks is "soft" -- if you need more, within reason,

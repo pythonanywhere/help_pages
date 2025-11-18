@@ -15,8 +15,8 @@ you'll find links to start various types of console:
   * Python using either the standard Python shell or [IPython](https://ipython.readthedocs.io/en/stable/). If you've never tried IPython, check it out, it's pretty cool!
   * Bash
   * [PyPy](//pypy.org/)
-  * MySQL
   * Custom consoles
+  * MySQL (on [accounts created after 2026-01-15](/pages/FreeAccountsFeatures), paid feature)
   * Postgres (paid feature)
   
 For the available **Python/IPython** consoles, check the available Python versions

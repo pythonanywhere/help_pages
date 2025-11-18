@@ -158,9 +158,7 @@ You can now follow along with the rest of Part 1 of the official tutorial, more 
 
 ### Database setup and settings.py
 
-
-
-We support different databases, but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though.
+We support [different databases](/pages/KindsOfDatabases), but using SQlite, the default, is probably simplest at this stage. You can change your `TIME_ZONE` setting as they suggest if you like though.
 
   * TIP: *the links to the documentation in the comments in settings.py should point to the same django version as your virtualenv, 2.0. If they don't, then you probably accidentally ran the `startproject` command without activating the virtualenv. Probably best to delete the whole `mysite` directory, make sure your virtualenv is active, and run `startproject` again.*.
 

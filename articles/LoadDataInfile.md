@@ -25,7 +25,7 @@ the database manually like so:
     :::bash
     mysql -h myusername.mysql.pythonanywhere-services.com -u myusername 'myusername$default' -p --local-infile=1
 
-"--local-infile=1" enables the load data command.  You will be prompted for your
+`--local-infile=1` enables the load data command.  You will be prompted for your
 password.
 
 

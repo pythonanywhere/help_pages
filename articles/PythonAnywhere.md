@@ -1,4 +1,3 @@
-
 <!--
 .. title: PythonAnywhere
 .. slug: PythonAnywhere
@@ -10,7 +9,4 @@
 .. type: text
 -->
 
-
-
-
-PythonAnywhere is a Python development and hosting environment that displays in your web browser and runs on our servers. They're already set up with everything you need. It's easy to use, fast, and powerful. There's even a useful free plan. 
+PythonAnywhere is a Python development and hosting environment that displays in your web browser and runs on our servers. They're already set up with everything you need. It's easy to use, fast, and powerful.

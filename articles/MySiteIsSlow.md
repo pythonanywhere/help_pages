@@ -1,4 +1,3 @@
-
 <!--
 .. title: Why is my site slow?
 .. slug: MySiteIsSlow
@@ -96,7 +95,7 @@ Due to the distributed nature of our network filesystem, reading and writing to 
 
 ### SQLite
 
-Closely related to the above - because SQLite uses the filesystem, it can be quite slow on PythonAnywhere.  In addition, there are know problems with using SQLite on a network filesystem when you have multiple processes / workers all trying to use the database at the same time.  That's why we recommend you never use SQLite in a production webapp
+Closely related to the above - because SQLite uses the filesystem, it can be quite slow on PythonAnywhere.  In addition, there are know problems with using SQLite on a network filesystem when you have multiple processes / workers all trying to use the database at the same time.  That's why we recommend you never use SQLite in a production webapp.
 
 
 * **TIP**: _Switch to MySQL or Postgres for a speedup_
@@ -140,7 +139,3 @@ Switch to using an [async task queue](/pages/AsyncInWebApps/) instead.
 If you're trying to do big number crunching, like machine learning analysis, again that's something you probably want to do asynchronously rather than directly inline in your webapp code.
 
 Again, see this article on [moving work out of your webapp to an async task queue](/pages/AsyncInWebApps/) instead.
-
-
-
-

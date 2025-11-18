@@ -1,4 +1,3 @@
-
 <!--
 .. title: Kinds of databases
 .. slug: KindsOfDatabases
@@ -14,13 +13,10 @@
 
 There are three databases built in to PythonAnywhere:
 
-* MySQL, which is available for every user
-* SQLite, which is also available for everyone, but runs a bit slowly on our system -- we
-  recommend you only use it for testing or for scripts that don't do a lot of processing.
+* SQLite, which is available for everyone.  As it relies on the file system, it runs a bit slower on the cloud -- we
+  don't recommend it as a production database.
+* [MySQL](/pages/UsingMySQL), which is available on all paid accounts and [free accounts created before 2026-01-15](/pages/FreeAccountsFeatures).
 * [Postgres](/pages/Postgres) in available in paid plans only, as an add-on.
-
-We're considering adding built-in support for MongoDB and Redis in the future --
-if you're interested in it (or something else entirely), let us know!
 
 ### Connecting to external databases
 
