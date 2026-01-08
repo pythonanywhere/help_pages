@@ -53,8 +53,6 @@ As an alternative to reading through the worked example on this page, try can tr
 
 Users have the ability to nominate their teacher via the [Account page](https://www.pythonanywhere.com/account). So one option is to get your students to sign up for PythonAnywhere accounts one by one, and enter your username into the "teacher" field. This can also be a good way to check out the features of the education beta, by signing up for a second account, and using it as a "fake" student account.
 
-Alternatively, we can bulk-create accounts for all your students if you like. Just get in touch using the "Send feedback" link on your account page!
-
 
 ## Viewing your students' stuff
 
