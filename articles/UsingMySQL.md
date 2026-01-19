@@ -9,7 +9,8 @@
 .. type: text
 -->
 
-> Warning -- this will only work in paid accounts or free accounts created before 2026-01-15, see [this page](/pages/FreeAccountsFeatures) for more details.
+> Warning -- this will only work in paid accounts or free accounts created
+> before 2026-01-15 (or 2026-01-08 in the EU system), see [this page](/pages/FreeAccountsFeatures) for more details.
 
 To start using MySQL, you'll need to go to the MySQL tab on your
 [dashboard](https://www.pythonanywhere.com/dashboard/), and set up a password.

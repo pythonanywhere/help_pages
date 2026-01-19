@@ -10,7 +10,8 @@
 .. type: text
 -->
 
-> Warning -- this will only work in paid accounts or free accounts created before 2026-01-15, see [this page](/pages/FreeAccountsFeatures) for more details.
+> Warning -- this will only work in paid accounts or free accounts created
+> before 2026-01-15 (or 2026-01-08 in the EU system), see [this page](/pages/FreeAccountsFeatures) for more details.
 
 *From PythonAnywhere user mjbeller [in the forums](https://www.pythonanywhere.com/forums/topic/1288/#id_post_8992)*
 

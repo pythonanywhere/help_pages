@@ -13,10 +13,10 @@ Free accounts on PythonAnywhere support the following features:
 
 - 100 [CPU seconds](/pages/WhatAreCPUSeconds)
 - 512 MiB of [disk space](/pages/DiskQuota)
-- 1 web app with 1 month expiry
+- 1 web app with 1 web worker and 1 month expiry
 - 2 [consoles](/pages/TypesOfConsoles)
 
-Older accounts, created before 2026-01-15 will also have access to:
+Older accounts, created before 2026-01-15 (or before 2026-01-08 in our EU system) will also have access to:
 
  - MySQL database (with storage within default 512 MB disk space limits)
  - 1 daily [scheduled task](/pages/ScheduledTasks)

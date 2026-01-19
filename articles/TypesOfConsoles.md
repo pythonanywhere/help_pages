@@ -16,7 +16,7 @@ you'll find links to start various types of console:
   * Bash
   * [PyPy](//pypy.org/)
   * Custom consoles
-  * MySQL (on [accounts created after 2026-01-15](/pages/FreeAccountsFeatures), paid feature)
+  * MySQL (on [accounts created after 2026-01-15 (or 2026-01-08 in the EU system)](/pages/FreeAccountsFeatures), paid feature)
   * Postgres (paid feature)
   
 For the available **Python/IPython** consoles, check the available Python versions

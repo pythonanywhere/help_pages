@@ -15,7 +15,8 @@ There are three databases built in to PythonAnywhere:
 
 * SQLite, which is available for everyone.  As it relies on the file system, it runs a bit slower on the cloud -- we
   don't recommend it as a production database.
-* [MySQL](/pages/UsingMySQL), which is available on all paid accounts and [free accounts created before 2026-01-15](/pages/FreeAccountsFeatures).
+* [MySQL](/pages/UsingMySQL), which is available on all paid accounts and 
+[free accounts created before 2026-01-15 (or 2026-01-08 in the EU system)](/pages/FreeAccountsFeatures).
 * [Postgres](/pages/Postgres) in available in paid plans only, as an add-on.
 
 ### Connecting to external databases
