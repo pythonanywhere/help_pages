@@ -26,6 +26,8 @@ Follow these steps:
         :::bash
         pip3.10 show jupyter
 
+    If there is no version, you can probably just use 1.0.0 at the moment
+
 2. Install the package with the appropriate version into your virtualenv:
 
         :::bash
