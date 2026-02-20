@@ -251,6 +251,7 @@ Configuring your PythonAnywhere environment, including system images, timezones,
 Understanding and managing your account's resource limits, including disk space, CPU, and RAM usage.
 
 * ["Disk Quota Exceeded" (running out of storage space / maxing out your quota)](/pages/DiskQuota)
+* [How can I reset my file storage?](/pages/ResetFiles)
 * [RAM limits](/pages/RAMLimit)
 * [What are CPU-seconds?](/pages/WhatAreCPUSeconds)
 * [My site is slow!](/pages/MySiteIsSlow)
