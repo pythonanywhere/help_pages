@@ -4,19 +4,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    return redirect("/pages/")
+    return redirect("/page/")
 
-@app.route('/pages/FastHTML')
-@app.route('/pages/FastHTML/')
+@app.route('/page/FastHTML')
+@app.route('/page/FastHTML/')
 def fasthtml_redirect():
     return redirect("/pages/ASGICommandLine")
 
-@app.route('/pages/FastAPI')
-@app.route('/pages/FastAPI/')
+@app.route('/page/FastAPI')
+@app.route('/page/FastAPI/')
 def fastapi_redirect():
     return redirect("/pages/ASGICommandLine")
 
-@app.route('/pages/AsgiDjango')
-@app.route('/pages/AsgiDjango/')
+@app.route('/page/AsgiDjango')
+@app.route('/page/AsgiDjango/')
 def asgi_django_redirect():
     return redirect("/pages/ASGICommandLine")
