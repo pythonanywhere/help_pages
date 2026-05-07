@@ -264,7 +264,6 @@ Managing your PythonAnywhere account, security settings, and account deletion.
 
 * [Securing your PythonAnywhere account](/pages/SecuringYourAccount)
 * [How do I completely delete my account?](/pages/DeleteAccount)
-* [How do I solve authentication errors from Gmail when sending emails from my code?](/pages/GmailAppSpecificPasswords)
 * [Details on the PythonAnywhere Bug Bounty](/pages/BugBounty)
 
 ## Networking and External Access
@@ -272,7 +271,6 @@ Managing your PythonAnywhere account, security settings, and account deletion.
 Configuring network access, static IPs, SSH, and external connections for your applications.
 
 * [How to get SSH access to your account](/pages/SSHAccess)
-* [Can I use SMTP to send email on a Free account?](/pages/SMTPForFreeUsers)
 * [Requesting Allowlist additions](/pages/RequestingAllowlistAdditions)
 * [What do I do if a server I want to connect to has an allowlist that only allows incoming connections from particular (static) IPs?](/pages/StaticIPForExternalAllowlists)
 * [IPv6](/pages/IPv6)
