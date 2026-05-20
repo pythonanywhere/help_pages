@@ -57,8 +57,9 @@ when your script starts up.
 ### The excessive allowlist
 
 If all else fails, you can consider allowlisting all of Amazon's us-east-1
-datacenter.   We really don't recommend this, though -- there are a *lot* of IP
-addresses in their range, the servers could be rented out to hackers who are
-trying to get into databases like yours, and anyway the list is subject to
-change.   Still, if you decide to go for this option, here's a link to
+datacenter (for our US cluster) or eu-central-1 (for our EU cluster).   We
+really don't recommend this, though -- there are a *lot* of IP addresses in
+their range, the servers could be rented out to hackers who are trying to get
+into databases like yours, and anyway the list is subject to change.   Still,
+if you decide to go for this option, here's a link to 
 [the IP ranges list](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
