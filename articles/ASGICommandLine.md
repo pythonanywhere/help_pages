@@ -26,6 +26,7 @@ experimental feature.  Some important limitations to know about:
  * We have not worked out the long-term pricing for ASGI sites, which will probably
    differ from the way we charge for traditional WSGI ones.  We're 99.9% certain that
    there will be a way to host them in a free plan, though!
+ * Daphne does not work well with the current ASGI system. We strongly advise against using it.
 
 If you are brave enough to try it, here is a quick guide on how to do it :-)
 
