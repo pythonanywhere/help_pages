@@ -12,8 +12,9 @@
 
 Your Postgres data on PythonAnywhere is fully protected against hardware
 failure. However, we do not automatically support rolling back to a point in
-time. If you want protection from accidental changes, you can set up a scheduled
-task to regularly back your data up to a file, which you can re-load into
+time. If you want protection from accidental changes, you can set up a [scheduled 
+task](https://help.pythonanywhere.com/pages/ScheduledTasks/) to regularly back 
+your data up to a file, which you can re-load into
 Postgres at a later date.
 
 Here's an example of a command that can dump a particular database called
