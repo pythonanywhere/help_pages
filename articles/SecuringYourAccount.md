@@ -13,8 +13,9 @@
 
 We do all we can to keep your PythonAnywhere account secure, along with the
 files and data you have stored in it -- from fully-patched operating systems
-and a [bug bounty program](https://help.pythonanywhere.com/pages/BugBounty) to
-encourage security researchers to tell us about any issues before they become
+and regular security scans by trusted, recognized security vendors to catch
+vulnerabilities before they're a problem, to a bug bounty program that
+encourages security researchers to tell us about any issues before they become
 problems, to strict internal policies determining when our support staff are
 allowed to look at your stuff (basically, never without your permission unless
 your code is causing major systemwide problems, or is provably involved in
