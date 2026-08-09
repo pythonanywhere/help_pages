@@ -55,7 +55,8 @@ installed versions.
 ### Python versions
 
 The new system image may not support the version of Python that you are using.
-In particular, double-check your websites to see which ones they are using,
+In particular, double-check the version your app itself is using by going to 
+the Code section in the Web tab of your account Dashboard,
 and check it against the [per-system-image list of Python versions](/pages/PythonVersions).
 
 ### Virtualenvs
@@ -110,6 +111,14 @@ default Python version in "innit".
 We do not pre-install packages into all Python versions in all system images.
 You can check what packages are installed in which system
 image [here](https://www.pythonanywhere.com/batteries_included/).
+
+### Webapp Python version
+
+Remember that the Python version run by your app can be different to the defaults 
+on the System Image page.
+
+You can check the version your app itself is using by going to the 
+Code section in the Web tab of your account Dashboard
 
 
 ## Database Server Versions
