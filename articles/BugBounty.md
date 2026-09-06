@@ -59,6 +59,8 @@ are welcome to contact their owners directly.
   So the fact that the attacker may be able to, eg, brute force an email reset
   as well, isn't something we consider a serious additional security risk.
 
+* Attacks where the victim is student of the attacker - there's an explicit 
+  trust relationship, there.
 
 
 ## Bug classes we're interested in
