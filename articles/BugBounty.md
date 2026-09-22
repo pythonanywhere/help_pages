@@ -124,7 +124,7 @@ Other reports that are out of scope include:
 
 ## Reporting
 
-Send reports to [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
+Send reports to [bugbounty@pythonanywhere.com](mailto:bugbounty@pythonanywhere.com).
 
 The most important part of a report is a clear, complete, step-by-step description
 of what we need to do to reproduce the issue. Include any required account setup,
