@@ -39,16 +39,49 @@ Do not report bugs in those sites to us;  if you can find contact details on the
 are welcome to contact their owners directly.
 
 
-## Bug classes we're not really interested in
+## Out of scope -- do not report these as vulnerabilities
 
-* "I can run code on your servers" - Yup. That's our business.
+PythonAnywhere is a hosting platform. Users are intentionally allowed to run
+code and publish arbitrary content, including files, HTML, JavaScript, and web
+applications. We do not generally inspect or sanitize user-hosted content before
+serving it.
 
-* Self XSS -- If you can execute XSS-style attacks against your own account by
-  uploading a file and then loading it in the browser, that's not particularly
-  interesting to us.
+**Content is not private merely because it contains sensitive information.** If
+users place files, credentials, tokens, source code, or other data in a publicly
+served location, or configure their web apps to return that data, public access
+is the expected result of their configuration. It is not a PythonAnywhere
+vulnerability.
 
-* Auto-pwnage -- "If I run this code it does something bad to my
-  account/files/web apps"
+A report is out of scope if all of the following are true:
+
+1. The reporter controls the affected PythonAnywhere account or web app.
+2. The reporter uploaded, created, published, or configured the exposed content.
+3. No other user's account, private data, or authenticated PythonAnywhere
+   session is affected.
+
+This remains out of scope even if the published content is sensitive, executes
+JavaScript, downloads a file, reveals credentials placed in it, or could be
+dangerous if another person chose to use it.
+
+Examples that are **not vulnerabilities and are not eligible for a bounty**:
+
+* Uploading a file to your own public web app and then accessing it without
+  authentication.
+* Publishing secrets or credentials through your own web app.
+* Hosting arbitrary HTML or JavaScript on your own web app.
+* Uploading malicious content and then opening or executing it yourself.
+* Running code that damages or exposes your own account, files, databases, or
+  web apps.
+* Self-XSS, including attacks that require you to paste code into your own
+  browser console.
+* Demonstrating that code can run on PythonAnywhere; running user code is a core
+  feature of the service.
+
+The important question is not "can this content be reached from the Internet?"
+It is "did PythonAnywhere expose data or capabilities across a boundary that the
+affected user did not make public?"
+
+Other reports that are out of scope include:
 
 * Attacks that assume that accounts need to have unique email addresses. We
   allow multiple accounts to have the same email address.
@@ -65,8 +98,10 @@ are welcome to contact their owners directly.
 
 ## Bug classes we're interested in
 
-* General XSS, CSRF etc. -- Can you get a user that is logged in to PythonAnywhere to do
-  something malicious to their own account by e.g. having them follow a link?
+* General XSS, CSRF etc. -- Can an attacker cause a different logged-in
+  PythonAnywhere user to do something malicious, for example by getting them to
+  follow a link or visit a page? Self-XSS and attacks that require the victim to
+  paste code into their browser console are out of scope.
 
 * Cross-user exploits -- Can you do something bad to another user on PythonAnywhere
   from your account? Unless you're a teacher doing something malicious to your
@@ -91,8 +126,30 @@ are welcome to contact their owners directly.
 
 Send reports to [support@pythonanywhere.com](mailto:support@pythonanywhere.com).
 
-All reports must be accompanied by a proof of concept that we can reproduce. It has to be a proof 
-of actual exploitation based on the reported vulnerability.
+The most important part of a report is a clear, complete, step-by-step description
+of what we need to do to reproduce the issue. Include any required account setup,
+configuration, requests, commands, and expected results. We should be able to
+follow the steps without having to guess or ask for missing details.
+
+All reports must be accompanied by a proof of concept that we can reproduce. It
+must demonstrate actual exploitation of the reported vulnerability, rather than
+only describing a theoretical issue.
+
+### Required security-boundary statement
+
+Every report must answer these questions:
+
+1. Which account or user is the victim?
+2. Is the victim different from the reporter?
+3. What private data or capability becomes accessible?
+4. Which PythonAnywhere access-control or isolation boundary is bypassed?
+5. Does the proof of concept require the victim to upload, publish, paste,
+   execute, or open attacker-supplied content?
+
+If the only affected account is yours, or the reported data was published
+through a web app or public file location that you control, the report is
+self-pwnage and is out of scope. Reports that do not identify a crossed security
+boundary may be closed without further investigation.
 
 
 ## Payouts
