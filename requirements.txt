@@ -35,6 +35,6 @@ Unidecode==1.2.0
 urllib3==1.26.5
 Werkzeug==2.3.3
 Yapsy==1.12.2
-zipp==3.4.1
+zipp==3.19.1
 aiohttp
 watchdog
