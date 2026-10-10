@@ -21,7 +21,7 @@ accounts up [to have websites with custom domains](/pages/CustomDomains).
 You can create an app to run there by going to the
 [Web](https://www.pythonanywhere.com/web_app_setup/) tab of your dashboard. From
 there you click on the "Add a new web app" button, which will pop up a wizard
-where you can chose the domain to use (if your account allows custom domains)
+where you can choose the domain to use (if your account allows custom domains)
 and then select a web application framework. We have "quickstart" options for
 Django, web2py, Bottle and Flask, and there is also a "Manual configuration"
 option where you can generate a standard template WSGI file that can be modified
