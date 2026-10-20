@@ -137,7 +137,7 @@ and then the contents of the `for` loop are just normal copy commands.
 ### No graphics :/
 
 
-PythonAnywhere is a server-side, no-gui sort of environment, so we currently don't support any sort of graphics (unless you count web apps). So things like turtle and pygame are out. Which is a shame because graphics are so great, particularly for the student's first few experiences with programming. You may want to check out <https://trinket.io> as an alternative for the first few classes.
+PythonAnywhere is a server-side, no-gui sort of environment, so we currently don't support any sort of graphics (unless you count web apps). So things like turtle and pygame are out. Which is a shame because graphics are so great, particularly for the student's first few experiences with programming. You may want to check out <https://coddy.tech/playground/turtle>, which runs Python with turtle in the browser, as an alternative for the first few classes.
 
 
 ### No young children :/
