@@ -53,6 +53,6 @@ Good luck!
 
 ## PS - or you can go elsewhere
 
-We should also mention our friends at [Trinket.io](https://trinket.io/), who
-have a platform that makes it really easy to share short scripts online.
+We should also mention [Coddy's embeddable editor](https://coddy.tech/embed), which
+makes it really easy to share short scripts online: it turns your code into a link or an embed that anyone can run in their browser.
 
