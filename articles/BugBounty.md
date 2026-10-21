@@ -126,6 +126,9 @@ Other reports that are out of scope include:
 
 Send reports to [bugbounty@pythonanywhere.com](mailto:bugbounty@pythonanywhere.com).
 
+Initial reports must start with a paragrpah of six or fewer sentences
+describing the issue clearly and succinctly.
+
 The most important part of a report is a clear, complete, step-by-step description
 of what we need to do to reproduce the issue. Include any required account setup,
 configuration, requests, commands, and expected results. We should be able to
