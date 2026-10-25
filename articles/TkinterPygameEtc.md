@@ -60,7 +60,7 @@ great fun graphics package, particularly for teaching programming by drawing
 pictures, but unfortunately, for the reasons above, it won't work on
 PythonAnywhere.
 
-But we often recommend our friends at [trinket.io](https://trinket.io)
-instead;  they've built a cool browser-based version of Python that
-does support turtle.  It's great for beginners!
+But you can run turtle programs in your browser instead, for example in
+[Coddy's Python turtle playground](https://coddy.tech/playground/turtle),
+which runs Python in the browser and does support turtle.  It's great for beginners!
 
