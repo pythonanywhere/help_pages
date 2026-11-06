@@ -33,7 +33,12 @@ to work, you need to use the real address of the MySQL server. You can find it
 using `dig`:
 
 ```bash
-dig your_username.mysql.pythonanywhere-services.com
+dig <your_username>.mysql.pythonanywhere-services.com
+```
+or 
+
+```bash
+dig <your_username>.mysql.eu.pythonanywhere-services.com
 ```
 
 In the ANSWER section of the output, you will see something like this:
