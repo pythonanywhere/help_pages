@@ -2,7 +2,7 @@
 <!--
 .. title: MySQL Certificate Verification
 .. slug: MySQLCertificateVerification
-.. date: 2026-11-06 14:35:28 UTC+01:00
+.. date: 2026-11-06 00:00:00 UTC+01:00
 .. tags:
 .. category:
 .. link:
