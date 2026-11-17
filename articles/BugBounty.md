@@ -126,6 +126,8 @@ Other reports that are out of scope include:
 
 Send reports to [bugbounty@pythonanywhere.com](mailto:bugbounty@pythonanywhere.com).
 
+Make sure that the subject of the email is a short description of the vulnerability.
+
 Initial reports must start with a paragrpah of six or fewer sentences
 describing the issue clearly and succinctly.
 
